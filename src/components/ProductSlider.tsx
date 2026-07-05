@@ -85,9 +85,11 @@ export default function ProductSlider() {
                 {/* Image */}
                 <div className="relative h-56 overflow-hidden bg-gray-800">
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent z-10" />
-                  <div className="h-full w-full bg-gray-800 flex items-center justify-center">
-                    <span className="text-6xl">🚛</span>
-                  </div>
+                  <img
+                    src={truck.image}
+                    alt={truck.name}
+                    className="h-full w-full object-cover"
+                  />
                   {/* Category Badge */}
                   <div className="absolute top-4 left-4 z-20 rounded-full bg-amber-500 px-3 py-1 text-xs font-semibold text-black">
                     {categories.find(c => c.id === truck.category)?.name}
