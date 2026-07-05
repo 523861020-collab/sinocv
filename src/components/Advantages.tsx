@@ -43,7 +43,7 @@ export default function Advantages() {
             我们的优势
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed">
-            30年重卡出口经验，服务全球50+国家，值得信赖的合作伙伴
+            五大品牌一站式采购，重汽/陕汽重卡 + 徐工机械 + 中集挂车 + 福田商用车
           </p>
         </motion.div>
 

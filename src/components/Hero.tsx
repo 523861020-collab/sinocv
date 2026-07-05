@@ -7,14 +7,14 @@ const slides = [
   {
     image: '/images/hero-1.jpg',
     title: 'SITRAK 6×4 牵引车',
-    subtitle: '德国曼技术 · 高端重卡',
-    description: '高效节油，适合长途物流运输'
+    subtitle: '中国重汽 · 德国曼技术',
+    description: '重汽/陕汽牵引车、载货车、自卸车、搅拌车、专用车全系列'
   },
   {
     image: '/images/hero-2.jpg',
-    title: 'HOWO 8×4 载货车',
-    subtitle: '中国重汽 · 经典耐用',
-    description: '超大载重，适应各种复杂路况'
+    title: '徐工 · 中集 · 福田',
+    subtitle: '工程机械 + 挂车 + 轻型商用车',
+    description: '挖掘机、装载机、挂车、Van、微卡——一站式采购'
   }
 ];
 

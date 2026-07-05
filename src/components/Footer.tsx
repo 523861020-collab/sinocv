@@ -8,12 +8,12 @@ export default function Footer() {
             <div className="flex items-center gap-3 mb-6">
               <img src="/images/logo.png" alt="Logo" className="h-10 w-auto" />
               <div>
-                <div className="text-xl font-bold text-white">HOWO TRUCK</div>
-                <div className="text-xs text-amber-500 tracking-widest">CHINA NATIONAL HEAVY DUTY</div>
+                <div className="text-xl font-bold text-white">SINOTRUK EXPORT</div>
+                <div className="text-xs text-amber-500 tracking-widest">重汽 · 陕汽 · 徐工 · 中集 · 福田</div>
               </div>
             </div>
             <p className="text-gray-400 leading-relaxed mb-6">
-              中国重汽授权出口商，专注于HOWO/SITRAK系列重卡出口业务，服务全球50多个国家和地区。
+              中国重汽/陕汽授权出口商，徐工工程机械、中集挂车、福田商用车合作出口，产品覆盖牵引车、自卸车、搅拌车、专用车、工程机械等全系列。
             </p>
             <div className="flex gap-4">
               <a href="#" className="rounded-full bg-gray-800 p-3 text-gray-400 hover:text-amber-500 hover:bg-gray-700 transition-all">
@@ -39,22 +39,23 @@ export default function Footer() {
             <h3 className="text-lg font-semibold text-white mb-6">产品中心</h3>
             <ul className="space-y-4">
               <li><a href="#products" className="text-gray-400 hover:text-amber-500 transition-colors">牵引车系列</a></li>
+              <li><a href="#products" className="text-gray-400 hover:text-amber-500 transition-colors">载货车系列</a></li>
               <li><a href="#products" className="text-gray-400 hover:text-amber-500 transition-colors">自卸车系列</a></li>
               <li><a href="#products" className="text-gray-400 hover:text-amber-500 transition-colors">搅拌车系列</a></li>
-              <li><a href="#products" className="text-gray-400 hover:text-amber-500 transition-colors">罐式车系列</a></li>
-              <li><a href="#products" className="text-gray-400 hover:text-amber-500 transition-colors">随车吊系列</a></li>
+              <li><a href="#products" className="text-gray-400 hover:text-amber-500 transition-colors">专用车系列</a></li>
+              <li><a href="#products" className="text-gray-400 hover:text-amber-500 transition-colors">挂车系列</a></li>
             </ul>
           </div>
 
-          {/* Services */}
+          {/* Brands */}
           <div>
-            <h3 className="text-lg font-semibold text-white mb-6">我们的服务</h3>
+            <h3 className="text-lg font-semibold text-white mb-6">合作品牌</h3>
             <ul className="space-y-4">
-              <li><a href="#" className="text-gray-400 hover:text-amber-500 transition-colors">整车出口</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-amber-500 transition-colors">配件供应</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-amber-500 transition-colors">技术支持</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-amber-500 transition-colors">售后服务</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-amber-500 transition-colors">定制改装</a></li>
+              <li><span className="text-gray-400">🏭 中国重汽 HOWO/SITRAK</span></li>
+              <li><span className="text-gray-400">🚛 陕汽重卡 Shaanxi</span></li>
+              <li><span className="text-gray-400">⚙️ 徐工机械 XCMG</span></li>
+              <li><span className="text-gray-400">🔗 中集挂车 CIMC</span></li>
+              <li><span className="text-gray-400">🚐 福田汽车 Foton</span></li>
             </ul>
           </div>
 

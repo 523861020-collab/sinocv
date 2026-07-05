@@ -36,8 +36,8 @@ export default function Navbar() {
           <a href="#" className="flex items-center gap-3">
             <img src="/images/logo.png" alt="Logo" className="h-10 w-auto" />
             <div>
-              <div className="text-xl font-bold text-white">HOWO TRUCK</div>
-              <div className="text-xs text-amber-500 tracking-widest">CHINA NATIONAL HEAVY DUTY</div>
+              <div className="text-xl font-bold text-white">SINOTRUK EXPORT</div>
+              <div className="text-xs text-amber-500 tracking-widest">重汽 · 陕汽 · 徐工 · 中集 · 福田</div>
             </div>
           </a>
 

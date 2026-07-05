@@ -29,7 +29,7 @@ export default function ProductSlider() {
             产品中心
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed">
-            中国重汽全系列重卡产品，覆盖牵引车、自卸车、搅拌车、罐式车等多种车型
+            牵引车 · 载货车 · 冷藏车 · 自卸车 · 搅拌车 · 专用车 · 挂车 · 工程机械 · 轻型商用车
           </p>
         </motion.div>
 
@@ -94,17 +94,19 @@ export default function ProductSlider() {
                   <div className="absolute top-4 left-4 z-20 rounded-full bg-amber-500 px-3 py-1 text-xs font-semibold text-black">
                     {categories.find(c => c.id === truck.category)?.name}
                   </div>
-                  {/* HP Badge */}
-                  <div className="absolute top-4 right-4 z-20 rounded-full bg-white/20 backdrop-blur-sm px-3 py-1 text-xs font-semibold text-white">
-                    {truck.horsepower}HP
-                  </div>
+                  {truck.horsepower > 0 && (
+                    <div className="absolute top-4 right-4 z-20 rounded-full bg-white/20 backdrop-blur-sm px-3 py-1 text-xs font-semibold text-white">
+                      {truck.horsepower}HP
+                    </div>
+                  )}
                 </div>
 
                 {/* Content */}
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-amber-500 transition-colors">
+                  <h3 className="text-xl font-bold text-white mb-1 group-hover:text-amber-500 transition-colors">
                     {truck.name}
                   </h3>
+                  <p className="text-amber-500 text-sm mb-3">{truck.brand}</p>
                   <div className="space-y-2 mb-4">
                     <div className="flex justify-between text-sm">
                       <span className="text-gray-500">驱动</span>
