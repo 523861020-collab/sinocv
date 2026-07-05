@@ -6,21 +6,15 @@ import { motion, AnimatePresence } from 'framer-motion';
 const slides = [
   {
     image: '/images/hero-1.jpg',
-    title: '中国重汽 HOWO',
-    subtitle: '非洲与中东市场首选品牌',
-    description: '30年专注重卡出口，服务全球50+国家'
+    title: 'SITRAK 6×4 牵引车',
+    subtitle: '德国曼技术 · 高端重卡',
+    description: '高效节油，适合长途物流运输'
   },
   {
     image: '/images/hero-2.jpg',
-    title: 'SITRAK 豪沃',
-    subtitle: '德国曼技术，中国制造',
-    description: '高端重卡，品质与性价比的完美结合'
-  },
-  {
-    image: '/images/hero-3.jpg',
-    title: '专业出口服务',
-    subtitle: '一站式解决方案',
-    description: '从选型到物流，全程无忧'
+    title: 'HOWO 8×4 载货车',
+    subtitle: '中国重汽 · 经典耐用',
+    description: '超大载重，适应各种复杂路况'
   }
 ];
 
