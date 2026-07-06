@@ -79,27 +79,26 @@ export default function ZonePage({ title, titleEn, icon, brand, trucks, bannerIm
 
   return (
     <div className="min-h-screen bg-black pt-20">
-      {/* Narrow Banner */}
-      <div className="relative h-56 overflow-hidden bg-gray-900">
+      {/* Title */}
+      <div className="container mx-auto px-6 py-6">
+        <div className="flex items-center gap-3">
+          <span className="text-3xl">{icon}</span>
+          <div>
+            <div className="flex items-baseline gap-2">
+              <h1 className="text-2xl md:text-3xl font-bold text-white">{title}</h1>
+              <span className="text-white/40 text-xs">{titleEn}</span>
+            </div>
+            <p className="text-amber-500 text-xs mt-0.5">{brand}</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Banner Image */}
+      <div className="h-48 md:h-56 overflow-hidden bg-gray-900">
         <div
-          className="absolute inset-0 bg-cover bg-center"
+          className="h-full w-full bg-cover bg-center"
           style={{ backgroundImage: `url(${bannerImage})` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 p-6">
-          <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
-            <div className="flex items-center gap-3">
-              <span className="text-3xl">{icon}</span>
-              <div>
-                <div className="flex items-baseline gap-2">
-                  <h1 className="text-2xl md:text-3xl font-bold text-white">{title}</h1>
-                  <span className="text-white/60 text-xs">{titleEn}</span>
-                </div>
-                <p className="text-amber-400 text-xs mt-0.5">{brand}</p>
-              </div>
-            </div>
-          </motion.div>
-        </div>
       </div>
 
       {/* Products grouped by sub-category */}
