@@ -29,7 +29,7 @@ function ZoneWindow({ zone }: { zone: typeof zones[0] }) {
       </div>
 
       {/* Product image */}
-      <div className="relative h-40 overflow-hidden bg-gray-800">
+      <div className="relative h-52 overflow-hidden bg-gray-800">
         <AnimatePresence mode="wait">
           <motion.img
             key={current}
@@ -42,13 +42,13 @@ function ZoneWindow({ zone }: { zone: typeof zones[0] }) {
             className="absolute inset-0 h-full w-full object-cover"
           />
         </AnimatePresence>
-        <div className="absolute top-2 left-2 rounded-full bg-amber-500 px-2 py-0.5 text-xs font-semibold text-black">
+        <div className="absolute top-3 left-3 rounded-full bg-amber-500 px-2.5 py-0.5 text-xs font-semibold text-black">
           {categories.find(c => c.id === p.category)?.name}
         </div>
       </div>
 
       {/* Product info */}
-      <div className="p-3">
+      <div className="p-4">
         <AnimatePresence mode="wait">
           <motion.div
             key={current}
@@ -58,8 +58,8 @@ function ZoneWindow({ zone }: { zone: typeof zones[0] }) {
             transition={{ duration: 0.3 }}
           >
             <p className="text-amber-500 text-xs">{p.brand}</p>
-            <h4 className="text-sm font-bold text-white mt-0.5 mb-2 truncate">{p.name}</h4>
-            <div className="flex justify-between text-xs">
+            <h4 className="text-base font-bold text-white mt-0.5 mb-2 truncate">{p.name}</h4>
+            <div className="flex justify-between text-sm">
               <span className="text-gray-500">{p.driveType}</span>
               <span className="text-amber-500 font-semibold">{p.price}</span>
             </div>
@@ -89,7 +89,7 @@ export default function Home() {
             <p className="text-gray-400 text-lg">五大品类 · 一站式采购</p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-6xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             {zones.map(zone => (
               <ZoneWindow key={zone.id} zone={zone} />
             ))}
