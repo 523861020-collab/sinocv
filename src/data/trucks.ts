@@ -312,16 +312,6 @@ export const zones = [
     color: 'from-orange-500/20 to-transparent'
   },
   {
-    id: 'trailer',
-    title: '挂车专区',
-    titleEn: 'Trailers',
-    icon: '🔗',
-    brand: '中集 CIMC',
-    description: '平板挂车 · 自卸挂车，全球销量第一挂车品牌',
-    categories: ['trailer'],
-    color: 'from-blue-500/20 to-transparent'
-  },
-  {
     id: 'light',
     title: '轻型商用车专区',
     titleEn: 'Light Commercial Vehicles',
@@ -330,6 +320,16 @@ export const zones = [
     description: 'Van 封闭货车 · 微卡 · 城市物流配送',
     categories: ['light'],
     color: 'from-green-500/20 to-transparent'
+  },
+  {
+    id: 'trailer',
+    title: '挂车专区',
+    titleEn: 'Trailers',
+    icon: '🔗',
+    brand: '中集 CIMC',
+    description: '平板挂车 · 自卸挂车，全球销量第一挂车品牌',
+    categories: ['trailer'],
+    color: 'from-blue-500/20 to-transparent'
   }
 ];
 
