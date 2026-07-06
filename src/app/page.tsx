@@ -161,8 +161,8 @@ export default function Home() {
           </div>
 
           {/* Row 2: Company intro — centered full width */}
-          <div className="max-w-4xl mx-auto mb-10 text-center">
-            <div className="rounded-2xl bg-gray-900 border border-gray-800 p-10">
+          <div className="max-w-4xl mx-auto mb-10">
+            <div className="rounded-2xl bg-gray-900 border border-gray-800 p-10 text-center">
               <h3 className="text-2xl font-bold text-white mb-6 flex items-center justify-center gap-3">
                 <span className="w-10 h-10 rounded-xl bg-amber-500/10 flex items-center justify-center text-xl">🏢</span>
                 关于 SINOCV
