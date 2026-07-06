@@ -38,8 +38,8 @@ export default function Navbar() {
           <a href="#" className="flex items-center gap-3">
             <img src="/images/logo.png" alt="Logo" className="h-10 w-auto" />
             <div>
-              <div className="text-xl font-bold text-white">SINOTRUK EXPORT</div>
-              <div className="text-xs text-amber-500 tracking-widest">重汽 · 徐工 · 中集 · 福田</div>
+              <div className="text-xl font-bold text-white">SINOCV</div>
+              <div className="text-xs text-amber-500 tracking-widest">卡车 · 工程机械 · Van · 挂车</div>
             </div>
           </a>
 
