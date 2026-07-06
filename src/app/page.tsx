@@ -141,40 +141,80 @@ export default function Home() {
           </div>
 
           {/* Row 1: Manager + Company Info */}
-          <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-            {/* Manager */}
-            <div className="rounded-xl bg-gray-900 border border-gray-800 p-8 flex flex-col items-center text-center">
-              <img src="/images/manager.jpg" alt="李善龙" className="w-36 h-36 rounded-full object-cover mb-4 border-2 border-amber-500" />
-              <h4 className="text-white font-bold text-xl">李善龙</h4>
-              <p className="text-amber-500 text-sm mb-5">总经理 / General Manager</p>
-              <div className="space-y-2 text-sm text-gray-400 w-full">
-                <div className="flex items-center justify-center gap-2">📧 lishanlong@sinocv.com</div>
-                <div className="flex items-center justify-center gap-2">📱 +86 13001977959</div>
-                <div className="flex items-center justify-center gap-2">💬 微信: sinocv</div>
+          <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10">
+            {/* Manager — premium card */}
+            <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-900 via-gray-900 to-amber-950/30 border border-gray-800">
+              {/* subtle glow */}
+              <div className="absolute -top-20 -right-20 w-40 h-40 bg-amber-500/5 rounded-full blur-3xl" />
+              <div className="relative p-10 flex flex-col items-center text-center">
+                {/* photo with ring glow */}
+                <div className="relative mb-6">
+                  <div className="absolute inset-0 rounded-full bg-amber-500/20 blur-xl scale-110" />
+                  <img src="/images/manager.jpg" alt="李善龙" className="relative w-40 h-40 rounded-full object-cover border-4 border-amber-500/40 shadow-2xl shadow-amber-500/10" />
+                </div>
+                <h4 className="text-white font-bold text-2xl mb-1">李善龙</h4>
+                <p className="text-amber-400 text-sm font-medium mb-8">总经理 · General Manager</p>
+                
+                {/* contact pills */}
+                <div className="space-y-3 w-full max-w-xs">
+                  <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-gray-800/60 text-sm text-gray-300 hover:bg-gray-800 transition-colors">
+                    <span className="text-lg">📧</span>
+                    <span className="truncate">lishanlong@sinocv.com</span>
+                  </div>
+                  <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-gray-800/60 text-sm text-gray-300 hover:bg-gray-800 transition-colors">
+                    <span className="text-lg">📱</span>
+                    <span>+86 13001977959</span>
+                  </div>
+                  <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-gray-800/60 text-sm text-gray-300 hover:bg-gray-800 transition-colors">
+                    <span className="text-lg">💬</span>
+                    <span>微信: sinocv</span>
+                  </div>
+                </div>
               </div>
             </div>
 
-            {/* Company + Factory + Mission */}
-            <div className="space-y-6">
-              <div className="rounded-xl bg-gray-900 border border-gray-800 p-8">
-                <h3 className="text-lg font-bold text-white mb-3 flex items-center gap-2">🏢 公司介绍</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">
+            {/* Company + Factory + Mission — three cards */}
+            <div className="space-y-4">
+              {/* 公司介绍 */}
+              <div className="rounded-2xl bg-gray-900 border border-gray-800 p-8 hover:border-gray-700 transition-colors">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-xl bg-amber-500/10 flex items-center justify-center text-xl shrink-0">🏢</div>
+                  <h3 className="text-lg font-bold text-white">公司介绍</h3>
+                </div>
+                <p className="text-gray-400 leading-relaxed">
                   SINOCV 是一家专业从事中国商用车及工程机械出口的贸易公司，总部位于香港。公司与多家中国顶级制造商建立了长期稳定的合作关系，致力于为全球客户提供高品质的重卡、工程机械、挂车及轻型商用车一站式采购服务。
                 </p>
               </div>
-              <div className="rounded-xl bg-gray-900 border border-gray-800 p-8">
-                <h3 className="text-lg font-bold text-white mb-3 flex items-center gap-2">🏭 合作工厂</h3>
-                <div className="grid grid-cols-2 gap-3 text-sm text-gray-400">
-                  <div className="bg-gray-800/50 rounded-lg p-3 text-center">中国重汽</div>
-                  <div className="bg-gray-800/50 rounded-lg p-3 text-center">徐工集团</div>
-                  <div className="bg-gray-800/50 rounded-lg p-3 text-center">中集车辆</div>
-                  <div className="bg-gray-800/50 rounded-lg p-3 text-center">福田汽车</div>
+
+              {/* 合作工厂 */}
+              <div className="rounded-2xl bg-gray-900 border border-gray-800 p-8 hover:border-gray-700 transition-colors">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-xl bg-amber-500/10 flex items-center justify-center text-xl shrink-0">🏭</div>
+                  <h3 className="text-lg font-bold text-white">合作工厂</h3>
+                </div>
+                <div className="grid grid-cols-2 gap-3">
+                  {[
+                    { name: '中国重汽', sub: 'SINOTRUK' },
+                    { name: '徐工集团', sub: 'XCMG' },
+                    { name: '中集车辆', sub: 'CIMC' },
+                    { name: '福田汽车', sub: 'FOTON' },
+                  ].map(f => (
+                    <div key={f.name} className="rounded-xl border border-gray-800 bg-gray-800/40 py-4 px-4 text-center hover:border-amber-500/30 hover:bg-gray-800/70 transition-all">
+                      <div className="text-white font-semibold text-sm">{f.name}</div>
+                      <div className="text-gray-500 text-xs mt-0.5">{f.sub}</div>
+                    </div>
+                  ))}
                 </div>
               </div>
-              <div className="rounded-xl bg-gray-900 border border-gray-800 p-8">
-                <h3 className="text-lg font-bold text-white mb-3 flex items-center gap-2">🎯 公司宗旨</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">
-                  以客户需求为导向，以品质服务为根本，为全球客户提供最优质的中国制造商用车及工程机械产品，成为值得信赖的长期合作伙伴。
+
+              {/* 公司宗旨 */}
+              <div className="rounded-2xl bg-gradient-to-r from-amber-500/5 to-transparent border border-amber-500/20 p-8">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-xl bg-amber-500/20 flex items-center justify-center text-xl shrink-0">🎯</div>
+                  <h3 className="text-lg font-bold text-white">公司宗旨</h3>
+                </div>
+                <p className="text-gray-300 leading-relaxed text-base italic">
+                  "以客户需求为导向，以品质服务为根本，为全球客户提供最优质的中国制造商用车及工程机械产品，成为值得信赖的长期合作伙伴。"
                 </p>
               </div>
             </div>
