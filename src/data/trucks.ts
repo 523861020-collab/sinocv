@@ -317,6 +317,18 @@ export const stockTrucks: Truck[] = [
     price: '',
     image: '/images/dump-howo.jpg',
     features: ['已到港', '黄色', '加强型货箱', '即付即发']
+  },
+  {
+    id: 'stock-003',
+    name: 'SITRAK C7H 440 牵引车 现车',
+    category: 'tractor',
+    brand: '中国重汽',
+    horsepower: 440,
+    driveType: '6×4',
+    engine: '曼 MC13.440',
+    price: '',
+    image: '/images/tractor-2.jpg',
+    features: ['已到港', '白色', '豪华驾驶室', '即付即发']
   }
 ];
 
