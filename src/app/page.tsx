@@ -5,7 +5,6 @@ import Link from 'next/link';
 import Hero from '@/components/Hero';
 import Advantages from '@/components/Advantages';
 import Contact from '@/components/Contact';
-import Footer from '@/components/Footer';
 import { zones } from '@/data/trucks';
 
 const categoryCards = [
@@ -18,7 +17,7 @@ const categoryCards = [
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-black">
+    <>
       <Hero />
 
       {/* Category Cards */}
@@ -70,7 +69,6 @@ export default function Home() {
 
       <Advantages />
       <Contact />
-      <Footer />
-    </main>
+    </>
   );
 }

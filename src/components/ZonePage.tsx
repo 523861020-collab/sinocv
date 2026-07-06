@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion';
 import { Truck, categories } from '@/data/trucks';
-import Link from 'next/link';
 
 interface ZonePageProps {
   title: string;
@@ -79,14 +78,11 @@ export default function ZonePage({ title, titleEn, icon, brand, description, tru
   }
 
   return (
-    <main className="min-h-screen bg-black pt-24">
+    <div className="min-h-screen bg-black pt-20">
       {/* Header */}
       <section className="py-16 bg-gray-950 border-b border-gray-800">
         <div className="container mx-auto px-6">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}>
-            <Link href="/" className="text-gray-500 hover:text-amber-500 text-sm mb-6 inline-block">
-              ← 返回首页
-            </Link>
             <div className="flex items-center gap-4 mb-4">
               <span className="text-5xl">{icon}</span>
               <div>
@@ -122,6 +118,6 @@ export default function ZonePage({ title, titleEn, icon, brand, description, tru
           </section>
         );
       })}
-    </main>
+    </div>
   );
 }
