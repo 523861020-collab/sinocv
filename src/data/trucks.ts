@@ -37,18 +37,6 @@ export const trucks: Truck[] = [
     image: '/images/tractor-2.jpg',
     features: ['豪华驾驶室', '液力缓速器', '车道偏离预警', '360°环视']
   },
-  {
-    id: 'shaanxi-x3000-430',
-    name: '陕汽 X3000 430 牵引车',
-    category: 'tractor',
-    brand: '陕汽',
-    horsepower: 430,
-    driveType: '6×4',
-    engine: '潍柴 WP13.430E62',
-    price: '$27,000 - $34,000',
-    image: '/images/tractor-1.jpg',
-    features: ['法士特变速箱', '汉德车桥', '四点悬浮驾驶室', '定速巡航']
-  },
 
   // ===== 载货车 =====
   {
@@ -62,18 +50,6 @@ export const trucks: Truck[] = [
     price: '$25,000 - $32,000',
     image: '/images/hero-2.jpg',
     features: ['9.6米货箱', '气囊减震座椅', '多媒体中控', '定速巡航']
-  },
-  {
-    id: 'shaanxi-l3000-280',
-    name: '陕汽 L3000 280 载货车',
-    category: 'cargo',
-    brand: '陕汽',
-    horsepower: 280,
-    driveType: '4×2',
-    engine: '潍柴 WP7.280E62',
-    price: '$22,000 - $28,000',
-    image: '/images/tractor-1.jpg',
-    features: ['经济节油', '大货箱容积', '电动门窗', '中控锁']
   },
 
   // ===== 冷藏车 =====
@@ -102,18 +78,6 @@ export const trucks: Truck[] = [
     price: '$35,000 - $45,000',
     image: '/images/dump-howo.jpg',
     features: ['加强型货箱', '液压举升', '矿山专用轮胎', '防护网']
-  },
-  {
-    id: 'shaanxi-f3000-dump',
-    name: '陕汽 F3000 380 自卸车',
-    category: 'dump',
-    brand: '陕汽',
-    horsepower: 380,
-    driveType: '6×4',
-    engine: '潍柴 WP12.380E62',
-    price: '$32,000 - $42,000',
-    image: '/images/dump-howo.jpg',
-    features: ['矿山专用底盘', '加强型悬挂', '沙漠空滤', '发动机护板']
   },
 
   // ===== 搅拌车 =====
@@ -237,6 +201,8 @@ export const trucks: Truck[] = [
     image: '/images/mining-truck.jpg',
     features: ['35吨载重', '宽体驾驶室', '液力缓速器', '矿用底盘']
   },
+
+  // ===== 挂车（中集） =====
   {
     id: 'cimc-flatbed',
     name: '中集 40英尺 平板挂车',
@@ -333,7 +299,7 @@ export const zones = [
     title: '重卡专区',
     titleEn: 'Heavy Duty Trucks',
     icon: '🚛',
-    brand: '中国重汽 / 陕汽',
+    brand: '中国重汽',
     description: '牵引车 · 载货车 · 冷藏车 · 自卸车 · 搅拌车 · 水泥罐车 · 垃圾运输车 · 随车吊 · 高空作业车 · 洒水车',
     categories: ['tractor', 'cargo', 'dump', 'mixer', 'special'],
     color: 'from-amber-500/20 to-transparent'
@@ -384,7 +350,7 @@ export const advantages = [
   {
     title: '品牌齐全',
     titleEn: 'Full Brand Portfolio',
-    description: '中国重汽、陕汽重卡、徐工机械、中集挂车、福田商用车——五大品牌一站式采购',
+    description: '中国重汽、徐工机械、中集挂车、福田商用车——四大品牌一站式采购',
     icon: 'shield'
   },
   {

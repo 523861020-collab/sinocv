@@ -39,7 +39,7 @@ export default function Navbar() {
             <img src="/images/logo.png" alt="Logo" className="h-10 w-auto" />
             <div>
               <div className="text-xl font-bold text-white">SINOTRUK EXPORT</div>
-              <div className="text-xs text-amber-500 tracking-widest">重汽 · 陕汽 · 徐工 · 中集 · 福田</div>
+              <div className="text-xs text-amber-500 tracking-widest">重汽 · 徐工 · 中集 · 福田</div>
             </div>
           </a>
 
