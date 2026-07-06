@@ -141,32 +141,32 @@ export default function Home() {
           </div>
 
           {/* Row 1: Manager + Company Info */}
-          <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10">
-            {/* Manager — premium card */}
-            <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-900 via-gray-900 to-amber-950/30 border border-gray-800">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10 items-stretch">
+            {/* Manager — premium card, fills column height */}
+            <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-900 via-gray-900 to-amber-950/30 border border-gray-800 h-full">
               {/* subtle glow */}
               <div className="absolute -top-20 -right-20 w-40 h-40 bg-amber-500/5 rounded-full blur-3xl" />
-              <div className="relative p-10 flex flex-col items-center text-center">
+              <div className="relative p-10 h-full flex flex-col items-center text-center justify-center">
                 {/* photo with ring glow */}
-                <div className="relative mb-6">
+                <div className="relative mb-8">
                   <div className="absolute inset-0 rounded-full bg-amber-500/20 blur-xl scale-110" />
-                  <img src="/images/manager.jpg" alt="李善龙" className="relative w-40 h-40 rounded-full object-cover border-4 border-amber-500/40 shadow-2xl shadow-amber-500/10" />
+                  <img src="/images/manager.jpg" alt="李善龙" className="relative w-48 h-48 rounded-full object-cover border-4 border-amber-500/40 shadow-2xl shadow-amber-500/10" />
                 </div>
-                <h4 className="text-white font-bold text-2xl mb-1">李善龙</h4>
-                <p className="text-amber-400 text-sm font-medium mb-8">总经理 · General Manager</p>
+                <h4 className="text-white font-bold text-3xl mb-2">李善龙</h4>
+                <p className="text-amber-400 text-base font-medium mb-10">总经理 · General Manager</p>
                 
                 {/* contact pills */}
-                <div className="space-y-3 w-full max-w-xs">
-                  <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-gray-800/60 text-sm text-gray-300 hover:bg-gray-800 transition-colors">
-                    <span className="text-lg">📧</span>
+                <div className="space-y-4 w-full max-w-xs">
+                  <div className="flex items-center gap-3 px-5 py-4 rounded-xl bg-gray-800/60 text-base text-gray-300 hover:bg-gray-800 transition-colors">
+                    <span className="text-xl">📧</span>
                     <span className="truncate">lishanlong@sinocv.com</span>
                   </div>
-                  <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-gray-800/60 text-sm text-gray-300 hover:bg-gray-800 transition-colors">
-                    <span className="text-lg">📱</span>
+                  <div className="flex items-center gap-3 px-5 py-4 rounded-xl bg-gray-800/60 text-base text-gray-300 hover:bg-gray-800 transition-colors">
+                    <span className="text-xl">📱</span>
                     <span>+86 13001977959</span>
                   </div>
-                  <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-gray-800/60 text-sm text-gray-300 hover:bg-gray-800 transition-colors">
-                    <span className="text-lg">💬</span>
+                  <div className="flex items-center gap-3 px-5 py-4 rounded-xl bg-gray-800/60 text-base text-gray-300 hover:bg-gray-800 transition-colors">
+                    <span className="text-xl">💬</span>
                     <span>微信: sinocv</span>
                   </div>
                 </div>
