@@ -35,7 +35,7 @@ export async function POST(request: Request) {
           }),
         });
         const data = await res.json();
-        if (!res.ok) console.error('Resend error:', JSON.stringify(data));
+        console.log('Resend response:', res.status, JSON.stringify(data).substring(0, 300));
       } catch (e: any) {
         console.error('Email error:', e.message);
       }
