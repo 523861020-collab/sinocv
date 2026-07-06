@@ -80,28 +80,25 @@ export default function ZonePage({ title, titleEn, icon, brand, trucks, bannerIm
   return (
     <div className="min-h-screen bg-black pt-16">
       {/* Narrow Banner */}
-      <div className="relative h-56 overflow-hidden">
+      <div className="relative h-56 overflow-hidden bg-gray-900">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${bannerImage})` }}
         />
-        <div className="absolute inset-0 bg-black/60" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/50 to-transparent" />
-        <div className="relative z-10 h-full flex items-center">
-          <div className="container mx-auto px-6">
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-              <div className="flex items-center gap-4">
-                <span className="text-4xl">{icon}</span>
-                <div>
-                  <div className="flex items-center gap-3">
-                    <h1 className="text-3xl md:text-4xl font-bold text-white">{title}</h1>
-                    <span className="text-gray-400 text-sm">{titleEn}</span>
-                  </div>
-                  <p className="text-amber-500 text-sm mt-1">{brand}</p>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 p-6">
+          <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
+            <div className="flex items-center gap-3">
+              <span className="text-3xl">{icon}</span>
+              <div>
+                <div className="flex items-baseline gap-2">
+                  <h1 className="text-2xl md:text-3xl font-bold text-white">{title}</h1>
+                  <span className="text-white/60 text-xs">{titleEn}</span>
                 </div>
+                <p className="text-amber-400 text-xs mt-0.5">{brand}</p>
               </div>
-            </motion.div>
-          </div>
+            </div>
+          </motion.div>
         </div>
       </div>
 
