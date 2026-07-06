@@ -143,21 +143,23 @@ export default function Home() {
 
           {/* Certificate Images + Manager */}
           <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Manager - first */}
+            <div className="rounded-xl bg-gray-900 border border-gray-800 p-8 flex flex-col items-center justify-center text-center">
+              <img src="/images/manager.jpg" alt="李善龙" className="w-36 h-36 rounded-full object-cover mb-4 border-2 border-amber-500" />
+              <h4 className="text-white font-bold text-xl">李善龙</h4>
+              <p className="text-amber-500 text-sm mb-5">总经理 / General Manager</p>
+              <div className="space-y-2 text-sm text-gray-400 w-full">
+                <div className="flex items-center justify-center gap-2">📧 lishanlong@sinocv.com</div>
+                <div className="flex items-center justify-center gap-2">📱 +86 13001977959</div>
+                <div className="flex items-center justify-center gap-2">💬 微信: sinocv</div>
+              </div>
+            </div>
             <a href="/images/cert-hk-1.jpg" target="_blank" className="rounded-xl overflow-hidden border border-gray-800 hover:border-amber-500/50 transition-all block">
               <img src="/images/cert-hk-1.jpg" alt="公司注册证明书" className="w-full h-auto" />
             </a>
             <a href="/images/cert-hk-2.jpg" target="_blank" className="rounded-xl overflow-hidden border border-gray-800 hover:border-amber-500/50 transition-all block">
               <img src="/images/cert-hk-2.jpg" alt="商业登记证" className="w-full h-auto" />
             </a>
-            <div className="rounded-xl bg-gray-900 border border-gray-800 p-6 flex flex-col items-center justify-center text-center">
-              <img src="/images/manager.jpg" alt="李善龙" className="w-28 h-28 rounded-full object-cover mb-4 border-2 border-amber-500" />
-              <h4 className="text-white font-bold text-lg">李善龙</h4>
-              <p className="text-amber-500 text-sm mb-4">总经理 / General Manager</p>
-              <div className="space-y-2 text-sm text-gray-400">
-                <div>📧 lishanlong@sinocv.com</div>
-                <div>📱 WhatsApp: +86 19103781257</div>
-              </div>
-            </div>
           </div>
         </div>
       </section>

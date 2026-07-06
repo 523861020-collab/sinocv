@@ -90,8 +90,8 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="text-white font-semibold mb-1">联系电话</h4>
-                  <p className="text-gray-400">+86 19103781257</p>
-                  <p className="text-gray-400">WhatsApp: +86 19103781257</p>
+                  <p className="text-gray-400">+86 13001977959</p>
+                  <p className="text-gray-400">WhatsApp: +86 13001977959</p>
                 </div>
               </div>
             </div>
