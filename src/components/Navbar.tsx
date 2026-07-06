@@ -16,8 +16,10 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { href: '#products', label: '产品中心' },
-    { href: '#markets', label: '全球市场' },
+    { href: '#heavy-truck', label: '重卡' },
+    { href: '#machinery', label: '工程机械' },
+    { href: '#trailer', label: '挂车' },
+    { href: '#light', label: '轻型车' },
     { href: '#catalog', label: '画册下载' },
     { href: '#contact', label: '联系我们' }
   ];

@@ -290,6 +290,49 @@ export const categories = [
   { id: 'light', name: '轻型商用车', nameEn: 'Light Commercial', icon: '🚐' }
 ];
 
+export const zones = [
+  {
+    id: 'heavy-truck',
+    title: '重卡专区',
+    titleEn: 'Heavy Duty Trucks',
+    icon: '🚛',
+    brand: '中国重汽 / 陕汽',
+    description: '牵引车 · 载货车 · 冷藏车 · 自卸车 · 搅拌车 · 水泥罐车 · 垃圾运输车 · 随车吊 · 高空作业车 · 洒水车',
+    categories: ['tractor', 'cargo', 'dump', 'mixer', 'special'],
+    color: 'from-amber-500/20 to-transparent'
+  },
+  {
+    id: 'machinery',
+    title: '工程机械专区',
+    titleEn: 'Construction Machinery',
+    icon: '⚙️',
+    brand: '徐工 XCMG',
+    description: '挖掘机 · 装载机，矿山/基建/市政工程解决方案',
+    categories: ['machinery'],
+    color: 'from-orange-500/20 to-transparent'
+  },
+  {
+    id: 'trailer',
+    title: '挂车专区',
+    titleEn: 'Trailers',
+    icon: '🔗',
+    brand: '中集 CIMC',
+    description: '平板挂车 · 自卸挂车，全球销量第一挂车品牌',
+    categories: ['trailer'],
+    color: 'from-blue-500/20 to-transparent'
+  },
+  {
+    id: 'light',
+    title: '轻型商用车专区',
+    titleEn: 'Light Commercial Vehicles',
+    icon: '🚐',
+    brand: '福田 Foton',
+    description: 'Van 封闭货车 · 微卡 · 城市物流配送',
+    categories: ['light'],
+    color: 'from-green-500/20 to-transparent'
+  }
+];
+
 export const advantages = [
   {
     title: '品牌齐全',
