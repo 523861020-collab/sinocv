@@ -293,6 +293,33 @@ export const categories = [
   { id: 'light', name: '轻型商用车', nameEn: 'Light Commercial', icon: '🚐' }
 ];
 
+export const stockTrucks: Truck[] = [
+  {
+    id: 'stock-001',
+    name: 'HOWO TX 430 牵引车 现车',
+    category: 'tractor',
+    brand: '中国重汽',
+    horsepower: 430,
+    driveType: '6×4',
+    engine: '潍柴 WP13.430E62',
+    price: '',
+    image: '/images/hero-tractor.jpg',
+    features: ['已到港', '白色', '高顶双卧铺', '即付即发']
+  },
+  {
+    id: 'stock-002',
+    name: 'HOWO 8×4 自卸车 现车',
+    category: 'dump',
+    brand: '中国重汽',
+    horsepower: 380,
+    driveType: '8×4',
+    engine: '潍柴 WP12.380E62',
+    price: '',
+    image: '/images/dump-howo.jpg',
+    features: ['已到港', '黄色', '加强型货箱', '即付即发']
+  }
+];
+
 export const zones = [
   {
     id: 'heavy-truck',
