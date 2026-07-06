@@ -117,13 +117,13 @@ export default function Hero() {
                 className="flex gap-4"
               >
                 <a
-                  href="#heavy-truck"
+                  href="/heavy-truck"
                   className="rounded-md bg-amber-500 px-8 py-4 text-lg font-semibold text-black transition-all hover:bg-amber-400 hover:shadow-lg hover:shadow-amber-500/30"
                 >
                   查看产品
                 </a>
                 <a
-                  href="#contact"
+                  href="/#contact"
                   className="rounded-md border-2 border-white px-8 py-4 text-lg font-semibold text-white transition-all hover:bg-white hover:text-black"
                 >
                   立即询价
