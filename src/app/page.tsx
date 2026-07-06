@@ -2,7 +2,6 @@ import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import Advantages from '@/components/Advantages';
 import GlobalMarkets from '@/components/GlobalMarkets';
-import DownloadCatalog from '@/components/DownloadCatalog';
 import ZoneSection from '@/components/ZoneSection';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
@@ -13,8 +12,6 @@ export default function Home() {
     <main className="min-h-screen bg-black">
       <Navbar />
       <Hero />
-
-      {/* 4 Product Zones */}
       {zones.map((zone) => (
         <ZoneSection
           key={zone.id}
@@ -22,10 +19,8 @@ export default function Home() {
           trucks={trucks.filter((t) => zone.categories.includes(t.category))}
         />
       ))}
-
       <Advantages />
       <GlobalMarkets />
-      <DownloadCatalog />
       <Contact />
       <Footer />
     </main>
