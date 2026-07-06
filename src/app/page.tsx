@@ -191,6 +191,10 @@ export default function Home() {
                   🎯 <span className="text-amber-400 font-medium">公司宗旨：</span>
                   以客户需求为导向，以品质服务为根本，成为值得信赖的长期合作伙伴。
                 </p>
+                <a href="/images/license-cn.jpg" target="_blank" className="block mt-5 rounded-xl overflow-hidden border border-gray-700 hover:border-amber-500/40 transition-all">
+                  <img src="/images/license-cn.jpg" alt="国内营业执照" className="w-full h-auto" />
+                  <div className="px-3 py-2 text-center text-xs text-gray-500">国内营业执照</div>
+                </a>
               </div>
             </div>
           </div>
