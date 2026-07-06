@@ -78,7 +78,7 @@ export default function ZonePage({ title, titleEn, icon, brand, trucks, bannerIm
   }
 
   return (
-    <div className="min-h-screen bg-black pt-16">
+    <div className="min-h-screen bg-black pt-20">
       {/* Narrow Banner */}
       <div className="relative h-56 overflow-hidden bg-gray-900">
         <div

@@ -35,7 +35,7 @@ export default function Navbar() {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-3">
+          <a href="/" className="flex items-center gap-3">
             <img src="/images/logo.png" alt="Logo" className="h-10 w-auto" />
             <div>
               <div className="text-xl font-bold text-white">SINOCV</div>
