@@ -153,7 +153,7 @@ export default function Home() {
 
           {/* Manager */}
           <div className="max-w-md mx-auto mt-10 rounded-2xl bg-gray-900 border border-gray-800 p-6 text-center">
-            <div className="w-16 h-16 rounded-full bg-gray-800 flex items-center justify-center text-2xl mx-auto mb-4">👔</div>
+            <img src="/images/manager.jpg" alt="李善龙" className="w-20 h-20 rounded-full object-cover mx-auto mb-4 border-2 border-amber-500" />
             <h4 className="text-white font-bold text-lg">李善龙</h4>
             <p className="text-amber-500 text-sm mb-4">总经理 / General Manager</p>
             <div className="space-y-2 text-sm text-gray-400">
