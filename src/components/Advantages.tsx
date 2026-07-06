@@ -68,6 +68,59 @@ export default function Advantages() {
           ))}
         </div>
 
+        {/* Coverage Map */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-20"
+        >
+          <div className="text-center mb-10">
+            <h3 className="text-2xl font-bold text-white mb-2">销售覆盖区域</h3>
+            <p className="text-gray-400">覆盖中东、非洲、东南亚、中亚等 30+ 国家和地区</p>
+          </div>
+          
+          {/* Region cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                name: '中东',
+                icon: '🕌',
+                countries: '沙特 · 阿联酋 · 伊拉克 · 约旦 · 科威特 · 阿曼 · 巴林 · 卡塔尔',
+                color: 'from-amber-500/20 to-amber-500/5',
+                border: 'border-amber-500/30'
+              },
+              {
+                name: '非洲',
+                icon: '🌍',
+                countries: '阿尔及利亚 · 尼日利亚 · 埃塞俄比亚 · 坦桑尼亚 · 肯尼亚 · 加纳 · 南非 · 埃及',
+                color: 'from-emerald-500/20 to-emerald-500/5',
+                border: 'border-emerald-500/30'
+              },
+              {
+                name: '东南亚',
+                icon: '🌏',
+                countries: '越南 · 菲律宾 · 印尼 · 缅甸 · 老挝 · 柬埔寨 · 马来西亚 · 泰国',
+                color: 'from-blue-500/20 to-blue-500/5',
+                border: 'border-blue-500/30'
+              },
+              {
+                name: '中亚',
+                icon: '🏔️',
+                countries: '哈萨克斯坦 · 乌兹别克斯坦 · 土库曼斯坦 · 吉尔吉斯斯坦 · 塔吉克斯坦',
+                color: 'from-purple-500/20 to-purple-500/5',
+                border: 'border-purple-500/30'
+              }
+            ].map(region => (
+              <div key={region.name} className={`rounded-2xl bg-gradient-to-br ${region.color} border ${region.border} p-8 text-center`}>
+                <span className="text-4xl mb-4 block">{region.icon}</span>
+                <h4 className="text-white font-bold text-lg mb-3">{region.name}</h4>
+                <p className="text-gray-400 text-sm leading-relaxed">{region.countries}</p>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+
         {/* Stats */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
