@@ -27,6 +27,12 @@ const slides = [
     title: '中集 挂车',
     subtitle: 'CIMC · 全球挂车销量第一',
     description: '平板挂车、自卸挂车，13吨车桥，耐用可靠'
+  },
+  {
+    image: '/images/hero-mining.jpg',
+    title: '矿用宽体自卸车',
+    subtitle: '同力重工 · 徐工 · 临工重机',
+    description: '40-45吨载重，加强型底盘，适应矿山恶劣工况'
   }
 ];
 

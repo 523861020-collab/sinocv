@@ -210,7 +210,7 @@ export const trucks: Truck[] = [
     driveType: '6×4',
     engine: '潍柴 WP12.380E62',
     price: '$65,000 - $85,000',
-    image: '/images/dump-howo.jpg',
+    image: '/images/mining-truck.jpg',
     features: ['40吨载重', '矿用宽体', '加强型底盘', '沙漠空滤']
   },
   {
@@ -222,7 +222,7 @@ export const trucks: Truck[] = [
     driveType: '6×4',
     engine: '潍柴 WP13.420E62',
     price: '$75,000 - $95,000',
-    image: '/images/dump-howo.jpg',
+    image: '/images/mining-truck.jpg',
     features: ['45吨载重', '油气悬挂', '自动润滑', '矿用轮胎']
   },
   {
@@ -234,7 +234,7 @@ export const trucks: Truck[] = [
     driveType: '6×4',
     engine: '潍柴 WP12.400E62',
     price: '$60,000 - $80,000',
-    image: '/images/dump-howo.jpg',
+    image: '/images/mining-truck.jpg',
     features: ['35吨载重', '宽体驾驶室', '液力缓速器', '矿用底盘']
   },
   {
