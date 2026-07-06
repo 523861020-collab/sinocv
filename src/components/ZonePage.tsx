@@ -89,15 +89,11 @@ export default function ZonePage({ title, titleEn, icon, brand, trucks, bannerIm
         />
         <div className="absolute inset-0 bg-black/40" />
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="flex items-center gap-4">
-            <span className="text-4xl md:text-5xl">{icon}</span>
-            <div>
-              <div className="flex items-baseline gap-2">
-                <h1 className="text-3xl md:text-4xl font-bold text-white">{title}</h1>
-                <span className="text-white/50 text-sm">{titleEn}</span>
-              </div>
-              <p className="text-amber-400 text-sm mt-1 text-center">{brand}</p>
-            </div>
+          <div className="text-center">
+            <span className="text-5xl md:text-6xl block mb-3">{icon}</span>
+            <h1 className="text-3xl md:text-4xl font-bold text-white mb-1">{title}</h1>
+            <p className="text-white/50 text-xs mb-1">{titleEn}</p>
+            <p className="text-amber-400 text-sm">{brand}</p>
           </div>
         </div>
       </div>
