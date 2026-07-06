@@ -132,6 +132,86 @@ export default function Home() {
       </section>
 
       <Advantages />
+
+      {/* 公司信息 */}
+      <section className="bg-black py-16">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">公司资质</h2>
+            <p className="text-gray-400 text-lg">正规注册 · 诚信经营 · 值得信赖</p>
+          </div>
+
+          <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="rounded-2xl bg-gray-900 border border-gray-800 p-8">
+              <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                <span>🏢</span> 公司信息
+              </h3>
+              <div className="space-y-3 text-sm">
+                <div className="flex justify-between border-b border-gray-800 pb-2">
+                  <span className="text-gray-500">公司名称</span>
+                  <span className="text-gray-300">[贵公司全称]</span>
+                </div>
+                <div className="flex justify-between border-b border-gray-800 pb-2">
+                  <span className="text-gray-500">注册地址</span>
+                  <span className="text-gray-300">[公司注册地址]</span>
+                </div>
+                <div className="flex justify-between border-b border-gray-800 pb-2">
+                  <span className="text-gray-500">统一社会信用代码</span>
+                  <span className="text-gray-300">[统一社会信用代码]</span>
+                </div>
+                <div className="flex justify-between border-b border-gray-800 pb-2">
+                  <span className="text-gray-500">经营范围</span>
+                  <span className="text-gray-300">汽车及零部件出口、工程机械出口</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-500">出口资质</span>
+                  <span className="text-green-400">对外贸易经营者备案 · 海关报关单位</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-2xl bg-gray-900 border border-gray-800 p-8">
+              <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                <span>👤</span> 负责人
+              </h3>
+              <div className="flex items-start gap-4 mb-6">
+                <div className="w-16 h-16 rounded-full bg-gray-800 flex items-center justify-center text-2xl shrink-0">
+                  👔
+                </div>
+                <div>
+                  <h4 className="text-white font-bold text-lg">[负责人姓名]</h4>
+                  <p className="text-amber-500 text-sm">[职位，如：总经理 / Export Manager]</p>
+                </div>
+              </div>
+              <div className="space-y-2 text-sm">
+                <div className="flex items-center gap-2 text-gray-400">
+                  <span>📧</span> lishanlong@sinocv.com
+                </div>
+                <div className="flex items-center gap-2 text-gray-400">
+                  <span>📱</span> WhatsApp: [WhatsApp号]
+                </div>
+                <div className="flex items-center gap-2 text-gray-400">
+                  <span>📍</span> [办公地址]
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="max-w-5xl mx-auto mt-8">
+            <h3 className="text-lg font-bold text-white mb-4 text-center">资质证书</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {['营业执照', '出口资质', '品牌授权', '银行资信'].map((label, i) => (
+                <div key={i} className="rounded-xl bg-gray-900 border border-gray-800 p-6 text-center group hover:border-amber-500/30 transition-colors cursor-pointer">
+                  <span className="text-3xl block mb-3">{['📄','🌐','✅','🏦'][i]}</span>
+                  <p className="text-gray-400 text-sm">{label}</p>
+                  <p className="text-gray-600 text-xs mt-1">点击查看</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <Contact />
     </>
   );
