@@ -137,14 +137,13 @@ export default function Home() {
       <section className="bg-black py-16">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">公司资质</h2>
-            <p className="text-gray-400 text-lg">香港公司注册证明 · 真实可查</p>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">关于我们</h2>
           </div>
 
-          {/* Certificate Images + Manager */}
-          <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Manager - first */}
-            <div className="rounded-xl bg-gray-900 border border-gray-800 p-8 flex flex-col items-center justify-center text-center">
+          {/* Row 1: Manager + Company Info */}
+          <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            {/* Manager */}
+            <div className="rounded-xl bg-gray-900 border border-gray-800 p-8 flex flex-col items-center text-center">
               <img src="/images/manager.jpg" alt="李善龙" className="w-36 h-36 rounded-full object-cover mb-4 border-2 border-amber-500" />
               <h4 className="text-white font-bold text-xl">李善龙</h4>
               <p className="text-amber-500 text-sm mb-5">总经理 / General Manager</p>
@@ -154,12 +153,44 @@ export default function Home() {
                 <div className="flex items-center justify-center gap-2">💬 微信: sinocv</div>
               </div>
             </div>
-            <a href="/images/cert-hk-1.jpg" target="_blank" className="rounded-xl overflow-hidden border border-gray-800 hover:border-amber-500/50 transition-all block">
-              <img src="/images/cert-hk-1.jpg" alt="公司注册证明书" className="w-full h-auto" />
-            </a>
-            <a href="/images/cert-hk-2.jpg" target="_blank" className="rounded-xl overflow-hidden border border-gray-800 hover:border-amber-500/50 transition-all block">
-              <img src="/images/cert-hk-2.jpg" alt="商业登记证" className="w-full h-auto" />
-            </a>
+
+            {/* Company + Factory + Mission */}
+            <div className="space-y-6">
+              <div className="rounded-xl bg-gray-900 border border-gray-800 p-8">
+                <h3 className="text-lg font-bold text-white mb-3 flex items-center gap-2">🏢 公司介绍</h3>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  SINOCV 是一家专业从事中国商用车及工程机械出口的贸易公司，总部位于香港。公司与多家中国顶级制造商建立了长期稳定的合作关系，致力于为全球客户提供高品质的重卡、工程机械、挂车及轻型商用车一站式采购服务。
+                </p>
+              </div>
+              <div className="rounded-xl bg-gray-900 border border-gray-800 p-8">
+                <h3 className="text-lg font-bold text-white mb-3 flex items-center gap-2">🏭 合作工厂</h3>
+                <div className="grid grid-cols-2 gap-3 text-sm text-gray-400">
+                  <div className="bg-gray-800/50 rounded-lg p-3 text-center">中国重汽</div>
+                  <div className="bg-gray-800/50 rounded-lg p-3 text-center">徐工集团</div>
+                  <div className="bg-gray-800/50 rounded-lg p-3 text-center">中集车辆</div>
+                  <div className="bg-gray-800/50 rounded-lg p-3 text-center">福田汽车</div>
+                </div>
+              </div>
+              <div className="rounded-xl bg-gray-900 border border-gray-800 p-8">
+                <h3 className="text-lg font-bold text-white mb-3 flex items-center gap-2">🎯 公司宗旨</h3>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  以客户需求为导向，以品质服务为根本，为全球客户提供最优质的中国制造商用车及工程机械产品，成为值得信赖的长期合作伙伴。
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Row 2: Certificates */}
+          <div className="max-w-5xl mx-auto">
+            <h3 className="text-lg font-bold text-white mb-4 text-center">香港公司注册证明</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <a href="/images/cert-hk-1.jpg" target="_blank" className="rounded-xl overflow-hidden border border-gray-800 hover:border-amber-500/50 transition-all block">
+                <img src="/images/cert-hk-1.jpg" alt="公司注册证明书" className="w-full h-auto" />
+              </a>
+              <a href="/images/cert-hk-2.jpg" target="_blank" className="rounded-xl overflow-hidden border border-gray-800 hover:border-amber-500/50 transition-all block">
+                <img src="/images/cert-hk-2.jpg" alt="商业登记证" className="w-full h-auto" />
+              </a>
+            </div>
           </div>
         </div>
       </section>
