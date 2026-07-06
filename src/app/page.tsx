@@ -204,7 +204,7 @@ export default function Home() {
               <h4 className="text-sm font-semibold text-gray-400 mb-3 flex items-center gap-2 justify-center">
                 <span className="w-1.5 h-1.5 rounded-full bg-amber-500" /> 资质证书
               </h4>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <a href="/images/cert-hk-1.jpg" target="_blank" className="rounded-xl overflow-hidden border border-gray-800 hover:border-amber-500/40 transition-all block bg-gray-900">
                   <img src="/images/cert-hk-1.jpg" alt="香港公司注册证明书" className="w-full h-auto" />
                   <div className="px-3 py-2 text-center text-xs text-gray-500">香港公司注册证明书</div>
@@ -212,10 +212,6 @@ export default function Home() {
                 <a href="/images/cert-hk-2.jpg" target="_blank" className="rounded-xl overflow-hidden border border-gray-800 hover:border-amber-500/40 transition-all block bg-gray-900">
                   <img src="/images/cert-hk-2.jpg" alt="香港商业登记证" className="w-full h-auto" />
                   <div className="px-3 py-2 text-center text-xs text-gray-500">香港商业登记证</div>
-                </a>
-                <a href="/images/license-cn.jpg" target="_blank" className="rounded-xl overflow-hidden border border-gray-800 hover:border-amber-500/40 transition-all block bg-gray-900">
-                  <img src="/images/license-cn.jpg" alt="国内营业执照" className="w-full h-auto" />
-                  <div className="px-3 py-2 text-center text-xs text-gray-500">国内营业执照</div>
                 </a>
               </div>
             </div>
