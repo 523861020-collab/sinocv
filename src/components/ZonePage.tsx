@@ -79,26 +79,25 @@ export default function ZonePage({ title, titleEn, icon, brand, trucks, bannerIm
 
   return (
     <div className="min-h-screen bg-black pt-20">
-      {/* Title */}
-      <div className="container mx-auto px-6 py-6">
-        <div className="flex items-center gap-3">
-          <span className="text-3xl">{icon}</span>
-          <div>
-            <div className="flex items-baseline gap-2">
-              <h1 className="text-2xl md:text-3xl font-bold text-white">{title}</h1>
-              <span className="text-white/40 text-xs">{titleEn}</span>
-            </div>
-            <p className="text-amber-500 text-xs mt-0.5">{brand}</p>
-          </div>
-        </div>
-      </div>
-
-      {/* Banner Image */}
-      <div className="h-48 md:h-56 overflow-hidden bg-gray-900">
+      {/* Banner with Title Overlay */}
+      <div className="relative h-48 md:h-56 overflow-hidden bg-gray-900">
         <div
           className="h-full w-full bg-cover bg-center"
           style={{ backgroundImage: `url(${bannerImage})` }}
         />
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="flex items-center gap-4">
+            <span className="text-4xl md:text-5xl">{icon}</span>
+            <div>
+              <div className="flex items-baseline gap-2">
+                <h1 className="text-3xl md:text-4xl font-bold text-white">{title}</h1>
+                <span className="text-white/50 text-sm">{titleEn}</span>
+              </div>
+              <p className="text-amber-400 text-sm mt-1 text-center">{brand}</p>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Products grouped by sub-category */}
