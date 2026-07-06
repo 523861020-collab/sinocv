@@ -160,7 +160,7 @@ export default function Home() {
                     <span>📱</span> +86 13001977959
                   </div>
                   <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-gray-800/60 text-sm text-gray-300">
-                    <span>💬</span> 微信: sinocv
+                    <span>💬</span> 微信: 13001977959
                   </div>
                 </div>
               </div>
