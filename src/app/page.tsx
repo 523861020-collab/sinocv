@@ -140,82 +140,64 @@ export default function Home() {
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">关于我们</h2>
           </div>
 
-          {/* Row 1: Manager + Company Info */}
-          <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10 items-stretch">
-            {/* Manager — premium card, fills column height */}
-            <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-900 via-gray-900 to-amber-950/30 border border-gray-800 h-full">
-              {/* subtle glow */}
-              <div className="absolute -top-20 -right-20 w-40 h-40 bg-amber-500/5 rounded-full blur-3xl" />
-              <div className="relative p-10 h-full flex flex-col items-center text-center justify-center">
-                {/* photo with ring glow */}
-                <div className="relative mb-8">
-                  <div className="absolute inset-0 rounded-full bg-amber-500/20 blur-xl scale-110" />
-                  <img src="/images/manager.jpg" alt="李善龙" className="relative w-48 h-48 rounded-full object-cover border-4 border-amber-500/40 shadow-2xl shadow-amber-500/10" />
-                </div>
-                <h4 className="text-white font-bold text-3xl mb-2">李善龙</h4>
-                <p className="text-amber-400 text-base font-medium mb-10">总经理 · General Manager</p>
-                
-                {/* contact pills */}
-                <div className="space-y-4 w-full max-w-xs">
-                  <div className="flex items-center gap-3 px-5 py-4 rounded-xl bg-gray-800/60 text-base text-gray-300 hover:bg-gray-800 transition-colors">
-                    <span className="text-xl">📧</span>
-                    <span className="truncate">lishanlong@sinocv.com</span>
+          {/* Row 1: Manager + Company Info — single unified card */}
+          <div className="max-w-6xl mx-auto mb-10">
+            <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-900 via-gray-900 to-amber-950/20 border border-gray-800">
+              <div className="absolute -top-40 -right-40 w-80 h-80 bg-amber-500/3 rounded-full blur-3xl" />
+              <div className="relative grid grid-cols-1 lg:grid-cols-5">
+                {/* Left: Manager */}
+                <div className="lg:col-span-2 flex flex-col items-center text-center p-10 border-b lg:border-b-0 lg:border-r border-gray-800/50">
+                  <div className="relative mb-6">
+                    <div className="absolute inset-0 rounded-full bg-amber-500/20 blur-xl scale-110" />
+                    <img src="/images/manager.jpg" alt="李善龙" className="relative w-44 h-44 rounded-full object-cover border-4 border-amber-500/40 shadow-2xl shadow-amber-500/10" />
                   </div>
-                  <div className="flex items-center gap-3 px-5 py-4 rounded-xl bg-gray-800/60 text-base text-gray-300 hover:bg-gray-800 transition-colors">
-                    <span className="text-xl">📱</span>
-                    <span>+86 13001977959</span>
-                  </div>
-                  <div className="flex items-center gap-3 px-5 py-4 rounded-xl bg-gray-800/60 text-base text-gray-300 hover:bg-gray-800 transition-colors">
-                    <span className="text-xl">💬</span>
-                    <span>微信: sinocv</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Company + Factory + Mission — three cards */}
-            <div className="space-y-5">
-              {/* 公司介绍 */}
-              <div className="rounded-2xl bg-gray-900 border border-gray-800 p-10 hover:border-gray-700 transition-colors">
-                <div className="flex items-center gap-4 mb-5">
-                  <div className="w-14 h-14 rounded-xl bg-amber-500/10 flex items-center justify-center text-3xl shrink-0">🏢</div>
-                  <h3 className="text-2xl font-bold text-white">公司介绍</h3>
-                </div>
-                <p className="text-gray-200 leading-relaxed text-lg">
-                  SINOCV 是一家专业从事中国商用车及工程机械出口的贸易公司，总部位于香港。公司与多家中国顶级制造商建立了长期稳定的合作关系，致力于为全球客户提供高品质的重卡、工程机械、挂车及轻型商用车一站式采购服务。
-                </p>
-              </div>
-
-              {/* 合作工厂 */}
-              <div className="rounded-2xl bg-gray-900 border border-gray-800 p-10 hover:border-gray-700 transition-colors">
-                <div className="flex items-center gap-4 mb-5">
-                  <div className="w-14 h-14 rounded-xl bg-amber-500/10 flex items-center justify-center text-3xl shrink-0">🏭</div>
-                  <h3 className="text-2xl font-bold text-white">合作工厂</h3>
-                </div>
-                <div className="grid grid-cols-2 gap-4">
-                  {[
-                    { name: '中国重汽', sub: 'SINOTRUK' },
-                    { name: '徐工集团', sub: 'XCMG' },
-                    { name: '中集车辆', sub: 'CIMC' },
-                    { name: '福田汽车', sub: 'FOTON' },
-                  ].map(f => (
-                    <div key={f.name} className="rounded-xl border border-gray-800 bg-gray-800/40 py-6 px-4 text-center hover:border-amber-500/30 hover:bg-gray-800/70 transition-all">
-                      <div className="text-white font-semibold text-lg">{f.name}</div>
-                      <div className="text-gray-500 text-sm mt-1">{f.sub}</div>
+                  <h4 className="text-white font-bold text-3xl mb-1">李善龙</h4>
+                  <p className="text-amber-400 text-base font-medium mb-8">总经理 · General Manager</p>
+                  <div className="space-y-3 w-full max-w-xs">
+                    <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-gray-800/60 text-sm text-gray-300">
+                      <span className="text-lg">📧</span>
+                      <span className="truncate">lishanlong@sinocv.com</span>
                     </div>
-                  ))}
+                    <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-gray-800/60 text-sm text-gray-300">
+                      <span className="text-lg">📱</span>
+                      <span>+86 13001977959</span>
+                    </div>
+                    <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-gray-800/60 text-sm text-gray-300">
+                      <span className="text-lg">💬</span>
+                      <span>微信: sinocv</span>
+                    </div>
+                  </div>
                 </div>
-              </div>
 
-              {/* 公司宗旨 */}
-              <div className="rounded-2xl bg-gradient-to-r from-amber-500/5 to-transparent border border-amber-500/20 p-10">
-                <div className="flex items-center gap-4 mb-5">
-                  <div className="w-14 h-14 rounded-xl bg-amber-500/20 flex items-center justify-center text-3xl shrink-0">🎯</div>
-                  <h3 className="text-2xl font-bold text-white">公司宗旨</h3>
+                {/* Right: Rich company description */}
+                <div className="lg:col-span-3 p-10 lg:p-12 flex flex-col justify-center">
+                  <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+                    <span className="w-10 h-10 rounded-xl bg-amber-500/10 flex items-center justify-center text-xl">🏢</span>
+                    关于 SINOCV
+                  </h3>
+                  
+                  <div className="space-y-5 text-gray-300 leading-relaxed text-base">
+                    <p>
+                      <span className="text-amber-400 font-semibold">SINOCV</span> 是一家总部位于香港的专业商用车及工程机械出口贸易公司。我们深耕中国制造，整合行业顶尖资源，为全球客户提供从选型、定制、验车、物流到清关的全链条出口服务。
+                    </p>
+                    <p>
+                      公司与<span className="text-white font-medium">中国重汽（SINOTRUK）</span>、<span className="text-white font-medium">徐工集团（XCMG）</span>、<span className="text-white font-medium">中集车辆（CIMC）</span>、<span className="text-white font-medium">福田汽车（Foton）</span>等国内一线品牌建立了长期稳定的战略合作关系，确保每一台交付的车辆均为原厂正品，享受完整的质保与售后支持。
+                    </p>
+                    <p>
+                      我们的产品覆盖<span className="text-white font-medium">牵引车、载货车、自卸车、搅拌车、冷藏车、洒水车、垃圾运输车、随车吊、高空作业车</span>等全系列商用车，以及<span className="text-white font-medium">挖掘机、装载机、矿用宽体自卸车</span>等工程机械设备，同时提供<span className="text-white font-medium">平板挂车、自卸挂车、Van封闭货车、微卡</span>等多元化产品。
+                    </p>
+                    <p>
+                      凭借香港的国际化平台和内地强大的供应链优势，SINOCV 已成功将产品出口至<span className="text-white font-medium">非洲（阿尔及利亚、尼日利亚、肯尼亚、坦桑尼亚、埃塞俄比亚等）、中东（沙特、阿联酋、伊拉克、约旦等）、东南亚及中亚</span>等 30 多个国家和地区，赢得了海外客户的广泛信赖。
+                    </p>
+                  </div>
+
+                  <div className="mt-8 pt-6 border-t border-gray-800/50">
+                    <p className="text-gray-400 italic text-base leading-relaxed">
+                      🎯 <span className="text-amber-400 font-medium">公司宗旨：</span>
+                      以客户需求为导向，以品质服务为根本，为全球客户提供最优质的中国制造商用车及工程机械产品，成为值得信赖的长期合作伙伴。
+                    </p>
+                  </div>
                 </div>
-                <p className="text-gray-200 leading-relaxed text-lg italic">
-                  "以客户需求为导向，以品质服务为根本，为全球客户提供最优质的中国制造商用车及工程机械产品，成为值得信赖的长期合作伙伴。"
-                </p>
               </div>
             </div>
           </div>
