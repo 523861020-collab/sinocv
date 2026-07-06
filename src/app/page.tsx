@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Link from 'next/link';
 import Hero from '@/components/Hero';
 import Advantages from '@/components/Advantages';
 import Contact from '@/components/Contact';
@@ -88,7 +89,9 @@ export default function Home() {
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             {zones.map(zone => (
-              <ZoneWindow key={zone.id} zone={zone} />
+              <Link key={zone.id} href={zone.id === 'heavy-truck' ? '/heavy-truck' : `/${zone.id}`}>
+                <ZoneWindow zone={zone} />
+              </Link>
             ))}
           </div>
         </div>
