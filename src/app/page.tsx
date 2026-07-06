@@ -220,16 +220,39 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Row 2: Certificates */}
-          <div className="max-w-5xl mx-auto">
-            <h3 className="text-lg font-bold text-white mb-4 text-center">香港公司注册证明</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <a href="/images/cert-hk-1.jpg" target="_blank" className="rounded-xl overflow-hidden border border-gray-800 hover:border-amber-500/50 transition-all block">
-                <img src="/images/cert-hk-1.jpg" alt="公司注册证明书" className="w-full h-auto" />
+          {/* Row 2: Certificates + Physical presence */}
+          <div className="max-w-6xl mx-auto space-y-8">
+            <h3 className="text-lg font-bold text-white text-center">企业资质</h3>
+
+            {/* 国内展厅 — wide banner */}
+            <div>
+              <h4 className="text-sm font-semibold text-gray-400 mb-3 flex items-center gap-2 justify-center">
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-500" /> 国内展厅
+              </h4>
+              <a href="/images/4s-store.jpg" target="_blank" className="block rounded-2xl overflow-hidden border border-gray-800 hover:border-amber-500/40 transition-all">
+                <img src="/images/4s-store.jpg" alt="国内展厅" className="w-full h-auto max-h-96 object-cover" />
               </a>
-              <a href="/images/cert-hk-2.jpg" target="_blank" className="rounded-xl overflow-hidden border border-gray-800 hover:border-amber-500/50 transition-all block">
-                <img src="/images/cert-hk-2.jpg" alt="商业登记证" className="w-full h-auto" />
-              </a>
+            </div>
+
+            {/* 三证 — 3-column grid */}
+            <div>
+              <h4 className="text-sm font-semibold text-gray-400 mb-3 flex items-center gap-2 justify-center">
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-500" /> 资质证书
+              </h4>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <a href="/images/cert-hk-1.jpg" target="_blank" className="rounded-xl overflow-hidden border border-gray-800 hover:border-amber-500/40 transition-all block bg-gray-900">
+                  <img src="/images/cert-hk-1.jpg" alt="香港公司注册证明书" className="w-full h-auto" />
+                  <div className="px-3 py-2 text-center text-xs text-gray-500">香港公司注册证明书</div>
+                </a>
+                <a href="/images/cert-hk-2.jpg" target="_blank" className="rounded-xl overflow-hidden border border-gray-800 hover:border-amber-500/40 transition-all block bg-gray-900">
+                  <img src="/images/cert-hk-2.jpg" alt="香港商业登记证" className="w-full h-auto" />
+                  <div className="px-3 py-2 text-center text-xs text-gray-500">香港商业登记证</div>
+                </a>
+                <a href="/images/license-cn.jpg" target="_blank" className="rounded-xl overflow-hidden border border-gray-800 hover:border-amber-500/40 transition-all block bg-gray-900">
+                  <img src="/images/license-cn.jpg" alt="国内营业执照" className="w-full h-auto" />
+                  <div className="px-3 py-2 text-center text-xs text-gray-500">国内营业执照</div>
+                </a>
+              </div>
             </div>
           </div>
         </div>
