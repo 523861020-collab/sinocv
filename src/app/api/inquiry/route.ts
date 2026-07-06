@@ -29,7 +29,7 @@ export async function POST(request: Request) {
           headers: { 'Authorization': `Bearer ${RESEND_KEY}`, 'Content-Type': 'application/json' },
           body: JSON.stringify({
             from: 'SINOCV <onboarding@resend.dev>',
-            to: 'lishanlong@sinocv.com',
+            to: '523861020@qq.com',
             subject: `新询价 - ${inquiry.name} - ${inquiry.country || '未知'}`,
             html,
           }),
