@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
 
-const DATA_FILE = path.join(process.cwd(), 'data', 'inquiries.json');
+const DATA_FILE = '/tmp/inquiries.json';
 const RESEND_KEY = process.env.RESEND_API_KEY || '';
 const TO_EMAIL = 'lishanlong@sinocv.com';
 
