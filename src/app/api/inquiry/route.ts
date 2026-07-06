@@ -27,7 +27,7 @@ export async function POST(request: Request) {
         }),
       });
       const data = await res.json();
-      console.log('Resend:', res.status, JSON.stringify(data).substring(0, 200));
+      console.log('Resend full:', JSON.stringify(data));
     } catch (e: any) {
       console.error('Resend failed:', e.message);
     }
