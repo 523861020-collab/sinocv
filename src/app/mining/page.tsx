@@ -1,7 +1,7 @@
 import ZonePage from '@/components/ZonePage';
 import { trucks, zones } from '@/data/trucks';
 
-const zone = zones[2]; // mining
+const zone = zones[2];
 
 export default function MiningPage() {
   return (
@@ -12,6 +12,7 @@ export default function MiningPage() {
       brand={zone.brand}
       description={zone.description}
       trucks={trucks.filter(t => zone.categories.includes(t.category))}
+      bannerImage="/images/hero-mining.jpg"
     />
   );
 }

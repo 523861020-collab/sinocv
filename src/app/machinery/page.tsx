@@ -1,7 +1,7 @@
 import ZonePage from '@/components/ZonePage';
 import { trucks, zones } from '@/data/trucks';
 
-const zone = zones[1]; // machinery
+const zone = zones[1];
 
 export default function MachineryPage() {
   return (
@@ -12,6 +12,7 @@ export default function MachineryPage() {
       brand={zone.brand}
       description={zone.description}
       trucks={trucks.filter(t => zone.categories.includes(t.category))}
+      bannerImage="/images/hero-excavator.jpg"
     />
   );
 }

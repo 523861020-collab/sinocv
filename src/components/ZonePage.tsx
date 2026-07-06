@@ -10,6 +10,7 @@ interface ZonePageProps {
   brand: string;
   description: string;
   trucks: Truck[];
+  bannerImage: string;
 }
 
 function ProductCard({ truck, index }: { truck: Truck; index: number }) {
@@ -68,8 +69,7 @@ function ProductCard({ truck, index }: { truck: Truck; index: number }) {
   );
 }
 
-export default function ZonePage({ title, titleEn, icon, brand, description, trucks }: ZonePageProps) {
-  // Group by category
+export default function ZonePage({ title, titleEn, icon, brand, trucks, bannerImage }: ZonePageProps) {
   const grouped = new Map<string, Truck[]>();
   for (const t of trucks) {
     const cat = t.category;
@@ -78,27 +78,34 @@ export default function ZonePage({ title, titleEn, icon, brand, description, tru
   }
 
   return (
-    <div className="min-h-screen bg-black pt-20">
-      {/* Header */}
-      <section className="py-16 bg-gray-950 border-b border-gray-800">
-        <div className="container mx-auto px-6">
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}>
-            <div className="flex items-center gap-4 mb-4">
-              <span className="text-5xl">{icon}</span>
-              <div>
-                <div className="flex items-center gap-3">
-                  <h1 className="text-4xl md:text-5xl font-bold text-white">{title}</h1>
-                  <span className="text-gray-500 text-lg">{titleEn}</span>
+    <div className="min-h-screen bg-black pt-16">
+      {/* Narrow Banner */}
+      <div className="relative h-56 overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${bannerImage})` }}
+        />
+        <div className="absolute inset-0 bg-black/60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/50 to-transparent" />
+        <div className="relative z-10 h-full flex items-center">
+          <div className="container mx-auto px-6">
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+              <div className="flex items-center gap-4">
+                <span className="text-4xl">{icon}</span>
+                <div>
+                  <div className="flex items-center gap-3">
+                    <h1 className="text-3xl md:text-4xl font-bold text-white">{title}</h1>
+                    <span className="text-gray-400 text-sm">{titleEn}</span>
+                  </div>
+                  <p className="text-amber-500 text-sm mt-1">{brand}</p>
                 </div>
-                <p className="text-amber-500 mt-1">{brand}</p>
               </div>
-            </div>
-            <p className="text-gray-400 text-lg leading-relaxed mt-4">{description}</p>
-          </motion.div>
+            </motion.div>
+          </div>
         </div>
-      </section>
+      </div>
 
-      {/* Products by sub-category */}
+      {/* Products grouped by sub-category */}
       {Array.from(grouped.entries()).map(([catId, catTrucks]) => {
         const cat = categories.find(c => c.id === catId);
         return (
