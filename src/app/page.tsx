@@ -140,61 +140,63 @@ export default function Home() {
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">关于我们</h2>
           </div>
 
-          {/* Row 1: Manager + Company Intro — two columns */}
-          <div className="max-w-6xl mx-auto mb-10 grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Row 1: Manager + License + Company Intro — three columns */}
+          <div className="max-w-6xl mx-auto mb-10 grid grid-cols-1 lg:grid-cols-3 gap-6">
             {/* Left: Manager */}
             <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-900 via-gray-900 to-amber-950/20 border border-gray-800">
               <div className="absolute -top-40 -right-40 w-80 h-80 bg-amber-500/3 rounded-full blur-3xl" />
-              <div className="relative flex flex-col items-center text-center p-12">
-                <div className="relative mb-6">
+              <div className="relative flex flex-col items-center text-center p-8">
+                <div className="relative mb-4">
                   <div className="absolute inset-0 rounded-full bg-amber-500/20 blur-xl scale-110" />
-                  <img src="/images/manager.jpg" alt="李善龙" className="relative w-44 h-44 rounded-full object-cover border-4 border-amber-500/40 shadow-2xl shadow-amber-500/10" />
+                  <img src="/images/manager.jpg" alt="李善龙" className="relative w-32 h-32 rounded-full object-cover border-4 border-amber-500/40 shadow-2xl shadow-amber-500/10" />
                 </div>
-                <h4 className="text-white font-bold text-3xl mb-1">李善龙</h4>
-                <p className="text-amber-400 text-base font-medium mb-8">总经理 · General Manager</p>
-                <div className="space-y-3 w-full max-w-xs">
-                  <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-gray-800/60 text-sm text-gray-300">
+                <h4 className="text-white font-bold text-2xl mb-1">李善龙</h4>
+                <p className="text-amber-400 text-sm font-medium mb-6">总经理 · General Manager</p>
+                <div className="space-y-2 w-full">
+                  <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-gray-800/60 text-xs text-gray-300">
                     <span>📧</span> lishanlong@sinocv.com
                   </div>
-                  <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-gray-800/60 text-sm text-gray-300">
+                  <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-gray-800/60 text-xs text-gray-300">
                     <span>📱</span> +86 13001977959
                   </div>
-                  <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-gray-800/60 text-sm text-gray-300">
+                  <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-gray-800/60 text-xs text-gray-300">
                     <span>💬</span> 微信: 13001977959
                   </div>
                 </div>
               </div>
             </div>
 
+            {/* Center: CN Business License */}
+            <a href="/images/license-cn.jpg" target="_blank" className="relative rounded-2xl overflow-hidden border border-gray-800 hover:border-amber-500/40 transition-all block bg-gray-900 h-full">
+              <img src="/images/license-cn.jpg" alt="国内营业执照" className="w-full h-full object-cover" />
+              <div className="absolute bottom-0 left-0 right-0 bg-black/60 px-3 py-2 text-center text-xs text-gray-300">国内营业执照</div>
+            </a>
+
             {/* Right: Company intro */}
-            <div className="rounded-2xl bg-gray-900 border border-gray-800 p-10 lg:p-12 flex flex-col justify-center">
-              <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-                <span className="w-10 h-10 rounded-xl bg-amber-500/10 flex items-center justify-center text-xl">🏢</span>
+            <div className="rounded-2xl bg-gray-900 border border-gray-800 p-8 flex flex-col justify-center">
+              <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                <span className="w-8 h-8 rounded-lg bg-amber-500/10 flex items-center justify-center text-lg">🏢</span>
                 关于 SINOCV
               </h3>
-              <div className="space-y-4 text-gray-300 leading-relaxed text-base">
+              <div className="space-y-3 text-gray-300 leading-relaxed text-sm">
                 <p>
-                  <span className="text-amber-400 font-semibold">SINOCV</span> 是一家总部位于香港的专业商用车及工程机械出口贸易公司，为全球客户提供从选型、定制、验车、物流到清关的全链条出口服务。
+                  <span className="text-amber-400 font-semibold">SINOCV</span> 总部位于香港，为全球客户提供从选型、定制、验车、物流到清关的全链条商用车出口服务。
                 </p>
                 <p>
-                  公司与<span className="text-white font-medium">中国重汽（SINOTRUK）、徐工集团（XCMG）、中集车辆（CIMC）、福田汽车（Foton）</span>等国内一线品牌建立了长期稳定的战略合作关系，确保每一台车辆均为原厂正品。
+                  合作品牌：<span className="text-white font-medium">中国重汽、徐工集团、中集车辆、福田汽车</span>，均为原厂正品。
                 </p>
                 <p>
-                  产品覆盖牵引车、载货车、自卸车、搅拌车、冷藏车、洒水车、垃圾运输车、随车吊、高空作业车等全系列商用车，以及挖掘机、装载机、矿用宽体自卸车、平板挂车、自卸挂车、Van封闭货车、微卡等多元化产品。
+                  产品覆盖牵引车、自卸车、搅拌车、专用车、挖掘机、装载机、矿卡、挂车、Van等。
                 </p>
                 <p>
-                  凭借香港的国际化平台和内地供应链优势，已成功出口至非洲、中东、东南亚及中亚等 30 多个国家和地区。
+                  已出口至非洲、中东、东南亚、中亚等 30+ 国家和地区。
                 </p>
               </div>
-              <div className="mt-6 pt-5 border-t border-gray-800/50">
-                <p className="text-gray-400 italic text-base">
-                  🎯 <span className="text-amber-400 font-medium">公司宗旨：</span>
-                  以客户需求为导向，以品质服务为根本，成为值得信赖的长期合作伙伴。
+              <div className="mt-4 pt-4 border-t border-gray-800/50">
+                <p className="text-gray-400 italic text-sm">
+                  🎯 <span className="text-amber-400 font-medium">宗旨：</span>
+                  以客户需求为导向，以品质服务为根本。
                 </p>
-                <a href="/images/license-cn.jpg" target="_blank" className="block mt-5 rounded-xl overflow-hidden border border-gray-700 hover:border-amber-500/40 transition-all">
-                  <img src="/images/license-cn.jpg" alt="国内营业执照" className="w-full h-auto" />
-                  <div className="px-3 py-2 text-center text-xs text-gray-500">国内营业执照</div>
-                </a>
               </div>
             </div>
           </div>
