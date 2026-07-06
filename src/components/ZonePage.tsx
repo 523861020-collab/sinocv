@@ -78,7 +78,9 @@ export default function ZonePage({ title, titleEn, icon, brand, trucks, bannerIm
   }
 
   return (
-    <div className="min-h-screen bg-black" style={{ paddingTop: '5rem' }}>
+    <div className="min-h-screen bg-black">
+      {/* Spacer for fixed navbar */}
+      <div className="h-20" />
       {/* Banner with Title Overlay */}
       <div className="relative h-48 md:h-56 overflow-hidden bg-gray-900">
         <div
