@@ -76,68 +76,62 @@ export default function Advantages() {
           className="mt-20"
         >
           <div className="text-center mb-10">
-            <h3 className="text-2xl font-bold text-white mb-2">销售覆盖区域</h3>
-            <p className="text-gray-400">以中国为枢纽，覆盖中东、非洲、东南亚、中亚等 30+ 国家和地区</p>
+            <h3 className="text-2xl font-bold text-white mb-2">全球销售网络</h3>
+            <p className="text-gray-400">以中国为核心，覆盖四大区域 30+ 国家</p>
           </div>
           
-          <div className="max-w-5xl mx-auto">
-            <svg viewBox="0 0 1000 420" className="w-full h-auto">
-              <defs>
-                <radialGradient id="chinaGlow" cx="50%" cy="50%">
-                  <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.6"/>
-                  <stop offset="60%" stopColor="#f59e0b" stopOpacity="0.15"/>
-                  <stop offset="100%" stopColor="#f59e0b" stopOpacity="0"/>
-                </radialGradient>
-                <filter id="glow">
-                  <feGaussianBlur stdDeviation="3" result="blur"/>
-                  <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-                </filter>
-              </defs>
-              
-              {/* World outline */}
-              <g fill="none" stroke="#2d3748" strokeWidth="0.6">
-                <path d="M140,80 L210,55 L280,60 L300,75 L310,100 L300,125 L275,145 L245,155 L200,150 L165,135 L145,115 Z"/>
-                <path d="M220,210 L260,200 L280,210 L285,240 L275,270 L260,300 L240,320 L225,315 L215,290 Z"/>
-                <path d="M360,60 L395,45 L440,42 L470,48 L490,55 L500,70 L490,80 L470,85 L440,83 L410,80 L380,75 Z"/>
-                <path d="M415,105 L440,100 L460,108 L475,125 L480,155 L475,190 L470,225 L460,255 L445,285 L430,305 L415,310 L400,305 L385,285 L375,260 L365,230 L360,200 L362,165 L370,140 L385,120 Z"/>
-                <path d="M500,55 L535,38 L585,28 L635,25 L685,35 L725,50 L755,70 L775,95 L785,125 L780,160 L765,185 L745,195 L725,190 L705,180 L685,175 L665,173 L645,170 L625,165 L605,155 L585,145 L565,130 L545,115 L525,100 L510,85 Z"/>
-                <path d="M740,195 L760,200 L775,215 L770,235 L755,243 L735,235 L728,220 Z"/>
-                <path d="M750,245 L775,243 L790,255 L785,270 L770,278 L755,273 L748,260 Z"/>
-                <path d="M760,275 L800,265 L830,275 L840,300 L830,325 L805,335 L775,330 L760,310 Z"/>
+          <div className="max-w-4xl mx-auto">
+            <svg viewBox="0 0 900 380" className="w-full h-auto">
+              {/* Clean continent outlines */}
+              <g fill="none" stroke="#1f2937" strokeWidth="1.2" opacity="0.8">
+                <path d="M100,60 L170,35 L250,40 L270,55 L280,75 L270,100 L250,120 L210,130 L170,125 L135,110 L115,90 Z"/>
+                <path d="M180,180 L220,170 L240,180 L245,210 L235,240 L220,270 L200,290 L185,285 L175,260 Z"/>
+                <path d="M320,40 L355,25 L400,22 L430,28 L450,35 L460,50 L450,60 L430,65 L400,63 L370,60 L340,55 Z"/>
+                <path d="M375,85 L400,80 L420,88 L435,105 L440,135 L435,170 L430,205 L420,235 L405,265 L390,285 L375,290 L360,285 L345,265 L335,240 L325,210 L320,180 L322,145 L330,120 L345,100 Z"/>
+                <path d="M460,35 L495,18 L545,8 L595,5 L645,15 L685,30 L715,50 L735,75 L745,105 L740,140 L725,165 L705,175 L685,170 L665,160 L645,155 L625,153 L605,150 L585,145 L565,135 L545,125 L525,110 L505,95 L485,80 L470,65 Z"/>
+                <path d="M700,175 L720,180 L735,195 L730,215 L715,223 L695,215 L688,200 Z"/>
+                <path d="M710,225 L735,223 L750,235 L745,250 L730,258 L715,253 L708,240 Z"/>
+                <path d="M720,255 L760,245 L790,255 L800,280 L790,305 L765,315 L735,310 L720,290 Z"/>
               </g>
               
-              {/* China hub glow */}
-              <circle cx="590" cy="110" r="45" fill="url(#chinaGlow)"/>
-              <circle cx="590" cy="110" r="8" fill="#f59e0b" filter="url(#glow)"/>
-              <circle cx="590" cy="110" r="4" fill="#fff"/>
+              {/* China - prominent node */}
+              <circle cx="565" cy="100" r="36" fill="#f59e0b" fillOpacity="0.12"/>
+              <circle cx="565" cy="100" r="18" fill="#f59e0b" fillOpacity="0.25"/>
+              <circle cx="565" cy="100" r="6" fill="#f59e0b"/>
+              <text x="565" y="155" textAnchor="middle" fill="#f59e0b" fontSize="13" fontWeight="700">🇨🇳 中国</text>
               
-              {/* Connection arcs from China to regions */}
-              {/* China → Middle East */}
-              <path d="M560,100 Q510,70 480,130" fill="none" stroke="#f59e0b" strokeWidth="1.5" strokeDasharray="5,3" opacity="0.7"/>
-              {/* China → Africa */}
-              <path d="M560,115 Q500,160 430,230" fill="none" stroke="#ec4899" strokeWidth="1.5" strokeDasharray="5,3" opacity="0.7"/>
-              {/* China → Central Asia */}
-              <path d="M580,85 Q570,55 550,75" fill="none" stroke="#8b5cf6" strokeWidth="1.5" strokeDasharray="5,3" opacity="0.7"/>
-              {/* China → Southeast Asia */}
-              <path d="M610,125 Q680,150 735,210" fill="none" stroke="#3b82f6" strokeWidth="1.5" strokeDasharray="5,3" opacity="0.7"/>
+              {/* Connection lines */}
+              <line x1="565" y1="100" x2="510" y2="120" stroke="#f59e0b" strokeWidth="1.8" strokeDasharray="6,4" opacity="0.6"/>
+              <line x1="510" y1="120" x2="430" y2="200" stroke="#ec4899" strokeWidth="1.8" strokeDasharray="6,4" opacity="0.6"/>
+              <line x1="565" y1="100" x2="650" y2="170" stroke="#3b82f6" strokeWidth="1.8" strokeDasharray="6,4" opacity="0.6"/>
+              <line x1="565" y1="100" x2="540" y2="70" stroke="#8b5cf6" strokeWidth="1.8" strokeDasharray="6,4" opacity="0.6"/>
               
-              {/* Destination dots */}
-              <circle cx="480" cy="130" r="5" fill="#f59e0b" opacity="0.8"/>
-              <circle cx="430" cy="230" r="5" fill="#ec4899" opacity="0.8"/>
-              <circle cx="550" cy="75" r="5" fill="#8b5cf6" opacity="0.8"/>
-              <circle cx="735" cy="210" r="5" fill="#3b82f6" opacity="0.8"/>
+              {/* Destination nodes */}
+              <circle cx="510" cy="120" r="5" fill="#f59e0b" fillOpacity="0.8"/>
+              <circle cx="430" cy="200" r="5" fill="#ec4899" fillOpacity="0.8"/>
+              <circle cx="650" cy="170" r="5" fill="#3b82f6" fillOpacity="0.8"/>
+              <circle cx="540" cy="70" r="5" fill="#8b5cf6" fillOpacity="0.8"/>
               
               {/* Region labels */}
-              <text x="430" y="355" textAnchor="middle" fill="#ec4899" fontSize="15" fontWeight="700">非洲 AFRICA</text>
-              <text x="560" y="310" textAnchor="middle" fill="#f59e0b" fontSize="13" fontWeight="600">中 东</text>
-              <text x="730" y="260" textAnchor="middle" fill="#3b82f6" fontSize="13" fontWeight="600">东南亚</text>
-              <text x="530" y="55" textAnchor="middle" fill="#8b5cf6" fontSize="13" fontWeight="600">中 亚</text>
-              <text x="615" y="132" textAnchor="start" fill="#f59e0b" fontSize="10" fontWeight="700">中 国</text>
+              <text x="510" y="143" textAnchor="middle" fill="#f59e0b" fontSize="12" fontWeight="600">中 东</text>
+              <text x="500" y="170" textAnchor="middle" fill="#f59e0b" fontSize="12" fontWeight="600">MIDDLE EAST</text>
               
-              {/* Bottom country lists */}
-              <text x="500" y="385" textAnchor="middle" fill="#4b5563" fontSize="10">
-                沙特 · 阿联酋 · 伊拉克 · 阿尔及利亚 · 尼日利亚 · 埃塞俄比亚 · 坦桑尼亚 · 肯尼亚 · 越南 · 印尼 · 哈萨克斯坦 · 乌兹别克斯坦 等 30+ 国
-              </text>
+              <text x="430" y="225" textAnchor="middle" fill="#ec4899" fontSize="12" fontWeight="600">非 洲</text>
+              <text x="450" y="240" textAnchor="middle" fill="#ec4899" fontSize="12" fontWeight="600">AFRICA</text>
+              
+              <text x="650" y="195" textAnchor="middle" fill="#3b82f6" fontSize="12" fontWeight="600">东南亚</text>
+              <text x="650" y="210" textAnchor="middle" fill="#3b82f6" fontSize="12" fontWeight="600">SE ASIA</text>
+              
+              <text x="540" y="55" textAnchor="middle" fill="#8b5cf6" fontSize="12" fontWeight="600">中 亚</text>
+              <text x="540" y="40" textAnchor="middle" fill="#8b5cf6" fontSize="12" fontWeight="600">CENTRAL ASIA</text>
+              
+              {/* Bottom country list */}
+              <g transform="translate(0, 340)">
+                <text x="450" y="0" textAnchor="middle" fill="#4b5563" fontSize="10">
+                  沙特 · 阿联酋 · 伊拉克 · 约旦 · 阿尔及利亚 · 尼日利亚 · 肯尼亚 · 埃塞俄比亚 · 坦桑尼亚 · 越南 · 印尼 · 菲律宾 · 哈萨克斯坦 等
+                </text>
+                <text x="450" y="18" textAnchor="middle" fill="#f59e0b" fontSize="13" fontWeight="700">覆盖 30+ 国家和地区</text>
+              </g>
             </svg>
           </div>
         </motion.div>

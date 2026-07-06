@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import Hero from '@/components/Hero';
 import Advantages from '@/components/Advantages';
+import Contact from '@/components/Contact';
 import { trucks, zones, categories, stockTrucks } from '@/data/trucks';
 
 function ZoneWindow({ zone }: { zone: typeof zones[0] }) {
@@ -217,6 +218,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <Contact />
     </>
   );
 }
