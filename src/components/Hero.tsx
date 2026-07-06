@@ -38,33 +38,41 @@ const slides = [
 
 export default function Hero() {
   const [current, setCurrent] = useState(0);
+  const [prev, setPrev] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
+      setPrev(current);
       setCurrent((prev) => (prev + 1) % slides.length);
     }, 5000);
     return () => clearInterval(timer);
-  }, []);
+  }, [current]);
+
+  const goTo = (i: number) => {
+    setPrev(current);
+    setCurrent(i);
+  };
 
   return (
     <section className="relative h-screen w-full overflow-hidden bg-black">
-      {/* Background Slides */}
-      <AnimatePresence mode="wait">
+      {/* All slides layered — only current and previous visible for crossfade */}
+      {slides.map((slide, i) => (
         <motion.div
-          key={current}
-          initial={{ opacity: 0, scale: 1.1 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 1.5 }}
+          key={i}
+          initial={false}
+          animate={{
+            opacity: i === current ? 1 : i === prev ? 0 : 0,
+          }}
+          transition={{ duration: 1.2 }}
           className="absolute inset-0"
         >
           <div
             className="h-full w-full bg-cover bg-center"
-            style={{ backgroundImage: `url(${slides[current].image})` }}
+            style={{ backgroundImage: `url(${slide.image})` }}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
         </motion.div>
-      </AnimatePresence>
+      ))}
 
       {/* Content */}
       <div className="relative z-10 flex h-full items-center">
@@ -72,24 +80,24 @@ export default function Hero() {
           <AnimatePresence mode="wait">
             <motion.div
               key={current}
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -50 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
+              exit={{ opacity: 0, y: -40 }}
+              transition={{ duration: 0.8 }}
               className="max-w-3xl"
             >
               <motion.p
-                initial={{ opacity: 0, x: -30 }}
+                initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.5 }}
+                transition={{ delay: 0.3 }}
                 className="mb-4 text-lg tracking-widest text-amber-400"
               >
                 {slides[current].subtitle}
               </motion.p>
               <motion.h1
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.7 }}
+                transition={{ delay: 0.5 }}
                 className="mb-6 text-5xl font-bold leading-relaxed tracking-normal text-white md:text-7xl"
               >
                 {slides[current].title}
@@ -97,7 +105,7 @@ export default function Hero() {
               <motion.p
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 0.9 }}
+                transition={{ delay: 0.7 }}
                 className="mb-8 text-xl leading-relaxed tracking-normal text-gray-300"
               >
                 {slides[current].description}
@@ -105,11 +113,11 @@ export default function Hero() {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.1 }}
+                transition={{ delay: 0.9 }}
                 className="flex gap-4"
               >
                 <a
-                  href="#products"
+                  href="#heavy-truck"
                   className="rounded-md bg-amber-500 px-8 py-4 text-lg font-semibold text-black transition-all hover:bg-amber-400 hover:shadow-lg hover:shadow-amber-500/30"
                 >
                   查看产品
@@ -131,31 +139,13 @@ export default function Hero() {
         {slides.map((_, i) => (
           <button
             key={i}
-            onClick={() => setCurrent(i)}
+            onClick={() => goTo(i)}
             className={`h-2 rounded-full transition-all ${
               i === current ? 'w-12 bg-amber-500' : 'w-6 bg-white/50'
             }`}
           />
         ))}
       </div>
-
-      {/* Scroll Indicator */}
-      <motion.div
-        animate={{ y: [0, 10, 0] }}
-        transition={{ repeat: Infinity, duration: 2 }}
-        className="absolute bottom-10 right-10 z-20"
-      >
-        <div className="flex flex-col items-center gap-2 text-white/60">
-          <span className="text-sm tracking-widest">SCROLL</span>
-          <div className="h-10 w-6 rounded-full border-2 border-white/40">
-            <motion.div
-              animate={{ y: [0, 12, 0] }}
-              transition={{ repeat: Infinity, duration: 1.5 }}
-              className="mx-auto mt-2 h-2 w-1.5 rounded-full bg-white"
-            />
-          </div>
-        </div>
-      </motion.div>
     </section>
   );
 }
