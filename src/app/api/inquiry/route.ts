@@ -9,6 +9,7 @@ export async function POST(request: Request) {
     };
 
     const RESEND_KEY = process.env.RESEND_API_KEY || '';
+    console.log('KEY exists:', !!RESEND_KEY, 'length:', RESEND_KEY.length);
 
     // Send email via Resend
     if (RESEND_KEY) {
