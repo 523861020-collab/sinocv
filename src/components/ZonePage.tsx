@@ -48,10 +48,6 @@ function ProductCard({ truck, index }: { truck: Truck; index: number }) {
             <span className="text-gray-500">发动机</span>
             <span className="text-gray-300">{truck.engine}</span>
           </div>
-          <div className="flex justify-between text-sm">
-            <span className="text-gray-500">价格</span>
-            <span className="text-amber-500 font-semibold">{truck.price}</span>
-          </div>
         </div>
         <div className="flex flex-wrap gap-1.5 mb-4">
           {truck.features.slice(0, 3).map((f, i) => (

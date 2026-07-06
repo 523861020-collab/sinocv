@@ -59,10 +59,7 @@ function ZoneWindow({ zone }: { zone: typeof zones[0] }) {
           >
             <p className="text-amber-500 text-xs">{p.brand}</p>
             <h4 className="text-base font-bold text-white mt-0.5 mb-2 truncate">{p.name}</h4>
-            <div className="flex justify-between text-sm">
-              <span className="text-gray-500">{p.driveType}</span>
-              <span className="text-amber-500 font-semibold">{p.price}</span>
-            </div>
+            <span className="text-gray-500 text-sm">{p.driveType}</span>
           </motion.div>
         </AnimatePresence>
       </div>
