@@ -10,7 +10,7 @@ import { trucks, zones, categories } from '@/data/trucks';
 
 const PER_PAGE = 3;
 
-function ProductCard({ product }: { product: ReturnType<typeof getZoneProducts>[0] }) {
+function ProductCard({ product }: { product: typeof trucks[0] }) {
   return (
     <div className="rounded-xl bg-gray-900 border border-gray-800 overflow-hidden group hover:border-amber-500/50 transition-all duration-300">
       <div className="relative h-44 overflow-hidden bg-gray-800">
