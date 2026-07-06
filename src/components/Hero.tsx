@@ -5,16 +5,28 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const slides = [
   {
-    image: '/images/hero-1.jpg',
-    title: 'SITRAK 6×4 牵引车',
-    subtitle: '中国重汽 · 德国曼技术',
-    description: '重汽/陕汽牵引车、载货车、自卸车、搅拌车、专用车全系列'
+    image: '/images/hero-tractor.jpg',
+    title: '中国重汽 牵引车',
+    subtitle: 'HOWO / SITRAK · 德国曼技术',
+    description: '潍柴发动机，6×4驱动，30年重卡出口经验'
   },
   {
-    image: '/images/hero-2.jpg',
-    title: '徐工 · 中集 · 福田',
-    subtitle: '工程机械 + 挂车 + 轻型商用车',
-    description: '挖掘机、装载机、挂车、Van、微卡——一站式采购'
+    image: '/images/hero-excavator.jpg',
+    title: '徐工 挖掘机',
+    subtitle: 'XCMG · 中国工程机械第一品牌',
+    description: 'XE215挖掘机、ZL50装载机，矿山/基建/市政工程'
+  },
+  {
+    image: '/images/hero-van.jpg',
+    title: '福田 Van 封闭货车',
+    subtitle: 'Foton · 城市物流配送专家',
+    description: '图雅诺Van、时代微卡，经济节油，灵活高效'
+  },
+  {
+    image: '/images/hero-trailer.jpg',
+    title: '中集 挂车',
+    subtitle: 'CIMC · 全球挂车销量第一',
+    description: '平板挂车、自卸挂车，13吨车桥，耐用可靠'
   }
 ];
 
