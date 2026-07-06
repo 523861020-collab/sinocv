@@ -141,7 +141,7 @@ export default function Home() {
           </div>
 
           {/* Row 1: Manager + License + Company Intro — three columns */}
-          <div className="max-w-6xl mx-auto mb-10 grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div className="max-w-6xl mx-auto mb-10 grid grid-cols-1 lg:grid-cols-2 gap-6">
             {/* Left: Manager */}
             <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-900 via-gray-900 to-amber-950/20 border border-gray-800">
               <div className="absolute -top-40 -right-40 w-80 h-80 bg-amber-500/3 rounded-full blur-3xl" />
@@ -165,12 +165,6 @@ export default function Home() {
                 </div>
               </div>
             </div>
-
-            {/* Center: CN Business License */}
-            <a href="/images/license-cn.jpg" target="_blank" className="relative rounded-2xl overflow-hidden border border-gray-800 hover:border-amber-500/40 transition-all block bg-gray-900 h-full">
-              <img src="/images/license-cn.jpg" alt="国内营业执照" className="w-full h-full object-cover" />
-              <div className="absolute bottom-0 left-0 right-0 bg-black/60 px-3 py-2 text-center text-xs text-gray-300">国内营业执照</div>
-            </a>
 
             {/* Right: Company intro */}
             <div className="rounded-2xl bg-gray-900 border border-gray-800 p-8 flex flex-col justify-center">
@@ -204,16 +198,6 @@ export default function Home() {
           {/* Row 2: Certificates + Physical presence */}
           <div className="max-w-6xl mx-auto space-y-8">
             <h3 className="text-lg font-bold text-white text-center">企业资质</h3>
-
-            {/* 国内展厅 — wide banner */}
-            <div>
-              <h4 className="text-sm font-semibold text-gray-400 mb-3 flex items-center gap-2 justify-center">
-                <span className="w-1.5 h-1.5 rounded-full bg-amber-500" /> 国内展厅
-              </h4>
-              <a href="/images/4s-store.jpg" target="_blank" className="block rounded-2xl overflow-hidden border border-gray-800 hover:border-amber-500/40 transition-all">
-                <img src="/images/4s-store.jpg" alt="国内展厅" className="w-full h-auto max-h-96 object-cover" />
-              </a>
-            </div>
 
             {/* 三证 — 3-column grid */}
             <div>
