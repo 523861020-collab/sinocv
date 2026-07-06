@@ -1,7 +1,7 @@
 export interface Truck {
   id: string;
   name: string;
-  category: 'tractor' | 'cargo' | 'dump' | 'mixer' | 'special' | 'trailer' | 'machinery' | 'light';
+  category: 'tractor' | 'cargo' | 'dump' | 'mixer' | 'special' | 'trailer' | 'machinery' | 'mining' | 'light';
   brand: string;
   horsepower: number;
   driveType: string;
@@ -200,7 +200,43 @@ export const trucks: Truck[] = [
     features: ['15方水罐', '前冲后洒', '高压水炮', '自吸自排']
   },
 
-  // ===== 挂车（中集） =====
+  // ===== 矿卡 =====
+  {
+    id: 'tongli-tl875',
+    name: '同力 TL875 矿用自卸车',
+    category: 'mining',
+    brand: '同力重工',
+    horsepower: 380,
+    driveType: '6×4',
+    engine: '潍柴 WP12.380E62',
+    price: '$65,000 - $85,000',
+    image: '/images/dump-howo.jpg',
+    features: ['40吨载重', '矿用宽体', '加强型底盘', '沙漠空滤']
+  },
+  {
+    id: 'xcmg-xdr80t',
+    name: '徐工 XDR80T 矿用自卸车',
+    category: 'mining',
+    brand: '徐工 XCMG',
+    horsepower: 420,
+    driveType: '6×4',
+    engine: '潍柴 WP13.420E62',
+    price: '$75,000 - $95,000',
+    image: '/images/dump-howo.jpg',
+    features: ['45吨载重', '油气悬挂', '自动润滑', '矿用轮胎']
+  },
+  {
+    id: 'lgmg-mt86',
+    name: '临工 MT86 矿用宽体车',
+    category: 'mining',
+    brand: '临工重机',
+    horsepower: 400,
+    driveType: '6×4',
+    engine: '潍柴 WP12.400E62',
+    price: '$60,000 - $80,000',
+    image: '/images/dump-howo.jpg',
+    features: ['35吨载重', '宽体驾驶室', '液力缓速器', '矿用底盘']
+  },
   {
     id: 'cimc-flatbed',
     name: '中集 40英尺 平板挂车',
@@ -285,8 +321,9 @@ export const categories = [
   { id: 'dump', name: '自卸车', nameEn: 'Dump Truck', icon: '🏗️' },
   { id: 'mixer', name: '搅拌车', nameEn: 'Concrete Mixer', icon: '🔄' },
   { id: 'special', name: '专用车', nameEn: 'Special Vehicle', icon: '🔧' },
-  { id: 'trailer', name: '挂车', nameEn: 'Trailer', icon: '🔗' },
   { id: 'machinery', name: '工程机械', nameEn: 'Construction Machinery', icon: '⚙️' },
+  { id: 'mining', name: '矿卡', nameEn: 'Mining Truck', icon: '⛏️' },
+  { id: 'trailer', name: '挂车', nameEn: 'Trailer', icon: '🔗' },
   { id: 'light', name: '轻型商用车', nameEn: 'Light Commercial', icon: '🚐' }
 ];
 
@@ -310,6 +347,16 @@ export const zones = [
     description: '挖掘机 · 装载机，矿山/基建/市政工程解决方案',
     categories: ['machinery'],
     color: 'from-orange-500/20 to-transparent'
+  },
+  {
+    id: 'mining',
+    title: '矿卡专区',
+    titleEn: 'Mining Trucks',
+    icon: '⛏️',
+    brand: '同力重工 / 徐工 / 临工重机',
+    description: '矿用宽体自卸车，40-45吨载重，适应矿山恶劣工况',
+    categories: ['mining'],
+    color: 'from-red-500/20 to-transparent'
   },
   {
     id: 'light',

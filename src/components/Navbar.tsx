@@ -18,6 +18,7 @@ export default function Navbar() {
   const navLinks = [
     { href: '#heavy-truck', label: '重卡' },
     { href: '#machinery', label: '工程机械' },
+    { href: '#mining', label: '矿卡' },
     { href: '#light', label: '轻型车' },
     { href: '#trailer', label: '挂车' },
     { href: '#contact', label: '联系我们' }
