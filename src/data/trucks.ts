@@ -212,7 +212,7 @@ export const trucks: Truck[] = [
     driveType: '3轴',
     engine: '-',
     price: '$8,000 - $12,000',
-    image: '/images/tractor-1.jpg',
+    image: '/images/trailer-cimc.jpg',
     features: ['40英尺平板', '13吨车桥', 'ABS制动', '集装箱锁具']
   },
   {
@@ -224,7 +224,7 @@ export const trucks: Truck[] = [
     driveType: '3轴',
     engine: '-',
     price: '$12,000 - $18,000',
-    image: '/images/dump-howo.jpg',
+    image: '/images/trailer-cimc.jpg',
     features: ['40立方U型斗', '液压举升', '耐磨钢板', '自动篷布']
   },
 
