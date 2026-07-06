@@ -158,7 +158,7 @@ export default function Home() {
             <p className="text-amber-500 text-sm mb-4">总经理 / General Manager</p>
             <div className="space-y-2 text-sm text-gray-400">
               <div>📧 lishanlong@sinocv.com</div>
-              <div>📱 WhatsApp: +86 138 0000 0000</div>
+              <div>📱 WhatsApp: +86 19103781257</div>
             </div>
           </div>
         </div>
