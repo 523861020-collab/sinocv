@@ -178,10 +178,10 @@ export default function Home() {
               {/* 公司介绍 */}
               <div className="rounded-2xl bg-gray-900 border border-gray-800 p-10 hover:border-gray-700 transition-colors">
                 <div className="flex items-center gap-4 mb-5">
-                  <div className="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center text-2xl shrink-0">🏢</div>
-                  <h3 className="text-xl font-bold text-white">公司介绍</h3>
+                  <div className="w-14 h-14 rounded-xl bg-amber-500/10 flex items-center justify-center text-3xl shrink-0">🏢</div>
+                  <h3 className="text-2xl font-bold text-white">公司介绍</h3>
                 </div>
-                <p className="text-gray-300 leading-relaxed text-base">
+                <p className="text-gray-200 leading-relaxed text-lg">
                   SINOCV 是一家专业从事中国商用车及工程机械出口的贸易公司，总部位于香港。公司与多家中国顶级制造商建立了长期稳定的合作关系，致力于为全球客户提供高品质的重卡、工程机械、挂车及轻型商用车一站式采购服务。
                 </p>
               </div>
@@ -189,8 +189,8 @@ export default function Home() {
               {/* 合作工厂 */}
               <div className="rounded-2xl bg-gray-900 border border-gray-800 p-10 hover:border-gray-700 transition-colors">
                 <div className="flex items-center gap-4 mb-5">
-                  <div className="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center text-2xl shrink-0">🏭</div>
-                  <h3 className="text-xl font-bold text-white">合作工厂</h3>
+                  <div className="w-14 h-14 rounded-xl bg-amber-500/10 flex items-center justify-center text-3xl shrink-0">🏭</div>
+                  <h3 className="text-2xl font-bold text-white">合作工厂</h3>
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   {[
@@ -199,8 +199,8 @@ export default function Home() {
                     { name: '中集车辆', sub: 'CIMC' },
                     { name: '福田汽车', sub: 'FOTON' },
                   ].map(f => (
-                    <div key={f.name} className="rounded-xl border border-gray-800 bg-gray-800/40 py-5 px-4 text-center hover:border-amber-500/30 hover:bg-gray-800/70 transition-all">
-                      <div className="text-white font-semibold text-base">{f.name}</div>
+                    <div key={f.name} className="rounded-xl border border-gray-800 bg-gray-800/40 py-6 px-4 text-center hover:border-amber-500/30 hover:bg-gray-800/70 transition-all">
+                      <div className="text-white font-semibold text-lg">{f.name}</div>
                       <div className="text-gray-500 text-sm mt-1">{f.sub}</div>
                     </div>
                   ))}
@@ -210,10 +210,10 @@ export default function Home() {
               {/* 公司宗旨 */}
               <div className="rounded-2xl bg-gradient-to-r from-amber-500/5 to-transparent border border-amber-500/20 p-10">
                 <div className="flex items-center gap-4 mb-5">
-                  <div className="w-12 h-12 rounded-xl bg-amber-500/20 flex items-center justify-center text-2xl shrink-0">🎯</div>
-                  <h3 className="text-xl font-bold text-white">公司宗旨</h3>
+                  <div className="w-14 h-14 rounded-xl bg-amber-500/20 flex items-center justify-center text-3xl shrink-0">🎯</div>
+                  <h3 className="text-2xl font-bold text-white">公司宗旨</h3>
                 </div>
-                <p className="text-gray-300 leading-relaxed text-lg italic">
+                <p className="text-gray-200 leading-relaxed text-lg italic">
                   "以客户需求为导向，以品质服务为根本，为全球客户提供最优质的中国制造商用车及工程机械产品，成为值得信赖的长期合作伙伴。"
                 </p>
               </div>
