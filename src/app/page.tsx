@@ -140,13 +140,13 @@ export default function Home() {
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">关于我们</h2>
             {/* Manager — directly below title */}
             <div className="flex flex-col items-center mt-8">
-              <div className="relative mb-4">
-                <div className="absolute inset-0 rounded-full bg-amber-500/20 blur-xl scale-110" />
-                <img src="/images/manager.jpg" alt="李善龙" className="relative w-28 h-28 rounded-full object-cover border-3 border-amber-500/40 shadow-2xl" />
+              <div className="relative mb-6">
+                <div className="absolute inset-0 rounded-full bg-amber-500/20 blur-2xl scale-110" />
+                <img src="/images/manager.jpg" alt="李善龙" className="relative w-56 h-56 rounded-full object-cover border-4 border-amber-500/40 shadow-2xl" />
               </div>
-              <h4 className="text-white font-bold text-2xl">李善龙</h4>
-              <p className="text-amber-400 text-sm font-medium mb-3">总经理 · General Manager</p>
-              <div className="flex flex-wrap justify-center gap-2 text-xs text-gray-400">
+              <h4 className="text-white font-bold text-5xl mb-2">李善龙</h4>
+              <p className="text-amber-400 text-xl font-medium mb-4">总经理 · General Manager</p>
+              <div className="flex flex-wrap justify-center gap-3 text-base text-gray-400">
                 <span>📧 lishanlong@sinocv.com</span>
                 <span className="text-gray-700">|</span>
                 <span>📱 +86 13001977959</span>
