@@ -7,7 +7,10 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-3 mb-6">
               <img src="/images/logo.png" alt="Logo" className="h-10 w-auto" />
-              <div className="text-sm text-amber-500 font-medium">One-stop Shop for Chinese Commercial Vehicles</div>
+              <div className="text-sm text-amber-500 font-medium leading-tight">
+                <div>One-stop Shop for</div>
+                <div>Chinese Commercial Vehicles</div>
+              </div>
             </div>
             <p className="text-gray-400 leading-relaxed mb-6">
               Authorized SINOTRUK exporter and partner of XCMG, CIMC, and Foton. Products cover tractor trucks, dump trucks, mixer trucks, special vehicles, construction machinery, and more.
