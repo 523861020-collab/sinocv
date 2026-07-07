@@ -82,7 +82,7 @@ export default function Home() {
 
       {/* 促销车 */}
       {stockTrucks.length > 0 && (
-        <section className="bg-gray-950 py-48">
+        <section className="bg-gray-950 py-32">
           <div className="container mx-auto px-6">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Promotions</h2>
@@ -114,7 +114,7 @@ export default function Home() {
         </section>
       )}
 
-      <section className="bg-gray-950 py-48">
+      <section className="bg-gray-950 py-32">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Products</h2>
@@ -134,10 +134,10 @@ export default function Home() {
       <Advantages />
 
       {/* 公司信息 */}
-      <section className="bg-black py-48">
+      <section className="bg-black py-32">
         <div className="px-6">
           <div className="text-center">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-32">About Us</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-20">About Us</h2>
             {/* Manager */}
             <div className="flex flex-col items-center">
               <div className="relative mb-8">
@@ -156,7 +156,7 @@ export default function Home() {
             </div>
             
             {/* Company intro — right below manager */}
-            <h3 className="text-3xl font-bold text-white mt-48 mb-14">🏢 About SINOCV</h3>
+            <h3 className="text-3xl font-bold text-white mt-32 mb-10">🏢 About SINOCV</h3>
             <p className="text-gray-300 leading-relaxed text-base mb-8">
               <span className="text-amber-400 font-semibold">SINOCV</span> is a Hong Kong-based professional commercial vehicle and construction machinery export company, providing full-chain export services from vehicle selection, customization, inspection, logistics, to customs clearance.
             </p>

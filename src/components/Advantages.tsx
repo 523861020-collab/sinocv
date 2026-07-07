@@ -29,7 +29,7 @@ const iconMap: Record<string, React.ReactNode> = {
 
 export default function Advantages() {
   return (
-    <section className="bg-black py-48">
+    <section className="bg-black py-32">
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <motion.div
