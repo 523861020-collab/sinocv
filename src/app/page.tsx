@@ -151,7 +151,7 @@ export default function Home() {
                 <span className="text-gray-700">|</span>
                 <span>📱 +86 13001977959</span>
                 <span className="text-gray-700">|</span>
-                <span>💬 微信: 13001977959</span>
+                <a href="https://wa.me/8619103781257" target="_blank" className="text-green-400 hover:text-green-300 transition-colors">💬 WhatsApp: +86 19103781257</a>
               </div>
             </div>
             
