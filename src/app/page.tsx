@@ -162,27 +162,27 @@ export default function Home() {
 
           {/* Row 2: Company intro — centered full width */}
           <div className="max-w-4xl mx-auto mb-10">
-            <div className="rounded-2xl bg-gray-900 border border-gray-800 p-10 text-center">
+            <div className="rounded-2xl bg-gray-900 border border-gray-800 p-10" style={{textAlign: 'center' as const}}>
               <h3 className="text-2xl font-bold text-white mb-6 flex items-center justify-center gap-3">
                 <span className="w-10 h-10 rounded-xl bg-amber-500/10 flex items-center justify-center text-xl">🏢</span>
                 关于 SINOCV
               </h3>
-              <div className="space-y-4 text-gray-300 leading-relaxed text-base text-center">
-                <p className="text-center">
+              <div className="space-y-4 text-gray-300 leading-relaxed text-base">
+                <p style={{textAlign: 'center' as const}}>
                   <span className="text-amber-400 font-semibold">SINOCV</span> 是一家总部位于香港的专业商用车及工程机械出口贸易公司，为全球客户提供从选型、定制、验车、物流到清关的全链条出口服务。
                 </p>
-                <p className="text-center">
+                <p style={{textAlign: 'center' as const}}>
                   公司与<span className="text-white font-medium">中国重汽（SINOTRUK）、徐工集团（XCMG）、中集车辆（CIMC）、福田汽车（Foton）</span>等国内一线品牌建立了长期稳定的战略合作关系，确保每一台车辆均为原厂正品。
                 </p>
-                <p className="text-center">
+                <p style={{textAlign: 'center' as const}}>
                   产品覆盖牵引车、载货车、自卸车、搅拌车、冷藏车、洒水车、垃圾运输车、随车吊、高空作业车等全系列商用车，以及挖掘机、装载机、矿用宽体自卸车、平板挂车、自卸挂车、Van封闭货车、微卡等多元化产品。
                 </p>
-                <p className="text-center">
+                <p style={{textAlign: 'center' as const}}>
                   凭借香港的国际化平台和内地供应链优势，已成功出口至非洲、中东、东南亚及中亚等 30 多个国家和地区，赢得了海外客户的广泛信赖。
                 </p>
               </div>
               <div className="mt-6 pt-6 border-t border-gray-800/50">
-                <p className="text-center text-gray-400 italic text-base">
+                <p className="text-gray-400 italic text-base" style={{textAlign: 'center' as const}}>
                   🎯 <span className="text-amber-400 font-medium">公司宗旨：</span>
                   以客户需求为导向，以品质服务为根本，成为全球客户值得信赖的长期合作伙伴。
                 </p>
