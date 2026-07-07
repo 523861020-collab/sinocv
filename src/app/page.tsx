@@ -82,7 +82,7 @@ export default function Home() {
 
       {/* 促销车 */}
       {stockTrucks.length > 0 && (
-        <section className="bg-gray-950 py-32">
+        <section className="bg-gray-950 py-40">
           <div className="container mx-auto px-6">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">促销车</h2>
@@ -114,7 +114,7 @@ export default function Home() {
         </section>
       )}
 
-      <section className="bg-gray-950 py-32">
+      <section className="bg-gray-950 py-40">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">产品中心</h2>
@@ -134,7 +134,7 @@ export default function Home() {
       <Advantages />
 
       {/* 公司信息 */}
-      <section className="bg-black py-32">
+      <section className="bg-black py-40">
         <div className="px-6">
           <div className="text-center">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-32">关于我们</h2>
@@ -156,7 +156,7 @@ export default function Home() {
             </div>
             
             {/* Company intro — right below manager */}
-            <h3 className="text-3xl font-bold text-white mt-32 mb-10">🏢 关于 SINOCV</h3>
+            <h3 className="text-3xl font-bold text-white mt-48 mb-14">🏢 关于 SINOCV</h3>
             <p className="text-gray-300 leading-relaxed text-base mb-6">
               <span className="text-amber-400 font-semibold">SINOCV</span> 是一家总部位于香港的专业商用车及工程机械出口贸易公司，为全球客户提供从选型、定制、验车、物流到清关的全链条出口服务。
             </p>
