@@ -9,7 +9,7 @@ export default function Footer() {
               <img src="/images/logo.png" alt="Logo" className="h-10 w-auto" />
               <div>
                 <div className="text-xl font-bold text-white">SINOCV</div>
-                <div className="text-xs text-amber-500 tracking-widest">Trucks · Machinery · Vans · Trailers</div>
+                <div className="text-xs text-amber-500 tracking-widest">Sinocv | One-stop Shop for Chinese Commercial Vehicles</div>
               </div>
             </div>
             <p className="text-gray-400 leading-relaxed mb-6">
