@@ -174,7 +174,7 @@ export default function Home() {
             </p>
             
             {/* HK Certificates — right below */}
-            <h3 className="text-2xl font-bold text-white mt-32 mb-8">Certifications</h3>
+            <h3 style={{marginTop: '2rem'}} className="text-2xl font-bold text-white mb-8">Certifications</h3>
             <div className="flex flex-wrap justify-center gap-6">
               <a href="/images/cert-hk-1.jpg" target="_blank" className="rounded-xl overflow-hidden border border-gray-800 hover:border-amber-500/40 transition-all block bg-gray-900 w-full max-w-sm">
                 <img src="/images/cert-hk-1.jpg" alt="香港公司注册证明书" className="w-full h-auto" />
