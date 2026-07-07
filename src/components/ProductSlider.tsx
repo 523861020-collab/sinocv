@@ -133,7 +133,7 @@ export default function ProductSlider() {
 
                   {/* CTA */}
                   <a
-                    href="#contact"
+                    href="https://wa.me/8619103781257" target="_blank"
                     className="block w-full rounded-md bg-amber-500/10 py-3 text-center text-amber-500 font-semibold transition-all hover:bg-amber-500 hover:text-black"
                   >
                     获取报价

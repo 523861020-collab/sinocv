@@ -103,7 +103,7 @@ export default function Home() {
                     <div className="flex flex-wrap gap-2 mb-12">
                       {t.features.map((f, i) => <span key={i} className="rounded-full bg-gray-800 px-2.5 py-1 text-xs text-gray-400">{f}</span>)}
                     </div>
-                    <a href="/#contact" className="block w-full rounded-md bg-red-500/10 py-2.5 text-center text-red-400 font-semibold text-sm transition-all hover:bg-red-500 hover:text-white">
+                    <a href="https://wa.me/8619103781257" target="_blank" className="block w-full rounded-md bg-red-500/10 py-2.5 text-center text-red-400 font-semibold text-sm transition-all hover:bg-red-500 hover:text-white">
                       Inquire Now →
                     </a>
                   </div>

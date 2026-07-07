@@ -13,7 +13,7 @@ const catalogs = [
   {
     title: 'HOWO-TX 非洲版画册',
     description: 'HOWO-TX 系列非洲市场专属配置，针对高温、多尘、复杂路况优化设计。（请联系获取）',
-    file: '#contact',
+    file: 'https://wa.me/8619103781257',
     size: '213 MB',
     icon: '🚛'
   }

@@ -131,8 +131,8 @@ export default function Hero() {
                   View Products
                 </Link>
                 <a
-                  href="/#contact"
-                  className="rounded-md border-2 border-white px-8 py-4 text-lg font-semibold text-white transition-all hover:bg-white hover:text-black"
+                  href="https://wa.me/8619103781257" target="_blank"
+                    className="rounded-md border-2 border-green-500 px-8 py-4 text-lg font-semibold text-green-400 transition-all hover:bg-green-500 hover:text-white"
                 >
                   Get Quote
                 </a>
