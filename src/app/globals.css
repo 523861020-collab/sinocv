@@ -100,3 +100,11 @@ body {
   background-color: #f59e0b;
   color: #000000;
 }
+
+/* Global paragraph spacing */
+p {
+  margin-bottom: 35px;
+}
+p:last-child {
+  margin-bottom: 0;
+}
