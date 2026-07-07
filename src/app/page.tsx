@@ -134,19 +134,19 @@ export default function Home() {
       <Advantages />
 
       {/* 公司信息 */}
-      <section className="bg-black py-24">
+      <section className="bg-black py-16">
         <div className="px-6">
-          <div className="text-center">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-32">关于我们</h2>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-16">关于我们</h2>
             {/* Manager */}
             <div className="flex flex-col items-center">
-              <div className="relative mb-10">
+              <div className="relative mb-6">
                 <div className="absolute inset-0 rounded-full bg-amber-500/20 blur-2xl scale-110" />
                 <img src="/images/manager.jpg" alt="李善龙" className="relative w-56 h-56 rounded-full object-cover border-4 border-amber-500/40 shadow-2xl" />
               </div>
-              <h4 className="text-white font-bold text-5xl mb-4">李善龙</h4>
-              <p className="text-amber-400 text-xl font-medium mb-8">总经理 · General Manager</p>
-              <div className="flex flex-wrap justify-center gap-3 text-base text-gray-400">
+              <h4 className="text-white font-bold text-5xl mb-2">李善龙</h4>
+              <p className="text-amber-400 text-xl font-medium mb-4">总经理 · General Manager</p>
+              <div className="flex flex-wrap justify-center gap-3 text-base text-gray-400 mb-10">
                 <span>📧 lishanlong@sinocv.com</span>
                 <span className="text-gray-700">|</span>
                 <span>📱 +86 13001977959</span>
@@ -156,36 +156,34 @@ export default function Home() {
             </div>
             
             {/* Company intro — right below manager */}
-            <h3 className="text-3xl font-bold text-white mt-32 mb-12">🏢 关于 SINOCV</h3>
-            <div className="max-w-3xl mx-auto space-y-6">
-            <p className="text-gray-300 leading-relaxed text-lg">
+            <h3 className="text-3xl font-bold text-white mt-20 mb-10">🏢 关于 SINOCV</h3>
+            <p className="text-gray-300 leading-relaxed text-base mb-4">
               <span className="text-amber-400 font-semibold">SINOCV</span> 是一家总部位于香港的专业商用车及工程机械出口贸易公司，为全球客户提供从选型、定制、验车、物流到清关的全链条出口服务。
             </p>
-            <p className="text-gray-300 leading-relaxed text-lg">
+            <p className="text-gray-300 leading-relaxed text-base mb-4">
               公司与<span className="text-white font-medium">中国重汽（SINOTRUK）、徐工集团（XCMG）、中集车辆（CIMC）、福田汽车（Foton）</span>等国内一线品牌建立了长期稳定的战略合作关系，确保每一台车辆均为原厂正品。
             </p>
-            <p className="text-gray-300 leading-relaxed text-lg">
+            <p className="text-gray-300 leading-relaxed text-base mb-4">
               产品覆盖牵引车、载货车、自卸车、搅拌车、冷藏车、洒水车、垃圾运输车、随车吊、高空作业车等全系列商用车，以及挖掘机、装载机、矿用宽体自卸车、平板挂车、自卸挂车、Van封闭货车、微卡等多元化产品。
             </p>
-            <p className="text-gray-300 leading-relaxed text-lg">
+            <p className="text-gray-300 leading-relaxed text-base mb-4">
               凭借香港的国际化平台和内地供应链优势，已成功出口至非洲、中东、东南亚及中亚等 30 多个国家和地区，赢得了海外客户的广泛信赖。
             </p>
-            </div>
-            <p className="mt-12 pt-8 border-t border-gray-800/50 text-gray-400 italic text-lg">
+            <p className="mt-8 pt-6 border-t border-gray-800/50 text-gray-400 italic text-base">
               🎯 <span className="text-amber-400 font-medium">公司宗旨：</span>
               以客户需求为导向，以品质服务为根本，成为全球客户值得信赖的长期合作伙伴。
             </p>
             
             {/* HK Certificates — right below */}
-            <h3 className="text-2xl font-bold text-white mt-32 mb-10">企业资质</h3>
-            <div className="flex flex-wrap justify-center gap-8 max-w-3xl mx-auto">
+            <h3 className="text-2xl font-bold text-white mt-20 mb-6">企业资质</h3>
+            <div className="flex flex-wrap justify-center gap-6">
               <a href="/images/cert-hk-1.jpg" target="_blank" className="rounded-xl overflow-hidden border border-gray-800 hover:border-amber-500/40 transition-all block bg-gray-900 w-full max-w-sm">
                 <img src="/images/cert-hk-1.jpg" alt="香港公司注册证明书" className="w-full h-auto" />
-                <div className="px-3 py-3 text-center text-sm text-gray-500">香港公司注册证明书</div>
+                <div className="px-3 py-2 text-center text-xs text-gray-500">香港公司注册证明书</div>
               </a>
               <a href="/images/cert-hk-2.jpg" target="_blank" className="rounded-xl overflow-hidden border border-gray-800 hover:border-amber-500/40 transition-all block bg-gray-900 w-full max-w-sm">
                 <img src="/images/cert-hk-2.jpg" alt="香港商业登记证" className="w-full h-auto" />
-                <div className="px-3 py-3 text-center text-sm text-gray-500">香港商业登记证</div>
+                <div className="px-3 py-2 text-center text-xs text-gray-500">香港商业登记证</div>
               </a>
             </div>
           </div>
