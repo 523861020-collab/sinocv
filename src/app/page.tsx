@@ -156,7 +156,7 @@ export default function Home() {
             </div>
             
             {/* Company intro — right below manager */}
-            <h3 style={{marginTop: '4rem'}} className="text-3xl font-bold text-white mb-6">🏢 About SINOCV</h3>
+            <h3 style={{marginTop: '2rem'}} className="text-3xl font-bold text-white mb-6">🏢 About SINOCV</h3>
             <p className="text-gray-300 leading-relaxed text-base text-left">
               <span className="text-amber-400 font-semibold">SINOCV</span> is a Hong Kong-based professional commercial vehicle and construction machinery export company, providing full-chain export services from vehicle selection, customization, inspection, logistics, to customs clearance.
             </p>
