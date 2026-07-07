@@ -16,12 +16,12 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { href: '/heavy-truck', label: '重卡' },
-    { href: '/machinery', label: '工程机械' },
-    { href: '/mining', label: '矿卡' },
-    { href: '/light', label: '轻型车' },
-    { href: '/trailers', label: '挂车' },
-    { href: '#contact', label: '联系我们' }
+    { href: '/heavy-truck', label: 'Heavy Trucks' },
+    { href: '/machinery', label: 'Machinery' },
+    { href: '/mining', label: 'Mining' },
+    { href: '/light', label: 'Light Vehicles' },
+    { href: '/trailers', label: 'Trailers' },
+    { href: '#contact', label: 'Contact' }
   ];
 
   return (
@@ -39,7 +39,7 @@ export default function Navbar() {
             <img src="/images/logo.png" alt="Logo" className="h-10 w-auto" />
             <div>
               <div className="text-xl font-bold text-white">SINOCV</div>
-              <div className="text-xs text-amber-500 tracking-widest">卡车 · 工程机械 · Van · 挂车</div>
+              <div className="text-xs text-amber-500 tracking-widest">Trucks · Machinery · Vans · Trailers</div>
             </div>
           </a>
 
@@ -58,7 +58,7 @@ export default function Navbar() {
               href="#contact"
               className="rounded-md bg-amber-500 px-6 py-2.5 font-semibold text-black hover:bg-amber-400 transition-colors"
             >
-              立即询价
+              Get Quote
             </a>
           </div>
 
@@ -101,7 +101,7 @@ export default function Navbar() {
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="block mx-4 rounded-md bg-amber-500 px-6 py-3 text-center font-semibold text-black hover:bg-amber-400 transition-colors"
               >
-                立即询价
+                Get Quote
               </a>
             </div>
           </motion.div>

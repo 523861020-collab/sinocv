@@ -7,37 +7,37 @@ import Link from 'next/link';
 const slides = [
   {
     image: '/images/hero-tractor.jpg',
-    title: '中国重汽 牵引车',
-    subtitle: 'HOWO / SITRAK · 德国曼技术',
-    description: '潍柴发动机，6×4驱动，30年重卡出口经验',
+    title: 'SINOTRUK Tractor Truck',
+    subtitle: 'HOWO / SITRAK · German MAN Technology',
+    description: 'Weichai engine, 6×4 drive, 30 years of heavy truck export experience',
     link: '/heavy-truck'
   },
   {
     image: '/images/hero-excavator.jpg',
-    title: '徐工 挖掘机',
-    subtitle: 'XCMG · 中国工程机械第一品牌',
-    description: 'XE215挖掘机、ZL50装载机，矿山/基建/市政工程',
+    title: 'XCMG Excavator',
+    subtitle: 'XCMG · China\'s #1 Construction Machinery',
+    description: 'XE215 Excavator, ZL50 Loader — mining, infrastructure, municipal projects',
     link: '/machinery'
   },
   {
     image: '/images/hero-van.jpg',
-    title: '福田 Van 封闭货车',
-    subtitle: 'Foton · 城市物流配送专家',
-    description: '图雅诺Van、时代微卡，经济节油，灵活高效',
+    title: 'Foton Cargo Van',
+    subtitle: 'Foton · Urban Logistics Expert',
+    description: 'Toano Van, Forland Mini Truck — fuel-efficient, agile, and reliable',
     link: '/light'
   },
   {
     image: '/images/hero-trailer.jpg',
-    title: '中集 挂车',
-    subtitle: 'CIMC · 全球挂车销量第一',
-    description: '平板挂车、自卸挂车，13吨车桥，耐用可靠',
+    title: 'CIMC Trailer',
+    subtitle: 'CIMC · Global #1 Trailer Manufacturer',
+    description: 'Flatbed trailers, dump trailers — 13-ton axles, durable and dependable',
     link: '/trailers'
   },
   {
     image: '/images/hero-mining.jpg',
-    title: '矿用宽体自卸车',
-    subtitle: '同力重工 · 徐工 · 临工重机',
-    description: '40-45吨载重，加强型底盘，适应矿山恶劣工况',
+    title: 'Mining Dump Truck',
+    subtitle: 'Tonly · XCMG · Lingong',
+    description: '40-45 ton payload, reinforced chassis, built for harsh mining conditions',
     link: '/mining'
   }
 ];
@@ -128,7 +128,7 @@ export default function Hero() {
                   href={slides[current].link}
                   className="rounded-md bg-amber-500 px-8 py-4 text-lg font-semibold text-black transition-all hover:bg-amber-400 hover:shadow-lg hover:shadow-amber-500/30"
                 >
-                  查看产品
+                  View Products
                 </Link>
                 <a
                   href="/#contact"
