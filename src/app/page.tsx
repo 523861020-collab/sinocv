@@ -134,7 +134,7 @@ export default function Home() {
       <Advantages />
 
       {/* 公司信息 */}
-      <section className="bg-gray-900 py-[7.5rem]">
+      <section className="bg-black py-[7.5rem]">
         <div className="px-6">
           <div className="text-center">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-10">About Us</h2>
