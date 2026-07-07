@@ -37,10 +37,7 @@ export default function Navbar() {
           {/* Logo */}
           <a href="/" className="flex items-center gap-3">
             <img src="/images/logo.png" alt="Logo" className="h-10 w-auto" />
-            <div>
-              <div className="text-xl font-bold text-white">SINOCV</div>
-              <div className="text-xs text-amber-500 tracking-widest">Sinocv | One-stop Shop for Chinese Commercial Vehicles</div>
-            </div>
+            <div className="text-sm text-amber-500 font-medium">One-stop Shop for Chinese Commercial Vehicles</div>
           </a>
 
           {/* Desktop Navigation */}
