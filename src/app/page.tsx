@@ -82,10 +82,10 @@ export default function Home() {
 
       {/* 促销车 */}
       {stockTrucks.length > 0 && (
-        <section className="bg-gray-950 py-16">
+        <section className="bg-gray-950 py-24">
           <div className="container mx-auto px-6">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">促销车</h2>
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">促销车</h2>
               <p className="text-gray-400 text-lg">库存现车 · 即付即发 · 无需等待生产周期</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -114,10 +114,10 @@ export default function Home() {
         </section>
       )}
 
-      <section className="bg-gray-950 py-16">
+      <section className="bg-gray-950 py-24">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">产品中心</h2>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">产品中心</h2>
             <p className="text-gray-400 text-lg">五大品类 · 一站式采购</p>
           </div>
 
@@ -134,19 +134,19 @@ export default function Home() {
       <Advantages />
 
       {/* 公司信息 */}
-      <section className="bg-black py-16">
+      <section className="bg-black py-24">
         <div className="px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-24">关于我们</h2>
+          <div className="text-center">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-32">关于我们</h2>
             {/* Manager */}
             <div className="flex flex-col items-center">
-              <div className="relative mb-6">
+              <div className="relative mb-8">
                 <div className="absolute inset-0 rounded-full bg-amber-500/20 blur-2xl scale-110" />
                 <img src="/images/manager.jpg" alt="李善龙" className="relative w-56 h-56 rounded-full object-cover border-4 border-amber-500/40 shadow-2xl" />
               </div>
-              <h4 className="text-white font-bold text-5xl mb-2">李善龙</h4>
-              <p className="text-amber-400 text-xl font-medium mb-4">总经理 · General Manager</p>
-              <div className="flex flex-wrap justify-center gap-3 text-base text-gray-400 mb-10">
+              <h4 className="text-white font-bold text-5xl mb-3">李善龙</h4>
+              <p className="text-amber-400 text-xl font-medium mb-6">总经理 · General Manager</p>
+              <div className="flex flex-wrap justify-center gap-3 text-base text-gray-400">
                 <span>📧 lishanlong@sinocv.com</span>
                 <span className="text-gray-700">|</span>
                 <span>📱 +86 13001977959</span>
@@ -156,7 +156,7 @@ export default function Home() {
             </div>
             
             {/* Company intro — right below manager */}
-            <h3 className="text-3xl font-bold text-white mt-24 mb-10">🏢 关于 SINOCV</h3>
+            <h3 className="text-3xl font-bold text-white mt-32 mb-10">🏢 关于 SINOCV</h3>
             <p className="text-gray-300 leading-relaxed text-base mb-4">
               <span className="text-amber-400 font-semibold">SINOCV</span> 是一家总部位于香港的专业商用车及工程机械出口贸易公司，为全球客户提供从选型、定制、验车、物流到清关的全链条出口服务。
             </p>
@@ -175,7 +175,7 @@ export default function Home() {
             </p>
             
             {/* HK Certificates — right below */}
-            <h3 className="text-2xl font-bold text-white mt-24 mb-6">企业资质</h3>
+            <h3 className="text-2xl font-bold text-white mt-32 mb-8">企业资质</h3>
             <div className="flex flex-wrap justify-center gap-6">
               <a href="/images/cert-hk-1.jpg" target="_blank" className="rounded-xl overflow-hidden border border-gray-800 hover:border-amber-500/40 transition-all block bg-gray-900 w-full max-w-sm">
                 <img src="/images/cert-hk-1.jpg" alt="香港公司注册证明书" className="w-full h-auto" />
