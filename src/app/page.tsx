@@ -157,16 +157,16 @@ export default function Home() {
             
             {/* Company intro — right below manager */}
             <h3 className="text-3xl font-bold text-white mt-16 mb-6">🏢 About SINOCV</h3>
-            <p style={{marginBottom: '35px', lineHeight: 1}} className="text-gray-300 text-base">
+            <p style={{marginBottom: '35px', lineHeight: 1.5}} className="text-gray-300 text-base">
               <span className="text-amber-400 font-semibold">SINOCV</span> is a Hong Kong-based professional commercial vehicle and construction machinery export company, providing full-chain export services from vehicle selection, customization, inspection, logistics, to customs clearance.
             </p>
-            <p style={{marginBottom: '35px', lineHeight: 1}} className="text-gray-300 text-base">
+            <p style={{marginBottom: '35px', lineHeight: 1.5}} className="text-gray-300 text-base">
               We have established long-term strategic partnerships with <span className="text-white font-medium">SINOTRUK, XCMG, CIMC, and Foton</span>, ensuring every vehicle delivered is factory-original with full warranty and after-sales support.
             </p>
-            <p style={{marginBottom: '35px', lineHeight: 1}} className="text-gray-300 text-base">
+            <p style={{marginBottom: '35px', lineHeight: 1.5}} className="text-gray-300 text-base">
               Our product range covers the full lineup of commercial vehicles including tractor trucks, cargo trucks, dump trucks, mixer trucks, reefer trucks, water trucks, garbage trucks, crane trucks, and aerial work platforms, as well as construction machinery such as excavators, loaders, and mining dump trucks, plus trailers, vans, and mini trucks.
             </p>
-            <p style={{marginBottom: '35px', lineHeight: 1}} className="text-gray-300 text-base">
+            <p style={{marginBottom: '35px', lineHeight: 1.5}} className="text-gray-300 text-base">
               Leveraging Hong Kong's international platform and mainland China's supply chain advantages, SINOCV has successfully exported to over 30 countries and regions across Africa, the Middle East, Southeast Asia, and Central Asia, earning widespread trust from overseas customers.
             </p>
             <p className="mt-12 pt-8 border-t border-gray-800/50 text-gray-400 italic text-base">
