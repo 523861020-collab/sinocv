@@ -82,7 +82,7 @@ export default function Home() {
 
       {/* 促销车 */}
       {stockTrucks.length > 0 && (
-        <section className="bg-gray-950 py-32">
+        <section className="bg-gray-950 py-16">
           <div className="container mx-auto px-6">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Promotions</h2>
@@ -114,7 +114,7 @@ export default function Home() {
         </section>
       )}
 
-      <section className="bg-gray-950 py-32">
+      <section className="bg-gray-950 py-16">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Products</h2>
@@ -134,10 +134,10 @@ export default function Home() {
       <Advantages />
 
       {/* 公司信息 */}
-      <section className="bg-black py-32">
+      <section className="bg-black py-16">
         <div className="px-6">
           <div className="text-center">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-20">About Us</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-10">About Us</h2>
             {/* Manager */}
             <div className="flex flex-col items-center">
               <div className="relative mb-8">
@@ -156,17 +156,17 @@ export default function Home() {
             </div>
             
             {/* Company intro — right below manager */}
-            <h3 className="text-3xl font-bold text-white mt-32 mb-10">🏢 About SINOCV</h3>
-            <p className="text-gray-300 leading-relaxed text-base mb-8">
+            <h3 className="text-3xl font-bold text-white mt-16 mb-6">🏢 About SINOCV</h3>
+            <p className="text-gray-300 leading-relaxed text-base mb-4">
               <span className="text-amber-400 font-semibold">SINOCV</span> is a Hong Kong-based professional commercial vehicle and construction machinery export company, providing full-chain export services from vehicle selection, customization, inspection, logistics, to customs clearance.
             </p>
-            <p className="text-gray-300 leading-relaxed text-base mb-8">
+            <p className="text-gray-300 leading-relaxed text-base mb-4">
               We have established long-term strategic partnerships with <span className="text-white font-medium">SINOTRUK, XCMG, CIMC, and Foton</span>, ensuring every vehicle delivered is factory-original with full warranty and after-sales support.
             </p>
-            <p className="text-gray-300 leading-relaxed text-base mb-8">
+            <p className="text-gray-300 leading-relaxed text-base mb-4">
               Our product range covers the full lineup of commercial vehicles including tractor trucks, cargo trucks, dump trucks, mixer trucks, reefer trucks, water trucks, garbage trucks, crane trucks, and aerial work platforms, as well as construction machinery such as excavators, loaders, and mining dump trucks, plus trailers, vans, and mini trucks.
             </p>
-            <p className="text-gray-300 leading-relaxed text-base mb-8">
+            <p className="text-gray-300 leading-relaxed text-base mb-4">
               Leveraging Hong Kong's international platform and mainland China's supply chain advantages, SINOCV has successfully exported to over 30 countries and regions across Africa, the Middle East, Southeast Asia, and Central Asia, earning widespread trust from overseas customers.
             </p>
             <p className="mt-12 pt-8 border-t border-gray-800/50 text-gray-400 italic text-base">
