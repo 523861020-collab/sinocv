@@ -5,9 +5,9 @@ import Footer from "@/components/Footer";
 import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
-  title: "SINOCV | 卡车·工程机械·Van·挂车 出口专家",
-  description: "专业出口中国重汽重卡、徐工工程机械、中集挂车、福田商用车。牵引车、自卸车、搅拌车、挖掘机、装载机、冷藏车、专用车等全系列。服务非洲、中东、东南亚50+国家。",
-  keywords: "中国重汽, HOWO, SITRAK, 徐工, 中集, 福田, 重卡出口, 牵引车, 自卸车, 搅拌车, 挖掘机, 装载机, 挂车",
+  title: "SINOCV | Trucks · Machinery · Vans · Trailers Export Experts",
+  description: "Professional export of SINOTRUK heavy trucks, XCMG machinery, CIMC trailers, and Foton commercial vehicles. Tractor trucks, dump trucks, mixer trucks, excavators, loaders, reefers, special vehicles. Serving 50+ countries across Africa, Middle East, and Southeast Asia.",
+  keywords: "SINOTRUK, HOWO, SITRAK, XCMG, CIMC, Foton, heavy truck export, tractor truck, dump truck, mixer truck, excavator, loader, trailer",
 };
 
 export default function RootLayout({
