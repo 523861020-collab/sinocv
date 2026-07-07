@@ -134,7 +134,7 @@ export default function Hero() {
                   href="/#contact"
                   className="rounded-md border-2 border-white px-8 py-4 text-lg font-semibold text-white transition-all hover:bg-white hover:text-black"
                 >
-                  立即询价
+                  Get Quote
                 </a>
               </motion.div>
             </motion.div>
