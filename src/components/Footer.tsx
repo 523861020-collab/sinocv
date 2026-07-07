@@ -9,11 +9,11 @@ export default function Footer() {
               <img src="/images/logo.png" alt="Logo" className="h-10 w-auto" />
               <div>
                 <div className="text-xl font-bold text-white">SINOCV</div>
-                <div className="text-xs text-amber-500 tracking-widest">卡车 · 工程机械 · Van · 挂车</div>
+                <div className="text-xs text-amber-500 tracking-widest">Trucks · Machinery · Vans · Trailers</div>
               </div>
             </div>
             <p className="text-gray-400 leading-relaxed mb-6">
-              中国重汽授权出口商，徐工工程机械、中集挂车、福田商用车合作出口，产品覆盖牵引车、自卸车、搅拌车、专用车、工程机械等全系列。
+              Authorized SINOTRUK exporter and partner of XCMG, CIMC, and Foton. Products cover tractor trucks, dump trucks, mixer trucks, special vehicles, construction machinery, and more.
             </p>
             <div className="flex gap-4">
               <a href="#" className="rounded-full bg-gray-800 p-3 text-gray-400 hover:text-amber-500 hover:bg-gray-700 transition-all">
@@ -36,38 +36,38 @@ export default function Footer() {
 
           {/* Products */}
           <div>
-            <h3 className="text-lg font-semibold text-white mb-6">产品中心</h3>
+            <h3 className="text-lg font-semibold text-white mb-6">Products</h3>
             <ul className="space-y-4">
-              <li><a href="#products" className="text-gray-400 hover:text-amber-500 transition-colors">牵引车系列</a></li>
-              <li><a href="#products" className="text-gray-400 hover:text-amber-500 transition-colors">载货车系列</a></li>
-              <li><a href="#products" className="text-gray-400 hover:text-amber-500 transition-colors">自卸车系列</a></li>
-              <li><a href="#products" className="text-gray-400 hover:text-amber-500 transition-colors">搅拌车系列</a></li>
-              <li><a href="#products" className="text-gray-400 hover:text-amber-500 transition-colors">专用车系列</a></li>
-              <li><a href="#products" className="text-gray-400 hover:text-amber-500 transition-colors">挂车系列</a></li>
+              <li><a href="#products" className="text-gray-400 hover:text-amber-500 transition-colors">Tractor Trucks</a></li>
+              <li><a href="#products" className="text-gray-400 hover:text-amber-500 transition-colors">Cargo Trucks</a></li>
+              <li><a href="#products" className="text-gray-400 hover:text-amber-500 transition-colors">Dump Trucks</a></li>
+              <li><a href="#products" className="text-gray-400 hover:text-amber-500 transition-colors">Mixer Trucks</a></li>
+              <li><a href="#products" className="text-gray-400 hover:text-amber-500 transition-colors">Special Vehicles</a></li>
+              <li><a href="#products" className="text-gray-400 hover:text-amber-500 transition-colors">Trailers</a></li>
             </ul>
           </div>
 
           {/* Brands */}
           <div>
-            <h3 className="text-lg font-semibold text-white mb-6">合作品牌</h3>
+            <h3 className="text-lg font-semibold text-white mb-6">Brands</h3>
             <ul className="space-y-4">
-              <li><span className="text-gray-400">🏭 中国重汽 HOWO/SITRAK</span></li>
-              <li><span className="text-gray-400">⚙️ 徐工机械 XCMG</span></li>
-              <li><span className="text-gray-400">🔗 中集挂车 CIMC</span></li>
-              <li><span className="text-gray-400">🚐 福田汽车 Foton</span></li>
+              <li><span className="text-gray-400">🏭 SINOTRUK HOWO/SITRAK</span></li>
+              <li><span className="text-gray-400">⚙️ XCMG Machinery</span></li>
+              <li><span className="text-gray-400">🔗 CIMC Trailers</span></li>
+              <li><span className="text-gray-400">🚐 Foton Motors</span></li>
             </ul>
           </div>
 
           {/* Contact */}
           <div>
-            <h3 className="text-lg font-semibold text-white mb-6">联系方式</h3>
+            <h3 className="text-lg font-semibold text-white mb-6">Contact</h3>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
                 <svg className="h-5 w-5 text-amber-500 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
-                <span className="text-gray-400">中国山东省济南市历城区</span>
+                <span className="text-gray-400">Licheng, Jinan, Shandong, China</span>
               </div>
               <div className="flex items-center gap-3">
                 <svg className="h-5 w-5 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -91,9 +91,9 @@ export default function Footer() {
             © 2024 HOWO Truck Export. All rights reserved.
           </p>
           <div className="flex gap-6">
-            <a href="#" className="text-gray-500 hover:text-amber-500 text-sm transition-colors">隐私政策</a>
-            <a href="#" className="text-gray-500 hover:text-amber-500 text-sm transition-colors">服务条款</a>
-            <a href="#" className="text-gray-500 hover:text-amber-500 text-sm transition-colors">网站地图</a>
+            <a href="#" className="text-gray-500 hover:text-amber-500 text-sm transition-colors">Privacy</a>
+            <a href="#" className="text-gray-500 hover:text-amber-500 text-sm transition-colors">Terms</a>
+            <a href="#" className="text-gray-500 hover:text-amber-500 text-sm transition-colors">Sitemap</a>
           </div>
         </div>
       </div>

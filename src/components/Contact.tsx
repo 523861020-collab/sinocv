@@ -50,10 +50,10 @@ export default function Contact() {
           >
             <p className="mb-4 text-amber-500 tracking-widest text-sm">CONTACT US</p>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              立即询价
+              Get a Quote
             </h2>
             <p className="text-gray-400 text-lg leading-relaxed mb-8">
-              填写以下表单，我们的专业团队将在24小时内为您提供详细的报价方案。
+              Fill out the form below and our team will provide a detailed quotation within 24 hours.
             </p>
             
             <div className="space-y-6">
@@ -65,8 +65,8 @@ export default function Contact() {
                   </svg>
                 </div>
                 <div>
-                  <h4 className="text-white font-semibold mb-1">公司地址</h4>
-                  <p className="text-gray-400">中国山东省济南市历城区</p>
+                  <h4 className="text-white font-semibold mb-1">Address</h4>
+                  <p className="text-gray-400">Licheng District, Jinan, Shandong, China</p>
                 </div>
               </div>
               
@@ -77,7 +77,7 @@ export default function Contact() {
                   </svg>
                 </div>
                 <div>
-                  <h4 className="text-white font-semibold mb-1">电子邮箱</h4>
+                  <h4 className="text-white font-semibold mb-1">Email</h4>
                   <p className="text-gray-400">info@howotruck.com</p>
                 </div>
               </div>
@@ -89,7 +89,7 @@ export default function Contact() {
                   </svg>
                 </div>
                 <div>
-                  <h4 className="text-white font-semibold mb-1">联系电话</h4>
+                  <h4 className="text-white font-semibold mb-1">Phone</h4>
                   <p className="text-gray-400">+86 13001977959</p>
                   <p className="text-gray-400">WhatsApp: +86 13001977959</p>
                 </div>
@@ -106,22 +106,22 @@ export default function Contact() {
             {isSubmitted ? (
               <div className="rounded-xl bg-gray-900 border border-gray-800 p-12 text-center">
                 <div className="text-6xl mb-6">✅</div>
-                <h3 className="text-2xl font-bold text-white mb-4">询价提交成功！</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">Quote Submitted!</h3>
                 <p className="text-gray-400 mb-8">
-                  感谢您的询价，我们的专业团队将在24小时内与您联系。
+                  Thank you for your inquiry. Our team will contact you within 24 hours.
                 </p>
                 <button
                   onClick={() => setIsSubmitted(false)}
                   className="rounded-md bg-amber-500 px-8 py-3 font-semibold text-black hover:bg-amber-400 transition-colors"
                 >
-                  继续询价
+                  Submit Another
                 </button>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="rounded-xl bg-gray-900 border border-gray-800 p-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                   <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-2">姓名 *</label>
+                    <label className="block text-sm font-medium text-gray-400 mb-2">Name *</label>
                     <input
                       type="text"
                       required
@@ -132,7 +132,7 @@ export default function Contact() {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-2">邮箱 *</label>
+                    <label className="block text-sm font-medium text-gray-400 mb-2">Email *</label>
                     <input
                       type="email"
                       required
@@ -143,7 +143,7 @@ export default function Contact() {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-2">电话</label>
+                    <label className="block text-sm font-medium text-gray-400 mb-2">Phone</label>
                     <input
                       type="tel"
                       value={formData.phone}
@@ -153,7 +153,7 @@ export default function Contact() {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-2">公司</label>
+                    <label className="block text-sm font-medium text-gray-400 mb-2">Company</label>
                     <input
                       type="text"
                       value={formData.company}
@@ -163,7 +163,7 @@ export default function Contact() {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-2">国家 *</label>
+                    <label className="block text-sm font-medium text-gray-400 mb-2">Country *</label>
                     <input
                       type="text"
                       required
@@ -174,30 +174,30 @@ export default function Contact() {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-2">感兴趣的产品</label>
+                    <label className="block text-sm font-medium text-gray-400 mb-2">Product Interest</label>
                     <select
                       value={formData.product}
                       onChange={(e) => setFormData({ ...formData, product: e.target.value })}
                       className="w-full rounded-md bg-gray-800 border border-gray-700 px-4 py-3 text-white focus:border-amber-500 focus:outline-none"
                     >
-                      <option value="">请选择产品类型</option>
-                      <option value="tractor">牵引车 (Tractor Truck)</option>
-                      <option value="dump">自卸车 (Dump Truck)</option>
-                      <option value="mixer">搅拌车 (Concrete Mixer)</option>
-                      <option value="tanker">罐式车 (Tank Truck)</option>
-                      <option value="crane">随车吊 (Crane Truck)</option>
+                      <option value="">Select Product Type</option>
+                      <option value="tractor">Tractor Truck</option>
+                      <option value="dump">Dump Truck</option>
+                      <option value="mixer">Concrete Mixer</option>
+                      <option value="tanker">Tank Truck</option>
+                      <option value="crane">Crane Truck</option>
                     </select>
                   </div>
                 </div>
                 
                 <div className="mb-6">
-                  <label className="block text-sm font-medium text-gray-400 mb-2">留言</label>
+                  <label className="block text-sm font-medium text-gray-400 mb-2">Message</label>
                   <textarea
                     rows={4}
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     className="w-full rounded-md bg-gray-800 border border-gray-700 px-4 py-3 text-white focus:border-amber-500 focus:outline-none"
-                    placeholder="请描述您的需求..."
+                    placeholder="Describe your requirements..."
                   />
                 </div>
                 
@@ -206,7 +206,7 @@ export default function Contact() {
                   disabled={isSubmitting}
                   className="w-full rounded-md bg-amber-500 py-4 text-lg font-semibold text-black transition-all hover:bg-amber-400 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  {isSubmitting ? '提交中...' : '提交询价'}
+                  {isSubmitting ? 'Submitting...' : 'Submit Inquiry'}
                 </button>
               </form>
             )}

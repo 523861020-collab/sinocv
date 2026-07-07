@@ -40,10 +40,10 @@ export default function Advantages() {
         >
           <p className="mb-4 text-amber-500 tracking-widest text-sm">WHY CHOOSE US</p>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            我们的优势
+            Our Advantages
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed">
-            四大品牌一站式采购，重汽重卡 + 徐工机械 + 中集挂车 + 福田商用车
+            4 Major Brands · One-Stop Sourcing — SINOTRUK + XCMG + CIMC + Foton
           </p>
         </motion.div>
 
