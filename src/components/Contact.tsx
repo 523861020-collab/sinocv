@@ -39,7 +39,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="bg-black py-32">
+    <section id="contact" style={{paddingTop: '1.5rem', paddingBottom: '1.5rem'}} className="bg-black">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Left: Info */}

@@ -29,7 +29,7 @@ const iconMap: Record<string, React.ReactNode> = {
 
 export default function Advantages() {
   return (
-    <section className="bg-black py-32">
+    <section style={{paddingTop: '1.5rem', paddingBottom: '1.5rem'}} className="bg-black">
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <motion.div
