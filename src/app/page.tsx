@@ -176,12 +176,12 @@ export default function Home() {
             
             {/* HK Certificates — right below */}
             <h3 className="text-2xl font-bold text-white mt-12 mb-6">企业资质</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
-              <a href="/images/cert-hk-1.jpg" target="_blank" className="rounded-xl overflow-hidden border border-gray-800 hover:border-amber-500/40 transition-all block bg-gray-900">
+            <div className="flex flex-wrap justify-center gap-6">
+              <a href="/images/cert-hk-1.jpg" target="_blank" className="rounded-xl overflow-hidden border border-gray-800 hover:border-amber-500/40 transition-all block bg-gray-900 w-full max-w-sm">
                 <img src="/images/cert-hk-1.jpg" alt="香港公司注册证明书" className="w-full h-auto" />
                 <div className="px-3 py-2 text-center text-xs text-gray-500">香港公司注册证明书</div>
               </a>
-              <a href="/images/cert-hk-2.jpg" target="_blank" className="rounded-xl overflow-hidden border border-gray-800 hover:border-amber-500/40 transition-all block bg-gray-900">
+              <a href="/images/cert-hk-2.jpg" target="_blank" className="rounded-xl overflow-hidden border border-gray-800 hover:border-amber-500/40 transition-all block bg-gray-900 w-full max-w-sm">
                 <img src="/images/cert-hk-2.jpg" alt="香港商业登记证" className="w-full h-auto" />
                 <div className="px-3 py-2 text-center text-xs text-gray-500">香港商业登记证</div>
               </a>
