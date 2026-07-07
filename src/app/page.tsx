@@ -156,7 +156,7 @@ export default function Home() {
             </div>
             
             {/* Company intro — right below manager */}
-            <h3 className="text-3xl font-bold text-white mt-8 mb-8">🏢 关于 SINOCV</h3>
+            <h3 className="text-3xl font-bold text-white mt-20 mb-10">🏢 关于 SINOCV</h3>
             <p className="text-gray-300 leading-relaxed text-base mb-4">
               <span className="text-amber-400 font-semibold">SINOCV</span> 是一家总部位于香港的专业商用车及工程机械出口贸易公司，为全球客户提供从选型、定制、验车、物流到清关的全链条出口服务。
             </p>
@@ -175,7 +175,7 @@ export default function Home() {
             </p>
             
             {/* HK Certificates — right below */}
-            <h3 className="text-2xl font-bold text-white mt-12 mb-6">企业资质</h3>
+            <h3 className="text-2xl font-bold text-white mt-20 mb-6">企业资质</h3>
             <div className="flex flex-wrap justify-center gap-6">
               <a href="/images/cert-hk-1.jpg" target="_blank" className="rounded-xl overflow-hidden border border-gray-800 hover:border-amber-500/40 transition-all block bg-gray-900 w-full max-w-sm">
                 <img src="/images/cert-hk-1.jpg" alt="香港公司注册证明书" className="w-full h-auto" />
