@@ -170,8 +170,7 @@ export default function Home() {
               Leveraging Hong Kong's international platform and mainland China's supply chain advantages, SINOCV has successfully exported to over 30 countries and regions across Africa, the Middle East, Southeast Asia, and Central Asia, earning widespread trust from overseas customers.
             </p>
             <p className="mt-12 pt-8 border-t border-gray-800/50 text-gray-400 italic text-base">
-              🎯 <span className="text-amber-400 font-medium">Our Mission:</span>
-              Customer-focused, quality-driven — to provide the finest Chinese commercial vehicles and construction machinery to global customers and become a trusted long-term partner.
+              🎯 <span className="text-amber-400 font-medium">Our Mission:</span> Customer-focused, quality-driven — to provide the finest Chinese commercial vehicles and construction machinery to global customers and become a trusted long-term partner.
             </p>
             
             {/* HK Certificates — right below */}
