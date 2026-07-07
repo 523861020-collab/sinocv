@@ -29,14 +29,14 @@ const iconMap: Record<string, React.ReactNode> = {
 
 export default function Advantages() {
   return (
-    <section className="bg-black py-24">
+    <section className="bg-black py-32">
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-16 text-center"
+          className="mb-20 text-center"
         >
           <p className="mb-4 text-amber-500 tracking-widest text-sm">WHY CHOOSE US</p>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
