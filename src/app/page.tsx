@@ -82,7 +82,7 @@ export default function Home() {
 
       {/* 促销车 */}
       {stockTrucks.length > 0 && (
-        <section style={{paddingTop: '5rem', paddingBottom: '5rem'}} className="bg-gray-950">
+        <section style={{paddingTop: '1rem', paddingBottom: '1rem'}} className="bg-gray-950">
           <div className="container mx-auto px-6">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Promotions</h2>
@@ -114,7 +114,7 @@ export default function Home() {
         </section>
       )}
 
-      <section style={{paddingTop: '5rem', paddingBottom: '5rem'}} className="bg-gray-950">
+      <section style={{paddingTop: '1rem', paddingBottom: '1rem'}} className="bg-gray-950">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Products</h2>
@@ -134,7 +134,7 @@ export default function Home() {
       <Advantages />
 
       {/* 公司信息 */}
-      <section style={{paddingTop: '5rem', paddingBottom: '5rem'}} className="bg-black">
+      <section style={{paddingTop: '1rem', paddingBottom: '1rem'}} className="bg-black">
         <div className="px-6">
           <div className="text-center">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-12">About Us</h2>
