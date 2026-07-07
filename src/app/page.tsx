@@ -40,7 +40,7 @@ function ZoneWindow({ zone }: { zone: typeof zones[0] }) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
-            className="absolute inset-0 h-full w-full object-cover"
+            className="absolute inset-0 h-full w-full object-cover" loading="lazy"
           />
         </AnimatePresence>
         <div className="absolute top-3 left-3 rounded-full bg-amber-500 px-2.5 py-0.5 text-xs font-semibold text-black">
@@ -92,7 +92,7 @@ export default function Home() {
               {stockTrucks.map(t => (
                 <div key={t.id} className="rounded-xl bg-gray-900 border border-red-500/20 overflow-hidden group hover:border-red-500/50 transition-all">
                   <div className="relative h-52 overflow-hidden bg-gray-800">
-                    <img src={t.image} alt={t.name} className="h-full w-full object-cover" />
+                    <img src={t.image} alt={t.name} className="h-full w-full object-cover" loading="lazy" />
                     <div className="absolute top-3 left-3 rounded-full bg-red-500 px-2.5 py-0.5 text-xs font-semibold text-white">
                       Hot
                     </div>
