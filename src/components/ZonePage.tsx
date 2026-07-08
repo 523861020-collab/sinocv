@@ -98,13 +98,13 @@ export default function ZonePage({ title, titleEn, icon, brand, trucks, bannerIm
         const cat = categories.find(c => c.id === catId);
         return (
           <section key={catId} className="py-16">
-            <div className="px-4">
+            <div className="px-6">
               <div className="flex items-center gap-3 mb-10">
                 <span className="text-3xl">{cat?.icon}</span>
                 <h2 className="text-2xl font-bold text-white">{cat?.name}</h2>
                 <span className="text-gray-500 text-sm">{cat?.nameEn}</span>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {catTrucks.map((truck, i) => (
                   <ProductCard key={truck.id} truck={truck} index={i} />
                 ))}
