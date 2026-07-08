@@ -17,6 +17,7 @@ export default function ProductSlider() {
   return (
     <section id="products" className="bg-gray-950 py-24">
       <div className="px-6 lg:px-16 max-w-[1920px] mx-auto">
+        <div className="max-w-6xl mx-auto w-full">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -26,10 +27,10 @@ export default function ProductSlider() {
         >
           <p className="mb-4 text-amber-500 tracking-widest text-sm">OUR PRODUCTS</p>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            产品中心
+            Products
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed">
-            牵引车 · 载货车 · 冷藏车 · 自卸车 · 搅拌车 · 专用车 · 挂车 · 工程机械 · 轻型商用车
+            Tractor · Cargo · Reefer · Dump · Mixer · Special · Trailer · Machinery · Light
           </p>
         </motion.div>
 
@@ -49,7 +50,6 @@ export default function ProductSlider() {
 
         {/* Product Cards Slider */}
         <div className="relative">
-          {/* Navigation Buttons */}
           <button
             onClick={() => scroll('left')}
             className="absolute left-0 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white/10 p-3 text-white backdrop-blur-sm transition-all hover:bg-white/20"
@@ -67,7 +67,6 @@ export default function ProductSlider() {
             </svg>
           </button>
 
-          {/* Cards Container */}
           <div
             ref={scrollRef}
             className="flex gap-6 overflow-x-auto scrollbar-hide pb-4"
@@ -82,7 +81,6 @@ export default function ProductSlider() {
                 transition={{ delay: index * 0.1 }}
                 className="min-w-[350px] flex-shrink-0 rounded-xl bg-gray-900 border border-gray-800 overflow-hidden group hover:border-amber-500/50 transition-all duration-300"
               >
-                {/* Image */}
                 <div className="relative h-56 overflow-hidden bg-gray-800">
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent z-10" />
                   <img
@@ -90,7 +88,6 @@ export default function ProductSlider() {
                     alt={truck.name}
                     className="h-full w-full object-cover"
                   />
-                  {/* Category Badge */}
                   <div className="absolute top-4 left-4 z-20 rounded-full bg-amber-500 px-3 py-1 text-xs font-semibold text-black">
                     {categories.find(c => c.id === truck.category)?.name}
                   </div>
@@ -100,8 +97,6 @@ export default function ProductSlider() {
                     </div>
                   )}
                 </div>
-
-                {/* Content */}
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-white mb-1 group-hover:text-amber-500 transition-colors">
                     {truck.name}
@@ -109,20 +104,14 @@ export default function ProductSlider() {
                   <p className="text-amber-500 text-sm mb-3">{truck.brand}</p>
                   <div className="space-y-2 mb-4">
                     <div className="flex justify-between text-sm">
-                      <span className="text-gray-500">驱动</span>
+                      <span className="text-gray-500">Drive</span>
                       <span className="text-gray-300">{truck.driveType}</span>
                     </div>
                     <div className="flex justify-between text-sm">
-                      <span className="text-gray-500">发动机</span>
+                      <span className="text-gray-500">Engine</span>
                       <span className="text-gray-300">{truck.engine}</span>
                     </div>
-                    <div className="flex justify-between text-sm">
-                      <span className="text-gray-500">价格</span>
-                      <span className="text-amber-500 font-semibold">{truck.price}</span>
-                    </div>
                   </div>
-
-                  {/* Features */}
                   <div className="flex flex-wrap gap-2 mb-4">
                     {truck.features.slice(0, 3).map((feature, i) => (
                       <span key={i} className="rounded-full bg-gray-800 px-3 py-1 text-xs text-gray-400">
@@ -130,18 +119,17 @@ export default function ProductSlider() {
                       </span>
                     ))}
                   </div>
-
-                  {/* CTA */}
                   <a
                     href="https://wa.me/8619103781257" target="_blank"
                     className="block w-full rounded-md bg-amber-500/10 py-3 text-center text-amber-500 font-semibold transition-all hover:bg-amber-500 hover:text-black"
                   >
-                    获取报价
+                    Get Quote
                   </a>
                 </div>
               </motion.div>
             ))}
           </div>
+        </div>
         </div>
       </div>
     </section>

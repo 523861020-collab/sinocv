@@ -96,6 +96,7 @@ export default function GlobalMarkets() {
             </motion.div>
           ))}
         </div>
+          </div>
       </div>
     </section>
   );
