@@ -12,7 +12,7 @@ export default function MiningPage() {
       brand={zone.brand}
       description={zone.description}
       trucks={trucks.filter(t => zone.categories.includes(t.category))}
-      bannerImage="/images/hero-mining.jpg"
+      bannerImage="/images/hero-mining-banner.jpg"
     />
   );
 }
