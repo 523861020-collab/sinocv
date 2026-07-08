@@ -40,7 +40,7 @@ export default function Advantages() {
           className="mb-20 text-center"
         >
           <p className="mb-4 text-amber-500 tracking-widest text-sm">WHY CHOOSE US</p>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Our Advantages</h2>
+          <h2 style={{color: 'red', fontSize: '4rem'}} className="font-bold text-white mb-4">OUR ADVANTAGES TEST</h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed">
             4 Major Brands · One-Stop Sourcing — SINOTRUK + XCMG + CIMC + Foton
           </p>
