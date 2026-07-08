@@ -8,6 +8,7 @@ export interface Truck {
   engine: string;
   price: string;
   image: string;
+  images?: string[];
   features: string[];
 }
 
@@ -22,7 +23,8 @@ export const trucks: Truck[] = [
     driveType: '6×4',
     engine: '曼 MC13 / MC11',
     price: '$35,000 - $55,000',
-    image: '/images/tractor-2.jpg?v=2',
+    image: '/images/sitrak-12.jpg',
+    images: ['/images/sitrak-12.jpg', '/images/sitrak-13.jpg', '/images/sitrak-14.jpg'],
     features: ['430HP · 480HP · 540HP', '曼发动机', '采埃孚变速箱', '豪华驾驶室']
   },
   {
@@ -34,7 +36,8 @@ export const trucks: Truck[] = [
     driveType: '6×4',
     engine: '潍柴 / 曼',
     price: '$28,000 - $42,000',
-    image: '/images/tractor-3.jpg',
+    image: '/images/howo-15.jpg',
+    images: ['/images/howo-15.jpg', '/images/howo-16.jpg', '/images/howo-17.jpg'],
     features: ['340HP · 380HP · 400HP · 430HP', '潍柴/曼发动机可选', '高顶双卧铺', 'ABS+空调']
   },
 
