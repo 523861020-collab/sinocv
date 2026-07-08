@@ -69,12 +69,7 @@ export default function Advantages() {
         </div>
 
         {/* Global Map */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mt-16 text-center"
-        >
+        <div className="mt-16 text-center">
           <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">Export Network</h3>
           <p className="text-gray-400 mb-8">Serving 50+ Countries Across Africa, Middle East & Southeast Asia</p>
           <div className="rounded-xl overflow-hidden border border-gray-800">
@@ -82,10 +77,9 @@ export default function Advantages() {
               src="/images/map-global.jpg"
               alt="SINOCV Global Export Network"
               className="w-full object-cover"
-              loading="lazy"
             />
           </div>
-        </motion.div>
+        </div>
 
         {/* Stats */}
         <motion.div
