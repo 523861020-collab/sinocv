@@ -77,12 +77,14 @@ export default function Advantages() {
             overflow: 'hidden',
             border: '1px solid #1f2937',
             backgroundColor: '#111827',
-            minHeight: '200px',
+            maxWidth: '900px',
+            marginLeft: 'auto',
+            marginRight: 'auto',
           }}>
             <img
               src="/images/map-global.jpg"
               alt="SINOCV Global Export Network"
-              style={{width: '100%', display: 'block'}}
+              style={{width: '100%', height: 'auto', maxHeight: '300px', display: 'block', objectFit: 'contain'}}
             />
           </div>
         </div>
