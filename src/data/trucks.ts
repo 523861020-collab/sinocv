@@ -50,7 +50,7 @@ export const trucks: Truck[] = [
     engine: '潍柴',
     price: '$30,000 - $40,000',
     image: '/images/howo-nx-1.jpg',
-    images: ['/images/howo-nx-1.jpg', '/images/howo-nx-2.jpg'],
+    images: ['/images/howo-nx-1.jpg', '/images/howo-nx-2.jpg', '/images/howo-nx-3.jpg'],
     features: ['380HP · 400HP · 430HP', '潍柴发动机', '高顶双卧铺', 'ABS+空调']
   },
 
