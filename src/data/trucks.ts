@@ -366,7 +366,7 @@ export const zones = [
   {
     id: 'light',
     title: '轻型商用车专区',
-    titleEn: 'Light Commercial Vehicles',
+    titleEn: 'SINOTRUK Light Vehicles',
     icon: '🚐',
     brand: '中国重汽先锋官',
     description: 'Van 先锋官 · 微卡 · 城市物流配送',
