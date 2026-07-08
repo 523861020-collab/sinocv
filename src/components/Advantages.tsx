@@ -93,7 +93,7 @@ export default function Advantages() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8"
+          className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-8"
         >
           {[
             { number: '50+', label: 'Export Countries' },
