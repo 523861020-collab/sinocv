@@ -54,7 +54,7 @@ export const trucks: Truck[] = [
     features: ['380HP · 400HP · 430HP', '潍柴发动机', '高顶双卧铺', 'ABS+空调']
   },
 
-  // ===== 自卸车 =====
+  // ===== 载货车 =====
   {
     id: 'howo-tx-cargo-340',
     name: 'HOWO TX 340 载货车',
@@ -94,6 +94,19 @@ export const trucks: Truck[] = [
     price: '$35,000 - $45,000',
     image: '/images/dump-howo.jpg',
     features: ['加强型货箱', '液压举升', '矿山专用轮胎', '防护网']
+  },
+  {
+    id: 'sitrak-dump',
+    name: '汕德卡 6×4 自卸车',
+    category: 'dump',
+    brand: '中国重汽',
+    horsepower: 440,
+    driveType: '6×4',
+    engine: '曼 MC13.440',
+    price: '$40,000 - $52,000',
+    image: '/images/sitrak-dump-1.jpg',
+    images: ['/images/sitrak-dump-1.jpg', '/images/sitrak-dump-2.jpg', '/images/sitrak-dump-3.jpg'],
+    features: ['曼发动机', '加强型货箱', '液压举升', '矿山专用']
   },
 
   // ===== 搅拌车 =====
