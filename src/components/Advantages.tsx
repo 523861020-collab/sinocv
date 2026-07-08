@@ -30,7 +30,7 @@ const iconMap: Record<string, React.ReactNode> = {
 export default function Advantages() {
   return (
     <section style={{paddingTop: '1.5rem', paddingBottom: '1.5rem'}} className="bg-black">
-      <div className="container mx-auto px-6">
+      <div className="px-6 lg:px-16 max-w-[1920px] mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

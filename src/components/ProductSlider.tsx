@@ -16,7 +16,7 @@ export default function ProductSlider() {
 
   return (
     <section id="products" className="bg-gray-950 py-24">
-      <div className="container mx-auto px-6">
+      <div className="px-6 lg:px-16 max-w-[1920px] mx-auto">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

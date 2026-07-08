@@ -22,7 +22,7 @@ const catalogs = [
 export default function DownloadCatalog() {
   return (
     <section id="catalog" className="bg-black py-24">
-      <div className="container mx-auto px-6">
+      <div className="px-6 lg:px-16 max-w-[1920px] mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
