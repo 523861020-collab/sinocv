@@ -136,6 +136,19 @@ export const trucks: Truck[] = [
     image: '/images/mixer-sitrak.jpg',
     features: ['12方搅拌罐', '恒速控制系统', '耐磨叶片', '自动润滑']
   },
+  {
+    id: 'sitrak-mixer',
+    name: '汕德卡 6×4 搅拌车',
+    category: 'mixer',
+    brand: '中国重汽',
+    horsepower: 440,
+    driveType: '6×4',
+    engine: '曼 MC13.440',
+    price: '$48,000 - $60,000',
+    image: '/images/sitrak-mixer-1.jpg',
+    images: ['/images/sitrak-mixer-1.jpg', '/images/sitrak-mixer-2.jpg', '/images/sitrak-mixer-3.jpg'],
+    features: ['12方搅拌罐', '恒速控制', '耐磨叶片', '自动润滑']
+  },
 
   // ===== 水泥罐车 =====
   {
