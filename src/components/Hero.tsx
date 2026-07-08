@@ -21,9 +21,9 @@ const slides = [
   },
   {
     image: '/images/hero-van.jpg',
-    title: 'Foton Cargo Van',
-    subtitle: 'Foton · Urban Logistics Expert',
-    description: 'Toano Van, Forland Mini Truck — fuel-efficient, agile, and reliable',
+    title: 'SINOTRUK Pioneer Van',
+    subtitle: 'SINOTRUK · Urban Logistics Expert',
+    description: 'Howo Pioneer — fuel-efficient, spacious, and reliable for cargo delivery',
     link: '/light'
   },
   {

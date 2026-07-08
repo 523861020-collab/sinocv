@@ -368,8 +368,8 @@ export const zones = [
     title: '轻型商用车专区',
     titleEn: 'Light Commercial Vehicles',
     icon: '🚐',
-    brand: '福田 Foton',
-    description: 'Van 封闭货车 · 微卡 · 城市物流配送',
+    brand: '中国重汽 SINOTRUK',
+    description: 'Van 先锋官 · 微卡 · 城市物流配送',
     categories: ['light'],
     color: 'from-green-500/20 to-transparent'
   },
@@ -389,7 +389,7 @@ export const advantages = [
   {
     title: '品牌齐全',
     titleEn: 'Full Brand Portfolio',
-    description: '中国重汽、徐工机械、中集挂车、福田商用车——四大品牌一站式采购',
+    description: '中国重汽、徐工机械、中集挂车、先锋官——四大品牌一站式采购',
     icon: 'shield'
   },
   {
