@@ -53,14 +53,14 @@ function Lightbox({ images, onClose }: { images: string[]; onClose: () => void }
   const [idx, setIdx] = useState(0);
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm" onClick={onClose}>
-      <button onClick={(e) => { e.stopPropagation(); onClose(); }} className="absolute top-4 right-4 z-50 rounded-full bg-white/10 p-3 text-white hover:bg-white/20 text-xl">✕</button>
+      <button onClick={(e) => { e.stopPropagation(); onClose(); }} className="absolute top-4 right-6 z-50 rounded-full bg-white/10 p-3 text-white hover:bg-white/20 text-xl">✕</button>
+      <img src={images[idx]} alt="" className="max-h-[90vh] max-w-[85vw] object-contain" onClick={(e) => e.stopPropagation()} />
       {images.length > 1 && (
         <>
-          <button onClick={(e) => { e.stopPropagation(); setIdx(i => (i - 1 + images.length) % images.length); }} className="absolute left-4 z-50 rounded-full bg-white/10 p-4 text-white hover:bg-white/20 text-2xl">◀</button>
-          <button onClick={(e) => { e.stopPropagation(); setIdx(i => (i + 1) % images.length); }} className="absolute right-4 z-50 rounded-full bg-white/10 p-4 text-white hover:bg-white/20 text-2xl">▶</button>
+          <button onClick={(e) => { e.stopPropagation(); setIdx(i => (i - 1 + images.length) % images.length); }} className="absolute left-[5%] top-1/2 -translate-y-1/2 z-50 rounded-full bg-white/10 p-3 text-white hover:bg-white/20 text-xl">◀</button>
+          <button onClick={(e) => { e.stopPropagation(); setIdx(i => (i + 1) % images.length); }} className="absolute right-[5%] top-1/2 -translate-y-1/2 z-50 rounded-full bg-white/10 p-3 text-white hover:bg-white/20 text-xl">▶</button>
         </>
       )}
-      <img src={images[idx]} alt="" className="max-h-[90vh] max-w-[90vw] object-contain" onClick={(e) => e.stopPropagation()} />
       <div className="absolute bottom-6 left-1/2 z-50 flex -translate-x-1/2 gap-2">
         {images.map((_, i) => <div key={i} className={`h-2 w-2 rounded-full ${i === idx ? 'bg-amber-500' : 'bg-white/40'}`} />)}
       </div>
