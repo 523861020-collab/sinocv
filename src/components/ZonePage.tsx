@@ -52,7 +52,7 @@ function ProductCard({ truck, index, onOpen }: { truck: Truck; index: number; on
 function Lightbox({ images, onClose }: { images: string[]; onClose: () => void }) {
   const [idx, setIdx] = useState(0);
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black/70 backdrop-blur-md" onClick={onClose}>
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black/50 backdrop-blur-md" onClick={onClose}>
       <button onClick={(e) => { e.stopPropagation(); onClose(); }} className="absolute top-4 right-6 z-50 rounded-full bg-white/10 p-3 text-white hover:bg-white/20 text-xl">✕</button>
       <img src={images[idx]} alt="" className="max-h-[75vh] max-w-[90vw] object-contain rounded-lg shadow-2xl" onClick={(e) => e.stopPropagation()} />
       {images.length > 1 && (
