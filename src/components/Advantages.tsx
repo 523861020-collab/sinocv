@@ -65,27 +65,38 @@ export default function Advantages() {
         </div>
 
         {/* Global Export Network Map */}
-        <div style={{marginTop: '4rem', textAlign: 'center'}}>
+        <div style={{marginTop: '4rem', textAlign: 'center', position: 'relative'}}>
           <h3 style={{fontSize: '1.75rem', fontWeight: 'bold', color: '#fff', marginBottom: '0.5rem'}}>
             Export Network
           </h3>
           <p style={{color: '#9ca3af', marginBottom: '2rem', fontSize: '1.1rem'}}>
             Serving 50+ Countries Across Africa, Middle East & Southeast Asia
           </p>
-          <div style={{
-            borderRadius: '0.75rem',
-            overflow: 'hidden',
-            border: '1px solid #1f2937',
-            backgroundColor: '#111827',
-            maxWidth: '900px',
-            marginLeft: 'auto',
-            marginRight: 'auto',
-          }}>
-            <img
-              src="/images/map-global.jpg"
-              alt="SINOCV Global Export Network"
-              style={{width: '100%', height: 'auto', maxHeight: '300px', display: 'block', objectFit: 'contain'}}
-            />
+          <div style={{position: 'relative', maxWidth: '900px', marginLeft: 'auto', marginRight: 'auto'}}>
+            {/* Left fade */}
+            <div style={{
+              position: 'absolute', left: 0, top: 0, bottom: 0, width: '60px',
+              background: 'linear-gradient(to right, #000 0%, transparent 100%)',
+              zIndex: 2, pointerEvents: 'none',
+            }} />
+            {/* Right fade */}
+            <div style={{
+              position: 'absolute', right: 0, top: 0, bottom: 0, width: '60px',
+              background: 'linear-gradient(to left, #000 0%, transparent 100%)',
+              zIndex: 2, pointerEvents: 'none',
+            }} />
+            <div style={{
+              borderRadius: '0.75rem',
+              overflow: 'hidden',
+              border: '1px solid #1f2937',
+              backgroundColor: '#111827',
+            }}>
+              <img
+                src="/images/map-global.jpg"
+                alt="SINOCV Global Export Network"
+                style={{width: '100%', height: 'auto', maxHeight: '300px', display: 'block', objectFit: 'contain'}}
+              />
+            </div>
           </div>
         </div>
 
