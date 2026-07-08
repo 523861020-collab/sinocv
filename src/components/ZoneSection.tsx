@@ -137,7 +137,6 @@ export default function ZoneSection({ zone, trucks }: ZoneSectionProps) {
           </div>
         </div>
       </div>
-      </div>
     </section>
   );
 }

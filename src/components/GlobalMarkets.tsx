@@ -97,7 +97,6 @@ export default function GlobalMarkets() {
           ))}
         </div>
       </div>
-      </div>
     </section>
   );
 }
