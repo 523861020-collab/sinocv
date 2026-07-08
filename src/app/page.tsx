@@ -76,8 +76,7 @@ export default function Home() {
       {stockTrucks.length > 0 && (
         <section style={{paddingTop: '1.5rem', paddingBottom: '1.5rem'}} className="bg-gray-950">
           <div className="px-6 lg:px-16 max-w-[1920px] mx-auto">
-            <div className="max-w-6xl mx-auto w-full">
-              <div className="text-center mb-16">
+          <div className="text-center mb-16">
                 <h2 className="text-4xl md:text-5xl font-bold text-white mb-1">Promotions</h2>
                 <p className="text-gray-400 text-lg">In-Stock · Ready to Ship · No Production Wait</p>
               </div>

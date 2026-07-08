@@ -7,8 +7,6 @@ export default function GlobalMarkets() {
   return (
     <section id="markets" className="bg-gray-950 py-24">
       <div className="px-6 lg:px-16 max-w-[1920px] mx-auto">
-        <div className="max-w-6xl mx-auto w-full">
-        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -17,14 +15,13 @@ export default function GlobalMarkets() {
         >
           <p className="mb-4 text-amber-500 tracking-widest text-sm">GLOBAL REACH</p>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            全球市场
+            Global Markets
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed">
-            产品远销非洲、中东、东南亚、中亚等50多个国家和地区
+            Products exported to 50+ countries across Africa, Middle East, Southeast Asia & Central Asia
           </p>
         </motion.div>
 
-        {/* World Map Placeholder */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -32,20 +29,17 @@ export default function GlobalMarkets() {
           className="mb-16 rounded-2xl bg-gray-900 border border-gray-800 p-8 md:p-12"
         >
           <div className="relative aspect-[2/1] bg-gray-800/50 rounded-xl overflow-hidden">
-            {/* Simplified world map using CSS */}
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="text-center">
                 <div className="text-8xl mb-4">🌍</div>
-                <p className="text-gray-500 text-lg">我们的产品覆盖全球主要市场</p>
+                <p className="text-gray-500 text-lg">Our products cover major global markets</p>
               </div>
             </div>
-            
-            {/* Market dots */}
             {[
-              { top: '35%', left: '20%', label: '非洲' },
-              { top: '30%', left: '55%', label: '中东' },
-              { top: '45%', left: '75%', label: '东南亚' },
-              { top: '25%', left: '60%', label: '中亚' }
+              { top: '35%', left: '20%', label: 'Africa' },
+              { top: '30%', left: '55%', label: 'Middle East' },
+              { top: '45%', left: '75%', label: 'Southeast Asia' },
+              { top: '25%', left: '60%', label: 'Central Asia' }
             ].map((pos, i) => (
               <motion.div
                 key={i}
@@ -68,7 +62,6 @@ export default function GlobalMarkets() {
           </div>
         </motion.div>
 
-        {/* Market Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {markets.map((market, index) => (
             <motion.div
@@ -82,7 +75,7 @@ export default function GlobalMarkets() {
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-2xl font-bold text-white">{market.region}</h3>
                 <span className="rounded-full bg-amber-500/10 px-3 py-1 text-amber-500 font-semibold">
-                  {market.count}+ 台
+                  {market.count}+ Units
                 </span>
               </div>
               <div className="space-y-2">
@@ -96,7 +89,6 @@ export default function GlobalMarkets() {
             </motion.div>
           ))}
         </div>
-          </div>
       </div>
     </section>
   );
