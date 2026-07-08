@@ -52,18 +52,18 @@ function ProductCard({ truck, index, onOpen }: { truck: Truck; index: number; on
 function Lightbox({ images, onClose }: { images: string[]; onClose: () => void }) {
   const [idx, setIdx] = useState(0);
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm" onClick={onClose}>
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black/70 backdrop-blur-md" onClick={onClose}>
       <button onClick={(e) => { e.stopPropagation(); onClose(); }} className="absolute top-4 right-6 z-50 rounded-full bg-white/10 p-3 text-white hover:bg-white/20 text-xl">✕</button>
-      <img src={images[idx]} alt="" className="max-h-[90vh] max-w-[85vw] object-contain" onClick={(e) => e.stopPropagation()} />
+      <img src={images[idx]} alt="" className="max-h-[75vh] max-w-[90vw] object-contain rounded-lg shadow-2xl" onClick={(e) => e.stopPropagation()} />
       {images.length > 1 && (
-        <>
-          <button onClick={(e) => { e.stopPropagation(); setIdx(i => (i - 1 + images.length) % images.length); }} className="absolute left-[5%] top-1/2 -translate-y-1/2 z-50 rounded-full bg-white/10 p-3 text-white hover:bg-white/20 text-xl">◀</button>
-          <button onClick={(e) => { e.stopPropagation(); setIdx(i => (i + 1) % images.length); }} className="absolute right-[5%] top-1/2 -translate-y-1/2 z-50 rounded-full bg-white/10 p-3 text-white hover:bg-white/20 text-xl">▶</button>
-        </>
+        <div className="mt-4 flex items-center gap-4 z-50">
+          <button onClick={(e) => { e.stopPropagation(); setIdx(i => (i - 1 + images.length) % images.length); }} className="rounded-full bg-white/10 px-4 py-2 text-white hover:bg-white/30 text-lg">◀ Prev</button>
+          <div className="flex gap-2">
+            {images.map((_, i) => <div key={i} className={`h-2 w-2 rounded-full ${i === idx ? 'bg-amber-500' : 'bg-white/40'}`} />)}
+          </div>
+          <button onClick={(e) => { e.stopPropagation(); setIdx(i => (i + 1) % images.length); }} className="rounded-full bg-white/10 px-4 py-2 text-white hover:bg-white/30 text-lg">Next ▶</button>
+        </div>
       )}
-      <div className="absolute bottom-6 left-1/2 z-50 flex -translate-x-1/2 gap-2">
-        {images.map((_, i) => <div key={i} className={`h-2 w-2 rounded-full ${i === idx ? 'bg-amber-500' : 'bg-white/40'}`} />)}
-      </div>
     </motion.div>
   );
 }
