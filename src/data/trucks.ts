@@ -22,7 +22,7 @@ export const trucks: Truck[] = [
     driveType: '6×4',
     engine: '曼 MC13 / MC11',
     price: '$35,000 - $55,000',
-    image: '/images/tractor-2.jpg',
+    image: '/images/tractor-2.jpg?v=2',
     features: ['430HP · 480HP · 540HP', '曼发动机', '采埃孚变速箱', '豪华驾驶室']
   },
   {
@@ -327,7 +327,7 @@ export const stockTrucks: Truck[] = [
     driveType: '6×4',
     engine: '曼 MC13.440',
     price: '',
-    image: '/images/tractor-2.jpg',
+    image: '/images/tractor-2.jpg?v=2',
     features: ['已到港', '白色', '豪华驾驶室', '即付即发']
   }
 ];
