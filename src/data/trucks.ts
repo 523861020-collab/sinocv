@@ -84,15 +84,16 @@ export const trucks: Truck[] = [
 
   // ===== 自卸车 =====
   {
-    id: 'howo-8x4-dump-380',
-    name: 'HOWO 8×4 自卸车',
+    id: 'howo-dump',
+    name: '豪沃 TX 6×4 自卸车',
     category: 'dump',
     brand: '中国重汽',
-    horsepower: 380,
-    driveType: '8×4',
-    engine: '潍柴 WP12.380E62',
-    price: '$35,000 - $45,000',
-    image: '/images/dump-howo.jpg',
+    horsepower: 400,
+    driveType: '6×4',
+    engine: '潍柴 WP12.400E62',
+    price: '$38,000 - $48,000',
+    image: '/images/howo-dump-1.jpg',
+    images: ['/images/howo-dump-1.jpg', '/images/howo-dump-2.jpg', '/images/howo-dump-3.jpg'],
     features: ['加强型货箱', '液压举升', '矿山专用轮胎', '防护网']
   },
   {
