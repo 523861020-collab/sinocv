@@ -162,7 +162,7 @@ export const trucks: Truck[] = [
     image: '/images/sitrak-mixer-1.jpg',
     images: ['/images/sitrak-mixer-1.jpg', '/images/sitrak-mixer-2.jpg', '/images/sitrak-mixer-3.jpg'],
     features: ['12方搅拌罐', '恒速控制', '耐磨叶片', '自动润滑']
-
+  },
 
   // ===== 水泥罐车 =====
   {
@@ -176,7 +176,7 @@ export const trucks: Truck[] = [
     price: '$30,000 - $38,000',
     image: '/images/tractor-1.jpg',
     features: ['45立方罐体', '空压机卸料', '压力安全阀', '防堵设计']
-
+  },
 
   // ===== 垃圾运输车 =====
   {
@@ -190,7 +190,7 @@ export const trucks: Truck[] = [
     price: '$28,000 - $36,000',
     image: '/images/tractor-1.jpg',
     features: ['压缩式箱体', 'PLC电控系统', '密封防泄漏', '12方容积']
-
+  },
 
   // ===== 随车吊 =====
   {
@@ -204,7 +204,7 @@ export const trucks: Truck[] = [
     price: '$38,000 - $48,000',
     image: '/images/crane-1.jpg',
     features: ['12吨吊机', '液压支腿', '远程遥控', '360°旋转']
-
+  },
 
   // ===== 高空作业车 =====
   {
@@ -218,7 +218,7 @@ export const trucks: Truck[] = [
     price: '$35,000 - $45,000',
     image: '/images/tractor-1.jpg',
     features: ['28米作业高度', '液压伸缩臂', '安全锁止', '遥控操作']
-
+  },
 
   // ===== 洒水车 =====
   {
@@ -232,7 +232,7 @@ export const trucks: Truck[] = [
     price: '$25,000 - $32,000',
     image: '/images/tanker-1.jpg',
     features: ['15方水罐', '前冲后洒', '高压水炮', '自吸自排']
-
+  },
 
   // ===== 矿卡 =====
   {
@@ -246,7 +246,7 @@ export const trucks: Truck[] = [
     price: '$65,000 - $85,000',
     image: '/images/mining-truck.jpg',
     features: ['40吨载重', '矿用宽体', '加强型底盘', '沙漠空滤']
-
+  },
   {
     id: 'xcmg-xdr80t',
     name: '徐工 XDR80T 矿用自卸车',
@@ -258,7 +258,7 @@ export const trucks: Truck[] = [
     price: '$75,000 - $95,000',
     image: '/images/mining-truck.jpg',
     features: ['45吨载重', '油气悬挂', '自动润滑', '矿用轮胎']
-
+  },
   {
     id: 'lgmg-mt86',
     name: '临工 MT86 矿用宽体车',
@@ -270,7 +270,7 @@ export const trucks: Truck[] = [
     price: '$60,000 - $80,000',
     image: '/images/mining-truck.jpg',
     features: ['35吨载重', '宽体驾驶室', '液力缓速器', '矿用底盘']
-
+  },
 
   // ===== 挂车（中集） =====
   {
@@ -284,7 +284,7 @@ export const trucks: Truck[] = [
     price: '$8,000 - $12,000',
     image: '/images/trailer-cimc.jpg',
     features: ['40英尺平板', '13吨车桥', 'ABS制动', '集装箱锁具']
-
+  },
   {
     id: 'cimc-dump-trailer',
     name: '中集 40立方 自卸挂车',
@@ -296,7 +296,7 @@ export const trucks: Truck[] = [
     price: '$12,000 - $18,000',
     image: '/images/trailer-cimc.jpg',
     features: ['40立方U型斗', '液压举升', '耐磨钢板', '自动篷布']
-
+  },
 
   // ===== 工程机械（徐工） =====
   {
@@ -310,7 +310,7 @@ export const trucks: Truck[] = [
     price: '$55,000 - $75,000',
     image: '/images/tractor-1.jpg',
     features: ['21.5吨', '1.1方铲斗', '智能电控', '矿山加强型']
-
+  },
   {
     id: 'xcmg-loader-zl50',
     name: '徐工 ZL50GN 装载机',
@@ -322,7 +322,7 @@ export const trucks: Truck[] = [
     price: '$35,000 - $48,000',
     image: '/images/tractor-1.jpg',
     features: ['5吨', '3.0方铲斗', '液压先导操控', '空调驾驶室']
-
+  },
 
   // ===== 中国重汽轻型车 =====
   {
@@ -336,7 +336,7 @@ export const trucks: Truck[] = [
     price: '$12,000 - $18,000',
     image: '/images/tractor-1.jpg',
     features: ['12m³货箱', '侧滑门', 'ABS+EBD', '空调']
-
+  },
   {
     id: 'sinotruk-micro',
     name: '中国重汽 轻型微卡',
@@ -375,7 +375,7 @@ export const stockTrucks: Truck[] = [
     price: '',
     image: '/images/hero-tractor.jpg',
     features: ['已到港', '白色', '高顶双卧铺', '即付即发']
-
+  },
   {
     id: 'stock-002',
     name: 'HOWO 8×4 自卸车 现车',
@@ -387,7 +387,7 @@ export const stockTrucks: Truck[] = [
     price: '',
     image: '/images/dump-howo.jpg',
     features: ['已到港', '黄色', '加强型货箱', '即付即发']
-
+  },
   {
     id: 'stock-003',
     name: 'SITRAK C7H 440 牵引车 现车',
@@ -412,7 +412,7 @@ export const zones = [
     description: '牵引车 · 载货车 · 冷藏车 · 自卸车 · 搅拌车 · 水泥罐车 · 垃圾运输车 · 随车吊 · 高空作业车 · 洒水车',
     categories: ['tractor', 'cargo', 'dump', 'mixer', 'special'],
     color: 'from-amber-500/20 to-transparent'
-
+  },
   {
     id: 'machinery',
     title: '工程机械专区',
@@ -422,7 +422,7 @@ export const zones = [
     description: '挖掘机 · 装载机，矿山/基建/市政工程解决方案',
     categories: ['machinery'],
     color: 'from-orange-500/20 to-transparent'
-
+  },
   {
     id: 'mining',
     title: '矿卡专区',
@@ -432,7 +432,7 @@ export const zones = [
     description: '矿用宽体自卸车，40-45吨载重，适应矿山恶劣工况',
     categories: ['mining'],
     color: 'from-red-500/20 to-transparent'
-
+  },
   {
     id: 'light',
     title: '轻型商用车专区',
@@ -442,7 +442,7 @@ export const zones = [
     description: 'Van 先锋官 · 微卡 · 城市物流配送',
     categories: ['light'],
     color: 'from-green-500/20 to-transparent'
-
+  },
   {
     id: 'trailer',
     title: '挂车专区',
@@ -461,19 +461,19 @@ export const advantages = [
     titleEn: 'Full Brand Portfolio',
     description: '中国重汽、徐工机械、中集挂车、先锋官——四大品牌一站式采购',
     icon: 'shield'
-
+  },
   {
     title: '价格优势',
     titleEn: 'Competitive Price',
     description: '原厂直供，省去中间环节，同等配置价格低于市场价15%-20%',
     icon: 'price'
-
+  },
   {
     title: '售后无忧',
     titleEn: 'After-sales Service',
     description: '提供2年质保，海外设有服务网点，配件供应及时，技术远程支持',
     icon: 'service'
-
+  },
   {
     title: '定制服务',
     titleEn: 'Customization',
