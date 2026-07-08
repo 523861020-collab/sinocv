@@ -97,6 +97,19 @@ export const trucks: Truck[] = [
     features: ['加强型货箱', '液压举升', '矿山专用轮胎', '防护网']
   },
   {
+    id: 'howo-nx-dump',
+    name: '豪沃 NX 6×4 自卸车',
+    category: 'dump',
+    brand: '中国重汽',
+    horsepower: 430,
+    driveType: '6×4',
+    engine: '潍柴 WP13.430E62',
+    price: '$42,000 - $52,000',
+    image: '/images/howo-nx-dump-1.jpg',
+    images: ['/images/howo-nx-dump-1.jpg', '/images/howo-nx-dump-2.jpg', '/images/howo-nx-dump-3.jpg'],
+    features: ['加强型货箱', '液压举升', '矿山专用轮胎', '防护网']
+  },
+  {
     id: 'sitrak-dump',
     name: '汕德卡 6×4 自卸车',
     category: 'dump',
