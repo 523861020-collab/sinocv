@@ -14,40 +14,16 @@ export interface Truck {
 export const trucks: Truck[] = [
   // ===== 牵引车 =====
   {
-    id: 'sitrak-g7-540',
-    name: '汕德卡G7 6×4 牵引车 540HP',
+    id: 'sitrak-g7',
+    name: '汕德卡G7 6×4 牵引车',
     category: 'tractor',
     brand: '中国重汽',
     horsepower: 540,
     driveType: '6×4',
-    engine: '曼 MC13.540',
-    price: '$42,000 - $55,000',
+    engine: '曼 MC13 / MC11',
+    price: '$35,000 - $55,000',
     image: '/images/tractor-2.jpg',
-    features: ['曼发动机', '采埃孚变速箱', '液力缓速器', '豪华驾驶室']
-  },
-  {
-    id: 'sitrak-g7-480',
-    name: '汕德卡G7 6×4 牵引车 480HP',
-    category: 'tractor',
-    brand: '中国重汽',
-    horsepower: 480,
-    driveType: '6×4',
-    engine: '曼 MC13.480',
-    price: '$38,000 - $48,000',
-    image: '/images/tractor-2.jpg',
-    features: ['曼发动机', '采埃孚变速箱', '液力缓速器', '高顶双卧铺']
-  },
-  {
-    id: 'sitrak-g7-430',
-    name: '汕德卡 G7 430 牵引车',
-    category: 'tractor',
-    brand: '中国重汽',
-    horsepower: 430,
-    driveType: '6×4',
-    engine: '曼 MC11.430',
-    price: '$35,000 - $45,000',
-    image: '/images/tractor-2.jpg',
-    features: ['曼发动机', '采埃孚变速箱', 'ABS防抱死', '空调系统']
+    features: ['430HP · 480HP · 540HP', '曼发动机', '采埃孚变速箱', '豪华驾驶室']
   },
 
   // ===== 载货车 =====
