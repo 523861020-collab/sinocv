@@ -144,6 +144,7 @@ export default function ProductSlider() {
           </div>
         </div>
       </div>
+      </div>
     </section>
   );
 }

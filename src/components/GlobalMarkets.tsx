@@ -7,6 +7,7 @@ export default function GlobalMarkets() {
   return (
     <section id="markets" className="bg-gray-950 py-24">
       <div className="px-6 lg:px-16 max-w-[1920px] mx-auto">
+        <div className="max-w-6xl mx-auto w-full">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -95,6 +96,7 @@ export default function GlobalMarkets() {
             </motion.div>
           ))}
         </div>
+      </div>
       </div>
     </section>
   );

@@ -31,6 +31,7 @@ export default function Advantages() {
   return (
     <section style={{paddingTop: '1.5rem', paddingBottom: '1.5rem'}} className="bg-black">
       <div className="px-6 lg:px-16 max-w-[1920px] mx-auto">
+        <div className="max-w-6xl mx-auto w-full">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -118,6 +119,7 @@ export default function Advantages() {
             </div>
           ))}
         </motion.div>
+      </div>
       </div>
     </section>
   );

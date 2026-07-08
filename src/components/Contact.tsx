@@ -41,6 +41,7 @@ export default function Contact() {
   return (
     <section id="contact" style={{paddingTop: '1.5rem', paddingBottom: '1.5rem'}} className="bg-black">
       <div className="px-6 lg:px-16 max-w-[1920px] mx-auto">
+        <div className="max-w-6xl mx-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Left: Info */}
           <motion.div
@@ -212,6 +213,7 @@ export default function Contact() {
             )}
           </motion.div>
         </div>
+      </div>
       </div>
     </section>
   );

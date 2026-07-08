@@ -70,6 +70,7 @@ export default function DownloadCatalog() {
           ))}
         </div>
       </div>
+      </div>
     </section>
   );
 }
