@@ -93,7 +93,7 @@ export default function Advantages() {
               backgroundColor: '#000',
             }}>
               <img
-                src="/images/map-new.jpg?v=3"
+                src="/images/export-map-2026.jpg"
                 alt="SINOCV Global Export Network"
                 style={{width: '100%', height: 'auto', maxHeight: '300px', display: 'block', objectFit: 'contain'}}
               />
