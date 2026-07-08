@@ -49,18 +49,6 @@ export const trucks: Truck[] = [
     image: '/images/tractor-1.jpg',
     features: ['全新驾驶室', '液力缓速器', '智能节油', '车道偏离预警']
   },
-  {
-    id: 'howo-7-380',
-    name: '豪沃 7 380 牵引车',
-    category: 'tractor',
-    brand: '中国重汽',
-    horsepower: 380,
-    driveType: '6×4',
-    engine: '潍柴 WP12.380E62',
-    price: '$25,000 - $32,000',
-    image: '/images/tractor-1.jpg',
-    features: ['经典耐用', '维修成本低', 'ABS防抱死', '空调系统']
-  },
 
   // ===== 载货车 =====
   {
