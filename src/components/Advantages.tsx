@@ -31,7 +31,6 @@ export default function Advantages() {
   return (
     <section style={{paddingTop: '1.5rem', paddingBottom: '1.5rem'}} className="bg-black">
       <div className="container mx-auto px-6">
-        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -39,15 +38,12 @@ export default function Advantages() {
           className="mb-20 text-center"
         >
           <p className="mb-4 text-amber-500 tracking-widest text-sm">WHY CHOOSE US</p>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Our Advantages
-          </h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Our Advantages</h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed">
             4 Major Brands · One-Stop Sourcing — SINOTRUK + XCMG + CIMC + Foton
           </p>
         </motion.div>
 
-        {/* Advantages Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {advantages.map((adv, index) => (
             <motion.div
@@ -68,20 +64,29 @@ export default function Advantages() {
           ))}
         </div>
 
-        {/* Global Map */}
-        <div className="mt-16 text-center">
-          <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">Export Network</h3>
-          <p className="text-gray-400 mb-8">Serving 50+ Countries Across Africa, Middle East & Southeast Asia</p>
-          <div className="rounded-xl overflow-hidden border border-gray-800">
+        {/* Global Export Network Map */}
+        <div style={{marginTop: '4rem', textAlign: 'center'}}>
+          <h3 style={{fontSize: '1.75rem', fontWeight: 'bold', color: '#fff', marginBottom: '0.5rem'}}>
+            Export Network
+          </h3>
+          <p style={{color: '#9ca3af', marginBottom: '2rem', fontSize: '1.1rem'}}>
+            Serving 50+ Countries Across Africa, Middle East & Southeast Asia
+          </p>
+          <div style={{
+            borderRadius: '0.75rem',
+            overflow: 'hidden',
+            border: '1px solid #1f2937',
+            backgroundColor: '#111827',
+            minHeight: '200px',
+          }}>
             <img
               src="/images/map-global.jpg"
               alt="SINOCV Global Export Network"
-              className="w-full object-cover"
+              style={{width: '100%', display: 'block'}}
             />
           </div>
         </div>
 
-        {/* Stats */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -89,10 +94,10 @@ export default function Advantages() {
           className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8"
         >
           {[
-            { number: '50+', label: '出口国家' },
-            { number: '10,000+', label: '累计出口' },
-            { number: '30+', label: '年行业经验' },
-            { number: '98%', label: '客户满意度' }
+            { number: '50+', label: 'Export Countries' },
+            { number: '10,000+', label: 'Units Exported' },
+            { number: '30+', label: 'Years Experience' },
+            { number: '98%', label: 'Client Satisfaction' }
           ].map((stat, i) => (
             <div key={i} className="text-center">
               <div className="text-4xl md:text-5xl font-bold text-amber-500 mb-2">{stat.number}</div>
