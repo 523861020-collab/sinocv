@@ -254,27 +254,27 @@ export const trucks: Truck[] = [
     features: ['5吨', '3.0方铲斗', '液压先导操控', '空调驾驶室']
   },
 
-  // ===== 福田轻型商用车 =====
+  // ===== 中国重汽轻型车 =====
   {
-    id: 'foton-van',
-    name: '福田 图雅诺 Van 封闭货车',
+    id: 'sinotruk-van',
+    name: '中国重汽 先锋官 Van',
     category: 'light',
-    brand: '福田 Foton',
+    brand: '中国重汽先锋官',
     horsepower: 150,
     driveType: '4×2',
-    engine: '康明斯 ISF2.8',
+    engine: '潍柴 WP2.3Q',
     price: '$12,000 - $18,000',
     image: '/images/tractor-1.jpg',
     features: ['12m³货箱', '侧滑门', 'ABS+EBD', '空调']
   },
   {
-    id: 'foton-micro',
-    name: '福田 时代 微卡',
+    id: 'sinotruk-micro',
+    name: '中国重汽 轻型微卡',
     category: 'light',
-    brand: '福田 Foton',
+    brand: '中国重汽先锋官',
     horsepower: 112,
     driveType: '4×2',
-    engine: '全柴 4A2-88C50',
+    engine: '潍柴 WP2.1Q',
     price: '$5,000 - $8,000',
     image: '/images/tractor-1.jpg',
     features: ['3.3米货箱', '经济节油', '灵活城市通行', '低维保成本']
