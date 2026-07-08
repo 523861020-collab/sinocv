@@ -14,8 +14,20 @@ export interface Truck {
 export const trucks: Truck[] = [
   // ===== 牵引车 =====
   {
+    id: 'sitrak-c7h-440',
+    name: '汕德卡 C7H 440 牵引车',
+    category: 'tractor',
+    brand: '中国重汽',
+    horsepower: 440,
+    driveType: '6×4',
+    engine: '曼 MC13.440',
+    price: '$35,000 - $45,000',
+    image: '/images/tractor-2.jpg',
+    features: ['豪华驾驶室', '液力缓速器', '车道偏离预警', '360°环视']
+  },
+  {
     id: 'howo-tx-430',
-    name: 'HOWO TX 430 牵引车',
+    name: '豪沃 TX 430 牵引车',
     category: 'tractor',
     brand: '中国重汽',
     horsepower: 430,
@@ -26,16 +38,28 @@ export const trucks: Truck[] = [
     features: ['高顶双卧铺', 'ABS防抱死', '空调系统', '气囊座椅']
   },
   {
-    id: 'sitrak-c7h-440',
-    name: 'SITRAK C7H 440 牵引车',
+    id: 'howo-nx-460',
+    name: '豪沃 NX 460 牵引车',
     category: 'tractor',
     brand: '中国重汽',
-    horsepower: 440,
+    horsepower: 460,
     driveType: '6×4',
-    engine: '曼 MC13.440',
-    price: '$35,000 - $45,000',
-    image: '/images/tractor-2.jpg',
-    features: ['豪华驾驶室', '液力缓速器', '车道偏离预警', '360°环视']
+    engine: '潍柴 WP13.460E62',
+    price: '$30,000 - $38,000',
+    image: '/images/tractor-1.jpg',
+    features: ['全新驾驶室', '液力缓速器', '智能节油', '车道偏离预警']
+  },
+  {
+    id: 'howo-7-380',
+    name: '豪沃 7 380 牵引车',
+    category: 'tractor',
+    brand: '中国重汽',
+    horsepower: 380,
+    driveType: '6×4',
+    engine: '潍柴 WP12.380E62',
+    price: '$25,000 - $32,000',
+    image: '/images/tractor-1.jpg',
+    features: ['经典耐用', '维修成本低', 'ABS防抱死', '空调系统']
   },
 
   // ===== 载货车 =====
