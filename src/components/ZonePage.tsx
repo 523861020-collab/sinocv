@@ -105,7 +105,7 @@ export default function ZonePage({ title, titleEn, icon, brand, trucks, bannerIm
                 <h2 className="text-2xl font-bold text-white">{cat?.name}</h2>
                 <span className="text-gray-500 text-sm">{cat?.nameEn}</span>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {catTrucks.map((truck, i) => (
                   <ProductCard key={truck.id} truck={truck} index={i} />
                 ))}
