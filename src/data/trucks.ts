@@ -125,16 +125,17 @@ export const trucks: Truck[] = [
 
   // ===== 搅拌车 =====
   {
-    id: 'sitrak-mixer-371',
-    name: 'SITRAK 6×4 搅拌车',
+    id: 'howo-nx-mixer',
+    name: '豪沃 NX 8×4 搅拌车',
     category: 'mixer',
     brand: '中国重汽',
-    horsepower: 371,
-    driveType: '6×4',
-    engine: '中国重汽 MC11.371',
-    price: '$42,000 - $55,000',
-    image: '/images/mixer-sitrak.jpg',
-    features: ['12方搅拌罐', '恒速控制系统', '耐磨叶片', '自动润滑']
+    horsepower: 430,
+    driveType: '8×4',
+    engine: '潍柴 WP13.430E62',
+    price: '$48,000 - $58,000',
+    image: '/images/howo-nx-mixer-1.jpg',
+    images: ['/images/howo-nx-mixer-1.jpg', '/images/howo-nx-mixer-2.jpg', '/images/howo-nx-mixer-3.jpg'],
+    features: ['12方搅拌罐', '恒速控制', '耐磨叶片', '自动润滑']
   },
   {
     id: 'howo-mixer',
