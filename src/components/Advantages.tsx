@@ -75,14 +75,14 @@ export default function Advantages() {
           <div style={{position: 'relative', maxWidth: '900px', marginLeft: 'auto', marginRight: 'auto'}}>
             {/* Left fade */}
             <div style={{
-              position: 'absolute', left: 0, top: 0, bottom: 0, width: '60px',
-              background: 'linear-gradient(to right, #000 0%, transparent 100%)',
+              position: 'absolute', left: 0, top: 0, bottom: 0, width: '150px',
+              background: 'linear-gradient(to right, #000 20%, transparent 100%)',
               zIndex: 2, pointerEvents: 'none',
             }} />
             {/* Right fade */}
             <div style={{
-              position: 'absolute', right: 0, top: 0, bottom: 0, width: '60px',
-              background: 'linear-gradient(to left, #000 0%, transparent 100%)',
+              position: 'absolute', right: 0, top: 0, bottom: 0, width: '150px',
+              background: 'linear-gradient(to left, #000 20%, transparent 100%)',
               zIndex: 2, pointerEvents: 'none',
             }} />
             <div style={{
