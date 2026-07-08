@@ -15,7 +15,7 @@ export const trucks: Truck[] = [
   // ===== 牵引车 =====
   {
     id: 'sitrak-g7-540',
-    name: '汕德卡 G7 540 牵引车',
+    name: '汕德卡G7 6×4 牵引车 540HP',
     category: 'tractor',
     brand: '中国重汽',
     horsepower: 540,
@@ -27,7 +27,7 @@ export const trucks: Truck[] = [
   },
   {
     id: 'sitrak-g7-480',
-    name: '汕德卡 G7 480 牵引车',
+    name: '汕德卡G7 6×4 牵引车 480HP',
     category: 'tractor',
     brand: '中国重汽',
     horsepower: 480,
@@ -48,30 +48,6 @@ export const trucks: Truck[] = [
     price: '$35,000 - $45,000',
     image: '/images/tractor-2.jpg',
     features: ['曼发动机', '采埃孚变速箱', 'ABS防抱死', '空调系统']
-  },
-  {
-    id: 'howo-tx-430',
-    name: '豪沃 TX 430 牵引车',
-    category: 'tractor',
-    brand: '中国重汽',
-    horsepower: 430,
-    driveType: '6×4',
-    engine: '潍柴 WP13.430E62',
-    price: '$28,000 - $35,000',
-    image: '/images/tractor-1.jpg',
-    features: ['高顶双卧铺', 'ABS防抱死', '空调系统', '气囊座椅']
-  },
-  {
-    id: 'howo-nx-460',
-    name: '豪沃 NX 460 牵引车',
-    category: 'tractor',
-    brand: '中国重汽',
-    horsepower: 460,
-    driveType: '6×4',
-    engine: '潍柴 WP13.460E62',
-    price: '$30,000 - $38,000',
-    image: '/images/tractor-1.jpg',
-    features: ['全新驾驶室', '液力缓速器', '智能节油', '车道偏离预警']
   },
 
   // ===== 载货车 =====
