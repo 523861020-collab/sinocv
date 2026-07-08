@@ -12,7 +12,7 @@ export default function MachineryPage() {
       brand={zone.brand}
       description={zone.description}
       trucks={trucks.filter(t => zone.categories.includes(t.category))}
-      bannerImage="/images/hero-excavator.jpg"
+      bannerImage="/images/hero-machinery-banner.jpg"
     />
   );
 }
