@@ -34,7 +34,7 @@ export const trucks: Truck[] = [
     driveType: '6×4',
     engine: '潍柴 / 曼',
     price: '$28,000 - $42,000',
-    image: '/images/tractor-1.jpg',
+    image: '/images/tractor-3.jpg',
     features: ['340HP · 380HP · 400HP · 430HP', '潍柴/曼发动机可选', '高顶双卧铺', 'ABS+空调']
   },
 
