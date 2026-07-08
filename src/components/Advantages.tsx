@@ -90,7 +90,7 @@ export default function Advantages() {
               borderRadius: '0.75rem',
               overflow: 'hidden',
               border: '1px solid #1f2937',
-              backgroundColor: '#111827',
+              backgroundColor: '#000',
             }}>
               <img
                 src="/images/map-global.jpg"
