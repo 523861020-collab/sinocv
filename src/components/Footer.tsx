@@ -13,7 +13,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-gray-400 leading-relaxed mb-6">
-              Authorized SINOTRUK exporter and partner of XCMG, CIMC, and Foton. Products cover tractor trucks, dump trucks, mixer trucks, special vehicles, construction machinery, and more.
+              Authorized SINOTRUK exporter and partner of XCMG, CIMC, and Pioneer Van. Products cover tractor trucks, dump trucks, mixer trucks, special vehicles, construction machinery, and more.
             </p>
             <div className="flex gap-4">
               <a href="#" className="rounded-full bg-gray-800 p-3 text-gray-400 hover:text-amber-500 hover:bg-gray-700 transition-all">
@@ -54,7 +54,7 @@ export default function Footer() {
               <li><span className="text-gray-400">🏭 SINOTRUK HOWO/SITRAK</span></li>
               <li><span className="text-gray-400">⚙️ XCMG Machinery</span></li>
               <li><span className="text-gray-400">🔗 CIMC Trailers</span></li>
-              <li><span className="text-gray-400">🚐 Foton Motors</span></li>
+              <li><span className="text-gray-400">🚐 中国重汽轻型车</span></li>
             </ul>
           </div>
 

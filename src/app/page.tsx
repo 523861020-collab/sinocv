@@ -138,7 +138,7 @@ export default function Home() {
               <span className="text-amber-400 font-semibold">SINOCV</span> is a Hong Kong-based professional commercial vehicle and construction machinery export company, providing full-chain export services from vehicle selection, customization, inspection, logistics, to customs clearance.
             </p>
             <p className="text-gray-300 leading-relaxed text-base text-left">
-              We have established long-term strategic partnerships with <span className="text-white font-medium">SINOTRUK, XCMG, CIMC, and Foton</span>, ensuring every vehicle delivered is factory-original with full warranty and after-sales support.
+              We have established long-term strategic partnerships with <span className="text-white font-medium">SINOTRUK, XCMG, CIMC, and Pioneer Van</span>, ensuring every vehicle delivered is factory-original with full warranty and after-sales support.
             </p>
             <p className="text-gray-300 leading-relaxed text-base text-left">
               Our product range covers the full lineup of commercial vehicles including tractor trucks, cargo trucks, dump trucks, mixer trucks, reefer trucks, water trucks, garbage trucks, crane trucks, and aerial work platforms, as well as construction machinery such as excavators, loaders, and mining dump trucks, plus trailers, vans, and mini trucks.
