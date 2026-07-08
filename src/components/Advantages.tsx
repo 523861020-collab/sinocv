@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { advantages } from '@/data/trucks';
+import { MAP_DATA_URI } from '@/data/mapImage';
 
 const iconMap: Record<string, React.ReactNode> = {
   shield: (
@@ -77,7 +78,7 @@ export default function Advantages() {
             {/* Left fade */}
             <div style={{
               position: 'absolute', left: 0, top: 0, bottom: 0, width: '200px',
- background: 'linear-gradient(to right, #000 0%, transparent 100%)',
+              background: 'linear-gradient(to right, #000 0%, transparent 100%)',
               zIndex: 2, pointerEvents: 'none',
             }} />
             {/* Right fade */}
@@ -93,7 +94,7 @@ export default function Advantages() {
               backgroundColor: '#000',
             }}>
               <img
-                src="/images/export-map-2026.jpg"
+                src={MAP_DATA_URI}
                 alt="SINOCV Global Export Network"
                 style={{width: '100%', height: 'auto', maxHeight: '300px', display: 'block', objectFit: 'contain'}}
               />
