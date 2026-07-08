@@ -41,8 +41,20 @@ export const trucks: Truck[] = [
     features: ['340HP · 380HP · 400HP · 430HP', '潍柴/曼发动机可选', '高顶双卧铺', 'ABS+空调']
   },
   {
+    id: 'howo-nx',
+    name: '豪沃 NX 6×4 牵引车',
+    category: 'tractor',
+    brand: '中国重汽',
+    horsepower: 430,
+    driveType: '6×4',
+    engine: '潍柴',
+    price: '$30,000 - $40,000',
+    image: '/images/howo-nx-1.jpg',
+    images: ['/images/howo-nx-1.jpg', '/images/howo-nx-2.jpg', '/images/howo-nx-3.jpg'],
+    features: ['380HP · 400HP · 430HP', '潍柴发动机', '高顶双卧铺', 'ABS+空调']
+  },
 
-  // ===== 载货车 =====
+  // ===== 自卸车 =====
   {
     id: 'howo-tx-cargo-340',
     name: 'HOWO TX 340 载货车',
