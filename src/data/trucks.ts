@@ -1,7 +1,7 @@
 export interface Truck {
   id: string;
   name: string;
-  category: 'tractor' | 'cargo' | 'dump' | 'mixer' | 'reefer' | 'cement' | 'garbage' | 'crane' | 'aerial' | 'water' | 'fuel' | '6x6' | 'trailer' | 'machinery' | 'mining' | 'light';
+  category: 'tractor' | 'cargo' | 'dump' | 'mixer' | 'reefer' | 'cement' | 'garbage' | 'crane' | 'aerial' | 'water' | 'fuel' | 'wrecker' | '6x6' | 'trailer' | 'machinery' | 'mining' | 'light';
   brand: string;
   horsepower: number;
   driveType: string;
@@ -216,6 +216,21 @@ export const trucks: Truck[] = [
     image: '/images/howo-4x2-garbage-1.jpg',
     images: ['/images/howo-4x2-garbage-1.jpg', '/images/howo-4x2-garbage-2.jpg', '/images/howo-4x2-garbage-3.jpg'],
     features: ['城市环卫', '灵活机动', '密封防漏', '省油']
+  },
+
+  // ===== 清障车 =====
+  {
+    id: 'howo-4x2-wrecker',
+    name: '豪沃 轻卡 4×2 清障车',
+    category: 'wrecker',
+    brand: '中国重汽',
+    horsepower: 160,
+    driveType: '4×2',
+    engine: '潍柴 WP2.3Q',
+    price: '$24,000 - $30,000',
+    image: '/images/howo-4x2-wrecker-1.jpg',
+    images: ['/images/howo-4x2-wrecker-1.jpg', '/images/howo-4x2-wrecker-2.jpg', '/images/howo-4x2-wrecker-3.jpg'],
+    features: ['城市救援', '平板拖车', '液压绞盘', '灵活机动']
   },
 
   // ===== 随车吊 =====
@@ -486,6 +501,7 @@ export const categories = [
   { id: 'aerial', name: '高空作业车', nameEn: 'Aerial Platform', icon: '🪜' },
   { id: 'water', name: '洒水车', nameEn: 'Water Truck', icon: '💧' },
   { id: 'fuel', name: '油罐车', nameEn: 'Fuel Tanker', icon: '⛽' },
+  { id: 'wrecker', name: '清障车', nameEn: 'Wrecker', icon: '🪝' },
   { id: '6x6', name: '6×6专区', nameEn: '6×6 Off-Road', icon: '🧭' },
   { id: 'machinery', name: '工程机械', nameEn: 'Construction Machinery', icon: '⚙️' },
   { id: 'mining', name: '矿卡', nameEn: 'Mining Truck', icon: '⛏️' },
@@ -540,7 +556,7 @@ export const zones = [
     icon: '🚛',
     brand: '中国重汽',
     description: '牵引车 · 载货车 · 冷藏车 · 自卸车 · 搅拌车 · 水泥罐车 · 垃圾运输车 · 随车吊 · 高空作业车 · 洒水车 · 油罐车',
-    categories: ['tractor', 'cargo', 'dump', 'mixer', 'reefer', 'cement', 'garbage', 'crane', 'aerial', 'water', 'fuel'],
+    categories: ['tractor', 'cargo', 'dump', 'mixer', 'reefer', 'cement', 'garbage', 'crane', 'aerial', 'water', 'fuel', 'wrecker'],
     color: 'from-amber-500/20 to-transparent'
   },
   {
