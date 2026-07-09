@@ -511,7 +511,8 @@ export const trucks: Truck[] = [
     driveType: '4×4',
     engine: '潍柴 WD10G220',
     price: '$35,000 - $48,000',
-    image: '/images/tractor-1.jpg',
+    image: '/images/xcmg-zl50-1.jpg',
+    images: ['/images/xcmg-zl50-1.jpg', '/images/xcmg-zl50-2.jpg', '/images/xcmg-zl50-3.jpg'],
     features: ['5吨', '3.0方铲斗', '液压先导操控', '空调驾驶室']
   },
 
