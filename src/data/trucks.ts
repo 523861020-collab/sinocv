@@ -608,6 +608,19 @@ export const trucks: Truck[] = [
     image: '/images/sinotruk-pass-light-1.jpg',
     images: ['/images/sinotruk-pass-light-1.jpg', '/images/sinotruk-pass-light-2.jpg', '/images/sinotruk-pass-light-3.jpg'],
     features: ['15座', '客运通勤', '舒适', '空调']
+  },
+  {
+    id: 'sinotruk-biz-light',
+    name: '中国重汽 商务版',
+    category: 'light',
+    brand: '中国重汽先锋官',
+    horsepower: 150,
+    driveType: '4×2',
+    engine: '潍柴 WP2.3Q',
+    price: '$16,000 - $22,000',
+    image: '/images/sinotruk-biz-light-1.jpg',
+    images: ['/images/sinotruk-biz-light-1.jpg', '/images/sinotruk-biz-light-2.jpg', '/images/sinotruk-biz-light-3.jpg'],
+    features: ['商务接待', '豪华内饰', '9座', '高端']
   }
 ];
 
