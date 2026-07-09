@@ -590,7 +590,7 @@ export const zones = [
     icon: '🚛',
     brand: '中国重汽',
     description: '牵引车 · 载货车 · 冷藏车 · 自卸车 · 搅拌车 · 水泥罐车 · 垃圾运输车 · 随车吊 · 高空作业车 · 洒水车 · 油罐车',
-    categories: ['tractor', 'cargo', 'dump', 'mixer', 'reefer', 'light-special', 'crane', 'water', 'fuel', '6x6'],
+    categories: ['tractor', 'dump', 'cargo', 'mixer', 'reefer', 'light-special', 'crane', 'water', 'fuel', '6x6'],
     color: 'from-amber-500/20 to-transparent'
   },
   {
