@@ -206,18 +206,6 @@ export const trucks: Truck[] = [
 
   // ===== 垃圾运输车 =====
   {
-    id: 'howo-tx-garbage',
-    name: 'HOWO TX 280 垃圾运输车',
-    category: 'garbage',
-    brand: '中国重汽',
-    horsepower: 280,
-    driveType: '4×2',
-    engine: '潍柴 WP7.280E62',
-    price: '$28,000 - $36,000',
-    image: '/images/tractor-1.jpg',
-    features: ['压缩式箱体', 'PLC电控系统', '密封防泄漏', '12方容积']
-  },
-  {
     id: 'howo-4x2-garbage',
     name: '豪沃 轻卡 4×2 垃圾运输车',
     category: 'garbage',
