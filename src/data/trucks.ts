@@ -204,6 +204,19 @@ export const trucks: Truck[] = [
     image: '/images/tractor-1.jpg',
     features: ['压缩式箱体', 'PLC电控系统', '密封防泄漏', '12方容积']
   },
+  {
+    id: 'howo-4x2-garbage',
+    name: '豪沃 轻卡 4×2 垃圾运输车',
+    category: 'garbage',
+    brand: '中国重汽',
+    horsepower: 160,
+    driveType: '4×2',
+    engine: '潍柴 WP2.3Q',
+    price: '$20,000 - $26,000',
+    image: '/images/howo-4x2-garbage-1.jpg',
+    images: ['/images/howo-4x2-garbage-1.jpg', '/images/howo-4x2-garbage-2.jpg', '/images/howo-4x2-garbage-3.jpg'],
+    features: ['城市环卫', '灵活机动', '密封防漏', '省油']
+  },
 
   // ===== 随车吊 =====
   {
