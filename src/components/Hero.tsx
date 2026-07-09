@@ -34,7 +34,7 @@ const slides = [
     link: '/trailers'
   },
   {
-    image: '/images/hero-mining.jpg',
+    image: '/images/hero-mining-new.jpg',
     title: 'Mining Dump Truck',
     subtitle: 'Tonly · XCMG · Lingong',
     description: '40-45 ton payload, reinforced chassis, built for harsh mining conditions',
