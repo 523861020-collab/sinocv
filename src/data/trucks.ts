@@ -499,7 +499,8 @@ export const trucks: Truck[] = [
     driveType: '履带式',
     engine: '康明斯 QSB7',
     price: '$55,000 - $75,000',
-    image: '/images/tractor-1.jpg',
+    image: '/images/xcmg-xe215-1.jpg',
+    images: ['/images/xcmg-xe215-1.jpg', '/images/xcmg-xe215-2.jpg', '/images/xcmg-xe215-3.jpg'],
     features: ['21.5吨', '1.1方铲斗', '智能电控', '矿山加强型']
   },
   {
