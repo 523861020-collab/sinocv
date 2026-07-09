@@ -411,21 +411,8 @@ export const trucks: Truck[] = [
 
   // ===== 矿卡 =====
   {
-    id: 'sinotruk-90-mining',
-    name: '中国重汽 105矿',
-    category: 'mining',
-    brand: '中国重汽',
-    horsepower: 540,
-    driveType: '6×4',
-    engine: '潍柴 WP17.540E62',
-    price: '$100,000 - $130,000',
-    image: '/images/sinotruk-90-mining-1.jpg',
-    images: ['/images/sinotruk-90-mining-1.jpg', '/images/sinotruk-90-mining-2.jpg', '/images/sinotruk-90-mining-3.jpg'],
-    features: ['105吨载重', '矿用宽体', '潍柴17L发动机', '油气悬挂']
-  },
-  {
     id: 'sinotruk-90t-mining',
-    name: '中国重汽 90矿',
+    name: '中国重汽矿卡90',
     category: 'mining',
     brand: '中国重汽',
     horsepower: 480,
@@ -438,7 +425,7 @@ export const trucks: Truck[] = [
   },
   {
     id: 'sinotruk-95-mining',
-    name: '中国重汽 95矿',
+    name: '中国重汽矿卡95',
     category: 'mining',
     brand: '中国重汽',
     horsepower: 510,
@@ -451,7 +438,7 @@ export const trucks: Truck[] = [
   },
   {
     id: 'sinotruk-102-mining',
-    name: '中国重汽 102矿',
+    name: '中国重汽矿卡102',
     category: 'mining',
     brand: '中国重汽',
     horsepower: 540,
@@ -461,6 +448,19 @@ export const trucks: Truck[] = [
     image: '/images/sinotruk-102-mining-1.jpg',
     images: ['/images/sinotruk-102-mining-1.jpg', '/images/sinotruk-102-mining-2.jpg', '/images/sinotruk-102-mining-3.jpg'],
     features: ['102吨载重', '矿用宽体', '潍柴17L发动机', '6×6全驱']
+  },
+  {
+    id: 'sinotruk-90-mining',
+    name: '中国重汽矿卡105',
+    category: 'mining',
+    brand: '中国重汽',
+    horsepower: 540,
+    driveType: '6×4',
+    engine: '潍柴 WP17.540E62',
+    price: '$100,000 - $130,000',
+    image: '/images/sinotruk-90-mining-1.jpg',
+    images: ['/images/sinotruk-90-mining-1.jpg', '/images/sinotruk-90-mining-2.jpg', '/images/sinotruk-90-mining-3.jpg'],
+    features: ['105吨载重', '矿用宽体', '潍柴17L发动机', '油气悬挂']
   },
 
   // ===== 挂车（中集） =====
