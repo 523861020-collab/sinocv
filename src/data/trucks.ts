@@ -1,7 +1,7 @@
 export interface Truck {
   id: string;
   name: string;
-  category: 'tractor' | 'cargo' | 'dump' | 'mixer' | 'special' | '6x6' | 'trailer' | 'machinery' | 'mining' | 'light';
+  category: 'tractor' | 'cargo' | 'dump' | 'mixer' | 'reefer' | 'cement' | 'garbage' | 'crane' | 'aerial' | 'water' | 'fuel' | '6x6' | 'trailer' | 'machinery' | 'mining' | 'light';
   brand: string;
   horsepower: number;
   driveType: string;
@@ -72,7 +72,7 @@ export const trucks: Truck[] = [
   {
     id: 'howo-t5g-reefer',
     name: 'HOWO T5G 340 冷藏车',
-    category: 'special',
+    category: 'reefer',
     brand: '中国重汽',
     horsepower: 340,
     driveType: '6×2',
@@ -122,19 +122,6 @@ export const trucks: Truck[] = [
     images: ['/images/sitrak-dump-1.jpg', '/images/sitrak-dump-2.jpg', '/images/sitrak-dump-3.jpg'],
     features: ['曼发动机', '加强型货箱', '液压举升', '矿山专用']
   },
-  {
-    id: 'howo-6x6-dump',
-    name: '豪沃 6×6 自卸车',
-    category: '6x6',
-    brand: '中国重汽',
-    horsepower: 420,
-    driveType: '6×6',
-    engine: '潍柴 WP13.420E62',
-    price: '$50,000 - $62,000',
-    image: '/images/howo-6x6-dump-1.jpg',
-    images: ['/images/howo-6x6-dump-1.jpg', '/images/howo-6x6-dump-2.jpg', '/images/howo-6x6-dump-3.jpg'],
-    features: ['6×6全驱', '沙漠专用', '加强型货箱', '液压举升']
-  },
 
   // ===== 搅拌车 =====
   {
@@ -181,7 +168,7 @@ export const trucks: Truck[] = [
   {
     id: 'howo-tx-cement',
     name: 'HOWO TX 380 水泥罐车',
-    category: 'special',
+    category: 'cement',
     brand: '中国重汽',
     horsepower: 380,
     driveType: '6×4',
@@ -195,7 +182,7 @@ export const trucks: Truck[] = [
   {
     id: 'howo-tx-garbage',
     name: 'HOWO TX 280 垃圾运输车',
-    category: 'special',
+    category: 'garbage',
     brand: '中国重汽',
     horsepower: 280,
     driveType: '4×2',
@@ -209,7 +196,7 @@ export const trucks: Truck[] = [
   {
     id: 'howo-tx-crane',
     name: '豪沃 TX 6×4 随车吊',
-    category: 'special',
+    category: 'crane',
     brand: '中国重汽',
     horsepower: 400,
     driveType: '6×4',
@@ -224,7 +211,7 @@ export const trucks: Truck[] = [
   {
     id: 'howo-tx-aerial',
     name: 'HOWO TX 280 高空作业车',
-    category: 'special',
+    category: 'aerial',
     brand: '中国重汽',
     horsepower: 280,
     driveType: '4×2',
@@ -238,7 +225,7 @@ export const trucks: Truck[] = [
   {
     id: 'howo-tx-water',
     name: '豪沃 TX 6×4 洒水车',
-    category: 'special',
+    category: 'water',
     brand: '中国重汽',
     horsepower: 340,
     driveType: '6×4',
@@ -253,7 +240,7 @@ export const trucks: Truck[] = [
   {
     id: 'howo-tx-fuel',
     name: '豪沃 TX 6×4 油罐车',
-    category: 'special',
+    category: 'fuel',
     brand: '中国重汽',
     horsepower: 380,
     driveType: '6×4',
@@ -264,7 +251,20 @@ export const trucks: Truck[] = [
     features: ['20方油罐', '防爆设计', '油气回收', '静电接地']
   },
 
-  // ===== 底盘 =====
+  // ===== 6×6 =====
+  {
+    id: 'howo-6x6-dump',
+    name: '豪沃 6×6 自卸车',
+    category: '6x6',
+    brand: '中国重汽',
+    horsepower: 420,
+    driveType: '6×6',
+    engine: '潍柴 WP13.420E62',
+    price: '$50,000 - $62,000',
+    image: '/images/howo-6x6-dump-1.jpg',
+    images: ['/images/howo-6x6-dump-1.jpg', '/images/howo-6x6-dump-2.jpg', '/images/howo-6x6-dump-3.jpg'],
+    features: ['6×6全驱', '沙漠专用', '加强型货箱', '液压举升']
+  },
   {
     id: 'howo-6x6-chassis',
     name: '豪沃 6×6 底盘',
@@ -278,8 +278,6 @@ export const trucks: Truck[] = [
     images: ['/images/howo-6x6-chassis-1.jpg', '/images/howo-6x6-chassis-2.jpg', '/images/howo-6x6-chassis-3.jpg'],
     features: ['6×6全驱', '加强型大梁', '多种上装适配', '军用级底盘']
   },
-
-  // ===== 沙漠油罐车 =====
   {
     id: 'howo-6x6-fuel',
     name: '豪沃 6×6 沙漠油罐车',
@@ -416,7 +414,13 @@ export const categories = [
   { id: 'cargo', name: '载货车', nameEn: 'Cargo Truck', icon: '📦' },
   { id: 'dump', name: '自卸车', nameEn: 'Dump Truck', icon: '🏗️' },
   { id: 'mixer', name: '搅拌车', nameEn: 'Concrete Mixer', icon: '🔄' },
-  { id: 'special', name: '专用车', nameEn: 'Special Vehicle', icon: '🔧' },
+  { id: 'reefer', name: '冷藏车', nameEn: 'Reefer Truck', icon: '🧊' },
+  { id: 'cement', name: '水泥罐车', nameEn: 'Cement Tanker', icon: '🚛' },
+  { id: 'garbage', name: '垃圾运输车', nameEn: 'Garbage Truck', icon: '🗑️' },
+  { id: 'crane', name: '随车吊', nameEn: 'Truck Crane', icon: '🏗️' },
+  { id: 'aerial', name: '高空作业车', nameEn: 'Aerial Platform', icon: '🪜' },
+  { id: 'water', name: '洒水车', nameEn: 'Water Truck', icon: '💧' },
+  { id: 'fuel', name: '油罐车', nameEn: 'Fuel Tanker', icon: '⛽' },
   { id: '6x6', name: '6×6专区', nameEn: '6×6 Off-Road', icon: '🧭' },
   { id: 'machinery', name: '工程机械', nameEn: 'Construction Machinery', icon: '⚙️' },
   { id: 'mining', name: '矿卡', nameEn: 'Mining Truck', icon: '⛏️' },
@@ -470,8 +474,8 @@ export const zones = [
     titleEn: 'Heavy Duty Trucks',
     icon: '🚛',
     brand: '中国重汽',
-    description: '牵引车 · 载货车 · 冷藏车 · 自卸车 · 搅拌车 · 水泥罐车 · 垃圾运输车 · 随车吊 · 高空作业车 · 洒水车',
-    categories: ['tractor', 'cargo', 'dump', 'mixer', 'special'],
+    description: '牵引车 · 载货车 · 冷藏车 · 自卸车 · 搅拌车 · 水泥罐车 · 垃圾运输车 · 随车吊 · 高空作业车 · 洒水车 · 油罐车',
+    categories: ['tractor', 'cargo', 'dump', 'mixer', 'reefer', 'cement', 'garbage', 'crane', 'aerial', 'water', 'fuel'],
     color: 'from-amber-500/20 to-transparent'
   },
   {
