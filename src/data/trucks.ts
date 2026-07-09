@@ -266,6 +266,21 @@ export const trucks: Truck[] = [
     features: ['6×6全驱', '加强型大梁', '多种上装适配', '军用级底盘']
   },
 
+  // ===== 沙漠油罐车 =====
+  {
+    id: 'howo-6x6-fuel',
+    name: '豪沃 6×6 沙漠油罐车',
+    category: 'special',
+    brand: '中国重汽',
+    horsepower: 420,
+    driveType: '6×6',
+    engine: '潍柴 WP13.420E62',
+    price: '$45,000 - $58,000',
+    image: '/images/howo-6x6-fuel-1.jpg',
+    images: ['/images/howo-6x6-fuel-1.jpg', '/images/howo-6x6-fuel-2.jpg', '/images/howo-6x6-fuel-3.jpg'],
+    features: ['沙漠专用', '6×6全驱', '大型油罐', '高温适应性']
+  },
+
   // ===== 矿卡 =====
   {
     id: 'tongli-tl875',
