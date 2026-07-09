@@ -122,6 +122,19 @@ export const trucks: Truck[] = [
     images: ['/images/sitrak-dump-1.jpg', '/images/sitrak-dump-2.jpg', '/images/sitrak-dump-3.jpg'],
     features: ['曼发动机', '加强型货箱', '液压举升', '矿山专用']
   },
+  {
+    id: 'howo-6x6-dump',
+    name: '豪沃 6×6 自卸车',
+    category: 'dump',
+    brand: '中国重汽',
+    horsepower: 420,
+    driveType: '6×6',
+    engine: '潍柴 WP13.420E62',
+    price: '$50,000 - $62,000',
+    image: '/images/howo-6x6-dump-1.jpg',
+    images: ['/images/howo-6x6-dump-1.jpg', '/images/howo-6x6-dump-2.jpg', '/images/howo-6x6-dump-3.jpg'],
+    features: ['6×6全驱', '沙漠专用', '加强型货箱', '液压举升']
+  },
 
   // ===== 搅拌车 =====
   {
