@@ -246,6 +246,19 @@ export const trucks: Truck[] = [
     image: '/images/tractor-1.jpg',
     features: ['28米作业高度', '液压伸缩臂', '安全锁止', '遥控操作']
   },
+  {
+    id: 'howo-4x2-aerial',
+    name: '豪沃 轻卡 4×2 高空作业车',
+    category: 'aerial',
+    brand: '中国重汽',
+    horsepower: 160,
+    driveType: '4×2',
+    engine: '潍柴 WP2.3Q',
+    price: '$28,000 - $35,000',
+    image: '/images/howo-4x2-aerial-1.jpg',
+    images: ['/images/howo-4x2-aerial-1.jpg', '/images/howo-4x2-aerial-2.jpg', '/images/howo-4x2-aerial-3.jpg'],
+    features: ['城市高空作业', '灵活机动', '省油', '安全锁止']
+  },
 
   // ===== 洒水车 =====
   {
