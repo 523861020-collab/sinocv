@@ -328,6 +328,19 @@ export const trucks: Truck[] = [
     images: ['/images/howo-nx-water-1.jpg', '/images/howo-nx-water-2.jpg', '/images/howo-nx-water-3.jpg'],
     features: ['15方水罐', '前冲后洒', '高压水炮', '自吸自排']
   },
+  {
+    id: 'sitrak-4x2-water',
+    name: '汕德卡 4×2 水罐车',
+    category: 'water',
+    brand: '中国重汽',
+    horsepower: 280,
+    driveType: '4×2',
+    engine: '曼 MC07.280',
+    price: '$22,000 - $28,000',
+    image: '/images/sitrak-4x2-water-1.jpg',
+    images: ['/images/sitrak-4x2-water-1.jpg', '/images/sitrak-4x2-water-2.jpg', '/images/sitrak-4x2-water-3.jpg'],
+    features: ['市政洒水', '降尘喷雾', '高压水炮', '曼发动机']
+  },
 
   // ===== 油罐车 =====
   {
