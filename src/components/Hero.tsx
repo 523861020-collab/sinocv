@@ -20,7 +20,7 @@ const slides = [
     link: '/machinery'
   },
   {
-    image: '/images/hero-van.jpg',
+    image: '/images/hero-van-new.jpg',
     title: 'SINOTRUK Pioneer Van',
     subtitle: 'SINOTRUK · Urban Logistics Expert',
     description: 'Howo Pioneer — fuel-efficient, spacious, and reliable for cargo delivery',
