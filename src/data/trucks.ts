@@ -121,6 +121,19 @@ export const trucks: Truck[] = [
     images: ['/images/howo-tx-4x2-reefer-1.jpg', '/images/howo-tx-4x2-reefer-2.jpg', '/images/howo-tx-4x2-reefer-3.jpg'],
     features: ['中卡冷藏', '冷链运输', '省油', '冷王制冷机组']
   },
+  {
+    id: 'sitrak-8x4-reefer',
+    name: '汕德卡 8×4 冷藏车',
+    category: 'reefer',
+    brand: '中国重汽',
+    horsepower: 440,
+    driveType: '8×4',
+    engine: '曼 MC13.440',
+    price: '$48,000 - $60,000',
+    image: '/images/sitrak-8x4-reefer-1.jpg',
+    images: ['/images/sitrak-8x4-reefer-1.jpg', '/images/sitrak-8x4-reefer-2.jpg'],
+    features: ['大型冷藏', '长途冷链', '曼发动机', '冷王制冷机组']
+  },
 
   // ===== 自卸车 =====
   {
