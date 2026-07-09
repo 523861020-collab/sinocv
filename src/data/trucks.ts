@@ -236,6 +236,21 @@ export const trucks: Truck[] = [
     features: ['15方水罐', '前冲后洒', '高压水炮', '自吸自排']
   },
 
+  // ===== 油罐车 =====
+  {
+    id: 'howo-tx-fuel',
+    name: '豪沃 TX 6×4 油罐车',
+    category: 'special',
+    brand: '中国重汽',
+    horsepower: 380,
+    driveType: '6×4',
+    engine: '潍柴 WP12.380E62',
+    price: '$30,000 - $40,000',
+    image: '/images/howo-tx-fuel-1.jpg',
+    images: ['/images/howo-tx-fuel-1.jpg', '/images/howo-tx-fuel-2.jpg', '/images/howo-tx-fuel-3.jpg'],
+    features: ['20方油罐', '防爆设计', '油气回收', '静电接地']
+  },
+
   // ===== 矿卡 =====
   {
     id: 'tongli-tl875',
