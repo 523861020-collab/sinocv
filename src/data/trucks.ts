@@ -411,42 +411,6 @@ export const trucks: Truck[] = [
 
   // ===== 矿卡 =====
   {
-    id: 'tongli-tl875',
-    name: '同力 TL875 矿用自卸车',
-    category: 'mining',
-    brand: '同力重工',
-    horsepower: 380,
-    driveType: '6×4',
-    engine: '潍柴 WP12.380E62',
-    price: '$65,000 - $85,000',
-    image: '/images/mining-truck.jpg',
-    features: ['40吨载重', '矿用宽体', '加强型底盘', '沙漠空滤']
-  },
-  {
-    id: 'xcmg-xdr80t',
-    name: '徐工 XDR80T 矿用自卸车',
-    category: 'mining',
-    brand: '徐工 XCMG',
-    horsepower: 420,
-    driveType: '6×4',
-    engine: '潍柴 WP13.420E62',
-    price: '$75,000 - $95,000',
-    image: '/images/mining-truck.jpg',
-    features: ['45吨载重', '油气悬挂', '自动润滑', '矿用轮胎']
-  },
-  {
-    id: 'lgmg-mt86',
-    name: '临工 MT86 矿用宽体车',
-    category: 'mining',
-    brand: '临工重机',
-    horsepower: 400,
-    driveType: '6×4',
-    engine: '潍柴 WP12.400E62',
-    price: '$60,000 - $80,000',
-    image: '/images/mining-truck.jpg',
-    features: ['35吨载重', '宽体驾驶室', '液力缓速器', '矿用底盘']
-  },
-  {
     id: 'sinotruk-90-mining',
     name: '中国重汽 105矿',
     category: 'mining',
