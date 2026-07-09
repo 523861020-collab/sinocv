@@ -264,18 +264,6 @@ export const trucks: Truck[] = [
 
   // ===== 高空作业车 =====
   {
-    id: 'howo-tx-aerial',
-    name: 'HOWO TX 280 高空作业车',
-    category: 'aerial',
-    brand: '中国重汽',
-    horsepower: 280,
-    driveType: '4×2',
-    engine: '潍柴 WP7.280E62',
-    price: '$35,000 - $45,000',
-    image: '/images/tractor-1.jpg',
-    features: ['28米作业高度', '液压伸缩臂', '安全锁止', '遥控操作']
-  },
-  {
     id: 'howo-4x2-aerial',
     name: '豪沃 轻卡 4×2 高空作业车',
     category: 'aerial',
