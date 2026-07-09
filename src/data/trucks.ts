@@ -289,6 +289,19 @@ export const trucks: Truck[] = [
     images: ['/images/howo-tx-fuel-1.jpg', '/images/howo-tx-fuel-2.jpg', '/images/howo-tx-fuel-3.jpg'],
     features: ['20方油罐', '防爆设计', '油气回收', '静电接地']
   },
+  {
+    id: 'howo-4x4-fuel',
+    name: '豪沃 轻卡 4×4 油罐车',
+    category: 'fuel',
+    brand: '中国重汽',
+    horsepower: 160,
+    driveType: '4×4',
+    engine: '潍柴 WP2.3Q',
+    price: '$22,000 - $28,000',
+    image: '/images/howo-4x4-fuel-1.jpg',
+    images: ['/images/howo-4x4-fuel-1.jpg', '/images/howo-4x4-fuel-2.jpg', '/images/howo-4x4-fuel-3.jpg'],
+    features: ['4×4全驱', '小型油罐', '矿区/工地供油', '防爆设计']
+  },
 
   // ===== 6×6 =====
   {
