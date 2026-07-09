@@ -606,6 +606,19 @@ export const trucks: Truck[] = [
     price: '$5,000 - $8,000',
     image: '/images/tractor-1.jpg',
     features: ['3.3米货箱', '经济节油', '灵活城市通行', '低维保成本']
+  },
+  {
+    id: 'sinotruk-cargo-light',
+    name: '中国重汽 货运版',
+    category: 'light',
+    brand: '中国重汽先锋官',
+    horsepower: 130,
+    driveType: '4×2',
+    engine: '潍柴 WP2.3Q',
+    price: '$8,000 - $12,000',
+    image: '/images/sinotruk-cargo-light-1.jpg',
+    images: ['/images/sinotruk-cargo-light-1.jpg', '/images/sinotruk-cargo-light-2.jpg', '/images/sinotruk-cargo-light-3.jpg'],
+    features: ['城市货运', '大空间', '省油', '灵活']
   }
 ];
 
