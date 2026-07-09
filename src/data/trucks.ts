@@ -194,15 +194,16 @@ export const trucks: Truck[] = [
 
   // ===== 随车吊 =====
   {
-    id: 'howo-7-crane',
-    name: 'HOWO 7 400 随车吊',
+    id: 'howo-tx-crane',
+    name: '豪沃 TX 6×4 随车吊',
     category: 'special',
     brand: '中国重汽',
     horsepower: 400,
     driveType: '6×4',
     engine: '潍柴 WP12.400E62',
     price: '$38,000 - $48,000',
-    image: '/images/crane-1.jpg',
+    image: '/images/howo-tx-crane-1.jpg',
+    images: ['/images/howo-tx-crane-1.jpg', '/images/howo-tx-crane-2.jpg', '/images/howo-tx-crane-3.jpg'],
     features: ['12吨吊机', '液压支腿', '远程遥控', '360°旋转']
   },
 
