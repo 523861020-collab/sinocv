@@ -302,6 +302,19 @@ export const trucks: Truck[] = [
     images: ['/images/howo-tx-water-1.jpg', '/images/howo-tx-water-2.jpg', '/images/howo-tx-water-3.jpg'],
     features: ['15方水罐', '前冲后洒', '高压水炮', '自吸自排']
   },
+  {
+    id: 'howo-nx-water',
+    name: '豪沃 NX 6×4 洒水车',
+    category: 'water',
+    brand: '中国重汽',
+    horsepower: 340,
+    driveType: '6×4',
+    engine: '潍柴 WP10.340E62',
+    price: '$25,000 - $32,000',
+    image: '/images/howo-nx-water-1.jpg',
+    images: ['/images/howo-nx-water-1.jpg', '/images/howo-nx-water-2.jpg', '/images/howo-nx-water-3.jpg'],
+    features: ['15方水罐', '前冲后洒', '高压水炮', '自吸自排']
+  },
 
   // ===== 油罐车 =====
   {
