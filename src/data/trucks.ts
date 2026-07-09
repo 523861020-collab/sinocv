@@ -67,6 +67,19 @@ export const trucks: Truck[] = [
     image: '/images/hero-2.jpg',
     features: ['9.6米货箱', '气囊减震座椅', '多媒体中控', '定速巡航']
   },
+  {
+    id: 'sitrak-curtain',
+    name: '汕德卡 6×4 侧帘载货车',
+    category: 'cargo',
+    brand: '中国重汽',
+    horsepower: 440,
+    driveType: '6×4',
+    engine: '曼 MC13.440',
+    price: '$38,000 - $48,000',
+    image: '/images/sitrak-curtain-1.jpg',
+    images: ['/images/sitrak-curtain-1.jpg', '/images/sitrak-curtain-2.jpg', '/images/sitrak-curtain-3.jpg'],
+    features: ['侧帘式', '快速装卸', '大容量', '曼发动机']
+  },
 
   // ===== 冷藏车 =====
   {
