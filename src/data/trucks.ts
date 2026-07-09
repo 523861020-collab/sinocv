@@ -219,6 +219,19 @@ export const trucks: Truck[] = [
     images: ['/images/howo-tx-crane-1.jpg', '/images/howo-tx-crane-2.jpg', '/images/howo-tx-crane-3.jpg'],
     features: ['12吨吊机', '液压支腿', '远程遥控', '360°旋转']
   },
+  {
+    id: 'howo-4x2-crane',
+    name: '豪沃 轻卡 4×2 随车吊',
+    category: 'crane',
+    brand: '中国重汽',
+    horsepower: 160,
+    driveType: '4×2',
+    engine: '潍柴 WP2.3Q',
+    price: '$25,000 - $32,000',
+    image: '/images/howo-4x2-crane-1.jpg',
+    images: ['/images/howo-4x2-crane-1.jpg', '/images/howo-4x2-crane-2.jpg', '/images/howo-4x2-crane-3.jpg'],
+    features: ['轻型随车吊', '城市灵活', '省油', '液压支腿']
+  },
 
   // ===== 高空作业车 =====
   {
