@@ -120,6 +120,19 @@ export const trucks: Truck[] = [
     images: ['/images/howo-4x2-reefer-1.jpg', '/images/howo-4x2-reefer-2.jpg', '/images/howo-4x2-reefer-3.jpg'],
     features: ['轻型冷藏', '城市配送', '低油耗', '冷王制冷机组']
   },
+  {
+    id: 'howo-tx-4x2-reefer',
+    name: '豪沃 TX 4×2 冷藏车',
+    category: 'reefer',
+    brand: '中国重汽',
+    horsepower: 210,
+    driveType: '4×2',
+    engine: '潍柴 WP4.6',
+    price: '$28,000 - $35,000',
+    image: '/images/howo-tx-4x2-reefer-1.jpg',
+    images: ['/images/howo-tx-4x2-reefer-1.jpg', '/images/howo-tx-4x2-reefer-2.jpg', '/images/howo-tx-4x2-reefer-3.jpg'],
+    features: ['中卡冷藏', '冷链运输', '省油', '冷王制冷机组']
+  },
 
   // ===== 自卸车 =====
   {
