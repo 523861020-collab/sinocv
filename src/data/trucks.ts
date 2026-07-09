@@ -459,6 +459,19 @@ export const trucks: Truck[] = [
     images: ['/images/sinotruk-90-mining-1.jpg', '/images/sinotruk-90-mining-2.jpg', '/images/sinotruk-90-mining-3.jpg'],
     features: ['105吨载重', '矿用宽体', '潍柴17L发动机', '油气悬挂']
   },
+  {
+    id: 'sinotruk-90t-mining',
+    name: '中国重汽 90矿',
+    category: 'mining',
+    brand: '中国重汽',
+    horsepower: 480,
+    driveType: '6×4',
+    engine: '潍柴 WP15.480E62',
+    price: '$85,000 - $110,000',
+    image: '/images/sinotruk-90t-mining-1.jpg',
+    images: ['/images/sinotruk-90t-mining-1.jpg', '/images/sinotruk-90t-mining-2.jpg', '/images/sinotruk-90t-mining-3.jpg'],
+    features: ['90吨载重', '矿用宽体', '潍柴15L发动机', '油气悬挂']
+  },
 
   // ===== 挂车（中集） =====
   {
