@@ -224,14 +224,15 @@ export const trucks: Truck[] = [
   // ===== 洒水车 =====
   {
     id: 'howo-tx-water',
-    name: 'HOWO TX 340 洒水车',
+    name: '豪沃 TX 6×4 洒水车',
     category: 'special',
     brand: '中国重汽',
     horsepower: 340,
     driveType: '6×4',
     engine: '潍柴 WP10.340E62',
     price: '$25,000 - $32,000',
-    image: '/images/tanker-1.jpg',
+    image: '/images/howo-tx-water-1.jpg',
+    images: ['/images/howo-tx-water-1.jpg', '/images/howo-tx-water-2.jpg', '/images/howo-tx-water-3.jpg'],
     features: ['15方水罐', '前冲后洒', '高压水炮', '自吸自排']
   },
 
