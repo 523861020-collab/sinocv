@@ -568,6 +568,19 @@ export const trucks: Truck[] = [
     images: ['/images/xcmg-grader-1.jpg', '/images/xcmg-grader-2.jpg'],
     features: ['18吨级', '液压操控', '360°回转铲刀', '矿山/公路']
   },
+  {
+    id: 'xcmg-skid',
+    name: '徐工 滑铲机',
+    category: 'machinery',
+    brand: '徐工 XCMG',
+    horsepower: 80,
+    driveType: '轮式',
+    engine: '潍柴 WP3.2',
+    price: '$18,000 - $28,000',
+    image: '/images/xcmg-skid-1.jpg',
+    images: ['/images/xcmg-skid-1.jpg', '/images/xcmg-skid-2.jpg', '/images/xcmg-skid-3.jpg'],
+    features: ['小巧灵活', '多功能', '市政环卫', '低油耗']
+  },
 
   // ===== 中国重汽轻型车 =====
   {
