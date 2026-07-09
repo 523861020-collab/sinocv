@@ -542,6 +542,19 @@ export const trucks: Truck[] = [
     images: ['/images/xcmg-roller-1.jpg', '/images/xcmg-roller-2.jpg', '/images/xcmg-roller-3.jpg'],
     features: ['20吨级', '液压振动', '前后双驱', '全液压转向']
   },
+  {
+    id: 'xcmg-backhoe',
+    name: '徐工 两头忙',
+    category: 'machinery',
+    brand: '徐工 XCMG',
+    horsepower: 100,
+    driveType: '4×4',
+    engine: '潍柴 WP4.1',
+    price: '$38,000 - $52,000',
+    image: '/images/xcmg-backhoe-1.jpg',
+    images: ['/images/xcmg-backhoe-1.jpg', '/images/xcmg-backhoe-2.jpg', '/images/xcmg-backhoe-3.jpg'],
+    features: ['挖掘+装载一体', '多功能', '灵活机动', '市政/农田']
+  },
 
   // ===== 中国重汽轻型车 =====
   {
