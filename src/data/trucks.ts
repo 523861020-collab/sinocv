@@ -584,30 +584,6 @@ export const trucks: Truck[] = [
 
   // ===== 中国重汽轻型车 =====
   {
-    id: 'sinotruk-van',
-    name: '中国重汽 先锋官 Van',
-    category: 'light',
-    brand: '中国重汽先锋官',
-    horsepower: 150,
-    driveType: '4×2',
-    engine: '潍柴 WP2.3Q',
-    price: '$12,000 - $18,000',
-    image: '/images/tractor-1.jpg',
-    features: ['12m³货箱', '侧滑门', 'ABS+EBD', '空调']
-  },
-  {
-    id: 'sinotruk-micro',
-    name: '中国重汽 轻型微卡',
-    category: 'light',
-    brand: '中国重汽先锋官',
-    horsepower: 112,
-    driveType: '4×2',
-    engine: '潍柴 WP2.1Q',
-    price: '$5,000 - $8,000',
-    image: '/images/tractor-1.jpg',
-    features: ['3.3米货箱', '经济节油', '灵活城市通行', '低维保成本']
-  },
-  {
     id: 'sinotruk-cargo-light',
     name: '中国重汽 货运版',
     category: 'light',
