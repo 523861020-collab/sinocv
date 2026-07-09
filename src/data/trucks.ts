@@ -1,7 +1,7 @@
 export interface Truck {
   id: string;
   name: string;
-  category: 'tractor' | 'cargo' | 'dump' | 'mixer' | 'special' | 'trailer' | 'machinery' | 'mining' | 'light';
+  category: 'tractor' | 'cargo' | 'dump' | 'mixer' | 'special' | '6x6' | 'trailer' | 'machinery' | 'mining' | 'light';
   brand: string;
   horsepower: number;
   driveType: string;
@@ -125,7 +125,7 @@ export const trucks: Truck[] = [
   {
     id: 'howo-6x6-dump',
     name: '豪沃 6×6 自卸车',
-    category: 'dump',
+    category: '6x6',
     brand: '中国重汽',
     horsepower: 420,
     driveType: '6×6',
@@ -268,7 +268,7 @@ export const trucks: Truck[] = [
   {
     id: 'howo-6x6-chassis',
     name: '豪沃 6×6 底盘',
-    category: 'special',
+    category: '6x6',
     brand: '中国重汽',
     horsepower: 400,
     driveType: '6×6',
@@ -283,7 +283,7 @@ export const trucks: Truck[] = [
   {
     id: 'howo-6x6-fuel',
     name: '豪沃 6×6 沙漠油罐车',
-    category: 'special',
+    category: '6x6',
     brand: '中国重汽',
     horsepower: 420,
     driveType: '6×6',
@@ -417,6 +417,7 @@ export const categories = [
   { id: 'dump', name: '自卸车', nameEn: 'Dump Truck', icon: '🏗️' },
   { id: 'mixer', name: '搅拌车', nameEn: 'Concrete Mixer', icon: '🔄' },
   { id: 'special', name: '专用车', nameEn: 'Special Vehicle', icon: '🔧' },
+  { id: '6x6', name: '6×6专区', nameEn: '6×6 Off-Road', icon: '🧭' },
   { id: 'machinery', name: '工程机械', nameEn: 'Construction Machinery', icon: '⚙️' },
   { id: 'mining', name: '矿卡', nameEn: 'Mining Truck', icon: '⛏️' },
   { id: 'trailer', name: '挂车', nameEn: 'Trailer', icon: '🔗' },

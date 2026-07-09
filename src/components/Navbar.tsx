@@ -17,6 +17,7 @@ export default function Navbar() {
 
   const navLinks = [
     { href: '/heavy-truck', label: 'Heavy Trucks' },
+    { href: '/6x6', label: '6×6 Off-Road' },
     { href: '/machinery', label: 'Machinery' },
     { href: '/mining', label: 'Mining' },
     { href: '/light', label: 'Light Vehicles' },
