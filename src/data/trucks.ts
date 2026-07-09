@@ -96,18 +96,6 @@ export const trucks: Truck[] = [
 
   // ===== 冷藏车 =====
   {
-    id: 'howo-t5g-reefer',
-    name: 'HOWO T5G 340 冷藏车',
-    category: 'reefer',
-    brand: '中国重汽',
-    horsepower: 340,
-    driveType: '6×2',
-    engine: '潍柴 WP10.340E62',
-    price: '$32,000 - $40,000',
-    image: '/images/tractor-1.jpg',
-    features: ['冷王/开利制冷机组', '-18°C恒温', '聚氨酯保温箱体', '温控记录仪']
-  },
-  {
     id: 'howo-4x2-reefer',
     name: '豪沃 4×2 轻卡冷藏车',
     category: 'reefer',
