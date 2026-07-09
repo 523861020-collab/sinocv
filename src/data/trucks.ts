@@ -555,6 +555,19 @@ export const trucks: Truck[] = [
     images: ['/images/xcmg-backhoe-1.jpg', '/images/xcmg-backhoe-2.jpg', '/images/xcmg-backhoe-3.jpg'],
     features: ['挖掘+装载一体', '多功能', '灵活机动', '市政/农田']
   },
+  {
+    id: 'xcmg-grader',
+    name: '徐工 平地机',
+    category: 'machinery',
+    brand: '徐工 XCMG',
+    horsepower: 220,
+    driveType: '6×4',
+    engine: '潍柴 WP10.220E62',
+    price: '$45,000 - $60,000',
+    image: '/images/xcmg-grader-1.jpg',
+    images: ['/images/xcmg-grader-1.jpg', '/images/xcmg-grader-2.jpg'],
+    features: ['18吨级', '液压操控', '360°回转铲刀', '矿山/公路']
+  },
 
   // ===== 中国重汽轻型车 =====
   {
