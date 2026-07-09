@@ -1,7 +1,7 @@
 export interface Truck {
   id: string;
   name: string;
-  category: 'tractor' | 'cargo' | 'dump' | 'mixer' | 'reefer' | 'cement' | 'garbage' | 'crane' | 'aerial' | 'water' | 'fuel' | 'wrecker' | '6x6' | 'trailer' | 'machinery' | 'mining' | 'light';
+  category: 'tractor' | 'cargo' | 'dump' | 'mixer' | 'reefer' | 'garbage' | 'crane' | 'aerial' | 'water' | 'fuel' | 'wrecker' | '6x6' | 'trailer' | 'machinery' | 'mining' | 'light';
   brand: string;
   horsepower: number;
   driveType: string;
@@ -202,20 +202,6 @@ export const trucks: Truck[] = [
     image: '/images/sitrak-mixer-1.jpg',
     images: ['/images/sitrak-mixer-1.jpg', '/images/sitrak-mixer-2.jpg', '/images/sitrak-mixer-3.jpg'],
     features: ['12方搅拌罐', '恒速控制', '耐磨叶片', '自动润滑']
-  },
-
-  // ===== 水泥罐车 =====
-  {
-    id: 'howo-tx-cement',
-    name: 'HOWO TX 380 水泥罐车',
-    category: 'cement',
-    brand: '中国重汽',
-    horsepower: 380,
-    driveType: '6×4',
-    engine: '潍柴 WP12.380E62',
-    price: '$30,000 - $38,000',
-    image: '/images/tractor-1.jpg',
-    features: ['45立方罐体', '空压机卸料', '压力安全阀', '防堵设计']
   },
 
   // ===== 垃圾运输车 =====
@@ -548,7 +534,6 @@ export const categories = [
   { id: 'dump', name: '自卸车', nameEn: 'Dump Truck', icon: '🏗️' },
   { id: 'mixer', name: '搅拌车', nameEn: 'Concrete Mixer', icon: '🔄' },
   { id: 'reefer', name: '冷藏车', nameEn: 'Reefer Truck', icon: '🧊' },
-  { id: 'cement', name: '水泥罐车', nameEn: 'Cement Tanker', icon: '🚛' },
   { id: 'garbage', name: '垃圾运输车', nameEn: 'Garbage Truck', icon: '🗑️' },
   { id: 'crane', name: '随车吊', nameEn: 'Truck Crane', icon: '🏗️' },
   { id: 'aerial', name: '高空作业车', nameEn: 'Aerial Platform', icon: '🪜' },
@@ -609,7 +594,7 @@ export const zones = [
     icon: '🚛',
     brand: '中国重汽',
     description: '牵引车 · 载货车 · 冷藏车 · 自卸车 · 搅拌车 · 水泥罐车 · 垃圾运输车 · 随车吊 · 高空作业车 · 洒水车 · 油罐车',
-    categories: ['tractor', 'cargo', 'dump', 'mixer', 'reefer', 'cement', 'garbage', 'crane', 'aerial', 'water', 'fuel', 'wrecker', '6x6'],
+    categories: ['tractor', 'cargo', 'dump', 'mixer', 'reefer', 'garbage', 'crane', 'aerial', 'water', 'fuel', 'wrecker', '6x6'],
     color: 'from-amber-500/20 to-transparent'
   },
   {
