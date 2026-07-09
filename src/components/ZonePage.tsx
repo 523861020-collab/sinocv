@@ -27,23 +27,10 @@ function ProductCard({ truck, index, onOpen }: { truck: Truck; index: number; on
         <div className="absolute top-4 left-4 z-20 rounded-full bg-amber-500 px-3 py-1 text-xs font-semibold text-black">
           {categories.find(c => c.id === truck.category)?.name}
         </div>
-        {truck.horsepower > 0 && (
-          <div className="absolute top-4 right-4 z-20 rounded-full bg-white/20 backdrop-blur-sm px-3 py-1 text-xs font-semibold text-white">
-            {truck.horsepower}HP
-          </div>
-        )}
       </div>
-      <div className="p-6">
-        <h3 className="text-lg font-bold text-white mb-1 group-hover:text-amber-500 transition-colors">{truck.name}</h3>
-        <p className="text-amber-500 text-xs mb-3">{truck.brand}</p>
-        <div className="space-y-1.5 mb-4">
-          <div className="flex justify-between text-sm"><span className="text-gray-500">Drive</span><span className="text-gray-300">{truck.driveType}</span></div>
-          <div className="flex justify-between text-sm"><span className="text-gray-500">Engine</span><span className="text-gray-300">{truck.engine}</span></div>
-        </div>
-        <div className="flex flex-wrap gap-1.5 mb-4">
-          {truck.features.slice(0, 3).map((f, i) => <span key={i} className="rounded-full bg-gray-800 px-2.5 py-1 text-xs text-gray-400">{f}</span>)}
-        </div>
-        <a href="https://wa.me/8619103781257" target="_blank" className="block w-full rounded-md bg-amber-500/10 py-2.5 text-center text-amber-500 font-semibold text-sm transition-all hover:bg-amber-500 hover:text-black">Get Quote</a>
+      <div className="p-4 text-center">
+        <h3 className="text-base font-bold text-white group-hover:text-amber-500 transition-colors">{truck.name}</h3>
+        <a href="https://wa.me/8619103781257" target="_blank" className="mt-4 inline-block w-full rounded-md bg-amber-500/10 py-2.5 text-center text-amber-500 font-semibold text-sm transition-all hover:bg-amber-500 hover:text-black">Get Quote</a>
       </div>
     </motion.div>
   );
