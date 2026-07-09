@@ -529,6 +529,19 @@ export const trucks: Truck[] = [
     images: ['/images/xcmg-25t-crane-1.jpg', '/images/xcmg-25t-crane-2.jpg', '/images/xcmg-25t-crane-3.jpg'],
     features: ['25吨吊重', '液压伸缩臂', '360°旋转', '全路面底盘']
   },
+  {
+    id: 'xcmg-roller',
+    name: '徐工 压路机',
+    category: 'machinery',
+    brand: '徐工 XCMG',
+    horsepower: 180,
+    driveType: '轮胎式',
+    engine: '潍柴 WP6.180E62',
+    price: '$35,000 - $50,000',
+    image: '/images/xcmg-roller-1.jpg',
+    images: ['/images/xcmg-roller-1.jpg', '/images/xcmg-roller-2.jpg', '/images/xcmg-roller-3.jpg'],
+    features: ['20吨级', '液压振动', '前后双驱', '全液压转向']
+  },
 
   // ===== 中国重汽轻型车 =====
   {
