@@ -251,6 +251,21 @@ export const trucks: Truck[] = [
     features: ['20方油罐', '防爆设计', '油气回收', '静电接地']
   },
 
+  // ===== 底盘 =====
+  {
+    id: 'howo-6x6-chassis',
+    name: '豪沃 6×6 底盘',
+    category: 'special',
+    brand: '中国重汽',
+    horsepower: 400,
+    driveType: '6×6',
+    engine: '潍柴 WP12.400E62',
+    price: '$32,000 - $42,000',
+    image: '/images/howo-6x6-chassis-1.jpg',
+    images: ['/images/howo-6x6-chassis-1.jpg', '/images/howo-6x6-chassis-2.jpg', '/images/howo-6x6-chassis-3.jpg'],
+    features: ['6×6全驱', '加强型大梁', '多种上装适配', '军用级底盘']
+  },
+
   // ===== 矿卡 =====
   {
     id: 'tongli-tl875',
