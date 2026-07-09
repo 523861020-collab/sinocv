@@ -345,6 +345,19 @@ export const trucks: Truck[] = [
     images: ['/images/howo-4x4-fuel-1.jpg', '/images/howo-4x4-fuel-2.jpg', '/images/howo-4x4-fuel-3.jpg'],
     features: ['4×4全驱', '小型油罐', '矿区/工地供油', '防爆设计']
   },
+  {
+    id: 'howo-nx-8x4-fuel',
+    name: '豪沃 NX 8×4 油罐车',
+    category: 'fuel',
+    brand: '中国重汽',
+    horsepower: 430,
+    driveType: '8×4',
+    engine: '潍柴 WP13.430E62',
+    price: '$38,000 - $48,000',
+    image: '/images/howo-nx-8x4-fuel-1.jpg',
+    images: ['/images/howo-nx-8x4-fuel-1.jpg', '/images/howo-nx-8x4-fuel-2.jpg', '/images/howo-nx-8x4-fuel-3.jpg'],
+    features: ['大容量油罐', '防爆设计', '油气回收', '8×4重载']
+  },
 
   // ===== 6×6 =====
   {
