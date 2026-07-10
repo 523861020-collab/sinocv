@@ -581,6 +581,19 @@ export const trucks: Truck[] = [
     images: ['/images/cimc-reefer-1.jpg', '/images/cimc-reefer-2.jpg', '/images/cimc-reefer-3.jpg'],
     features: ['半挂冷藏', '冷王制冷机组', '聚氨酯保温', '-18°C恒温']
   },
+  {
+    id: 'cimc-fuel-trailer',
+    name: '中集 半挂油罐车',
+    category: 'trailer',
+    brand: '中集 CIMC',
+    horsepower: 0,
+    driveType: '3轴',
+    engine: '-',
+    price: '$25,000 - $35,000',
+    image: '/images/cimc-fuel-trailer-1.jpg',
+    images: ['/images/cimc-fuel-trailer-1.jpg', '/images/cimc-fuel-trailer-2.jpg', '/images/cimc-fuel-trailer-3.jpg'],
+    features: ['大容量油罐', '防爆设计', '油气回收', '静电接地']
+  },
 
   // ===== 工程机械（徐工） =====
   {
