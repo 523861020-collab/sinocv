@@ -751,7 +751,7 @@ export const stockTrucks: Truck[] = [
   {
     id: 'stock-001',
     name: '奔驰 8×4 消防车',
-    category: 'special',
+    category: '6x6',
     brand: '奔驰',
     horsepower: 420,
     driveType: '8×4',
@@ -764,7 +764,7 @@ export const stockTrucks: Truck[] = [
   {
     id: 'stock-002',
     name: '奔驰 8×4 消防车',
-    category: 'special',
+    category: '6x6',
     brand: '奔驰',
     horsepower: 420,
     driveType: '8×4',
@@ -777,7 +777,7 @@ export const stockTrucks: Truck[] = [
   {
     id: 'stock-003',
     name: '奔驰 8×4 消防车',
-    category: 'special',
+    category: '6x6',
     brand: '奔驰',
     horsepower: 420,
     driveType: '8×4',
