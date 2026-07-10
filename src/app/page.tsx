@@ -140,16 +140,7 @@ export default function Home() {
             </div>
             <h3 style={{marginTop: '2rem'}} className="text-3xl font-bold text-white mb-6">🏢 About SINOCV</h3>
             <p className="text-gray-300 leading-relaxed text-base text-left">
-              <span className="text-amber-400 font-semibold">SINOCV</span> is a Hong Kong-based professional commercial vehicle and construction machinery export company, providing full-chain export services from vehicle selection, customization, inspection, logistics, to customs clearance.
-            </p>
-            <p className="text-gray-300 leading-relaxed text-base text-left">
-              We have established long-term strategic partnerships with <span className="text-white font-medium">SINOTRUK, XCMG, CIMC, and Light Vehicles</span>, ensuring every vehicle delivered is factory-original with full warranty and after-sales support.
-            </p>
-            <p className="text-gray-300 leading-relaxed text-base text-left">
-              Our product range covers the full lineup of commercial vehicles including tractor trucks, cargo trucks, dump trucks, mixer trucks, reefer trucks, water trucks, garbage trucks, crane trucks, and aerial work platforms, as well as construction machinery such as excavators, loaders, and mining dump trucks, plus trailers, vans, and mini trucks.
-            </p>
-            <p className="text-gray-300 leading-relaxed text-base text-left">
-              Leveraging Hong Kong's international platform and mainland China's supply chain advantages, SINOCV has successfully exported to over 30 countries and regions across Africa, the Middle East, Southeast Asia, and Central Asia, earning widespread trust from overseas customers.
+              <span className="text-amber-400 font-semibold">Xin Yuntong China Limited</span> is dedicated to providing superior services to global truck users. As a professional commercial vehicle export enterprise, we specialize in exporting Chinese heavy-duty trucks and construction machinery. Backed by a comprehensive supply chain and complete export qualifications, we deliver high-quality, smart manufacturing from China to the world. We offer not only one-stop procurement services covering complete vehicles and spare parts but also a robust after-sales support system, ensuring a hassle-free, efficient, and seamless cross-border purchasing experience for every client.
             </p>
             <p className="mt-12 pt-8 border-t border-gray-800/50 text-gray-400 italic text-base text-left">
               🎯 <span className="text-amber-400 font-medium">Our Mission:</span> Customer-focused, quality-driven — to provide the finest Chinese commercial vehicles and construction machinery to global customers and become a trusted long-term partner.
