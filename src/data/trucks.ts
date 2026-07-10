@@ -96,7 +96,7 @@ export const trucks: Truck[] = [
   {
     id: 'sinotruk-3axle-cargo',
     name: '中国重汽 三轴 牵引载货车',
-    category: 'cargo',
+    category: 'trailer',
     brand: '中国重汽',
     horsepower: 440,
     driveType: '6×4',
@@ -109,7 +109,7 @@ export const trucks: Truck[] = [
   {
     id: 'sinotruk-3axle-highside',
     name: '中国重汽 三轴 高栏载货车',
-    category: 'cargo',
+    category: 'trailer',
     brand: '中国重汽',
     horsepower: 440,
     driveType: '6×4',
