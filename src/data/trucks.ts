@@ -760,32 +760,6 @@ export const stockTrucks: Truck[] = [
     image: '/images/benz-fire-1.jpg',
     images: ['/images/benz-fire-1.jpg', '/images/benz-fire-2.jpg', '/images/benz-fire-3.jpg'],
     features: ['8×4', '奔驰底盘', '中国上装', '即付即发']
-  },
-  {
-    id: 'stock-002',
-    name: '奔驰 8×4 消防车',
-    category: '6x6',
-    brand: '奔驰',
-    horsepower: 420,
-    driveType: '8×4',
-    engine: '奔驰 OM 470',
-    price: '',
-    image: '/images/benz-fire-2.jpg',
-    images: ['/images/benz-fire-1.jpg', '/images/benz-fire-2.jpg', '/images/benz-fire-3.jpg'],
-    features: ['8×4', '奔驰底盘', '中国上装', '即付即发']
-  },
-  {
-    id: 'stock-003',
-    name: '奔驰 8×4 消防车',
-    category: '6x6',
-    brand: '奔驰',
-    horsepower: 420,
-    driveType: '8×4',
-    engine: '奔驰 OM 470',
-    price: '',
-    image: '/images/benz-fire-3.jpg',
-    images: ['/images/benz-fire-1.jpg', '/images/benz-fire-2.jpg', '/images/benz-fire-3.jpg'],
-    features: ['8×4', '奔驰底盘', '中国上装', '即付即发']
   }
 ];
 
