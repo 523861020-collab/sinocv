@@ -750,39 +750,42 @@ export const categories = [
 export const stockTrucks: Truck[] = [
   {
     id: 'stock-001',
-    name: 'HOWO TX 430 牵引车 现车',
-    category: 'tractor',
-    brand: '中国重汽',
-    horsepower: 430,
-    driveType: '6×4',
-    engine: '潍柴 WP13.430E62',
+    name: '奔驰 8×4 消防车',
+    category: 'special',
+    brand: '奔驰',
+    horsepower: 420,
+    driveType: '8×4',
+    engine: '奔驰 OM 470',
     price: '',
-    image: '/images/hero-tractor.jpg',
-    features: ['已到港', '白色', '高顶双卧铺', '即付即发']
+    image: '/images/benz-fire-1.jpg',
+    images: ['/images/benz-fire-1.jpg', '/images/benz-fire-2.jpg', '/images/benz-fire-3.jpg'],
+    features: ['8×4', '奔驰底盘', '中国上装', '即付即发']
   },
   {
     id: 'stock-002',
-    name: 'HOWO 8×4 自卸车 现车',
-    category: 'dump',
-    brand: '中国重汽',
-    horsepower: 380,
+    name: '奔驰 8×4 消防车',
+    category: 'special',
+    brand: '奔驰',
+    horsepower: 420,
     driveType: '8×4',
-    engine: '潍柴 WP12.380E62',
+    engine: '奔驰 OM 470',
     price: '',
-    image: '/images/dump-howo.jpg',
-    features: ['已到港', '黄色', '加强型货箱', '即付即发']
+    image: '/images/benz-fire-2.jpg',
+    images: ['/images/benz-fire-1.jpg', '/images/benz-fire-2.jpg', '/images/benz-fire-3.jpg'],
+    features: ['8×4', '奔驰底盘', '中国上装', '即付即发']
   },
   {
     id: 'stock-003',
-    name: 'SITRAK C7H 440 牵引车 现车',
-    category: 'tractor',
-    brand: '中国重汽',
-    horsepower: 440,
-    driveType: '6×4',
-    engine: '曼 MC13.440',
+    name: '奔驰 8×4 消防车',
+    category: 'special',
+    brand: '奔驰',
+    horsepower: 420,
+    driveType: '8×4',
+    engine: '奔驰 OM 470',
     price: '',
-    image: '/images/tractor-2.jpg?v=2',
-    features: ['已到港', '白色', '豪华驾驶室', '即付即发']
+    image: '/images/benz-fire-3.jpg',
+    images: ['/images/benz-fire-1.jpg', '/images/benz-fire-2.jpg', '/images/benz-fire-3.jpg'],
+    features: ['8×4', '奔驰底盘', '中国上装', '即付即发']
   }
 ];
 
