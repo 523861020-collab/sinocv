@@ -568,6 +568,19 @@ export const trucks: Truck[] = [
     images: ['/images/cimc-semi-dump-1.jpg', '/images/cimc-semi-dump-2.jpg', '/images/cimc-semi-dump-3.jpg'],
     features: ['U型货箱', '液压举升', '耐磨钢板', '自动篷布']
   },
+  {
+    id: 'cimc-reefer',
+    name: '中集 半挂冷藏车',
+    category: 'trailer',
+    brand: '中集 CIMC',
+    horsepower: 0,
+    driveType: '3轴',
+    engine: '-',
+    price: '$22,000 - $30,000',
+    image: '/images/cimc-reefer-1.jpg',
+    images: ['/images/cimc-reefer-1.jpg', '/images/cimc-reefer-2.jpg', '/images/cimc-reefer-3.jpg'],
+    features: ['半挂冷藏', '冷王制冷机组', '聚氨酯保温', '-18°C恒温']
+  },
 
   // ===== 工程机械（徐工） =====
   {
