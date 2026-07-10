@@ -783,8 +783,8 @@ export const stockTrucks: Truck[] = [
     driveType: '8×4',
     engine: '曼 MC13.440',
     price: '',
-    image: '/images/stock-sitrak-dump-1.jpg',
-    images: ['/images/stock-sitrak-dump-1.jpg', '/images/stock-sitrak-dump-2.jpg', '/images/stock-sitrak-dump-3.jpg'],
+    image: '/images/stk-sitrak-dump-1.jpg',
+    images: ['/images/stk-sitrak-dump-1.jpg', '/images/stk-sitrak-dump-2.jpg', '/images/stk-sitrak-dump-3.jpg'],
     features: ['8×4', '曼发动机', '加强型货箱', '即付即发']
   }
 ];
