@@ -123,7 +123,7 @@ export default function Home() {
         <div className="px-6">
           <div className="text-center">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-12">About Us</h2>
-            <div className="flex flex-col items-center">
+            <div className="max-w-3xl mx-auto text-center w-full">
               <div className="relative mb-8">
                 <div className="absolute inset-0 rounded-full bg-amber-500/20 blur-2xl scale-110" />
                 <img src="/images/manager.jpg" alt="Li Shanlong" className="relative w-56 h-56 rounded-full object-cover border-4 border-amber-500/40 shadow-2xl" />
@@ -137,10 +137,7 @@ export default function Home() {
                 <span className="text-gray-700">|</span>
                 <a href="https://wa.me/8619103781257" target="_blank" className="text-green-400 hover:text-green-300 transition-colors">💬 WhatsApp: +86 19103781257</a>
               </div>
-            </div>
-            {/* v3 */}
-            <div className="max-w-3xl mx-auto text-center">
-            <h3 className="text-3xl font-bold text-white mb-6">🏢 About XINYUNTONG CHINA</h3>
+            <h3 className="text-3xl font-bold text-white mb-6 mt-2">🏢 About XINYUNTONG CHINA</h3>
             <p className="text-gray-300 leading-relaxed text-base mb-6">
               <span className="text-amber-400 font-semibold">Xin Yuntong China Limited</span> is dedicated to providing superior services to global truck users. As a professional commercial vehicle export enterprise, we specialize in exporting Chinese heavy-duty trucks and construction machinery. Backed by a comprehensive supply chain and complete export qualifications, we deliver high-quality, smart manufacturing from China to the world. We offer not only one-stop procurement services covering complete vehicles and spare parts but also a robust after-sales support system, ensuring a hassle-free, efficient, and seamless cross-border purchasing experience for every client.
             </p>
