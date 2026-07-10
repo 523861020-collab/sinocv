@@ -95,7 +95,7 @@ export const trucks: Truck[] = [
   },
   {
     id: 'sinotruk-3axle-cargo',
-    name: '中国重汽 三轴 牵引载货车',
+    name: '牵引载货挂车',
     category: 'trailer',
     brand: '中国重汽',
     horsepower: 440,
@@ -108,7 +108,7 @@ export const trucks: Truck[] = [
   },
   {
     id: 'sinotruk-3axle-highside',
-    name: '中国重汽 三轴 高栏载货车',
+    name: '高栏载货挂车',
     category: 'trailer',
     brand: '中国重汽',
     horsepower: 440,
@@ -492,7 +492,7 @@ export const trucks: Truck[] = [
   // ===== 挂车（中集） =====
   {
     id: 'cimc-4axle-flat',
-    name: '中集 四轴 平板挂车',
+    name: '平板挂车',
     category: 'trailer',
     brand: '中集 CIMC',
     horsepower: 0,
@@ -505,7 +505,7 @@ export const trucks: Truck[] = [
   },
   {
     id: 'cimc-3axle-curtain',
-    name: '中集 三轴 侧帘挂车',
+    name: '侧帘挂车',
     category: 'trailer',
     brand: '中集 CIMC',
     horsepower: 0,
@@ -518,7 +518,7 @@ export const trucks: Truck[] = [
   },
   {
     id: 'cimc-4axle-lowbed',
-    name: '中集 四轴 低平板挂车',
+    name: '低平板挂车',
     category: 'trailer',
     brand: '中集 CIMC',
     horsepower: 0,
@@ -531,7 +531,7 @@ export const trucks: Truck[] = [
   },
   {
     id: 'cimc-3axle-heavy',
-    name: '中集 三轴 大件运输挂车',
+    name: '大件运输挂车',
     category: 'trailer',
     brand: '中集 CIMC',
     horsepower: 0,
@@ -544,7 +544,7 @@ export const trucks: Truck[] = [
   },
   {
     id: 'cimc-2axle-car',
-    name: '中集 两轴 轿运车',
+    name: '轿运挂车',
     category: 'trailer',
     brand: '中集 CIMC',
     horsepower: 0,
@@ -557,7 +557,7 @@ export const trucks: Truck[] = [
   },
   {
     id: 'cimc-semi-dump',
-    name: '中集 半挂自卸车',
+    name: '自卸挂车',
     category: 'trailer',
     brand: '中集 CIMC',
     horsepower: 0,
@@ -570,7 +570,7 @@ export const trucks: Truck[] = [
   },
   {
     id: 'cimc-reefer',
-    name: '中集 半挂冷藏车',
+    name: '冷藏挂车',
     category: 'trailer',
     brand: '中集 CIMC',
     horsepower: 0,
@@ -583,7 +583,7 @@ export const trucks: Truck[] = [
   },
   {
     id: 'cimc-fuel-trailer',
-    name: '中集 半挂油罐车',
+    name: '油罐挂车',
     category: 'trailer',
     brand: '中集 CIMC',
     horsepower: 0,
@@ -596,7 +596,7 @@ export const trucks: Truck[] = [
   },
   {
     id: 'cimc-lng-trailer',
-    name: '中集 LNG半挂罐体',
+    name: 'LNG罐体挂车',
     category: 'trailer',
     brand: '中集 CIMC',
     horsepower: 0,
@@ -609,7 +609,7 @@ export const trucks: Truck[] = [
   },
   {
     id: 'cimc-powder-trailer',
-    name: '中集 粉尘罐半挂',
+    name: '粉尘罐挂车',
     category: 'trailer',
     brand: '中集 CIMC',
     horsepower: 0,
