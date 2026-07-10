@@ -529,6 +529,19 @@ export const trucks: Truck[] = [
     features: ['低平板', '四轴重载', '工程机械运输', '16吨车桥']
   },
   {
+    id: 'cimc-3axle-heavy',
+    name: '中集 三轴 大件运输挂车',
+    category: 'trailer',
+    brand: '中集 CIMC',
+    horsepower: 0,
+    driveType: '3轴',
+    engine: '-',
+    price: '$14,000 - $20,000',
+    image: '/images/cimc-3axle-heavy-1.jpg',
+    images: ['/images/cimc-3axle-heavy-1.jpg', '/images/cimc-3axle-heavy-2.jpg', '/images/cimc-3axle-heavy-3.jpg'],
+    features: ['大件运输', '加强型大梁', '13吨车桥', 'ABS制动']
+  },
+  {
     id: 'cimc-dump-trailer',
     name: '中集 40立方 自卸挂车',
     category: 'trailer',
