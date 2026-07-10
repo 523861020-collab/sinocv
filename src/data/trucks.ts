@@ -503,6 +503,19 @@ export const trucks: Truck[] = [
     features: ['侧帘式', '快速装卸', '13吨车桥', 'ABS制动']
   },
   {
+    id: 'cimc-4axle-lowbed',
+    name: '中集 四轴 低平板挂车',
+    category: 'trailer',
+    brand: '中集 CIMC',
+    horsepower: 0,
+    driveType: '4轴',
+    engine: '-',
+    price: '$18,000 - $25,000',
+    image: '/images/cimc-4axle-lowbed-1.jpg',
+    images: ['/images/cimc-4axle-lowbed-1.jpg', '/images/cimc-4axle-lowbed-2.jpg', '/images/cimc-4axle-lowbed-3.jpg'],
+    features: ['低平板', '四轴重载', '工程机械运输', '16吨车桥']
+  },
+  {
     id: 'cimc-dump-trailer',
     name: '中集 40立方 自卸挂车',
     category: 'trailer',
