@@ -116,7 +116,7 @@ export const trucks: Truck[] = [
     engine: '曼 MC13.440',
     price: '$45,000 - $58,000',
     image: '/images/sinotruk-3axle-highside-1.jpg',
-    images: ['/images/sinotruk-3axle-highside-1.jpg', '/images/sinotruk-3axle-highside-2.jpg'],
+    images: ['/images/sinotruk-3axle-highside-1.jpg', '/images/sinotruk-3axle-highside-2.jpg', '/images/sinotruk-3axle-highside-3.jpg'],
     features: ['高栏货箱', '大容量', '曼发动机', '长途运输']
   },
 
