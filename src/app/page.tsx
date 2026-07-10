@@ -56,17 +56,8 @@ function ZoneWindow({ zone }: { zone: typeof zones[0] }) {
           {categories.find(c => c.id === p.category)?.name}
         </div>
       </div>
-      <div className="p-4">
-        <AnimatePresence mode="wait">
-          <motion.div key={current}
-            initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -6 }}
-            transition={{ duration: 0.3 }}
-          >
-            <p className="text-amber-500 text-xs">{p.brand}</p>
-            <h4 className="text-base font-bold text-white mt-0.5 mb-2 truncate">{p.name}</h4>
-            <span className="text-gray-500 text-sm">{p.driveType}</span>
-          </motion.div>
-        </AnimatePresence>
+      <div className="p-4 text-center">
+        <h4 className="text-base font-bold text-white truncate">{p.name}</h4>
       </div>
       <div className="flex justify-center gap-1 pb-3">
         {products.map((_, i) => (
