@@ -38,7 +38,7 @@ export default function Navbar() {
           <a href="/" className="flex items-center gap-3">
             <img src="/images/logo-new.png" alt="Logo" className="h-10 w-auto" />
             <div className="text-sm text-amber-500 font-medium leading-tight">
-              <div>One-Stop Sourcing</div>
+              <div>One-Stop Sourcing for</div>
               <div>Commercial Vehicles</div>
             </div>
           </a>
