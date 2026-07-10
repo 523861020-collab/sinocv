@@ -811,7 +811,7 @@ export const zones = [
     brand: 'SINOTRUK',
     description: 'Tractors · Cargo · Dump · Mixer · Reefer · Crane · Water · Fuel · 6×6',
     categories: ['tractor', 'dump', 'cargo', 'mixer', 'reefer', 'light-special', 'crane', 'water', 'fuel', '6x6'],
-    color: 'from-amber-500/20 to-transparent'
+    color: 'from-blue-500/20 to-transparent'
   },
   {
     id: 'machinery',

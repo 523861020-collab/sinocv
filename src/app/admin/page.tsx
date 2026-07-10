@@ -29,7 +29,7 @@ export default function AdminPage() {
               <div key={inq.id} className="rounded-xl bg-gray-900 border border-gray-800 p-6">
                 <div className="flex justify-between items-start mb-3">
                   <div>
-                    <span className="text-amber-500 text-xs">{inq.id}</span>
+                    <span className="text-blue-500 text-xs">{inq.id}</span>
                     <h3 className="text-white font-semibold text-lg">{inq.name}</h3>
                   </div>
                   <span className="text-gray-500 text-xs">{new Date(inq.createdAt).toLocaleString()}</span>

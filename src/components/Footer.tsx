@@ -7,7 +7,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-3 mb-6">
               <img src="/images/logo-new.png" alt="Logo" className="h-10 w-auto" />
-              <div className="text-sm text-amber-500 font-medium leading-tight">
+              <div className="text-sm text-blue-500 font-medium leading-tight">
                 <div>One-stop Shop for</div>
                 <div>Chinese Commercial Vehicles</div>
               </div>
@@ -28,11 +28,11 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold text-white mb-6">Quick Links</h3>
             <ul className="space-y-3">
-              <li><a href="/heavy-truck" className="text-gray-400 hover:text-amber-500 transition-colors">Heavy Duty Trucks</a></li>
-              <li><a href="/machinery" className="text-gray-400 hover:text-amber-500 transition-colors">Construction Machinery</a></li>
-              <li><a href="/mining" className="text-gray-400 hover:text-amber-500 transition-colors">Mining Trucks</a></li>
-              <li><a href="/light" className="text-gray-400 hover:text-amber-500 transition-colors">Light Vehicles</a></li>
-              <li><a href="/trailers" className="text-gray-400 hover:text-amber-500 transition-colors">Trailers</a></li>
+              <li><a href="/heavy-truck" className="text-gray-400 hover:text-blue-500 transition-colors">Heavy Duty Trucks</a></li>
+              <li><a href="/machinery" className="text-gray-400 hover:text-blue-500 transition-colors">Construction Machinery</a></li>
+              <li><a href="/mining" className="text-gray-400 hover:text-blue-500 transition-colors">Mining Trucks</a></li>
+              <li><a href="/light" className="text-gray-400 hover:text-blue-500 transition-colors">Light Vehicles</a></li>
+              <li><a href="/trailers" className="text-gray-400 hover:text-blue-500 transition-colors">Trailers</a></li>
             </ul>
           </div>
 
@@ -41,7 +41,7 @@ export default function Footer() {
             <h3 className="text-lg font-semibold text-white mb-6">Contact</h3>
             <div className="space-y-4">
               <div className="flex items-center gap-3">
-                <svg className="h-5 w-5 text-amber-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="h-5 w-5 text-blue-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
                 <span className="text-gray-400">lishanlong@sinocv.com</span>

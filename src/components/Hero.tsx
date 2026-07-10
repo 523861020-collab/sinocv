@@ -98,7 +98,7 @@ export default function Hero() {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.3 }}
-                className="mb-4 text-lg tracking-widest text-amber-400"
+                className="mb-4 text-lg tracking-widest text-blue-400"
               >
                 {slides[current].subtitle}
               </motion.p>
@@ -126,7 +126,7 @@ export default function Hero() {
               >
                 <Link
                   href={slides[current].link}
-                  className="rounded-md bg-amber-500 px-8 py-4 text-lg font-semibold text-black transition-all hover:bg-amber-400 hover:shadow-lg hover:shadow-amber-500/30"
+                  className="rounded-md bg-blue-500 px-8 py-4 text-lg font-semibold text-black transition-all hover:bg-blue-400 hover:shadow-lg hover:shadow-blue-500/30"
                 >
                   View Products
                 </Link>
@@ -149,7 +149,7 @@ export default function Hero() {
             key={i}
             onClick={() => goTo(i)}
             className={`h-2 rounded-full transition-all ${
-              i === current ? 'w-12 bg-amber-500' : 'w-6 bg-white/50'
+              i === current ? 'w-12 bg-blue-500' : 'w-6 bg-white/50'
             }`}
           />
         ))}

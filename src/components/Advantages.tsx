@@ -38,7 +38,7 @@ export default function Advantages() {
           viewport={{ once: true }}
           className="mb-20 text-center"
         >
-          <p className="mb-4 text-amber-500 tracking-widest text-sm">WHY CHOOSE US</p>
+          <p className="mb-4 text-blue-500 tracking-widest text-sm">WHY CHOOSE US</p>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Our Advantages</h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed">
             4 Major Brands · One-Stop Sourcing — SINOTRUK + XCMG + CIMC + Light Vehicles
@@ -53,9 +53,9 @@ export default function Advantages() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="group rounded-xl bg-gray-900/50 border border-gray-800 p-8 text-center transition-all hover:border-amber-500/50 hover:bg-gray-900"
+              className="group rounded-xl bg-gray-900/50 border border-gray-800 p-8 text-center transition-all hover:border-blue-500/50 hover:bg-gray-900"
             >
-              <div className="mx-auto mb-6 text-amber-500 group-hover:scale-110 transition-transform">
+              <div className="mx-auto mb-6 text-blue-500 group-hover:scale-110 transition-transform">
                 {iconMap[adv.icon]}
               </div>
               <h3 className="text-xl font-bold text-white mb-2">{adv.title}</h3>
@@ -114,7 +114,7 @@ export default function Advantages() {
             { number: '98%', label: 'Client Satisfaction' }
           ].map((stat, i) => (
             <div key={i} className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-amber-500 mb-2">{stat.number}</div>
+              <div className="text-4xl md:text-5xl font-bold text-blue-500 mb-2">{stat.number}</div>
               <div className="text-gray-400">{stat.label}</div>
             </div>
           ))}

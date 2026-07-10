@@ -14,7 +14,7 @@ function ProductCard({ truck, index, onOpen }: { truck: Truck; index: number; on
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.08 }}
-      className="rounded-xl bg-gray-900 border border-gray-800 overflow-hidden group hover:border-amber-500/50 transition-all duration-300"
+      className="rounded-xl bg-gray-900 border border-gray-800 overflow-hidden group hover:border-blue-500/50 transition-all duration-300"
     >
       <div className="relative h-52 overflow-hidden bg-gray-800 cursor-pointer" onClick={() => onOpen(allImages)}>
         <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent z-10" />
@@ -24,13 +24,13 @@ function ProductCard({ truck, index, onOpen }: { truck: Truck; index: number; on
             {allImages.length} photos
           </div>
         )}
-        <div className="absolute top-4 left-4 z-20 rounded-full bg-amber-500 px-3 py-1 text-xs font-semibold text-black">
+        <div className="absolute top-4 left-4 z-20 rounded-full bg-blue-500 px-3 py-1 text-xs font-semibold text-black">
           {categories.find(c => c.id === truck.category)?.name}
         </div>
       </div>
       <div className="p-4 text-center">
-        <h3 className="text-base font-bold text-white group-hover:text-amber-500 transition-colors">{truck.name}</h3>
-        <a href="https://wa.me/8619103781257" target="_blank" className="mt-4 inline-block w-full rounded-md bg-amber-500/10 py-2.5 text-center text-amber-500 font-semibold text-sm transition-all hover:bg-amber-500 hover:text-black">Get Quote</a>
+        <h3 className="text-base font-bold text-white group-hover:text-blue-500 transition-colors">{truck.name}</h3>
+        <a href="https://wa.me/8619103781257" target="_blank" className="mt-4 inline-block w-full rounded-md bg-blue-500/10 py-2.5 text-center text-blue-500 font-semibold text-sm transition-all hover:bg-blue-500 hover:text-black">Get Quote</a>
       </div>
     </motion.div>
   );
@@ -47,7 +47,7 @@ function Lightbox({ images, onClose }: { images: string[]; onClose: () => void }
         <div className="mt-4 flex items-center gap-4 z-50">
           <button onClick={(e) => { e.stopPropagation(); setIdx(i => (i - 1 + images.length) % images.length); }} className="rounded-full bg-white/10 px-4 py-2 text-white hover:bg-white/30 text-lg">◀ Prev</button>
           <div className="flex gap-2">
-            {images.map((_, i) => <div key={i} className={`h-2 w-2 rounded-full ${i === idx ? 'bg-amber-500' : 'bg-white/40'}`} />)}
+            {images.map((_, i) => <div key={i} className={`h-2 w-2 rounded-full ${i === idx ? 'bg-blue-500' : 'bg-white/40'}`} />)}
           </div>
           <button onClick={(e) => { e.stopPropagation(); setIdx(i => (i + 1) % images.length); }} className="rounded-full bg-white/10 px-4 py-2 text-white hover:bg-white/30 text-lg">Next ▶</button>
         </div>
@@ -72,7 +72,7 @@ export default function ZonePage({
         <div className="h-full w-full bg-cover bg-center" style={{ backgroundImage: `url(${bannerImage})` }} />
         <div className="absolute inset-0 bg-black/40" />
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center"><h1 className="text-3xl md:text-4xl font-bold text-white mb-1">{title}</h1><p className="text-amber-400 text-sm">{brand}</p></div>
+          <div className="text-center"><h1 className="text-3xl md:text-4xl font-bold text-white mb-1">{title}</h1><p className="text-blue-400 text-sm">{brand}</p></div>
         </div>
       </div>
       {/* v=20260710 */}
