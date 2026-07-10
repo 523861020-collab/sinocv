@@ -555,6 +555,19 @@ export const trucks: Truck[] = [
     features: ['大件运输', '加强型大梁', '13吨车桥', 'ABS制动']
   },
   {
+    id: 'cimc-2axle-car',
+    name: '中集 两轴 轿运车',
+    category: 'trailer',
+    brand: '中集 CIMC',
+    horsepower: 0,
+    driveType: '2轴',
+    engine: '-',
+    price: '$10,000 - $15,000',
+    image: '/images/cimc-2axle-car-1.jpg',
+    images: ['/images/cimc-2axle-car-1.jpg', '/images/cimc-2axle-car-2.jpg'],
+    features: ['轿运专用', '双层装载', '10吨车桥', 'ABS制动']
+  },
+  {
     id: 'cimc-dump-trailer',
     name: '中集 40立方 自卸挂车',
     category: 'trailer',
