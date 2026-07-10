@@ -120,7 +120,7 @@ export default function Home() {
       <Advantages />
 
       <section style={{paddingTop: '1.5rem', paddingBottom: '1.5rem'}} className="bg-black">
-        <div className="max-w-4xl mx-auto px-6 text-center">
+        <div className="max-w-3xl mx-auto px-6 text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-12">About Us</h2>
           <div className="relative mb-8">
             <img src="/images/manager.jpg" alt="Li Shanlong" className="w-56 h-56 rounded-full object-cover border-2 border-amber-500/40 mx-auto" />
