@@ -6,7 +6,7 @@ import WhatsAppFloat from "@/components/WhatsAppFloat";
 import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
-  title: "SINOCV | One-stop Shop for Chinese Commercial Vehicles",
+  title: "XINYUNTONG | Chinese Commercial Vehicles Export",
   description: "Professional export of SINOTRUK heavy trucks, XCMG machinery, and CIMC trailers. Tractors, dump trucks, mixers, excavators, loaders, reefers, special vehicles. Serving 50+ countries across Africa, Middle East, and Southeast Asia.",
   keywords: "SINOTRUK, HOWO, SITRAK, XCMG, CIMC, heavy truck export, tractor truck, dump truck, mixer truck, excavator, loader, trailer",
 };
