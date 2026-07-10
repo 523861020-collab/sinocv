@@ -773,6 +773,19 @@ export const stockTrucks: Truck[] = [
     image: '/images/stock-howo-dump-1.jpg',
     images: ['/images/stock-howo-dump-1.jpg', '/images/stock-howo-dump-2.jpg', '/images/stock-howo-dump-3.jpg'],
     features: ['6×4', '潍柴发动机', '加强型货箱', '即付即发']
+  },
+  {
+    id: 'stock-003',
+    name: '汕德卡 8×4 自卸车 促销车型',
+    category: 'dump',
+    brand: '中国重汽',
+    horsepower: 440,
+    driveType: '8×4',
+    engine: '曼 MC13.440',
+    price: '',
+    image: '/images/stock-sitrak-dump-1.jpg',
+    images: ['/images/stock-sitrak-dump-1.jpg', '/images/stock-sitrak-dump-2.jpg', '/images/stock-sitrak-dump-3.jpg'],
+    features: ['8×4', '曼发动机', '加强型货箱', '即付即发']
   }
 ];
 
