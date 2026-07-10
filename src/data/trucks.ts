@@ -719,7 +719,7 @@ export const trucks: Truck[] = [
     id: 'sinotruk-cargo-light',
     name: '中国重汽 货运版',
     category: 'light',
-    brand: '中国重汽先锋官',
+    brand: '中国重汽轻型车',
     horsepower: 130,
     driveType: '4×2',
     engine: '潍柴 WP2.3Q',
@@ -732,7 +732,7 @@ export const trucks: Truck[] = [
     id: 'sinotruk-pass-light',
     name: '中国重汽 客运版',
     category: 'light',
-    brand: '中国重汽先锋官',
+    brand: '中国重汽轻型车',
     horsepower: 150,
     driveType: '4×2',
     engine: '潍柴 WP2.3Q',
@@ -745,7 +745,7 @@ export const trucks: Truck[] = [
     id: 'sinotruk-biz-light',
     name: '中国重汽 商务版',
     category: 'light',
-    brand: '中国重汽先锋官',
+    brand: '中国重汽轻型车',
     horsepower: 150,
     driveType: '4×2',
     engine: '潍柴 WP2.3Q',
@@ -851,8 +851,8 @@ export const zones = [
     title: '轻型商用车专区',
     titleEn: 'SINOTRUK Light Vehicles',
     icon: '🚐',
-    brand: '中国重汽先锋官',
-    description: 'Van 先锋官 · 微卡 · 城市物流配送',
+    brand: '中国重汽轻型车',
+    description: 'Van · 微卡 · 城市物流配送',
     categories: ['light'],
     color: 'from-green-500/20 to-transparent'
   },
@@ -872,7 +872,7 @@ export const advantages = [
   {
     title: '品牌齐全',
     titleEn: 'Full Brand Portfolio',
-    description: '中国重汽、徐工机械、中集挂车、先锋官——四大品牌一站式采购',
+    description: '中国重汽、徐工机械、中集挂车、轻型车——四大品牌一站式采购',
     icon: 'shield'
   },
   {
