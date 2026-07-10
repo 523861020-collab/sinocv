@@ -93,6 +93,19 @@ export const trucks: Truck[] = [
     images: ['/images/sitrak-4x2-cargo-1.jpg', '/images/sitrak-4x2-cargo-2.jpg', '/images/sitrak-4x2-cargo-3.jpg'],
     features: ['城市物流', '曼发动机', '大货箱', '经济节油']
   },
+  {
+    id: 'sinotruk-3axle-cargo',
+    name: '中国重汽 三轴 牵引载货车',
+    category: 'cargo',
+    brand: '中国重汽',
+    horsepower: 440,
+    driveType: '6×4',
+    engine: '曼 MC13.440',
+    price: '$42,000 - $55,000',
+    image: '/images/sinotruk-3axle-cargo-1.jpg',
+    images: ['/images/sinotruk-3axle-cargo-1.jpg', '/images/sinotruk-3axle-cargo-2.jpg', '/images/sinotruk-3axle-cargo-3.jpg'],
+    features: ['牵引车+挂车', '大载重', '曼发动机', '长途物流']
+  },
 
   // ===== 冷藏车 =====
   {
