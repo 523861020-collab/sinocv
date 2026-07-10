@@ -97,13 +97,9 @@ export default function Home() {
                     <img src={t.image} alt={t.name} className="h-full w-full object-cover" loading="lazy" />
                     <div className="absolute top-3 left-3 rounded-full bg-red-500 px-2.5 py-0.5 text-xs font-semibold text-white">Hot</div>
                   </div>
-                  <div className="p-4">
-                    <h3 className="text-base font-bold text-white mb-1">{t.name}</h3>
-                    <p className="text-amber-500 text-xs mb-3">{t.brand} · {t.engine}</p>
-                    <div className="flex flex-wrap gap-2 mb-12">
-                      {t.features.map((f, i) => <span key={i} className="rounded-full bg-gray-800 px-2.5 py-1 text-xs text-gray-400">{f}</span>)}
-                    </div>
-                    <a href="https://wa.me/8619103781257" target="_blank" className="block w-full rounded-md bg-red-500/10 py-2.5 text-center text-red-400 font-semibold text-sm transition-all hover:bg-red-500 hover:text-white">
+                  <div className="p-4 text-center">
+                    <h3 className="text-base font-bold text-white">{t.name}</h3>
+                    <a href="https://wa.me/8619103781257" target="_blank" className="mt-3 inline-block w-full rounded-md bg-red-500/10 py-2.5 text-center text-red-400 font-semibold text-sm transition-all hover:bg-red-500 hover:text-white">
                       Inquire Now →
                     </a>
                   </div>
