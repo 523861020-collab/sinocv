@@ -48,7 +48,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <p className="mb-4 text-blue-500 tracking-widest text-sm">CONTACT US</p>
+            <p className="mb-4 text-amber-500 tracking-widest text-sm">CONTACT US</p>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Get a Quote
             </h2>
@@ -58,7 +58,7 @@ export default function Contact() {
             
             <div className="space-y-6">
               <div className="flex items-start gap-4">
-                <div className="rounded-full bg-blue-500/10 p-3 text-blue-500">
+                <div className="rounded-full bg-amber-500/10 p-3 text-amber-500">
                   <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -71,7 +71,7 @@ export default function Contact() {
               </div>
               
               <div className="flex items-start gap-4">
-                <div className="rounded-full bg-blue-500/10 p-3 text-blue-500">
+                <div className="rounded-full bg-amber-500/10 p-3 text-amber-500">
                   <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
@@ -83,7 +83,7 @@ export default function Contact() {
               </div>
               
               <div className="flex items-start gap-4">
-                <div className="rounded-full bg-blue-500/10 p-3 text-blue-500">
+                <div className="rounded-full bg-amber-500/10 p-3 text-amber-500">
                   <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
@@ -112,7 +112,7 @@ export default function Contact() {
                 </p>
                 <button
                   onClick={() => setIsSubmitted(false)}
-                  className="rounded-md bg-blue-500 px-8 py-3 font-semibold text-black hover:bg-blue-400 transition-colors"
+                  className="rounded-md bg-amber-500 px-8 py-3 font-semibold text-black hover:bg-amber-400 transition-colors"
                 >
                   Submit Another
                 </button>
@@ -127,7 +127,7 @@ export default function Contact() {
                       required
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full rounded-md bg-gray-800 border border-gray-700 px-4 py-3 text-white focus:border-blue-500 focus:outline-none"
+                      className="w-full rounded-md bg-gray-800 border border-gray-700 px-4 py-3 text-white focus:border-amber-500 focus:outline-none"
                       placeholder="Your Name"
                     />
                   </div>
@@ -138,7 +138,7 @@ export default function Contact() {
                       required
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full rounded-md bg-gray-800 border border-gray-700 px-4 py-3 text-white focus:border-blue-500 focus:outline-none"
+                      className="w-full rounded-md bg-gray-800 border border-gray-700 px-4 py-3 text-white focus:border-amber-500 focus:outline-none"
                       placeholder="your@email.com"
                     />
                   </div>
@@ -148,7 +148,7 @@ export default function Contact() {
                       type="tel"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full rounded-md bg-gray-800 border border-gray-700 px-4 py-3 text-white focus:border-blue-500 focus:outline-none"
+                      className="w-full rounded-md bg-gray-800 border border-gray-700 px-4 py-3 text-white focus:border-amber-500 focus:outline-none"
                       placeholder="+1 234 567 890"
                     />
                   </div>
@@ -158,7 +158,7 @@ export default function Contact() {
                       type="text"
                       value={formData.company}
                       onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                      className="w-full rounded-md bg-gray-800 border border-gray-700 px-4 py-3 text-white focus:border-blue-500 focus:outline-none"
+                      className="w-full rounded-md bg-gray-800 border border-gray-700 px-4 py-3 text-white focus:border-amber-500 focus:outline-none"
                       placeholder="Company Name"
                     />
                   </div>
@@ -169,7 +169,7 @@ export default function Contact() {
                       required
                       value={formData.country}
                       onChange={(e) => setFormData({ ...formData, country: e.target.value })}
-                      className="w-full rounded-md bg-gray-800 border border-gray-700 px-4 py-3 text-white focus:border-blue-500 focus:outline-none"
+                      className="w-full rounded-md bg-gray-800 border border-gray-700 px-4 py-3 text-white focus:border-amber-500 focus:outline-none"
                       placeholder="Your Country"
                     />
                   </div>
@@ -178,7 +178,7 @@ export default function Contact() {
                     <select
                       value={formData.product}
                       onChange={(e) => setFormData({ ...formData, product: e.target.value })}
-                      className="w-full rounded-md bg-gray-800 border border-gray-700 px-4 py-3 text-white focus:border-blue-500 focus:outline-none"
+                      className="w-full rounded-md bg-gray-800 border border-gray-700 px-4 py-3 text-white focus:border-amber-500 focus:outline-none"
                     >
                       <option value="">Select Product Type</option>
                       <option value="tractor">Tractor Truck</option>
@@ -196,7 +196,7 @@ export default function Contact() {
                     rows={4}
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full rounded-md bg-gray-800 border border-gray-700 px-4 py-3 text-white focus:border-blue-500 focus:outline-none"
+                    className="w-full rounded-md bg-gray-800 border border-gray-700 px-4 py-3 text-white focus:border-amber-500 focus:outline-none"
                     placeholder="Describe your requirements..."
                   />
                 </div>
@@ -204,7 +204,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full rounded-md bg-blue-500 py-4 text-lg font-semibold text-black transition-all hover:bg-blue-400 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full rounded-md bg-amber-500 py-4 text-lg font-semibold text-black transition-all hover:bg-amber-400 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? 'Submitting...' : 'Submit Inquiry'}
                 </button>

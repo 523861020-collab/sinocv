@@ -16,7 +16,7 @@ function TruckCard({ truck, index }: { truck: Truck; index: number }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.1 }}
-      className="min-w-[320px] flex-shrink-0 rounded-xl bg-gray-900 border border-gray-800 overflow-hidden group hover:border-blue-500/50 transition-all duration-300"
+      className="min-w-[320px] flex-shrink-0 rounded-xl bg-gray-900 border border-gray-800 overflow-hidden group hover:border-amber-500/50 transition-all duration-300"
     >
       <div className="relative h-48 overflow-hidden bg-gray-800">
         <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent z-10" />
@@ -25,7 +25,7 @@ function TruckCard({ truck, index }: { truck: Truck; index: number }) {
           alt={truck.name}
           className="h-full w-full object-cover"
         />
-        <div className="absolute top-4 left-4 z-20 rounded-full bg-blue-500 px-3 py-1 text-xs font-semibold text-black">
+        <div className="absolute top-4 left-4 z-20 rounded-full bg-amber-500 px-3 py-1 text-xs font-semibold text-black">
           {categories.find(c => c.id === truck.category)?.name}
         </div>
         {truck.horsepower > 0 && (
@@ -36,10 +36,10 @@ function TruckCard({ truck, index }: { truck: Truck; index: number }) {
       </div>
 
       <div className="p-5">
-        <h3 className="text-lg font-bold text-white mb-1 group-hover:text-blue-500 transition-colors">
+        <h3 className="text-lg font-bold text-white mb-1 group-hover:text-amber-500 transition-colors">
           {truck.name}
         </h3>
-        <p className="text-blue-500 text-xs mb-3">{truck.brand}</p>
+        <p className="text-amber-500 text-xs mb-3">{truck.brand}</p>
         <div className="space-y-1.5 mb-3">
           <div className="flex justify-between text-sm">
             <span className="text-gray-500">驱动</span>
@@ -51,7 +51,7 @@ function TruckCard({ truck, index }: { truck: Truck; index: number }) {
           </div>
           <div className="flex justify-between text-sm">
             <span className="text-gray-500">价格</span>
-            <span className="text-blue-500 font-semibold">{truck.price}</span>
+            <span className="text-amber-500 font-semibold">{truck.price}</span>
           </div>
         </div>
         <div className="flex flex-wrap gap-1.5 mb-3">
@@ -63,7 +63,7 @@ function TruckCard({ truck, index }: { truck: Truck; index: number }) {
         </div>
         <a
           href="https://wa.me/8619103781257" target="_blank"
-          className="block w-full rounded-md bg-blue-500/10 py-2.5 text-center text-blue-500 font-semibold text-sm transition-all hover:bg-blue-500 hover:text-black"
+          className="block w-full rounded-md bg-amber-500/10 py-2.5 text-center text-amber-500 font-semibold text-sm transition-all hover:bg-amber-500 hover:text-black"
         >
           获取报价
         </a>
@@ -101,7 +101,7 @@ export default function ZoneSection({ zone, trucks }: ZoneSectionProps) {
                 <h2 className="text-3xl md:text-4xl font-bold text-white">{zone.title}</h2>
                 <span className="text-sm text-gray-500 font-normal">{zone.titleEn}</span>
               </div>
-              <p className="text-blue-500 text-sm mt-1">{zone.brand}</p>
+              <p className="text-amber-500 text-sm mt-1">{zone.brand}</p>
             </div>
           </div>
           <p className="text-gray-400 leading-relaxed">{zone.description}</p>

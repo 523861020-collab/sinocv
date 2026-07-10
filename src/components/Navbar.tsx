@@ -37,7 +37,7 @@ export default function Navbar() {
           {/* Logo */}
           <a href="/" className="flex items-center gap-3">
             <img src="/images/logo-new.png" alt="Logo" className="h-10 w-auto" />
-            <div className="text-sm text-blue-500 font-medium leading-tight">
+            <div className="text-sm text-amber-500 font-medium leading-tight">
               <div>One-stop Shop for</div>
               <div>Chinese Commercial Vehicles</div>
             </div>
@@ -49,7 +49,7 @@ export default function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-gray-300 hover:text-blue-500 transition-colors font-medium"
+                className="text-gray-300 hover:text-amber-500 transition-colors font-medium"
               >
                 {link.label}
               </a>
@@ -91,7 +91,7 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="block px-4 py-2 text-gray-300 hover:text-blue-500 transition-colors"
+                  className="block px-4 py-2 text-gray-300 hover:text-amber-500 transition-colors"
                 >
                   {link.label}
                 </a>

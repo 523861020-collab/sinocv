@@ -7,7 +7,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-3 mb-6">
               <img src="/images/logo-new.png" alt="Logo" className="h-10 w-auto" />
-              <div className="text-sm text-blue-500 font-medium leading-tight">
+              <div className="text-sm text-amber-500 font-medium leading-tight">
                 <div>One-stop Shop for</div>
                 <div>Chinese Commercial Vehicles</div>
               </div>
@@ -16,7 +16,7 @@ export default function Footer() {
               Authorized SINOTRUK exporter and partner of XCMG and CIMC. Products cover tractor trucks, dump trucks, mixer trucks, special vehicles, construction machinery, trailers, and light commercial vehicles.
             </p>
             <div className="flex gap-4">
-              <a href="https://www.facebook.com/chintruck" target="_blank" rel="noopener" className="rounded-full bg-gray-800 p-3 text-gray-400 hover:text-blue-500 hover:bg-gray-700 transition-all">
+              <a href="https://www.facebook.com/chintruck" target="_blank" rel="noopener" className="rounded-full bg-gray-800 p-3 text-gray-400 hover:text-amber-500 hover:bg-gray-700 transition-all">
                 <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
                 </svg>
@@ -28,11 +28,11 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold text-white mb-6">Quick Links</h3>
             <ul className="space-y-3">
-              <li><a href="/heavy-truck" className="text-gray-400 hover:text-blue-500 transition-colors">Heavy Duty Trucks</a></li>
-              <li><a href="/machinery" className="text-gray-400 hover:text-blue-500 transition-colors">Construction Machinery</a></li>
-              <li><a href="/mining" className="text-gray-400 hover:text-blue-500 transition-colors">Mining Trucks</a></li>
-              <li><a href="/light" className="text-gray-400 hover:text-blue-500 transition-colors">Light Vehicles</a></li>
-              <li><a href="/trailers" className="text-gray-400 hover:text-blue-500 transition-colors">Trailers</a></li>
+              <li><a href="/heavy-truck" className="text-gray-400 hover:text-amber-500 transition-colors">Heavy Duty Trucks</a></li>
+              <li><a href="/machinery" className="text-gray-400 hover:text-amber-500 transition-colors">Construction Machinery</a></li>
+              <li><a href="/mining" className="text-gray-400 hover:text-amber-500 transition-colors">Mining Trucks</a></li>
+              <li><a href="/light" className="text-gray-400 hover:text-amber-500 transition-colors">Light Vehicles</a></li>
+              <li><a href="/trailers" className="text-gray-400 hover:text-amber-500 transition-colors">Trailers</a></li>
             </ul>
           </div>
 
@@ -41,7 +41,7 @@ export default function Footer() {
             <h3 className="text-lg font-semibold text-white mb-6">Contact</h3>
             <div className="space-y-4">
               <div className="flex items-center gap-3">
-                <svg className="h-5 w-5 text-blue-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="h-5 w-5 text-amber-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
                 <span className="text-gray-400">lishanlong@sinocv.com</span>

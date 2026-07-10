@@ -29,7 +29,7 @@ export default function DownloadCatalog() {
           viewport={{ once: true }}
           className="mb-16 text-center"
         >
-          <p className="mb-4 text-blue-500 tracking-widest text-sm">DOWNLOAD</p>
+          <p className="mb-4 text-amber-500 tracking-widest text-sm">DOWNLOAD</p>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             产品画册下载
           </h2>
@@ -48,10 +48,10 @@ export default function DownloadCatalog() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.2 }}
-              className="group rounded-xl bg-gray-900 border border-gray-800 p-8 transition-all hover:border-blue-500/50 hover:bg-gray-900/80"
+              className="group rounded-xl bg-gray-900 border border-gray-800 p-8 transition-all hover:border-amber-500/50 hover:bg-gray-900/80"
             >
               <div className="text-5xl mb-6">{cat.icon}</div>
-              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-500 transition-colors">
+              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-amber-500 transition-colors">
                 {cat.title}
               </h3>
               <p className="text-gray-400 leading-relaxed mb-6">
@@ -59,7 +59,7 @@ export default function DownloadCatalog() {
               </p>
               <div className="flex items-center justify-between">
                 <span className="text-sm text-gray-500">{cat.size}</span>
-                <span className="flex items-center gap-2 text-blue-500 font-semibold group-hover:gap-3 transition-all">
+                <span className="flex items-center gap-2 text-amber-500 font-semibold group-hover:gap-3 transition-all">
                   下载
                   <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />

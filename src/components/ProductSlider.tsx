@@ -25,7 +25,7 @@ export default function ProductSlider() {
           viewport={{ once: true }}
           className="mb-16 text-center"
         >
-          <p className="mb-4 text-blue-500 tracking-widest text-sm">OUR PRODUCTS</p>
+          <p className="mb-4 text-amber-500 tracking-widest text-sm">OUR PRODUCTS</p>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Products
           </h2>
@@ -39,7 +39,7 @@ export default function ProductSlider() {
           {categories.map((cat) => (
             <button
               key={cat.id}
-              className="flex items-center gap-2 rounded-full border border-gray-700 px-6 py-3 text-gray-300 transition-all hover:border-blue-500 hover:text-blue-500"
+              className="flex items-center gap-2 rounded-full border border-gray-700 px-6 py-3 text-gray-300 transition-all hover:border-amber-500 hover:text-amber-500"
             >
               <span>{cat.icon}</span>
               <span>{cat.name}</span>
@@ -79,7 +79,7 @@ export default function ProductSlider() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="min-w-[350px] flex-shrink-0 rounded-xl bg-gray-900 border border-gray-800 overflow-hidden group hover:border-blue-500/50 transition-all duration-300"
+                className="min-w-[350px] flex-shrink-0 rounded-xl bg-gray-900 border border-gray-800 overflow-hidden group hover:border-amber-500/50 transition-all duration-300"
               >
                 <div className="relative h-56 overflow-hidden bg-gray-800">
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent z-10" />
@@ -88,7 +88,7 @@ export default function ProductSlider() {
                     alt={truck.name}
                     className="h-full w-full object-cover"
                   />
-                  <div className="absolute top-4 left-4 z-20 rounded-full bg-blue-500 px-3 py-1 text-xs font-semibold text-black">
+                  <div className="absolute top-4 left-4 z-20 rounded-full bg-amber-500 px-3 py-1 text-xs font-semibold text-black">
                     {categories.find(c => c.id === truck.category)?.name}
                   </div>
                   {truck.horsepower > 0 && (
@@ -98,10 +98,10 @@ export default function ProductSlider() {
                   )}
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-white mb-1 group-hover:text-blue-500 transition-colors">
+                  <h3 className="text-xl font-bold text-white mb-1 group-hover:text-amber-500 transition-colors">
                     {truck.name}
                   </h3>
-                  <p className="text-blue-500 text-sm mb-3">{truck.brand}</p>
+                  <p className="text-amber-500 text-sm mb-3">{truck.brand}</p>
                   <div className="space-y-2 mb-4">
                     <div className="flex justify-between text-sm">
                       <span className="text-gray-500">Drive</span>
@@ -121,7 +121,7 @@ export default function ProductSlider() {
                   </div>
                   <a
                     href="https://wa.me/8619103781257" target="_blank"
-                    className="block w-full rounded-md bg-blue-500/10 py-3 text-center text-blue-500 font-semibold transition-all hover:bg-blue-500 hover:text-black"
+                    className="block w-full rounded-md bg-amber-500/10 py-3 text-center text-amber-500 font-semibold transition-all hover:bg-amber-500 hover:text-black"
                   >
                     Get Quote
                   </a>

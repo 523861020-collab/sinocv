@@ -13,7 +13,7 @@ export default function GlobalMarkets() {
           viewport={{ once: true }}
           className="mb-16 text-center"
         >
-          <p className="mb-4 text-blue-500 tracking-widest text-sm">GLOBAL REACH</p>
+          <p className="mb-4 text-amber-500 tracking-widest text-sm">GLOBAL REACH</p>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Global Markets
           </h2>
@@ -51,9 +51,9 @@ export default function GlobalMarkets() {
                 style={{ top: pos.top, left: pos.left }}
               >
                 <div className="relative">
-                  <div className="h-4 w-4 rounded-full bg-blue-500 animate-ping absolute" />
-                  <div className="h-4 w-4 rounded-full bg-blue-500 relative" />
-                  <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap text-sm font-semibold text-blue-500">
+                  <div className="h-4 w-4 rounded-full bg-amber-500 animate-ping absolute" />
+                  <div className="h-4 w-4 rounded-full bg-amber-500 relative" />
+                  <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap text-sm font-semibold text-amber-500">
                     {pos.label}
                   </div>
                 </div>
@@ -70,18 +70,18 @@ export default function GlobalMarkets() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="rounded-xl bg-gray-900 border border-gray-800 p-6 hover:border-blue-500/50 transition-all"
+              className="rounded-xl bg-gray-900 border border-gray-800 p-6 hover:border-amber-500/50 transition-all"
             >
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-2xl font-bold text-white">{market.region}</h3>
-                <span className="rounded-full bg-blue-500/10 px-3 py-1 text-blue-500 font-semibold">
+                <span className="rounded-full bg-amber-500/10 px-3 py-1 text-amber-500 font-semibold">
                   {market.count}+ Units
                 </span>
               </div>
               <div className="space-y-2">
                 {market.countries.map((country, i) => (
                   <div key={i} className="flex items-center gap-2 text-gray-400">
-                    <span className="h-1.5 w-1.5 rounded-full bg-blue-500" />
+                    <span className="h-1.5 w-1.5 rounded-full bg-amber-500" />
                     <span>{country}</span>
                   </div>
                 ))}
