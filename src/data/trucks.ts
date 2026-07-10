@@ -594,6 +594,19 @@ export const trucks: Truck[] = [
     images: ['/images/cimc-fuel-trailer-1.jpg', '/images/cimc-fuel-trailer-2.jpg', '/images/cimc-fuel-trailer-3.jpg'],
     features: ['大容量油罐', '防爆设计', '油气回收', '静电接地']
   },
+  {
+    id: 'cimc-lng-trailer',
+    name: '中集 LNG半挂罐体',
+    category: 'trailer',
+    brand: '中集 CIMC',
+    horsepower: 0,
+    driveType: '3轴',
+    engine: '-',
+    price: '$28,000 - $38,000',
+    image: '/images/cimc-lng-trailer-1.jpg',
+    images: ['/images/cimc-lng-trailer-1.jpg', '/images/cimc-lng-trailer-2.jpg', '/images/cimc-lng-trailer-3.jpg'],
+    features: ['LNG液化气', '低温罐体', '高真空绝热', '安全阀组']
+  },
 
   // ===== 工程机械（徐工） =====
   {
