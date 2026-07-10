@@ -54,7 +54,7 @@ export default function Footer() {
               <li><span className="text-gray-400">🏭 SINOTRUK HOWO/SITRAK</span></li>
               <li><span className="text-gray-400">⚙️ XCMG Machinery</span></li>
               <li><span className="text-gray-400">🔗 CIMC Trailers</span></li>
-              <li><span className="text-gray-400">🚐 中国重汽轻型车</span></li>
+              <li><span className="text-gray-400">🚐 Light Vehicles</span></li>
             </ul>
           </div>
 
