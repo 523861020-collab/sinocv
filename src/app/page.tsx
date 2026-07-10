@@ -8,6 +8,23 @@ import Advantages from '@/components/Advantages';
 import Contact from '@/components/Contact';
 import { trucks, zones, categories, stockTrucks } from '@/data/trucks';
 
+function Lightbox({ images, onClose }: { images: string[]; onClose: () => void }) {
+  const [idx, setIdx] = useState(0);
+  return (
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-50 flex flex-col items-center justify-center" onClick={onClose} style={{background: 'transparent'}}>
+      <button onClick={e => { e.stopPropagation(); onClose(); }} className="absolute top-4 right-6 z-50 rounded-full bg-white/10 p-3 text-white hover:bg-white/20 text-xl">✕</button>
+      <img src={images[idx]} alt="" className="max-h-[75vh] max-w-[90vw] object-contain rounded-lg shadow-2xl" onClick={e => e.stopPropagation()} />
+      {images.length > 1 && (
+        <div className="mt-4 flex items-center gap-4 z-50">
+          <button onClick={e => { e.stopPropagation(); setIdx(i => (i - 1 + images.length) % images.length); }} className="rounded-full bg-white/10 px-4 py-2 text-white hover:bg-white/30 text-lg">◀ Prev</button>
+          <div className="flex gap-2">{images.map((_, i) => <div key={i} className={`h-2 w-2 rounded-full ${i === idx ? 'bg-amber-500' : 'bg-white/40'}`} />)}</div>
+          <button onClick={e => { e.stopPropagation(); setIdx(i => (i + 1) % images.length); }} className="rounded-full bg-white/10 px-4 py-2 text-white hover:bg-white/30 text-lg">Next ▶</button>
+        </div>
+      )}
+    </motion.div>
+  );
+}
+
 function ZoneWindow({ zone }: { zone: typeof zones[0] }) {
   const products = trucks.filter(t => zone.categories.includes(t.category));
   const [current, setCurrent] = useState(0);
@@ -61,6 +78,7 @@ function ZoneWindow({ zone }: { zone: typeof zones[0] }) {
 }
 
 export default function Home() {
+  const [lightbox, setLightbox] = useState<string[] | null>(null);
   return (
     <>
       <Hero />
@@ -75,7 +93,7 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {stockTrucks.map(t => (
                 <div key={t.id} className="rounded-xl bg-gray-900 border border-red-500/20 overflow-hidden group hover:border-red-500/50 transition-all">
-                  <div className="relative h-52 overflow-hidden bg-gray-800">
+                  <div className="relative h-52 overflow-hidden bg-gray-800 cursor-pointer" onClick={() => setLightbox(t.images || [t.image])}>
                     <img src={t.image} alt={t.name} className="h-full w-full object-cover" loading="lazy" />
                     <div className="absolute top-3 left-3 rounded-full bg-red-500 px-2.5 py-0.5 text-xs font-semibold text-white">Hot</div>
                   </div>
@@ -165,6 +183,7 @@ export default function Home() {
       </section>
 
       <Contact />
+      <AnimatePresence>{lightbox && <Lightbox images={lightbox} onClose={() => setLightbox(null)} />}</AnimatePresence>
     </>
   );
 }
