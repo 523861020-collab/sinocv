@@ -607,6 +607,19 @@ export const trucks: Truck[] = [
     images: ['/images/cimc-lng-trailer-1.jpg', '/images/cimc-lng-trailer-2.jpg', '/images/cimc-lng-trailer-3.jpg'],
     features: ['LNG液化气', '低温罐体', '高真空绝热', '安全阀组']
   },
+  {
+    id: 'cimc-powder-trailer',
+    name: '中集 粉尘罐半挂',
+    category: 'trailer',
+    brand: '中集 CIMC',
+    horsepower: 0,
+    driveType: '3轴',
+    engine: '-',
+    price: '$20,000 - $28,000',
+    image: '/images/cimc-powder-trailer-1.jpg',
+    images: ['/images/cimc-powder-trailer-1.jpg', '/images/cimc-powder-trailer-2.jpg', '/images/cimc-powder-trailer-3.jpg'],
+    features: ['粉尘罐体', '空压机卸料', '压力安全阀', '防堵设计']
+  },
 
   // ===== 工程机械（徐工） =====
   {
