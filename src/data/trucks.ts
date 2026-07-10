@@ -568,6 +568,19 @@ export const trucks: Truck[] = [
     features: ['轿运专用', '双层装载', '10吨车桥', 'ABS制动']
   },
   {
+    id: 'cimc-semi-dump',
+    name: '中集 半挂自卸车',
+    category: 'trailer',
+    brand: '中集 CIMC',
+    horsepower: 0,
+    driveType: '3轴',
+    engine: '-',
+    price: '$14,000 - $20,000',
+    image: '/images/cimc-semi-dump-1.jpg',
+    images: ['/images/cimc-semi-dump-1.jpg', '/images/cimc-semi-dump-2.jpg', '/images/cimc-semi-dump-3.jpg'],
+    features: ['U型货箱', '液压举升', '耐磨钢板', '自动篷布']
+  },
+  {
     id: 'cimc-dump-trailer',
     name: '中集 40立方 自卸挂车',
     category: 'trailer',
