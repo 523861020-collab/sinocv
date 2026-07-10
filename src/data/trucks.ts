@@ -760,6 +760,19 @@ export const stockTrucks: Truck[] = [
     image: '/images/benz-fire-1.jpg',
     images: ['/images/benz-fire-1.jpg', '/images/benz-fire-2.jpg', '/images/benz-fire-3.jpg'],
     features: ['8×4', '奔驰底盘', '中国上装', '即付即发']
+  },
+  {
+    id: 'stock-002',
+    name: '豪沃 6×4 自卸车 促销车型',
+    category: 'dump',
+    brand: '中国重汽',
+    horsepower: 400,
+    driveType: '6×4',
+    engine: '潍柴 WP12.400E62',
+    price: '',
+    image: '/images/stock-howo-dump-1.jpg',
+    images: ['/images/stock-howo-dump-1.jpg', '/images/stock-howo-dump-2.jpg', '/images/stock-howo-dump-3.jpg'],
+    features: ['6×4', '潍柴发动机', '加强型货箱', '即付即发']
   }
 ];
 
