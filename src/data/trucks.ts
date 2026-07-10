@@ -477,6 +477,19 @@ export const trucks: Truck[] = [
     features: ['40英尺平板', '13吨车桥', 'ABS制动', '集装箱锁具']
   },
   {
+    id: 'cimc-4axle-flat',
+    name: '中集 四轴 平板挂车',
+    category: 'trailer',
+    brand: '中集 CIMC',
+    horsepower: 0,
+    driveType: '4轴',
+    engine: '-',
+    price: '$15,000 - $22,000',
+    image: '/images/cimc-4axle-flat-1.jpg',
+    images: ['/images/cimc-4axle-flat-1.jpg', '/images/cimc-4axle-flat-2.jpg', '/images/cimc-4axle-flat-3.jpg'],
+    features: ['四轴重载', '16吨车桥', 'ABS制动', '集装箱锁具']
+  },
+  {
     id: 'cimc-dump-trailer',
     name: '中集 40立方 自卸挂车',
     category: 'trailer',
