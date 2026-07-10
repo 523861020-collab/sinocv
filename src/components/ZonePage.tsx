@@ -72,7 +72,7 @@ export default function ZonePage({
         <div className="h-full w-full bg-cover bg-center" style={{ backgroundImage: `url(${bannerImage})` }} />
         <div className="absolute inset-0 bg-black/40" />
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center"><h1 className="text-3xl md:text-4xl font-bold text-white mb-1">{title}</h1><p className="text-white/50 text-xs mb-1">{titleEn}</p><p className="text-amber-400 text-sm">{brand}</p></div>
+          <div className="text-center"><h1 className="text-3xl md:text-4xl font-bold text-white mb-1">{title}</h1><p className="text-amber-400 text-sm">{brand}</p></div>
         </div>
       </div>
       {Array.from(grouped.entries()).map(([catId, catTrucks]) => {
@@ -80,7 +80,7 @@ export default function ZonePage({
         return (
           <section key={catId} className="py-16">
             <div className="px-6">
-              <div className="flex items-center gap-3 mb-10"><span className="text-3xl">{cat?.icon}</span><h2 className="text-2xl font-bold text-white">{cat?.name}</h2><span className="text-gray-500 text-sm">{cat?.nameEn}</span></div>
+              <div className="flex items-center gap-3 mb-10"><span className="text-3xl">{cat?.icon}</span><h2 className="text-2xl font-bold text-white">{cat?.name}</h2></div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {catTrucks.map((truck, i) => <ProductCard key={truck.id} truck={truck} index={i} onOpen={setLightbox} />)}
               </div>
