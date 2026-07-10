@@ -135,9 +135,9 @@ export default function Home() {
             <div className="flex flex-col items-center">
               <div className="relative mb-8">
                 <div className="absolute inset-0 rounded-full bg-amber-500/20 blur-2xl scale-110" />
-                <img src="/images/manager.jpg" alt="李善龙" className="relative w-56 h-56 rounded-full object-cover border-4 border-amber-500/40 shadow-2xl" />
+                <img src="/images/manager.jpg" alt="Li Shanlong" className="relative w-56 h-56 rounded-full object-cover border-4 border-amber-500/40 shadow-2xl" />
               </div>
-              <h4 className="text-white font-bold text-5xl mb-3">李善龙</h4>
+              <h4 className="text-white font-bold text-5xl mb-3">Li Shanlong</h4>
               <p className="text-amber-400 text-xl font-medium mb-6">General Manager</p>
               <div className="flex flex-wrap justify-center gap-3 text-base text-gray-400">
                 <span>📧 lishanlong@sinocv.com</span>

@@ -16,13 +16,13 @@ export default function AdminPage() {
   return (
     <div className="min-h-screen bg-black pt-24 px-6">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-3xl font-bold text-white mb-2">客户留言</h1>
-        <p className="text-gray-400 mb-8">共 {inquiries.length} 条</p>
+        <h1 className="text-3xl font-bold text-white mb-2">Customer Inquiries</h1>
+        <p className="text-gray-400 mb-8">{inquiries.length} total</p>
 
         {loading ? (
-          <p className="text-gray-500">加载中...</p>
+          <p className="text-gray-500">Loading...</p>
         ) : inquiries.length === 0 ? (
-          <p className="text-gray-500">暂无留言</p>
+          <p className="text-gray-500">No inquiries yet</p>
         ) : (
           <div className="space-y-4">
             {inquiries.reverse().map((inq: any) => (
@@ -32,15 +32,15 @@ export default function AdminPage() {
                     <span className="text-amber-500 text-xs">{inq.id}</span>
                     <h3 className="text-white font-semibold text-lg">{inq.name}</h3>
                   </div>
-                  <span className="text-gray-500 text-xs">{new Date(inq.createdAt).toLocaleString('zh-CN')}</span>
+                  <span className="text-gray-500 text-xs">{new Date(inq.createdAt).toLocaleString()}</span>
                 </div>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-3 text-sm">
-                  <div><span className="text-gray-500">邮箱：</span><span className="text-gray-300">{inq.email || '-'}</span></div>
-                  <div><span className="text-gray-500">电话：</span><span className="text-gray-300">{inq.phone || '-'}</span></div>
-                  <div><span className="text-gray-500">公司：</span><span className="text-gray-300">{inq.company || '-'}</span></div>
-                  <div><span className="text-gray-500">国家：</span><span className="text-gray-300">{inq.country || '-'}</span></div>
+                  <div><span className="text-gray-500">Email: </span><span className="text-gray-300">{inq.email || '-'}</span></div>
+                  <div><span className="text-gray-500">Phone: </span><span className="text-gray-300">{inq.phone || '-'}</span></div>
+                  <div><span className="text-gray-500">Company: </span><span className="text-gray-300">{inq.company || '-'}</span></div>
+                  <div><span className="text-gray-500">Country: </span><span className="text-gray-300">{inq.country || '-'}</span></div>
                 </div>
-                {inq.product && <p className="text-gray-500 text-sm mb-2">意向产品：{inq.product}</p>}
+                {inq.product && <p className="text-gray-500 text-sm mb-2">Product: {inq.product}</p>}
                 {inq.message && <p className="text-gray-400 bg-gray-800 rounded-lg p-3 text-sm">{inq.message}</p>}
               </div>
             ))}

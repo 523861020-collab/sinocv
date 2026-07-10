@@ -36,7 +36,7 @@ const slides = [
   {
     image: '/images/hero-mining-new.jpg',
     title: 'Mining Dump Truck',
-    subtitle: 'Tonly · XCMG · Lingong',
+    subtitle: 'SINOTRUK · 70-105T Wide-body Mining Trucks',
     description: '40-45 ton payload, reinforced chassis, built for harsh mining conditions',
     link: '/mining'
   }

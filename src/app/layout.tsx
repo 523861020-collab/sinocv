@@ -7,8 +7,8 @@ import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   title: "SINOCV | One-stop Shop for Chinese Commercial Vehicles",
-  description: "Professional export of SINOTRUK heavy trucks, XCMG machinery, CIMC trailers, and Foton commercial vehicles. Tractor trucks, dump trucks, mixer trucks, excavators, loaders, reefers, special vehicles. Serving 50+ countries across Africa, Middle East, and Southeast Asia.",
-  keywords: "SINOTRUK, HOWO, SITRAK, XCMG, CIMC, Foton, heavy truck export, tractor truck, dump truck, mixer truck, excavator, loader, trailer",
+  description: "Professional export of SINOTRUK heavy trucks, XCMG machinery, and CIMC trailers. Tractors, dump trucks, mixers, excavators, loaders, reefers, special vehicles. Serving 50+ countries across Africa, Middle East, and Southeast Asia.",
+  keywords: "SINOTRUK, HOWO, SITRAK, XCMG, CIMC, heavy truck export, tractor truck, dump truck, mixer truck, excavator, loader, trailer",
 };
 
 export default function RootLayout({

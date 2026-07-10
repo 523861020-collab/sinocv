@@ -13,856 +13,843 @@ export interface Truck {
 }
 
 export const trucks: Truck[] = [
-  // ===== 牵引车 =====
+  // ===== Tractor Trucks =====
   {
     id: 'sitrak-g7',
-    name: '汕德卡G7 6×4 牵引车',
+    name: 'SITRAK G7 6×4 Tractor',
     category: 'tractor',
-    brand: '中国重汽',
+    brand: 'SINOTRUK',
     horsepower: 540,
     driveType: '6×4',
-    engine: '曼 MC13 / MC11',
+    engine: 'MAN MC13 / MC11',
     price: '$35,000 - $55,000',
     image: '/images/sitrak-12.jpg',
     images: ['/images/sitrak-12.jpg', '/images/sitrak-13.jpg', '/images/sitrak-14.jpg'],
-    features: ['430HP · 480HP · 540HP', '曼发动机', '采埃孚变速箱', '豪华驾驶室']
+    features: ['430HP · 480HP · 540HP', 'MAN Engine', 'ZF Transmission', 'Luxury Cabin']
   },
   {
     id: 'howo-tx',
-    name: '豪沃 TX 6×4 牵引车',
+    name: 'HOWO TX 6×4 Tractor',
     category: 'tractor',
-    brand: '中国重汽',
+    brand: 'SINOTRUK',
     horsepower: 430,
     driveType: '6×4',
-    engine: '潍柴 / 曼',
+    engine: 'Weichai / MAN',
     price: '$28,000 - $42,000',
     image: '/images/howo-15.jpg',
     images: ['/images/howo-15.jpg', '/images/howo-16.jpg', '/images/howo-17.jpg'],
-    features: ['340HP · 380HP · 400HP · 430HP', '潍柴/曼发动机可选', '高顶双卧铺', 'ABS+空调']
+    features: ['340HP · 380HP · 400HP · 430HP', 'Weichai/MAN Engine', 'High Roof Sleeper', 'ABS+AC']
   },
   {
     id: 'howo-nx',
-    name: '豪沃 NX 6×4 牵引车',
+    name: 'HOWO NX 6×4 Tractor',
     category: 'tractor',
-    brand: '中国重汽',
+    brand: 'SINOTRUK',
     horsepower: 430,
     driveType: '6×4',
-    engine: '潍柴',
+    engine: 'Weichai',
     price: '$30,000 - $40,000',
     image: '/images/howo-nx-1.jpg',
     images: ['/images/howo-nx-1.jpg', '/images/howo-nx-2.jpg', '/images/howo-nx-3.jpg'],
-    features: ['380HP · 400HP · 430HP', '潍柴发动机', '高顶双卧铺', 'ABS+空调']
+    features: ['380HP · 400HP · 430HP', 'Weichai Engine', 'High Roof Sleeper', 'ABS+AC']
   },
-
-  // ===== 载货车 =====
+  // ===== Cargo Trucks =====
   {
     id: 'howo-tx-cargo-340',
-    name: 'HOWO TX 340 载货车',
+    name: 'HOWO TX 340 Cargo Truck',
     category: 'cargo',
-    brand: '中国重汽',
+    brand: 'SINOTRUK',
     horsepower: 340,
     driveType: '8×4',
-    engine: '潍柴 WP10.340E62',
+    engine: 'Weichai WP10.340E62',
     price: '$25,000 - $32,000',
     image: '/images/hero-2.jpg',
-    features: ['9.6米货箱', '气囊减震座椅', '多媒体中控', '定速巡航']
+    features: ['9.6m Cargo Box', 'Air Suspension Seat', 'Multimedia Console', 'Cruise Control']
   },
   {
     id: 'sitrak-curtain',
-    name: '汕德卡 6×4 侧帘载货车',
+    name: 'SITRAK 6×4 Curtain Cargo',
     category: 'cargo',
-    brand: '中国重汽',
+    brand: 'SINOTRUK',
     horsepower: 440,
     driveType: '6×4',
-    engine: '曼 MC13.440',
+    engine: 'MAN MC13.440',
     price: '$38,000 - $48,000',
     image: '/images/sitrak-curtain-1.jpg',
     images: ['/images/sitrak-curtain-1.jpg', '/images/sitrak-curtain-2.jpg', '/images/sitrak-curtain-3.jpg'],
-    features: ['侧帘式', '快速装卸', '大容量', '曼发动机']
+    features: ['Curtain Side', 'Quick Loading', 'Large Capacity', 'MAN Engine']
   },
   {
     id: 'sitrak-4x2-cargo',
-    name: '汕德卡 4×2 载货车',
+    name: 'SITRAK 4×2 Cargo Truck',
     category: 'cargo',
-    brand: '中国重汽',
+    brand: 'SINOTRUK',
     horsepower: 280,
     driveType: '4×2',
-    engine: '曼 MC07.280',
+    engine: 'MAN MC07.280',
     price: '$25,000 - $32,000',
     image: '/images/sitrak-4x2-cargo-1.jpg',
     images: ['/images/sitrak-4x2-cargo-1.jpg', '/images/sitrak-4x2-cargo-2.jpg', '/images/sitrak-4x2-cargo-3.jpg'],
-    features: ['城市物流', '曼发动机', '大货箱', '经济节油']
+    features: ['City Logistics', 'MAN Engine', 'Large Box', 'Fuel Efficient']
   },
-  {
-    id: 'sinotruk-3axle-cargo',
-    name: '牵引载货挂车',
-    category: 'trailer',
-    brand: '中国重汽',
-    horsepower: 440,
-    driveType: '6×4',
-    engine: '曼 MC13.440',
-    price: '$42,000 - $55,000',
-    image: '/images/sinotruk-3axle-cargo-1.jpg',
-    images: ['/images/sinotruk-3axle-cargo-1.jpg', '/images/sinotruk-3axle-cargo-2.jpg', '/images/sinotruk-3axle-cargo-3.jpg'],
-    features: ['牵引车+挂车', '大载重', '曼发动机', '长途物流']
-  },
-  {
-    id: 'sinotruk-3axle-highside',
-    name: '高栏载货挂车',
-    category: 'trailer',
-    brand: '中国重汽',
-    horsepower: 440,
-    driveType: '6×4',
-    engine: '曼 MC13.440',
-    price: '$45,000 - $58,000',
-    image: '/images/sinotruk-3axle-highside-1.jpg',
-    images: ['/images/sinotruk-3axle-highside-1.jpg', '/images/sinotruk-3axle-highside-2.jpg', '/images/sinotruk-3axle-highside-3.jpg'],
-    features: ['高栏货箱', '大容量', '曼发动机', '长途运输']
-  },
-
-  // ===== 冷藏车 =====
+  // ===== Reefer Trucks =====
   {
     id: 'howo-4x2-reefer',
-    name: '豪沃 4×2 轻卡冷藏车',
+    name: 'HOWO 4×2 Reefer Truck',
     category: 'reefer',
-    brand: '中国重汽',
+    brand: 'SINOTRUK',
     horsepower: 160,
     driveType: '4×2',
-    engine: '潍柴 WP2.3Q',
+    engine: 'Weichai WP2.3Q',
     price: '$22,000 - $28,000',
     image: '/images/howo-4x2-reefer-1.jpg',
     images: ['/images/howo-4x2-reefer-1.jpg', '/images/howo-4x2-reefer-2.jpg', '/images/howo-4x2-reefer-3.jpg'],
-    features: ['轻型冷藏', '城市配送', '低油耗', '冷王制冷机组']
+    features: ['Light Reefer', 'City Delivery', 'Low Fuel', 'Thermo King Unit']
   },
   {
     id: 'howo-tx-4x2-reefer',
-    name: '豪沃 TX 4×2 冷藏车',
+    name: 'HOWO TX 4×2 Reefer Truck',
     category: 'reefer',
-    brand: '中国重汽',
+    brand: 'SINOTRUK',
     horsepower: 210,
     driveType: '4×2',
-    engine: '潍柴 WP4.6',
+    engine: 'Weichai WP4.6',
     price: '$28,000 - $35,000',
     image: '/images/howo-tx-4x2-reefer-1.jpg',
     images: ['/images/howo-tx-4x2-reefer-1.jpg', '/images/howo-tx-4x2-reefer-2.jpg', '/images/howo-tx-4x2-reefer-3.jpg'],
-    features: ['中卡冷藏', '冷链运输', '省油', '冷王制冷机组']
+    features: ['Medium Reefer', 'Cold Chain', 'Fuel Efficient', 'Thermo King Unit']
   },
   {
     id: 'sitrak-8x4-reefer',
-    name: '汕德卡 8×4 冷藏车',
+    name: 'SITRAK 8×4 Reefer Truck',
     category: 'reefer',
-    brand: '中国重汽',
+    brand: 'SINOTRUK',
     horsepower: 440,
     driveType: '8×4',
-    engine: '曼 MC13.440',
+    engine: 'MAN MC13.440',
     price: '$48,000 - $60,000',
     image: '/images/sitrak-8x4-reefer-1.jpg',
     images: ['/images/sitrak-8x4-reefer-1.jpg', '/images/sitrak-8x4-reefer-2.jpg'],
-    features: ['大型冷藏', '长途冷链', '曼发动机', '冷王制冷机组']
+    features: ['Large Reefer', 'Long-haul Cold Chain', 'MAN Engine', 'Thermo King Unit']
   },
-
-  // ===== 自卸车 =====
+  // ===== Dump Trucks =====
   {
     id: 'howo-dump',
-    name: '豪沃 TX 6×4 自卸车',
+    name: 'HOWO TX 6×4 Dump Truck',
     category: 'dump',
-    brand: '中国重汽',
+    brand: 'SINOTRUK',
     horsepower: 400,
     driveType: '6×4',
-    engine: '潍柴 WP12.400E62',
+    engine: 'Weichai WP12.400E62',
     price: '$38,000 - $48,000',
     image: '/images/howo-dump-1.jpg',
     images: ['/images/howo-dump-1.jpg', '/images/howo-dump-2.jpg', '/images/howo-dump-3.jpg'],
-    features: ['加强型货箱', '液压举升', '矿山专用轮胎', '防护网']
+    features: ['Reinforced Box', 'Hydraulic Lift', 'Mining Tires', 'Safety Mesh']
   },
   {
     id: 'howo-nx-dump',
-    name: '豪沃 NX 6×4 自卸车',
+    name: 'HOWO NX 6×4 Dump Truck',
     category: 'dump',
-    brand: '中国重汽',
+    brand: 'SINOTRUK',
     horsepower: 430,
     driveType: '6×4',
-    engine: '潍柴 WP13.430E62',
+    engine: 'Weichai WP13.430E62',
     price: '$42,000 - $52,000',
     image: '/images/howo-nx-dump-1.jpg',
     images: ['/images/howo-nx-dump-1.jpg', '/images/howo-nx-dump-2.jpg', '/images/howo-nx-dump-3.jpg'],
-    features: ['加强型货箱', '液压举升', '矿山专用轮胎', '防护网']
+    features: ['Reinforced Box', 'Hydraulic Lift', 'Mining Tires', 'Safety Mesh']
   },
   {
     id: 'sitrak-dump',
-    name: '汕德卡 6×4 自卸车',
+    name: 'SITRAK 6×4 Dump Truck',
     category: 'dump',
-    brand: '中国重汽',
+    brand: 'SINOTRUK',
     horsepower: 440,
     driveType: '6×4',
-    engine: '曼 MC13.440',
+    engine: 'MAN MC13.440',
     price: '$40,000 - $52,000',
     image: '/images/sitrak-dump-1.jpg',
     images: ['/images/sitrak-dump-1.jpg', '/images/sitrak-dump-2.jpg', '/images/sitrak-dump-3.jpg'],
-    features: ['曼发动机', '加强型货箱', '液压举升', '矿山专用']
+    features: ['MAN Engine', 'Reinforced Box', 'Hydraulic Lift', 'Mining Spec']
   },
-
-  // ===== 搅拌车 =====
+  // ===== Mixer Trucks =====
   {
     id: 'howo-nx-mixer',
-    name: '豪沃 NX 8×4 搅拌车',
+    name: 'HOWO NX 8×4 Mixer',
     category: 'mixer',
-    brand: '中国重汽',
+    brand: 'SINOTRUK',
     horsepower: 430,
     driveType: '8×4',
-    engine: '潍柴 WP13.430E62',
+    engine: 'Weichai WP13.430E62',
     price: '$48,000 - $58,000',
     image: '/images/howo-nx-mixer-1.jpg',
     images: ['/images/howo-nx-mixer-1.jpg', '/images/howo-nx-mixer-2.jpg', '/images/howo-nx-mixer-3.jpg'],
-    features: ['12方搅拌罐', '恒速控制', '耐磨叶片', '自动润滑']
+    features: ['12m³ Drum', 'Constant Speed', 'Wear-resistant Blades', 'Auto-lubrication']
   },
   {
     id: 'howo-mixer',
-    name: '豪沃 TX 6×4 搅拌车',
+    name: 'HOWO TX 6×4 Mixer',
     category: 'mixer',
-    brand: '中国重汽',
+    brand: 'SINOTRUK',
     horsepower: 400,
     driveType: '6×4',
-    engine: '潍柴 WP12.400E62',
+    engine: 'Weichai WP12.400E62',
     price: '$43,000 - $53,000',
     image: '/images/howo-mixer-1.jpg',
     images: ['/images/howo-mixer-1.jpg', '/images/howo-mixer-2.jpg', '/images/howo-mixer-3.jpg'],
-    features: ['12方搅拌罐', '恒速控制', '耐磨叶片', '自动润滑']
+    features: ['12m³ Drum', 'Constant Speed', 'Wear-resistant Blades', 'Auto-lubrication']
   },
   {
     id: 'sitrak-mixer',
-    name: '汕德卡 6×4 搅拌车',
+    name: 'SITRAK 6×4 Mixer',
     category: 'mixer',
-    brand: '中国重汽',
+    brand: 'SINOTRUK',
     horsepower: 440,
     driveType: '6×4',
-    engine: '曼 MC13.440',
+    engine: 'MAN MC13.440',
     price: '$48,000 - $60,000',
     image: '/images/sitrak-mixer-1.jpg',
     images: ['/images/sitrak-mixer-1.jpg', '/images/sitrak-mixer-2.jpg', '/images/sitrak-mixer-3.jpg'],
-    features: ['12方搅拌罐', '恒速控制', '耐磨叶片', '自动润滑']
+    features: ['12m³ Drum', 'Constant Speed', 'Wear-resistant Blades', 'Auto-lubrication']
   },
-
-  // ===== 轻卡专用车 =====
+  // ===== Light Special Vehicles =====
   {
     id: 'howo-4x2-garbage',
-    name: '豪沃 轻卡 4×2 垃圾运输车',
+    name: 'HOWO 4×2 Garbage Truck',
     category: 'light-special',
-    brand: '中国重汽',
+    brand: 'SINOTRUK',
     horsepower: 160,
     driveType: '4×2',
-    engine: '潍柴 WP2.3Q',
+    engine: 'Weichai WP2.3Q',
     price: '$20,000 - $26,000',
     image: '/images/howo-4x2-garbage-1.jpg',
     images: ['/images/howo-4x2-garbage-1.jpg', '/images/howo-4x2-garbage-2.jpg', '/images/howo-4x2-garbage-3.jpg'],
-    features: ['城市环卫', '灵活机动', '密封防漏', '省油']
+    features: ['Municipal', 'Compact', 'Sealed', 'Fuel Efficient']
   },
   {
     id: 'howo-4x2-wrecker',
-    name: '豪沃 轻卡 4×2 清障车',
+    name: 'HOWO 4×2 Wrecker',
     category: 'light-special',
-    brand: '中国重汽',
+    brand: 'SINOTRUK',
     horsepower: 160,
     driveType: '4×2',
-    engine: '潍柴 WP2.3Q',
+    engine: 'Weichai WP2.3Q',
     price: '$24,000 - $30,000',
     image: '/images/howo-4x2-wrecker-1.jpg',
     images: ['/images/howo-4x2-wrecker-1.jpg', '/images/howo-4x2-wrecker-2.jpg', '/images/howo-4x2-wrecker-3.jpg'],
-    features: ['城市救援', '平板拖车', '液压绞盘', '灵活机动']
+    features: ['City Rescue', 'Flatbed', 'Hydraulic Winch', 'Compact']
   },
   {
     id: 'howo-4x2-aerial',
-    name: '豪沃 轻卡 4×2 高空作业车',
+    name: 'HOWO 4×2 Aerial Platform',
     category: 'light-special',
-    brand: '中国重汽',
+    brand: 'SINOTRUK',
     horsepower: 160,
     driveType: '4×2',
-    engine: '潍柴 WP2.3Q',
+    engine: 'Weichai WP2.3Q',
     price: '$28,000 - $35,000',
     image: '/images/howo-4x2-aerial-1.jpg',
     images: ['/images/howo-4x2-aerial-1.jpg', '/images/howo-4x2-aerial-2.jpg', '/images/howo-4x2-aerial-3.jpg'],
-    features: ['城市高空作业', '灵活机动', '省油', '安全锁止']
+    features: ['City Aerial Work', 'Compact', 'Fuel Efficient', 'Safety Lock']
   },
-
-  // ===== 随车吊 =====
+  // ===== Crane Trucks =====
   {
     id: 'howo-tx-crane',
-    name: '豪沃 TX 6×4 随车吊',
+    name: 'HOWO TX 6×4 Truck Crane',
     category: 'crane',
-    brand: '中国重汽',
+    brand: 'SINOTRUK',
     horsepower: 400,
     driveType: '6×4',
-    engine: '潍柴 WP12.400E62',
+    engine: 'Weichai WP12.400E62',
     price: '$38,000 - $48,000',
     image: '/images/howo-tx-crane-1.jpg',
     images: ['/images/howo-tx-crane-1.jpg', '/images/howo-tx-crane-2.jpg', '/images/howo-tx-crane-3.jpg'],
-    features: ['12吨吊机', '液压支腿', '远程遥控', '360°旋转']
+    features: ['12T Crane', 'Hydraulic Legs', 'Remote Control', '360° Rotation']
   },
   {
     id: 'howo-4x2-crane',
-    name: '豪沃 轻卡 4×2 随车吊',
+    name: 'HOWO 4×2 Truck Crane',
     category: 'crane',
-    brand: '中国重汽',
+    brand: 'SINOTRUK',
     horsepower: 160,
     driveType: '4×2',
-    engine: '潍柴 WP2.3Q',
+    engine: 'Weichai WP2.3Q',
     price: '$25,000 - $32,000',
     image: '/images/howo-4x2-crane-1.jpg',
     images: ['/images/howo-4x2-crane-1.jpg', '/images/howo-4x2-crane-2.jpg', '/images/howo-4x2-crane-3.jpg'],
-    features: ['轻型随车吊', '城市灵活', '省油', '液压支腿']
+    features: ['Light Crane', 'City Flexible', 'Fuel Efficient', 'Hydraulic Legs']
   },
-
-  // ===== 洒水车 =====
+  // ===== Water Trucks =====
   {
     id: 'howo-tx-water',
-    name: '豪沃 TX 6×4 洒水车',
+    name: 'HOWO TX 6×4 Water Truck',
     category: 'water',
-    brand: '中国重汽',
+    brand: 'SINOTRUK',
     horsepower: 340,
     driveType: '6×4',
-    engine: '潍柴 WP10.340E62',
+    engine: 'Weichai WP10.340E62',
     price: '$25,000 - $32,000',
     image: '/images/howo-tx-water-1.jpg',
     images: ['/images/howo-tx-water-1.jpg', '/images/howo-tx-water-2.jpg', '/images/howo-tx-water-3.jpg'],
-    features: ['15方水罐', '前冲后洒', '高压水炮', '自吸自排']
+    features: ['15m³ Tank', 'Front Spray', 'Water Cannon', 'Self-priming']
   },
   {
     id: 'howo-nx-water',
-    name: '豪沃 NX 6×4 洒水车',
+    name: 'HOWO NX 6×4 Water Truck',
     category: 'water',
-    brand: '中国重汽',
+    brand: 'SINOTRUK',
     horsepower: 340,
     driveType: '6×4',
-    engine: '潍柴 WP10.340E62',
+    engine: 'Weichai WP10.340E62',
     price: '$25,000 - $32,000',
     image: '/images/howo-nx-water-1.jpg',
     images: ['/images/howo-nx-water-1.jpg', '/images/howo-nx-water-2.jpg', '/images/howo-nx-water-3.jpg'],
-    features: ['15方水罐', '前冲后洒', '高压水炮', '自吸自排']
+    features: ['15m³ Tank', 'Front Spray', 'Water Cannon', 'Self-priming']
   },
   {
     id: 'sitrak-4x2-water',
-    name: '汕德卡 4×2 水罐车',
+    name: 'SITRAK 4×2 Water Truck',
     category: 'water',
-    brand: '中国重汽',
+    brand: 'SINOTRUK',
     horsepower: 280,
     driveType: '4×2',
-    engine: '曼 MC07.280',
+    engine: 'MAN MC07.280',
     price: '$22,000 - $28,000',
     image: '/images/sitrak-4x2-water-1.jpg',
     images: ['/images/sitrak-4x2-water-1.jpg', '/images/sitrak-4x2-water-2.jpg', '/images/sitrak-4x2-water-3.jpg'],
-    features: ['市政洒水', '降尘喷雾', '高压水炮', '曼发动机']
+    features: ['Municipal Spray', 'Dust Control', 'Water Cannon', 'MAN Engine']
   },
-
-  // ===== 油罐车 =====
+  // ===== Fuel Tankers =====
   {
     id: 'howo-tx-fuel',
-    name: '豪沃 TX 6×4 油罐车',
+    name: 'HOWO TX 6×4 Fuel Tanker',
     category: 'fuel',
-    brand: '中国重汽',
+    brand: 'SINOTRUK',
     horsepower: 380,
     driveType: '6×4',
-    engine: '潍柴 WP12.380E62',
+    engine: 'Weichai WP12.380E62',
     price: '$30,000 - $40,000',
     image: '/images/howo-tx-fuel-1.jpg',
     images: ['/images/howo-tx-fuel-1.jpg', '/images/howo-tx-fuel-2.jpg', '/images/howo-tx-fuel-3.jpg'],
-    features: ['20方油罐', '防爆设计', '油气回收', '静电接地']
+    features: ['20m³ Tank', 'Explosion Proof', 'Vapor Recovery', 'Static Grounding']
   },
   {
     id: 'howo-4x4-fuel',
-    name: '豪沃 轻卡 4×4 油罐车',
+    name: 'HOWO 4×4 Fuel Tanker',
     category: 'fuel',
-    brand: '中国重汽',
+    brand: 'SINOTRUK',
     horsepower: 160,
     driveType: '4×4',
-    engine: '潍柴 WP2.3Q',
+    engine: 'Weichai WP2.3Q',
     price: '$22,000 - $28,000',
     image: '/images/howo-4x4-fuel-1.jpg',
     images: ['/images/howo-4x4-fuel-1.jpg', '/images/howo-4x4-fuel-2.jpg', '/images/howo-4x4-fuel-3.jpg'],
-    features: ['4×4全驱', '小型油罐', '矿区/工地供油', '防爆设计']
+    features: ['4×4 AWD', 'Small Tank', 'Mine/Site Refuel', 'Explosion Proof']
   },
   {
     id: 'howo-nx-8x4-fuel',
-    name: '豪沃 NX 8×4 油罐车',
+    name: 'HOWO NX 8×4 Fuel Tanker',
     category: 'fuel',
-    brand: '中国重汽',
+    brand: 'SINOTRUK',
     horsepower: 430,
     driveType: '8×4',
-    engine: '潍柴 WP13.430E62',
+    engine: 'Weichai WP13.430E62',
     price: '$38,000 - $48,000',
     image: '/images/howo-nx-8x4-fuel-1.jpg',
     images: ['/images/howo-nx-8x4-fuel-1.jpg', '/images/howo-nx-8x4-fuel-2.jpg', '/images/howo-nx-8x4-fuel-3.jpg'],
-    features: ['大容量油罐', '防爆设计', '油气回收', '8×4重载']
+    features: ['Large Tank', 'Explosion Proof', 'Vapor Recovery', '8×4 Heavy Duty']
   },
-
   // ===== 6×6 =====
   {
     id: 'howo-6x6-dump',
-    name: '豪沃 6×6 自卸车',
+    name: 'HOWO 6×6 Dump Truck',
     category: '6x6',
-    brand: '中国重汽',
+    brand: 'SINOTRUK',
     horsepower: 420,
     driveType: '6×6',
-    engine: '潍柴 WP13.420E62',
+    engine: 'Weichai WP13.420E62',
     price: '$50,000 - $62,000',
     image: '/images/howo-6x6-dump-1.jpg',
     images: ['/images/howo-6x6-dump-1.jpg', '/images/howo-6x6-dump-2.jpg', '/images/howo-6x6-dump-3.jpg'],
-    features: ['6×6全驱', '沙漠专用', '加强型货箱', '液压举升']
+    features: ['6×6 AWD', 'Desert Spec', 'Reinforced Box', 'Hydraulic Lift']
   },
   {
     id: 'howo-6x6-chassis',
-    name: '豪沃 6×6 底盘',
+    name: 'HOWO 6×6 Chassis',
     category: '6x6',
-    brand: '中国重汽',
+    brand: 'SINOTRUK',
     horsepower: 400,
     driveType: '6×6',
-    engine: '潍柴 WP12.400E62',
+    engine: 'Weichai WP12.400E62',
     price: '$32,000 - $42,000',
     image: '/images/howo-6x6-chassis-1.jpg',
     images: ['/images/howo-6x6-chassis-1.jpg', '/images/howo-6x6-chassis-2.jpg', '/images/howo-6x6-chassis-3.jpg'],
-    features: ['6×6全驱', '加强型大梁', '多种上装适配', '军用级底盘']
+    features: ['6×6 AWD', 'Reinforced Frame', 'Multi-body Fit', 'Military Grade']
   },
   {
     id: 'howo-6x6-fuel',
-    name: '豪沃 6×6 沙漠油罐车',
+    name: 'HOWO 6×6 Desert Fuel Tanker',
     category: '6x6',
-    brand: '中国重汽',
+    brand: 'SINOTRUK',
     horsepower: 420,
     driveType: '6×6',
-    engine: '潍柴 WP13.420E62',
+    engine: 'Weichai WP13.420E62',
     price: '$45,000 - $58,000',
     image: '/images/howo-6x6-fuel-1.jpg',
     images: ['/images/howo-6x6-fuel-1.jpg', '/images/howo-6x6-fuel-2.jpg', '/images/howo-6x6-fuel-3.jpg'],
-    features: ['沙漠专用', '6×6全驱', '大型油罐', '高温适应性']
+    features: ['Desert Spec', '6×6 AWD', 'Large Tank', 'High Temp Adapt']
   },
-
-  // ===== 矿卡 =====
+  // ===== Mining Trucks =====
   {
     id: 'sinotruk-90t-mining',
-    name: '中国重汽矿卡90',
+    name: 'SINOTRUK Mining Truck 90',
     category: 'mining',
-    brand: '中国重汽',
+    brand: 'SINOTRUK',
     horsepower: 480,
     driveType: '6×4',
-    engine: '潍柴 WP15.480E62',
+    engine: 'Weichai WP15.480E62',
     price: '$85,000 - $110,000',
     image: '/images/sinotruk-90t-mining-1.jpg',
     images: ['/images/sinotruk-90t-mining-1.jpg', '/images/sinotruk-90t-mining-2.jpg', '/images/sinotruk-90t-mining-3.jpg'],
-    features: ['90吨载重', '矿用宽体', '潍柴15L发动机', '油气悬挂']
+    features: ['90T Payload', 'Mining Wide-body', 'Weichai 15L Engine', 'Hydro-pneumatic']
   },
   {
     id: 'sinotruk-95-mining',
-    name: '中国重汽矿卡70',
+    name: 'SINOTRUK Mining Truck 70',
     category: 'mining',
-    brand: '中国重汽',
+    brand: 'SINOTRUK',
     horsepower: 510,
     driveType: '6×4',
-    engine: '潍柴 WP16.510E62',
+    engine: 'Weichai WP16.510E62',
     price: '$92,000 - $120,000',
     image: '/images/sinotruk-95-mining-1.jpg',
     images: ['/images/sinotruk-95-mining-1.jpg', '/images/sinotruk-95-mining-2.jpg', '/images/sinotruk-95-mining-3.jpg'],
-    features: ['70吨载重', '矿用宽体', '潍柴16L发动机', '油气悬挂']
+    features: ['70T Payload', 'Mining Wide-body', 'Weichai 16L Engine', 'Hydro-pneumatic']
   },
   {
     id: 'sinotruk-102-mining',
-    name: '中国重汽矿卡102',
+    name: 'SINOTRUK Mining Truck 102',
     category: 'mining',
-    brand: '中国重汽',
+    brand: 'SINOTRUK',
     horsepower: 540,
     driveType: '6×6',
-    engine: '潍柴 WP17.540E62',
+    engine: 'Weichai WP17.540E62',
     price: '$108,000 - $138,000',
     image: '/images/sinotruk-90-mining-1.jpg',
     images: ['/images/sinotruk-90-mining-1.jpg', '/images/sinotruk-90-mining-2.jpg', '/images/sinotruk-90-mining-3.jpg'],
-    features: ['102吨载重', '矿用宽体', '潍柴17L发动机', '6×6全驱']
+    features: ['102T Payload', 'Mining Wide-body', 'Weichai 17L Engine', '6×6 AWD']
   },
   {
     id: 'sinotruk-90-mining',
-    name: '中国重汽矿卡105',
+    name: 'SINOTRUK Mining Truck 105',
     category: 'mining',
-    brand: '中国重汽',
+    brand: 'SINOTRUK',
     horsepower: 540,
     driveType: '6×4',
-    engine: '潍柴 WP17.540E62',
+    engine: 'Weichai WP17.540E62',
     price: '$100,000 - $130,000',
     image: '/images/sinotruk-102-mining-1.jpg',
     images: ['/images/sinotruk-102-mining-1.jpg', '/images/sinotruk-102-mining-2.jpg', '/images/sinotruk-102-mining-3.jpg'],
-    features: ['105吨载重', '矿用宽体', '潍柴17L发动机', '油气悬挂']
+    features: ['105T Payload', 'Mining Wide-body', 'Weichai 17L Engine', 'Hydro-pneumatic']
   },
-
-  // ===== 挂车（中集） =====
+  // ===== Trailers =====
+  {
+    id: 'sinotruk-3axle-cargo',
+    name: 'Tractor Cargo Trailer',
+    category: 'trailer',
+    brand: 'SINOTRUK',
+    horsepower: 440,
+    driveType: '6×4',
+    engine: 'MAN MC13.440',
+    price: '$42,000 - $55,000',
+    image: '/images/sinotruk-3axle-cargo-1.jpg',
+    images: ['/images/sinotruk-3axle-cargo-1.jpg', '/images/sinotruk-3axle-cargo-2.jpg', '/images/sinotruk-3axle-cargo-3.jpg'],
+    features: ['Tractor+Trailer', 'Heavy Load', 'MAN Engine', 'Long-haul']
+  },
+  {
+    id: 'sinotruk-3axle-highside',
+    name: 'High-side Cargo Trailer',
+    category: 'trailer',
+    brand: 'SINOTRUK',
+    horsepower: 440,
+    driveType: '6×4',
+    engine: 'MAN MC13.440',
+    price: '$45,000 - $58,000',
+    image: '/images/sinotruk-3axle-highside-1.jpg',
+    images: ['/images/sinotruk-3axle-highside-1.jpg', '/images/sinotruk-3axle-highside-2.jpg', '/images/sinotruk-3axle-highside-3.jpg'],
+    features: ['High-side Box', 'Large Capacity', 'MAN Engine', 'Long-haul']
+  },
   {
     id: 'cimc-4axle-flat',
-    name: '平板挂车',
+    name: 'Flatbed Trailer',
     category: 'trailer',
-    brand: '中集 CIMC',
+    brand: 'CIMC',
     horsepower: 0,
-    driveType: '4轴',
+    driveType: '4 Axles',
     engine: '-',
     price: '$15,000 - $22,000',
     image: '/images/cimc-4axle-flat-1.jpg',
     images: ['/images/cimc-4axle-flat-1.jpg', '/images/cimc-4axle-flat-2.jpg', '/images/cimc-4axle-flat-3.jpg'],
-    features: ['四轴重载', '16吨车桥', 'ABS制动', '集装箱锁具']
+    features: ['4-Axle Heavy Duty', '16T Axles', 'ABS', 'Container Locks']
   },
   {
     id: 'cimc-3axle-curtain',
-    name: '侧帘挂车',
+    name: 'Curtain Side Trailer',
     category: 'trailer',
-    brand: '中集 CIMC',
+    brand: 'CIMC',
     horsepower: 0,
-    driveType: '3轴',
+    driveType: '3 Axles',
     engine: '-',
     price: '$12,000 - $18,000',
     image: '/images/cimc-3axle-curtain-1.jpg',
     images: ['/images/cimc-3axle-curtain-1.jpg', '/images/cimc-3axle-curtain-2.jpg', '/images/cimc-3axle-curtain-3.jpg'],
-    features: ['侧帘式', '快速装卸', '13吨车桥', 'ABS制动']
+    features: ['Curtain Side', 'Quick Loading', '13T Axles', 'ABS']
   },
   {
     id: 'cimc-4axle-lowbed',
-    name: '低平板挂车',
+    name: 'Low-bed Trailer',
     category: 'trailer',
-    brand: '中集 CIMC',
+    brand: 'CIMC',
     horsepower: 0,
-    driveType: '4轴',
+    driveType: '4 Axles',
     engine: '-',
     price: '$18,000 - $25,000',
     image: '/images/cimc-4axle-lowbed-1.jpg',
     images: ['/images/cimc-4axle-lowbed-1.jpg', '/images/cimc-4axle-lowbed-2.jpg', '/images/cimc-4axle-lowbed-3.jpg'],
-    features: ['低平板', '四轴重载', '工程机械运输', '16吨车桥']
+    features: ['Low-bed', '4-Axle Heavy Duty', 'Equipment Transport', '16T Axles']
   },
   {
     id: 'cimc-3axle-heavy',
-    name: '大件运输挂车',
+    name: 'Heavy Haul Trailer',
     category: 'trailer',
-    brand: '中集 CIMC',
+    brand: 'CIMC',
     horsepower: 0,
-    driveType: '3轴',
+    driveType: '3 Axles',
     engine: '-',
     price: '$14,000 - $20,000',
     image: '/images/cimc-3axle-heavy-1.jpg',
     images: ['/images/cimc-3axle-heavy-1.jpg', '/images/cimc-3axle-heavy-2.jpg', '/images/cimc-3axle-heavy-3.jpg'],
-    features: ['大件运输', '加强型大梁', '13吨车桥', 'ABS制动']
+    features: ['Heavy Haul', 'Reinforced Frame', '13T Axles', 'ABS']
   },
   {
     id: 'cimc-2axle-car',
-    name: '轿运挂车',
+    name: 'Car Carrier Trailer',
     category: 'trailer',
-    brand: '中集 CIMC',
+    brand: 'CIMC',
     horsepower: 0,
-    driveType: '2轴',
+    driveType: '2 Axles',
     engine: '-',
     price: '$10,000 - $15,000',
     image: '/images/cimc-2axle-car-1.jpg',
     images: ['/images/cimc-2axle-car-1.jpg', '/images/cimc-2axle-car-2.jpg'],
-    features: ['轿运专用', '双层装载', '10吨车桥', 'ABS制动']
+    features: ['Car Carrier', 'Double Deck', '10T Axles', 'ABS']
   },
   {
     id: 'cimc-semi-dump',
-    name: '自卸挂车',
+    name: 'Dump Trailer',
     category: 'trailer',
-    brand: '中集 CIMC',
+    brand: 'CIMC',
     horsepower: 0,
-    driveType: '3轴',
+    driveType: '3 Axles',
     engine: '-',
     price: '$14,000 - $20,000',
     image: '/images/cimc-semi-dump-1.jpg',
     images: ['/images/cimc-semi-dump-1.jpg', '/images/cimc-semi-dump-2.jpg', '/images/cimc-semi-dump-3.jpg'],
-    features: ['U型货箱', '液压举升', '耐磨钢板', '自动篷布']
+    features: ['U-shaped Box', 'Hydraulic Lift', 'Wear Plate', 'Auto Cover']
   },
   {
     id: 'cimc-reefer',
-    name: '冷藏挂车',
+    name: 'Reefer Trailer',
     category: 'trailer',
-    brand: '中集 CIMC',
+    brand: 'CIMC',
     horsepower: 0,
-    driveType: '3轴',
+    driveType: '3 Axles',
     engine: '-',
     price: '$22,000 - $30,000',
     image: '/images/cimc-reefer-1.jpg',
     images: ['/images/cimc-reefer-1.jpg', '/images/cimc-reefer-2.jpg', '/images/cimc-reefer-3.jpg'],
-    features: ['半挂冷藏', '冷王制冷机组', '聚氨酯保温', '-18°C恒温']
+    features: ['Reefer Trailer', 'Thermo King Unit', 'Polyurethane Insulation', '-18°C']
   },
   {
     id: 'cimc-fuel-trailer',
-    name: '油罐挂车',
+    name: 'Fuel Tank Trailer',
     category: 'trailer',
-    brand: '中集 CIMC',
+    brand: 'CIMC',
     horsepower: 0,
-    driveType: '3轴',
+    driveType: '3 Axles',
     engine: '-',
     price: '$25,000 - $35,000',
     image: '/images/cimc-fuel-trailer-1.jpg',
     images: ['/images/cimc-fuel-trailer-1.jpg', '/images/cimc-fuel-trailer-2.jpg', '/images/cimc-fuel-trailer-3.jpg'],
-    features: ['大容量油罐', '防爆设计', '油气回收', '静电接地']
+    features: ['Large Tank', 'Explosion Proof', 'Vapor Recovery', 'Grounding']
   },
   {
     id: 'cimc-lng-trailer',
-    name: 'LNG罐体挂车',
+    name: 'LNG Tank Trailer',
     category: 'trailer',
-    brand: '中集 CIMC',
+    brand: 'CIMC',
     horsepower: 0,
-    driveType: '3轴',
+    driveType: '3 Axles',
     engine: '-',
     price: '$28,000 - $38,000',
     image: '/images/cimc-lng-trailer-1.jpg',
     images: ['/images/cimc-lng-trailer-1.jpg', '/images/cimc-lng-trailer-2.jpg', '/images/cimc-lng-trailer-3.jpg'],
-    features: ['LNG液化气', '低温罐体', '高真空绝热', '安全阀组']
+    features: ['LNG Cryogenic', 'Vacuum Insulated', 'Safety Valves']
   },
   {
     id: 'cimc-powder-trailer',
-    name: '粉尘罐挂车',
+    name: 'Powder Tank Trailer',
     category: 'trailer',
-    brand: '中集 CIMC',
+    brand: 'CIMC',
     horsepower: 0,
-    driveType: '3轴',
+    driveType: '3 Axles',
     engine: '-',
     price: '$20,000 - $28,000',
     image: '/images/cimc-powder-trailer-1.jpg',
     images: ['/images/cimc-powder-trailer-1.jpg', '/images/cimc-powder-trailer-2.jpg', '/images/cimc-powder-trailer-3.jpg'],
-    features: ['粉尘罐体', '空压机卸料', '压力安全阀', '防堵设计']
+    features: ['Powder Tank', 'Compressor Discharge', 'Safety Valve', 'Anti-clog']
   },
-
-  // ===== 工程机械（徐工） =====
+  // ===== Construction Machinery (XCMG) =====
   {
     id: 'xcmg-excavator-215',
-    name: '徐工 XE215 挖掘机',
+    name: 'XCMG XE215 Excavator',
     category: 'machinery',
-    brand: '徐工 XCMG',
+    brand: 'XCMG',
     horsepower: 168,
-    driveType: '履带式',
-    engine: '康明斯 QSB7',
+    driveType: 'Tracked',
+    engine: 'Cummins QSB7',
     price: '$55,000 - $75,000',
     image: '/images/xcmg-xe215-1.jpg',
     images: ['/images/xcmg-xe215-1.jpg', '/images/xcmg-xe215-2.jpg', '/images/xcmg-xe215-3.jpg'],
-    features: ['21.5吨', '1.1方铲斗', '智能电控', '矿山加强型']
+    features: ['21.5T', '1.1m³ Bucket', 'Smart Control', 'Mining Strengthened']
   },
   {
     id: 'xcmg-loader-zl50',
-    name: '徐工 ZL50GN 装载机',
+    name: 'XCMG ZL50GN Loader',
     category: 'machinery',
-    brand: '徐工 XCMG',
+    brand: 'XCMG',
     horsepower: 220,
     driveType: '4×4',
-    engine: '潍柴 WD10G220',
+    engine: 'Weichai WD10G220',
     price: '$35,000 - $48,000',
     image: '/images/xcmg-zl50-1.jpg',
     images: ['/images/xcmg-zl50-1.jpg', '/images/xcmg-zl50-2.jpg', '/images/xcmg-zl50-3.jpg'],
-    features: ['5吨', '3.0方铲斗', '液压先导操控', '空调驾驶室']
+    features: ['5T', '3.0m³ Bucket', 'Hydraulic Pilot', 'AC Cabin']
   },
   {
     id: 'xcmg-25t-crane',
-    name: '徐工 25吨 起重机',
+    name: 'XCMG 25T Mobile Crane',
     category: 'machinery',
-    brand: '徐工 XCMG',
+    brand: 'XCMG',
     horsepower: 290,
     driveType: '6×4',
-    engine: '潍柴 WP10.290E62',
+    engine: 'Weichai WP10.290E62',
     price: '$80,000 - $100,000',
     image: '/images/xcmg-25t-crane-1.jpg',
     images: ['/images/xcmg-25t-crane-1.jpg', '/images/xcmg-25t-crane-2.jpg', '/images/xcmg-25t-crane-3.jpg'],
-    features: ['25吨吊重', '液压伸缩臂', '360°旋转', '全路面底盘']
+    features: ['25T Lift', 'Telescopic Boom', '360° Rotation', 'All-terrain']
   },
   {
     id: 'xcmg-roller',
-    name: '徐工 压路机',
+    name: 'XCMG Road Roller',
     category: 'machinery',
-    brand: '徐工 XCMG',
+    brand: 'XCMG',
     horsepower: 180,
-    driveType: '轮胎式',
-    engine: '潍柴 WP6.180E62',
+    driveType: 'Wheel Type',
+    engine: 'Weichai WP6.180E62',
     price: '$35,000 - $50,000',
     image: '/images/xcmg-roller-1.jpg',
     images: ['/images/xcmg-roller-1.jpg', '/images/xcmg-roller-2.jpg', '/images/xcmg-roller-3.jpg'],
-    features: ['20吨级', '液压振动', '前后双驱', '全液压转向']
+    features: ['20T Class', 'Hydraulic Vibration', 'Dual Drive', 'Full Hydraulic Steering']
   },
   {
     id: 'xcmg-backhoe',
-    name: '徐工 两头忙',
+    name: 'XCMG Backhoe Loader',
     category: 'machinery',
-    brand: '徐工 XCMG',
+    brand: 'XCMG',
     horsepower: 100,
     driveType: '4×4',
-    engine: '潍柴 WP4.1',
+    engine: 'Weichai WP4.1',
     price: '$38,000 - $52,000',
     image: '/images/xcmg-backhoe-1.jpg',
     images: ['/images/xcmg-backhoe-1.jpg', '/images/xcmg-backhoe-2.jpg', '/images/xcmg-backhoe-3.jpg'],
-    features: ['挖掘+装载一体', '多功能', '灵活机动', '市政/农田']
+    features: ['Dig+Load Combo', 'Multi-function', 'Compact', 'Municipal/Farm']
   },
   {
     id: 'xcmg-grader',
-    name: '徐工 平地机',
+    name: 'XCMG Motor Grader',
     category: 'machinery',
-    brand: '徐工 XCMG',
+    brand: 'XCMG',
     horsepower: 220,
     driveType: '6×4',
-    engine: '潍柴 WP10.220E62',
+    engine: 'Weichai WP10.220E62',
     price: '$45,000 - $60,000',
     image: '/images/xcmg-grader-1.jpg',
     images: ['/images/xcmg-grader-1.jpg', '/images/xcmg-grader-2.jpg'],
-    features: ['18吨级', '液压操控', '360°回转铲刀', '矿山/公路']
+    features: ['18T Class', 'Hydraulic Control', '360° Blade', 'Mining/Highway']
   },
   {
     id: 'xcmg-skid',
-    name: '徐工 滑铲机',
+    name: 'XCMG Skid Steer Loader',
     category: 'machinery',
-    brand: '徐工 XCMG',
+    brand: 'XCMG',
     horsepower: 80,
-    driveType: '轮式',
-    engine: '潍柴 WP3.2',
+    driveType: 'Wheel',
+    engine: 'Weichai WP3.2',
     price: '$18,000 - $28,000',
     image: '/images/xcmg-skid-1.jpg',
     images: ['/images/xcmg-skid-1.jpg', '/images/xcmg-skid-2.jpg', '/images/xcmg-skid-3.jpg'],
-    features: ['小巧灵活', '多功能', '市政环卫', '低油耗']
+    features: ['Compact', 'Multi-function', 'Municipal', 'Low Fuel']
   },
-
-  // ===== 中国重汽轻型车 =====
+  // ===== Light Vehicles =====
   {
     id: 'sinotruk-cargo-light',
-    name: '中国重汽 货运版',
+    name: 'SINOTRUK Light Cargo',
     category: 'light',
-    brand: '中国重汽轻型车',
+    brand: 'SINOTRUK Light',
     horsepower: 130,
     driveType: '4×2',
-    engine: '潍柴 WP2.3Q',
+    engine: 'Weichai WP2.3Q',
     price: '$8,000 - $12,000',
     image: '/images/sinotruk-cargo-light-1.jpg',
     images: ['/images/sinotruk-cargo-light-1.jpg', '/images/sinotruk-cargo-light-2.jpg', '/images/sinotruk-cargo-light-3.jpg'],
-    features: ['城市货运', '大空间', '省油', '灵活']
+    features: ['City Cargo', 'Spacious', 'Fuel Efficient', 'Compact']
   },
   {
     id: 'sinotruk-pass-light',
-    name: '中国重汽 客运版',
+    name: 'SINOTRUK Light Passenger',
     category: 'light',
-    brand: '中国重汽轻型车',
+    brand: 'SINOTRUK Light',
     horsepower: 150,
     driveType: '4×2',
-    engine: '潍柴 WP2.3Q',
+    engine: 'Weichai WP2.3Q',
     price: '$14,000 - $20,000',
     image: '/images/sinotruk-pass-light-1.jpg',
     images: ['/images/sinotruk-pass-light-1.jpg', '/images/sinotruk-pass-light-2.jpg', '/images/sinotruk-pass-light-3.jpg'],
-    features: ['15座', '客运通勤', '舒适', '空调']
+    features: ['15 Seats', 'Commuter', 'Comfort', 'AC']
   },
   {
     id: 'sinotruk-biz-light',
-    name: '中国重汽 商务版',
+    name: 'SINOTRUK Light Business',
     category: 'light',
-    brand: '中国重汽轻型车',
+    brand: 'SINOTRUK Light',
     horsepower: 150,
     driveType: '4×2',
-    engine: '潍柴 WP2.3Q',
+    engine: 'Weichai WP2.3Q',
     price: '$16,000 - $22,000',
     image: '/images/sinotruk-biz-light-1.jpg',
     images: ['/images/sinotruk-biz-light-1.jpg', '/images/sinotruk-biz-light-2.jpg', '/images/sinotruk-biz-light-3.jpg'],
-    features: ['商务接待', '豪华内饰', '9座', '高端']
+    features: ['VIP Transport', 'Luxury Interior', '9 Seats', 'Premium']
   }
 ];
 
 export const categories = [
-  { id: 'tractor', name: '牵引车', nameEn: 'Tractor Truck', icon: '🚛' },
-  { id: 'cargo', name: '载货车', nameEn: 'Cargo Truck', icon: '📦' },
-  { id: 'dump', name: '自卸车', nameEn: 'Dump Truck', icon: '🏗️' },
-  { id: 'mixer', name: '搅拌车', nameEn: 'Concrete Mixer', icon: '🔄' },
-  { id: 'reefer', name: '冷藏车', nameEn: 'Reefer Truck', icon: '🧊' },
-  { id: 'light-special', name: '轻卡专用车', nameEn: 'Light Special', icon: '🚐' },
-  { id: 'crane', name: '随车吊', nameEn: 'Truck Crane', icon: '🏗️' },
-  { id: 'water', name: '洒水车', nameEn: 'Water Truck', icon: '💧' },
-  { id: 'fuel', name: '油罐车', nameEn: 'Fuel Tanker', icon: '⛽' },
-  { id: '6x6', name: '6×6专区', nameEn: '6×6 Off-Road', icon: '🧭' },
-  { id: 'machinery', name: '工程机械', nameEn: 'Construction Machinery', icon: '⚙️' },
-  { id: 'mining', name: '矿卡', nameEn: 'Mining Truck', icon: '⛏️' },
-  { id: 'trailer', name: '挂车', nameEn: 'Trailer', icon: '🔗' },
-  { id: 'light', name: '轻型商用车', nameEn: 'Light Commercial', icon: '🚐' }
+  { id: 'tractor', name: 'Tractor Truck', nameEn: 'Tractor Truck', icon: '🚛' },
+  { id: 'cargo', name: 'Cargo Truck', nameEn: 'Cargo Truck', icon: '📦' },
+  { id: 'dump', name: 'Dump Truck', nameEn: 'Dump Truck', icon: '🏗️' },
+  { id: 'mixer', name: 'Concrete Mixer', nameEn: 'Concrete Mixer', icon: '🔄' },
+  { id: 'reefer', name: 'Reefer Truck', nameEn: 'Reefer Truck', icon: '🧊' },
+  { id: 'light-special', name: 'Light Special', nameEn: 'Light Special Vehicles', icon: '🚐' },
+  { id: 'crane', name: 'Truck Crane', nameEn: 'Truck Crane', icon: '🏗️' },
+  { id: 'water', name: 'Water Truck', nameEn: 'Water Truck', icon: '💧' },
+  { id: 'fuel', name: 'Fuel Tanker', nameEn: 'Fuel Tanker', icon: '⛽' },
+  { id: '6x6', name: '6×6 Off-Road', nameEn: '6×6 Off-Road', icon: '🧭' },
+  { id: 'machinery', name: 'Construction Machinery', nameEn: 'Construction Machinery', icon: '⚙️' },
+  { id: 'mining', name: 'Mining Truck', nameEn: 'Mining Truck', icon: '⛏️' },
+  { id: 'trailer', name: 'Trailer', nameEn: 'Trailer', icon: '🔗' },
+  { id: 'light', name: 'Light Commercial', nameEn: 'Light Commercial', icon: '🚐' }
 ];
 
 export const stockTrucks: Truck[] = [
   {
     id: 'stock-001',
-    name: '奔驰 8×4 消防车',
+    name: 'Mercedes 8×4 Fire Truck',
     category: '6x6',
-    brand: '奔驰',
+    brand: 'Mercedes-Benz',
     horsepower: 420,
     driveType: '8×4',
-    engine: '奔驰 OM 470',
+    engine: 'Mercedes OM 470',
     price: '',
     image: '/images/benz-fire-1.jpg',
     images: ['/images/benz-fire-1.jpg', '/images/benz-fire-2.jpg', '/images/benz-fire-3.jpg'],
-    features: ['8×4', '奔驰底盘', '中国上装', '即付即发']
+    features: ['8×4', 'Mercedes Chassis', 'China Body', 'Ready to Ship']
   },
   {
     id: 'stock-002',
-    name: '豪沃 6×4 自卸车 促销车型',
+    name: 'HOWO 6×4 Dump Truck Promo',
     category: 'dump',
-    brand: '中国重汽',
+    brand: 'SINOTRUK',
     horsepower: 400,
     driveType: '6×4',
-    engine: '潍柴 WP12.400E62',
+    engine: 'Weichai WP12.400E62',
     price: '',
     image: '/images/stock-howo-dump-1.jpg',
     images: ['/images/stock-howo-dump-1.jpg', '/images/stock-howo-dump-2.jpg', '/images/stock-howo-dump-3.jpg'],
-    features: ['6×4', '潍柴发动机', '加强型货箱', '即付即发']
+    features: ['6×4', 'Weichai Engine', 'Reinforced Box', 'Ready to Ship']
   },
   {
     id: 'stock-003',
-    name: '汕德卡 8×4 自卸车 促销车型',
+    name: 'SITRAK 8×4 Dump Truck Promo',
     category: 'dump',
-    brand: '中国重汽',
+    brand: 'SINOTRUK',
     horsepower: 440,
     driveType: '8×4',
-    engine: '曼 MC13.440',
+    engine: 'MAN MC13.440',
     price: '',
     image: '/images/stk-sitrak-dump-1.jpg',
     images: ['/images/stk-sitrak-dump-1.jpg', '/images/stk-sitrak-dump-2.jpg', '/images/stk-sitrak-dump-3.jpg'],
-    features: ['8×4', '曼发动机', '加强型货箱', '即付即发']
+    features: ['8×4', 'MAN Engine', 'Reinforced Box', 'Ready to Ship']
   }
 ];
 
 export const zones = [
   {
     id: 'heavy-truck',
-    title: '重卡专区',
+    title: 'Heavy Duty Trucks',
     titleEn: 'Heavy Duty Trucks',
     icon: '🚛',
-    brand: '中国重汽',
-    description: '牵引车 · 载货车 · 冷藏车 · 自卸车 · 搅拌车 · 水泥罐车 · 垃圾运输车 · 随车吊 · 高空作业车 · 洒水车 · 油罐车',
+    brand: 'SINOTRUK',
+    description: 'Tractors · Cargo · Dump · Mixer · Reefer · Crane · Water · Fuel · 6×6',
     categories: ['tractor', 'dump', 'cargo', 'mixer', 'reefer', 'light-special', 'crane', 'water', 'fuel', '6x6'],
     color: 'from-amber-500/20 to-transparent'
   },
   {
     id: 'machinery',
-    title: '工程机械专区',
+    title: 'Construction Machinery',
     titleEn: 'Construction Machinery',
     icon: '⚙️',
-    brand: '徐工 XCMG',
-    description: '挖掘机 · 装载机，矿山/基建/市政工程解决方案',
+    brand: 'XCMG',
+    description: 'Excavators · Loaders · Cranes · Rollers · Graders',
     categories: ['machinery'],
     color: 'from-orange-500/20 to-transparent'
   },
   {
     id: 'mining',
-    title: '矿卡专区',
+    title: 'Mining Trucks',
     titleEn: 'Mining Trucks',
     icon: '⛏️',
-    brand: '同力重工 / 徐工 / 临工重机',
-    description: '矿用宽体自卸车，40-45吨载重，适应矿山恶劣工况',
+    brand: 'SINOTRUK',
+    description: '70-105 Ton Wide-body Mining Dump Trucks',
     categories: ['mining'],
     color: 'from-red-500/20 to-transparent'
   },
   {
     id: 'light',
-    title: '轻型商用车专区',
-    titleEn: 'SINOTRUK Light Vehicles',
+    title: 'Light Vehicles',
+    titleEn: 'Light Vehicles',
     icon: '🚐',
-    brand: '中国重汽轻型车',
-    description: 'Van · 微卡 · 城市物流配送',
+    brand: 'SINOTRUK Light',
+    description: 'Van · Cargo · Passenger · Business',
     categories: ['light'],
     color: 'from-green-500/20 to-transparent'
   },
   {
     id: 'trailer',
-    title: '挂车专区',
+    title: 'Trailers',
     titleEn: 'Trailers',
     icon: '🔗',
-    brand: '中集 CIMC',
-    description: '平板挂车 · 自卸挂车，全球销量第一挂车品牌',
+    brand: 'CIMC / SINOTRUK',
+    description: 'Flatbed · Curtain · Low-bed · Heavy Haul · Reefer · Tankers',
     categories: ['trailer'],
     color: 'from-blue-500/20 to-transparent'
   }
@@ -870,34 +857,34 @@ export const zones = [
 
 export const advantages = [
   {
-    title: '品牌齐全',
+    title: 'Full Brand Portfolio',
     titleEn: 'Full Brand Portfolio',
-    description: '中国重汽、徐工机械、中集挂车、轻型车——四大品牌一站式采购',
+    description: 'SINOTRUK + XCMG + CIMC — Three major brands, one-stop sourcing',
     icon: 'shield'
   },
   {
-    title: '价格优势',
+    title: 'Competitive Price',
     titleEn: 'Competitive Price',
-    description: '原厂直供，省去中间环节，同等配置价格低于市场价15%-20%',
+    description: 'Factory-direct supply, no middlemen, 15%-20% below market price',
     icon: 'price'
   },
   {
-    title: '售后无忧',
+    title: 'After-sales Service',
     titleEn: 'After-sales Service',
-    description: '提供2年质保，海外设有服务网点，配件供应及时，技术远程支持',
+    description: '2-year warranty, overseas service network, fast parts supply, remote technical support',
     icon: 'service'
   },
   {
-    title: '定制服务',
+    title: 'Customization',
     titleEn: 'Customization',
-    description: '可根据客户需求定制配置、颜色、标识，满足不同市场特殊要求',
+    description: 'Custom configuration, color, and branding to meet specific market requirements',
     icon: 'custom'
   }
 ];
 
 export const markets = [
-  { region: '非洲', countries: ['阿尔及利亚', '尼日利亚', '埃塞俄比亚', '坦桑尼亚', '肯尼亚', '加纳'], count: 45 },
-  { region: '中东', countries: ['沙特阿拉伯', '阿联酋', '伊拉克', '约旦', '科威特'], count: 32 },
-  { region: '东南亚', countries: ['越南', '菲律宾', '印度尼西亚', '缅甸', '老挝'], count: 28 },
-  { region: '中亚', countries: ['哈萨克斯坦', '乌兹别克斯坦', '土库曼斯坦', '吉尔吉斯斯坦'], count: 18 }
+  { region: 'Africa', countries: ['Algeria', 'Nigeria', 'Ethiopia', 'Tanzania', 'Kenya', 'Ghana'], count: 45 },
+  { region: 'Middle East', countries: ['Saudi Arabia', 'UAE', 'Iraq', 'Jordan', 'Kuwait'], count: 32 },
+  { region: 'Southeast Asia', countries: ['Vietnam', 'Philippines', 'Indonesia', 'Myanmar', 'Laos'], count: 28 },
+  { region: 'Central Asia', countries: ['Kazakhstan', 'Uzbekistan', 'Turkmenistan', 'Kyrgyzstan'], count: 18 }
 ];
