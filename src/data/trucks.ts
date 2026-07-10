@@ -490,6 +490,19 @@ export const trucks: Truck[] = [
     features: ['四轴重载', '16吨车桥', 'ABS制动', '集装箱锁具']
   },
   {
+    id: 'cimc-3axle-curtain',
+    name: '中集 三轴 侧帘挂车',
+    category: 'trailer',
+    brand: '中集 CIMC',
+    horsepower: 0,
+    driveType: '3轴',
+    engine: '-',
+    price: '$12,000 - $18,000',
+    image: '/images/cimc-3axle-curtain-1.jpg',
+    images: ['/images/cimc-3axle-curtain-1.jpg', '/images/cimc-3axle-curtain-2.jpg', '/images/cimc-3axle-curtain-3.jpg'],
+    features: ['侧帘式', '快速装卸', '13吨车桥', 'ABS制动']
+  },
+  {
     id: 'cimc-dump-trailer',
     name: '中集 40立方 自卸挂车',
     category: 'trailer',
