@@ -491,18 +491,6 @@ export const trucks: Truck[] = [
 
   // ===== 挂车（中集） =====
   {
-    id: 'cimc-flatbed',
-    name: '中集 40英尺 平板挂车',
-    category: 'trailer',
-    brand: '中集 CIMC',
-    horsepower: 0,
-    driveType: '3轴',
-    engine: '-',
-    price: '$8,000 - $12,000',
-    image: '/images/trailer-cimc.jpg',
-    features: ['40英尺平板', '13吨车桥', 'ABS制动', '集装箱锁具']
-  },
-  {
     id: 'cimc-4axle-flat',
     name: '中集 四轴 平板挂车',
     category: 'trailer',
