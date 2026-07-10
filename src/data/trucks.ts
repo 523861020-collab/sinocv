@@ -106,6 +106,19 @@ export const trucks: Truck[] = [
     images: ['/images/sinotruk-3axle-cargo-1.jpg', '/images/sinotruk-3axle-cargo-2.jpg', '/images/sinotruk-3axle-cargo-3.jpg'],
     features: ['牵引车+挂车', '大载重', '曼发动机', '长途物流']
   },
+  {
+    id: 'sinotruk-3axle-highside',
+    name: '中国重汽 三轴 高栏载货车',
+    category: 'cargo',
+    brand: '中国重汽',
+    horsepower: 440,
+    driveType: '6×4',
+    engine: '曼 MC13.440',
+    price: '$45,000 - $58,000',
+    image: '/images/sinotruk-3axle-highside-1.jpg',
+    images: ['/images/sinotruk-3axle-highside-1.jpg', '/images/sinotruk-3axle-highside-2.jpg'],
+    features: ['高栏货箱', '大容量', '曼发动机', '长途运输']
+  },
 
   // ===== 冷藏车 =====
   {
