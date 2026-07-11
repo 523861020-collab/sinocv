@@ -25,6 +25,10 @@ export default function Footer() {
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
               </a>
             </div>
+            <div className="mt-6 pt-4 border-t border-gray-800">
+              <p className="text-gray-500 text-xs mb-2">Partner Brands</p>
+              <p className="text-gray-400 text-sm font-medium">SINOTRUK · XCMG · CIMC</p>
+            </div>
           </div>
           <div>
             <h4 className="text-white font-semibold mb-3">Quick Links</h4>
@@ -49,16 +53,6 @@ export default function Footer() {
         </div>
         <div className="mt-10 pt-6 border-t border-gray-800 text-center text-gray-600 text-xs">
           © 2025 XINYUNTONG CHINA LIMITED. All rights reserved.
-        </div>
-      </div>
-      <div className="border-t border-gray-800 py-4 bg-black">
-        <div className="flex items-center justify-center gap-8 text-sm">
-          <span className="text-gray-500">Partner Brands</span>
-          <span className="text-gray-400 font-semibold">SINOTRUK</span>
-          <span className="text-gray-600">|</span>
-          <span className="text-gray-400 font-semibold">XCMG</span>
-          <span className="text-gray-600">|</span>
-          <span className="text-gray-400 font-semibold">CIMC</span>
         </div>
       </div>
     </footer>
