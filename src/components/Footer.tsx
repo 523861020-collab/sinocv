@@ -2,7 +2,7 @@ export default function Footer() {
   return (
     <footer className="bg-gray-950 border-t border-gray-800">
       <div className="px-6 lg:px-16 max-w-[1920px] mx-auto py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
             <div className="flex flex-col items-start gap-2 mb-4">
               <img src="/images/logo-new.png" alt="Logo" className="h-10 w-auto" />
@@ -25,9 +25,13 @@ export default function Footer() {
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
               </a>
             </div>
-            <div className="mt-6 pt-4 border-t border-gray-800">
-              <p className="text-gray-500 text-xs mb-2">Partner Brands</p>
-              <p className="text-gray-400 text-sm font-medium">SINOTRUK · XCMG · CIMC</p>
+          </div>
+          <div>
+            <h4 className="text-white font-semibold mb-3">Partner Brands</h4>
+            <div className="space-y-2 text-sm text-gray-400">
+              <p>SINOTRUK</p>
+              <p>XCMG</p>
+              <p>CIMC</p>
             </div>
           </div>
           <div>
