@@ -4,9 +4,12 @@ export default function Footer() {
       <div className="px-6 lg:px-16 max-w-[1920px] mx-auto py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <div className="flex items-center gap-3 mb-4">
+            <div className="flex flex-col items-start gap-2 mb-4">
               <img src="/images/logo-new.png" alt="Logo" className="h-10 w-auto" />
-              <span className="text-amber-500 font-bold text-lg">XINYUNTONG</span>
+              <div className="text-sm text-amber-500 font-medium leading-tight">
+                <div>One-Stop Sourcing for</div>
+                <div>Commercial Vehicles</div>
+              </div>
             </div>
             <p className="text-gray-500 text-sm leading-relaxed">
               Your trusted partner for Chinese commercial vehicles and construction machinery export.
