@@ -41,8 +41,17 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="mt-10 pt-6 border-t border-gray-800 text-center text-gray-600 text-xs">
-          © 2025 XINYUNTONG CHINA LIMITED. All rights reserved.
+        <div className="mt-10 pt-6 border-t border-gray-800 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="flex items-center gap-6">
+            <span className="text-gray-500 text-sm">Partner Brands</span>
+            <span className="text-gray-400 font-semibold">SINOTRUK</span>
+            <span className="text-gray-600">|</span>
+            <span className="text-gray-400 font-semibold">XCMG</span>
+            <span className="text-gray-600">|</span>
+            <span className="text-gray-400 font-semibold">CIMC</span>
+          </div>
+          <div className="text-gray-600 text-xs">
+            © 2025 XINYUNTONG CHINA LIMITED. All rights reserved.
         </div>
       </div>
     </footer>

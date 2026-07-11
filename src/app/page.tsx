@@ -157,33 +157,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section style={{paddingTop: '1.5rem', paddingBottom: '1.5rem'}} className="bg-gray-950">
-        <div style={{textAlign: 'center', padding: '0 1.5rem'}}>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Partner Brands</h2>
-          <p className="text-gray-400 text-lg mb-12">Strategic Cooperation · Factory Direct</p>
-          <div className="flex flex-wrap justify-center gap-12 items-center">
-            <div className="text-center">
-              <div className="w-32 h-32 rounded-2xl bg-gray-900 border border-gray-800 flex items-center justify-center mb-3 mx-auto">
-                <span className="text-3xl font-bold text-amber-500">S</span>
-              </div>
-              <p className="text-white font-semibold">SINOTRUK</p>
-            </div>
-            <div className="text-center">
-              <div className="w-32 h-32 rounded-2xl bg-gray-900 border border-gray-800 flex items-center justify-center mb-3 mx-auto">
-                <span className="text-3xl font-bold text-amber-500">X</span>
-              </div>
-              <p className="text-white font-semibold">XCMG</p>
-            </div>
-            <div className="text-center">
-              <div className="w-32 h-32 rounded-2xl bg-gray-900 border border-gray-800 flex items-center justify-center mb-3 mx-auto">
-                <span className="text-3xl font-bold text-amber-500">C</span>
-              </div>
-              <p className="text-white font-semibold">CIMC</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <Contact />
       <AnimatePresence>{lightbox && <Lightbox images={lightbox} onClose={() => setLightbox(null)} />}</AnimatePresence>
     </>
