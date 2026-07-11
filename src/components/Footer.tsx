@@ -51,7 +51,6 @@ export default function Footer() {
               <a href="https://wa.me/8619103781257" target="_blank" rel="noopener" className="flex items-center gap-2 text-green-400 hover:text-green-300">
                 <span>💬 WhatsApp: +86 19103781257</span>
               </a>
-              <a href="https://www.facebook.com/chintruck" target="_blank" rel="noopener" className="text-gray-400 hover:text-amber-500">Facebook</a>
             </div>
           </div>
         </div>
