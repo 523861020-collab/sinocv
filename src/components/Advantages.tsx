@@ -73,7 +73,7 @@ export default function Advantages() {
           <p style={{color: '#9ca3af', marginBottom: '2rem', fontSize: '1.1rem'}}>
             Serving 50+ Countries Across Africa, Middle East & Southeast Asia
           </p>
-          <div style={{position: 'relative', maxWidth: '900px', marginLeft: 'auto', marginRight: 'auto'}}>
+          <div style={{position: 'relative', maxWidth: '1100px', marginLeft: 'auto', marginRight: 'auto'}}>
             {/* Left fade */}
             <div style={{
               position: 'absolute', left: 0, top: 0, bottom: 0, width: '200px',
@@ -95,7 +95,7 @@ export default function Advantages() {
               <img
                 src={MAP_DATA_URI}
                 alt="SINOCV Global Export Network"
-                style={{width: '100%', height: 'auto', maxHeight: '300px', display: 'block', objectFit: 'contain'}}
+                style={{width: '100%', height: 'auto', maxHeight: '380px', display: 'block', objectFit: 'contain'}}
               />
             </div>
           </div>
