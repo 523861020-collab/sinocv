@@ -6,6 +6,10 @@ export default function Footer() {
           <div>
             <div className="flex flex-col items-start gap-2 mb-4">
               <img src="/images/logo-new.png" alt="Logo" className="h-10 w-auto" />
+              <div className="text-sm text-amber-500 font-medium leading-tight">
+                <div>One-Stop Sourcing for</div>
+                <div>Commercial Vehicles</div>
+              </div>
             </div>
             <div className="flex gap-3">
               <a href="https://www.facebook.com/chintruck" target="_blank" className="w-9 h-9 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-[#1877F2] hover:text-white transition-colors">
