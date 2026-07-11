@@ -120,7 +120,7 @@ export default function Home() {
       <Advantages />
 
       <section style={{paddingTop: '1.5rem', paddingBottom: '1.5rem'}} className="bg-black">
-        <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', maxWidth: '768px', margin: '0 auto', padding: '0 1.5rem'}}>
+        <div style={{textAlign: 'center', padding: '0 1.5rem'}}>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-12">About Us</h2>
           {/* v20260710-1: manager photo directly below */}
           <div className="mb-8">
