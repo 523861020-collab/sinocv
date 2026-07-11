@@ -28,14 +28,13 @@ export default function Footer() {
             </div>
           </div>
           <div>
-            <h4 className="text-white font-semibold mb-3 text-center">Quick Links</h4>
+            <h4 className="text-white font-semibold mb-3">Quick Links</h4>
             <div className="grid grid-cols-2 gap-2 text-sm">
               <a href="/heavy-truck" className="text-gray-400 hover:text-amber-500">Heavy Trucks</a>
               <a href="/machinery" className="text-gray-400 hover:text-amber-500">Machinery</a>
               <a href="/mining" className="text-gray-400 hover:text-amber-500">Mining</a>
               <a href="/light" className="text-gray-400 hover:text-amber-500">Light Vehicles</a>
               <a href="/trailers" className="text-gray-400 hover:text-amber-500">Trailers</a>
-              <a href="/6x6" className="text-gray-400 hover:text-amber-500">6×6 Off-Road</a>
             </div>
           </div>
           <div>
