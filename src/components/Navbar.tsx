@@ -53,6 +53,12 @@ export default function Navbar() {
                 {link.label}
               </a>
             ))}
+            <a
+              href="https://wa.me/8619103781257" target="_blank"
+              className="rounded-md bg-green-500 px-6 py-2.5 font-semibold text-white hover:bg-green-400 transition-colors"
+            >
+              Get Quote
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -90,7 +96,14 @@ export default function Navbar() {
                 </a>
               ))}
             </div>
-          </motion.div>
+              <a
+                href="https://wa.me/8619103781257" target="_blank"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block mx-4 rounded-md bg-green-500 px-6 py-3 text-center font-semibold text-white hover:bg-green-400 transition-colors"
+              >
+                Inquire Now
+              </a>
+            </motion.div>
         )}
       </div>
     </motion.nav>
