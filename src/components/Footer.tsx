@@ -40,6 +40,8 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-3">Contact</h4>
             <div className="space-y-2 text-sm text-gray-400">
+              <p>📱 +86 13001977959</p>
+              <p>📍 Licheng District, Jinan, Shandong, China</p>
               <p>📧 lishanlong@sinocv.com</p>
               <a href="https://wa.me/8619103781257" target="_blank" rel="noopener" className="flex items-center gap-2 text-green-400 hover:text-green-300">
                 <span>💬 WhatsApp: +86 19103781257</span>
