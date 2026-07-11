@@ -123,8 +123,8 @@ export default function Home() {
         <div style={{textAlign: 'center', padding: '0 1.5rem'}}>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-12">About Us</h2>
           {/* v20260710-1: manager photo directly below */}
-          <div className="mb-8">
-            <img src="/images/manager.jpg" alt="Li Shanlong" className="w-56 h-56 rounded-full object-cover border-2 border-amber-500/40 mx-auto" />
+          <div className="mb-8 flex justify-center">
+            <img src="/images/manager.jpg" alt="Li Shanlong" className="w-56 h-56 rounded-full object-cover border-2 border-amber-500/40" />
           </div>
           <h4 className="text-white font-bold text-5xl mb-3">Li Shanlong</h4>
           <p className="text-amber-400 text-xl font-medium mb-6">General Manager</p>
