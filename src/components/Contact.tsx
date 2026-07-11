@@ -40,7 +40,7 @@ export default function Contact() {
 
   return (
     <section id="contact" style={{paddingTop: '1.5rem', paddingBottom: '1.5rem'}} className="bg-black">
-      <div style={{maxWidth: '672px', margin: '0 auto', padding: '0 1.5rem', textAlign: 'center'}}>
+      <div style={{maxWidth: '896px', margin: '0 auto', padding: '0 1.5rem', textAlign: 'center'}}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
