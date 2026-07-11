@@ -11,9 +11,14 @@ export default function Footer() {
                 <div>Commercial Vehicles</div>
               </div>
             </div>
-            <p className="text-gray-500 text-sm leading-relaxed">
+            <p className="text-gray-500 text-sm leading-relaxed mb-4">
               Your trusted partner for Chinese commercial vehicles and construction machinery export.
             </p>
+            <div className="flex gap-3">
+              <a href="https://www.facebook.com/chintruck" target="_blank" className="w-9 h-9 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-blue-600 hover:text-white transition-colors text-sm">f</a>
+              <a href="#" className="w-9 h-9 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-blue-700 hover:text-white transition-colors text-sm">in</a>
+              <a href="#" className="w-9 h-9 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-red-600 hover:text-white transition-colors text-sm">▶</a>
+            </div>
           </div>
           <div>
             <h4 className="text-white font-semibold mb-3">Quick Links</h4>
