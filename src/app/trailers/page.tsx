@@ -1,7 +1,7 @@
 import ZonePage from '@/components/ZonePage';
 import { trucks, zones } from '@/data/trucks';
 
-const zone = zones[4];
+const zone = zones.find(z => z.id === 'trailer')!;
 
 export default function TrailerPage() {
   return (

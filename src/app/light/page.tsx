@@ -1,7 +1,7 @@
 import ZonePage from '@/components/ZonePage';
 import { trucks, zones } from '@/data/trucks';
 
-const zone = zones[3];
+const zone = zones.find(z => z.id === 'light')!;
 
 export default function LightPage() {
   return (

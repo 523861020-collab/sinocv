@@ -1,7 +1,7 @@
 import ZonePage from '@/components/ZonePage';
 import { trucks, zones } from '@/data/trucks';
 
-const zone = zones[2];
+const zone = zones.find(z => z.id === 'mining')!;
 
 export default function MiningPage() {
   return (
