@@ -20,11 +20,11 @@ const slides = [
     link: '/machinery'
   },
   {
-    image: '/images/hero-van-new.jpg',
-    title: 'SINOTRUK Light Vehicles',
-    subtitle: 'SINOTRUK · Urban Logistics Expert',
-    description: 'Light Vehicles — fuel-efficient, spacious, and reliable for cargo delivery',
-    link: '/light'
+    image: '/images/hero-mining-new.jpg',
+    title: 'Mining Dump Truck',
+    subtitle: 'SINOTRUK · 70-105T Wide-body Mining Trucks',
+    description: '40-45 ton payload, reinforced chassis, built for harsh mining conditions',
+    link: '/mining'
   },
   {
     image: '/images/hero-trailer.jpg',
@@ -34,11 +34,11 @@ const slides = [
     link: '/trailers'
   },
   {
-    image: '/images/hero-mining-new.jpg',
-    title: 'Mining Dump Truck',
-    subtitle: 'SINOTRUK · 70-105T Wide-body Mining Trucks',
-    description: '40-45 ton payload, reinforced chassis, built for harsh mining conditions',
-    link: '/mining'
+    image: '/images/hero-van-new.jpg',
+    title: 'SINOTRUK Light Vehicles',
+    subtitle: 'SINOTRUK · Urban Logistics Expert',
+    description: 'Light Vehicles — fuel-efficient, spacious, and reliable for cargo delivery',
+    link: '/light'
   }
 ];
 

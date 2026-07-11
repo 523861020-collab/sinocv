@@ -19,8 +19,8 @@ export default function Navbar() {
     { href: '/heavy-truck', label: 'Heavy Trucks' },
     { href: '/machinery', label: 'Machinery' },
     { href: '/mining', label: 'Mining' },
-    { href: '/light', label: 'Light Vehicles' },
     { href: '/trailers', label: 'Trailers' },
+    { href: '/light', label: 'Light Vehicles' },
   ];
 
   return (

@@ -834,16 +834,6 @@ export const zones = [
     color: 'from-red-500/20 to-transparent'
   },
   {
-    id: 'light',
-    title: 'Light Vehicles',
-    titleEn: 'Light Vehicles',
-    icon: '🚐',
-    brand: 'SINOTRUK Light',
-    description: 'Van · Cargo · Passenger · Business',
-    categories: ['light'],
-    color: 'from-green-500/20 to-transparent'
-  },
-  {
     id: 'trailer',
     title: 'Trailers',
     titleEn: 'Trailers',
@@ -852,6 +842,16 @@ export const zones = [
     description: 'Flatbed · Curtain · Low-bed · Heavy Haul · Reefer · Tankers',
     categories: ['trailer'],
     color: 'from-amber-500/20 to-transparent'
+  },
+  {
+    id: 'light',
+    title: 'Light Vehicles',
+    titleEn: 'Light Vehicles',
+    icon: '🚐',
+    brand: 'SINOTRUK Light',
+    description: 'Van · Cargo · Passenger · Business',
+    categories: ['light'],
+    color: 'from-green-500/20 to-transparent'
   }
 ];
 

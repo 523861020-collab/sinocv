@@ -37,8 +37,8 @@ export default function Footer() {
               <a href="/heavy-truck" className="text-gray-400 hover:text-amber-500">Heavy Trucks</a>
               <a href="/machinery" className="text-gray-400 hover:text-amber-500">Machinery</a>
               <a href="/mining" className="text-gray-400 hover:text-amber-500">Mining</a>
-              <a href="/light" className="text-gray-400 hover:text-amber-500">Light Vehicles</a>
               <a href="/trailers" className="text-gray-400 hover:text-amber-500">Trailers</a>
+              <a href="/light" className="text-gray-400 hover:text-amber-500">Light Vehicles</a>
             </div>
           </div>
           <div>
