@@ -128,7 +128,7 @@ export default function Home() {
           </div>
           <h4 className="text-white font-bold text-5xl mb-3">Li Shanlong</h4>
           <p className="text-amber-400 text-xl font-medium mb-6">General Manager</p>
-          <div className="flex flex-wrap justify-center gap-3 text-base text-gray-400 mb-16">
+          <div className="flex flex-wrap justify-center gap-3 text-base text-gray-400 mb-12">
             <span>📧 lishanlong@sinocv.com</span>
             <span>📱 +86 13001977959</span>
             <a href="https://wa.me/8619103781257" target="_blank" className="text-green-400 hover:text-green-300">💬 WhatsApp</a>
