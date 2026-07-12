@@ -6,7 +6,7 @@ const USERS = ['Li Shanlong', '王小涵', '毛振威', '赵欢乐', '杜飞跃'
 // PINs — stored in localStorage so users can change their own
 function getPins(){try{return JSON.parse(localStorage.getItem('sinocv_pins')||'{}')}catch(e){return{}}}
 function savePins(p){localStorage.setItem('sinocv_pins',JSON.stringify(p))}
-const defaultPins={'Li Shanlong':'1234','13001977959':'202502','Sales 1':'1111','Sales 2':'2222','Sales 3':'3333','Sales 4':'4444'};
+const defaultPins={'Li Shanlong':'1234','13001977959':'202502','王小涵':'1111','毛振威':'2222','赵欢乐':'3333','杜飞跃':'4444'};
 function PINS(){const saved=getPins();return{...defaultPins,...saved}}
 
 function doLogin(){
