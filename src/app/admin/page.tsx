@@ -78,23 +78,32 @@ export default function AdminPage() {
       });
     });
 
-    let csv='日期,姓名,开始时间,结束时间,在线时长(分钟),工时(分钟)\n';
-    const userMap: Record<string,{totalMin:number,workMin:number}> = {};
+    let csv='日期,姓名,上班时间,下班时间,在线(分),工时(分),迟到(分)\n';
+    const userMap: Record<string,{totalMin:number,workMin:number,lateCount:number,lateMins:number}> = {};
     timeLogs.forEach((l:any)=>{
       const start=l.sessionStart?new Date(l.sessionStart):null;
       const end=l.endTime?new Date(l.endTime):null;
       const dur=start&&end?Math.round((end.getTime()-start.getTime())/60000):0;
       let workMin=0;
       if(start&&end){for(let t=start.getTime();t<end.getTime();t+=60000){const d3=new Date(t);const h3=d3.getHours()+d3.getMinutes()/60;if(h3>=13&&h3<22.5&&!(h3>=17.5&&h3<18.5))workMin++;}}
-      csv+=`${l.date||''},${l.user||''},${start?start.toLocaleTimeString('zh-CN',{hour12:false}):'-'},${end?end.toLocaleTimeString('zh-CN',{hour12:false}):'-'},${dur},${workMin}\n`;
-      if(!userMap[l.user])userMap[l.user]={totalMin:0,workMin:0};
+      // Check late: first session start after 13:00 Beijing time
+      let lateMin=0;
+      if(start){
+        const sh=start.getUTCHours()+8; // Beijing time
+        const sm=start.getMinutes();
+        const startMin=sh*60+sm;
+        if(startMin > 13*60) lateMin = startMin - 13*60;
+      }
+      csv+=`${l.date||''},${l.user||''},${start?start.toLocaleTimeString('zh-CN',{hour12:false,timeZone:'Asia/Shanghai'}):'-'},${end?end.toLocaleTimeString('zh-CN',{hour12:false,timeZone:'Asia/Shanghai'}):'-'},${dur},${workMin},${lateMin}\n`;
+      if(!userMap[l.user])userMap[l.user]={totalMin:0,workMin:0,lateCount:0,lateMins:0};
       userMap[l.user].totalMin += dur;
       userMap[l.user].workMin += workMin;
+      if(lateMin>0){userMap[l.user].lateCount++;userMap[l.user].lateMins+=lateMin;}
     });
 
-    csv+='\n姓名,出勤天数,基础日薪,基础工资,全勤奖,PI数,PI绩效,应发合计\n';
+    csv+='\n姓名,出勤天数,基础日薪,基础工资,迟到次数,迟到(分),全勤奖,PI数,PI绩效,应发合计\n';
     USERS.forEach(u=>{
-      const d = userMap[u] || {totalMin:0,workMin:0};
+      const d = userMap[u] || {totalMin:0,workMin:0,lateCount:0,lateMins:0};
       const baseSalary = (USER_INFO[u]||{}).salary || 0;
       const dailyRate = daysInMonth > 0 ? Math.round(baseSalary / daysInMonth) : 0;
       const daysWorked = (userDays[u]||new Set()).size;
@@ -110,7 +119,7 @@ export default function AdminPage() {
       const piBonus = piCount >= 60 ? 300 : 0;
       
       const total = basePay + attendanceBonus + piBonus;
-      csv+=`${u},${daysWorked},${dailyRate},${basePay},${attendanceBonus},${piCount},${piBonus},${total}\n`;
+      csv+=`${u},${daysWorked},${dailyRate},${basePay},${d.lateCount},${d.lateMins},${attendanceBonus},${piCount},${piBonus},${total}\n`;
     });
     csv+=`\n本月共${daysInMonth}天,基础日薪=基础工资÷${daysInMonth},全勤需全部日历日出勤+周末≥30分钟,PI≥60个=300元绩效\n`;
     const bl=new Blob(['\uFEFF'+csv],{type:'text/csv'});const a3=document.createElement('a');a3.href=URL.createObjectURL(bl);a3.download=`考勤工资_${timeMonth}.csv`;a3.click();
