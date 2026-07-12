@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>SINOCV CRM</title>
+  <style>
+    body { width: 320px; font-family: -apple-system, sans-serif; margin: 0; padding: 0; }
+    .header { background: #f59e0b; color: #000; padding: 12px 16px; font-weight: 700; font-size: 14px; display: flex; align-items: center; gap: 8px; }
+    .content { padding: 16px; text-align: center; }
+    .btn { display: block; width: 100%; margin: 8px 0; padding: 10px; border-radius: 6px; border: none; cursor: pointer; font-size: 14px; font-weight: 600; }
+    .btn-primary { background: #f59e0b; color: #000; }
+    .btn-secondary { background: #1f2937; color: #e5e7eb; border: 1px solid #374151; }
+    .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 12px 0; }
+    .stat { background: #111827; border-radius: 8px; padding: 10px; text-align: center; border: 1px solid #374151; }
+    .stat-num { font-size: 22px; font-weight: 700; color: #f59e0b; }
+    .stat-label { font-size: 11px; color: #9ca3af; }
+  </style>
+</head>
+<body>
+  <div class="header">🚛 SINOCV CRM</div>
+  <div class="content">
+    <p style="font-size:13px;color:#9ca3af;margin:4px 0;">Open <b>web.whatsapp.com</b> to use CRM</p>
+    <div class="stats">
+      <div class="stat"><div class="stat-num" id="stat-contacts">-</div><div class="stat-label">Contacts</div></div>
+      <div class="stat"><div class="stat-num" id="stat-pi">-</div><div class="stat-label">PIs</div></div>
+    </div>
+    <button class="btn btn-primary" id="btn-open-wa">📱 Open WhatsApp Web</button>
+    <button class="btn btn-secondary" id="btn-dashboard">📊 View Dashboard</button>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
