@@ -274,41 +274,45 @@ export default function AdminPage() {
         </div>}
 
         {tab==='yearly'&&(()=>{
-          const yr = new Date().getFullYear();
-          const allOrders = my.flatMap(c=>(c.orders||[]).map((o:any)=>({owner:c.owner||'',name:c.name||c.phone,phone:c.phone,country:c.country||'',cat:c.category||'',...o})));
-          // Filter this year
-          const yOrders = allOrders.filter(o=>o.eta?.startsWith(String(yr))||o.shipDate?.startsWith(String(yr)));
-          // Commission: units * 1000, payable next month after ETA
-          const now = new Date(); const thisMonth = `${yr}-${String(now.getMonth()+1).padStart(2,'0')}`;
-          const commByOwner: Record<string,{units:number,payable:number,paid:number,pending:number}> = {};
-          yOrders.forEach(o=>{
-            if(!o.owner) return;
-            if(!commByOwner[o.owner]) commByOwner[o.owner] = {units:0,payable:0,paid:0,pending:0};
-            commByOwner[o.owner].units += (o.units||0);
-            if(o.status==='delivered'||o.status==='shipped'){
-              const eta = o.eta || '';
-              if(eta < thisMonth) commByOwner[o.owner].payable += (o.units||0)*1000;
-              if(eta >= thisMonth) commByOwner[o.owner].pending += (o.units||0)*1000;
-            }
-          });
-          const totalUnits = yOrders.reduce((s:number,o:any)=>s+(o.units||0),0);
-          return <div style={{padding:'32px',maxWidth:'960px'}}><h2 style={{color:'#fff',fontSize:'18px',marginBottom:'24px'}}>📈 {yr} 年度报表</h2>
-            <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(150px,1fr))',gap:'12px',marginBottom:'24px'}}>
-              {[[yOrders.length,'年度订单'],[totalUnits,'车辆总数'],[totalUnits*1000,'提成总额'],[yOrders.filter(o=>o.status==='shipped'||o.status==='delivered').length,'已到港']].map(([n,l],i)=><div key={i} style={{background:'#0d0d0d',border:'1px solid #1a1a1a',borderRadius:'10px',padding:'16px'}}><div style={{fontSize:'24px',fontWeight:700,color:'#f59e0b'}}>{n as number}</div><div style={{fontSize:'12px',color:'#666',marginTop:'4px'}}>{l}</div></div>)}
-            </div>
-            <div style={{background:'#0d0d0d',border:'1px solid #1a1a1a',borderRadius:'10px',padding:'20px',marginBottom:'24px'}}>
-              <h3 style={{color:'#fff',fontSize:'14px',marginBottom:'12px'}}>💰 提成汇总（¥1000/辆，到港次月兑付）</h3>
-              <table style={{width:'100%',fontSize:'13px',borderCollapse:'collapse'}}><thead><tr style={{color:'#666',borderBottom:'1px solid #1a1a1a'}}><th style={{textAlign:'left',padding:'8px',fontWeight:400}}>销售员</th><th style={{padding:'8px',fontWeight:400}}>车辆数</th><th style={{padding:'8px',fontWeight:400}}>已到港待付</th><th style={{padding:'8px',fontWeight:400}}>未到港</th></tr></thead><tbody>
-                {USERS.filter(u=>commByOwner[u]).map(u=>{const co=commByOwner[u];return <tr key={u} style={{borderBottom:'1px solid #111'}}><td style={{padding:'10px 8px',color:'#fff',fontWeight:500}}>{u}</td><td style={{textAlign:'center',color:'#ccc'}}>{co.units}</td><td style={{textAlign:'center',color:'#34d399',fontWeight:600}}>¥{co.payable.toLocaleString()}</td><td style={{textAlign:'center',color:'#f59e0b'}}>¥{co.pending.toLocaleString()}</td></tr>})}
-              </tbody></table>
-            </div>
-            <div style={{background:'#0d0d0d',border:'1px solid #1a1a1a',borderRadius:'10px',padding:'20px'}}>
-              <h3 style={{color:'#fff',fontSize:'14px',marginBottom:'12px'}}>📋 订单明细</h3>
-              <div style={{overflow:'auto'}}><table style={{width:'100%',fontSize:'11px',borderCollapse:'collapse'}}><thead><tr style={{color:'#666',borderBottom:'1px solid #1a1a1a'}}><th style={{textAlign:'left',padding:'6px'}}>负责人</th><th style={{textAlign:'left'}}>客户</th><th>订单号</th><th>车型</th><th>数量</th><th>金额</th><th>ETA</th><th>状态</th></tr></thead><tbody>
-                {yOrders.slice(0,100).map((o:any,i:number)=><tr key={i} style={{borderBottom:'1px solid #111'}}><td style={{padding:'4px',color:'#888'}}>{o.owner}</td><td style={{color:'#fff'}}>{o.name||o.phone}</td><td style={{color:'#f59e0b'}}>{o.orderNo}</td><td style={{color:'#aaa'}}>{o.requirements?.slice(0,20)}</td><td style={{textAlign:'center',color:'#fff'}}>{o.units||0}</td><td style={{textAlign:'center',color:'#fff'}}>{o.totalAmt?o.totalAmt+' '+o.currency:''}</td><td style={{textAlign:'center',color:'#ccc'}}>{o.eta||'-'}</td><td style={{textAlign:'center'}}><span style={{fontSize:'10px',padding:'2px 4px',borderRadius:'3px',background:o.status==='shipped'?'#064e3b':o.status==='delivered'?'#333':'#1a1200',color:o.status==='shipped'?'#34d399':o.status==='delivered'?'#888':'#f59e0b'}}>{o.status||'待处理'}</span></td></tr>)}
-              </tbody></table></div>
-            </div>
-          </div>;
+          try {
+            const yr = new Date().getFullYear();
+            const allOrders = (my||[]).flatMap(c=>(c.orders||[]).map((o:any)=>({owner:c.owner||'',name:c.name||c.phone,phone:c.phone,country:c.country||'',cat:c.category||'',...o})));
+            const yOrders = allOrders.filter(o=>o.eta?.startsWith(String(yr))||o.shipDate?.startsWith(String(yr)));
+            const nowDt = new Date(); const thisMonth = `${yr}-${String(nowDt.getMonth()+1).padStart(2,'0')}`;
+            const commByOwner: Record<string,{units:number,payable:number,pending:number}> = {};
+            yOrders.forEach(o=>{
+              if(!o.owner) return;
+              if(!commByOwner[o.owner]) commByOwner[o.owner] = {units:0,payable:0,pending:0};
+              commByOwner[o.owner].units += (o.units||0);
+              if((o.status||'')==='delivered'||(o.status||'')==='shipped'){
+                const eta = o.eta || '';
+                if(eta && eta < thisMonth) commByOwner[o.owner].payable += (o.units||0)*1000;
+                if(eta && eta >= thisMonth) commByOwner[o.owner].pending += (o.units||0)*1000;
+              }
+            });
+            const totalUnits2 = yOrders.reduce((s:number,o:any)=>s+(o.units||0),0);
+            return <div style={{padding:'32px',maxWidth:'960px'}}><h2 style={{color:'#fff',fontSize:'18px',marginBottom:'24px'}}>📈 {yr} 年度报表</h2>
+              <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(150px,1fr))',gap:'12px',marginBottom:'24px'}}>
+                {[[yOrders.length,'年度订单'],[totalUnits2,'车辆总数'],[totalUnits2*1000,'提成总额'],[yOrders.filter(o=>(o.status||'')==='shipped'||(o.status||'')==='delivered').length,'已到港']].map(([n,l],i)=><div key={i} style={{background:'#0d0d0d',border:'1px solid #1a1a1a',borderRadius:'10px',padding:'16px'}}><div style={{fontSize:'24px',fontWeight:700,color:'#f59e0b'}}>{n as number}</div><div style={{fontSize:'12px',color:'#666',marginTop:'4px'}}>{l}</div></div>)}
+              </div>
+              <div style={{background:'#0d0d0d',border:'1px solid #1a1a1a',borderRadius:'10px',padding:'20px',marginBottom:'24px'}}>
+                <h3 style={{color:'#fff',fontSize:'14px',marginBottom:'12px'}}>💰 提成汇总（¥1000/辆，到港次月兑付）</h3>
+                {Object.keys(commByOwner).length===0?<p style={{color:'#555',padding:'20px',textAlign:'center'}}>暂无数据</p>:
+                <table style={{width:'100%',fontSize:'13px',borderCollapse:'collapse'}}><thead><tr style={{color:'#666',borderBottom:'1px solid #1a1a1a'}}><th style={{textAlign:'left',padding:'8px',fontWeight:400}}>销售员</th><th style={{padding:'8px',fontWeight:400}}>车辆数</th><th style={{padding:'8px',fontWeight:400}}>已到港待付</th><th style={{padding:'8px',fontWeight:400}}>未到港</th></tr></thead><tbody>
+                  {USERS.filter(u=>commByOwner[u]).map(u=>{const co=commByOwner[u];return <tr key={u} style={{borderBottom:'1px solid #111'}}><td style={{padding:'10px 8px',color:'#fff',fontWeight:500}}>{u}</td><td style={{textAlign:'center',color:'#ccc'}}>{co.units}</td><td style={{textAlign:'center',color:'#34d399',fontWeight:600}}>¥{co.payable.toLocaleString()}</td><td style={{textAlign:'center',color:'#f59e0b'}}>¥{co.pending.toLocaleString()}</td></tr>})}
+                </tbody></table>}
+              </div>
+              {yOrders.length===0?<p style={{color:'#555',textAlign:'center',padding:'40px'}}>暂无年度订单数据</p>:
+              <div style={{background:'#0d0d0d',border:'1px solid #1a1a1a',borderRadius:'10px',padding:'20px'}}>
+                <h3 style={{color:'#fff',fontSize:'14px',marginBottom:'12px'}}>📋 订单明细</h3>
+                <div style={{overflow:'auto'}}><table style={{width:'100%',fontSize:'11px',borderCollapse:'collapse'}}><thead><tr style={{color:'#666',borderBottom:'1px solid #1a1a1a'}}><th style={{textAlign:'left',padding:'6px'}}>负责人</th><th style={{textAlign:'left'}}>客户</th><th>订单号</th><th>车型</th><th>数量</th><th>金额</th><th>ETA</th><th>状态</th></tr></thead><tbody>
+                  {yOrders.slice(0,100).map((o:any,i:number)=><tr key={i} style={{borderBottom:'1px solid #111'}}><td style={{padding:'4px',color:'#888'}}>{o.owner||''}</td><td style={{color:'#fff'}}>{o.name||o.phone||''}</td><td style={{color:'#f59e0b'}}>{o.orderNo||''}</td><td style={{color:'#aaa'}}>{String(o.requirements||'').slice(0,20)}</td><td style={{textAlign:'center',color:'#fff'}}>{o.units||0}</td><td style={{textAlign:'center',color:'#fff'}}>{o.totalAmt?o.totalAmt+' '+(o.currency||'USD'):''}</td><td style={{textAlign:'center',color:'#ccc'}}>{o.eta||'-'}</td><td style={{textAlign:'center'}}><span style={{fontSize:'10px',padding:'2px 4px',borderRadius:'3px',background:(o.status||'')==='shipped'?'#064e3b':(o.status||'')==='delivered'?'#333':'#1a1200',color:(o.status||'')==='shipped'?'#34d399':(o.status||'')==='delivered'?'#888':'#f59e0b'}}>{o.status||'待处理'}</span></td></tr>)}
+                </tbody></table></div>
+              </div>}
+            </div>;
+          } catch(e) {
+            return <div style={{padding:'32px',color:'#f87171'}}>⚠️ 页面出错，请刷新重试</div>;
+          }
         })()}
 
         {tab==='time'&&<div style={{padding:'32px',maxWidth:'960px'}}>
