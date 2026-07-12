@@ -7,10 +7,10 @@ const API = '/api/crm';
 const USERS = ['Li Shanlong', '王小涵', '毛振威', '赵欢乐', '杜飞跃'];
 const USER_INFO: Record<string,any> = {
   'Li Shanlong': {product:'全部',region:'全球',salary:0},
-  '王小涵': {product:'牵引车/挂车/载货车/冷藏车',region:'北非/西非',salary:5000},
-  '毛振威': {product:'工程机械(自卸车/挖掘机/装载机/随车吊/搅拌车等)',region:'中非/东非',salary:5000},
-  '赵欢乐': {product:'工程机械(自卸车/挖掘机/装载机/随车吊/搅拌车等)',region:'北非/西非',salary:5000},
-  '杜飞跃': {product:'牵引车/挂车/载货车/冷藏车',region:'中非/东非',salary:5000},
+  '王小涵': {product:'牵引车/挂车/载货车/冷藏车',region:'北非/西非',salary:3200},
+  '毛振威': {product:'工程机械(自卸车/挖掘机/装载机/随车吊/搅拌车等)',region:'中非/东非',salary:3200},
+  '赵欢乐': {product:'工程机械(自卸车/挖掘机/装载机/随车吊/搅拌车等)',region:'北非/西非',salary:3000},
+  '杜飞跃': {product:'牵引车/挂车/载货车/冷藏车',region:'中非/东非',salary:3000},
 };
 const PINS: Record<string,string> = {'Li Shanlong':'1234','13001977959':'202502','王小涵':'1111','毛振威':'2222','赵欢乐':'3333','杜飞跃':'4444'};
 
@@ -42,15 +42,43 @@ export default function AdminPage() {
   useEffect(() => { if(loggedIn && tab==='time') { loadTime(timeMonth); loadFups(); } }, [loggedIn,tab,timeMonth,loadTime]);
 
   const expTime = () => {
-    // Calculate expected hours for the selected month
     const [y,m] = timeMonth.split('-').map(Number);
     const daysInMonth = new Date(y,m,0).getDate();
     let workDays = 0;
     for(let d=1;d<=daysInMonth;d++){const wd=new Date(y,m-1,d).getDay();if(wd!==0&&wd!==6)workDays++}
     const expectedHours = workDays * 8;
 
-    let csv='日期,姓名,开始时间,结束时间,在线时长(分钟),工时(分钟),基础工资,应发工资\n';
-    // Per-user summary
+    // Per-user daily log
+    const userDays: Record<string,Set<string>> = {};
+    const userWeekendMins: Record<string,number> = {};
+    timeLogs.forEach((l:any)=>{
+      if(!userDays[l.user]) userDays[l.user] = new Set();
+      userDays[l.user].add(l.date);
+      // Track weekend minutes
+      const d2 = new Date(l.date);
+      const wd2 = d2.getDay();
+      if(wd2 === 0 || wd2 === 6){
+        const dur = l.endTime&&l.sessionStart?Math.round((l.endTime-l.sessionStart)/60000):0;
+        userWeekendMins[l.user] = (userWeekendMins[l.user]||0) + dur;
+      }
+    });
+
+    // Per-user PI counts for this month
+    const moStart = timeMonth + '-01';
+    const userPIs: Record<string,number> = {};
+    my.forEach(c=>{
+      const u = c.owner;
+      if(!u) return;
+      (c.orders||[]).forEach((o:any)=>{
+        (o.pis||[]).forEach((p:any)=>{
+          if(p.date && p.date.startsWith(timeMonth)){
+            userPIs[u] = (userPIs[u]||0) + 1;
+          }
+        });
+      });
+    });
+
+    let csv='日期,姓名,开始时间,结束时间,在线时长(分钟),工时(分钟)\n';
     const userMap: Record<string,{totalMin:number,workMin:number}> = {};
     timeLogs.forEach((l:any)=>{
       const start=l.sessionStart?new Date(l.sessionStart):null;
@@ -58,21 +86,33 @@ export default function AdminPage() {
       const dur=start&&end?Math.round((end.getTime()-start.getTime())/60000):0;
       let workMin=0;
       if(start&&end){for(let t=start.getTime();t<end.getTime();t+=60000){const d3=new Date(t);const h3=d3.getHours()+d3.getMinutes()/60;if(h3>=13&&h3<22.5&&!(h3>=17.5&&h3<18.5))workMin++;}}
-      csv+=`${l.date||''},${l.user||''},${start?start.toLocaleTimeString('zh-CN',{hour12:false}):'-'},${end?end.toLocaleTimeString('zh-CN',{hour12:false}):'-'},${dur},${workMin},,\n`;
+      csv+=`${l.date||''},${l.user||''},${start?start.toLocaleTimeString('zh-CN',{hour12:false}):'-'},${end?end.toLocaleTimeString('zh-CN',{hour12:false}):'-'},${dur},${workMin}\n`;
       if(!userMap[l.user])userMap[l.user]={totalMin:0,workMin:0};
       userMap[l.user].totalMin += dur;
       userMap[l.user].workMin += workMin;
     });
-    // Summary rows
-    csv+='\n姓名,总在线时长(h),总工时(h),基础工资,应发工资\n';
+
+    csv+='\n姓名,出勤天数,基础日薪,基础工资,全勤奖,PI数,PI绩效,应发合计\n';
     USERS.forEach(u=>{
       const d = userMap[u] || {totalMin:0,workMin:0};
       const baseSalary = (USER_INFO[u]||{}).salary || 0;
-      const actualHrs = d.workMin / 60;
-      const salary = expectedHours > 0 ? Math.round((actualHrs / expectedHours) * baseSalary) : 0;
-      csv+=`${u},${(d.totalMin/60).toFixed(1)},${actualHrs.toFixed(1)},${baseSalary},${salary}\n`;
+      const dailyRate = daysInMonth > 0 ? Math.round(baseSalary / daysInMonth) : 0;
+      const daysWorked = (userDays[u]||new Set()).size;
+      const basePay = dailyRate * Math.min(daysWorked, daysInMonth);
+      
+      // Full attendance check: all days covered + weekends have 30min+
+      const weekendOk = (userWeekendMins[u]||0) >= 30;
+      const allDaysCovered = daysWorked >= daysInMonth;
+      const attendanceBonus = (allDaysCovered && weekendOk) ? 200 : 0;
+      
+      // PI bonus
+      const piCount = userPIs[u] || 0;
+      const piBonus = piCount >= 60 ? 300 : 0;
+      
+      const total = basePay + attendanceBonus + piBonus;
+      csv+=`${u},${daysWorked},${dailyRate},${basePay},${attendanceBonus},${piCount},${piBonus},${total}\n`;
     });
-    csv+=`\n本月工作日:${workDays}天,应出勤工时:${expectedHours}h\n`;
+    csv+=`\n本月共${daysInMonth}天,基础日薪=基础工资÷${daysInMonth},全勤需全部日历日出勤+周末≥30分钟,PI≥60个=300元绩效\n`;
     const bl=new Blob(['\uFEFF'+csv],{type:'text/csv'});const a3=document.createElement('a');a3.href=URL.createObjectURL(bl);a3.download=`考勤工资_${timeMonth}.csv`;a3.click();
   };
 
