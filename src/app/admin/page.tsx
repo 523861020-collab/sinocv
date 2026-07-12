@@ -270,7 +270,7 @@ export default function AdminPage() {
 
         {tab==='yearly'&&(()=>{
           const yr = new Date().getFullYear();
-          const allOrders = my.flatMap(c=>(c.orders||[]).map((o:any)=>({owner:c.owner||'',name:c.name||c.phone,phone:c.phone,country:c.country||'',cat:c.category||'','...':o})));
+          const allOrders = my.flatMap(c=>(c.orders||[]).map((o:any)=>({owner:c.owner||'',name:c.name||c.phone,phone:c.phone,country:c.country||'',cat:c.category||'',...o})));
           // Filter this year
           const yOrders = allOrders.filter(o=>o.eta?.startsWith(String(yr))||o.shipDate?.startsWith(String(yr)));
           // Commission: units * 1000, payable next month after ETA
@@ -286,7 +286,7 @@ export default function AdminPage() {
               if(eta >= thisMonth) commByOwner[o.owner].pending += (o.units||0)*1000;
             }
           });
-          totalUnits = yOrders.reduce((s:number,o:any)=>s+(o.units||0),0);
+          const totalUnits = yOrders.reduce((s:number,o:any)=>s+(o.units||0),0);
           return <div style={{padding:'32px',maxWidth:'960px'}}><h2 style={{color:'#fff',fontSize:'18px',marginBottom:'24px'}}>📈 {yr} 年度报表</h2>
             <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(150px,1fr))',gap:'12px',marginBottom:'24px'}}>
               {[[yOrders.length,'年度订单'],[totalUnits,'车辆总数'],[totalUnits*1000,'提成总额'],[yOrders.filter(o=>o.status==='shipped'||o.status==='delivered').length,'已到港']].map(([n,l],i)=><div key={i} style={{background:'#0d0d0d',border:'1px solid #1a1a1a',borderRadius:'10px',padding:'16px'}}><div style={{fontSize:'24px',fontWeight:700,color:'#f59e0b'}}>{n as number}</div><div style={{fontSize:'12px',color:'#666',marginTop:'4px'}}>{l}</div></div>)}
