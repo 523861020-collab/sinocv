@@ -2,10 +2,25 @@
 
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { useLocale } from 'next-intl';
+import { useRouter, usePathname } from '@/i18n/routing';
+
+const locales = [
+  { code: 'en', label: 'EN', flag: '🇬🇧' },
+  { code: 'fr', label: 'FR', flag: '🇫🇷' },
+  { code: 'ar', label: 'AR', flag: '🇸🇦' },
+];
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const locale = useLocale();
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const switchLocale = (newLocale: string) => {
+    router.replace(pathname, { locale: newLocale });
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -59,6 +74,22 @@ export default function Navbar() {
             >
               Get Quote
             </a>
+            <div className="relative group">
+              <button className="flex items-center gap-1 text-gray-400 hover:text-white text-sm font-medium px-2 py-1 rounded hover:bg-gray-800 transition-colors">
+                {locales.find(l => l.code === locale)?.flag} {locale.toUpperCase()}
+              </button>
+              <div className="absolute right-0 top-full mt-1 bg-gray-900 border border-gray-700 rounded-lg py-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all shadow-xl min-w-[100px]">
+                {locales.map(l => (
+                  <button
+                    key={l.code}
+                    onClick={() => switchLocale(l.code)}
+                    className={`block w-full text-left px-4 py-2 text-sm hover:bg-gray-800 transition-colors ${locale === l.code ? 'text-amber-500' : 'text-gray-300'}`}
+                  >
+                    {l.flag} {l.label}
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
