@@ -30,37 +30,57 @@ export default function AdminPage() {
   function doLogin(){ if(!user||!pin){setErr('Select user and enter PIN');return}; if(PINS[user]!==pin){setErr('Wrong PIN');return}; setLoggedIn(true);setErr(''); }
 
   if(!loggedIn) return (
-    <div className="min-h-screen bg-black flex items-center justify-center relative">
-      {/* Subtle grid pattern */}
-      <div className="absolute inset-0 opacity-[0.03]" style={{
-        backgroundImage: 'radial-gradient(circle, #f59e0b 1px, transparent 1px)',
-        backgroundSize: '40px 40px'
-      }}></div>
-
-      {/* Corner accents */}
-      <div className="absolute top-0 left-0 w-64 h-64 bg-amber-500/3 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 right-0 w-64 h-64 bg-amber-500/3 rounded-full blur-3xl"></div>
-
-      {/* Login Card — perfectly centered */}
-      <div className="relative w-[380px] bg-gray-950 border border-gray-800 rounded-2xl p-8 shadow-2xl">
-        <div className="text-center mb-8">
-          <div className="text-3xl mb-3">🚛</div>
-          <h2 className="text-white font-bold text-lg">XINYUNTONG CRM</h2>
-          <p className="text-gray-600 text-xs mt-1">Sign in to your account</p>
+    <div style={{
+      minHeight: '100vh',
+      background: '#000',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+    }}>
+      <div style={{
+        width: '360px',
+        background: '#111',
+        borderRadius: '16px',
+        padding: '40px 32px',
+        border: '1px solid #222',
+      }}>
+        <div style={{textAlign:'center',marginBottom:'32px'}}>
+          <div style={{fontSize:'32px',marginBottom:'8px'}}>🚛</div>
+          <h2 style={{color:'#fff',fontSize:'18px',fontWeight:700,margin:0}}>XINYUNTONG CRM</h2>
+          <p style={{color:'#666',fontSize:'12px',marginTop:'4px'}}>Sign in to your account</p>
         </div>
-
-        <div className="space-y-4">
-          <div>
-            <input type="text" value={user} onChange={e=>setUser(e.target.value)} placeholder="Username" className="w-full p-3 rounded-lg bg-black border border-gray-800 text-white text-sm placeholder-gray-600 focus:border-amber-500 focus:outline-none transition-colors" />
-          </div>
-          <div>
-            <input type="password" value={pin} onChange={e=>setPin(e.target.value)} placeholder="Password" className="w-full p-3 rounded-lg bg-black border border-gray-800 text-white text-sm placeholder-gray-600 focus:border-amber-500 focus:outline-none transition-colors" onKeyDown={e=>e.key==='Enter'&&doLogin()} />
-          </div>
-        </div>
-
-        {err&&<p className="text-red-400 text-xs mt-4 text-center">{err}</p>}
-
-        <button onClick={doLogin} className="w-full mt-5 bg-amber-500 hover:bg-amber-400 text-black font-bold py-3 rounded-lg transition-colors text-sm">
+        <input
+          type="text"
+          value={user}
+          onChange={e=>setUser(e.target.value)}
+          placeholder="Username"
+          style={{
+            width:'100%',padding:'12px 16px',borderRadius:'8px',
+            background:'#000',border:'1px solid #333',color:'#fff',
+            fontSize:'14px',marginBottom:'12px',outline:'none',boxSizing:'border-box'
+          }}
+        />
+        <input
+          type="password"
+          value={pin}
+          onChange={e=>setPin(e.target.value)}
+          placeholder="Password"
+          onKeyDown={e=>e.key==='Enter'&&doLogin()}
+          style={{
+            width:'100%',padding:'12px 16px',borderRadius:'8px',
+            background:'#000',border:'1px solid #333',color:'#fff',
+            fontSize:'14px',marginBottom:err?'8px':'16px',outline:'none',boxSizing:'border-box'
+          }}
+        />
+        {err&&<p style={{color:'#f87171',fontSize:'12px',textAlign:'center',marginBottom:'12px'}}>{err}</p>}
+        <button
+          onClick={doLogin}
+          style={{
+            width:'100%',padding:'12px',borderRadius:'8px',border:'none',
+            background:'#f59e0b',color:'#000',fontWeight:700,fontSize:'14px',
+            cursor:'pointer'
+          }}
+        >
           Sign In
         </button>
       </div>
