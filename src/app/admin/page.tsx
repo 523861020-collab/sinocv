@@ -4,8 +4,8 @@
 import { useState, useEffect, useCallback } from 'react';
 
 const API = '/api/crm';
-const USERS = ['Li Shanlong', 'Sales 1', 'Sales 2', 'Sales 3', 'Sales 4'];
-const PINS: Record<string,string> = {'Li Shanlong':'1234','13001977959':'202502','Sales 1':'1111','Sales 2':'2222','Sales 3':'3333','Sales 4':'4444'};
+const USERS = ['Li Shanlong', '王晓涵', '毛正威', '赵欢乐', '杜飞跃'];
+const PINS: Record<string,string> = {'Li Shanlong':'1234','13001977959':'202502','王晓涵':'1111','毛正威':'2222','赵欢乐':'3333','杜飞跃':'4444'};
 
 export default function AdminPage() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -110,7 +110,7 @@ export default function AdminPage() {
             <h3 style={{color:'#fff',fontSize:'14px',marginBottom:'16px'}}>📊 每日业绩</h3>
             <table style={{width:'100%',fontSize:'13px',borderCollapse:'collapse'}}>
               <thead><tr style={{color:'#666',borderBottom:'1px solid #1a1a1a'}}><th style={{textAlign:'left',padding:'8px',fontWeight:400}}>销售员</th><th style={{padding:'8px',fontWeight:400}}>今日</th><th style={{padding:'8px',fontWeight:400}}>PI</th><th style={{padding:'8px',fontWeight:400}}>本周</th><th style={{padding:'8px',fontWeight:400}}>PI</th></tr></thead>
-              <tbody>{USERS.map(u=>{const s=st(u);return<tr key={u} style={{borderBottom:'1px solid #111'}}><td style={{padding:'10px 8px',color:'#fff',fontWeight:500}}>{u}</td><td style={{padding:'10px 8px',textAlign:'center',color:'#ccc'}}>{s.today}</td><td style={{padding:'10px 8px',textAlign:'center',color:'#f59e0b',fontWeight:600}}>{s.piToday}</td><td style={{padding:'10px 8px',textAlign:'center',color:'#ccc'}}>{s.week}</td><td style={{padding:'10px 8px',textAlign:'center',color:'#f59e0b',fontWeight:600}}>{s.piWeek}</td></tr>})}</tbody>
+              <tbody>{USERS.map(u=>{const s=st(u);return<tr key={u} onClick={()=>{setFilter('all');setSearch('');setTab('contacts');setTimeout(()=>setSearch(u),100)}} style={{borderBottom:'1px solid #111',cursor:'pointer'}} onMouseEnter={e=>e.currentTarget.style.background='#111'} onMouseLeave={e=>e.currentTarget.style.background='transparent'}><td style={{padding:'10px 8px',color:'#fff',fontWeight:500}}>{u}</td><td style={{padding:'10px 8px',textAlign:'center',color:'#ccc'}}>{s.today}</td><td style={{padding:'10px 8px',textAlign:'center',color:'#f59e0b',fontWeight:600}}>{s.piToday}</td><td style={{padding:'10px 8px',textAlign:'center',color:'#ccc'}}>{s.week}</td><td style={{padding:'10px 8px',textAlign:'center',color:'#f59e0b',fontWeight:600}}>{s.piWeek}</td></tr>})}</tbody>
             </table>
           </div>
         </div>}

@@ -2,7 +2,7 @@
 const API = 'https://truck-export-pi-xi.vercel.app/api/crm';
 let contacts=[], fltr='all', cur=null, scripts=[], sCat='all', sLang='en';
 let currentUser='', isAdmin=false;
-const USERS = ['Li Shanlong', 'Sales 1', 'Sales 2', 'Sales 3', 'Sales 4'];
+const USERS = ['Li Shanlong', '王晓涵', '毛正威', '赵欢乐', '杜飞跃'];
 // PINs — stored in localStorage so users can change their own
 function getPins(){try{return JSON.parse(localStorage.getItem('sinocv_pins')||'{}')}catch(e){return{}}}
 function savePins(p){localStorage.setItem('sinocv_pins',JSON.stringify(p))}
