@@ -1,32 +1,43 @@
+// @ts-nocheck
 import { NextRequest, NextResponse } from 'next/server';
+
+const YCLOUD_KEY = process.env.YCLOUD_API_KEY || '';
+
+// Ensure global stores
+if (!(global as any)._contacts) (global as any)._contacts = new Map();
 
 export async function POST(request: NextRequest) {
   const body = await request.json();
-  const apiKey = process.env.YCLOUD_API_KEY || '';
-
-  console.log('YCloud webhook:', JSON.stringify(body).slice(0, 500));
+  const type = body?.type;
 
   // Handle WhatsApp incoming message
-  if (body?.type === 'whatsapp.message.updated' && body?.whatsappMessage) {
+  if (type === 'whatsapp.message.updated' && body?.whatsappMessage) {
     const msg = body.whatsappMessage;
     if (msg.direction === 'inbound' && msg.from) {
-      const phoneNumber = msg.from;
+      const phone = msg.from;
       const profileName = msg?.contact?.profile?.name || '';
+      const existing = (global as any)._contacts.get(phone) || {};
 
-      if (profileName && profileName !== phoneNumber) {
-        // Update contact name via YCloud API
-        await fetch('https://api.ycloud.com/v2/contacts', {
-          method: 'POST',
-          headers: {
-            'X-API-Key': apiKey,
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            phoneNumber: phoneNumber,
-            name: profileName,
-          }),
-        });
-        console.log(`Contact updated: ${phoneNumber} → ${profileName}`);
+      // Save to our database
+      (global as any)._contacts.set(phone, {
+        ...existing,
+        phone,
+        name: profileName || existing.name || phone,
+        firstSeen: existing.firstSeen || new Date().toISOString(),
+        lastMessage: new Date().toISOString(),
+        updatedAt: new Date().toISOString(),
+        source: 'whatsapp',
+      });
+
+      // Also try to update YCloud contact name
+      if (YCLOUD_KEY && profileName && profileName !== phone) {
+        try {
+          await fetch('https://api.ycloud.com/v2/contacts', {
+            method: 'POST',
+            headers: { 'X-API-Key': YCLOUD_KEY, 'Content-Type': 'application/json' },
+            body: JSON.stringify({ phoneNumber: phone, name: profileName }),
+          });
+        } catch(e) {}
       }
     }
   }
@@ -35,5 +46,5 @@ export async function POST(request: NextRequest) {
 }
 
 export async function GET() {
-  return NextResponse.json({ status: 'YCloud webhook endpoint ready' });
+  return NextResponse.json({ status: 'YCloud webhook active' });
 }
