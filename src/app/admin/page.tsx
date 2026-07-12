@@ -44,7 +44,7 @@ export default function AdminPage() {
       {/* Login Card — perfectly centered */}
       <div className="relative w-[380px] bg-gray-950 border border-gray-800 rounded-2xl p-8 shadow-2xl">
         <div className="text-center mb-8">
-          <img src="/images/logo-new.png" alt="SINOCV" className="h-10 mx-auto mb-4" />
+          <div className="text-3xl mb-3">🚛</div>
           <h2 className="text-white font-bold text-lg">XINYUNTONG CRM</h2>
           <p className="text-gray-600 text-xs mt-1">Sign in to your account</p>
         </div>
@@ -105,7 +105,7 @@ export default function AdminPage() {
       {/* Sidebar */}
       <div className="w-56 bg-[#0a0a0a] border-r border-gray-800 flex flex-col shrink-0">
         <div className="p-5 border-b border-gray-800">
-          <img src="/images/logo-new.png" alt="SINOCV" className="h-7 mb-2" />
+          <div className="text-xl mb-1">🚛</div>
           <p className="text-gray-500 text-[10px]">XINYUNTONG CRM</p>
         </div>
         <nav className="flex-1 p-3 space-y-1">
