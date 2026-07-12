@@ -75,17 +75,17 @@ export default function Navbar() {
               Get Quote
             </a>
             <div className="relative group">
-              <button className="flex items-center gap-1 text-gray-400 hover:text-white text-sm font-medium px-2 py-1 rounded hover:bg-gray-800 transition-colors">
-                {locales.find(l => l.code === locale)?.flag} {locale.toUpperCase()}
+              <button className="flex items-center gap-1.5 text-gray-300 hover:text-white px-3 py-1.5 rounded hover:bg-gray-800 transition-colors text-base">
+                🌐 {locale.toUpperCase()}
               </button>
-              <div className="absolute right-0 top-full mt-1 bg-gray-900 border border-gray-700 rounded-lg py-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all shadow-xl min-w-[100px]">
+              <div className="absolute right-0 top-full mt-1 bg-gray-900 border border-gray-700 rounded-lg py-1.5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all shadow-xl min-w-[120px]">
                 {locales.map(l => (
                   <button
                     key={l.code}
                     onClick={() => switchLocale(l.code)}
-                    className={`block w-full text-left px-4 py-2 text-sm hover:bg-gray-800 transition-colors ${locale === l.code ? 'text-amber-500' : 'text-gray-300'}`}
+                    className={`block w-full text-left px-4 py-2.5 hover:bg-gray-800 transition-colors text-base ${locale === l.code ? 'text-amber-500 font-semibold' : 'text-gray-300'}`}
                   >
-                    {l.flag} {l.label}
+                    {l.flag}  {l.label}
                   </button>
                 ))}
               </div>
