@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "SINOCV CRM",
-  "version": "3.0",
-  "description": "Truck export CRM — contacts, PI, reminders, category follow-up",
+  "version": "4.0",
+  "description": "XINYUNTONG CRM",
   "icons": {
     "16": "icon/16.png",
     "32": "icon/32.png",
@@ -13,29 +13,14 @@
   "permissions": ["sidePanel", "storage", "alarms", "notifications", "tabs", "scripting"],
   "host_permissions": [
     "*://web.whatsapp.com/*",
-    "https://truck-export-pi-xi.vercel.app/*",
-    "https://api.ycloud.com/*"
+    "https://truck-export-pi-xi.vercel.app/*"
   ],
   "side_panel": {
     "default_path": "sidepanel.html"
   },
-  "background": {
-    "service_worker": "background.js"
-  },
   "content_scripts": [{
-    "matches": ["*://web.whatsapp.com/*"],
-    "js": ["js/ycloud-sync.js"],
-    "run_at": "document_idle"
-  }, {
     "matches": ["*://web.whatsapp.com/*"],
     "js": ["content.js"],
     "run_at": "document_end"
-  }, {
-    "matches": ["*://web.whatsapp.com/*"],
-    "js": ["js/time-tracker.js"],
-    "run_at": "document_end"
-  }],
-  "action": {
-    "default_title": "SINOCV CRM"
-  }
+  }]
 }
