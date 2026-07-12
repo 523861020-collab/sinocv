@@ -3,15 +3,18 @@ const API = 'https://truck-export-pi-xi.vercel.app/api/crm';
 let contacts=[], fltr='all', cur=null, scripts=[], sCat='all', sLang='en';
 let currentUser='', isAdmin=false;
 const USERS = ['Li Shanlong', 'Sales 1', 'Sales 2', 'Sales 3', 'Sales 4'];
-// PINs (in production, store these securely)
-const PINS = {'Li Shanlong':'1234','Sales 1':'1111','Sales 2':'2222','Sales 3':'3333','Sales 4':'4444'};
+// PINs — stored in localStorage so users can change their own
+function getPins(){try{return JSON.parse(localStorage.getItem('sinocv_pins')||'{}')}catch(e){return{}}}
+function savePins(p){localStorage.setItem('sinocv_pins',JSON.stringify(p))}
+const defaultPins={'Li Shanlong':'1234','Sales 1':'1111','Sales 2':'2222','Sales 3':'3333','Sales 4':'4444'};
+function PINS(){const saved=getPins();return{...defaultPins,...saved}}
 
 function doLogin(){
   const user=document.getElementById('loginUser').value;
   const pin=document.getElementById('loginPin').value;
   const err=document.getElementById('loginError');
   if(!user||!pin){err.textContent='Select user and enter PIN';err.style.display='block';return}
-  if(PINS[user]!==pin){err.textContent='Wrong PIN';err.style.display='block';return}
+  if(PINS()[user]!==pin){err.textContent='Wrong PIN';err.style.display='block';return}
   currentUser=user;isAdmin=user==='Li Shanlong';
   localStorage.setItem('sinocv_user',user);
   document.getElementById('loginScreen').style.display='none';
@@ -24,7 +27,7 @@ function doLogin(){
 (async function init(){
   // Check if already logged in (stored PIN session)
   const saved=localStorage.getItem('sinocv_user');
-  if(saved&&PINS[saved]){
+  if(saved&&PINS()[saved]){
     // Auto-login with saved user (PIN already verified)
     currentUser=saved;isAdmin=saved==='Li Shanlong';
     document.getElementById('loginScreen').style.display='none';
@@ -359,7 +362,24 @@ async function saveDetail(){
 function el(id){return document.getElementById(id)?.value||''}
 function onCatChange(){cur.category=document.getElementById('detCat')?.value;if(cur.category&&!cur.nextFollowUp){const days=cur.category==='A'?10:cur.category==='B'?30:60;const d=new Date();d.setDate(d.getDate()+days);cur.nextFollowUp=d.toISOString().split('T')[0]}}
 async function markDone(){const days=cur.category==='A'?10:cur.category==='B'?30:60;const d=new Date();d.setDate(d.getDate()+days);try{const r=await fetch(API.replace('/crm','')+'/crm/holidays/next?from='+d.toISOString().split('T')[0]);if(r.ok){const h=await r.json();if(h.nextWorkday)d.setTime(Date.parse(h.nextWorkday))}}catch(e){}cur.nextFollowUp=d.toISOString().split('T')[0];addTimeline('Follow-up done → next '+cur.nextFollowUp);await saveDetail()}
-function closeDetail(){document.getElementById('detail').classList.remove('show');cur=null}
+function closeDetail(){document.getElementById('detail').classList.remove('show');cur=null;}
+
+function showPinChange(){
+  document.getElementById('pinDialog').style.display='flex';
+  document.getElementById('oldPin').value='';
+  document.getElementById('newPin').value='';
+  document.getElementById('pinMsg').style.display='none';
+}
+function changePin(){
+  const old=document.getElementById('oldPin').value.trim();
+  const neu=document.getElementById('newPin').value.trim();
+  const msg=document.getElementById('pinMsg');
+  if(!old||!neu||neu.length<4){msg.textContent='New PIN must be 4-6 digits';msg.style.display='block';return}
+  if(PINS()[currentUser]!==old){msg.textContent='Current PIN is wrong';msg.style.display='block';return}
+  const pins=getPins();pins[currentUser]=neu;savePins(pins);
+  document.getElementById('pinDialog').style.display='none';
+  toast('✅ PIN changed');
+}
 
 // ===== SCRIPTS =====
 async function loadScripts(){
