@@ -101,15 +101,34 @@ export default function AdminPage() {
       if(lateMin>0){userMap[l.user].lateCount++;userMap[l.user].lateMins+=lateMin;}
     });
 
-    csv+='\n姓名,出勤天数,基础日薪,基础工资,迟到次数,迟到(分),全勤奖,PI数,PI绩效,应发合计\n';
+    csv+='\n姓名,出勤天数,基础日薪,基础工资,迟到次数,迟到扣款,旷工半天扣款,全勤奖,PI数,PI绩效,应发合计\n';
     USERS.forEach(u=>{
       const d = userMap[u] || {totalMin:0,workMin:0,lateCount:0,lateMins:0};
       const baseSalary = (USER_INFO[u]||{}).salary || 0;
       const dailyRate = daysInMonth > 0 ? Math.round(baseSalary / daysInMonth) : 0;
       const daysWorked = (userDays[u]||new Set()).size;
-      const basePay = dailyRate * Math.min(daysWorked, daysInMonth);
+      let basePay = dailyRate * Math.min(daysWorked, daysInMonth);
       
-      // Full attendance check: all days covered + weekends have 30min+
+      // Late penalty: 1 yuan/min
+      const latePenalty = d.lateMins;
+      
+      // Half-day absence if late > 30min
+      const halfDayAbsence = d.lateCount; // each late day > 30min = half day
+      // Count how many were > 30min
+      let halfDayCount = 0;
+      timeLogs.forEach((l:any)=>{
+        if(l.user !== u) return;
+        const start=l.sessionStart?new Date(l.sessionStart):null;
+        if(start){
+          const sh=start.getUTCHours()+8;
+          const sm=start.getMinutes();
+          const lateMin2=sh*60+sm-13*60;
+          if(lateMin2 > 30) halfDayCount++;
+        }
+      });
+      const halfDayPenalty = halfDayCount * Math.round(dailyRate / 2);
+      
+      // Full attendance check
       const weekendOk = (userWeekendMins[u]||0) >= 30;
       const allDaysCovered = daysWorked >= daysInMonth;
       const attendanceBonus = (allDaysCovered && weekendOk) ? 200 : 0;
@@ -118,10 +137,10 @@ export default function AdminPage() {
       const piCount = userPIs[u] || 0;
       const piBonus = piCount >= 60 ? 300 : 0;
       
-      const total = basePay + attendanceBonus + piBonus;
-      csv+=`${u},${daysWorked},${dailyRate},${basePay},${d.lateCount},${d.lateMins},${attendanceBonus},${piCount},${piBonus},${total}\n`;
+      const total = basePay + attendanceBonus + piBonus - latePenalty - halfDayPenalty;
+      csv+=`${u},${daysWorked},${dailyRate},${basePay},${d.lateCount},${latePenalty},${halfDayPenalty},${attendanceBonus},${piCount},${piBonus},${total}\n`;
     });
-    csv+=`\n本月共${daysInMonth}天,基础日薪=基础工资÷${daysInMonth},全勤需全部日历日出勤+周末≥30分钟,PI≥60个=300元绩效\n`;
+    csv+=`\n本月共${daysInMonth}天,基础日薪=基础工资÷${daysInMonth},全勤=全部日历日出勤+周末≥30分钟得200,PI≥60个=300,迟到=1元/分钟,迟到>30分钟=旷工半天扣日薪÷2\n`;
     const bl=new Blob(['\uFEFF'+csv],{type:'text/csv'});const a3=document.createElement('a');a3.href=URL.createObjectURL(bl);a3.download=`考勤工资_${timeMonth}.csv`;a3.click();
   };
 
