@@ -1,15 +1,40 @@
 // SINOCV CRM v5 — Structured Order + L/C + Timeline + Dashboard
 const API = 'https://truck-export-pi-xi.vercel.app/api/crm';
-let contacts=[], fltr='all', cur=null, scripts=[], sCat='all', sLang='en', dashMode=true;
+let contacts=[], fltr='all', cur=null, scripts=[], sCat='all', sLang='en';
+let currentUser='', isAdmin=false;
+const USERS = ['Li Shanlong', 'Sales 1', 'Sales 2', 'Sales 3', 'Sales 4'];
 
 (async function init(){
+  currentUser = localStorage.getItem('sinocv_user') || '';
+  isAdmin = currentUser === 'Li Shanlong';
+  renderUserSelect();
   await loadScripts();
   await loadContacts();
   renderDashboard();
   renderList();
   renderScriptCats();
   renderScripts();
+  if(!currentUser) document.getElementById('curUser').style.background='#fef3c7';
 })();
+
+function setUser(){
+  currentUser = document.getElementById('curUser').value;
+  localStorage.setItem('sinocv_user', currentUser);
+  isAdmin = currentUser === 'Li Shanlong';
+  document.getElementById('curUser').style.background='';
+  loadContacts().then(()=>{renderDashboard();renderList()});
+}
+
+function renderUserSelect(){
+  const sel = document.getElementById('curUser');
+  sel.innerHTML = USERS.map(u => `<option value="${u}" ${currentUser===u?'selected':''}>${u==='Li Shanlong'?'👑 ':''}${u}</option>`).join('');
+}
+
+// Filter contacts by current user
+function myContacts(){
+  if(isAdmin) return contacts;
+  return contacts.filter(c => !c.owner || c.owner === currentUser);
+}
 
 function switchTab(tab,el){
   document.querySelectorAll('.tab-row button').forEach(b=>b.classList.remove('active'));
@@ -21,17 +46,18 @@ function switchTab(tab,el){
 
 // ===== DASHBOARD =====
 function renderDashboard(){
-  const orders=contacts.flatMap(c=>(c.orders||[]).map(o=>({...o,name:c.name||c.phone,phone:c.phone})));
-  const total=contacts.length;
-  const a=contacts.filter(c=>c.category==='A').length;
-  const b=contacts.filter(c=>c.category==='B').length;
-  const c=contacts.filter(c=>c.category==='C').length;
+  const mc=myContacts();
+  const orders=mc.flatMap(c=>(c.orders||[]).map(o=>({...o,name:c.name||c.phone,phone:c.phone,owner:c.owner})));
+  const total=mc.length;
+  const a=mc.filter(c=>c.category==='A').length;
+  const b=mc.filter(c=>c.category==='B').length;
+  const c=mc.filter(c=>c.category==='C').length;
   const totalOrders=orders.length;
   const pendingOrders=orders.filter(o=>o.status==='pending'||o.status==='processing').length;
   const shippedOrders=orders.filter(o=>o.status==='shipped').length;
   const pis=orders.flatMap(o=>o.pis||[]).length;
   const lcs=orders.filter(o=>o.paymentMethod==='LC').length;
-  const overdue=contacts.filter(c=>c.nextFollowUp&&c.nextFollowUp<=new Date().toISOString().split('T')[0]).length;
+  const overdue=mc.filter(c=>c.nextFollowUp&&c.nextFollowUp<=new Date().toISOString().split('T')[0]).length;
 
   document.getElementById('dashContent').innerHTML=`
     <div class="dash-grid">
@@ -63,7 +89,8 @@ async function loadContacts(){
 function setFltr(f,el){fltr=f;document.querySelectorAll('.filters button').forEach(b=>b.classList.remove('active'));el.classList.add('active');renderList()}
 function renderList(){
   const q=(document.getElementById('search')?.value||'').toLowerCase();
-  let f=fltr==='all'?contacts:contacts.filter(c=>c.category===fltr);
+  const mc=myContacts();
+  let f=fltr==='all'?mc:mc.filter(c=>c.category===fltr);
   if(q)f=f.filter(c=>(c.name||''+c.phone||''+c.company||'').toLowerCase().includes(q));
   document.getElementById('list').innerHTML=f.map(c=>{
     const cls=c.category?'badge badge-'+c.category.toLowerCase():'badge badge-new';
@@ -80,8 +107,9 @@ function openDetail(phone){
   cur=contacts.find(c=>c.phone===phone)||{phone,category:'C',orders:[],timeline:[]};
   if(!cur.orders)cur.orders=[];
   if(!cur.timeline)cur.timeline=[];
-  // Auto-detect country from phone
+  // Auto-detect country + set owner
   if(!cur.country&&cur.phone)cur.country=detectCountry(cur.phone);
+  if(!cur.owner&&currentUser)cur.owner=currentUser;
   showDetail();
 }
 
@@ -266,12 +294,17 @@ function useScript(id){const s=scripts.find(sc=>sc.id===id);if(!s)return;const t
 function jumpToScript(){const num=document.getElementById('scriptNum').value.trim();if(!num)return;const s=scripts.find(sc=>sc.id===num);if(s)useScript(s.id);else toast('Not found: #'+num,true)}
 function toast(msg,err){const t=document.createElement('div');t.className='toast';t.textContent=msg;t.style.background=err?'#dc2626':'#059669';document.body.appendChild(t);setTimeout(()=>t.remove(),2000)}
 
-// Excel Export
+// Excel Export — admin gets all, sales get own
 function exportAll(){
-  let csv='Name,Phone,Country,Category,Order#,Status,Requirements,Total,Currency,Payment,Deposit,Balance,Vessel,ETA,VINs\n';
-  contacts.forEach(c=>{(c.orders||[]).forEach(o=>{
-    csv+=`${c.name||''},${c.phone||''},${c.country||''},${c.category||''},${o.orderNo||''},${o.status||''},${(o.requirements||'').replace(/,/g,' ')},${o.totalAmt||''},${o.currency||''},${o.paymentMethod||''},${o.depositAmt||''},${o.balanceAmt||''},${o.vessel||''},${o.eta||''},${(o.vins||[]).join(';')}\n`;
+  const mc=myContacts();
+  let csv='Owner,Name,Phone,Country,Category,Order#,Status,Requirements,Total,Currency,Payment,Deposit,Balance,Vessel,ETA,VINs\n';
+  mc.forEach(c=>{(c.orders||[]).forEach(o=>{
+    csv+=`${c.owner||''},${c.name||''},${c.phone||''},${c.country||''},${c.category||''},${o.orderNo||''},${o.status||''},${(o.requirements||'').replace(/,/g,' ')},${o.totalAmt||''},${o.currency||''},${o.paymentMethod||''},${o.depositAmt||''},${o.balanceAmt||''},${o.vessel||''},${o.eta||''},${(o.vins||[]).join(';')}\n`;
   })});
+  if(!mc.some(c=>(c.orders||[]).length>0)){
+    mc.forEach(c=>{csv+=`${c.owner||''},${c.name||''},${c.phone||''},${c.country||''},${c.category||''},,,,\n`;});
+  }
   download('sinocv_export.csv','\uFEFF'+csv);
+  toast('✓ Exported '+mc.length+' contacts');
 }
 function download(filename,text){const b=new Blob([text],{type:'text/csv;charset=utf-8'});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=filename;a.click();URL.revokeObjectURL(a.href)}
