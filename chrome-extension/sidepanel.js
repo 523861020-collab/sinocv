@@ -200,8 +200,9 @@ function showDetail(){
 
   document.getElementById('detBody').innerHTML=remHTML+`
     <div class="row2"><div><label>Phone</label><input id="detPhone" value="${c.phone||''}" readonly style="opacity:.5"></div><div><label>Name</label><input id="detName" value="${c.name||''}"></div></div>
-    <div class="row2"><div><label>Email</label><input type="email" id="detEmail" value="${c.email||''}"></div><div><label>Country</label><select id="detCountry">${['',...countryList()].map(v=>`<option value="${v}" ${(c.country||'')===v?'selected':''}>${v||'Auto'}</option>`).join('')}</select></div></div>
-    <div class="row2"><div><label>Company</label><input id="detCompany" value="${c.company||''}"></div><div><label>Product</label><select id="detProduct">${['','tractor','dump','mixer','trailer','machinery','mining','light'].map(v=>`<option value="${v}" ${(c.product||'')===v?'selected':''}>${v||'Select'}</option>`).join('')}</select></div></div>
+    <div class="row2"><div><label>Owner</label><select id="detOwner">${USERS.map(u=>`<option value="${u}" ${(c.owner||'')===u?'selected':''}>${u}</option>`).join('')}</select></div><div><label>Country</label><select id="detCountry">${['',...countryList()].map(v=>`<option value="${v}" ${(c.country||'')===v?'selected':''}>${v||'Auto'}</option>`).join('')}</select></div></div>
+    <div class="row2"><div><label>Email</label><input type="email" id="detEmail" value="${c.email||''}"></div><div><label>Company</label><input id="detCompany" value="${c.company||''}"></div></div>
+    <div class="row2"><div><label>Product</label><select id="detProduct">${['','tractor','dump','mixer','trailer','machinery','mining','light'].map(v=>`<option value="${v}" ${(c.product||'')===v?'selected':''}>${v||'Select'}</option>`).join('')}</select></div></div>
     <label>Notes</label><textarea id="detNotes" rows="2">${c.notes||''}</textarea>
     
     <div class="sec" style="margin-top:10px">🕐 Timeline</div>
@@ -329,7 +330,7 @@ async function saveDetail(){
     o.vins=(el('ordVin'+i)||'').split('\n').map(v=>v.trim()).filter(Boolean);
   });
   c.category=el('detCat');c.name=el('detName');c.email=el('detEmail');
-  c.country=el('detCountry')||detectCountry(c.phone);c.company=el('detCompany');
+  c.owner=el('detOwner')||c.owner;c.country=el('detCountry')||detectCountry(c.phone);c.company=el('detCompany');
   c.product=el('detProduct');c.notes=el('detNotes');
   try{
     const r=await fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(c)});
