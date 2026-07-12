@@ -5,14 +5,26 @@ let currentUser='', isAdmin=false;
 const USERS = ['李善龙', '王小涵', '毛振威', '赵欢乐', '杜飞跃'];
 const defaultPins={'李善龙':'202502','13001977959':'202502','王小涵':'1111','毛振威':'2222','赵欢乐':'3333','杜飞跃':'4444'};
 function getPins(){try{return JSON.parse(localStorage.getItem('sinocv_pins')||'{}')}catch(e){return{}}}
+function savePins(p){localStorage.setItem('sinocv_pins',JSON.stringify(p))}
+function clearOldPins(){
+  const saved = getPins();
+  let changed = false;
+  ['Sales 1','Sales 2','Sales 3','Sales 4','Li Shanlong'].forEach(k=>{if(saved[k]){delete saved[k];changed=true}});
+  if(changed) savePins(saved);
+}
 function PINS(){const saved=getPins();return{...defaultPins,...saved}}
 
 function doLogin(){
-  const user=document.getElementById('loginUser').value;
-  const pin=document.getElementById('loginPin').value;
+  clearOldPins();
+  const user=document.getElementById('loginUser').value.trim();
+  const pin=document.getElementById('loginPin').value.trim();
   const err=document.getElementById('loginError');
-  if(!user||!pin){err.textContent='Select user and enter PIN';err.style.display='block';return}
-  if(PINS()[user]!==pin){err.textContent='Wrong PIN';err.style.display='block';return}
+  if(!user||!pin){err.textContent='请输入用户名和密码';err.style.display='block';return}
+  // Check: default pin first, then saved pin
+  const defPin = defaultPins[user];
+  const savedPin = PINS()[user];
+  const correctPin = defPin || savedPin;
+  if(pin!==correctPin){err.textContent='密码错误';err.style.display='block';return}
   currentUser=user;isAdmin=user==='李善龙'||user==='13001977959'||user==='Li Shanlong';
   localStorage.setItem('sinocv_user',user);
   document.getElementById('loginScreen').style.display='none';
