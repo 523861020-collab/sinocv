@@ -13,293 +13,188 @@ export default function AdminPage() {
   const [pin, setPin] = useState('');
   const [err, setErr] = useState('');
   const [contacts, setContacts] = useState<any[]>([]);
-  const [filter, setFilter] = useState('all');
-  const [search, setSearch] = useState('');
   const [tab, setTab] = useState('dash');
   const [selected, setSelected] = useState<any>(null);
+  const [search, setSearch] = useState('');
+  const [filter, setFilter] = useState('all');
 
   const isAdmin = user === 'Li Shanlong' || user === '13001977959';
-  const myContacts = isAdmin ? contacts : contacts.filter(c => !c.owner || c.owner === user);
+  const my = isAdmin ? contacts : contacts.filter(c => !c.owner || c.owner === user);
 
-  const loadContacts = useCallback(async () => {
-    try { const r = await fetch(API+'?action=all'); if(r.ok){const d=await r.json();setContacts(d.contacts||[])} } catch(e){}
+  const load = useCallback(async () => {
+    try { const r = await fetch(API+'?action=all'); if(r.ok){setContacts((await r.json()).contacts||[])} } catch(e){}
   }, []);
+  useEffect(() => { if(loggedIn){load();const i=setInterval(load,20000);return ()=>clearInterval(i)} }, [loggedIn,load]);
 
-  useEffect(() => { if(loggedIn) { loadContacts(); const i=setInterval(loadContacts,20000); return ()=>clearInterval(i); } }, [loggedIn, loadContacts]);
+  function doLogin(){ if(!user||!pin){setErr('请输入用户名和密码');return}; if(PINS[user]!==pin){setErr('密码错误');return}; setLoggedIn(true);setErr(''); }
 
-  function doLogin(){ if(!user||!pin){setErr('Select user and enter PIN');return}; if(PINS[user]!==pin){setErr('Wrong PIN');return}; setLoggedIn(true);setErr(''); }
-
+  // ====== LOGIN ======
   if(!loggedIn) return (
-    <div style={{
-      minHeight: '100vh',
-      background: '#000',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-    }}>
-      <div style={{
-        width: '360px',
-        background: '#111',
-        borderRadius: '16px',
-        padding: '40px 32px',
-        border: '1px solid #222',
-      }}>
-        <div style={{textAlign:'center',marginBottom:'32px'}}>
-          <div style={{fontSize:'32px',marginBottom:'8px'}}>🚛</div>
-          <h2 style={{color:'#fff',fontSize:'18px',fontWeight:700,margin:0}}>XINYUNTONG CRM</h2>
-          <p style={{color:'#666',fontSize:'12px',marginTop:'4px'}}>Sign in to your account</p>
-        </div>
-        <input
-          type="text"
-          value={user}
-          onChange={e=>setUser(e.target.value)}
-          placeholder="Username"
-          style={{
-            width:'100%',padding:'12px 16px',borderRadius:'8px',
-            background:'#000',border:'1px solid #333',color:'#fff',
-            fontSize:'14px',marginBottom:'12px',outline:'none',boxSizing:'border-box'
-          }}
-        />
-        <input
-          type="password"
-          value={pin}
-          onChange={e=>setPin(e.target.value)}
-          placeholder="Password"
-          onKeyDown={e=>e.key==='Enter'&&doLogin()}
-          style={{
-            width:'100%',padding:'12px 16px',borderRadius:'8px',
-            background:'#000',border:'1px solid #333',color:'#fff',
-            fontSize:'14px',marginBottom:err?'8px':'16px',outline:'none',boxSizing:'border-box'
-          }}
-        />
-        {err&&<p style={{color:'#f87171',fontSize:'12px',textAlign:'center',marginBottom:'12px'}}>{err}</p>}
-        <button
-          onClick={doLogin}
-          style={{
-            width:'100%',padding:'12px',borderRadius:'8px',border:'none',
-            background:'#f59e0b',color:'#000',fontWeight:700,fontSize:'14px',
-            cursor:'pointer'
-          }}
-        >
-          Sign In
-        </button>
+    <div style={{minHeight:'100vh',background:'#000',display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center'}}>
+      <img src="/images/logo-new.png" alt="" style={{height:'48px',marginBottom:'40px'}} />
+      <div style={{width:'360px',background:'#0d0d0d',border:'1px solid #222',borderRadius:'12px',padding:'36px 28px'}}>
+        <h2 style={{color:'#fff',fontSize:'16px',textAlign:'center',marginBottom:'24px'}}>CRM 管理系统</h2>
+        <input value={user} onChange={e=>setUser(e.target.value)} placeholder="用户名" style={inp}/>
+        <input type="password" value={pin} onChange={e=>setPin(e.target.value)} placeholder="密码" onKeyDown={e=>e.key==='Enter'&&doLogin()} style={inp}/>
+        {err&&<p style={{color:'#f87171',fontSize:'12px',textAlign:'center',margin:'0 0 12px'}}>{err}</p>}
+        <button onClick={doLogin} style={{width:'100%',padding:'10px',borderRadius:'6px',border:'none',background:'#f59e0b',color:'#000',fontWeight:700,fontSize:'14px',cursor:'pointer'}}>登 录</button>
       </div>
     </div>
   );
 
-  // ====== COMPUTE STATS ======
-  const mc = myContacts;
-  const total = mc.length;
-  const a = mc.filter(c=>c.category==='A').length;
-  const b = mc.filter(c=>c.category==='B').length;
-  const cc = mc.filter(c=>c.category==='C').length;
-  const orders = mc.flatMap(c=>(c.orders||[]).map(o=>({...o,name:c.name||c.phone,phone:c.phone,owner:c.owner})));
-  const totalOrders = orders.length;
-  const pis = orders.flatMap(o=>o.pis||[]).length;
-  const shipped = orders.filter(o=>o.status==='shipped').length;
-  const overdue = mc.filter(c=>c.nextFollowUp&&c.nextFollowUp<=new Date().toISOString().split('T')[0]).length;
+  // ====== STATS ======
+  const t = my.length, a = my.filter(c=>c.category==='A').length, b = my.filter(c=>c.category==='B').length, cc = my.filter(c=>c.category==='C').length;
+  const orders = my.flatMap(c=>(c.orders||[]).map(o=>({...o,name:c.name||c.phone,phone:c.phone})));
+  const oN = orders.length, pis = orders.flatMap(o=>o.pis||[]).length, shipped = orders.filter(o=>o.status==='shipped').length;
   const lcs = orders.filter(o=>o.paymentMethod==='LC').length;
+  const overdue = my.filter(c=>c.nextFollowUp&&c.nextFollowUp<=new Date().toISOString().split('T')[0]).length;
 
-  const cmap: Record<string,number>={};
-  mc.forEach(c=>{const co=c.country||'Unknown';cmap[co]=(cmap[co]||0)+1});
-  const cSorted = Object.entries(cmap).sort((a,b)=>b[1]-a[1]);
+  const cmap: Record<string,number>={}; my.forEach(c=>{const co=c.country||'未知';cmap[co]=(cmap[co]||0)+1});
+  const cs = Object.entries(cmap).sort((a,b)=>b[1]-a[1]);
+  const today = new Date().toISOString().split('T')[0], wk = (()=>{const d=new Date();d.setDate(d.getDate()-d.getDay());return d.toISOString().split('T')[0]})();
 
-  const today = new Date().toISOString().split('T')[0];
-  const wkStart = (()=>{const d=new Date();d.setDate(d.getDate()-d.getDay());return d.toISOString().split('T')[0]})();
-  function statsFor(owner:string){
-    const cs=mc.filter(c=>c.owner===owner);
-    return {owner,today:cs.filter(c=>c.firstSeen?.startsWith(today)).length,week:cs.filter(c=>c.firstSeen>=wkStart).length,piToday:cs.flatMap(c=>(c.orders||[]).flatMap((o:any)=>(o.pis||[]).filter((p:any)=>p.date===today))).length,piWeek:cs.flatMap(c=>(c.orders||[]).flatMap((o:any)=>(o.pis||[]).filter((p:any)=>p.date>=wkStart))).length};
-  }
+  function st(owner:string){const cs2=my.filter(c=>c.owner===owner);return{owner,today:cs2.filter(c=>c.firstSeen?.startsWith(today)).length,week:cs2.filter(c=>c.firstSeen>=wk).length,piToday:cs2.flatMap(c=>(c.orders||[]).flatMap((o:any)=>(o.pis||[]).filter((p:any)=>p.date===today))).length,piWeek:cs2.flatMap(c=>(c.orders||[]).flatMap((o:any)=>(o.pis||[]).filter((p:any)=>p.date>=wk))).length}}
 
-  let filtered = filter==='all'?mc:mc.filter(c=>c.category===filter);
-  if(search) filtered = filtered.filter(c=>(c.name||''+c.phone||''+c.company||'').toLowerCase().includes(search.toLowerCase()));
+  let ft = filter==='all'?my:my.filter(c=>c.category===filter);
+  if(search) ft = ft.filter(c=>(c.name||''+c.phone||'').toLowerCase().includes(search.toLowerCase()));
 
-  function exportCSV(){
-    let csv='Owner,Name,Phone,Country,Category,Order#,Status,Total,Currency,Payment,Vessel,ETA,VINs\n';
-    mc.forEach((c:any)=>{(c.orders||[]).forEach((o:any)=>{csv+=`${c.owner||''},${c.name||''},${c.phone||''},${c.country||''},${c.category||''},${o.orderNo||''},${o.status||''},${o.totalAmt||''},${o.currency||''},${o.paymentMethod||''},${o.vessel||''},${o.eta||''},${(o.vins||[]).join(';')}\n`})});
-    const b2=new Blob(['\uFEFF'+csv],{type:'text/csv'});const a2=document.createElement('a');a2.href=URL.createObjectURL(b2);a2.download='sinocv_export.csv';a2.click();
+  function exp(){
+    let csv='负责人,客户名称,手机号,国家,分类,订单号,状态,金额,币种,付款方式,船名,ETA,VIN\n';
+    my.forEach((c:any)=>{(c.orders||[]).forEach((o:any)=>{csv+=`${c.owner||''},${c.name||''},${c.phone||''},${c.country||''},${c.category||''},${o.orderNo||''},${o.status||''},${o.totalAmt||''},${o.currency||''},${o.paymentMethod||''},${o.vessel||''},${o.eta||''},${(o.vins||[]).join(';')}\n`})});
+    const bl=new Blob(['\uFEFF'+csv],{type:'text/csv'});const a2=document.createElement('a');a2.href=URL.createObjectURL(bl);a2.download='客户数据导出.csv';a2.click();
   }
 
   return (
-    <div className="min-h-screen bg-[#050505] flex">
-      {/* Sidebar */}
-      <div className="w-56 bg-[#0a0a0a] border-r border-gray-800 flex flex-col shrink-0">
-        <div className="p-5 border-b border-gray-800">
-          <div className="text-xl mb-1">🚛</div>
-          <p className="text-gray-500 text-[10px]">XINYUNTONG CRM</p>
+    <div style={{minHeight:'100vh',background:'#000',display:'flex'}}>
+      {/* 侧边栏 */}
+      <div style={{width:'200px',background:'#0a0a0a',borderRight:'1px solid #1a1a1a',display:'flex',flexDirection:'column',flexShrink:0}}>
+        <div style={{padding:'20px 16px',borderBottom:'1px solid #1a1a1a'}}>
+          <img src="/images/logo-new.png" alt="" style={{height:'24px',marginBottom:'6px'}} />
+          <p style={{color:'#555',fontSize:'10px',margin:0}}>CRM · 商用汽车出口</p>
         </div>
-        <nav className="flex-1 p-3 space-y-1">
-          {[{id:'dash',icon:'📊',label:'Dashboard'},{id:'contacts',icon:'📋',label:'Contacts'}].map(t=>(
-            <button key={t.id} onClick={()=>setTab(t.id)} className={`w-full text-left px-3 py-2.5 rounded-lg text-sm flex items-center gap-3 transition-all ${tab===t.id?'bg-amber-500/10 text-amber-500 font-semibold':'text-gray-400 hover:text-white hover:bg-gray-900'}`}>
-              <span>{t.icon}</span>{t.label}
-            </button>
-          ))}
-        </nav>
-        <div className="p-3 border-t border-gray-800">
-          <div className="flex items-center gap-2 text-xs text-gray-500 mb-2"><span className="w-6 h-6 rounded-full bg-amber-500/20 flex items-center justify-center text-amber-500 text-[10px]">{isAdmin?'👑':'👤'}</span>{user}</div>
-          <div className="flex gap-1">
-            <button onClick={exportCSV} className="flex-1 py-1.5 rounded bg-gray-900 text-gray-400 text-[10px] hover:text-white hover:bg-gray-800 transition-colors">📥 Export</button>
-            <button onClick={()=>{setLoggedIn(false);setUser('');setPin('')}} className="flex-1 py-1.5 rounded bg-gray-900 text-gray-400 text-[10px] hover:text-red-400 hover:bg-gray-800 transition-colors">Logout</button>
+        <div style={{padding:'8px',flex:1}}>
+          {[{id:'dash',icon:'📊',l:'仪表盘'},{id:'contacts',icon:'📋',l:'客户列表'}].map(t=>
+            <button key={t.id} onClick={()=>setTab(t.id)} style={{width:'100%',textAlign:'left',padding:'10px 12px',borderRadius:'6px',border:'none',background:tab===t.id?'#1a1a1a':'transparent',color:tab===t.id?'#f59e0b':'#888',fontSize:'13px',cursor:'pointer',display:'flex',alignItems:'center',gap:'8px',marginBottom:'2px'}}>{t.icon} {t.l}</button>
+          )}
+        </div>
+        <div style={{padding:'12px',borderTop:'1px solid #1a1a1a',fontSize:'11px',color:'#666'}}>
+          👤 {user}
+          <div style={{marginTop:'6px',display:'flex',gap:'4px'}}>
+            <button onClick={exp} style={{flex:1,padding:'5px',borderRadius:'4px',border:'none',background:'#1a1a1a',color:'#999',fontSize:'10px',cursor:'pointer'}}>导出</button>
+            <button onClick={()=>{setLoggedIn(false);setUser('');setPin('')}} style={{flex:1,padding:'5px',borderRadius:'4px',border:'none',background:'#1a1a1a',color:'#999',fontSize:'10px',cursor:'pointer'}}>退出</button>
           </div>
         </div>
       </div>
 
-      {/* Main */}
-      <div className="flex-1 overflow-auto">
-        {/* Top bar */}
-        <div className="bg-[#0a0a0a] border-b border-gray-800 px-6 py-3 flex items-center">
-          <h2 className="text-white font-bold text-sm">{tab==='dash'?'Dashboard':'Contacts'}</h2>
-          {tab==='dash'&&<span className="ml-3 text-gray-600 text-xs">{total} contacts · {totalOrders} orders</span>}
-        </div>
-
-        {tab==='dash'&&(
-          <div className="p-6 max-w-6xl">
-            {/* Stat Cards */}
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 mb-8">
-              {[
-                {n:total,l:'Total Contacts',c:'text-white'},
-                {n:a,l:'A-Class',c:'text-purple-400'},
-                {n:b,l:'B-Class',c:'text-blue-400'},
-                {n:cc,l:'C-Class',c:'text-gray-400'},
-                {n:totalOrders,l:'Orders',c:'text-amber-500'},
-                {n:pis,l:'PIs',c:'text-emerald-400'},
-                {n:lcs,l:'L/Cs',c:'text-cyan-400'},
-                {n:shipped,l:'Shipped',c:'text-green-400'},
-                {n:overdue,l:'⚠ Overdue',c:overdue>0?'text-red-400':'text-gray-600'},
-              ].map((s,i)=><div key={i} className="bg-[#0a0a0a] border border-gray-800/50 rounded-xl p-5 hover:border-gray-700 transition-colors">
-                <div className={`text-3xl font-bold ${s.c}`}>{s.n}</div>
-                <div className="text-gray-500 text-xs mt-1">{s.l}</div>
-              </div>)}
-            </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              {/* Country Distribution */}
-              <div className="bg-[#0a0a0a] border border-gray-800/50 rounded-xl p-6">
-                <h3 className="text-white font-semibold text-sm mb-4 flex items-center gap-2">🌍 Countries <span className="text-gray-600 font-normal text-xs">{total} total</span></h3>
-                {cSorted.slice(0,8).map(([co,n])=>(
-                  <div key={co} className="flex items-center gap-3 mb-2 group">
-                    <span className="w-24 text-right text-gray-400 text-xs">{co}</span>
-                    <div className="flex-1 bg-gray-900 rounded-full h-2.5 overflow-hidden">
-                      <div className="bg-gradient-to-r from-amber-500 to-amber-400 rounded-full h-full transition-all" style={{width:Math.max((n/total)*100,1)+'%'}}></div>
-                    </div>
-                    <span className="w-12 text-xs font-mono text-gray-300">{Math.round((n/total)*100)}%</span>
-                    <span className="w-8 text-[10px] text-gray-600">{n}</span>
-                  </div>
-                ))}
-              </div>
-
-              {/* Daily Performance */}
-              <div className="bg-[#0a0a0a] border border-gray-800/50 rounded-xl p-6">
-                <h3 className="text-white font-semibold text-sm mb-4">📊 Daily Performance</h3>
-                <table className="w-full text-sm">
-                  <thead><tr className="text-gray-500 text-xs border-b border-gray-800"><th className="text-left py-2 font-medium">Salesperson</th><th className="text-right py-2">Today</th><th className="text-right py-2">PI</th><th className="text-right py-2">Week</th><th className="text-right py-2">PI</th></tr></thead>
-                  <tbody>
-                    {USERS.map(u=>{const s=statsFor(u);return(
-                      <tr key={u} className="border-b border-gray-800/50 hover:bg-gray-900/30"><td className="py-2.5 text-white font-medium">{u}</td><td className="text-right text-gray-300">{s.today}</td><td className="text-right text-amber-500 font-semibold">{s.piToday}</td><td className="text-right text-gray-300">{s.week}</td><td className="text-right text-amber-500 font-semibold">{s.piWeek}</td></tr>
-                    )})}
-                  </tbody>
-                </table>
-              </div>
-            </div>
+      {/* 主区域 */}
+      <div style={{flex:1,overflow:'auto'}}>
+        {tab==='dash'&&<div style={{padding:'32px',maxWidth:'960px'}}>
+          <h2 style={{color:'#fff',fontSize:'18px',marginBottom:'24px'}}>📊 数据概览</h2>
+          <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(140px,1fr))',gap:'12px',marginBottom:'32px'}}>
+            {[[t,'总客户数'],[a,'A类'],[b,'B类'],[cc,'C类'],[oN,'订单数'],[pis,'PI数'],[lcs,'信用证'],[shipped,'已发货'],[overdue,'逾期提醒']].map(([n,l],i)=><div key={i} style={{background:'#0d0d0d',border:'1px solid #1a1a1a',borderRadius:'10px',padding:'20px 16px'}}>
+              <div style={{fontSize:'28px',fontWeight:700,color:i===8&&(n as number)>0?'#f87171':'#f59e0b'}}>{n as number}</div>
+              <div style={{fontSize:'12px',color:'#666',marginTop:'4px'}}>{l}</div>
+            </div>)}
           </div>
-        )}
 
-        {tab==='contacts'&&(
-          <div className="p-6 max-w-6xl">
-            <div className="flex gap-3 mb-6">
-              <input value={search} onChange={e=>setSearch(e.target.value)} placeholder="Search contacts..." className="flex-1 p-2.5 rounded-xl bg-[#0a0a0a] border border-gray-800 text-white text-sm focus:border-amber-500/50 focus:outline-none" />
-              <select value={filter} onChange={e=>setFilter(e.target.value)} className="p-2.5 rounded-xl bg-[#0a0a0a] border border-gray-800 text-white text-sm">
-                <option value="all">All Categories</option><option value="A">A · 10d</option><option value="B">B · 30d</option><option value="C">C · 60d</option>
-              </select>
+          <div style={{background:'#0d0d0d',border:'1px solid #1a1a1a',borderRadius:'10px',padding:'24px',marginBottom:'24px'}}>
+            <h3 style={{color:'#fff',fontSize:'14px',marginBottom:'16px'}}>🌍 国家分布（共 {t} 客户）</h3>
+            {cs.slice(0,8).map(([co,n])=><div key={co} style={{display:'flex',alignItems:'center',gap:'12px',marginBottom:'6px',fontSize:'13px'}}>
+              <span style={{width:'80px',textAlign:'right',color:'#888'}}>{co}</span>
+              <div style={{flex:1,background:'#1a1a1a',borderRadius:'4px',height:'8px',overflow:'hidden'}}><div style={{height:'100%',borderRadius:'4px',background:'linear-gradient(90deg,#f59e0b,#d97706)',width:Math.max((n/t)*100,1)+'%'}}></div></div>
+              <span style={{width:'36px',color:'#f59e0b',fontWeight:600}}>{Math.round((n/t)*100)}%</span>
+            </div>)}
+          </div>
+
+          <div style={{background:'#0d0d0d',border:'1px solid #1a1a1a',borderRadius:'10px',padding:'24px'}}>
+            <h3 style={{color:'#fff',fontSize:'14px',marginBottom:'16px'}}>📊 每日业绩</h3>
+            <table style={{width:'100%',fontSize:'13px',borderCollapse:'collapse'}}>
+              <thead><tr style={{color:'#666',borderBottom:'1px solid #1a1a1a'}}><th style={{textAlign:'left',padding:'8px',fontWeight:400}}>销售员</th><th style={{padding:'8px',fontWeight:400}}>今日</th><th style={{padding:'8px',fontWeight:400}}>PI</th><th style={{padding:'8px',fontWeight:400}}>本周</th><th style={{padding:'8px',fontWeight:400}}>PI</th></tr></thead>
+              <tbody>{USERS.map(u=>{const s=st(u);return<tr key={u} style={{borderBottom:'1px solid #111'}}><td style={{padding:'10px 8px',color:'#fff',fontWeight:500}}>{u}</td><td style={{padding:'10px 8px',textAlign:'center',color:'#ccc'}}>{s.today}</td><td style={{padding:'10px 8px',textAlign:'center',color:'#f59e0b',fontWeight:600}}>{s.piToday}</td><td style={{padding:'10px 8px',textAlign:'center',color:'#ccc'}}>{s.week}</td><td style={{padding:'10px 8px',textAlign:'center',color:'#f59e0b',fontWeight:600}}>{s.piWeek}</td></tr>})}</tbody>
+            </table>
+          </div>
+        </div>}
+
+        {tab==='contacts'&&<div style={{padding:'32px',maxWidth:'960px'}}>
+          <h2 style={{color:'#fff',fontSize:'18px',marginBottom:'20px'}}>📋 客户列表</h2>
+          <div style={{display:'flex',gap:'8px',marginBottom:'20px'}}>
+            <input value={search} onChange={e=>setSearch(e.target.value)} placeholder="搜索客户..." style={{flex:1,padding:'10px 14px',borderRadius:'6px',border:'1px solid #1a1a1a',background:'#0d0d0d',color:'#fff',fontSize:'13px',outline:'none'}} />
+            <select value={filter} onChange={e=>setFilter(e.target.value)} style={{padding:'10px',borderRadius:'6px',border:'1px solid #1a1a1a',background:'#0d0d0d',color:'#fff',fontSize:'13px',outline:'none'}}>
+              <option value="all">全部分类</option><option value="A">A类</option><option value="B">B类</option><option value="C">C类</option>
+            </select>
+          </div>
+          {ft.map(c=>{
+            const d=c.nextFollowUp?Math.ceil((new Date(c.nextFollowUp)-Date.now())/86400000):null;
+            return <div key={c.phone} onClick={()=>setSelected(c)} style={{background:'#0d0d0d',border:'1px solid #1a1a1a',borderRadius:'8px',padding:'14px 18px',marginBottom:'6px',cursor:'pointer',display:'flex',justifyContent:'space-between',alignItems:'center'}}>
+              <div>
+                <div style={{color:'#fff',fontSize:'14px',fontWeight:600}}>{c.name||c.phone}
+                  {c.category&&<span style={{marginLeft:'8px',padding:'2px 6px',borderRadius:'4px',fontSize:'10px',background:c.category==='A'?'#7c3aed':c.category==='B'?'#2563eb':'#333',color:'#fff'}}>{c.category}类</span>}
+                  {d!==null&&d<=0&&<span style={{marginLeft:'6px',color:'#f87171',fontSize:'11px'}}>⚠ 逾期</span>}
+                </div>
+                <div style={{color:'#666',fontSize:'11px',marginTop:'2px'}}>{c.phone} · {c.country||'未知'} {(c.orders||[]).length?`· ${(c.orders||[]).length}个订单`:''} {d!==null?`· ${d}天`:''}</div>
+              </div>
+              <span style={{color:'#444'}}>→</span>
             </div>
-            <div className="space-y-2">
-              {filtered.map(c=>{
-                const dl=c.nextFollowUp?Math.ceil((new Date(c.nextFollowUp)-Date.now())/86400000):null;
-                return (
-                  <div key={c.phone} onClick={()=>setSelected(c)} className="bg-[#0a0a0a] border border-gray-800/50 rounded-xl p-4 cursor-pointer hover:border-gray-700 transition-all flex items-center justify-between group">
-                    <div>
-                      <div className="font-semibold text-white text-sm">{c.name||c.phone}
-                        {c.category&&<span className={`ml-2 px-2 py-0.5 rounded-md text-[10px] font-bold ${c.category==='A'?'bg-purple-500/20 text-purple-400':c.category==='B'?'bg-blue-500/20 text-blue-400':'bg-gray-700 text-gray-400'}`}>{c.category}</span>}
-                        {dl!==null&&dl<=0&&<span className="ml-2 text-red-400 text-xs">⚠ Overdue</span>}
-                      </div>
-                      <div className="text-gray-500 text-xs mt-1">{c.phone} {c.country?`· ${c.country}`:''} {(c.orders||[]).length?`· 📦${(c.orders||[]).length} orders`:''} {dl!==null?`· ${dl}d`:''} {isAdmin&&c.owner?`· 👤${c.owner}`:''}</div>
-                    </div>
-                    <div className="text-gray-600 group-hover:text-amber-500 transition-colors">→</div>
+          })}
+          {ft.length===0&&<p style={{color:'#444',textAlign:'center',padding:'60px'}}>暂无客户数据</p>}
+        </div>}
+
+        {/* 客户详情 */}
+        {selected&&<div style={{position:'fixed',inset:0,background:'rgba(0,0,0,.8)',zIndex:50,display:'flex',justifyContent:'flex-end'}} onClick={()=>setSelected(null)}>
+          <div style={{width:'100%',maxWidth:'500px',background:'#0d0d0d',borderLeft:'1px solid #1a1a1a',overflow:'auto'}} onClick={e=>e.stopPropagation()}>
+            <div style={{padding:'16px 20px',borderBottom:'1px solid #1a1a1a',display:'flex',alignItems:'center',gap:'12px',position:'sticky',top:0,background:'#0d0d0d'}}>
+              <button onClick={()=>setSelected(null)} style={{background:'none',border:'none',color:'#fff',fontSize:'18px',cursor:'pointer'}}>←</button>
+              <div style={{flex:1}}><div style={{color:'#fff',fontWeight:600}}>{selected.name||selected.phone}</div><div style={{color:'#666',fontSize:'11px'}}>{selected.phone} · {selected.country||'未知'}</div></div>
+              <span style={{padding:'2px 8px',borderRadius:'4px',fontSize:'10px',fontWeight:600,background:selected.category==='A'?'#7c3aed':selected.category==='B'?'#2563eb':selected.category==='C'?'#333':'#f59e0b',color:selected.category?'#fff':'#000'}}>{selected.category?selected.category+'类':'新'}</span>
+            </div>
+            <div style={{padding:'20px'}}>
+              {/* Info grid */}
+              <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'12px',fontSize:'13px',marginBottom:'20px'}}>
+                {[{l:'邮箱',v:selected.email},{l:'公司',v:selected.company},{l:'产品',v:selected.product},{l:'负责人',v:selected.owner}].map((f,i)=>f.v&&<div key={i}><div style={{color:'#666',fontSize:'10px',marginBottom:'2px'}}>{f.l}</div><div style={{color:'#ccc'}}>{f.v}</div></div>)}
+              </div>
+              {selected.notes&&<div style={{background:'#111',borderRadius:'8px',padding:'12px',fontSize:'13px',color:'#999',marginBottom:'16px'}}>{selected.notes}</div>}
+              {selected.nextFollowUp&&<div style={{background:'#1a1200',border:'1px solid #2d2000',borderRadius:'8px',padding:'12px',fontSize:'13px',color:'#f59e0b',marginBottom:'16px'}}>📅 下次回访：{selected.nextFollowUp}</div>}
+
+              {(selected.orders||[]).length>0&&<div>
+                <h4 style={{color:'#f59e0b',fontSize:'14px',marginBottom:'12px'}}>📦 订单（{(selected.orders||[]).length}）</h4>
+                {(selected.orders||[]).map((o:any,i:number)=><details key={i} style={{background:'#111',borderRadius:'8px',marginBottom:'8px',overflow:'hidden'}}>
+                  <summary style={{padding:'12px 16px',cursor:'pointer',fontSize:'13px',fontWeight:600,color:'#fff',display:'flex',justifyContent:'space-between'}}>
+                    <span>订单 #{i+1} {o.orderNo||''}</span>
+                    <span style={{fontSize:'10px',padding:'2px 6px',borderRadius:'3px',background:o.status==='shipped'?'#064e3b':o.status==='delivered'?'#333':'#1a1200',color:o.status==='shipped'?'#34d399':o.status==='delivered'?'#888':'#f59e0b'}}>{o.status||'待处理'}</span>
+                  </summary>
+                  <div style={{padding:'16px',borderTop:'1px solid #1a1a1a',fontSize:'12px',color:'#aaa',lineHeight:'1.8'}}>
+                    {o.requirements&&<p><span style={{color:'#666'}}>需求：</span>{o.requirements}</p>}
+                    {o.totalAmt&&<p><span style={{color:'#666'}}>金额：</span><b style={{color:'#fff'}}>{o.totalAmt} {o.currency||'USD'}</b></p>}
+                    {o.paymentMethod&&<p><span style={{color:'#666'}}>付款方式：</span>{o.paymentMethod==='LC'?'信用证':'T/T'}</p>}
+                    {(o.depositDate||o.depositAmt)&&<p><span style={{color:'#666'}}>定金：</span>{o.depositDate} {o.depositAmt}</p>}
+                    {(o.balanceDate||o.balanceAmt)&&<p><span style={{color:'#666'}}>尾款：</span>{o.balanceDate} {o.balanceAmt}</p>}
+                    {(o.lcOpenDate||o.lcAmt)&&<div style={{background:'#0a1628',borderRadius:'6px',padding:'10px',margin:'8px 0'}}>
+                      <p style={{color:'#38bdf8',fontWeight:600,marginBottom:'4px'}}>🏦 信用证</p>
+                      {o.lcOpenDate&&<p><span style={{color:'#666'}}>开证日期：</span>{o.lcOpenDate}</p>}
+                      {o.lcAmt&&<p><span style={{color:'#666'}}>金额：</span><b style={{color:'#fff'}}>{o.lcAmt}</b></p>}
+                      {o.lcShipDate&&<p><span style={{color:'#666'}}>最晚装船：</span>{o.lcShipDate}</p>}
+                      {o.lcDepartDate&&<p><span style={{color:'#666'}}>最晚离港：</span>{o.lcDepartDate}</p>}
+                      {o.docsDate&&<p><span style={{color:'#666'}}>交单日期：</span>{o.docsDate}</p>}
+                      {o.lcPayDate&&<p><span style={{color:'#666'}}>收款日期：</span>{o.lcPayDate} {o.lcPayAmt}</p>}
+                    </div>}
+                    {o.shipDate&&<p><span style={{color:'#666'}}>发运日期：</span>{o.shipDate}</p>}
+                    {o.eta&&<p><span style={{color:'#666'}}>预计到港：</span>{o.eta}</p>}
+                    {o.vessel&&<p><span style={{color:'#666'}}>船名：</span>{o.vessel} · 订舱号：{o.bookingNo||''}</p>}
+                    {(o.pis||[]).length>0&&<p><span style={{color:'#666'}}>PI：</span>{o.pis.map((p:any)=><span key={p.number} style={{color:'#f59e0b',marginRight:'6px'}}>{p.number} {p.date}</span>)}</p>}
+                    {(o.vins||[]).length>0&&<p style={{fontSize:'11px',marginTop:'4px'}}><span style={{color:'#666'}}>VIN：</span>{(o.vins||[]).join('、')}</p>}
                   </div>
-                );
-              })}
-              {filtered.length===0&&<div className="text-center py-16 text-gray-600">
-                <div className="text-4xl mb-3">📋</div>
-                <p className="text-sm">No contacts found</p>
+                </details>)}
               </div>}
             </div>
           </div>
-        )}
-
-        {/* Detail Modal */}
-        {selected && (
-          <div className="fixed inset-0 bg-black/80 z-50 flex justify-end animate-in" onClick={()=>setSelected(null)}>
-            <div className="w-full max-w-lg bg-[#0a0a0a] border-l border-gray-800 overflow-y-auto shadow-2xl" onClick={e=>e.stopPropagation()}>
-              <div className="sticky top-0 bg-[#0a0a0a] border-b border-gray-800 p-4 flex items-center gap-3 z-10">
-                <button onClick={()=>setSelected(null)} className="text-gray-400 hover:text-white text-lg">←</button>
-                <div className="flex-1">
-                  <h2 className="font-bold text-white">{selected.name||selected.phone}</h2>
-                  <p className="text-gray-500 text-xs">{selected.phone} · {selected.country||'Unknown'}</p>
-                </div>
-                <span className={`px-2.5 py-1 rounded-lg text-xs font-bold ${selected.category==='A'?'bg-purple-500/20 text-purple-400':selected.category==='B'?'bg-blue-500/20 text-blue-400':selected.category==='C'?'bg-gray-700 text-gray-400':'bg-amber-500/20 text-amber-500'}`}>{selected.category||'NEW'}</span>
-              </div>
-              <div className="p-5 space-y-4">
-                {/* Info */}
-                <div className="grid grid-cols-2 gap-3 text-sm">
-                  {[{l:'Email',v:selected.email},{l:'Company',v:selected.company},{l:'Product',v:selected.product},{l:'Owner',v:selected.owner}].map((f,i)=>f.v&&<div key={i}><label className="text-gray-500 text-[10px] uppercase tracking-wider">{f.l}</label><div className="text-white mt-0.5">{f.v}</div></div>)}
-                </div>
-                {selected.notes&&<div className="bg-gray-900/50 rounded-lg p-3 text-sm text-gray-300 border border-gray-800/50">{selected.notes}</div>}
-                {selected.nextFollowUp&&<div className="bg-amber-500/5 border border-amber-500/10 rounded-lg p-3 flex justify-between items-center"><span className="text-amber-400 text-sm">📅 Next follow-up: <b>{selected.nextFollowUp}</b></span></div>}
-
-                {/* Orders */}
-                {(selected.orders||[]).length>0&&<div>
-                  <h4 className="text-amber-500 font-semibold text-sm mb-3">📦 Orders ({(selected.orders||[]).length})</h4>
-                  {(selected.orders||[]).map((o:any,i:number)=>(
-                    <details key={i} className="bg-gray-900/30 border border-gray-800/50 rounded-xl mb-3 overflow-hidden">
-                      <summary className="p-3 cursor-pointer font-semibold text-sm flex items-center justify-between hover:bg-gray-900/50">
-                        <span>Order #{i+1} {o.orderNo&&`· ${o.orderNo}`}</span>
-                        <span className={`px-2 py-0.5 rounded text-[10px] font-bold ${o.status==='shipped'?'bg-green-500/20 text-green-400':o.status==='delivered'?'bg-gray-700 text-gray-400':'bg-amber-500/20 text-amber-400'}`}>{o.status||'pending'}</span>
-                      </summary>
-                      <div className="p-4 border-t border-gray-800/50 text-sm space-y-2">
-                        {o.requirements&&<p className="text-white">{o.requirements}</p>}
-                        <div className="grid grid-cols-2 gap-2 text-xs">
-                          {o.totalAmt&&<p><span className="text-gray-500">Amount</span> <span className="text-white font-semibold">{o.totalAmt} {o.currency||'USD'}</span></p>}
-                          {o.paymentMethod&&<p><span className="text-gray-500">Payment</span> <span className="text-white">{o.paymentMethod}</span></p>}
-                          {o.depositDate&&<p><span className="text-gray-500">Deposit</span> <span className="text-white">{o.depositDate} {o.depositAmt}</span></p>}
-                          {o.balanceDate&&<p><span className="text-gray-500">Balance</span> <span className="text-white">{o.balanceDate} {o.balanceAmt}</span></p>}
-                          {o.shipDate&&<p><span className="text-gray-500">Shipped</span> <span className="text-white">{o.shipDate}</span></p>}
-                          {o.eta&&<p><span className="text-gray-500">ETA</span> <span className="text-white">{o.eta}</span></p>}
-                          {o.vessel&&<p><span className="text-gray-500">Vessel</span> <span className="text-white">{o.vessel}</span></p>}
-                          {o.bookingNo&&<p><span className="text-gray-500">BKG</span> <span className="text-white">{o.bookingNo}</span></p>}
-                        </div>
-                        {/* L/C */}
-                        {(o.lcOpenDate||o.lcAmt)&&<div className="bg-cyan-500/5 border border-cyan-500/10 rounded-lg p-3 mt-2">
-                          <p className="text-cyan-400 text-xs font-semibold mb-1">🏦 Letter of Credit</p>
-                          <div className="grid grid-cols-2 gap-1 text-[11px]">
-                            {o.lcOpenDate&&<p><span className="text-gray-500">Open</span> <span className="text-white">{o.lcOpenDate}</span></p>}
-                            {o.lcAmt&&<p><span className="text-gray-500">Amount</span> <span className="text-white">{o.lcAmt}</span></p>}
-                            {o.lcShipDate&&<p><span className="text-gray-500">Latest Ship</span> <span className="text-white">{o.lcShipDate}</span></p>}
-                            {o.lcDepartDate&&<p><span className="text-gray-500">Latest Depart</span> <span className="text-white">{o.lcDepartDate}</span></p>}
-                            {o.docsDate&&<p><span className="text-gray-500">Docs Presented</span> <span className="text-white">{o.docsDate}</span></p>}
-                            {o.lcPayDate&&<p><span className="text-gray-500">Payment Rec'd</span> <span className="text-white">{o.lcPayDate} {o.lcPayAmt}</span></p>}
-                          </div>
-                        </div>}
-                        {(o.pis||[]).length>0&&<div className="flex flex-wrap gap-2 mt-2">{o.pis.map((p:any)=><span key={p.number} className="px-2 py-1 bg-amber-500/10 border border-amber-500/20 rounded text-[11px] text-amber-400">{p.number} {p.date}</span>)}</div>}
-                        {(o.vins||[]).length>0&&<div className="mt-2"><span className="text-gray-500 text-[10px]">VINs:</span> <span className="text-xs text-gray-300 font-mono">{(o.vins||[]).join(', ')}</span></div>}
-                      </div>
-                    </details>
-                  ))}
-                </div>}
-              </div>
-            </div>
-          </div>
-        )}
+        </div>}
       </div>
     </div>
   );
 }
+
+const inp: React.CSSProperties = {
+  width:'100%',padding:'10px 14px',borderRadius:'6px',border:'1px solid #222',
+  background:'#000',color:'#fff',fontSize:'14px',marginBottom:'12px',
+  outline:'none',boxSizing:'border-box'
+};
