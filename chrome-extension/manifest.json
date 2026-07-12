@@ -1,22 +1,19 @@
 {
   "manifest_version": 3,
   "name": "SINOCV CRM",
-  "version": "1.0",
-  "description": "Customer CRM for WhatsApp Web — auto capture contacts, notes, PI records",
-  "permissions": ["storage", "activeTab"],
+  "version": "2.0",
+  "description": "Complete CRM for truck export — contacts, PI, reminders, follow-up",
+  "permissions": ["storage", "alarms", "notifications"],
   "host_permissions": ["https://web.whatsapp.com/*", "https://truck-export-pi-xi.vercel.app/*"],
-  "content_scripts": [
-    {
-      "matches": ["https://web.whatsapp.com/*"],
-      "js": ["content.js"],
-      "css": ["sidebar.css"]
-    }
-  ],
-  "action": {
-    "default_popup": "popup.html",
-    "default_title": "SINOCV CRM"
+  "background": {
+    "service_worker": "background.js"
   },
-  "icons": {
-    "128": "icons/icon128.png"
+  "content_scripts": [{
+    "matches": ["https://web.whatsapp.com/*"],
+    "js": ["content.js"],
+    "css": ["sidebar.css"]
+  }],
+  "action": {
+    "default_title": "SINOCV CRM"
   }
 }
