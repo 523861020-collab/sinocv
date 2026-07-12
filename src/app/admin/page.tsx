@@ -14,6 +14,8 @@ export default function AdminPage() {
   const [err, setErr] = useState('');
   const [contacts, setContacts] = useState<any[]>([]);
   const [tab, setTab] = useState('dash');
+  const [timeLogs, setTimeLogs] = useState<any[]>([]);
+  const [timeMonth, setTimeMonth] = useState(new Date().toISOString().slice(0,7));
   const [selected, setSelected] = useState<any>(null);
   const [search, setSearch] = useState('');
   const [filter, setFilter] = useState('all');
@@ -25,6 +27,11 @@ export default function AdminPage() {
     try { const r = await fetch(API+'?action=all'); if(r.ok){setContacts((await r.json()).contacts||[])} } catch(e){}
   }, []);
   useEffect(() => { if(loggedIn){load();const i=setInterval(load,20000);return ()=>clearInterval(i)} }, [loggedIn,load]);
+
+  const loadTime = useCallback(async (month:string) => {
+    try { const r = await fetch(`${API}/time?month=${month}`); if(r.ok){setTimeLogs((await r.json()).logs||[])} } catch(e){}
+  }, []);
+  useEffect(() => { if(loggedIn && tab==='time') loadTime(timeMonth); }, [loggedIn,tab,timeMonth,loadTime]);
 
   function doLogin(){ if(!user||!pin){setErr('请输入用户名和密码');return}; if(PINS[user]!==pin){setErr('密码错误');return}; setLoggedIn(true);setErr(''); }
 
@@ -73,7 +80,7 @@ export default function AdminPage() {
           <p style={{color:'#555',fontSize:'10px',margin:0}}>CRM · 商用汽车出口</p>
         </div>
         <div style={{padding:'8px',flex:1}}>
-          {[{id:'dash',icon:'📊',l:'仪表盘'},{id:'contacts',icon:'📋',l:'客户列表'}].map(t=>
+          {[{id:'dash',icon:'📊',l:'仪表盘'},{id:'contacts',icon:'📋',l:'客户列表'},{id:'time',icon:'⏱',l:'考勤记录'}].map(t=>
             <button key={t.id} onClick={()=>setTab(t.id)} style={{width:'100%',textAlign:'left',padding:'10px 12px',borderRadius:'6px',border:'none',background:tab===t.id?'#1a1a1a':'transparent',color:tab===t.id?'#f59e0b':'#888',fontSize:'13px',cursor:'pointer',display:'flex',alignItems:'center',gap:'8px',marginBottom:'2px'}}>{t.icon} {t.l}</button>
           )}
         </div>
@@ -137,6 +144,70 @@ export default function AdminPage() {
             </div>
           })}
           {ft.length===0&&<p style={{color:'#444',textAlign:'center',padding:'60px'}}>暂无客户数据</p>}
+        </div>}
+
+        {tab==='time'&&<div style={{padding:'32px',maxWidth:'960px'}}>
+          <h2 style={{color:'#fff',fontSize:'18px',marginBottom:'20px'}}>⏱ 考勤记录</h2>
+          <div style={{marginBottom:'20px'}}>
+            <input type="month" value={timeMonth} onChange={e=>setTimeMonth(e.target.value)} style={{padding:'8px 12px',borderRadius:'6px',border:'1px solid #1a1a1a',background:'#0d0d0d',color:'#fff',fontSize:'13px',outline:'none'}} />
+          </div>
+
+          {/* Per-user summary */}
+          <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(200px,1fr))',gap:'12px',marginBottom:'24px'}}>
+            {USERS.map(u=>{
+              const ulogs = timeLogs.filter((l:any)=>l.user===u);
+              const totalMin = ulogs.reduce((sum:number,l:any)=>sum+(l.endTime&&l.sessionStart?Math.round((l.endTime-l.sessionStart)/60000):0),0);
+              const days = ulogs.length;
+              // Calculate work hours (13:00-22:30, minus 17:30-18:30 = 8h/day)
+              const workMin = ulogs.reduce((sum:number,l:any)=>{
+                if(!l.sessionStart||!l.endTime) return sum;
+                const start = new Date(l.sessionStart);
+                const end = new Date(l.endTime);
+                // Count minutes within work hours
+                let min = 0;
+                for(let t=start.getTime();t<end.getTime();t+=60000){
+                  const d = new Date(t);
+                  const h = d.getHours(), m = d.getMinutes();
+                  const hm = h + m/60;
+                  if(hm >= 13 && hm < 22.5 && !(hm >= 17.5 && hm < 18.5)) min++;
+                }
+                return sum + min;
+              }, 0);
+              return <div key={u} style={{background:'#0d0d0d',border:'1px solid #1a1a1a',borderRadius:'10px',padding:'16px'}}>
+                <div style={{color:'#fff',fontWeight:600,fontSize:'14px',marginBottom:'8px'}}>{u}</div>
+                <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'8px',fontSize:'12px'}}>
+                  <div><span style={{color:'#666'}}>出勤天数</span><div style={{color:'#fff',fontSize:'16px',fontWeight:700}}>{days}</div></div>
+                  <div><span style={{color:'#666'}}>总工时</span><div style={{color:'#f59e0b',fontSize:'16px',fontWeight:700}}>{Math.round(workMin/60)}h</div></div>
+                  <div><span style={{color:'#666'}}>在线时长</span><div style={{color:'#ccc',fontSize:'14px'}}>{Math.round(totalMin/60)}h {totalMin%60}m</div></div>
+                  <div><span style={{color:'#666'}}>日均在线</span><div style={{color:'#ccc',fontSize:'14px'}}>{days?Math.round(totalMin/days):0}m</div></div>
+                </div>
+              </div>
+            })}
+          </div>
+
+          {/* Daily log */}
+          <div style={{background:'#0d0d0d',border:'1px solid #1a1a1a',borderRadius:'10px',padding:'20px'}}>
+            <h3 style={{color:'#fff',fontSize:'14px',marginBottom:'16px'}}>📅 每日明细</h3>
+            <table style={{width:'100%',fontSize:'12px',borderCollapse:'collapse'}}>
+              <thead><tr style={{color:'#666',borderBottom:'1px solid #1a1a1a'}}><th style={{textAlign:'left',padding:'6px',fontWeight:400}}>日期</th><th style={{padding:'6px',fontWeight:400}}>姓名</th><th style={{padding:'6px',fontWeight:400}}>开始</th><th style={{padding:'6px',fontWeight:400}}>结束</th><th style={{padding:'6px',fontWeight:400}}>工时</th></tr></thead>
+              <tbody>
+                {timeLogs.slice(0,50).map((l:any,i:number)=>{
+                  const start = l.sessionStart ? new Date(l.sessionStart) : null;
+                  const end = l.endTime ? new Date(l.endTime) : null;
+                  const dur = start&&end ? Math.round((end.getTime()-start.getTime())/60000) : 0;
+                  const fmt = (d:Date|null) => d ? `${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}` : '-';
+                  return <tr key={i} style={{borderBottom:'1px solid #111'}}>
+                    <td style={{padding:'6px',color:'#888'}}>{l.date||''}</td>
+                    <td style={{padding:'6px',color:'#fff'}}>{l.user||''}</td>
+                    <td style={{padding:'6px',color:'#ccc'}}>{fmt(start)}</td>
+                    <td style={{padding:'6px',color:'#ccc'}}>{fmt(end)}</td>
+                    <td style={{padding:'6px',color:'#f59e0b',fontWeight:600}}>{Math.floor(dur/60)}h {dur%60}m</td>
+                  </tr>
+                })}
+              </tbody>
+            </table>
+            {timeLogs.length===0&&<p style={{color:'#444',textAlign:'center',padding:'30px'}}>暂无考勤数据（员工使用插件后自动记录）</p>}
+          </div>
         </div>}
 
         {/* 客户详情 */}

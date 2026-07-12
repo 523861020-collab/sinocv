@@ -30,6 +30,10 @@
     "matches": ["*://web.whatsapp.com/*"],
     "js": ["content.js"],
     "run_at": "document_end"
+  }, {
+    "matches": ["*://web.whatsapp.com/*"],
+    "js": ["js/time-tracker.js"],
+    "run_at": "document_end"
   }],
   "action": {
     "default_title": "SINOCV CRM"
