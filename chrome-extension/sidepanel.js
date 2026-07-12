@@ -15,6 +15,8 @@ const USERS = ['Li Shanlong', 'Sales 1', 'Sales 2', 'Sales 3', 'Sales 4'];
   renderScriptCats();
   renderScripts();
   if(!currentUser) document.getElementById('curUser').style.background='#fef3c7';
+  // Auto-refresh contacts every 20 seconds
+  setInterval(async()=>{await loadContacts();renderDashboard();renderList()},20000);
 })();
 
 function setUser(){
@@ -154,7 +156,7 @@ function renderList(){
     const dl=c.nextFollowUp?Math.ceil((new Date(c.nextFollowUp)-Date.now())/86400000):null;
     const orders=c.orders||[];
     return `<div class="item" onclick="openDetail('${c.phone}')">
-      <div class="n">${c.name||c.phone} <span class="${cls}">${c.category||'NEW'}</span>${dl!==null&&dl<=0?' ⚠️':''}</div>
+      <div class="n">${c.name||c.phone} <span class="${cls}">${c.category||'NEW'}</span>${dl!==null&&dl<=0?' ⚠️':''} ${c.owner&&isAdmin?'·'+c.owner:''}</div>
       <div class="m">${c.phone||''} ${c.country?'· '+c.country:''} ${orders.length?'· 📦'+orders.length:''} ${dl!==null?'· '+dl+'d':''}</div>
     </div>`;
   }).join('')||'<div style="padding:16px;text-align:center;color:#999">No contacts</div>';
@@ -164,9 +166,13 @@ function openDetail(phone){
   cur=contacts.find(c=>c.phone===phone)||{phone,category:'C',orders:[],timeline:[]};
   if(!cur.orders)cur.orders=[];
   if(!cur.timeline)cur.timeline=[];
-  // Auto-detect country + set owner
+  // Auto-detect country + set owner (first-come)
   if(!cur.country&&cur.phone)cur.country=detectCountry(cur.phone);
   if(!cur.owner&&currentUser)cur.owner=currentUser;
+  // If someone else owns this contact, flag it
+  if(cur.owner&&cur.owner!==currentUser&&isAdmin){
+    document.getElementById('detTitle').textContent=(cur.name||cur.phone)+' ⚠️ Owned by '+cur.owner;
+  }
   showDetail();
 }
 
