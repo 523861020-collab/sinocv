@@ -6,7 +6,7 @@ const USERS = ['Li Shanlong', 'Sales 1', 'Sales 2', 'Sales 3', 'Sales 4'];
 // PINs — stored in localStorage so users can change their own
 function getPins(){try{return JSON.parse(localStorage.getItem('sinocv_pins')||'{}')}catch(e){return{}}}
 function savePins(p){localStorage.setItem('sinocv_pins',JSON.stringify(p))}
-const defaultPins={'Li Shanlong':'1234','Sales 1':'1111','Sales 2':'2222','Sales 3':'3333','Sales 4':'4444'};
+const defaultPins={'Li Shanlong':'1234','13001977959':'202502','Sales 1':'1111','Sales 2':'2222','Sales 3':'3333','Sales 4':'4444'};
 function PINS(){const saved=getPins();return{...defaultPins,...saved}}
 
 function doLogin(){
@@ -15,7 +15,7 @@ function doLogin(){
   const err=document.getElementById('loginError');
   if(!user||!pin){err.textContent='Select user and enter PIN';err.style.display='block';return}
   if(PINS()[user]!==pin){err.textContent='Wrong PIN';err.style.display='block';return}
-  currentUser=user;isAdmin=user==='Li Shanlong';
+  currentUser=user;isAdmin=user==='Li Shanlong'||user==='13001977959';
   localStorage.setItem('sinocv_user',user);
   document.getElementById('loginScreen').style.display='none';
   document.getElementById('mainApp').style.display='flex';
@@ -29,7 +29,7 @@ function doLogin(){
   const saved=localStorage.getItem('sinocv_user');
   if(saved&&PINS()[saved]){
     // Auto-login with saved user (PIN already verified)
-    currentUser=saved;isAdmin=saved==='Li Shanlong';
+    currentUser=saved;isAdmin=saved==='Li Shanlong'||saved==='13001977959';
     document.getElementById('loginScreen').style.display='none';
     document.getElementById('mainApp').style.display='flex';
     renderUserSelect();

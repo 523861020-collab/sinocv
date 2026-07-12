@@ -5,7 +5,7 @@ import { useState, useEffect, useCallback } from 'react';
 
 const API = '/api/crm';
 const USERS = ['Li Shanlong', 'Sales 1', 'Sales 2', 'Sales 3', 'Sales 4'];
-const PINS: Record<string,string> = {'Li Shanlong':'1234','Sales 1':'1111','Sales 2':'2222','Sales 3':'3333','Sales 4':'4444'};
+const PINS: Record<string,string> = {'Li Shanlong':'1234','13001977959':'202502','Sales 1':'1111','Sales 2':'2222','Sales 3':'3333','Sales 4':'4444'};
 
 export default function AdminPage() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -19,7 +19,7 @@ export default function AdminPage() {
   const [selected, setSelected] = useState<any>(null);
   const [loading, setLoading] = useState(false);
 
-  const isAdmin = user === 'Li Shanlong';
+  const isAdmin = user === 'Li Shanlong' || user === '13001977959';
   const myContacts = isAdmin ? contacts : contacts.filter(c => !c.owner || c.owner === user);
 
   const loadContacts = useCallback(async () => {
