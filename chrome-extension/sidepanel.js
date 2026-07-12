@@ -59,9 +59,43 @@ function renderDashboard(){
   const lcs=orders.filter(o=>o.paymentMethod==='LC').length;
   const overdue=mc.filter(c=>c.nextFollowUp&&c.nextFollowUp<=new Date().toISOString().split('T')[0]).length;
 
+  // Country distribution
+  const now=new Date();
+  const weekAgo=new Date(now-7*86400000);
+  const yearStart=new Date(now.getFullYear(),0,1);
+  const monthStart=new Date(now.getFullYear(),now.getMonth(),1);
+
+  function countryPct(list,label){
+    const map={};
+    list.forEach(c=>{const co=c.country||'Unknown';map[co]=(map[co]||0)+1});
+    const sorted=Object.entries(map).sort((a,b)=>b[1]-a[1]);
+    const total=list.length||1;
+    return {label,sorted,total};
+  }
+
+  const allCt=countryPct(mc,'All Time');
+  const wkCt=countryPct(mc.filter(c=>c.firstSeen>=weekAgo.toISOString()),'This Week');
+  const moCt=countryPct(mc.filter(c=>c.firstSeen>=monthStart.toISOString()),'This Month');
+  const yrCt=countryPct(mc.filter(c=>c.firstSeen>=yearStart.toISOString()),'This Year');
+
+  function barChart(data){return data.sorted.slice(0,8).map(([co,n])=>`<div style="display:flex;align-items:center;gap:4px;margin:2px 0;font-size:9px"><span style="width:60px;text-align:right;color:#888">${co}</span><div style="flex:1;background:#f0f0f0;border-radius:2px;height:12px"><div style="width:${Math.max((n/data.total)*100,1)}%;background:#f59e0b;border-radius:2px;height:100%"></div></div><span style="width:32px;font-weight:600">${Math.round((n/data.total)*100)}%</span></div>`).join('')}
+
+  const countryHTML=`<div style="padding:6px 10px">
+    <div style="font-size:10px;font-weight:600;margin-bottom:4px;display:flex;gap:8px">
+      <span style="cursor:pointer;color:#f59e0b;border-bottom:2px solid #f59e0b" id="ctTabAll" onclick="switchCtTab('all')">All</span>
+      <span style="cursor:pointer" id="ctTabWeek" onclick="switchCtTab('week')">Week</span>
+      <span style="cursor:pointer" id="ctTabMonth" onclick="switchCtTab('month')">Month</span>
+      <span style="cursor:pointer" id="ctTabYear" onclick="switchCtTab('year')">Year</span>
+    </div>
+    <div id="ctChart">${barChart(allCt)}</div>
+  </div>`;
+
+  // Store chart data for tab switching
+  window._ctData={all:allCt,week:wkCt,month:moCt,year:yrCt};
+
   document.getElementById('dashContent').innerHTML=`
     <div class="dash-grid">
-      <div class="dash-card"><div class="dash-num">${total}</div><div class="dash-lbl">Total Contacts</div></div>
+      <div class="dash-card"><div class="dash-num">${total}</div><div class="dash-lbl">Contacts</div></div>
       <div class="dash-card"><div class="dash-num">${a}</div><div class="dash-lbl" style="color:#7c3aed">A-Class</div></div>
       <div class="dash-card"><div class="dash-num">${b}</div><div class="dash-lbl" style="color:#2563eb">B-Class</div></div>
       <div class="dash-card"><div class="dash-num">${c}</div><div class="dash-lbl" style="color:#6b7280">C-Class</div></div>
@@ -72,6 +106,8 @@ function renderDashboard(){
       <div class="dash-card"><div class="dash-num">${lcs}</div><div class="dash-lbl">L/Cs</div></div>
       <div class="dash-card"><div class="dash-num" style="color:#ef4444">${overdue}</div><div class="dash-lbl">⚠️ Overdue</div></div>
     </div>
+    <div class="sec" style="margin:0 10px">🌍 By Country (${total} total)</div>
+    ${countryHTML}
     <div class="sec" style="margin:0 10px">🚢 Active Shipments</div>
     <div style="padding:0 10px">${orders.filter(o=>o.status==='shipped').slice(0,5).map(o=>`
       <div class="item" onclick="navigator.clipboard.writeText('${o.vins?.[0]||''}')">
@@ -81,6 +117,17 @@ function renderDashboard(){
     `).join('')||'<div style="padding:8px;color:#999">No active shipments</div>'}</div>
   `;
 }
+
+function switchCtTab(tab){
+  const data=window._ctData[tab];
+  if(!data)return;
+  document.getElementById('ctChart').innerHTML=barChartLocal(data);
+  ['all','week','month','year'].forEach(t=>{
+    const el=document.getElementById('ctTab'+t.charAt(0).toUpperCase()+t.slice(1));
+    if(el)el.style.cssText=t===tab?'cursor:pointer;color:#f59e0b;border-bottom:2px solid #f59e0b':'cursor:pointer';
+  });
+}
+function barChartLocal(data){return data.sorted.slice(0,8).map(([co,n])=>`<div style="display:flex;align-items:center;gap:4px;margin:2px 0;font-size:9px"><span style="width:60px;text-align:right;color:#888">${co}</span><div style="flex:1;background:#f0f0f0;border-radius:2px;height:12px"><div style="width:${Math.max((n/data.total)*100,1)}%;background:#f59e0b;border-radius:2px;height:100%"></div></div><span style="width:32px;font-weight:600">${Math.round((n/data.total)*100)}%</span></div>`).join('')}
 
 // ===== CONTACTS =====
 async function loadContacts(){
