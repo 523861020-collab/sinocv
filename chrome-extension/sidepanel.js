@@ -176,7 +176,7 @@ function renderList(){
     const cls=c.category?'badge badge-'+c.category.toLowerCase():'badge badge-new';
     const dl=c.nextFollowUp?Math.ceil((new Date(c.nextFollowUp)-Date.now())/86400000):null;
     const orders=c.orders||[];
-    return `<div class="item" onclick="openDetail('${c.phone}')">
+    return `<div class="item" ondblclick="openWhatsApp('${c.phone}')" onclick="openDetail('${c.phone}')">
       <div class="n">${c.name||c.phone} <span class="${cls}">${c.category||'NEW'}</span>${dl!==null&&dl<=0?' ⚠️':''} ${c.owner&&isAdmin?'·'+c.owner:''}</div>
       <div class="m">${c.phone||''} ${c.country?'· '+c.country:''} ${orders.length?'· 📦'+orders.length:''} ${dl!==null?'· '+dl+'d':''}</div>
     </div>`;
@@ -363,6 +363,22 @@ function el(id){return document.getElementById(id)?.value||''}
 function onCatChange(){cur.category=document.getElementById('detCat')?.value;if(cur.category&&!cur.nextFollowUp){const days=cur.category==='A'?10:cur.category==='B'?30:60;const d=new Date();d.setDate(d.getDate()+days);cur.nextFollowUp=d.toISOString().split('T')[0]}}
 async function markDone(){const days=cur.category==='A'?10:cur.category==='B'?30:60;const d=new Date();d.setDate(d.getDate()+days);try{const r=await fetch(API.replace('/crm','')+'/crm/holidays/next?from='+d.toISOString().split('T')[0]);if(r.ok){const h=await r.json();if(h.nextWorkday)d.setTime(Date.parse(h.nextWorkday))}}catch(e){}cur.nextFollowUp=d.toISOString().split('T')[0];addTimeline('Follow-up done → next '+cur.nextFollowUp);await saveDetail()}
 function closeDetail(){document.getElementById('detail').classList.remove('show');cur=null;}
+
+function openWhatsApp(phone){
+  chrome.tabs.query({url:'*://web.whatsapp.com/*'}, tabs => {
+    if(tabs.length > 0){
+      chrome.tabs.update(tabs[0].id, {active: true});
+      // Navigate to the chat
+      chrome.scripting.executeScript({
+        target: {tabId: tabs[0].id},
+        func: (p) => { window.location.hash = '#phone=' + p; },
+        args: [phone]
+      }).catch(()=>{});
+    } else {
+      chrome.tabs.create({url: 'https://web.whatsapp.com/'});
+    }
+  });
+}
 
 function showPinChange(){
   document.getElementById('pinDialog').style.display='flex';

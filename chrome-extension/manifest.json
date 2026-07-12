@@ -10,7 +10,7 @@
     "96": "icon/96.png",
     "128": "icon/128.png"
   },
-  "permissions": ["sidePanel", "storage", "alarms", "notifications", "tabs"],
+  "permissions": ["sidePanel", "storage", "alarms", "notifications", "tabs", "scripting"],
   "host_permissions": [
     "*://web.whatsapp.com/*",
     "https://truck-export-pi-xi.vercel.app/*",
