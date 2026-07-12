@@ -1,20 +1,17 @@
-// SINOCV CRM — WhatsApp Web Content Script
+// SINOCV CRM — enhanced contact detection
 (function() {
   'use strict';
 
   const API = 'https://truck-export-pi-xi.vercel.app/api/crm';
+  let panel, currentPhone, currentName;
 
-  let panel, currentContact = {};
-
-  // Wait for WhatsApp to load
   function init() {
     if (document.getElementById('sinocv-crm-panel')) return;
     createPanel();
-    observe();
+    startObserver();
   }
 
   function createPanel() {
-    // Inject sidebar panel
     panel = document.createElement('div');
     panel.id = 'sinocv-crm-panel';
     panel.innerHTML = `
@@ -24,9 +21,9 @@
       </div>
       <div id="sinocv-body">
         <div id="sinocv-contact">
-          <div class="sinocv-label">Contact</div>
-          <div id="sinocv-name">Select a chat to start</div>
-          <div id="sinocv-phone"></div>
+          <div id="sinocv-name" style="font-size:16px;font-weight:600;margin-bottom:4px">Select a chat</div>
+          <div id="sinocv-phone" style="font-size:13px;color:#9ca3af"></div>
+          <button id="sinocv-btn-detect" style="margin-top:8px;padding:4px 12px;border-radius:4px;background:#374151;color:#e5e7eb;border:none;cursor:pointer;font-size:12px">🔍 Re-scan</button>
         </div>
         <div id="sinocv-form">
           <label class="sinocv-label">Name</label>
@@ -54,7 +51,6 @@
           <textarea id="sinocv-input-notes" rows="3" placeholder="Notes..."></textarea>
           <div id="sinocv-actions">
             <button id="sinocv-btn-save" class="sinocv-btn-primary">💾 Save</button>
-            <button id="sinocv-btn-history" class="sinocv-btn-secondary">📜 History</button>
           </div>
           <div id="sinocv-status"></div>
         </div>
@@ -62,41 +58,93 @@
     `;
     document.body.appendChild(panel);
 
-    // Events
     document.getElementById('sinocv-toggle').onclick = () => {
       const body = document.getElementById('sinocv-body');
       body.style.display = body.style.display === 'none' ? 'block' : 'none';
-      document.getElementById('sinocv-toggle').textContent =
-        body.style.display === 'none' ? '+' : '−';
+      document.getElementById('sinocv-toggle').textContent = body.style.display === 'none' ? '+' : '−';
     };
-
     document.getElementById('sinocv-btn-save').onclick = saveContact;
-    document.getElementById('sinocv-btn-history').onclick = loadHistory;
+    document.getElementById('sinocv-btn-detect').onclick = scanChat;
   }
 
-  // Observe WhatsApp header for active chat
-  function observe() {
-    const mo = new MutationObserver(() => {
-      const header = document.querySelector('header [data-testid="conversation-info-header"]');
-      if (header) {
-        const name = header.querySelector('[title]')?.title || header.textContent?.trim() || '';
-        const titleEl = document.querySelector('header [title]');
-        const phoneEl = document.querySelector('header [data-testid="conversation-info-header"]');
-        if (titleEl && name && !name.includes(',')) {
-          currentContact.name = name;
-          document.getElementById('sinocv-name').textContent = '👤 ' + name;
-          // Try to get phone from title attribute
-          const fullTitle = titleEl.getAttribute('title') || '';
-          const phoneMatch = fullTitle.match(/\+?\d{7,}/);
-          if (phoneMatch) {
-            currentContact.phone = phoneMatch[0];
-            document.getElementById('sinocv-phone').textContent = '📱 ' + phoneMatch[0];
-            loadContactData(phoneMatch[0]);
-          }
+  // Multiple strategies to detect contact info
+  function scanChat() {
+    let name = '', phone = '';
+
+    // Strategy 1: WhatsApp Web header title
+    const headerTitle = document.querySelector('header [title]');
+    if (headerTitle) {
+      const title = headerTitle.getAttribute('title') || '';
+      // Check if title contains "name, +phone" format
+      const parts = title.split(',');
+      if (parts.length >= 1) {
+        name = parts[0].trim();
+        // Check if second part is a phone number
+        if (parts.length >= 2 && /\d/.test(parts[1])) {
+          phone = parts[1].replace(/\s/g, '');
         }
       }
+    }
+
+    // Strategy 2: Look for the main header span
+    if (!name) {
+      const mainHeader = document.querySelector('header span[dir="auto"]');
+      if (mainHeader) name = mainHeader.textContent.trim();
+    }
+
+    // Strategy 3: Try data-testid attribute
+    if (!name) {
+      const testIdHeader = document.querySelector('[data-testid="conversation-info-header"]');
+      if (testIdHeader) name = testIdHeader.textContent.trim().split(',')[0];
+    }
+
+    // Strategy 4: URL-based phone extraction
+    if (!phone) {
+      const urlMatch = window.location.href.match(/phone=(\+\d+)/);
+      if (urlMatch) phone = urlMatch[1];
+    }
+
+    // Strategy 5: Try any element with phone-like text
+    if (!phone) {
+      const allText = document.querySelectorAll('span[dir="auto"]');
+      allText.forEach(el => {
+        const match = el.textContent.match(/\+?\d{8,15}/);
+        if (match && !phone) phone = match[0];
+      });
+    }
+
+    if (name) {
+      currentName = name;
+      document.getElementById('sinocv-name').innerHTML = '👤 <b>' + name + '</b>';
+      if (phone) {
+        currentPhone = phone;
+        document.getElementById('sinocv-phone').textContent = '📱 ' + phone;
+        loadContactData(phone);
+      } else {
+        document.getElementById('sinocv-phone').textContent = '⚠️ Phone not found — check URL';
+      }
+    } else {
+      document.getElementById('sinocv-name').textContent = '⚠️ Click a chat, then press Re-scan';
+    }
+  }
+
+  // Observe DOM for chat changes
+  function startObserver() {
+    let lastUrl = '';
+    const check = () => {
+      const url = window.location.href;
+      if (url !== lastUrl) {
+        lastUrl = url;
+        setTimeout(scanChat, 500);
+      }
+    };
+
+    // Also observe header changes
+    const mo = new MutationObserver(() => {
+      check();
     });
     mo.observe(document.body, { childList: true, subtree: true, characterData: true });
+    setInterval(check, 1000);
   }
 
   async function loadContactData(phone) {
@@ -118,15 +166,20 @@
 
   async function saveContact() {
     const status = document.getElementById('sinocv-status');
+    if (!currentPhone) {
+      status.textContent = 'No phone detected — click a chat first';
+      status.className = 'sinocv-status-error';
+      return;
+    }
     status.textContent = 'Saving...';
-    status.className = 'sinocv-status-loading';
+    status.className = '';
     try {
       const res = await fetch(API, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          phone: currentContact.phone,
-          name: document.getElementById('sinocv-input-name').value,
+          phone: currentPhone,
+          name: document.getElementById('sinocv-input-name').value || currentName,
           email: document.getElementById('sinocv-input-email').value,
           country: document.getElementById('sinocv-input-country').value,
           company: document.getElementById('sinocv-input-company').value,
@@ -149,23 +202,9 @@
     setTimeout(() => { status.textContent = ''; }, 2000);
   }
 
-  async function loadHistory() {
-    if (!currentContact.phone) return;
-    try {
-      const res = await fetch(`${API}/history?phone=${encodeURIComponent(currentContact.phone)}`);
-      if (!res.ok) return;
-      const data = await res.json();
-      if (data.history && data.history.length > 0) {
-        alert('History:\n' + data.history.map(h => `${h.time}: ${h.action}`).join('\n'));
-      } else {
-        alert('No history for this contact');
-      }
-    } catch(e) {}
-  }
-
-  // Start when WhatsApp Web loads
-  const check = setInterval(() => {
+  // Start
+  const timer = setInterval(() => {
     const app = document.querySelector('#app');
-    if (app) { clearInterval(check); setTimeout(init, 1000); }
+    if (app) { clearInterval(timer); setTimeout(init, 1500); }
   }, 500);
 })();
