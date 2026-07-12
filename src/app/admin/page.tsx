@@ -81,7 +81,18 @@ export default function AdminPage() {
   const cs = Object.entries(cmap).sort((a,b)=>b[1]-a[1]);
   const today = new Date().toISOString().split('T')[0], wk = (()=>{const d=new Date();d.setDate(d.getDate()-d.getDay());return d.toISOString().split('T')[0]})();
 
-  function st(owner:string){const cs2=my.filter(c=>c.owner===owner);return{owner,today:cs2.filter(c=>c.firstSeen?.startsWith(today)).length,week:cs2.filter(c=>c.firstSeen>=wk).length,piToday:cs2.flatMap(c=>(c.orders||[]).flatMap((o:any)=>(o.pis||[]).filter((p:any)=>p.date===today))).length,piWeek:cs2.flatMap(c=>(c.orders||[]).flatMap((o:any)=>(o.pis||[]).filter((p:any)=>p.date>=wk))).length,piMonth:cs2.flatMap(c=>(c.orders||[]).flatMap((o:any)=>(o.pis||[]).filter((p:any)=>p.date>=new Date().toISOString().slice(0,7))))).length}}
+  function st(owner:string){
+    const cs2=my.filter(c=>c.owner===owner);
+    const moStart=(new Date().toISOString().slice(0,7));
+    return {
+      owner,
+      today:cs2.filter(c=>c.firstSeen?.startsWith(today)).length,
+      week:cs2.filter(c=>c.firstSeen>=wk).length,
+      piToday:cs2.flatMap(c=>(c.orders||[]).flatMap((o:any)=>(o.pis||[]).filter((p:any)=>p.date===today))).length,
+      piWeek:cs2.flatMap(c=>(c.orders||[]).flatMap((o:any)=>(o.pis||[]).filter((p:any)=>p.date>=wk))).length,
+      piMonth:cs2.flatMap(c=>(c.orders||[]).flatMap((o:any)=>(o.pis||[]).filter((p:any)=>(p.date||'').startsWith(moStart)))).length,
+    };
+  }
 
   let ft = filter==='all'?my:my.filter(c=>c.category===filter);
   if(search) ft = ft.filter(c=>(c.name||''+c.phone||'').toLowerCase().includes(search.toLowerCase()));
