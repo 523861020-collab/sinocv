@@ -1,14 +1,17 @@
-// SINOCV Time Tracker — monitors WhatsApp activity
+// SINOCV Time Tracker — monitors WhatsApp activity + message sends
 (function(){
   'use strict';
   let lastActivity = Date.now();
-  let msgCount = 0;
   let sessionStart = Date.now();
   const USER = localStorage.getItem('sinocv_user') || 'unknown';
+  let lastSentPhone = '';
 
   function heartbeat() {
     lastActivity = Date.now();
-    // Save activity every 30 seconds
+    saveState();
+  }
+
+  function saveState() {
     const today = new Date().toISOString().split('T')[0];
     const key = `sinocv_time_${today}`;
     let data;
@@ -16,7 +19,6 @@
     data.user = USER;
     data.lastActivity = lastActivity;
     data.sessionStart = data.sessionStart || sessionStart;
-    data.msgCount = data.msgCount || 0;
     localStorage.setItem(key, JSON.stringify(data));
   }
 
@@ -25,58 +27,59 @@
   document.addEventListener('keydown', heartbeat);
   document.addEventListener('scroll', heartbeat);
 
-  // Monitor WhatsApp send button clicks
-  setInterval(() => {
-    // Detect sent messages via the send button or Enter in input
-    const sendBtn = document.querySelector('button[data-tab="11"]') || document.querySelector('span[data-icon="send"]');
-    if (sendBtn) {
-      const observer = new MutationObserver(() => heartbeat());
-      observer.observe(sendBtn, { attributes: true });
-    }
-    heartbeat();
-  }, 10000);
+  // Detect sent messages by watching for outgoing message bubbles
+  function watchSentMessages() {
+    const msgs = document.querySelectorAll('div.message-out');
+    msgs.forEach(msg => {
+      if (msg.dataset.sinocvTracked) return;
+      msg.dataset.sinocvTracked = '1';
+      
+      // Extract current chat phone from URL
+      const hash = window.location.hash;
+      const phoneMatch = hash.match(/phone=(\+\d+)/);
+      if (phoneMatch) {
+        lastSentPhone = phoneMatch[1];
+        const today = new Date().toISOString().split('T')[0];
+        const key = `sinocv_msgs_${today}`;
+        let data;
+        try { data = JSON.parse(localStorage.getItem(key) || '{}'); } catch(e) { data = {}; }
+        data[lastSentPhone] = (data[lastSentPhone] || 0) + 1;
+        data.user = USER;
+        localStorage.setItem(key, JSON.stringify(data));
+        
+        // Sync to backend immediately
+        fetch('https://truck-export-pi-xi.vercel.app/api/crm/time', {
+          method: 'POST', headers: {'Content-Type':'application/json'},
+          body: JSON.stringify({
+            user: USER, date: today, phone: lastSentPhone,
+            type: 'message_sent', timestamp: Date.now()
+          }),
+        }).catch(()=>{});
+      }
+    });
+  }
+
+  setInterval(watchSentMessages, 5000);
+  setInterval(heartbeat, 10000);
 
   // Listen for message inserts from CRM
   chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
     if (msg.type === 'insertScript') {
-      insertIntoChat(msg.text);
+      const input = document.querySelector('div[contenteditable="true"][role="textbox"]') 
+        || document.querySelector('footer div[contenteditable="true"]');
+      if (input) {
+        input.focus();
+        input.textContent = '';
+        document.execCommand('insertText', false, msg.text);
+        input.dispatchEvent(new Event('input', { bubbles: true }));
+      }
       sendResponse({ ok: true });
-      msgCount++;
       heartbeat();
     }
     return true;
   });
 
-  function insertIntoChat(text) {
-    const input = document.querySelector('div[contenteditable="true"][role="textbox"]') 
-      || document.querySelector('footer div[contenteditable="true"]');
-    if (!input) return;
-    input.focus();
-    input.textContent = '';
-    document.execCommand('insertText', false, text);
-    input.dispatchEvent(new Event('input', { bubbles: true }));
-  }
-
-  // Initial heartbeat
-  heartbeat();
-  // Save end-of-day data when tab closes
-  window.addEventListener('beforeunload', () => {
-    const today = new Date().toISOString().split('T')[0];
-    const key = `sinocv_time_${today}`;
-    let data;
-    try { data = JSON.parse(localStorage.getItem(key) || '{}'); } catch(e) { data = {}; }
-    data.endTime = Date.now();
-    data.date = today;
-    data.user = USER;
-    localStorage.setItem(key, JSON.stringify(data));
-    // Sync to backend
-    fetch('https://truck-export-pi-xi.vercel.app/api/crm/time', {
-      method: 'POST', headers: {'Content-Type':'application/json'},
-      body: JSON.stringify(data),
-    }).catch(()=>{});
-  });
-
-  // Also sync every 5 minutes while working
+  // Sync to backend periodically
   setInterval(() => {
     const today = new Date().toISOString().split('T')[0];
     const key = `sinocv_time_${today}`;
@@ -88,4 +91,31 @@
       body: JSON.stringify(data),
     }).catch(()=>{});
   }, 300000);
+
+  window.addEventListener('beforeunload', () => {
+    const today = new Date().toISOString().split('T')[0];
+    const key = `sinocv_time_${today}`;
+    let data;
+    try { data = JSON.parse(localStorage.getItem(key) || '{}'); } catch(e) { data = {}; }
+    data.endTime = Date.now();
+    data.date = today; data.user = USER;
+    localStorage.setItem(key, JSON.stringify(data));
+    fetch('https://truck-export-pi-xi.vercel.app/api/crm/time', {
+      method: 'POST', headers: {'Content-Type':'application/json'},
+      body: JSON.stringify(data),
+    }).catch(()=>{});
+  });
+
+  // Provide API for side panel to check if message was sent to this phone today
+  window._sinocvCheckSent = function(phone) {
+    const today = new Date().toISOString().split('T')[0];
+    const key = `sinocv_msgs_${today}`;
+    try {
+      const data = JSON.parse(localStorage.getItem(key) || '{}');
+      return (data[phone] || 0) > 0;
+    } catch(e) { return false; }
+  };
+
+  heartbeat();
 })();
+

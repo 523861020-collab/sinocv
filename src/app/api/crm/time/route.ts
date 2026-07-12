@@ -22,11 +22,18 @@ export async function GET(request: NextRequest) {
   // Aggregate by user+date
   const byDate: Record<string,any> = {};
   logs.forEach((l:any) => {
+    if (l.type === 'message_sent') return; // handled separately
     const key = `${l.date}_${l.user}`;
     if (!byDate[key] || l.endTime > (byDate[key].endTime||0)) {
       byDate[key] = l;
     }
   });
 
-  return NextResponse.json({ logs: Object.values(byDate).sort((a:any,b:any)=>b.date?.localeCompare(a.date||'')) });
+  // Separate message_sent events
+  const msgLogs = logs.filter((l:any) => l.type === 'message_sent');
+
+  return NextResponse.json({ 
+    logs: Object.values(byDate).sort((a:any,b:any)=>b.date?.localeCompare(a.date||'')),
+    msgs: msgLogs 
+  });
 }
