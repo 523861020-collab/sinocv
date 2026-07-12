@@ -3,20 +3,38 @@ const API = 'https://truck-export-pi-xi.vercel.app/api/crm';
 let contacts=[], fltr='all', cur=null, scripts=[], sCat='all', sLang='en';
 let currentUser='', isAdmin=false;
 const USERS = ['Li Shanlong', 'Sales 1', 'Sales 2', 'Sales 3', 'Sales 4'];
+// PINs (in production, store these securely)
+const PINS = {'Li Shanlong':'1234','Sales 1':'1111','Sales 2':'2222','Sales 3':'3333','Sales 4':'4444'};
+
+function doLogin(){
+  const user=document.getElementById('loginUser').value;
+  const pin=document.getElementById('loginPin').value;
+  const err=document.getElementById('loginError');
+  if(!user||!pin){err.textContent='Select user and enter PIN';err.style.display='block';return}
+  if(PINS[user]!==pin){err.textContent='Wrong PIN';err.style.display='block';return}
+  currentUser=user;isAdmin=user==='Li Shanlong';
+  localStorage.setItem('sinocv_user',user);
+  document.getElementById('loginScreen').style.display='none';
+  document.getElementById('mainApp').style.display='flex';
+  renderUserSelect();
+  loadScripts().then(()=>{loadContacts().then(()=>{renderDashboard();renderList();renderScriptCats();renderScripts()})});
+  setInterval(async()=>{await loadContacts();renderDashboard();renderList()},20000);
+}
 
 (async function init(){
-  currentUser = localStorage.getItem('sinocv_user') || '';
-  isAdmin = currentUser === 'Li Shanlong';
-  renderUserSelect();
-  await loadScripts();
-  await loadContacts();
-  renderDashboard();
-  renderList();
-  renderScriptCats();
-  renderScripts();
-  if(!currentUser) document.getElementById('curUser').style.background='#fef3c7';
-  // Auto-refresh contacts every 20 seconds
-  setInterval(async()=>{await loadContacts();renderDashboard();renderList()},20000);
+  // Check if already logged in (stored PIN session)
+  const saved=localStorage.getItem('sinocv_user');
+  if(saved&&PINS[saved]){
+    // Auto-login with saved user (PIN already verified)
+    currentUser=saved;isAdmin=saved==='Li Shanlong';
+    document.getElementById('loginScreen').style.display='none';
+    document.getElementById('mainApp').style.display='flex';
+    renderUserSelect();
+    await loadScripts();
+    await loadContacts();
+    renderDashboard();renderList();renderScriptCats();renderScripts();
+    setInterval(async()=>{await loadContacts();renderDashboard();renderList()},20000);
+  }
 })();
 
 function setUser(){
