@@ -16,6 +16,7 @@ export default function AdminPage() {
   const [tab, setTab] = useState('dash');
   const [timeLogs, setTimeLogs] = useState<any[]>([]);
   const [timeMonth, setTimeMonth] = useState(new Date().toISOString().slice(0,7));
+  const [followUps, setFollowUps] = useState<any>({});
   const [selected, setSelected] = useState<any>(null);
   const [search, setSearch] = useState('');
   const [filter, setFilter] = useState('all');
@@ -31,7 +32,11 @@ export default function AdminPage() {
   const loadTime = useCallback(async (month:string) => {
     try { const r = await fetch(`${API}/time?month=${month}`); if(r.ok){setTimeLogs((await r.json()).logs||[])} } catch(e){}
   }, []);
-  useEffect(() => { if(loggedIn && tab==='time') loadTime(timeMonth); }, [loggedIn,tab,timeMonth,loadTime]);
+  useEffect(() => { if(loggedIn && tab==='time') { loadTime(timeMonth); loadFups(); } }, [loggedIn,tab,timeMonth,loadTime]);
+
+  const loadFups = useCallback(async () => {
+    try { const r = await fetch(`${API}/followups?date=${new Date().toISOString().split('T')[0]}`); if(r.ok) setFollowUps(await r.json()); } catch(e){}
+  }, []);
 
   function doLogin(){ if(!user||!pin){setErr('请输入用户名和密码');return}; if(PINS[user]!==pin){setErr('密码错误');return}; setLoggedIn(true);setErr(''); }
 
@@ -183,6 +188,29 @@ export default function AdminPage() {
                 </div>
               </div>
             })}
+          </div>
+
+          {/* Follow-up compliance */}
+          <div style={{background:'#0d0d0d',border:'1px solid #1a1a1a',borderRadius:'10px',padding:'20px',marginBottom:'24px'}}>
+            <h3 style={{color:'#fff',fontSize:'14px',marginBottom:'12px'}}>📲 今日回访（自动检测 YCloud 发信记录）</h3>
+            <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(160px,1fr))',gap:'8px'}}>
+              <div style={{background:'#111',borderRadius:'8px',padding:'12px'}}>
+                <div style={{fontSize:'24px',fontWeight:700,color:'#34d399'}}>{followUps.followedUpToday||0}</div>
+                <div style={{fontSize:'11px',color:'#666'}}>今日已回访</div>
+              </div>
+              <div style={{background:'#111',borderRadius:'8px',padding:'12px'}}>
+                <div style={{fontSize:'24px',fontWeight:700,color:'#f59e0b'}}>{followUps.totalContacts||0}</div>
+                <div style={{fontSize:'11px',color:'#666'}}>总客户数</div>
+              </div>
+              <div style={{background:'#111',borderRadius:'8px',padding:'12px'}}>
+                <div style={{fontSize:'24px',fontWeight:700,color:'#f87171'}}>{overdue}</div>
+                <div style={{fontSize:'11px',color:'#666'}}>今日逾期未回</div>
+              </div>
+            </div>
+            <p style={{color:'#666',fontSize:'11px',marginTop:'8px'}}>
+              ✅ 回访判定：员工给<b style={{color:'#fff'}}>非今日新增</b>的客户发信息 = 回访成功<br/>
+              ❌ 未回访判定：逾期但今日未给该客户发信息
+            </p>
           </div>
 
           {/* Daily log */}
