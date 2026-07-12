@@ -35,17 +35,37 @@ export default function AdminPage() {
   }
 
   if(!loggedIn) return (
-    <div className="min-h-screen bg-black flex items-center justify-center">
-      <div className="bg-gray-900 border border-gray-800 rounded-xl p-8 w-80 text-center">
-        <div className="text-3xl mb-4">🚛</div>
-        <h2 className="text-amber-500 font-bold text-lg mb-6">SINOCV CRM</h2>
-        <select value={user} onChange={e=>setUser(e.target.value)} className="w-full mb-3 p-2 rounded bg-gray-800 border border-gray-700 text-white text-sm">
-          <option value="">Select user</option>
-          {USERS.map(u=><option key={u} value={u}>{u==='Li Shanlong'?'👑 ':''}{u}</option>)}
-        </select>
-        <input type="password" value={pin} onChange={e=>setPin(e.target.value)} placeholder="PIN" className="w-full mb-3 p-2 rounded bg-gray-800 border border-gray-700 text-white text-sm text-center" maxLength={6} onKeyDown={e=>e.key==='Enter'&&doLogin()} />
-        {err&&<p className="text-red-500 text-xs mb-2">{err}</p>}
-        <button onClick={doLogin} className="w-full bg-amber-500 text-black font-bold py-2 rounded hover:bg-amber-400">Login</button>
+    <div className="min-h-screen bg-black flex items-center justify-center relative overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-20 left-10 w-96 h-96 bg-amber-500 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-10 w-80 h-80 bg-amber-600 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="relative bg-gray-900/80 backdrop-blur border border-gray-700 rounded-2xl p-10 w-96 text-center shadow-2xl">
+        {/* Logo */}
+        <img src="/images/logo-new.png" alt="SINOCV" className="h-12 mx-auto mb-3" />
+        <h2 className="text-white font-bold text-xl mb-1">XINYUNTONG CRM</h2>
+        <p className="text-gray-500 text-xs mb-8">Commercial Vehicle Export Management</p>
+
+        <div className="space-y-3 text-left">
+          <div>
+            <label className="text-gray-400 text-xs">Username</label>
+            <input type="text" value={user} onChange={e=>setUser(e.target.value)} placeholder="Enter username" className="w-full mt-1 p-2.5 rounded-lg bg-gray-800 border border-gray-600 text-white text-sm focus:border-amber-500 focus:outline-none" />
+          </div>
+          <div>
+            <label className="text-gray-400 text-xs">Password</label>
+            <input type="password" value={pin} onChange={e=>setPin(e.target.value)} placeholder="Enter password" className="w-full mt-1 p-2.5 rounded-lg bg-gray-800 border border-gray-600 text-white text-sm focus:border-amber-500 focus:outline-none" onKeyDown={e=>e.key==='Enter'&&doLogin()} />
+          </div>
+        </div>
+
+        {err&&<p className="text-red-400 text-xs mt-3">{err}</p>}
+
+        <button onClick={doLogin} className="w-full mt-4 bg-amber-500 hover:bg-amber-400 text-black font-bold py-2.5 rounded-lg transition-colors">
+          Sign In
+        </button>
+
+        <p className="text-gray-600 text-[10px] mt-6">© 2026 XINYUNTONG CHINA LIMITED</p>
       </div>
     </div>
   );
