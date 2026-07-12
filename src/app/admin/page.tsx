@@ -4,8 +4,8 @@
 import { useState, useEffect, useCallback } from 'react';
 
 const API = '/api/crm';
-const USERS = ['Li Shanlong', '王晓涵', '毛正威', '赵欢乐', '杜飞跃'];
-const PINS: Record<string,string> = {'Li Shanlong':'1234','13001977959':'202502','王晓涵':'1111','毛正威':'2222','赵欢乐':'3333','杜飞跃':'4444'};
+const USERS = ['Li Shanlong', '王小涵', '毛振威', '赵欢乐', '杜飞跃'];
+const PINS: Record<string,string> = {'Li Shanlong':'1234','13001977959':'202502','王小涵':'1111','毛振威':'2222','赵欢乐':'3333','杜飞跃':'4444'};
 
 export default function AdminPage() {
   const [loggedIn, setLoggedIn] = useState(false);
