@@ -1,10 +1,11 @@
-// SINOCV CRM v4 — Full Order Tracking
+// SINOCV CRM v5 — Structured Order + L/C + Timeline + Dashboard
 const API = 'https://truck-export-pi-xi.vercel.app/api/crm';
-let contacts=[], fltr='all', cur=null, scripts=[], sCat='all', sLang='en';
+let contacts=[], fltr='all', cur=null, scripts=[], sCat='all', sLang='en', dashMode=true;
 
 (async function init(){
   await loadScripts();
   await loadContacts();
+  renderDashboard();
   renderList();
   renderScriptCats();
   renderScripts();
@@ -15,9 +16,47 @@ function switchTab(tab,el){
   el.classList.add('active');
   document.getElementById('tab-contacts').style.display=tab==='contacts'?'flex':'none';
   document.getElementById('tab-scripts').style.display=tab==='scripts'?'flex':'none';
+  document.getElementById('tab-dash').style.display=tab==='dash'?'flex':'none';
 }
 
-// ========== CONTACTS ==========
+// ===== DASHBOARD =====
+function renderDashboard(){
+  const orders=contacts.flatMap(c=>(c.orders||[]).map(o=>({...o,name:c.name||c.phone,phone:c.phone})));
+  const total=contacts.length;
+  const a=contacts.filter(c=>c.category==='A').length;
+  const b=contacts.filter(c=>c.category==='B').length;
+  const c=contacts.filter(c=>c.category==='C').length;
+  const totalOrders=orders.length;
+  const pendingOrders=orders.filter(o=>o.status==='pending'||o.status==='processing').length;
+  const shippedOrders=orders.filter(o=>o.status==='shipped').length;
+  const pis=orders.flatMap(o=>o.pis||[]).length;
+  const lcs=orders.filter(o=>o.paymentMethod==='LC').length;
+  const overdue=contacts.filter(c=>c.nextFollowUp&&c.nextFollowUp<=new Date().toISOString().split('T')[0]).length;
+
+  document.getElementById('dashContent').innerHTML=`
+    <div class="dash-grid">
+      <div class="dash-card"><div class="dash-num">${total}</div><div class="dash-lbl">Total Contacts</div></div>
+      <div class="dash-card"><div class="dash-num">${a}</div><div class="dash-lbl" style="color:#7c3aed">A-Class</div></div>
+      <div class="dash-card"><div class="dash-num">${b}</div><div class="dash-lbl" style="color:#2563eb">B-Class</div></div>
+      <div class="dash-card"><div class="dash-num">${c}</div><div class="dash-lbl" style="color:#6b7280">C-Class</div></div>
+      <div class="dash-card"><div class="dash-num">${totalOrders}</div><div class="dash-lbl">Orders</div></div>
+      <div class="dash-card"><div class="dash-num">${pendingOrders}</div><div class="dash-lbl" style="color:#d97706">In Progress</div></div>
+      <div class="dash-card"><div class="dash-num">${shippedOrders}</div><div class="dash-lbl" style="color:#059669">Shipped</div></div>
+      <div class="dash-card"><div class="dash-num">${pis}</div><div class="dash-lbl">PIs</div></div>
+      <div class="dash-card"><div class="dash-num">${lcs}</div><div class="dash-lbl">L/Cs</div></div>
+      <div class="dash-card"><div class="dash-num" style="color:#ef4444">${overdue}</div><div class="dash-lbl">⚠️ Overdue</div></div>
+    </div>
+    <div class="sec" style="margin:0 10px">🚢 Active Shipments</div>
+    <div style="padding:0 10px">${orders.filter(o=>o.status==='shipped').slice(0,5).map(o=>`
+      <div class="item" onclick="navigator.clipboard.writeText('${o.vins?.[0]||''}')">
+        <div class="n">${o.name} · ${o.orderNo||'#'}</div>
+        <div class="m">${o.vessel||''} · ETA ${o.eta||'?'} · ${(o.vins||[]).length} VINs</div>
+      </div>
+    `).join('')||'<div style="padding:8px;color:#999">No active shipments</div>'}</div>
+  `;
+}
+
+// ===== CONTACTS =====
 async function loadContacts(){
   try{const r=await fetch(API+'?action=all');if(r.ok){const d=await r.json();contacts=d.contacts||[]}}catch(e){}
 }
@@ -38,9 +77,19 @@ function renderList(){
 }
 
 function openDetail(phone){
-  cur=contacts.find(c=>c.phone===phone)||{phone,category:'C',orders:[]};
+  cur=contacts.find(c=>c.phone===phone)||{phone,category:'C',orders:[],timeline:[]};
   if(!cur.orders)cur.orders=[];
+  if(!cur.timeline)cur.timeline=[];
+  // Auto-detect country from phone
+  if(!cur.country&&cur.phone)cur.country=detectCountry(cur.phone);
   showDetail();
+}
+
+function detectCountry(phone){
+  const codes={'213':'Algeria','216':'Tunisia','212':'Morocco','20':'Egypt','234':'Nigeria','254':'Kenya','255':'Tanzania','233':'Ghana','221':'Senegal','225':'Côte d\'Ivoire','237':'Cameroon','971':'UAE','966':'Saudi Arabia','964':'Iraq','962':'Jordan','965':'Kuwait','974':'Qatar','973':'Bahrain','968':'Oman','967':'Yemen','84':'Vietnam','63':'Philippines','62':'Indonesia','95':'Myanmar','856':'Laos','855':'Cambodia','66':'Thailand','60':'Malaysia','65':'Singapore','86':'China','33':'France','49':'Germany','7':'Russia','1':'USA/Canada','44':'UK','39':'Italy','34':'Spain'};
+  const clean=phone.replace(/[^0-9]/g,'');
+  for(const[k,v]of Object.entries(codes))if(clean.startsWith(k))return v;
+  return '';
 }
 
 function showDetail(){
@@ -48,67 +97,99 @@ function showDetail(){
   document.getElementById('detTitle').textContent=c.name||c.phone||'New';
   document.getElementById('detCat').value=c.category||'';
   
+  // Timeline
+  const tl=(c.timeline||[]).slice(-10).reverse().map(t=>`<div style="font-size:9px;padding:2px 0;color:#888">${t.date?.slice(0,10)} · ${t.event}</div>`).join('');
+
   const dl=c.nextFollowUp?Math.ceil((new Date(c.nextFollowUp)-Date.now())/86400000):null;
   let remHTML='';
-  if(c.nextFollowUp){
-    remHTML=`<div class="rem"><span class="nx">${dl<=0?'⚠️ Overdue!':`📅 ${c.nextFollowUp} (${dl}d)`}</span><button class="btn btn-y" style="padding:2px 6px;font-size:9px" onclick="markDone()">✅ Done</button></div>`;
-  }
+  if(c.nextFollowUp)remHTML=`<div class="rem"><span class="nx">${dl<=0?'⚠️ Overdue!':`📅 ${c.nextFollowUp} (${dl}d)`}</span><button class="btn btn-y" style="padding:2px 6px;font-size:9px" onclick="markDone()">✅ Done</button></div>`;
 
-  const ordersHTML=(c.orders||[]).map((o,i)=>`
-    <div class="card">
-      <div class="card-hdr" onclick="toggleOrder(${i})">
-        <span>📦 Order #${i+1} ${o.orderNo||''} <span class="tag tag-${o.status||'pending'}">${o.status||'pending'}</span></span>
-        <span style="font-size:9px;color:#999">▼</span>
-      </div>
-      <div class="card-body" id="ordBody${i}">
-        <label>Order No</label><input value="${o.orderNo||''}" id="ordNo${i}">
-        <div class="row2"><div><label>Date</label><input type="date" value="${o.date||''}" id="ordDate${i}"></div><div><label>Status</label><select id="ordStatus${i}">${['pending','processing','shipped','delivered'].map(s=>`<option ${o.status===s?'selected':''}>${s}</option>`).join('')}</select></div></div>
-        <label>Requirements (model, qty, color)</label><textarea id="ordReq${i}" rows="2">${o.requirements||''}</textarea>
-        
-        <div class="sec">💵 Payment</div>
-        <div class="row2"><div><label>Deposit Date</label><input type="date" value="${o.depositDate||''}" id="ordDep${i}"></div><div><label>Deposit Amount</label><input value="${o.depositAmt||''}" id="ordDepAmt${i}" placeholder="$"></div></div>
-        <div class="row2"><div><label>Balance Date</label><input type="date" value="${o.balanceDate||''}" id="ordBal${i}"></div><div><label>Balance Amount</label><input value="${o.balanceAmt||''}" id="ordBalAmt${i}" placeholder="$"></div></div>
-        
-        <div class="sec">📄 PI Documents <button class="btn btn-y" style="padding:2px 6px;font-size:9px" onclick="addPI(${i})">+ PI</button></div>
-        <div id="piList${i}">${(o.pis||[]).map((p,j)=>`<div class="pi-row"><span>${p.number}</span><span style="font-size:9px;color:#999">${p.date||''}</span><button style="color:#ef4444;background:none;border:none;cursor:pointer;font-size:10px" onclick="removePI(${i},'${p.number}')">✕</button></div>`).join('')}</div>
-        <div style="display:flex;gap:4px;margin-top:3px"><input id="piNum${i}" placeholder="PI number" style="flex:1;font-size:10px;padding:3px 6px"><input type="date" id="piDate${i}" style="width:90px;font-size:10px;padding:3px 4px"></div>
-        
-        <div class="sec">🚢 Shipping</div>
-        <div class="row2"><div><label>Ship Date</label><input type="date" value="${o.shipDate||''}" id="ordShip${i}"></div><div><label>ETA</label><input type="date" value="${o.eta||''}" id="ordEta${i}"></div></div>
-        <div class="row2"><div><label>Vessel</label><input value="${o.vessel||''}" id="ordVessel${i}" placeholder="Vessel name"></div><div><label>Booking No</label><input value="${o.bookingNo||''}" id="ordBkN${i}"></div></div>
-        
-        <div class="sec">🔢 VIN Codes</div>
-        <textarea id="ordVin${i}" rows="2" placeholder="One VIN per line">${(o.vins||[]).join('\n')}</textarea>
-        
-        <div style="display:flex;gap:6px;margin-top:6px"><button class="btn btn-r" style="flex:1" onclick="deleteOrder(${i})">🗑 Delete</button></div>
-      </div>
-    </div>
-  `).join('');
+  // Orders
+  const ordersHTML=(c.orders||[]).map((o,i)=>renderOrderCard(o,i)).join('');
 
   document.getElementById('detBody').innerHTML=remHTML+`
-    <label>Category</label><select id="detCat2" onchange="onCatChange()">${['','A','B','C'].map(v=>`<option value="${v}" ${(c.category||'')===v?'selected':''}>${v||'C·New'}${v==='A'?'·10d':v==='B'?'·30d':v==='C'?'·60d':''}</option>`).join('')}</select>
     <div class="row2"><div><label>Phone</label><input id="detPhone" value="${c.phone||''}" readonly style="opacity:.5"></div><div><label>Name</label><input id="detName" value="${c.name||''}"></div></div>
-    <div class="row2"><div><label>Email</label><input type="email" id="detEmail" value="${c.email||''}"></div><div><label>Country</label><input id="detCountry" value="${c.country||''}"></div></div>
+    <div class="row2"><div><label>Email</label><input type="email" id="detEmail" value="${c.email||''}"></div><div><label>Country</label><select id="detCountry">${['',...countryList()].map(v=>`<option value="${v}" ${(c.country||'')===v?'selected':''}>${v||'Auto'}</option>`).join('')}</select></div></div>
     <div class="row2"><div><label>Company</label><input id="detCompany" value="${c.company||''}"></div><div><label>Product</label><select id="detProduct">${['','tractor','dump','mixer','trailer','machinery','mining','light'].map(v=>`<option value="${v}" ${(c.product||'')===v?'selected':''}>${v||'Select'}</option>`).join('')}</select></div></div>
     <label>Notes</label><textarea id="detNotes" rows="2">${c.notes||''}</textarea>
-    <div class="sec">📦 Orders <button class="btn btn-y" style="padding:2px 6px;font-size:9px" onclick="addOrder()">+ New Order</button></div>
+    
+    <div class="sec" style="margin-top:10px">🕐 Timeline</div>
+    <div style="max-height:80px;overflow-y:auto;padding:4px 0">${tl||'<div style="font-size:9px;color:#999">No events yet</div>'}</div>
+    
+    <div class="sec">📦 Orders <button class="btn btn-y" style="padding:2px 6px;font-size:9px" onclick="addOrder()">+ New</button></div>
     <div id="ordersList">${ordersHTML}</div>
     <div style="display:flex;gap:6px;margin-top:10px"><button class="btn btn-y" style="flex:1" onclick="saveDetail()">💾 Save</button></div>
   `;
-
-  // Sync secondary category select
-  document.getElementById('detCat2').addEventListener('change',function(){document.getElementById('detCat').value=this.value;});
   document.getElementById('detail').classList.add('show');
 }
 
+function countryList(){
+  return ['Algeria','Tunisia','Morocco','Egypt','Nigeria','Kenya','Tanzania','Ghana','Senegal','Côte d\'Ivoire','Cameroon','UAE','Saudi Arabia','Iraq','Jordan','Kuwait','Qatar','Vietnam','Philippines','Indonesia','Myanmar','France','UK','USA','Russia'];
+}
+
+function renderOrderCard(o,i){
+  const pm=o.paymentMethod||'TT';
+  const cur=o.currency||'USD';
+  return `<div class="card">
+    <div class="card-hdr" onclick="toggleOrder(${i})">
+      <span>📦 Order #${i+1} ${o.orderNo||''} <span class="tag tag-${o.status||'pending'}">${o.status||'pending'}</span></span>
+      <span style="font-size:9px;color:#999">▼</span>
+    </div>
+    <div class="card-body" id="ordBody${i}">
+      <!-- 1. 报价 -->
+      <div class="sec">💰 Quotation</div>
+      <div class="row2"><div><label>Order No</label><input value="${o.orderNo||''}" id="ordNo${i}"></div><div><label>Date</label><input type="date" value="${o.date||''}" id="ordDate${i}"></div></div>
+      <label>Requirements (model, qty, color)</label><textarea id="ordReq${i}" rows="2">${o.requirements||''}</textarea>
+      <div class="row2"><div><label>Total Amount</label><input value="${o.totalAmt||''}" id="ordAmt${i}" placeholder="$"></div><div><label>Currency</label><select id="ordCur${i}">${['USD','EUR','CNY'].map(v=>`<option value="${v}" ${cur===v?'selected':''}>${v}</option>`).join('')}</select></div></div>
+
+      <!-- 2. 付款方式 -->
+      <div class="sec">💵 Payment</div>
+      <div><label>Method</label><select id="ordPM${i}" onchange="toggleLCFields(${i},this.value)">${['TT','LC'].map(v=>`<option value="${v}" ${pm===v?'selected':''}>${v==='TT'?'T/T (电汇)':'L/C (信用证)'}</option>`).join('')}</select></div>
+      <div class="row2" style="margin-top:4px"><div><label>Deposit Date</label><input type="date" value="${o.depositDate||''}" id="ordDep${i}"></div><div><label>Deposit Amount</label><input value="${o.depositAmt||''}" id="ordDepAmt${i}" placeholder="$"></div></div>
+      <div class="row2"><div><label>Balance Date</label><input type="date" value="${o.balanceDate||''}" id="ordBal${i}"></div><div><label>Balance Amount</label><input value="${o.balanceAmt||''}" id="ordBalAmt${i}" placeholder="$"></div></div>
+
+      <!-- 3. 信用证 -->
+      <div id="lcBlock${i}" style="display:${pm==='LC'?'block':'none'}">
+        <div class="sec">🏦 L/C (信用证)</div>
+        <div class="row2"><div><label>L/C Opening Date</label><input type="date" value="${o.lcOpenDate||''}" id="ordLcOpen${i}"></div><div><label>L/C Amount</label><input value="${o.lcAmt||''}" id="ordLcAmt${i}" placeholder="$"></div></div>
+        <div class="row2"><div><label>Latest Ship Date</label><input type="date" value="${o.lcShipDate||''}" id="ordLcShip${i}"></div><div><label>Latest Departure</label><input type="date" value="${o.lcDepartDate||''}" id="ordLcDepart${i}"></div></div>
+        <label>Docs Presented Date</label><input type="date" value="${o.docsDate||''}" id="ordDocs${i}">
+        <div class="row2"><div><label>Payment Received</label><input type="date" value="${o.lcPayDate||''}" id="ordLcPay${i}"></div><div><label>Amount</label><input value="${o.lcPayAmt||''}" id="ordLcPayAmt${i}" placeholder="$"></div></div>
+        <label>L/C Note</label><input value="${o.lcNote||''}" id="ordLcNote${i}" placeholder="After docs presentation...">
+      </div>
+
+      <!-- 4. 传的信息 -->
+      <div class="sec">📄 PI & Docs</div>
+      <label>PI Sent Date</label><input type="date" value="${o.piSentDate||''}" id="ordPiSent${i}">
+      <div style="margin-top:4px"><span style="font-size:10px;color:#888">PI List</span> <button class="btn btn-y" style="padding:1px 5px;font-size:9px" onclick="addPI(${i})">+</button></div>
+      <div id="piList${i}">${(o.pis||[]).map((p,j)=>`<div class="pi-row"><span>${p.number}</span><span style="font-size:9px;color:#999">${p.date||''}</span><button style="color:#ef4444;background:none;border:none;cursor:pointer;font-size:10px" onclick="removePI(${i},'${p.number}')">✕</button></div>`).join('')}</div>
+      <div style="display:flex;gap:4px;margin-top:3px"><input id="piNum${i}" placeholder="PI number" style="flex:1;font-size:10px;padding:3px 6px"><input type="date" id="piDate${i}" style="width:90px;font-size:10px;padding:3px 4px"></div>
+
+      <!-- 5. Shipping -->
+      <div class="sec">🚢 Shipping</div>
+      <div><label>Status</label><select id="ordStatus${i}">${['pending','processing','shipped','delivered'].map(s=>`<option ${o.status===s?'selected':''}>${s}</option>`).join('')}</select></div>
+      <div class="row2" style="margin-top:4px"><div><label>Ship Date</label><input type="date" value="${o.shipDate||''}" id="ordShip${i}"></div><div><label>ETA</label><input type="date" value="${o.eta||''}" id="ordEta${i}"></div></div>
+      <div class="row2"><div><label>Vessel</label><input value="${o.vessel||''}" id="ordVessel${i}"></div><div><label>Booking No</label><input value="${o.bookingNo||''}" id="ordBkN${i}"></div></div>
+      
+      <label>VIN Codes</label><textarea id="ordVin${i}" rows="2" placeholder="One VIN per line">${(o.vins||[]).join('\n')}</textarea>
+      
+      <div style="display:flex;gap:4px;margin-top:6px"><button class="btn btn-r" style="flex:1;font-size:9px" onclick="deleteOrder(${i})">🗑</button></div>
+    </div>
+  </div>`;
+}
+
+function toggleLCFields(i,method){
+  document.getElementById('lcBlock'+i).style.display=method==='LC'?'block':'none';
+}
+
 function toggleOrder(i){
-  const b=document.getElementById('ordBody'+i);
-  b.classList.toggle('open');
+  document.getElementById('ordBody'+i).classList.toggle('open');
 }
 
 function addOrder(){
   if(!cur.orders)cur.orders=[];
-  cur.orders.push({status:'pending',pis:[],vins:[],date:new Date().toISOString().split('T')[0]});
+  cur.orders.push({status:'pending',pis:[],vins:[],date:new Date().toISOString().split('T')[0],paymentMethod:'TT',currency:'USD'});
+  addTimeline('New order created');
   showDetail();
 }
 
@@ -124,6 +205,7 @@ function addPI(oi){
   if(!n)return;
   if(!cur.orders[oi].pis)cur.orders[oi].pis=[];
   cur.orders[oi].pis.push({number:n,date:d});
+  addTimeline('PI '+n+' created');
   showDetail();
 }
 
@@ -132,117 +214,64 @@ function removePI(oi,num){
   showDetail();
 }
 
+function addTimeline(event){
+  if(!cur.timeline)cur.timeline=[];
+  cur.timeline.push({date:new Date().toISOString(),event});
+}
+
 async function saveDetail(){
   const c=cur;
-  // Read all order fields
   (c.orders||[]).forEach((o,i)=>{
-    o.orderNo=document.getElementById('ordNo'+i)?.value||o.orderNo||'';
-    o.date=document.getElementById('ordDate'+i)?.value||o.date||'';
-    o.status=document.getElementById('ordStatus'+i)?.value||o.status||'pending';
-    o.requirements=document.getElementById('ordReq'+i)?.value||'';
-    o.depositDate=document.getElementById('ordDep'+i)?.value||'';
-    o.depositAmt=document.getElementById('ordDepAmt'+i)?.value||'';
-    o.balanceDate=document.getElementById('ordBal'+i)?.value||'';
-    o.balanceAmt=document.getElementById('ordBalAmt'+i)?.value||'';
-    o.shipDate=document.getElementById('ordShip'+i)?.value||'';
-    o.eta=document.getElementById('ordEta'+i)?.value||'';
-    o.vessel=document.getElementById('ordVessel'+i)?.value||'';
-    o.bookingNo=document.getElementById('ordBkN'+i)?.value||'';
-    const vinText=document.getElementById('ordVin'+i)?.value||'';
-    o.vins=vinText.split('\n').map(v=>v.trim()).filter(Boolean);
+    o.orderNo=el('ordNo'+i)||o.orderNo;o.date=el('ordDate'+i)||o.date;
+    o.status=el('ordStatus'+i)||o.status;o.requirements=el('ordReq'+i)||'';
+    o.totalAmt=el('ordAmt'+i)||'';o.currency=el('ordCur'+i)||'USD';
+    o.paymentMethod=el('ordPM'+i)||'TT';
+    o.depositDate=el('ordDep'+i)||'';o.depositAmt=el('ordDepAmt'+i)||'';
+    o.balanceDate=el('ordBal'+i)||'';o.balanceAmt=el('ordBalAmt'+i)||'';
+    o.lcOpenDate=el('ordLcOpen'+i)||'';o.lcAmt=el('ordLcAmt'+i)||'';
+    o.lcShipDate=el('ordLcShip'+i)||'';o.lcDepartDate=el('ordLcDepart'+i)||'';
+    o.docsDate=el('ordDocs'+i)||'';o.lcPayDate=el('ordLcPay'+i)||'';o.lcPayAmt=el('ordLcPayAmt'+i)||'';
+    o.lcNote=el('ordLcNote'+i)||'';
+    o.piSentDate=el('ordPiSent'+i)||'';
+    o.shipDate=el('ordShip'+i)||'';o.eta=el('ordEta'+i)||'';
+    o.vessel=el('ordVessel'+i)||'';o.bookingNo=el('ordBkN'+i)||'';
+    o.vins=(el('ordVin'+i)||'').split('\n').map(v=>v.trim()).filter(Boolean);
   });
-
-  c.category=document.getElementById('detCat')?.value||c.category||'';
-  c.phone=document.getElementById('detPhone')?.value||c.phone;
-  c.name=document.getElementById('detName')?.value||'';
-  c.email=document.getElementById('detEmail')?.value||'';
-  c.country=document.getElementById('detCountry')?.value||'';
-  c.company=document.getElementById('detCompany')?.value||'';
-  c.product=document.getElementById('detProduct')?.value||'';
-  c.notes=document.getElementById('detNotes')?.value||'';
-
+  c.category=el('detCat');c.name=el('detName');c.email=el('detEmail');
+  c.country=el('detCountry')||detectCountry(c.phone);c.company=el('detCompany');
+  c.product=el('detProduct');c.notes=el('detNotes');
   try{
     const r=await fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(c)});
-    if(r.ok){const d=await r.json();cur=d.contact;await loadContacts();renderList();toast('✓ Saved');showDetail();}
+    if(r.ok){const d=await r.json();cur=d.contact;await loadContacts();renderList();renderDashboard();toast('✓ Saved');showDetail();}
   }catch(e){toast('Error',true)}
 }
 
-function onCatChange(){
-  cur.category=document.getElementById('detCat')?.value||document.getElementById('detCat2')?.value||'';
-  if(cur.category&&!cur.nextFollowUp){
-    const days=cur.category==='A'?10:cur.category==='B'?30:60;
-    const d=new Date();d.setDate(d.getDate()+days);
-    cur.nextFollowUp=d.toISOString().split('T')[0];
-  }
-}
+function el(id){return document.getElementById(id)?.value||''}
+function onCatChange(){cur.category=document.getElementById('detCat')?.value;if(cur.category&&!cur.nextFollowUp){const days=cur.category==='A'?10:cur.category==='B'?30:60;const d=new Date();d.setDate(d.getDate()+days);cur.nextFollowUp=d.toISOString().split('T')[0]}}
+async function markDone(){const days=cur.category==='A'?10:cur.category==='B'?30:60;const d=new Date();d.setDate(d.getDate()+days);try{const r=await fetch(API.replace('/crm','')+'/crm/holidays/next?from='+d.toISOString().split('T')[0]);if(r.ok){const h=await r.json();if(h.nextWorkday)d.setTime(Date.parse(h.nextWorkday))}}catch(e){}cur.nextFollowUp=d.toISOString().split('T')[0];addTimeline('Follow-up done → next '+cur.nextFollowUp);await saveDetail()}
+function closeDetail(){document.getElementById('detail').classList.remove('show');cur=null}
 
-async function markDone(){
-  const days=cur.category==='A'?10:cur.category==='B'?30:60;
-  const d=new Date();d.setDate(d.getDate()+days);
-  try{
-    const r=await fetch(API.replace('/crm','')+'/crm/holidays/next?from='+d.toISOString().split('T')[0]);
-    if(r.ok){const h=await r.json();if(h.nextWorkday)d.setTime(Date.parse(h.nextWorkday));}
-  }catch(e){}
-  cur.nextFollowUp=d.toISOString().split('T')[0];
-  await saveDetail();
-}
-
-function closeDetail(){document.getElementById('detail').classList.remove('show');cur=null;}
-
-// ========== SCRIPTS ==========
+// ===== SCRIPTS =====
 async function loadScripts(){
-  try{
-    const r=await fetch(chrome.runtime.getURL('scripts.json'));
-    if(r.ok){scripts=await r.json();saveScripts();return}
-  }catch(e){}
-  const raw=localStorage.getItem('sinocv_scripts_v2');
-  if(raw){scripts=JSON.parse(raw);return}
-  scripts=[{id:'1',cat:'General',title:'Greeting',en:'Hello sir, this is Li from China.',fr:'Bonjour monsieur, je suis Li de Chine.',ar:'مرحباً سيدي، أنا لي من الصين.'}];
-  saveScripts();
+  try{const r=await fetch(chrome.runtime.getURL('scripts.json'));if(r.ok){scripts=await r.json();saveScripts();return}}catch(e){}
+  const raw=localStorage.getItem('sinocv_scripts_v2');if(raw){scripts=JSON.parse(raw);return}
+  scripts=[{id:'1',cat:'General',title:'Greeting',en:'Hello sir, this is Li from China.',fr:'Bonjour monsieur, je suis Li de Chine.',ar:'مرحباً سيدي، أنا لي من الصين.'}];saveScripts()
 }
 function saveScripts(){localStorage.setItem('sinocv_scripts_v2',JSON.stringify(scripts))}
+function setLang(l,el){sLang=l;document.querySelectorAll('.lang-bar button').forEach(b=>b.classList.remove('active'));el.classList.add('active');renderScripts()}
+function renderScriptCats(){const cats=new Set(scripts.map(s=>s.cat));document.getElementById('scriptCats').innerHTML=['all',...cats].slice(0,20).map(c=>`<button class="cats-btn${sCat===c?' active':''}" onclick="fltrScript('${c}')">${c}</button>`).join('')}
+function fltrScript(c){sCat=c;renderScriptCats();renderScripts()}
+function renderScripts(){const q=(document.getElementById('scriptSearch')?.value||'').toLowerCase();let f=sCat==='all'?scripts:scripts.filter(s=>s.cat===sCat);if(q)f=f.filter(s=>(s.title+(s[sLang]||'')).toLowerCase().includes(q));document.getElementById('scriptList').innerHTML=f.map(s=>`<div class="scard" onclick="useScript('${s.id}')" style="border-left:3px solid ${sLang==='en'?'#2563eb':sLang==='fr'?'#dc2626':'#16a34a'}"><div class="t">${s.title||(s[sLang]||'').slice(0,25)}</div><div class="p">${(s[sLang]||s.en||'').slice(0,60)}</div></div>`).join('')||'<div style="padding:16px;text-align:center;color:#999">No scripts</div>'}
+function useScript(id){const s=scripts.find(sc=>sc.id===id);if(!s)return;const text=s[sLang]||s.en||'';chrome.tabs.query({url:'*://web.whatsapp.com/*'},tabs=>{if(tabs.length>0){chrome.tabs.sendMessage(tabs[0].id,{type:'insertScript',text},resp=>{if(resp?.ok){toast('✅ #'+id);document.getElementById('scriptInfo').textContent='#'+id+' ✓'}else toast('Error',true)})}else{navigator.clipboard.writeText(text).then(()=>toast('📋 #'+id))}})}
+function jumpToScript(){const num=document.getElementById('scriptNum').value.trim();if(!num)return;const s=scripts.find(sc=>sc.id===num);if(s)useScript(s.id);else toast('Not found: #'+num,true)}
+function toast(msg,err){const t=document.createElement('div');t.className='toast';t.textContent=msg;t.style.background=err?'#dc2626':'#059669';document.body.appendChild(t);setTimeout(()=>t.remove(),2000)}
 
-function setLang(l,el){
-  sLang=l;document.querySelectorAll('.lang-bar button').forEach(b=>b.classList.remove('active'));el.classList.add('active');renderScripts();
+// Excel Export
+function exportAll(){
+  let csv='Name,Phone,Country,Category,Order#,Status,Requirements,Total,Currency,Payment,Deposit,Balance,Vessel,ETA,VINs\n';
+  contacts.forEach(c=>{(c.orders||[]).forEach(o=>{
+    csv+=`${c.name||''},${c.phone||''},${c.country||''},${c.category||''},${o.orderNo||''},${o.status||''},${(o.requirements||'').replace(/,/g,' ')},${o.totalAmt||''},${o.currency||''},${o.paymentMethod||''},${o.depositAmt||''},${o.balanceAmt||''},${o.vessel||''},${o.eta||''},${(o.vins||[]).join(';')}\n`;
+  })});
+  download('sinocv_export.csv','\uFEFF'+csv);
 }
-function renderScriptCats(){
-  const cats=new Set(scripts.map(s=>s.cat));
-  document.getElementById('scriptCats').innerHTML=['all',...cats].slice(0,20).map(c=>`<button class="cats-btn${sCat===c?' active':''}" onclick="fltrScript('${c}',this)">${c}</button>`).join('');
-}
-function fltrScript(c,el){sCat=c;renderScriptCats();renderScripts()}
-function renderScripts(){
-  const q=(document.getElementById('scriptSearch')?.value||'').toLowerCase();
-  let f=sCat==='all'?scripts:scripts.filter(s=>s.cat===sCat);
-  if(q)f=f.filter(s=>(s.title+(s[sLang]||'')).toLowerCase().includes(q));
-  document.getElementById('scriptList').innerHTML=f.map(s=>`
-    <div class="scard" onclick="useScript('${s.id}')" style="border-left:3px solid ${sLang==='en'?'#2563eb':sLang==='fr'?'#dc2626':'#16a34a'}">
-      <div class="t">${s.title||(s[sLang]||'').slice(0,25)}</div>
-      <div class="p">${(s[sLang]||s.en||'').slice(0,60)}</div>
-    </div>
-  `).join('')||'<div style="padding:16px;text-align:center;color:#999">No scripts</div>';
-}
-
-function useScript(id){
-  const s=scripts.find(sc=>sc.id===id);if(!s)return;
-  const text=s[sLang]||s.en||'';
-  chrome.tabs.query({url:'*://web.whatsapp.com/*'},tabs=>{
-    if(tabs.length>0){
-      chrome.tabs.sendMessage(tabs[0].id,{type:'insertScript',text},resp=>{
-        if(resp?.ok){toast('✅ #'+id);document.getElementById('scriptInfo').textContent='#'+id+' ✓'}
-        else toast('Error',true)
-      });
-    }else{navigator.clipboard.writeText(text).then(()=>toast('📋 #'+id))}
-  });
-}
-
-function jumpToScript(){
-  const num=document.getElementById('scriptNum').value.trim();if(!num)return;
-  const s=scripts.find(sc=>sc.id===num);
-  if(s)useScript(s.id);else toast('Not found: #'+num,true);
-}
-
-function toast(msg,err){
-  const t=document.createElement('div');t.className='toast';
-  t.textContent=msg;t.style.background=err?'#dc2626':'#059669';
-  document.body.appendChild(t);setTimeout(()=>t.remove(),2000);
-}
+function download(filename,text){const b=new Blob([text],{type:'text/csv;charset=utf-8'});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=filename;a.click();URL.revokeObjectURL(a.href)}

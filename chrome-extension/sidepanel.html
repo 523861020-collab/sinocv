@@ -73,15 +73,23 @@ body{font-family:-apple-system,sans-serif;background:#fff;color:#1a1a1a;height:1
 .lang-bar button.active{background:#f59e0b;color:#fff;border-color:#f59e0b}
 .numin{display:flex;gap:4px;padding:4px 8px}
 .numin input{width:55px;padding:4px 6px;border-radius:3px;border:1px solid #e5e5e5;font-size:10px;outline:none}
+.dash-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:8px 10px}
+.dash-card{background:#f8f8f8;border:1px solid #f0f0f0;border-radius:6px;padding:8px;text-align:center}
+.dash-num{font-size:20px;font-weight:700;color:#f59e0b}
+.dash-lbl{font-size:9px;color:#999;margin-top:2px}
 </style>
 </head>
 <body>
 
-<div class="hdr"><h2>🚛 SINOCV CRM</h2></div>
+<div class="hdr"><h2>🚛 SINOCV CRM</h2><button class="btn btn-o" style="margin-left:auto;font-size:9px;padding:2px 6px" onclick="exportAll()">📥 Export</button></div>
 <div class="tab-row">
-  <button class="active" onclick="switchTab('contacts',this)">📋 Contacts</button>
+  <button class="active" onclick="switchTab('dash',this)">📊 Dash</button>
+  <button onclick="switchTab('contacts',this)">📋 Contacts</button>
   <button onclick="switchTab('scripts',this)">💬 Scripts</button>
 </div>
+
+<!-- DASHBOARD -->
+<div id="tab-dash" style="flex:1;overflow-y:auto" id="dashContent"><div style="padding:16px;text-align:center;color:#999">Loading...</div></div>
 
 <!-- CONTACTS -->
 <div id="tab-contacts" style="flex:1;display:flex;flex-direction:column">
