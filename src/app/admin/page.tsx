@@ -30,26 +30,40 @@ export default function AdminPage() {
   function doLogin(){ if(!user||!pin){setErr('Select user and enter PIN');return}; if(PINS[user]!==pin){setErr('Wrong PIN');return}; setLoggedIn(true);setErr(''); }
 
   if(!loggedIn) return (
-    <div className="min-h-screen bg-black flex flex-col items-center justify-center relative overflow-hidden">
-      <div className="absolute inset-0">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-amber-500/5 rounded-full blur-[120px]"></div>
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-amber-600/3 rounded-full blur-[100px]"></div>
-        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-amber-400/3 rounded-full blur-[100px]"></div>
-      </div>
-      <div className="relative mb-10 text-center">
-        <img src="/images/logo-new.png" alt="SINOCV" className="h-16 mx-auto mb-4" />
-        <h1 className="text-white text-2xl font-bold tracking-wide">XINYUNTONG CRM</h1>
-        <p className="text-gray-500 text-sm mt-1">Commercial Vehicle Export Management</p>
-      </div>
-      <div className="relative w-[360px] bg-gray-900/60 backdrop-blur-xl border border-gray-700/50 rounded-2xl p-8 shadow-2xl">
-        <div className="space-y-4">
-          <div><label className="block text-gray-400 text-xs mb-1.5 ml-1">Username</label><input type="text" value={user} onChange={e=>setUser(e.target.value)} placeholder="Enter username" className="w-full p-3 rounded-xl bg-black/50 border border-gray-600/50 text-white text-sm focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500/50 transition-all" /></div>
-          <div><label className="block text-gray-400 text-xs mb-1.5 ml-1">Password</label><input type="password" value={pin} onChange={e=>setPin(e.target.value)} placeholder="Enter password" className="w-full p-3 rounded-xl bg-black/50 border border-gray-600/50 text-white text-sm focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500/50 transition-all" onKeyDown={e=>e.key==='Enter'&&doLogin()} /></div>
+    <div className="min-h-screen bg-black flex items-center justify-center relative">
+      {/* Subtle grid pattern */}
+      <div className="absolute inset-0 opacity-[0.03]" style={{
+        backgroundImage: 'radial-gradient(circle, #f59e0b 1px, transparent 1px)',
+        backgroundSize: '40px 40px'
+      }}></div>
+
+      {/* Corner accents */}
+      <div className="absolute top-0 left-0 w-64 h-64 bg-amber-500/3 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 right-0 w-64 h-64 bg-amber-500/3 rounded-full blur-3xl"></div>
+
+      {/* Login Card — perfectly centered */}
+      <div className="relative w-[380px] bg-gray-950 border border-gray-800 rounded-2xl p-8 shadow-2xl">
+        <div className="text-center mb-8">
+          <img src="/images/logo-new.png" alt="SINOCV" className="h-10 mx-auto mb-4" />
+          <h2 className="text-white font-bold text-lg">XINYUNTONG CRM</h2>
+          <p className="text-gray-600 text-xs mt-1">Sign in to your account</p>
         </div>
+
+        <div className="space-y-4">
+          <div>
+            <input type="text" value={user} onChange={e=>setUser(e.target.value)} placeholder="Username" className="w-full p-3 rounded-lg bg-black border border-gray-800 text-white text-sm placeholder-gray-600 focus:border-amber-500 focus:outline-none transition-colors" />
+          </div>
+          <div>
+            <input type="password" value={pin} onChange={e=>setPin(e.target.value)} placeholder="Password" className="w-full p-3 rounded-lg bg-black border border-gray-800 text-white text-sm placeholder-gray-600 focus:border-amber-500 focus:outline-none transition-colors" onKeyDown={e=>e.key==='Enter'&&doLogin()} />
+          </div>
+        </div>
+
         {err&&<p className="text-red-400 text-xs mt-4 text-center">{err}</p>}
-        <button onClick={doLogin} className="w-full mt-5 bg-amber-500 hover:bg-amber-400 text-black font-bold py-3 rounded-xl transition-all text-sm tracking-wide">Sign In</button>
+
+        <button onClick={doLogin} className="w-full mt-5 bg-amber-500 hover:bg-amber-400 text-black font-bold py-3 rounded-lg transition-colors text-sm">
+          Sign In
+        </button>
       </div>
-      <p className="relative text-gray-700 text-xs mt-8">© 2026 XINYUNTONG CHINA LIMITED</p>
     </div>
   );
 
