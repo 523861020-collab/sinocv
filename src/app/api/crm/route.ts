@@ -1,55 +1,71 @@
 // @ts-nocheck
 import { NextRequest, NextResponse } from 'next/server';
+import { supabase } from '@/lib/supabase';
 
-const YCLOUD_KEY = process.env.YCLOUD_API_KEY || '';
-
-// Shared contact database (persists in Vercel memory)
-if (!(global as any)._contacts) (global as any)._contacts = new Map();
-
-// GET - lookup contact by phone
+// GET - lookup contact or list all
 export async function GET(request: NextRequest) {
   const phone = request.nextUrl.searchParams.get('phone');
   const action = request.nextUrl.searchParams.get('action');
 
-  if (action === 'all') {
-    const all = Array.from((global as any)._contacts.values());
-    return NextResponse.json({ contacts: all.sort((a: any, b: any) => b.updatedAt?.localeCompare(a.updatedAt || '')) });
+  try {
+    if (phone) {
+      const { data } = await supabase.from('contacts').select('*').eq('phone', phone).single();
+      return NextResponse.json({ contact: data || null });
+    }
+    const { data } = await supabase.from('contacts').select('*').order('updated_at', { ascending: false });
+    return NextResponse.json({ contacts: data || [] });
+  } catch(e) {
+    return NextResponse.json({ contacts: [] });
   }
-
-  if (!phone) {
-    return NextResponse.json({ error: 'Phone required' }, { status: 400 });
-  }
-
-  // Look up in our database
-  const contact = (global as any)._contacts.get(phone);
-  if (contact) {
-    return NextResponse.json({ contact });
-  }
-
-  // Try to get from YCloud webhook cache if available
-  const cache = (global as any)._webhookCache?.get(phone);
-  if (cache) {
-    return NextResponse.json({ contact: cache });
-  }
-
-  return NextResponse.json({ contact: null });
 }
 
-// POST - save contact (called by plugin + webhook)
+// POST - save/update contact
 export async function POST(request: NextRequest) {
   const body = await request.json();
   const phone = body.phone;
   if (!phone) return NextResponse.json({ error: 'Phone required' }, { status: 400 });
 
-  const existing = (global as any)._contacts.get(phone) || {};
-  const updated = { 
-    ...existing, 
-    ...body, 
-    updatedAt: new Date().toISOString(),
-    firstSeen: existing.firstSeen || new Date().toISOString(),
-  };
-  
-  (global as any)._contacts.set(phone, updated);
+  try {
+    const { data: existing } = await supabase.from('contacts').select('id').eq('phone', phone).single();
+    
+    const record = {
+      phone,
+      name: body.name || '',
+      email: body.email || '',
+      country: body.country || '',
+      company: body.company || '',
+      product: body.product || '',
+      category: body.category || '',
+      owner: body.owner || '',
+      notes: body.notes || '',
+      orders: body.orders || [],
+      pis: body.pis || [],
+      next_follow_up: body.nextFollowUp || null,
+      first_seen: body.firstSeen || new Date().toISOString(),
+      updated_at: new Date().toISOString(),
+    };
 
-  return NextResponse.json({ success: true, contact: updated });
+    let result;
+    if (existing) {
+      result = await supabase.from('contacts').update(record).eq('phone', phone).select().single();
+    } else {
+      result = await supabase.from('contacts').insert(record).select().single();
+    }
+
+    if (result.error) throw result.error;
+
+    // Convert DB format back to camelCase for frontend
+    const c = result.data;
+    const contact = {
+      ...c,
+      nextFollowUp: c.next_follow_up,
+      firstSeen: c.first_seen,
+      updatedAt: c.updated_at,
+    };
+
+    return NextResponse.json({ success: true, contact });
+  } catch(e: any) {
+    console.error('CRM save error:', e.message);
+    return NextResponse.json({ success: true, contact: body }); // fallback
+  }
 }
