@@ -85,8 +85,10 @@ body{font-family:-apple-system,sans-serif;background:#fff;color:#1a1a1a;height:1
 <div id="loginScreen" style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;background:#fff;gap:12px">
   <div style="font-size:32px">🚛</div>
   <h2 style="font-size:16px;color:#f59e0b">SINOCV CRM</h2>
-  <input type="text" id="loginUser" placeholder="用户名" style="padding:8px 12px;border-radius:6px;border:1px solid #e5e5e5;font-size:13px;width:200px;outline:none" onkeydown="if(event.key==='Enter')document.getElementById('loginPin').focus()">
-  <input type="password" id="loginPin" placeholder="Enter PIN" style="padding:8px 12px;border-radius:6px;border:1px solid #e5e5e5;font-size:13px;width:200px;outline:none;text-align:center" maxlength="6" onkeydown="if(event.key==='Enter')doLogin()">
+  <label style="font-size:12px;color:#666;width:200px;text-align:left">用户名</label>
+  <input type="text" id="loginUser" placeholder="输入手机号或姓名" style="padding:8px 12px;border-radius:6px;border:1px solid #e5e5e5;font-size:13px;width:200px;outline:none" onkeydown="if(event.key==='Enter')document.getElementById('loginPin').focus()">
+  <label style="font-size:12px;color:#666;width:200px;text-align:left">密码</label>
+  <input type="password" id="loginPin" placeholder="输入密码" style="padding:8px 12px;border-radius:6px;border:1px solid #e5e5e5;font-size:13px;width:200px;outline:none;text-align:center" maxlength="6" onkeydown="if(event.key==='Enter')doLogin()">
   <button class="btn btn-y" style="width:200px;padding:8px;font-size:13px" onclick="doLogin()">Login</button>
   <div id="loginError" style="font-size:11px;color:#ef4444;display:none"></div>
 </div>

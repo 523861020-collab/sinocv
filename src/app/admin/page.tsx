@@ -39,7 +39,12 @@ export default function AdminPage() {
   const loadTime = useCallback(async (month:string) => {
     try { const r = await fetch(`${API}/time?month=${month}`); if(r.ok){setTimeLogs((await r.json()).logs||[])} } catch(e){}
   }, []);
-  useEffect(() => { if(loggedIn && tab==='time') { loadTime(timeMonth); loadFups(); } }, [loggedIn,tab,timeMonth,loadTime]);
+
+  const loadFups = useCallback(async () => {
+    try { const r = await fetch(`${API}/followups?date=${new Date().toISOString().split('T')[0]}`); if(r.ok) setFollowUps(await r.json()); } catch(e){}
+  }, []);
+
+  useEffect(() => { if(loggedIn && tab==='time') { loadTime(timeMonth); loadFups(); } }, [loggedIn,tab,timeMonth,loadTime,loadFups]);
 
   const expTime = () => {
     const [y,m] = timeMonth.split('-').map(Number);
