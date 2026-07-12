@@ -85,15 +85,7 @@ body{font-family:-apple-system,sans-serif;background:#fff;color:#1a1a1a;height:1
 <div id="loginScreen" style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;background:#fff;gap:12px">
   <div style="font-size:32px">🚛</div>
   <h2 style="font-size:16px;color:#f59e0b">SINOCV CRM</h2>
-  <select id="loginUser" style="padding:8px 12px;border-radius:6px;border:1px solid #e5e5e5;font-size:13px;width:200px;outline:none">
-    <option value="">Select user</option>
-    <option value="李善龙">👑 李善龙</option>
-    <option value="13001977959">👑 李善龙(手机)</option>
-    <option value="王小涵">王小涵</option>
-    <option value="毛振威">毛振威</option>
-    <option value="赵欢乐">赵欢乐</option>
-    <option value="杜飞跃">杜飞跃</option>
-  </select>
+  <input type="text" id="loginUser" placeholder="用户名" style="padding:8px 12px;border-radius:6px;border:1px solid #e5e5e5;font-size:13px;width:200px;outline:none" onkeydown="if(event.key==='Enter')document.getElementById('loginPin').focus()">
   <input type="password" id="loginPin" placeholder="Enter PIN" style="padding:8px 12px;border-radius:6px;border:1px solid #e5e5e5;font-size:13px;width:200px;outline:none;text-align:center" maxlength="6" onkeydown="if(event.key==='Enter')doLogin()">
   <button class="btn btn-y" style="width:200px;padding:8px;font-size:13px" onclick="doLogin()">Login</button>
   <div id="loginError" style="font-size:11px;color:#ef4444;display:none"></div>
