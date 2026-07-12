@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { useRouter, usePathname } from '@/i18n/routing';
 
 const locales = [
@@ -15,6 +15,7 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const locale = useLocale();
+  const t = useTranslations();
   const router = useRouter();
   const pathname = usePathname();
 
@@ -31,11 +32,11 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { href: '/heavy-truck', label: 'Heavy Trucks' },
-    { href: '/machinery', label: 'Machinery' },
-    { href: '/mining', label: 'Mining' },
-    { href: '/trailers', label: 'Trailers' },
-    { href: '/light', label: 'Light Vehicles' },
+    { href: '/heavy-truck', label: t('nav.heavyTrucks') },
+    { href: '/machinery', label: t('nav.machinery') },
+    { href: '/mining', label: t('nav.mining') },
+    { href: '/trailers', label: t('nav.trailers') },
+    { href: '/light', label: t('nav.lightVehicles') },
   ];
 
   return (
@@ -72,7 +73,7 @@ export default function Navbar() {
               href="https://wa.me/8619103781257" target="_blank"
               className="rounded-md bg-green-500 px-6 py-2.5 font-semibold text-white hover:bg-green-400 transition-colors"
             >
-              Get Quote
+              {t('nav.getQuote')}
             </a>
             <div className="relative group">
               <button className="flex items-center gap-1.5 text-gray-300 hover:text-white px-3 py-1.5 rounded hover:bg-gray-800 transition-colors text-base">
@@ -132,7 +133,7 @@ export default function Navbar() {
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="block mx-4 rounded-md bg-green-500 px-6 py-3 text-center font-semibold text-white hover:bg-green-400 transition-colors"
               >
-                Inquire Now
+                {t('home.inquireNowMobile')}
               </a>
             </motion.div>
         )}
