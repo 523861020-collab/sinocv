@@ -93,8 +93,16 @@ function renderDashboard(){
   // Store chart data for tab switching
   window._ctData={all:allCt,week:wkCt,month:moCt,year:yrCt};
 
+  // Daily per-salesperson stats
+  const now2=new Date();const today2=now2.toISOString().split('T')[0];
+  const wkStart=new Date(now2);wkStart.setDate(now2.getDate()-now2.getDay());const weekStart=wkStart.toISOString().split('T')[0];
+  const moStart=new Date(now2.getFullYear(),now2.getMonth(),1).toISOString().split('T')[0];
+  function statsFor(owner){const cs=mc.filter(c=>c.owner===owner);return{owner,today:cs.filter(c=>c.firstSeen?.startsWith(today2)).length,week:cs.filter(c=>c.firstSeen>=weekStart).length,month:cs.filter(c=>c.firstSeen>=moStart).length,piToday:cs.flatMap(c=>(c.orders||[]).flatMap(o=>(o.pis||[]).filter(p=>p.date===today2))).length,piWeek:cs.flatMap(c=>(c.orders||[]).flatMap(o=>(o.pis||[]).filter(p=>p.date>=weekStart))).length,piMonth:cs.flatMap(c=>(c.orders||[]).flatMap(o=>(o.pis||[]).filter(p=>p.date>=moStart))).length}}
+  const owners=[...new Set(mc.map(c=>c.owner||'Unassigned'))].sort();
+  const dailyRows=owners.map(o=>statsFor(o));
+  const dailyHTML=`<table style="width:100%;font-size:9px;border-collapse:collapse;margin:6px 0"><tr style="color:#888;text-align:center"><th style="text-align:left">Salesperson</th><th>Today</th><th>PI</th><th>Week</th><th>PI</th><th>Month</th><th>PI</th></tr>${dailyRows.map(r=>`<tr style="text-align:center;border-top:1px solid #f0f0f0"><td style="text-align:left;font-weight:600">${r.owner}</td><td>${r.today}</td><td style="color:#f59e0b">${r.piToday}</td><td>${r.week}</td><td style="color:#f59e0b">${r.piWeek}</td><td>${r.month}</td><td style="color:#f59e0b">${r.piMonth}</td></tr>`).join('')}</table>`;
+
   document.getElementById('dashContent').innerHTML=`
-    <div class="dash-grid">
       <div class="dash-card"><div class="dash-num">${total}</div><div class="dash-lbl">Contacts</div></div>
       <div class="dash-card"><div class="dash-num">${a}</div><div class="dash-lbl" style="color:#7c3aed">A-Class</div></div>
       <div class="dash-card"><div class="dash-num">${b}</div><div class="dash-lbl" style="color:#2563eb">B-Class</div></div>
@@ -108,6 +116,8 @@ function renderDashboard(){
     </div>
     <div class="sec" style="margin:0 10px">🌍 By Country (${total} total)</div>
     ${countryHTML}
+    <div class="sec" style="margin:0 10px">📊 Daily Performance</div>
+    <div style="padding:0 10px">${dailyHTML}</div>
     <div class="sec" style="margin:0 10px">🚢 Active Shipments</div>
     <div style="padding:0 10px">${orders.filter(o=>o.status==='shipped').slice(0,5).map(o=>`
       <div class="item" onclick="navigator.clipboard.writeText('${o.vins?.[0]||''}')">
