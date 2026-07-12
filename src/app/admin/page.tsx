@@ -5,6 +5,13 @@ import { useState, useEffect, useCallback } from 'react';
 
 const API = '/api/crm';
 const USERS = ['Li Shanlong', '王小涵', '毛振威', '赵欢乐', '杜飞跃'];
+const USER_INFO: Record<string,any> = {
+  'Li Shanlong': {product:'全部',region:'全球'},
+  '王小涵': {product:'牵引车/挂车/载货车/冷藏车',region:'北非/西非'},
+  '毛振威': {product:'工程机械(自卸车/挖掘机/装载机/随车吊/搅拌车等)',region:'中非/东非'},
+  '赵欢乐': {product:'工程机械(自卸车/挖掘机/装载机/随车吊/搅拌车等)',region:'北非/西非'},
+  '杜飞跃': {product:'牵引车/挂车/载货车/冷藏车',region:'中非/东非'},
+};
 const PINS: Record<string,string> = {'Li Shanlong':'1234','13001977959':'202502','王小涵':'1111','毛振威':'2222','赵欢乐':'3333','杜飞跃':'4444'};
 
 export default function AdminPage() {
@@ -179,7 +186,8 @@ export default function AdminPage() {
                 return sum + min;
               }, 0);
               return <div key={u} style={{background:'#0d0d0d',border:'1px solid #1a1a1a',borderRadius:'10px',padding:'16px'}}>
-                <div style={{color:'#fff',fontWeight:600,fontSize:'14px',marginBottom:'8px'}}>{u}</div>
+                <div style={{color:'#fff',fontWeight:600,fontSize:'14px',marginBottom:'4px'}}>{u}</div>
+                <div style={{color:'#666',fontSize:'10px',marginBottom:'8px'}}>{(USER_INFO[u]||{}).product||''} · {(USER_INFO[u]||{}).region||''}</div>
                 <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'8px',fontSize:'12px'}}>
                   <div><span style={{color:'#666'}}>出勤天数</span><div style={{color:'#fff',fontSize:'16px',fontWeight:700}}>{days}</div></div>
                   <div><span style={{color:'#666'}}>总工时</span><div style={{color:'#f59e0b',fontSize:'16px',fontWeight:700}}>{Math.round(workMin/60)}h</div></div>
