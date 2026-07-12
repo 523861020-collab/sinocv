@@ -1,0 +1,2410 @@
+[
+  {
+    "id": "1",
+    "cat": "阿尔及利亚",
+    "title": "111你好先生，我是来自中国的li，很高兴认识你，请问你怎么称呼？想要购买什么卡车？",
+    "en": "Hello sir, this is Li from China. Nice to meet you. May I know your name? What type of truck are you looking for?",
+    "fr": "Bonjour monsieur, je suis Li de Chine. Ravi de faire votre connaissance. Puis-je connaître votre nom ? Quel type de camion recherchez-vous ?",
+    "ar": "مرحباً سيدي، أنا لي من الصين. تشرفت بمعرفتك. هل يمكنني معرفة اسمك؟ وما نوع الشاحنة التي تبحث عنها؟"
+  },
+  {
+    "id": "2",
+    "cat": "阿尔及利亚",
+    "title": "112早上好先生",
+    "en": "Good morning, sir.",
+    "fr": "Bonjour monsieur.",
+    "ar": "صباح الخير يا سيدي."
+  },
+  {
+    "id": "3",
+    "cat": "阿尔及利亚",
+    "title": "113下午好先生",
+    "en": "Good afternoon, sir.",
+    "fr": "Bon après-midi monsieur.",
+    "ar": "مساء الخير يا سيدي."
+  },
+  {
+    "id": "4",
+    "cat": "阿尔及利亚",
+    "title": "114晚上好先生",
+    "en": "Good evening, sir.",
+    "fr": "Bonsoir monsieur.",
+    "ar": "مساء الخير يا سيدي."
+  },
+  {
+    "id": "5",
+    "cat": "阿尔及利亚",
+    "title": "115你好先生",
+    "en": "Hello sir.",
+    "fr": "Bonjour monsieur.",
+    "ar": "مرحباً يا سيدي."
+  },
+  {
+    "id": "6",
+    "cat": "阿尔及利亚",
+    "title": "116愿你平安，先生",
+    "en": "May you be safe and well, sir.",
+    "fr": "Que la paix soit avec vous, monsieur.",
+    "ar": "أتمنى لك السلامة، يا سيدي."
+  },
+  {
+    "id": "7",
+    "cat": "阿尔及利亚",
+    "title": "117好久不见，我的朋友",
+    "en": "Long time no see, my friend.",
+    "fr": "Ça fait longtemps qu’on ne s’est pas vu, mon ami.",
+    "ar": "لم أرك منذ زمن طويل، يا صديقي."
+  },
+  {
+    "id": "8",
+    "cat": "阿尔及利亚",
+    "title": "118最近还好吗？我的朋友",
+    "en": "How have you been lately? My friend.",
+    "fr": "Bonjour monsieur, comment allez-vous ces derniers temps ?",
+    "ar": "مرحباً يا سيدي، كيف حالك مؤخراً؟"
+  },
+  {
+    "id": "9",
+    "cat": "阿尔及利亚",
+    "title": "119你好先生，你最近怎么样？",
+    "en": "Hello sir, how have you been lately?",
+    "fr": "Bonjour monsieur, comment allez-vous ces derniers temps ?",
+    "ar": "مرحباً يا سيدي، كيف حالك مؤخراً؟"
+  },
+  {
+    "id": "10",
+    "cat": "阿尔及利亚",
+    "title": "120你好朋友，最近还好吗？",
+    "en": "Hello my friend, how have you been lately?",
+    "fr": "Bonjour mon ami, comment vas-tu ces derniers temps ?",
+    "ar": "مرحباً يا صديقي، كيف حالك مؤخراً؟"
+  },
+  {
+    "id": "11",
+    "cat": "阿尔及利亚",
+    "title": "121好久不见，我的朋友，你最近好吗？",
+    "en": "Long time no see, my friend. How have you been lately?",
+    "fr": "Ça fait longtemps qu’on ne s’est pas vu, mon ami. Comment vas-tu ces derniers temps ?",
+    "ar": "لم أرك منذ زمن طويل، يا صديقي. كيف حالك مؤخراً؟"
+  },
+  {
+    "id": "12",
+    "cat": "阿尔及利亚",
+    "title": "122先生，请问你来自那个国家？",
+    "en": "Sir, may I ask which country you are from?",
+    "fr": "Monsieur, puis-je vous demander de quel pays vous venez ?",
+    "ar": "سيدي، هل يمكنني أن أسأل من أي دولة أنت؟"
+  },
+  {
+    "id": "13",
+    "cat": "阿尔及利亚",
+    "title": "123很高兴认识你，先生，你想咨询哪款卡车？",
+    "en": "Nice to meet you, sir. Which model of truck would you like to inquire about?",
+    "fr": "Ravi de vous rencontrer, monsieur. Quel modèle de camion souhaitez-vous consulter ?",
+    "ar": "سعيد بلقائك، يا سيدي. أي طراز من الشاحنات تريد الاستفسار عنه؟"
+  },
+  {
+    "id": "14",
+    "cat": "阿尔及利亚",
+    "title": "124先生，您需要什么类型卡车？用来运输什么货物？大概运输多少吨？",
+    "en": "Sir, what type of truck do you need? What kind of goods will it be used to transport? Approximately how many tons?",
+    "fr": "Monsieur, quel type de camion avez-vous besoin ? Pour transporter quel type de marchandises ? Environ combien de tonnes ?",
+    "ar": "سيدي، ما نوع الشاحنة التي تحتاجها؟ لنقل أي نوع من البضائع؟ تقريباً كم طن؟"
+  },
+  {
+    "id": "15",
+    "cat": "阿尔及利亚",
+    "title": "125先生，你在阿尔及利亚那个城市？",
+    "en": "Sir, which city in Algeria are you in?",
+    "fr": "Monsieur, dans quelle ville d’Algérie êtes-vous ?",
+    "ar": "سيدي، في أي مدينة في الجزائر أنت؟"
+  },
+  {
+    "id": "16",
+    "cat": "阿尔及利亚",
+    "title": "126先生，你主要从事物流运输吗？",
+    "en": "Sir, do you mainly engage in logistics and transportation?",
+    "fr": "Monsieur, exercez-vous principalement dans le domaine du transport et de la logistique ?",
+    "ar": "سيدي، هل تعمل بشكل أساسي في مجال النقل واللوجستيات؟"
+  },
+  {
+    "id": "17",
+    "cat": "阿尔及利亚",
+    "title": "127先生，你运输的货物是从那个城市到那个城市？",
+    "en": "Sir, from which city to which city do you transport your goods?",
+    "fr": "Monsieur, les marchandises que vous transportez vont de quelle ville à quelle ville ?",
+    "ar": "سيدي، البضائع التي تنقلها من أي مدينة إلى أي مدينة؟"
+  },
+  {
+    "id": "18",
+    "cat": "阿尔及利亚",
+    "title": "128先生，你现在开的是那个品牌的卡车？",
+    "en": "Sir, what brand of truck are you currently driving?",
+    "fr": "Monsieur, quelle marque de camion conduisez-vous actuellement ?",
+    "ar": "سيدي، ما هي علامة الشاحنة التي تقودها حالياً؟"
+  },
+  {
+    "id": "19",
+    "cat": "阿尔及利亚",
+    "title": "129先生，你购买卡车，主要运输什么货物？",
+    "en": "Sir, when you buy a truck, what kind of goods do you mainly transport?",
+    "fr": "Monsieur, lorsque vous achetez un camion, quel type de marchandises transportez-vous principalement ?",
+    "ar": "سيدي، عندما تشتري شاحنة، ما نوع البضائع التي تنقلها بشكل أساسي؟"
+  },
+  {
+    "id": "20",
+    "cat": "阿尔及利亚",
+    "title": "130先生，你从中国购买过卡车吗？或者其他国家购买过吗？",
+    "en": "Sir, have you ever bought trucks from China? Or from other countries?",
+    "fr": "Monsieur, avez-vous déjà acheté des camions en Chine ? Ou dans d’autres pays ?",
+    "ar": "سيدي، هل اشتريت شاحنات من الصين من قبل؟ أو من دول أخرى؟"
+  },
+  {
+    "id": "21",
+    "cat": "阿尔及利亚",
+    "title": "131先生你想咨询牵引车吗？",
+    "en": "Sir, would you like to purchase a tractor?",
+    "fr": "Monsieur, voulez - vous acheter un tracteur?",
+    "ar": "هل ترغب في شراء جرار ، سيدي ؟"
+  },
+  {
+    "id": "22",
+    "cat": "阿尔及利亚",
+    "title": "132先生你想要购买4x2牵引车还是6x4牵引车？选择手动挡还是自动挡？",
+    "en": "Sir, do you want to buy a 4x2 tractor truck or a 6x4 tractor truck? Do you prefer manual transmission or automatic?",
+    "fr": "Monsieur, voulez-vous acheter un tracteur 4x2 ou un tracteur 6x4 ? Préférez-vous une boîte manuelle ou automatique ?",
+    "ar": "سيدي، هل تريد شراء جرار 4x2 أم جرار 6x4؟ هل تفضل ناقل حركة يدوي أم أوتوماتيكي؟"
+  },
+  {
+    "id": "23",
+    "cat": "阿尔及利亚",
+    "title": "133先生，你想购买多少台牵引车？",
+    "en": "Sir, how many tractor trucks do you want to purchase?",
+    "fr": "Monsieur, combien de tracteurs routiers souhaitez-vous acheter ?",
+    "ar": "سيدي، كم عدد الجرارات التي تريد شراءها؟"
+  },
+  {
+    "id": "24",
+    "cat": "阿尔及利亚",
+    "title": "134先生你想咨询自卸车吗？",
+    "en": "Sir, would you like to inquire about dump trucks?",
+    "fr": "Monsieur, souhaitez-vous des informations sur les camions-bennes ?",
+    "ar": "سيدي، هل تريد الاستفسار عن شاحنات التفريغ (القلاب)؟"
+  },
+  {
+    "id": "25",
+    "cat": "阿尔及利亚",
+    "title": "135先生你想要购买6x4自卸车还是8x4自卸车？",
+    "en": "Sir, do you want to buy a 6x4 dump truck or an 8x4 dump truck?",
+    "fr": "Monsieur, voulez-vous acheter un camion-benne 6x4 ou un camion-benne 8x4 ?",
+    "ar": "سيدي، هل تريد شراء شاحنة قلاب 6x4 أم 8x4؟"
+  },
+  {
+    "id": "26",
+    "cat": "阿尔及利亚",
+    "title": "136先生，你想购买多少台自卸车？",
+    "en": "Sir, how many dump trucks do you want to purchase?",
+    "fr": "Monsieur, combien de camions-bennes souhaitez-vous acheter ?",
+    "ar": "سيدي، كم عدد شاحنات التفريغ التي تريد شراءها؟"
+  },
+  {
+    "id": "27",
+    "cat": "阿尔及利亚",
+    "title": "137先生你想咨询轻卡吗？",
+    "en": "Sir, would you like to inquire about light trucks?",
+    "fr": "Monsieur, souhaitez-vous des informations sur les camions légers ?",
+    "ar": "سيدي، هل تريد الاستفسار عن الشاحنات الخفيفة؟"
+  },
+  {
+    "id": "28",
+    "cat": "阿尔及利亚",
+    "title": "138先生你想要购买几吨的轻卡？用来运输什么货物？对于货箱长度你有什么要求？",
+    "en": "Sir, what tonnage of light truck do you want to buy? What kind of goods will it transport? Do you have any requirements for the cargo box length?",
+    "fr": "Monsieur, quelle capacité en tonnes de camion léger voulez-vous acheter ? Pour transporter quel type de marchandises ? Avez-vous des exigences concernant la longueur de la caisse ?",
+    "ar": "سيدي، كم طن الشاحنة الخفيفة التي تريد شراءها؟ لنقل أي نوع من البضائع؟ هل لديك متطلبات حول طول صندوق الشحن؟"
+  },
+  {
+    "id": "29",
+    "cat": "阿尔及利亚",
+    "title": "139先生，你想购买多少台轻卡？",
+    "en": "Sir, how many light trucks do you want to purchase?",
+    "fr": "Monsieur, combien de camions légers souhaitez-vous acheter ?",
+    "ar": "سيدي، كم عدد الشاحنات الخفيفة التي تريد شراءها؟"
+  },
+  {
+    "id": "30",
+    "cat": "阿尔及利亚",
+    "title": "140先生，你想购买多少台载货车？",
+    "en": "Sir, how many cargo trucks do you want to purchase?",
+    "fr": "Monsieur, combien de camions de fret souhaitez-vous acheter ?",
+    "ar": "سيدي، كم عدد شاحنات الشحن التي تريد شراءها؟"
+  },
+  {
+    "id": "31",
+    "cat": "阿尔及利亚",
+    "title": "141先生你想咨询随车吊吗？",
+    "en": "Sir, would you like to inquire about truck-mounted cranes?",
+    "fr": "Monsieur, souhaitez-vous des informations sur les camions-grues ?",
+    "ar": "سيدي، هل تريد الاستفسار عن الرافعات المثبتة على الشاحنات؟"
+  },
+  {
+    "id": "32",
+    "cat": "阿尔及利亚",
+    "title": "142先生你想要几吨的随车吊？我们有8吨和12吨的随车吊。",
+    "en": "Sir, what tonnage of truck-mounted crane do you want? We have 8-ton and 12-ton truck-mounted cranes.",
+    "fr": "Monsieur, quelle capacité en tonnes de grue sur camion voulez-vous ? Nous avons des grues de 8 tonnes et 12 tonnes.",
+    "ar": "سيدي، كم طن الرافعة المثبتة على الشاحنة التي تريد؟ لدينا رافعات 8 طن و12 طن."
+  },
+  {
+    "id": "33",
+    "cat": "阿尔及利亚",
+    "title": "143先生，你想购买多少台随车吊？",
+    "en": "Sir, how many truck-mounted cranes do you want to purchase?",
+    "fr": "Monsieur, combien de camions-grues souhaitez-vous acheter ?",
+    "ar": "سيدي، كم عدد الرافعات المثبتة على الشاحنات التي تريد شراءها؟"
+  },
+  {
+    "id": "34",
+    "cat": "阿尔及利亚",
+    "title": "144先生你想咨询水罐车吗？",
+    "en": "Sir, would you like to inquire about water tanker trucks?",
+    "fr": "Monsieur, souhaitez-vous des informations sur les camions-citernes à eau ?",
+    "ar": "سيدي، هل تريد الاستفسار عن شاحنات صهاريج المياه؟"
+  },
+  {
+    "id": "35",
+    "cat": "阿尔及利亚",
+    "title": "145先生你想要运输多少立方的水罐车？我们有12立方和22立方的水罐车。",
+    "en": "Sir, how many cubic meters of water tanker do you need? We have 12m³ and 22m³ water tankers.",
+    "fr": "Monsieur, quelle capacité en mètres cubes de camion-citerne à eau voulez-vous ? Nous avons des citernes de 12 m³ et 22 m³.",
+    "ar": "سيدي، كم متر مكعب صهريج المياه الذي تريد؟ لدينا صهاريج 12 م³ و22 م³."
+  },
+  {
+    "id": "36",
+    "cat": "阿尔及利亚",
+    "title": "146先生，你想购买多少台水罐车？",
+    "en": "Sir, how many water tanker trucks do you want to purchase?",
+    "fr": "Monsieur, combien de camions-citernes à eau souhaitez-vous acheter ?",
+    "ar": "سيدي، كم عدد شاحنات صهاريج المياه التي تريد شراءها؟"
+  },
+  {
+    "id": "37",
+    "cat": "阿尔及利亚",
+    "title": "147先生你想咨询油罐车吗？",
+    "en": "Sir, would you like to inquire about fuel/oil tanker trucks?",
+    "fr": "Monsieur, souhaitez-vous des informations sur les camions-citernes à carburant ?",
+    "ar": "سيدي، هل تريد الاستفسار عن شاحنات صهاريج الوقود؟"
+  },
+  {
+    "id": "38",
+    "cat": "阿尔及利亚",
+    "title": "148先生你想要运输多少立方的油罐车？我们有12立方和22立方的油罐车。",
+    "en": "Sir, how many cubic meters of tanker trucks do you want to transport? We have 12m³ and 22m³ tanker trucks.",
+    "fr": "Monsieur, combien de camions-citernes en mètres cubes souhaitez-vous transporter ? Nous avons des camions-citernes de 12m³ et 22m³.",
+    "ar": "سيدي، كم عدد شاحنات الصهاريج بالمتر المكعب التي تريد نقلها؟ لدينا شاحنات صهاريج بسعة 12 متر³ و22 متر³."
+  },
+  {
+    "id": "39",
+    "cat": "阿尔及利亚",
+    "title": "149先生，你想购买多台油罐车？",
+    "en": "Sir, how many tanker trucks do you want to purchase?",
+    "fr": "Monsieur, combien de camions-citernes souhaitez-vous acheter ?",
+    "ar": "سيدي، كم عدد شاحنات الصهاريج التي تريد شرائها؟"
+  },
+  {
+    "id": "40",
+    "cat": "阿尔及利亚",
+    "title": "150先生你想咨询搅拌车吗？",
+    "en": "Sir, do you want to inquire about mixer trucks?",
+    "fr": "Monsieur, voulez-vous vous renseigner sur les camions malaxeurs ?",
+    "ar": "سيدي، هل تريد الاستفسار عن شاحنات الخلاط؟"
+  },
+  {
+    "id": "41",
+    "cat": "阿尔及利亚",
+    "title": "151先生，搅拌车有10立方和12立方，你想购买哪一款？",
+    "en": "Sir, mixer trucks come in 10m³ and 12m³. Which one would you like to purchase?",
+    "fr": "Monsieur, les camions malaxeurs existent en 10m³ et 12m³. Lequel souhaitez-vous acheter ?",
+    "ar": "سيدي، شاحنات الخلاط متوفرة بسعة 10 متر³ و12 متر³، أي واحد ترغب في شرائه؟"
+  },
+  {
+    "id": "42",
+    "cat": "阿尔及利亚",
+    "title": "152先生，你想购买多少台搅拌车？",
+    "en": "Sir, how many mixer trucks do you want to purchase?",
+    "fr": "Monsieur, combien de camions malaxeurs souhaitez-vous acheter ?",
+    "ar": "سيدي، كم عدد شاحنات الخلاط التي تريد شرائها؟"
+  },
+  {
+    "id": "43",
+    "cat": "阿尔及利亚",
+    "title": "153先生，你想购买这个卡车底盘吗？",
+    "en": "Sir, do you want to purchase this truck chassis?",
+    "fr": "Monsieur, voulez-vous acheter ce châssis de camion ?",
+    "ar": "سيدي، هل ترغب في شراء هيكل هذه الشاحنة؟"
+  },
+  {
+    "id": "44",
+    "cat": "阿尔及利亚",
+    "title": "154先生，对于卡车你还有其他的要求吗？是否加装一些其他的配件？",
+    "en": "Sir, do you have any other requirements for the truck? Do you want to add any other accessories?",
+    "fr": "Monsieur, avez-vous d'autres exigences pour le camion ? Voulez-vous ajouter d'autres accessoires ?",
+    "ar": "سيدي، هل لديك أي متطلبات أخرى للشاحنة؟ هل ترغب في إضافة أي ملحقات أخرى؟"
+  },
+  {
+    "id": "45",
+    "cat": "阿尔及利亚",
+    "title": "155先生，牵引车你想要多大马力？我们有430马力，480马力和540马力",
+    "en": "Sir, how much horsepower do you want for the tractor? We have 430 horsepower, 480 horsepower, and 540 horsepower",
+    "fr": "Monsieur, quelle puissance voulez - vous pour le tracteur? Nous avons 430 CH, 480 ch et 540 ch",
+    "ar": "كم حصان هل تريد جرار ، سيدي ؟ لدينا 430 حصان ، 480 حصان و 540 حصان ."
+  },
+  {
+    "id": "46",
+    "cat": "阿尔及利亚",
+    "title": "156先生，请稍等，我给你发卡车的具体配置和价格。",
+    "en": "Sir, please wait a moment, I will send you the detailed configuration and price of the truck.",
+    "fr": "Monsieur, veuillez patienter un instant, je vais vous envoyer la configuration détaillée et le prix du camion.",
+    "ar": "سيدي، يرجى الانتظار قليلاً، سأرسل لك التكوين التفصيلي وسعر الشاحنة."
+  },
+  {
+    "id": "47",
+    "cat": "阿尔及利亚",
+    "title": "157先生，卡车生产大概需要35天左右。但是你的订单，我一定会尽快催促，保证让你尽快见到你的卡车。",
+    "en": "Sir, the truck production takes about 35 days. But for your order, I will urge it as soon as possible to ensure you can see your truck quickly.",
+    "fr": "Monsieur, la production du camion prend environ 35 jours. Mais pour votre commande, je vais la suivre rapidement afin que vous puissiez voir votre camion dès que possible.",
+    "ar": "سيدي، تستغرق عملية إنتاج الشاحنة حوالي 35 يومًا. لكن طلبك سأحرص على تسريعه لضمان أن ترى شاحنتك في أسرع وقت ممكن."
+  },
+  {
+    "id": "48",
+    "cat": "阿尔及利亚",
+    "title": "158先生，卡车的运输大概需要30天左右，可以到达目的港。",
+    "en": "Sir, the transportation of the truck takes about 30 days and can reach the destination port.",
+    "fr": "Monsieur, le transport du camion prend environ 30 jours et peut atteindre le port de destination.",
+    "ar": "سيدي، تستغرق عملية نقل الشاحنة حوالي 30 يومًا ويمكن أن تصل إلى ميناء الوجهة."
+  },
+  {
+    "id": "49",
+    "cat": "阿尔及利亚",
+    "title": "159先生，卡车生产需要35天左右，海上运输大概需要30天左右。一共大约需要70天可以送达你的港口。",
+    "en": "Sir, truck production takes about 35 days, and sea transportation takes about 30 days. It will take about 70 days in total to deliver to your port.",
+    "fr": "Monsieur, la production du camion prend environ 35 jours et le transport maritime environ 30 jours. Il faudra environ 70 jours au total pour livrer à votre port.",
+    "ar": "سيدي، تستغرق عملية إنتاج الشاحنة حوالي 35 يومًا، والنقل البحري حوالي 30 يومًا. الإجمالي حوالي 70 يومًا للوصول إلى ميناءك."
+  },
+  {
+    "id": "50",
+    "cat": "阿尔及利亚",
+    "title": "160先生，我们下完单以后，工厂需要排产，做生产计划，采购必须的配件，真正生产一天就可以完成了。",
+    "en": "Sir, after we place the order, the factory needs to schedule production, make a production plan, and procure necessary parts. Actual production can be completed in one day.",
+    "fr": "Monsieur, après avoir passé la commande, l'usine doit planifier la production, établir un plan de production et se procurer les pièces nécessaires. La production réelle peut être terminée en un jour.",
+    "ar": "سيدي، بعد تقديم الطلب، يحتاج المصنع إلى جدولة الإنتاج، ووضع خطة الإنتاج، وشراء الأجزاء اللازمة. يمكن الانتهاء من الإنتاج الفعلي في يوم واحد."
+  },
+  {
+    "id": "51",
+    "cat": "阿尔及利亚",
+    "title": "161先生，卡车生产完毕以后，我会给你发照片和视频，方便你查看。",
+    "en": "Sir, after the truck is produced, I will send you photos and videos for your reference.",
+    "fr": "Monsieur, une fois le camion produit, je vous enverrai des photos et vidéos pour votre référence.",
+    "ar": "سيدي، بعد إنتاج الشاحنة سأرسل لك صورًا وفيديوهات لتتمكن من الاطلاع عليها."
+  },
+  {
+    "id": "52",
+    "cat": "阿尔及利亚",
+    "title": "162先生，下单以后，我会催促生产尽快完成你的卡车，保证你的卡车尽快生产完成。",
+    "en": "Sir, after placing the order, I will urge production to complete your truck as soon as possible, ensuring your truck is produced quickly.",
+    "fr": "Monsieur, après avoir passé la commande, je vais accélérer la production pour que votre camion soit produit rapidement.",
+    "ar": "سيدي، بعد تقديم الطلب سأحرص على تسريع إنتاج شاحنتك لضمان إكمال الإنتاج بسرعة."
+  },
+  {
+    "id": "53",
+    "cat": "阿尔及利亚",
+    "title": "163先生，发往阿尔及利亚的船大部分是散货船，所以我们运输一般也都是散货船，滚装船很少，而且海运价格会更高。",
+    "en": "Sir, most ships sent to Algeria are bulk carriers, so our transportation is generally also by bulk ship. Ro-Ro ships are rare, and sea freight is more expensive.",
+    "fr": "Monsieur, la plupart des navires envoyés en Algérie sont des vraquiers, donc notre transport se fait généralement aussi par vraquier. Les navires roulants sont rares et le fret maritime est plus cher.",
+    "ar": "سيدي، معظم السفن المتجهة إلى الجزائر هي سفن بضائع سائبة، لذلك نقلنا يتم عادة بنفس الطريقة، السفن الدحرجة قليلة، وتكلفة الشحن البحري أعلى."
+  },
+  {
+    "id": "54",
+    "cat": "阿尔及利亚",
+    "title": "164先生，现在运输卡车都是达到阿尔及利亚杰恩杰恩港口，其他港口只能发框架，而且海运费会跟高。大概三倍的运费。",
+    "en": "Currently, trucks are transported to Djendjen Port in Algeria. Other ports can only ship as CKD (knocked down), and sea freight will be higher, about three times the cost.",
+    "fr": "Actuellement, les camions sont transportés au port de Djendjen en Algérie. Les autres ports ne peuvent expédier qu'en CKD, et le fret maritime sera plus élevé, environ trois fois le coût.",
+    "ar": "سيدي ، الآن شاحنات النقل تصل إلى ميناء جنين في الجزائر ، والموانئ الأخرى يمكن أن ترسل فقط في إطار الشحن البحري سوف تكون عالية . حوالي ثلاثة أضعاف تكلفة الشحن ."
+  },
+  {
+    "id": "55",
+    "cat": "阿尔及利亚",
+    "title": "165抱歉先生，卡车无法运输到其他港口，只能到杰恩杰恩港口，其他港口船很少，而且价格很贵。",
+    "en": "Sorry sir, the truck cannot be transported to other ports, only to Djendjen Port. Other ports have few ships and the cost is high.",
+    "fr": "Désolé monsieur, le camion ne peut pas être transporté vers d'autres ports, uniquement au port de Djendjen. Les autres ports ont peu de navires et le coût est élevé.",
+    "ar": "عذرًا سيدي، لا يمكن نقل الشاحنة إلى الموانئ الأخرى، فقط إلى ميناء جندجان، والموانئ الأخرى بها سفن قليلة والتكلفة مرتفعة."
+  },
+  {
+    "id": "56",
+    "cat": "阿尔及利亚",
+    "title": "166是的先生，我们在阿尔及尔/奥兰还有赛提夫都有办公室，如果需要的话，我可以安排人联系你。",
+    "en": "Yes sir, we have offices in Algiers/Oran and Setif. If needed, I can arrange someone to contact you.",
+    "fr": "Oui monsieur, nous avons des bureaux à Alger/Oran et Sétif. Si nécessaire, je peux organiser qu'on vous contacte.",
+    "ar": "نعم سيدي، لدينا مكاتب في الجزائر/وهران وسطيف، إذا لزم الأمر يمكنني ترتيب اتصال شخص ما بك."
+  },
+  {
+    "id": "57",
+    "cat": "阿尔及利亚",
+    "title": "167先生，我们在阿尔及利亚有很多服务站，我们在奥兰和赛提夫还有巴特那有专门的维修售后服务站。",
+    "en": "Sir, we have many service stations in Algeria, and we have dedicated after-sales service stations in Oran, Setif, and Batna.",
+    "fr": "Monsieur, nous avons de nombreuses stations de service en Algérie et nous avons des stations de service après-vente dédiées à Oran, Sétif et Batna.",
+    "ar": "سيدي، لدينا العديد من محطات الخدمة في الجزائر، ولدينا محطات صيانة وخدمة مخصصة في وهران وسطيف وباتنة."
+  },
+  {
+    "id": "58",
+    "cat": "阿尔及利亚",
+    "title": "168先生，我们中国的办公室是在山东济南市，如果你有时间的话，欢迎来我们工厂办公室参观。",
+    "en": "Sir, our office in China is in Jinan, Shandong. If you have time, you are welcome to visit our factory office.",
+    "fr": "Monsieur, notre bureau en Chine est à Jinan, Shandong. Si vous avez le temps, vous êtes le bienvenu pour visiter notre usine.",
+    "ar": "سيدي، مكتبنا في الصين موجود في جينان، شاندونغ. إذا كان لديك وقت، نرحب بزيارتك لمكتب المصنع."
+  },
+  {
+    "id": "59",
+    "cat": "阿尔及利亚",
+    "title": "169先生我们是一家中国公司，我们公司在中国，卡车在中国生产。然后通过海运的方式运输到目的港港口",
+    "en": "Sir, we are a Chinese company. Our company is in China, and the trucks are produced in China. They are then shipped to the destination port by sea.",
+    "fr": "Nous sommes une entreprise chinoise. Notre société est en Chine et les camions sont produits en Chine. Ils sont ensuite expédiés par mer au port de destination.",
+    "ar": "نحن شركة صينية، شركتنا في الصين والشاحنات تصنع في الصين. ثم يتم شحنها إلى ميناء الوجهة عن طريق البحر."
+  },
+  {
+    "id": "60",
+    "cat": "阿尔及利亚",
+    "title": "170先生，你打算什么时候来中国参观我们的工厂？",
+    "en": "Sir, when do you plan to visit our factory in China?",
+    "fr": "Monsieur, quand prévoyez-vous de visiter notre usine en Chine ?",
+    "ar": "سيدي، متى تخطط لزيارة مصنعنا في الصين؟"
+  },
+  {
+    "id": "61",
+    "cat": "阿尔及利亚",
+    "title": "171可以的先生，我们可以给你提供邀请函，方便你申请签证。",
+    "en": "Yes sir, we can provide you with an invitation letter to facilitate your visa application.",
+    "fr": "Oui monsieur, nous pouvons vous fournir une lettre d'invitation pour faciliter votre demande de visa.",
+    "ar": "نعم سيدي، يمكننا تزويدك برسالة دعوة لتسهيل طلب التأشيرة الخاص بك."
+  },
+  {
+    "id": "62",
+    "cat": "阿尔及利亚",
+    "title": "172先生，请把你的护照发给我，方便我给你开具邀请函来中国参观。",
+    "en": "Sir, please send me your passport so that I can issue an invitation letter for you to visit China.",
+    "fr": "Monsieur, veuillez m'envoyer votre passeport afin que je puisse vous délivrer une lettre d'invitation pour visiter la Chine.",
+    "ar": "سيدي، يرجى إرسال جواز سفرك لي حتى أتمكن من إصدار رسالة دعوة لك لزيارة الصين."
+  },
+  {
+    "id": "63",
+    "cat": "阿尔及利亚",
+    "title": "173先生，这是你的邀请函，有什么问题可以随时联系我。",
+    "en": "Sir, this is your invitation letter. You can contact me anytime if you have any questions.",
+    "fr": "Monsieur, voici votre lettre d'invitation. Vous pouvez me contacter à tout moment si vous avez des questions.",
+    "ar": "سيدي، هذه هي رسالة الدعوة الخاصة بك، يمكنك الاتصال بي في أي وقت إذا كان لديك أي استفسارات."
+  },
+  {
+    "id": "64",
+    "cat": "阿尔及利亚",
+    "title": "174先生，我们收到信用证70个工作日内就可以交付卡车，运输到你的目的港。",
+    "en": "Sir, we can deliver the trucks within 70 working days after receiving the letter of credit, and ship them to your destination port.",
+    "fr": "Monsieur, nous pouvons livrer les camions dans les 70 jours ouvrables après réception de la lettre de crédit et les expédier à votre port de destination.",
+    "ar": "سيدي، يمكننا تسليم الشاحنات خلال 70 يوم عمل بعد استلام خطاب الاعتماد وشحنها إلى ميناء الوجهة الخاص بك."
+  },
+  {
+    "id": "65",
+    "cat": "阿尔及利亚",
+    "title": "175抱歉先生，我们只能把卡车运送到目的港，我们无法帮你清关，建议你可以找目的港的代理商，他们可以更好的帮助你。",
+    "en": "Sorry sir, we can only transport the trucks to the destination port. We cannot help with customs clearance. We suggest you find an agent at the port who can assist you better.",
+    "fr": "Désolé monsieur, nous ne pouvons transporter les camions qu'au port de destination. Nous ne pouvons pas vous aider pour le dédouanement. Nous vous suggérons de trouver un agent au port qui peut mieux vous aider.",
+    "ar": "عذرًا سيدي، يمكننا نقل الشاحنات فقط إلى ميناء الوجهة، ولا يمكننا مساعدتك في التخليص الجمركي. ننصحك بالبحث عن وكيل في الميناء لمساعدتك بشكل أفضل."
+  },
+  {
+    "id": "66",
+    "cat": "阿尔及利亚",
+    "title": "176抱歉先生，我听不懂你的语音，请你打字告诉我你的需求，感谢你的理解。",
+    "en": "Sorry sir, I don’t understand your voice message. Please type your request. Thank you for your understanding.",
+    "fr": "Désolé monsieur, je ne comprends pas votre message vocal. Veuillez taper votre demande. Merci pour votre compréhension.",
+    "ar": "عذرًا سيدي، لا أفهم رسالتك الصوتية، يرجى كتابة طلبك، شكرًا لتفهمك."
+  },
+  {
+    "id": "67",
+    "cat": "阿尔及利亚",
+    "title": "177抱歉先生，我没有理解你的意思，麻烦你再重新说下，感谢你的理解。",
+    "en": "Sorry sir, I did not understand your meaning. Please explain again. Thank you for your understanding.",
+    "fr": "Désolé monsieur, je n'ai pas compris votre signification. Veuillez répéter. Merci pour votre compréhension.",
+    "ar": "عذرًا سيدي، لم أفهم قصدك، يرجى إعادة الشرح، شكرًا لتفهمك."
+  },
+  {
+    "id": "68",
+    "cat": "阿尔及利亚",
+    "title": "178抱歉先生，我们现在已经下班了，上班以后我会把资料发给你，感谢你的理解",
+    "en": "Sorry sir, we have finished work for today. I will send you the information after work. Thank you for your understanding.",
+    "fr": "Désolé monsieur, nous avons terminé le travail pour aujourd'hui. Je vous enverrai les informations après le travail. Merci pour votre compréhension.",
+    "ar": "عذرًا سيدي، لقد انتهينا من العمل الآن، سأرسل لك المعلومات بعد العودة للعمل، شكرًا لتفهمك."
+  },
+  {
+    "id": "69",
+    "cat": "阿尔及利亚",
+    "title": "179抱歉先生，不能使用阿尔及利亚第纳尔货币付款，只能使用信用证付款，或者国际电汇付款。",
+    "en": "Sorry sir, payment cannot be made in Algerian Dinar. Only L/C or international wire transfer is accepted.",
+    "fr": "Désolé monsieur, le paiement ne peut pas être effectué en dinar algérien. Seuls la lettre de crédit ou le virement international sont acceptés.",
+    "ar": "عذرًا سيدي، لا يمكن الدفع بالدينار الجزائري، يمكن الدفع فقط عن طريق خطاب اعتماد أو تحويل دولي."
+  },
+  {
+    "id": "70",
+    "cat": "阿尔及利亚",
+    "title": "180抱歉先生，我们没有二手的卡车，我们只出售新车，中国的二手卡车不太适合非洲市场的排放标准，车辆很容易出问题。",
+    "en": "Sorry sir, we don’t sell used trucks. We only sell new trucks. Chinese used trucks are not suitable for African emission standards and are prone to problems.",
+    "fr": "Désolé monsieur, nous ne vendons pas de camions d'occasion. Nous ne vendons que des camions neufs. Les camions d'occasion chinois ne conviennent pas aux normes d'émission africaines et sont sujets à des problèmes.",
+    "ar": "عذرًا سيدي، لا نبيع شاحنات مستعملة، نبيع فقط شاحنات جديدة. الشاحنات الصينية المستعملة غير مناسبة لمعايير الانبعاث في إفريقيا وسهلة التعطل."
+  },
+  {
+    "id": "71",
+    "cat": "阿尔及利亚",
+    "title": "181先生，中国的二手卡车是欧五和欧六的排放标准，在非洲使用很容易出问题，速度也只有20迈。速度无法提高。",
+    "en": "Sir, Chinese used trucks meet Euro 5 and Euro 6 emission standards. Using them in Africa can easily cause problems, and the speed is only 20 mph, which cannot be increased.",
+    "fr": "Monsieur, les camions d'occasion chinois respectent les normes Euro 5 et Euro 6. Les utiliser en Afrique peut facilement causer des problèmes et leur vitesse est limitée à 20 mph.",
+    "ar": "سيدي، الشاحنات الصينية المستعملة تتوافق مع معايير الانبعاث يورو 5 ويورو 6. استخدامها في إفريقيا قد يسبب مشاكل بسهولة، والسرعة 20 ميل في الساعة فقط ولا يمكن زيادتها."
+  },
+  {
+    "id": "72",
+    "cat": "阿尔及利亚",
+    "title": "182先生，我们出售的全新卡车都是有质保的，有一年或者10万公里的质保，卡车可以放心使用。",
+    "en": "Sir, all our new trucks come with a warranty of one year or 100,000 km, so you can use the trucks with confidence.",
+    "fr": "Monsieur, tous nos camions neufs sont garantis un an ou 100 000 km, vous pouvez donc utiliser les camions en toute confiance.",
+    "ar": "سيدي، جميع الشاحنات الجديدة التي نبيعها تأتي مع ضمان لمدة سنة أو 100,000 كم، لذا يمكنك استخدام الشاحنات بثقة."
+  },
+  {
+    "id": "73",
+    "cat": "阿尔及利亚",
+    "title": "183好的，我明白了先生",
+    "en": "Okay, I understand sir.",
+    "fr": "D'accord, je comprends monsieur.",
+    "ar": "حسنًا، فهمت سيدي."
+  },
+  {
+    "id": "74",
+    "cat": "阿尔及利亚",
+    "title": "184先生，你能给我发一张你想购买卡车的图片吗？方便我理解。",
+    "en": "Sir, could you send me a picture of the truck you want to purchase? It will help me understand.",
+    "fr": "Monsieur, pourriez-vous m'envoyer une photo du camion que vous souhaitez acheter ? Cela m'aidera à comprendre.",
+    "ar": "سيدي، هل يمكنك إرسال صورة للشاحنة التي ترغب في شرائها؟ سيساعدني ذلك على الفهم."
+  },
+  {
+    "id": "75",
+    "cat": "阿尔及利亚",
+    "title": "185好的先生，我等你的消息。",
+    "en": "Okay sir, I will wait for your message.",
+    "fr": "D'accord monsieur, j'attendrai votre message.",
+    "ar": "حسنًا سيدي، سأنتظر رسالتك."
+  },
+  {
+    "id": "76",
+    "cat": "阿尔及利亚",
+    "title": "186你好先生，我现在没有上班，我需要上班以后查询，然后回复你，感谢你的理解",
+    "en": "Hello sir, I am not working at the moment. I need to check and reply to you after I start working. Thank you for your understanding",
+    "fr": "Bonjour Monsieur, je ne suis pas au travail en ce moment, je dois me renseigner après le travail, puis vous répondre, merci de votre compréhension",
+    "ar": "مرحبا ، سيدي ، أنا لا أذهب إلى العمل الآن ، وأنا بحاجة إلى الذهاب إلى العمل بعد التحقيق ، ثم الرد عليك ، شكرا لكم على تفهمكم"
+  },
+  {
+    "id": "77",
+    "cat": "阿尔及利亚",
+    "title": "187感谢你的信任先生",
+    "en": "Thank you for your trust, sir.",
+    "fr": "Merci pour votre confiance, monsieur.",
+    "ar": "شكرًا لثقتك سيدي."
+  },
+  {
+    "id": "78",
+    "cat": "阿尔及利亚",
+    "title": "188先生，我们有很多阿尔及利亚的客户，都是通过LC信用证来付款的。我们可以接受信用证",
+    "en": "Sir, we have many clients in Algeria who pay via L/C. We can accept L/C payments.",
+    "fr": "Monsieur, nous avons de nombreux clients en Algérie qui paient par L/C. Nous pouvons accepter les paiements par L/C.",
+    "ar": "سيدي، لدينا العديد من العملاء في الجزائر الذين يدفعون عن طريق خطاب اعتماد. يمكننا قبول الدفع عبر خطاب اعتماد."
+  },
+  {
+    "id": "79",
+    "cat": "阿尔及利亚",
+    "title": "189先生，这是我们能提供最好的价格。",
+    "en": "Sir, this is the best price we can offer.",
+    "fr": "Monsieur, c'est le meilleur prix que nous pouvons offrir.",
+    "ar": "سيدي، هذا هو أفضل سعر يمكننا تقديمه."
+  },
+  {
+    "id": "80",
+    "cat": "阿尔及利亚",
+    "title": "190先生，我们提供的价格包含了海运费。",
+    "en": "Sir, the price we provide includes sea freight.",
+    "fr": "Monsieur, le prix que nous proposons inclut le fret maritime.",
+    "ar": "سيدي، السعر الذي نقدمه يشمل الشحن البحري."
+  },
+  {
+    "id": "81",
+    "cat": "阿尔及利亚",
+    "title": "191可以的先生，我们可以给你提供FOB的价格。",
+    "en": "Yes sir, we can provide you with FOB price.",
+    "fr": "Oui monsieur, nous pouvons vous fournir le prix FOB.",
+    "ar": "نعم سيدي، يمكننا تزويدك بسعر FOB."
+  },
+  {
+    "id": "82",
+    "cat": "阿尔及利亚",
+    "title": "192抱歉先生，这个价格我们无法出售。",
+    "en": "Sorry sir, we cannot sell at this price.",
+    "fr": "Désolé monsieur, nous ne pouvons pas vendre à ce prix.",
+    "ar": "عذرًا سيدي، لا يمكننا البيع بهذا السعر."
+  },
+  {
+    "id": "83",
+    "cat": "阿尔及利亚",
+    "title": "193先生，如果你确定购买的话，每台卡车我可以赠送你一些保养配件，方便你日后车辆的维修和保养。",
+    "en": "Sir, if you confirm the purchase, I can provide some maintenance parts for each truck to facilitate future maintenance and repairs.",
+    "fr": "Monsieur, si vous confirmez l'achat, je peux fournir quelques pièces d'entretien pour chaque camion afin de faciliter la maintenance et les réparations futures.",
+    "ar": "سيدي، إذا أكدت الشراء، يمكنني تزويدك ببعض قطع الصيانة لكل شاحنة لتسهيل صيانة وإصلاح الشاحنة لاحقًا."
+  },
+  {
+    "id": "84",
+    "cat": "阿尔及利亚",
+    "title": "194先生，我们赠送的配件有空气滤芯，机油，机滤，等一些常规保养的配件。",
+    "en": "Sir, the parts we provide include air filters, engine oil, oil filters, and other regular maintenance items.",
+    "fr": "Monsieur, les pièces que nous fournissons comprennent des filtres à air, de l'huile moteur, des filtres à huile et d'autres articles d'entretien courant.",
+    "ar": "سيدي، القطع التي نقدمها تشمل فلاتر الهواء، وزيت المحرك، وفلاتر الزيت، وغيرها من قطع الصيانة العادية."
+  },
+  {
+    "id": "85",
+    "cat": "阿尔及利亚",
+    "title": "195可以的先生，关于更多的配件我也可以给你申请，尽量满足你的需求。",
+    "en": "Yes sir, I can also apply for more parts for you to meet your needs as much as possible.",
+    "fr": "Oui monsieur, je peux également demander d'autres pièces pour vous afin de répondre au mieux à vos besoins.",
+    "ar": "نعم سيدي، يمكنني أيضًا طلب المزيد من القطع لتلبية احتياجاتك قدر الإمكان."
+  },
+  {
+    "id": "86",
+    "cat": "阿尔及利亚",
+    "title": "196先生，你想要什么配件？我这边可以查询一下。",
+    "en": "Sir, what parts do you want? I can check for you.",
+    "fr": "Monsieur, quelles pièces souhaitez-vous ? Je peux vérifier pour vous.",
+    "ar": "سيدي، ما هي القطع التي ترغب بها؟ يمكنني التحقق لك."
+  },
+  {
+    "id": "87",
+    "cat": "阿尔及利亚",
+    "title": "197好的，先生，感谢你的信任，我会尽快为你提供形式发票",
+    "en": "Okay sir, thank you for your trust. I will provide the proforma invoice as soon as possible.",
+    "fr": "D'accord monsieur, merci pour votre confiance. Je fournirai la facture pro forma dès que possible.",
+    "ar": "حسنًا سيدي، شكرًا لثقتك، سأزودك بالفاتورة الأولية في أسرع وقت ممكن."
+  },
+  {
+    "id": "88",
+    "cat": "阿尔及利亚",
+    "title": "198先生你确定购买的话，我可以为你提供形式发票，方便你申请信用证。",
+    "en": "Sir, if you confirm the purchase, I can provide a proforma invoice to facilitate your L/C application.",
+    "fr": "Monsieur, si vous confirmez l'achat, je peux fournir une facture pro forma pour faciliter votre demande de lettre de crédit.",
+    "ar": "سيدي، إذا أكدت الشراء، يمكنني تزويدك بفاتورة أولية لتسهيل تقديم طلب خطاب الاعتماد."
+  },
+  {
+    "id": "89",
+    "cat": "阿尔及利亚",
+    "title": "199先生，请把你公司的商业登记证书发送给我，我制作形式发票的时候需要使用。",
+    "en": "Sir, please send me your company’s business registration certificate, which I need to prepare the proforma invoice.",
+    "fr": "Monsieur, veuillez m'envoyer le certificat d'enregistrement commercial de votre société, dont j'ai besoin pour préparer la facture pro forma.",
+    "ar": "سيدي، يرجى إرسال شهادة تسجيل الشركة الخاصة بك، أحتاجها لإعداد الفاتورة الأولية."
+  },
+  {
+    "id": "90",
+    "cat": "阿尔及利亚",
+    "title": "200是的，先生我可以为你提供发票，请你给我提供一下你的商业登记证书，方便我为你提供pi。",
+    "en": "Yes sir, I can provide the invoice. Please provide your business registration certificate to help me prepare the PI.",
+    "fr": "Oui monsieur, je peux fournir la facture. Veuillez me fournir votre certificat d'enregistrement commercial pour que je puisse préparer le PI.",
+    "ar": "نعم سيدي، يمكنني تزويدك بالفاتورة، يرجى تزويدي بشهادة تسجيل الشركة لتسهيل إعداد الفاتورة الأولية."
+  },
+  {
+    "id": "91",
+    "cat": "阿尔及利亚",
+    "title": "201先生，根据申请PPI最新政策要求，PI中需同时包含客户的法语与阿语名称，另外除NIF号之外还需要客户都RC（营业执照）号",
+    "en": "Sir, according to the latest PPI policy requirements, the PI must include the customer’s name in French and Arabic, and in addition to the NIF, the customer’s RC (business license) number is also required.",
+    "fr": "Monsieur, selon les dernières exigences de la politique PPI, la PI doit inclure le nom du client en français et en arabe, et en plus du NIF, le numéro RC (licence commerciale) du client est également requis.",
+    "ar": "سيدي، وفقًا لأحدث متطلبات سياسة PPI، يجب أن تتضمن الفاتورة الأولية اسم العميل بالفرنسية والعربية، وبالإضافة إلى رقم NIF، مطلوب أيضًا رقم RC (رخصة العمل) للعميل."
+  },
+  {
+    "id": "92",
+    "cat": "阿尔及利亚",
+    "title": "202是的先生，如果你可以帮助我们成交的话，我们可以支付你佣金，需要看具体的车型，最高我们可以支付1000美元的佣金。",
+    "en": "Yes sir, if you help us close the deal, we can pay you a commission. It depends on the specific truck model, and the maximum we can pay is $1,000.",
+    "fr": "Oui monsieur, si vous nous aidez à conclure la vente, nous pouvons vous verser une commission. Cela dépend du modèle spécifique de camion et le maximum que nous pouvons payer est de 1000 $.",
+    "ar": "نعم سيدي، إذا ساعدتنا في إتمام الصفقة، يمكننا دفع عمولة لك. يعتمد ذلك على نوع الشاحنة المحدد، والحد الأقصى الذي يمكننا دفعه هو 1000 دولار."
+  },
+  {
+    "id": "93",
+    "cat": "阿尔及利亚",
+    "title": "203抱歉先生，如果你想要更多的佣金，你可以在我们的报价基础上增加费用，当交易结束的时候，我们转到你指定的账户。",
+    "en": "Sorry sir, if you want more commission, you can increase the fee based on our quotation. When the deal is completed, we will transfer it to your designated account.",
+    "fr": "Désolé monsieur, si vous voulez plus de commission, vous pouvez augmenter le montant sur la base de notre devis. Une fois la transaction terminée, nous le transférerons sur votre compte désigné.",
+    "ar": "عذرًا سيدي، إذا كنت تريد المزيد من العمولة، يمكنك زيادة الرسوم على أساس عرضنا. عند الانتهاء من الصفقة، سنحولها إلى حسابك المحدد."
+  },
+  {
+    "id": "94",
+    "cat": "阿尔及利亚",
+    "title": "204先生，当我们收到卡车的费用以后，我们可以把佣金转到你指定的账户。",
+    "en": "Sir, after we receive the payment for the trucks, we can transfer the commission to your designated account.",
+    "fr": "Monsieur, après réception du paiement des camions, nous pouvons transférer la commission sur votre compte désigné.",
+    "ar": "سيدي، بعد استلامنا لمبلغ الشاحنات، يمكننا تحويل العمولة إلى الحساب الذي تحدده."
+  },
+  {
+    "id": "95",
+    "cat": "阿尔及利亚",
+    "title": "205朋友，希望我们合作愉快。",
+    "en": "Friend, I hope we have a pleasant cooperation.",
+    "fr": "Ami, j'espère que nous aurons une coopération agréable.",
+    "ar": "صديقي، آمل أن تكون لدينا شراكة ناجحة."
+  },
+  {
+    "id": "96",
+    "cat": "阿尔及利亚",
+    "title": "206先生，你购买卡车拿到了政府的审批了吗？",
+    "en": "Sir, have you obtained government approval for the truck purchase?",
+    "fr": "Monsieur, avez-vous obtenu l'approbation du gouvernement pour l'achat du camion ?",
+    "ar": "سيدي، هل حصلت على موافقة الحكومة لشراء الشاحنة؟"
+  },
+  {
+    "id": "97",
+    "cat": "阿尔及利亚",
+    "title": "207先生，你的信用证申请好了吗？",
+    "en": "Sir, have you completed your L/C application?",
+    "fr": "Monsieur, avez-vous terminé votre demande de lettre de crédit ?",
+    "ar": "سيدي، هل أكملت طلب خطاب الاعتماد الخاص بك؟"
+  },
+  {
+    "id": "98",
+    "cat": "阿尔及利亚",
+    "title": "208先生，你申请信用证的水单，请发我一下。方便我们公司财务查询这个信用证。",
+    "en": "Sir, please send me the payment slip for your L/C application. This will help our finance department check the L/C.",
+    "fr": "Monsieur, veuillez m'envoyer le bordereau de paiement pour votre demande de L/C. Cela aidera notre service financier à vérifier la lettre de crédit.",
+    "ar": "سيدي، يرجى إرسال إيصال الدفع لطلب خطاب الاعتماد الخاص بك، سيساعد قسم المالية لدينا على التحقق من خطاب الاعتماد."
+  },
+  {
+    "id": "99",
+    "cat": "阿尔及利亚",
+    "title": "209可以的先生，我们收到水单以后，可以提前安排卡车的生产，这样你可以更快的见到你的卡车。",
+    "en": "Yes sir, after receiving the payment slip, we can arrange truck production in advance so that you can see your truck faster.",
+    "fr": "Oui monsieur, après réception du bordereau de paiement, nous pouvons organiser la production des camions à l'avance afin que vous puissiez voir votre camion plus rapidement.",
+    "ar": "نعم سيدي، بعد استلام إيصال الدفع، يمكننا ترتيب إنتاج الشاحنة مسبقًا حتى تتمكن من رؤية شاحنتك بسرعة أكبر."
+  },
+  {
+    "id": "100",
+    "cat": "阿尔及利亚",
+    "title": "210先生，这是你的形式发票，请查收。",
+    "en": "Sir, this is your proforma invoice. Please check it.",
+    "fr": "Monsieur, voici votre facture pro forma. Veuillez la vérifier.",
+    "ar": "سيدي، هذه هي الفاتورة الأولية الخاصة بك، يرجى التحقق منها."
+  },
+  {
+    "id": "101",
+    "cat": "阿尔及利亚",
+    "title": "211先生，请查看。",
+    "en": "Sir, please check.",
+    "fr": "Monsieur, veuillez vérifier.",
+    "ar": "سيدي، يرجى التحقق."
+  },
+  {
+    "id": "102",
+    "cat": "阿尔及利亚",
+    "title": "212你好先生，我是中国人，我现在在中国，卡车也是在中国生产。",
+    "en": "Hello sir, I am Chinese, currently in China, and the trucks are also produced in China.",
+    "fr": "Bonjour monsieur, je suis chinois, je suis actuellement en Chine et les camions sont également produits en Chine.",
+    "ar": "مرحبًا سيدي، أنا صيني وأعيش حاليًا في الصين، والشاحنات تُنتج أيضًا في الصين."
+  },
+  {
+    "id": "103",
+    "cat": "阿尔及利亚",
+    "title": "213先生，我们有很多阿尔及利亚的客户，都是通过LC信用证来付款的，很抱歉我们无法直接收取第纳尔的货币.",
+    "en": "Sir, we have many clients in Algeria who pay via L/C. Sorry, we cannot accept payment in Dinar directly.",
+    "fr": "Monsieur, nous avons de nombreux clients en Algérie qui paient par L/C. Désolé, nous ne pouvons pas accepter le paiement en dinar directement.",
+    "ar": "سيدي، لدينا العديد من العملاء في الجزائر الذين يدفعون عن طريق خطاب اعتماد، نأسف لا يمكننا قبول الدفع بالدينار مباشرة."
+  },
+  {
+    "id": "104",
+    "cat": "阿尔及利亚",
+    "title": "214先生，阿尔及利亚购买卡车需要通过政府的审批，通过审批以后才可以到银行申请信用证，我们在收到信用证以后，会安排卡车的生产和运输",
+    "en": "Sir, purchasing trucks in Algeria requires government approval. Only after approval can you apply for an L/C at the bank. Once we receive the L/C, we will arrange truck production and shipment.",
+    "fr": "Monsieur, l'achat de camions en Algérie nécessite une approbation gouvernementale. Ce n'est qu'après approbation que vous pouvez demander une lettre de crédit à la banque. Une fois que nous recevons la L/C, nous organiserons la production et l'expédition des camions.",
+    "ar": "سيدي، شراء الشاحنات في الجزائر يتطلب موافقة حكومية، وبعد الموافقة يمكن تقديم طلب خطاب اعتماد في البنك، وبمجرد استلام خطاب الاعتماد سنقوم بترتيب إنتاج الشاحنات وشحنها."
+  },
+  {
+    "id": "105",
+    "cat": "阿尔及利亚",
+    "title": "215好的先生，有什么问题可以随时联系我，让我们保持联系。",
+    "en": "Okay sir, if you have any questions, feel free to contact me. Let’s keep in touch.",
+    "fr": "D'accord monsieur, si vous avez des questions, n'hésitez pas à me contacter. Restons en contact.",
+    "ar": "حسنًا سيدي، إذا كان لديك أي أسئلة، لا تتردد في الاتصال بي. لنحافظ على التواصل."
+  },
+  {
+    "id": "106",
+    "cat": "阿尔及利亚",
+    "title": "216好的先生，我明白你很着急购买卡车，我看一下，这个卡车有没有现车，如果有的话，我们在收到信用证以后马上安排给你发货。",
+    "en": "Okay sir, I understand you are eager to purchase the truck. Let me check if this truck is in stock. If yes, we will arrange shipment immediately after receiving the L/C.",
+    "fr": "D'accord monsieur, je comprends que vous êtes pressé d'acheter le camion. Je vais vérifier si ce camion est en stock. Si oui, nous organiserons l'expédition immédiatement après réception de la L/C.",
+    "ar": "حسنًا سيدي، أفهم أنك متحمس لشراء الشاحنة. سأتحقق مما إذا كانت الشاحنة متوفرة. إذا كانت كذلك، سنقوم بترتيب الشحن فور استلام خطاب الاعتماد."
+  },
+  {
+    "id": "107",
+    "cat": "阿尔及利亚",
+    "title": "217抱歉先生，这个卡车没有现车，只能安排生产，生产周期大概30天",
+    "en": "Sorry sir, this truck is currently out of stock and can only be arranged for production. The production cycle is approximately 30 days",
+    "fr": "Désolé, Monsieur, ce camion n'a pas de voiture actuelle, il peut seulement organiser la production, le cycle de production est d'environ 30 jours",
+    "ar": "آسف ، سيدي ، هذه الشاحنة لا يوجد لديه سيارة في الوقت الحاضر ، يمكن فقط ترتيب الإنتاج ، دورة الإنتاج حوالي 30 يوما ."
+  },
+  {
+    "id": "108",
+    "cat": "阿尔及利亚",
+    "title": "218稍等先生，我现在查询一下。",
+    "en": "Please wait sir, I will check now.",
+    "fr": "Veuillez patienter monsieur, je vais vérifier maintenant.",
+    "ar": "يرجى الانتظار سيدي، سأتحقق الآن."
+  },
+  {
+    "id": "109",
+    "cat": "阿尔及利亚",
+    "title": "219稍等先生，我给你发一张照片。",
+    "en": "Please wait sir, I will send you a photo.",
+    "fr": "Veuillez patienter monsieur, je vais vous envoyer une photo.",
+    "ar": "يرجى الانتظار سيدي، سأرسل لك صورة."
+  },
+  {
+    "id": "110",
+    "cat": "阿尔及利亚",
+    "title": "220稍等先生，我给你发一下卡车的配置。",
+    "en": "Please wait sir, I will send you the truck configuration.",
+    "fr": "Veuillez patienter monsieur, je vais vous envoyer la configuration du camion.",
+    "ar": "يرجى الانتظار سيدي، سأرسل لك تكوين الشاحنة."
+  },
+  {
+    "id": "111",
+    "cat": "阿尔及利亚",
+    "title": "221可以的先生，卡车的颜色是可以定制的。",
+    "en": "Yes sir, the truck color can be customized.",
+    "fr": "Oui monsieur, la couleur du camion peut être personnalisée.",
+    "ar": "نعم سيدي، يمكن تخصيص لون الشاحنة."
+  },
+  {
+    "id": "112",
+    "cat": "阿尔及利亚",
+    "title": "222先生，这是我们的卡车颜色的色卡，方便你做颜色的选择。",
+    "en": "Sir, this is our truck color chart, which will help you choose the color.",
+    "fr": "Monsieur, voici notre nuancier de couleurs pour camions, ce qui vous aidera à choisir la couleur.",
+    "ar": "سيدي، هذه هي لوحة ألوان شاحناتنا، لتسهيل اختيارك للون."
+  },
+  {
+    "id": "113",
+    "cat": "阿尔及利亚",
+    "title": "223先生，卡车是可以定制特殊的颜色，需要增加500美元的定制颜色的费用。",
+    "en": "Sir, the truck can be customized with special colors. An additional $500 is required for custom color.",
+    "fr": "Monsieur, le camion peut être personnalisé avec des couleurs spéciales. Des frais supplémentaires de 500 $ sont requis pour la couleur personnalisée.",
+    "ar": "سيدي، يمكن تخصيص الشاحنة بألوان خاصة، وتحتاج رسوم إضافية قدرها 500 دولار للون المخصص."
+  },
+  {
+    "id": "114",
+    "cat": "阿尔及利亚",
+    "title": "224是的先生，我们有产品目录，和网站。",
+    "en": "Yes sir, we have a product catalog and a website.",
+    "fr": "Oui monsieur, nous avons un catalogue de produits et un site web.",
+    "ar": "نعم سيدي، لدينا كتالوج منتجات وموقع إلكتروني."
+  },
+  {
+    "id": "115",
+    "cat": "阿尔及利亚",
+    "title": "225先生这是我们的网站，方便你查看https://www.sinocv.com/",
+    "en": "Sir, this is our website for your reference: https://www.sinocv.com/",
+    "fr": "Monsieur, voici notre site web pour référence : https://www.sinocv.com/",
+    "ar": "سيدي، هذا هو موقعنا للاطلاع: https://www.sinocv.com/"
+  },
+  {
+    "id": "116",
+    "cat": "阿尔及利亚",
+    "title": "226先生我们whatsapp聊天记录的有我们的产品目录，你可以查看你想要的车型，有什么不明白可以随时联系我。",
+    "en": "Sir, our WhatsApp chat contains our product catalog. You can check the model you want, and contact me anytime if anything is unclear.",
+    "fr": "Monsieur, notre discussion WhatsApp contient notre catalogue de produits. Vous pouvez vérifier le modèle que vous souhaitez et me contacter à tout moment si quelque chose n'est pas clair.",
+    "ar": "سيدي، تحتوي محادثة WhatsApp الخاصة بنا على كتالوج المنتجات، يمكنك التحقق من الطراز الذي تريده، وإذا كان هناك أي شيء غير واضح يمكنك الاتصال بي في أي وقت."
+  },
+  {
+    "id": "117",
+    "cat": "阿尔及利亚",
+    "title": "227抱歉先生，我们是专业出售卡车的，我们没有工程机械设备，如果你相信我的话，我也可以帮助你购买工程机械。",
+    "en": "Sorry sir, we specialize in selling trucks. We don’t have construction machinery. If you trust me, I can also help you purchase construction machinery.",
+    "fr": "Désolé monsieur, nous sommes spécialisés dans la vente de camions. Nous n'avons pas de machines de construction. Si vous me faites confiance, je peux aussi vous aider à acheter des machines de construction.",
+    "ar": "عذرًا سيدي، نحن متخصصون في بيع الشاحنات، ولا نملك معدات البناء. إذا وثقت بي، يمكنني أيضًا مساعدتك في شراء معدات البناء."
+  },
+  {
+    "id": "118",
+    "cat": "阿尔及利亚",
+    "title": "228先生，你是想购买6x6的牵引车吗？",
+    "en": "Sir, do you want to purchase a 6x6 tractor truck?",
+    "fr": "Monsieur, voulez-vous acheter un camion tracteur 6x6 ?",
+    "ar": "سيدي، هل ترغب في شراء شاحنة جر 6x6؟"
+  },
+  {
+    "id": "119",
+    "cat": "阿尔及利亚",
+    "title": "229是的先生，我们有6x6的牵引车。",
+    "en": "Yes sir, we have 6x6 tractor trucks.",
+    "fr": "Oui monsieur, nous avons des camions tracteurs 6x6.",
+    "ar": "نعم سيدي، لدينا شاحنات جر 6x6."
+  },
+  {
+    "id": "120",
+    "cat": "阿尔及利亚",
+    "title": "230先生，你是想购买6x6的自卸车吗？",
+    "en": "Sir, do you want to purchase a 6x6 dump truck?",
+    "fr": "Monsieur, voulez-vous acheter un camion benne 6x6 ?",
+    "ar": "سيدي، هل ترغب في شراء شاحنة قلابة 6x6؟"
+  },
+  {
+    "id": "121",
+    "cat": "阿尔及利亚",
+    "title": "231是的先生，我们有6x6的自卸车。",
+    "en": "Yes sir, we have 6x6 dump trucks.",
+    "fr": "Oui monsieur, nous avons des camions bennes 6x6.",
+    "ar": "نعم سيدي، لدينا شاحنات قلابة 6x6."
+  },
+  {
+    "id": "122",
+    "cat": "阿尔及利亚",
+    "title": "232先生，你是想给牵引车加装一个油箱吗？",
+    "en": "Sir, do you want to add a fuel tank to the tractor truck?",
+    "fr": "Monsieur, voulez-vous ajouter un réservoir de carburant au camion tracteur ?",
+    "ar": "سيدي، هل ترغب في إضافة خزان وقود لشاحنة الجر؟"
+  },
+  {
+    "id": "123",
+    "cat": "阿尔及利亚",
+    "title": "233先生，牵引车底盘无法加装油箱，只能在背部增加一个1000升的油箱。",
+    "en": "Sir, the tractor chassis cannot be equipped with a fuel tank. Only a 1000L tank can be added at the rear.",
+    "fr": "Monsieur, le châssis du tracteur ne peut pas être équipé d'un réservoir de carburant. Seul un réservoir de 1000 litres peut être ajouté à l'arrière.",
+    "ar": "سيدي، لا يمكن تركيب خزان وقود على هيكل شاحنة الجر، يمكن إضافة خزان بسعة 1000 لتر في الخلف فقط."
+  },
+  {
+    "id": "124",
+    "cat": "阿尔及利亚",
+    "title": "234先生，牵引车背部加装一个1000升的油箱，需要1200美元。",
+    "en": "Sir, adding a 1000L tank to the rear of the tractor truck costs $1,200.",
+    "fr": "Monsieur, ajouter un réservoir de 1000 litres à l'arrière du camion tracteur coûte 1200 $.",
+    "ar": "سيدي، إضافة خزان بسعة 1000 لتر في خلف شاحنة الجر تكلف 1200 دولار."
+  },
+  {
+    "id": "125",
+    "cat": "阿尔及利亚",
+    "title": "235先生，你是想给这个卡车加装一个油箱吗？",
+    "en": "Sir, do you want to add a fuel tank to this truck?",
+    "fr": "Monsieur, voulez-vous ajouter un réservoir de carburant à ce camion ?",
+    "ar": "سيدي، هل ترغب في إضافة خزان وقود لهذه الشاحنة؟"
+  },
+  {
+    "id": "126",
+    "cat": "阿尔及利亚",
+    "title": "236先生，你想要加装一个多大的油箱？",
+    "en": "Sir, what size of fuel tank do you want to add?",
+    "fr": "Monsieur, quelle taille de réservoir de carburant souhaitez-vous ajouter ?",
+    "ar": "سيدي، ما حجم خزان الوقود الذي ترغب في إضافته؟"
+  },
+  {
+    "id": "127",
+    "cat": "阿尔及利亚",
+    "title": "237先生，加装一个400升的油箱需要600美元",
+    "en": "Sir, adding a 400L fuel tank costs $600.",
+    "fr": "Monsieur, ajouter un réservoir de 400 litres coûte 600 $.",
+    "ar": "سيدي، إضافة خزان وقود بسعة 400 لتر يكلف 600 دولار."
+  },
+  {
+    "id": "128",
+    "cat": "阿尔及利亚",
+    "title": "238先生，加装一个600升的油箱需要700美元",
+    "en": "Sir, adding a 600L fuel tank costs $700.",
+    "fr": "Monsieur, ajouter un réservoir de 600 litres coûte 700 $.",
+    "ar": "سيدي، إضافة خزان وقود بسعة 600 لتر يكلف 700 دولار."
+  },
+  {
+    "id": "129",
+    "cat": "阿尔及利亚",
+    "title": "239先生，你想给卡车加装一套监控系统吗？",
+    "en": "Sir, do you want to add a monitoring system to the truck?",
+    "fr": "Monsieur, voulez-vous ajouter un système de surveillance au camion ?",
+    "ar": "سيدي، هل ترغب في إضافة نظام مراقبة للشاحنة؟"
+  },
+  {
+    "id": "130",
+    "cat": "阿尔及利亚",
+    "title": "240先生，给卡车加装一套原厂的监控和一个10英尺的屏幕，需要增加700美元。",
+    "en": "Sir, adding an OEM monitoring system and a 10-foot screen to the truck costs $700.",
+    "fr": "Monsieur, ajouter un système de surveillance d'origine et un écran de 10 pieds au camion coûte 700 $.",
+    "ar": "سيدي، إضافة نظام مراقبة أصلي وشاشة 10 أقدام للشاحنة تكلف 700 دولار."
+  },
+  {
+    "id": "131",
+    "cat": "阿尔及利亚",
+    "title": "241先生，给卡车加装一套副厂的监控和一个10英尺的屏幕，需要增加430美元。",
+    "en": "Sir, adding an aftermarket monitoring system and a 10-foot screen costs $430.",
+    "fr": "Monsieur, ajouter un système de surveillance de rechange et un écran de 10 pieds coûte 430 $.",
+    "ar": "سيدي، إضافة نظام مراقبة غير أصلي وشاشة 10 أقدام تكلف 430 دولار."
+  },
+  {
+    "id": "132",
+    "cat": "阿尔及利亚",
+    "title": "242先生，你是想要加装一个原厂的驻车空调吗？",
+    "en": "Sir, do you want to add an OEM parking air conditioner?",
+    "fr": "Monsieur, voulez-vous ajouter un climatiseur de stationnement d'origine ?",
+    "ar": "سيدي، هل ترغب في إضافة مكيف هواء موقف أصلي؟"
+  },
+  {
+    "id": "133",
+    "cat": "阿尔及利亚",
+    "title": "243可以的先生，加装一个原厂的驻车空调，需要1200美元",
+    "en": "Yes sir, adding an OEM parking air conditioner costs $1,200.",
+    "fr": "Oui monsieur, ajouter un climatiseur de stationnement d'origine coûte 1 200 $.",
+    "ar": "نعم سيدي، إضافة مكيف هواء موقف أصلي تكلف 1200 دولار."
+  },
+  {
+    "id": "134",
+    "cat": "阿尔及利亚",
+    "title": "244先生，你是想要加装一个原厂的冰箱吗？",
+    "en": "Sir, do you want to add an OEM refrigerator?",
+    "fr": "Monsieur, voulez-vous ajouter un réfrigérateur d'origine ?",
+    "ar": "سيدي، هل ترغب في إضافة ثلاجة أصلية للشاحنة؟"
+  },
+  {
+    "id": "135",
+    "cat": "阿尔及利亚",
+    "title": "245可以的先生，可以给卡车加装一个冰箱，原厂的冰箱价格是500美元",
+    "en": "Yes sir, you can add a refrigerator to the truck. The OEM refrigerator costs $500.",
+    "fr": "Oui monsieur, vous pouvez ajouter un réfrigérateur au camion. Le réfrigérateur d'origine coûte 500 $.",
+    "ar": "نعم سيدي، يمكنك إضافة ثلاجة للشاحنة، وسعر الثلاجة الأصلية 500 دولار."
+  },
+  {
+    "id": "136",
+    "cat": "阿尔及利亚",
+    "title": "246先生你是想要给卡车加装一套液压系统吗？",
+    "en": "Sir, do you want to add a hydraulic system to the truck?",
+    "fr": "Monsieur, voulez-vous ajouter un système hydraulique au camion ?",
+    "ar": "سيدي، هل ترغب في إضافة نظام هيدروليكي للشاحنة؟"
+  },
+  {
+    "id": "137",
+    "cat": "阿尔及利亚",
+    "title": "247可以的先生，可以加装一套液压系统，加装一套液压系统的价格是2000美元。",
+    "en": "Yes sir, a hydraulic system can be added. The price for adding a hydraulic system is $2,000.",
+    "fr": "Oui monsieur, un système hydraulique peut être ajouté. Le prix pour ajouter un système hydraulique est de 2000 $.",
+    "ar": "نعم سيدي، يمكن إضافة نظام هيدروليكي، وسعر إضافة النظام الهيدروليكي هو 2000 دولار."
+  },
+  {
+    "id": "138",
+    "cat": "阿尔及利亚",
+    "title": "248先生，液压系统的油箱一般是180升的油箱，180升的液压油箱就可以满足使用。",
+    "en": "Sir, the hydraulic system’s tank is usually 180 liters, which is sufficient for use.",
+    "fr": "Monsieur, le réservoir du système hydraulique est généralement de 180 litres, ce qui suffit pour l'utilisation.",
+    "ar": "سيدي، خزان النظام الهيدروليكي عادةً بسعة 180 لتر، وهذه السعة تكفي للاستخدام."
+  },
+  {
+    "id": "139",
+    "cat": "阿尔及利亚",
+    "title": "249先生，你是想要加装一个牵引绞盘吗？",
+    "en": "Sir, do you want to add a winch?",
+    "fr": "Monsieur, voulez-vous ajouter un treuil ?",
+    "ar": "سيدي، هل ترغب في إضافة ونش سحب؟"
+  },
+  {
+    "id": "140",
+    "cat": "阿尔及利亚",
+    "title": "250可以的先生，加装一个5吨牵引绞盘，价格是560美元",
+    "en": "Yes sir, a 5-ton winch can be added. The price is $560.",
+    "fr": "Oui monsieur, un treuil de 5 tonnes peut être ajouté. Le prix est de 560 $.",
+    "ar": "نعم سيدي، يمكن إضافة ونش بسعة 5 طن، السعر 560 دولار."
+  },
+  {
+    "id": "141",
+    "cat": "阿尔及利亚",
+    "title": "251可以用的先生，加装一个10吨的牵引绞盘，价格是800美元",
+    "en": "Yes sir, a 10-ton winch can be added. The price is $800.",
+    "fr": "Oui monsieur, un treuil de 10 tonnes peut être ajouté. Le prix est de 800 $.",
+    "ar": "نعم سيدي، يمكن إضافة ونش بسعة 10 طن، السعر 800 دولار."
+  },
+  {
+    "id": "142",
+    "cat": "阿尔及利亚",
+    "title": "252先生，这个固特异固特异315/80r22.5，单胎价格是400美元",
+    "en": "Sir, this Goodyear 315/80R22.5 tire costs $400 per tire.",
+    "fr": "Monsieur, ce pneu Goodyear 315/80R22.5 coûte 400 $ l'unité.",
+    "ar": "سيدي، هذا الإطار Goodyear 315/80R22.5 سعر الإطار الواحد 400 دولار."
+  },
+  {
+    "id": "143",
+    "cat": "阿尔及利亚",
+    "title": "253先生，这个固特异385/80r22.5的轮胎加轮毂价格是600美元",
+    "en": "Sir, this Goodyear 385/80R22.5 tire with rim costs $600.",
+    "fr": "Monsieur, ce pneu Goodyear 385/80R22.5 avec jante coûte 600 $.",
+    "ar": "سيدي، هذا الإطار Goodyear 385/80R22.5 مع الجنط يكلف 600 دولار."
+  },
+  {
+    "id": "144",
+    "cat": "阿尔及利亚",
+    "title": "254先生，你是想给燃油再加装一台过滤系统吗？",
+    "en": "Sir, do you want to add a fuel filtration system to the truck?",
+    "fr": "Monsieur, voulez-vous ajouter un système de filtration de carburant au camion ?",
+    "ar": "سيدي، هل ترغب في إضافة نظام تصفية وقود للشاحنة؟"
+  },
+  {
+    "id": "145",
+    "cat": "阿尔及利亚",
+    "title": "255先生给卡车加装粗滤，需要增加290美元",
+    "en": "Sir, adding a coarse filter to the truck costs $290.",
+    "fr": "Monsieur, ajouter un filtre grossier au camion coûte 290 $.",
+    "ar": "سيدي، إضافة فلتر خشن للشاحنة يكلف 290 دولار."
+  },
+  {
+    "id": "146",
+    "cat": "阿尔及利亚",
+    "title": "256先生，你是想要更换一组驻车空调的电池吗？",
+    "en": "Sir, do you want to replace the parking air conditioner battery?",
+    "fr": "Monsieur, voulez-vous remplacer la batterie du climatiseur de stationnement ?",
+    "ar": "سيدي، هل ترغب في استبدال بطارية مكيف الهواء الخاص بالوقوف؟"
+  },
+  {
+    "id": "147",
+    "cat": "阿尔及利亚",
+    "title": "257先生，加装一组骆驼品牌5度的锂电池，可以让驻车空调使用12个小时左右，价格是980美元",
+    "en": "Sir, installing a set of Camel brand 5Ah lithium batteries allows the parking A/C to run for about 12 hours. The price is $980.",
+    "fr": "Monsieur, installer un ensemble de batteries lithium de marque Camel 5 Ah permet au climatiseur de stationnement de fonctionner environ 12 heures. Le prix est de 980 $.",
+    "ar": "سيدي، تركيب مجموعة بطاريات ليثيوم ماركة Camel بسعة 5 أمبير تسمح لمكيف الهواء بالعمل حوالي 12 ساعة، السعر 980 دولار."
+  },
+  {
+    "id": "148",
+    "cat": "阿尔及利亚",
+    "title": "258先生，三角轮胎315/80r22.5轮胎不锈钢轮毂每条价格是500美元",
+    "en": "Sir, the Triangle 315/80R22.5 tire with stainless steel rim costs $500 each.",
+    "fr": "Monsieur, le pneu Triangle 315/80R22.5 avec jante en acier inoxydable coûte 500 $ chacun.",
+    "ar": "سيدي، إطار Triangle 315/80R22.5 مع جنط من الفولاذ المقاوم للصدأ يكلف 500 دولار لكل إطار."
+  },
+  {
+    "id": "149",
+    "cat": "阿尔及利亚",
+    "title": "259你好先生，你之前咨询的卡车还想要购买吗？",
+    "en": "Hello sir, do you still want to purchase the trucks you previously inquired about?",
+    "fr": "Bonjour monsieur, souhaitez-vous toujours acheter les camions dont vous avez précédemment fait la demande ?",
+    "ar": "مرحبًا سيدي، هل لا تزال ترغب في شراء الشاحنات التي استفسرت عنها سابقًا؟"
+  },
+  {
+    "id": "150",
+    "cat": "阿尔及利亚",
+    "title": "260你好先生，你的信用证申请下来了吗？",
+    "en": "Hello sir, has your L/C application been approved?",
+    "fr": "Bonjour monsieur, votre demande de L/C a-t-elle été approuvée ?",
+    "ar": "مرحبًا سيدي، هل تمت الموافقة على طلب خطاب الاعتماد الخاص بك؟"
+  },
+  {
+    "id": "151",
+    "cat": "阿尔及利亚",
+    "title": "261你好我的朋友，你的信用证申请下来吗？",
+    "en": "Hello my friend, has your L/C application been approved?",
+    "fr": "Bonjour mon ami, votre demande de L/C a-t-elle été approuvée ?",
+    "ar": "مرحبًا صديقي، هل تمت الموافقة على طلب خطاب الاعتماد الخاص بك؟"
+  },
+  {
+    "id": "152",
+    "cat": "阿尔及利亚",
+    "title": "262你好先生，你购买卡车的申请被政府批准了吗？",
+    "en": "Hello sir, has your truck purchase application been approved by the government?",
+    "fr": "Bonjour monsieur, votre demande d'achat de camion a-t-elle été approuvée par le gouvernement ?",
+    "ar": "مرحبًا سيدي، هل تمت الموافقة على طلب شراء الشاحنة من قبل الحكومة؟"
+  },
+  {
+    "id": "153",
+    "cat": "阿尔及利亚",
+    "title": "263你好先生，你购买的卡车已经发运了，我会定时给你更新船行驶的轨迹信息。",
+    "en": "Hello sir, the trucks you purchased have been shipped. I will update you regularly with the ship’s tracking information.",
+    "fr": "Bonjour monsieur, les camions que vous avez achetés ont été expédiés. Je vous fournirai régulièrement les informations de suivi du navire.",
+    "ar": "مرحبًا سيدي، تم شحن الشاحنات التي اشتريتها، سأرسل لك تحديثات منتظمة لمسار السفينة."
+  },
+  {
+    "id": "154",
+    "cat": "阿尔及利亚",
+    "title": "264稍等先生，我给你发车辆的配置和照片。",
+    "en": "Please wait sir, I will send you the truck configuration and photos.",
+    "fr": "Veuillez patienter monsieur, je vais vous envoyer la configuration et les photos du camion.",
+    "ar": "يرجى الانتظار سيدي، سأرسل لك تكوين الشاحنة والصور."
+  },
+  {
+    "id": "155",
+    "cat": "阿尔及利亚",
+    "title": "265抱歉先生，我现在在休息，我上班以后，会查询一下并发送给你。",
+    "en": "Sorry sir, I am currently resting. I will check and send you the information after work.",
+    "fr": "Désolé monsieur, je me repose actuellement. Je vérifierai et vous enverrai les informations après le travail.",
+    "ar": "عذرًا سيدي، أنا أستريح حاليًا، سأتحقق وأرسل لك المعلومات بعد العودة للعمل."
+  },
+  {
+    "id": "156",
+    "cat": "阿尔及利亚",
+    "title": "2101先生，这款 SITRAK 4×2 牵引车，单卧铺，430 马力，手动挡，CFR 价格 59700 美元。",
+    "en": "Sir, this SITRAK 4×2 tractor truck, single sleeper, 430 HP, manual transmission, CFR price is $59,700.",
+    "fr": "Monsieur, ce tracteur SITRAK 4×2, couchette simple, 430 ch, transmission manuelle, prix CFR 59 700 $.",
+    "ar": "سيدي، هذه شاحنة جر SITRAK 4×2، سرير مفرد، 430 حصان، ناقل حركة يدوي، السعر CFR 59,700 دولار."
+  },
+  {
+    "id": "157",
+    "cat": "阿尔及利亚",
+    "title": "2102先生，这款 SITRAK 4×2 牵引车，单卧铺，430 马力，自动挡，CFR 价格 63000 美元。",
+    "en": "Sir, this SITRAK 4×2 tractor truck, single sleeper, 430 HP, automatic transmission, CFR price is $63,000.",
+    "fr": "Monsieur, ce tracteur SITRAK 4×2, couchette simple, 430 ch, transmission automatique, prix CFR 63 000 $.",
+    "ar": "سيدي، هذه شاحنة جر SITRAK 4×2، سرير مفرد، 430 حصان، ناقل حركة أوتوماتيكي، السعر CFR 63,000 دولار."
+  },
+  {
+    "id": "158",
+    "cat": "阿尔及利亚",
+    "title": "2103先生，这款 SITRAK 4×2 牵引车 G7S，双卧铺，480 马力，自动挡，空气悬挂，CFR 价格 71000 美元。",
+    "en": "Sir, this SITRAK 4×2 tractor truck G7S, double sleeper, 480 HP, automatic transmission, air suspension, CFR price is $71,000.",
+    "fr": "Monsieur, ce tracteur SITRAK 4×2 G7S, couchette double, 480 ch, transmission automatique, suspension pneumatique, prix CFR 71 000 $.",
+    "ar": "سيدي، هذه شاحنة جر SITRAK 4×2 G7S، سرير مزدوج، 480 حصان، ناقل حركة أوتوماتيكي، تعليق هوائي، السعر CFR 71,000 دولار."
+  },
+  {
+    "id": "159",
+    "cat": "阿尔及利亚",
+    "title": "2104先生，这款 SITRAK 6×4 牵引车，单卧铺，430 马力，手动挡，CFR 价格 64000 美元。",
+    "en": "Sir, this SITRAK 6×4 tractor truck, single sleeper, 430 HP, manual transmission, CFR price is $64,000.",
+    "fr": "Monsieur, ce tracteur SITRAK 6×4, couchette simple, 430 ch, transmission manuelle, prix CFR 64 000 $.",
+    "ar": "سيدي، هذه شاحنة جر SITRAK 6×4، سرير مفرد، 430 حصان، ناقل حركة يدوي، السعر CFR 64,000 دولار."
+  },
+  {
+    "id": "160",
+    "cat": "阿尔及利亚",
+    "title": "2105先生，这款 SITRAK 6×4 牵引车，单卧铺，430 马力，手动挡，载重版，CFR 价格 65300 美元。",
+    "en": "Sir, this SITRAK 6×4 tractor truck, single sleeper, 430 HP, manual transmission, heavy-duty version, CFR price is $65,300.",
+    "fr": "Monsieur, ce tracteur SITRAK 6×4, couchette simple, 430 ch, transmission manuelle, version lourde, prix CFR 65 300 $.",
+    "ar": "سيدي، هذه شاحنة جر SITRAK 6×4، سرير مفرد، 430 حصان، ناقل حركة يدوي، نسخة ثقيلة، السعر CFR 65,300 دولار."
+  },
+  {
+    "id": "161",
+    "cat": "阿尔及利亚",
+    "title": "2106先生，这款 SITRAK 6×4 牵引车，单卧铺，手动挡，480 马力，CFR 价格 65200 美元。",
+    "en": "Sir, this SITRAK 6×4 tractor truck, single sleeper, manual transmission, 480 HP, CFR price is $65,200.",
+    "fr": "Monsieur, ce tracteur SITRAK 6×4, couchette simple, transmission manuelle, 480 ch, prix CFR 65 200 $.",
+    "ar": "سيدي، هذه شاحنة جر SITRAK 6×4، سرير مفرد، ناقل حركة يدوي، 480 حصان، السعر CFR 65,200 دولار."
+  },
+  {
+    "id": "162",
+    "cat": "阿尔及利亚",
+    "title": "2107先生，这款 SITRAK 6×4 牵引车，单卧铺，自动挡，480 马力，CFR 价格 72000 美元。",
+    "en": "Sir, this SITRAK 6×4 tractor truck, single sleeper, automatic transmission, 480 HP, CFR price is $72,000.",
+    "fr": "Monsieur, ce tracteur SITRAK 6×4, couchette simple, transmission automatique, 480 ch, prix CFR 72 000 $.",
+    "ar": "سيدي، هذه شاحنة جر SITRAK 6×4، سرير مفرد، ناقل حركة أوتوماتيكي، 480 حصان، السعر CFR 72,000 دولار."
+  },
+  {
+    "id": "163",
+    "cat": "阿尔及利亚",
+    "title": "2108先生，这款 SITRAK 6×4 牵引车，单卧铺，手动挡，480 马力，载重版，CFR 价格 66300 美元。",
+    "en": "Sir, this SITRAK 6×4 tractor truck, single sleeper, manual transmission, 480 HP, heavy-duty version, CFR price is $66,300.",
+    "fr": "Monsieur, ce tracteur SITRAK 6×4, couchette simple, transmission manuelle, 480 ch, version lourde, prix CFR 66 300 $.",
+    "ar": "سيدي، هذه شاحنة جر SITRAK 6×4، سرير مفرد، ناقل حركة يدوي، 480 حصان، نسخة ثقيلة، السعر CFR 66,300 دولار."
+  },
+  {
+    "id": "164",
+    "cat": "阿尔及利亚",
+    "title": "2109先生，这款 SITRAK 6×4 牵引车 G7G，双卧铺，手动挡，480 马力，CFR 价格 66400 美元。",
+    "en": "Sir, this SITRAK 6×4 tractor truck G7G, double sleeper, manual transmission, 480 HP, CFR price is $66,400.",
+    "fr": "Monsieur, ce tracteur SITRAK 6×4 G7G, couchette double, transmission manuelle, 480 ch, prix CFR 66 400 $.",
+    "ar": "سيدي، هذه شاحنة جر SITRAK 6×4 G7G، سرير مزدوج، ناقل حركة يدوي، 480 حصان، السعر CFR 66,400 دولار."
+  },
+  {
+    "id": "165",
+    "cat": "阿尔及利亚",
+    "title": "2110先生，这款 SITRAK 6×4 牵引车 G7G，双卧铺，手动挡，480 马力，载重版 CL，CFR 价格 67500 美元。",
+    "en": "Sir, this SITRAK 6×4 tractor truck G7G, double sleeper, manual transmission, 480 HP, heavy-duty CL version, CFR price is $67,500.",
+    "fr": "Monsieur, ce tracteur SITRAK 6×4 G7G, couchette double, transmission manuelle, 480 ch, version lourde CL, prix CFR 67 500 $.",
+    "ar": "سيدي، هذه شاحنة جر SITRAK 6×4 G7G، سرير مزدوج، ناقل حركة يدوي، 480 حصان، نسخة ثقيلة CL، السعر CFR 67,500 دولار."
+  },
+  {
+    "id": "166",
+    "cat": "阿尔及利亚",
+    "title": "2111先生，这款 SITRAK 6×4 牵引车 G7S，单卧铺，自动挡，480 马力，载重版，CFR 价格 74000 美元。",
+    "en": "Sir, this SITRAK 6×4 tractor G7S, single sleeper, AMT, 480 HP, heavy-duty version, CFR price is 74,000 USD.",
+    "fr": "Monsieur, ce tracteur SITRAK 6×4 G7S, une couchette, boîte automatique, 480 ch, version renforcée, le prix CFR est de 74 000 USD.",
+    "ar": "سيدي، شاحنة SITRAK 6×4 طراز G7S، سرير واحد، جير أوتوماتيك، 480 حصان، نسخة الحمولة الثقيلة، سعر CFR هو 74,000 دولار أمريكي."
+  },
+  {
+    "id": "167",
+    "cat": "阿尔及利亚",
+    "title": "2112先生，这款 SITRAK 6×4 牵引车 G7S，双卧铺，480马力自动挡，载重版，CFR 价格 75900 美元。",
+    "en": "Sir, this SITRAK 6×4 tractor unit G7S, double sleeper cabin, 480 horsepower automatic transmission, heavy-duty version, CFR price 75900 US dollars.",
+    "fr": "Monsieur, ce tracteur routier SITRAK 6×4 modèle G7S, cabine à double couchette, 480 chevaux boîte de vitesses automatique, version renforcée pour charge lourde, prix CFR 75900 dollars américains.",
+    "ar": "سيدي، وحدة جرار ستراك 6×4 موديل G7S، كابينة بسرير مزدوج، بقوة 480 حصان وناقل حركة أوتوماتيكي، الإصدار المحمّل للحمولات الثقيلة، سعر CFR 75900 دولار أمريكي."
+  },
+  {
+    "id": "168",
+    "cat": "阿尔及利亚",
+    "title": "2113先生，这款 SITRAK 6×4 牵引车 G7S，双卧铺，540马力自动挡，标准版钢板悬架，CFR 价格 73000 美元。",
+    "en": "Sir, this SITRAK 6×4 tractor unit G7S, double sleeper cabin, 540 horsepower automatic transmission, standard leaf spring suspension, CFR price 73,000 US dollars.",
+    "fr": "Monsieur, ce tracteur routier SITRAK 6×4 modèle G7S, cabine à double couchette, 540 chevaux boîte automatique, suspension à lames standard, prix CFR 73 000 dollars américains.",
+    "ar": "سيدي، وحدة جرار ستراك 6×4 موديل G7S، كابينة سرير مزدوج، بقوة 540 حصان وناقل حركة أوتوماتيكي، تعليق صفيحي قياسي، سعر CFR 73000 دولار أمريكي."
+  },
+  {
+    "id": "169",
+    "cat": "阿尔及利亚",
+    "title": "2114先生，这款 SITRAK 6×4 牵引车 G7S，双卧铺，540马力自动挡，标准版空气悬挂，CFR 价格 75000 美元。",
+    "en": "Sir, this SITRAK 6×4 tractor unit G7S, double sleeper, 540 horsepower with automatic transmission, standard air suspension, CFR price 75,000 US dollars.",
+    "fr": "Monsieur, ce tracteur routier SITRAK 6×4 modèle G7S, double couchette, 540 chevaux avec boîte de vitesses automatique, suspension pneumatique standard, prix CFR 75 000 dollars américains.",
+    "ar": "سيدي، وحدة جرار ستراك 6×4 موديل G7S، بسرير مزدوج، بقوة 540 حصان وناقل حركة أوتوماتيكي، تعليق هوائي قياسي، وسعر CFR 75000 دولار أمريكي."
+  },
+  {
+    "id": "170",
+    "cat": "阿尔及利亚",
+    "title": "2115先生，这款豪沃 TX 6×4，430 马力， MAN 发动机， CFR 的价格是 52000 美元。",
+    "en": "Sir, this HOWO TX 6×4, 430 HP, MAN engine, the CFR price is 52,000 USD.",
+    "fr": "Monsieur, ce HOWO TX 6×4, 430 ch, moteur MAN, le prix CFR est de 52 000 USD.",
+    "ar": "سيدي، شاحنة HOWO TX 6×4، بقوة 430 حصان، محرك MAN، سعر CFR هو 52,000 دولار أمريكي."
+  },
+  {
+    "id": "171",
+    "cat": "阿尔及利亚",
+    "title": "2116先生，这款豪沃 TX 6×4，430 马力， weichai发动机， CFR 的价格是 49500美元。",
+    "en": "Sir, this HOWO TX 6×4, 430 HP, Weichai engine, the CFR price is 49,500 USD.",
+    "fr": "Monsieur, ce HOWO TX 6×4, 430 ch, moteur Weichai, le prix CFR est de 49 500 USD.",
+    "ar": "سيدي، شاحنة HOWO TX 6×4، بقوة 430 حصان، محرك Weichai، سعر CFR هو 49,500 دولار أمريكي."
+  },
+  {
+    "id": "172",
+    "cat": "阿尔及利亚",
+    "title": "2117先生，这款 T7H 4×2 430马力单卧铺平顶牵引车，13吨后桥，CFR 价格 43700 美元。",
+    "en": "Sir, this T7H 4×2 tractor unit with 430 horsepower, single sleeper flat roof cab, 13-ton rear axle, CFR price 43700 US dollars.",
+    "fr": "Monsieur, ce tracteur routier T7H 4×2 de 430 chevaux, cabine toit plat à simple couchette, pont arrière de 13 tonnes, prix CFR 43700 dollars américains.",
+    "ar": "سيدي، وحدة جرار T7H 4×2 بقوة 430 حصان، كابينة سقف مسطح بسرير واحد، محور خلفي 13 طن، سعر CFR 43700 دولار أمريكي."
+  },
+  {
+    "id": "173",
+    "cat": "阿尔及利亚",
+    "title": "2118先生，这款 T7H 4×2 430马力单卧铺平顶牵引车，16吨后桥，CFR 价格 46100 美元。",
+    "en": "Sir, this T7H 4×2 tractor unit, 430 horsepower, single sleeper flat roof cab, 16-ton rear axle, CFR price 46100 US dollars.",
+    "fr": "Monsieur, ce tracteur routier T7H 4×2 de 430 chevaux, cabine toit plat à simple couchette, pont arrière de 16 tonnes, prix CFR 46100 dollars américains.",
+    "ar": "سيدي، وحدة جرار T7H 4×2 بقوة 430 حصان، كابينة سقف مسطح بسرير واحد، محور خلفي 16 طن، سعر CFR 46100 دولار أمريكي."
+  },
+  {
+    "id": "174",
+    "cat": "阿尔及利亚",
+    "title": "2119先生，这款 T7H 6×4 430马力平顶牵引车，单卧铺，13吨后桥，CFR 价格 49100 美元。",
+    "en": "Sir, this T7H 6×4 tractor unit, 430 horsepower, flat roof cab with single sleeper, 13-ton rear axle, CFR price 49100 US dollars.",
+    "fr": "Monsieur, ce tracteur routier T7H 6×4 de 430 chevaux, cabine toit plat à simple couchette, pont arrière de 13 tonnes, prix CFR 49100 dollars américains.",
+    "ar": "سيدي، وحدة جرار T7H 6×4 بقوة 430 حصان، كابينة سقف مسطح بسرير واحد، محور خلفي 13 طن، سعر CFR 49100 دولار أمريكي."
+  },
+  {
+    "id": "175",
+    "cat": "阿尔及利亚",
+    "title": "2120先生，这款 T7H 6×4 430马力高顶牵引车，双卧铺，13吨后桥，CFR 价格 50100 美元。",
+    "en": "Sir, this T7H 6×4 high-roof tractor unit, 430 horsepower, double sleeper, 13-ton rear axle, CFR price 50100 US dollars.",
+    "fr": "Monsieur, ce tracteur routier T7H 6×4 à toit haut, 430 chevaux, double couchette, pont arrière de 13 tonnes, prix CFR 50100 dollars américains.",
+    "ar": "سيدي، وحدة جرار T7H 6×4 ذات السقف المرتفع، بقوة 430 حصان، بسرير مزدوج، محور خلفي 13 طن، سعر CFR 50100 دولار أمريكي."
+  },
+  {
+    "id": "176",
+    "cat": "阿尔及利亚",
+    "title": "2121先生，这款 T7H 6×4 430马力平顶牵引车，单卧铺，16吨后桥，CFR 价格 52100 美元。",
+    "en": "Sir, this T7H 6×4 tractor unit, 430 horsepower, flat roof with single sleeper, 16-ton rear axle, CFR price 52100 US dollars.",
+    "fr": "Monsieur, ce tracteur routier T7H 6×4 de 430 chevaux, cabine toit plat à simple couchette, pont arrière de 16 tonnes, prix CFR 52100 dollars américains.",
+    "ar": "سيدي، وحدة جرار T7H 6×4 بقوة 430 حصان، كابينة سقف مسطح بسرير واحد، محور خلفي 16 طن، سعر CFR 52100 دولار أمريكي."
+  },
+  {
+    "id": "177",
+    "cat": "阿尔及利亚",
+    "title": "2122先生，这款 T7H 6×4 430马力高顶牵引车，双卧铺，16吨后桥，CFR 价格 53300 美元。",
+    "en": "Sir, this T7H 6×4 high-roof tractor unit, 430 horsepower, double sleeper cabin, 16-ton rear axle, CFR price 53,300 US dollars.",
+    "fr": "Monsieur, ce tracteur routier T7H 6×4 à toit haut, 430 chevaux, cabine à double couchette, pont arrière de 16 tonnes, prix CFR 53 300 dollars américains.",
+    "ar": "سيدي، وحدة جرار T7H 6×4 ذات السقف المرتفع، بقوة 430 حصان، كابينة بسرير مزدوج، محور خلفي 16 طن، سعر CFR 53300 دولار أمريكي."
+  },
+  {
+    "id": "178",
+    "cat": "阿尔及利亚",
+    "title": "2201先生，这款豪沃 TX 6×4 自卸车，340 马力，货箱 16 立方，CFR 价格 50000 美元。",
+    "en": "Sir, this HOWO TX 6×4 dump truck, 340 HP, 16 cubic meters cargo box, CFR price is $50,000.",
+    "fr": "Monsieur, ce camion-benne HOWO TX 6×4, 340 ch, caisse de 16 mètres cubes, prix CFR 50 000 $.",
+    "ar": "سيدي، هذه شاحنة قلابة HOWO TX 6×4، 340 حصان، صندوق حمولته 16 متر³، السعر CFR 50,000 دولار."
+  },
+  {
+    "id": "179",
+    "cat": "阿尔及利亚",
+    "title": "2202先生，这款豪沃 TX 6×4 自卸车，380 马力，货箱 18 立方，CFR 价格 51400 美元。",
+    "en": "Sir, this HOWO TX 6×4 dump truck, 380 HP, 18 cubic meters cargo box, CFR price is $51,400.",
+    "fr": "Monsieur, ce camion-benne HOWO TX 6×4, 380 ch, caisse de 18 mètres cubes, prix CFR 51 400 $.",
+    "ar": "سيدي، هذه شاحنة قلابة HOWO TX 6×4، 380 حصان، صندوق حمولته 18 متر³، السعر CFR 51,400 دولار."
+  },
+  {
+    "id": "180",
+    "cat": "阿尔及利亚",
+    "title": "2203先生，这款豪沃 TX 8×4 自卸车，400 马力，货箱 22 立方，CFR 价格 59700 美元。",
+    "en": "Sir, this HOWO TX 8×4 dump truck, 400 HP, 22 cubic meters cargo box, CFR price is $59,700.",
+    "fr": "Monsieur, ce camion-benne HOWO TX 8×4, 400 ch, caisse de 22 mètres cubes, prix CFR 59 700 $.",
+    "ar": "سيدي، هذه شاحنة قلابة HOWO TX 8×4، 400 حصان، صندوق حمولته 22 متر³، السعر CFR 59,700 دولار."
+  },
+  {
+    "id": "181",
+    "cat": "阿尔及利亚",
+    "title": "2204先生，这款豪沃6×4自卸车，340马力，货箱16立方，CFR价格46500美元。",
+    "en": "Sir, this HOWO 6×4 dump truck, 340 HP, 16 cubic meters cargo box, CFR price is $46,500.",
+    "fr": "Monsieur, ce camion-benne HOWO 6×4, 340 ch, caisse de 16 mètres cubes, prix CFR 46 500 $.",
+    "ar": "سيدي، هذه شاحنة قلابة HOWO 6×4، 340 حصان، صندوق حمولته 16 متر³، السعر CFR 46,500 دولار."
+  },
+  {
+    "id": "182",
+    "cat": "阿尔及利亚",
+    "title": "2205先生，这款豪沃6×4自卸车，380马力，货箱18立方，CFR价格48900美元。",
+    "en": "Sir, this HOWO 6×4 dump truck, 380 HP, 18 cubic meters cargo box, CFR price is $48,900.",
+    "fr": "Monsieur, ce camion-benne HOWO 6×4, 380 ch, caisse de 18 mètres cubes, prix CFR 48 900 $.",
+    "ar": "سيدي، هذه شاحنة قلابة HOWO 6×4، 380 حصان، صندوق حمولته 18 متر³، السعر CFR 48,900 دولار."
+  },
+  {
+    "id": "183",
+    "cat": "阿尔及利亚",
+    "title": "2206先生，这款豪沃8×4自卸车，400马力发动机，货箱22立方，CFR价格56900美元。",
+    "en": "Sir, this HOWO 8×4 dump truck, 400 HP engine, 22 cubic meters cargo box, CFR price is $56,900.",
+    "fr": "Monsieur, ce camion-benne HOWO 8×4, moteur 400 ch, caisse de 22 mètres cubes, prix CFR 56 900 $.",
+    "ar": "سيدي، هذه شاحنة قلابة HOWO 8×4، محرك 400 حصان، صندوق حمولته 22 متر³، السعر CFR 56,900 دولار."
+  },
+  {
+    "id": "184",
+    "cat": "阿尔及利亚",
+    "title": "2207先生，这款豪沃 8×4 自卸车，430 马力，货箱 7.6米，货箱36立方， CFR 的价格是 62,200 美元。",
+    "en": "Sir, this HOWO 8×4 dump truck, 430 HP, 7.6 meters cargo box, 36 cubic meters, CFR price is $62,200.",
+    "fr": "Monsieur, ce camion-benne HOWO 8×4, 430 ch, caisse de 7,6 mètres, 36 mètres cubes, prix CFR 62 200 $.",
+    "ar": "سيدي، هذه شاحنة قلابة HOWO 8×4، 430 حصان، صندوق طوله 7.6 متر، سعته 36 متر³، السعر CFR 62,200 دولار."
+  },
+  {
+    "id": "185",
+    "cat": "阿尔及利亚",
+    "title": "2208先生，这款 SITRAK 6×4 自卸车，配备MAN发动机，430 马力，货箱 18.63 立方，CFR 价格 68700 美元。",
+    "en": "Sir, this SITRAK 6×4 dump truck with MAN engine, 430 HP, cargo box 18.63 cubic meters, CFR price is $68,700.",
+    "fr": "Monsieur, ce camion-benne SITRAK 6×4 avec moteur MAN, 430 ch, caisse de 18,63 mètres cubes, prix CFR 68 700 $.",
+    "ar": "سيدي، هذه شاحنة قلابة SITRAK 6×4، مزودة بمحرك MAN، 430 حصان، صندوق حمولته 18.63 متر³، السعر CFR 68,700 دولار."
+  },
+  {
+    "id": "186",
+    "cat": "阿尔及利亚",
+    "title": "2209先生，这款 SITRAK 8×4 自卸车，配备 MAN 发动机，430 马力，货箱 22 立方，CFR 价格 71500 美元。",
+    "en": "Sir, this SITRAK 8×4 dump truck with MAN engine, 430 HP, 22 cubic meters cargo box, CFR price is $71,500.",
+    "fr": "Monsieur, ce camion-benne SITRAK 8×4 avec moteur MAN, 430 ch, caisse de 22 mètres cubes, prix CFR 71 500 $.",
+    "ar": "سيدي، هذه شاحنة قلابة SITRAK 8×4، مزودة بمحرك MAN، 430 حصان، صندوق حمولته 22 متر³، السعر CFR 71,500 دولار."
+  },
+  {
+    "id": "187",
+    "cat": "阿尔及利亚",
+    "title": "2210先生，这款 SITRAK 8×4 自卸车，配备 MAN 发动机，480 马力，货箱 25 立方，CFR 价格 78500 美元。",
+    "en": "Sir, this SITRAK 8×4 dump truck with MAN engine, 480 HP, 25 cubic meters cargo box, CFR price is $78,500.",
+    "fr": "Monsieur, ce camion-benne SITRAK 8×4 avec moteur MAN, 480 ch, caisse de 25 mètres cubes, prix CFR 78 500 $.",
+    "ar": "سيدي، هذه شاحنة قلابة SITRAK 8×4، مزودة بمحرك MAN، 480 حصان، صندوق حمولته 25 متر³، السعر CFR 78,500 دولار."
+  },
+  {
+    "id": "188",
+    "cat": "阿尔及利亚",
+    "title": "2301先生，这款豪沃统帅 4×2 轻卡潍柴140马力发动机 3.5 吨底盘， CFR 的价格是 15300 美元。",
+    "en": "Sir, this HOWO Leader 4×2 light truck with Weichai 140 HP engine, 3.5-ton chassis, CFR price is $15,300.",
+    "fr": "Monsieur, ce camion léger HOWO Leader 4×2 avec moteur Weichai 140 ch, châssis de 3,5 tonnes, prix CFR 15 300 $.",
+    "ar": "سيدي، هذه شاحنة خفيفة HOWO Leader 4×2، بمحرك Weichai 140 حصان، شاسيه 3.5 طن، السعر CFR 15,300 دولار."
+  },
+  {
+    "id": "189",
+    "cat": "阿尔及利亚",
+    "title": "2302先生，这款豪沃统帅 4×2 轻卡玉柴120马力发动机 3.5 吨底盘， CFR 的价格是 14900 美元。",
+    "en": "Sir, this HOWO Leader 4×2 light truck with Yuchai 120 HP engine, 3.5-ton chassis, CFR price is $14,900.",
+    "fr": "Monsieur, ce camion léger HOWO Leader 4×2 avec moteur Yuchai 120 ch, châssis de 3,5 tonnes, prix CFR 14 900 $.",
+    "ar": "سيدي، هذه شاحنة خفيفة HOWO Leader 4×2، بمحرك Yuchai 120 حصان، شاسيه 3.5 طن، السعر CFR 14,900 دولار."
+  },
+  {
+    "id": "190",
+    "cat": "阿尔及利亚",
+    "title": "2303先生，这款豪沃统帅 3.5 吨轻卡，140马力，货箱 4.2 米， CFR 的价格是18100美元。",
+    "en": "Sir, this HOWO Leader 3.5-ton light truck, 140 HP, 4.2-meter cargo box, CFR price is $18,100.",
+    "fr": "Monsieur, ce camion léger HOWO Leader 3,5 tonnes, 140 ch, caisse de 4,2 mètres, prix CFR 18 100 $.",
+    "ar": "سيدي، هذه شاحنة خفيفة HOWO Leader 3.5 طن، 140 حصان، صندوق طوله 4.2 متر، السعر CFR 18,100 دولار."
+  },
+  {
+    "id": "191",
+    "cat": "阿尔及利亚",
+    "title": "2304先生，这款豪沃统帅 3.5 吨轻卡，货箱 4.2 米，玉柴 120 马力发动机。 CFR价格14400 美元。",
+    "en": "Sir, this HOWO Leader 3.5-ton light truck, 4.2-meter cargo box, Yuchai 120 HP engine, CFR price is $14,400.",
+    "fr": "Monsieur, ce camion léger HOWO Leader 3,5 tonnes, caisse de 4,2 mètres, moteur Yuchai 120 ch, prix CFR 14 400 $.",
+    "ar": "سيدي، هذه شاحنة خفيفة HOWO Leader 3.5 طن، صندوق طوله 4.2 متر، بمحرك Yuchai 120 حصان، السعر CFR 14,400 دولار."
+  },
+  {
+    "id": "192",
+    "cat": "阿尔及利亚",
+    "title": "2305先生，这款豪沃 3.5 吨厢式轻卡，33 轴距。玉柴 120 马力发动机，货箱长 4.2 米， CFR 的价格是 19500 美元。",
+    "en": "Sir, this HOWO 3.5-ton box light truck, 33 wheelbase, Yuchai 120 HP engine, cargo box length 4.2 meters, CFR price is $19,500.",
+    "fr": "Monsieur, ce camion léger HOWO 3,5 tonnes, caisse fermée, empattement 33, moteur Yuchai 120 ch, longueur de caisse 4,2 mètres, prix CFR 19 500 $.",
+    "ar": "سيدي، هذه شاحنة خفيفة HOWO 3.5 طن بصندوق مغلق، قاعدة عجلات 33، بمحرك Yuchai 120 حصان، طول الصندوق 4.2 متر، السعر CFR 19,500 دولار."
+  },
+  {
+    "id": "193",
+    "cat": "阿尔及利亚",
+    "title": "2306先生，这款豪沃 5 吨轻卡，玉柴发动机120马力，货箱 4.2 米， CFR 价格是 17500 美元。",
+    "en": "Sir, this HOWO 5-ton light truck, Yuchai 120 HP engine, 4.2-meter cargo box, CFR price is $17,500.",
+    "fr": "Monsieur, ce camion léger HOWO 5 tonnes, moteur Yuchai 120 ch, caisse de 4,2 mètres, prix CFR 17 500 $.",
+    "ar": "سيدي، هذه شاحنة خفيفة HOWO 5 طن، بمحرك Yuchai 120 حصان، صندوق طوله 4.2 متر، السعر CFR 17,500 دولار."
+  },
+  {
+    "id": "194",
+    "cat": "阿尔及利亚",
+    "title": "2307先生，这辆豪沃8吨，4x2轻卡，配康明斯 141 马力发动机。货箱4.2 米， CFR 的价格是 22200 美元。",
+    "en": "Sir, this HOWO 8-ton 4x2 light truck with Cummins 141 HP engine, 4.2-meter cargo box, CFR price is $22,200.",
+    "fr": "Monsieur, ce camion léger HOWO 8 tonnes 4×2, moteur Cummins 141 ch, caisse de 4,2 mètres, prix CFR 22 200 $.",
+    "ar": "سيدي، هذه شاحنة خفيفة HOWO 8 طن 4×2، بمحرك Cummins 141 حصان، صندوق طوله 4.2 متر، السعر CFR 22,200 دولار."
+  },
+  {
+    "id": "195",
+    "cat": "阿尔及利亚",
+    "title": "2308先生，这款豪沃8吨，4×2轻卡，42 轴距，玉柴130马力，货箱 5.8 米 CFR 的价格是 21300 美元。",
+    "en": "Sir, this HOWO 8-ton 4×2 light truck, 42 wheelbase, Yuchai 130 HP engine, 5.8-meter cargo box, CFR price is $21,300.",
+    "fr": "Monsieur, ce camion léger HOWO 8 tonnes 4×2, empattement 42, moteur Yuchai 130 ch, caisse de 5,8 mètres, prix CFR 21 300 $.",
+    "ar": "سيدي، هذه شاحنة خفيفة HOWO 8 طن 4×2، قاعدة عجلات 42، بمحرك Yuchai 130 حصان، صندوق طوله 5.8 متر، السعر CFR 21,300 دولار."
+  },
+  {
+    "id": "196",
+    "cat": "阿尔及利亚",
+    "title": "2309先生，这款豪沃 12 吨 4×2 轻卡，52 轴距。玉柴 160 马力，货箱 6.8 米长， CFR 的价格是 27800 美元。",
+    "en": "Sir, this HOWO 12-ton 4×2 light truck, 52 wheelbase, Yuchai 160 HP engine, 6.8-meter cargo box, CFR price is $27,800.",
+    "fr": "Monsieur, ce camion léger HOWO 12 tonnes 4×2, empattement 52, moteur Yuchai 160 ch, caisse de 6,8 mètres, prix CFR 27 800 $.",
+    "ar": "سيدي، هذه شاحنة HOWO 12 طن 4×2، قاعدة عجلات 52، بمحرك Yuchai 160 حصان، صندوق طوله 6.8 متر، السعر CFR 27,800 دولار."
+  },
+  {
+    "id": "197",
+    "cat": "阿尔及利亚",
+    "title": "2310先生，这款豪沃 TX4×2 载货车底盘，47 轴距， MAN 280马力发动机。 CFR 价格 38000 美元。",
+    "en": "Sir, this HOWO TX 4×2 cargo truck chassis, 47 wheelbase, MAN 280 HP engine, CFR price is $38,000.",
+    "fr": "Monsieur, ce châssis de camion HOWO TX 4×2, empattement 47, moteur MAN 280 ch, prix CFR 38 000 $.",
+    "ar": "سيدي، هيكل شاحنة HOWO TX 4×2، قاعدة عجلات 47، بمحرك MAN 280 حصان، السعر CFR 38,000 دولار."
+  },
+  {
+    "id": "198",
+    "cat": "阿尔及利亚",
+    "title": "2311先生，这款豪沃 TX 4×2 厢式车，47 轴距，MAN 280马力发动机，货箱 5.6 米， CFR 的价格 46400 美元。",
+    "en": "Sir, this HOWO TX 4×2 box truck, 47 wheelbase, MAN 280 HP engine, 5.6-meter cargo box, CFR price is $46,400.",
+    "fr": "Monsieur, ce camion fourgon HOWO TX 4×2, empattement 47, moteur MAN 280 ch, caisse de 5,6 mètres, prix CFR 46 400 $.",
+    "ar": "سيدي، شاحنة صندوقية HOWO TX 4×2، قاعدة عجلات 47، بمحرك MAN 280 حصان، صندوق طوله 5.6 متر، السعر CFR 46,400 دولار."
+  },
+  {
+    "id": "199",
+    "cat": "阿尔及利亚",
+    "title": "2312先生，这款TX 4×2 载货车底盘 62 轴距， MAN 发动机 280 马力， CFR 价格 39800 美元。",
+    "en": "Sir, this 4×2 cargo truck chassis, 62 wheelbase, MAN 280 HP engine, CFR price is $39,800.",
+    "fr": "Monsieur, ce châssis de camion 4×2, empattement 62, moteur MAN 280 ch, prix CFR 39 800 $.",
+    "ar": "سيدي، هيكل شاحنة 4×2، قاعدة عجلات 62، بمحرك MAN 280 حصان، السعر CFR 39,800 دولار."
+  },
+  {
+    "id": "200",
+    "cat": "阿尔及利亚",
+    "title": "2313先生，这款豪沃 TX4×2 载货车，62 轴距， MAN280 马力发动机，货箱长 8 米， CFR 价格 47500 美元。",
+    "en": "Sir, this HOWO TX4 × 2 cargo truck has a 62 wheelbase, MAN280 horsepower engine, a cargo box length of 8 meters, and a CFR price of $47500.",
+    "fr": "Monsieur, ce wagon hauvo tx4×2 avec empattement 62, moteur man280 HP, boîte de charge de 8 mètres de long, prix CFR $47500.",
+    "ar": "سيدي ، هذا هو TX4 × 2 شاحنة ، 62 قاعدة العجلات ، man280 حصان المحرك ، 8 أمتار طويلة ، المرجع سعر 47500 دولار ."
+  },
+  {
+    "id": "201",
+    "cat": "阿尔及利亚",
+    "title": "2314先生，这款豪沃 TX 6×4 载货车底盘，46轴距，潍柴340马力发动机， CFR的价格 45700 美元。",
+    "en": "Sir, this HOWO TX 6×4 cargo truck chassis, 46 wheelbase, Weichai 340 HP engine, CFR price is $45,700.",
+    "fr": "Monsieur, ce châssis de camion HOWO TX 6×4, empattement 46, moteur Weichai 340 ch, prix CFR 45 700 $.",
+    "ar": "سيدي، هيكل شاحنة HOWO TX 6×4، قاعدة عجلات 46، بمحرك Weichai 340 حصان، السعر CFR 45,700 دولار."
+  },
+  {
+    "id": "202",
+    "cat": "阿尔及利亚",
+    "title": "2315先生，这款汕德卡 4×2 载货车， MAN发动机，280 马力，47 轴距，底盘价格 CFR 44800 美元。",
+    "en": "Sir, this SITRAK4×2 cargo truck, MAN engine, 280 HP, 47 wheelbase, chassis CFR price is $44,800.",
+    "fr": "Monsieur, ce camion SITRAK4×2, moteur MAN, 280 ch, empattement 47, prix du châssis CFR 44 800 $.",
+    "ar": "سيدي، شاحنة SITRAK4×2، بمحرك MAN 280 حصان، قاعدة عجلات 47، سعر الهيكل CFR 44,800 دولار."
+  },
+  {
+    "id": "203",
+    "cat": "阿尔及利亚",
+    "title": "2316先生，这款汕德卡 4×2 载货车底盘 62 轴距， MAN发动机280马力， CFR 的价格是 47100 美元。",
+    "en": "Sir, this SITRAK4×2 cargo truck chassis, 62 wheelbase, MAN 280 HP engine, CFR price is $47,100.",
+    "fr": "Monsieur, ce châssis de camion SITRAK4×2, empattement 62, moteur MAN 280 ch, prix CFR 47 100 $.",
+    "ar": "سيدي، هيكل شاحنة SITRAK4×2، قاعدة عجلات 62، بمحرك MAN 280 حصان، السعر CFR 47,100 دولار."
+  },
+  {
+    "id": "204",
+    "cat": "阿尔及利亚",
+    "title": "2317先生，这款汕德卡 4×2 厢式卡车，62 轴距。 MAN 发动机 280 马力，货箱长 8米， CFR价格 53100 美元。",
+    "en": "Sir, this SITRAK4×2 box truck, 62 wheelbase, MAN 280 HP engine, 8-meter cargo box, CFR price is $53,100.",
+    "fr": "Monsieur, ce camion fourgon SITRAK4×2, empattement 62, moteur MAN 280 ch, caisse de 8 mètres, prix CFR 53 100 $.",
+    "ar": "سيدي، شاحنة صندوقية SITRAK4×2، قاعدة عجلات 62، بمحرك MAN 280 حصان، صندوق طوله 8 متر، السعر CFR 53,100 دولار."
+  },
+  {
+    "id": "205",
+    "cat": "阿尔及利亚",
+    "title": "2318先生，这款汕德卡 6×4 底盘，46 轴距， MAN 发动机，390 马力， CFR 价格 60800 美元。",
+    "en": "Sir, this SITRAK6×4 chassis, 46 wheelbase, MAN 390 HP engine, CFR price is $60,800.",
+    "fr": "Monsieur, ce châssis SITRAK6×4, empattement 46, moteur MAN 390 ch, prix CFR 60 800 $.",
+    "ar": "سيدي، هيكل شاحنة SITRAK6×4، قاعدة عجلات 46، بمحرك MAN 390 حصان، السعر CFR 60,800 دولار."
+  },
+  {
+    "id": "206",
+    "cat": "阿尔及利亚",
+    "title": "2319先生，这款汕德卡 6×4 载货车，46 轴距， MAN 发动机，430 马力。货箱长 6.5 米， CFR 价格 68700 美元。",
+    "en": "Sir, this SITRAK6×4 cargo truck, 46 wheelbase, MAN 430 HP engine, 6.5-meter cargo box, CFR price is $68,700.",
+    "fr": "Monsieur, ce camion SITRAK6×4, empattement 46, moteur MAN 430 ch, caisse de 6,5 mètres, prix CFR 68 700 $.",
+    "ar": "سيدي، شاحنة SITRAK6×4، قاعدة عجلات 46، بمحرك MAN 430 حصان، صندوق طوله 6.5 متر، السعر CFR 68,700 دولار."
+  },
+  {
+    "id": "207",
+    "cat": "阿尔及利亚",
+    "title": "2320先生，这款豪沃 6×4 平板运输车，潍柴 400 马力，货箱长 8.8 米。 CFR 的价格 54300 美元。",
+    "en": "Sir, this HOWO 6×4 flatbed truck, Weichai 400 HP, 8.8m cargo box, CFR price is $54,300.",
+    "fr": "Monsieur, ce camion plateau HOWO 6×4, Weichai 400 ch, caisse de 8,8 m, le prix CFR est de 54 300 $.",
+    "ar": "سيدي، هذه الشاحنة المسطحة HOWO 6×4، محرك Weichai بقوة 400 حصان، صندوق شحن بطول 8.8 متر، سعر CFR هو 54,300 دولار."
+  },
+  {
+    "id": "208",
+    "cat": "阿尔及利亚",
+    "title": "2321先生，这款汕德卡 8×4 平板载货车，46 轴距， MAN 发动机，390马力。货箱长 9 米， CFR 价格 69600 美元。",
+    "en": "Sir, this SITRAK 8×4 flatbed truck, 4600 wheelbase, MAN engine, 390 HP, 9m cargo box, CFR price is $69,600.",
+    "fr": "Monsieur, ce camion plateau SITRAK 8×4, empattement 46, moteur MAN, 390 ch, caisse de 9 m, le prix CFR est de 69 600 $.",
+    "ar": "سيدي، هذه الشاحنة المسطحة SITRAK 8×4، قاعدة عجلات 46، محرك MAN بقوة 390 حصان، صندوق شحن بطول 9 أمتار، سعر CFR هو 69,600 دولار."
+  },
+  {
+    "id": "209",
+    "cat": "阿尔及利亚",
+    "title": "2322先生，这款豪沃 TX 6×4 平板载货车，潍柴 340 马力，货箱 7.6 米长， CFR 价格。51300 美元。",
+    "en": "Sir, this HOWO TX 6×4 flatbed truck, Weichai 340 HP, 7.6m cargo box, CFR price is $51,300.",
+    "fr": "Monsieur, ce camion plateau HOWO TX 6×4, Weichai 340 ch, caisse de 7,6 m, le prix CFR est de 51 300 $.",
+    "ar": "سيدي، هذه الشاحنة المسطحة HOWO TX 6×4، محرك Weichai بقوة 340 حصان، صندوق شحن بطول 7.6 متر، سعر CFR هو 51,300 دولار."
+  },
+  {
+    "id": "210",
+    "cat": "阿尔及利亚",
+    "title": "2323先生，这款豪沃 TX 6×4 底盘，潍柴 380 马力。 CFR 的价格44400美元。",
+    "en": "Sir, this HOWO TX 6×4 chassis, Weichai 380 HP, CFR price is $44,400.",
+    "fr": "Monsieur, ce châssis HOWO TX 6×4, Weichai 380 ch, le prix CFR est de 44 400 $.",
+    "ar": "سيدي، هذا شاسيه HOWO TX 6×4، محرك Weichai بقوة 380 حصان، سعر CFR هو 44,400 دولار."
+  },
+  {
+    "id": "211",
+    "cat": "阿尔及利亚",
+    "title": "2324先生，这款豪沃 TX 8×4 底盘，潍柴 400 马力发动机 CFR 的价格 51700 美元",
+    "en": "Sir, this HOWO TX 8×4 chassis, Weichai 400 HP engine, CFR price is $51,700.",
+    "fr": "Monsieur, ce châssis HOWO TX 8×4, moteur Weichai 400 ch, le prix CFR est de 51 700 $.",
+    "ar": "سيدي، هذا شاسيه HOWO TX 8×4، محرك Weichai بقوة 400 حصان، سعر CFR هو 51,700 دولار."
+  },
+  {
+    "id": "212",
+    "cat": "阿尔及利亚",
+    "title": "2325先生，这款豪沃 7，6×4 载货车，潍柴 340 马力发动机，货箱7.6米 CFR 的价格 52600 美元。",
+    "en": "Sir, this HOWO 7 6×4 cargo truck, Weichai 340 HP engine, 7.6m cargo box, CFR price is $52,600.",
+    "fr": "Monsieur, ce camion de fret HOWO 7 6×4, moteur Weichai 340 ch, caisse de 7,6 m, le prix CFR est de 52 600 $.",
+    "ar": "سيدي، هذه شاحنة نقل HOWO 7 6×4، محرك Weichai بقوة 340 حصان، صندوق شحن بطول 7.6 متر، سعر CFR هو 52,600 دولار."
+  },
+  {
+    "id": "213",
+    "cat": "阿尔及利亚",
+    "title": "2326先生，这款豪沃统帅 4×2 33轴距，侧帘车可以运输 3.5吨货箱长 4.2 米， CFR 价格是 22400 美元。",
+    "en": "Sir, this HOWO Commander 4×2, 3300 wheelbase, side curtain truck, 3.5 tons capacity, 4.2m box, CFR price is $22,400.",
+    "fr": "Monsieur, ce HOWO Commander 4×2, empattement 33, camion à rideaux coulissants, 3,5 tonnes, caisse de 4,2 m, le prix CFR est de 22 400 $.",
+    "ar": "سيدي، شاحنة HOWO Commander 4×2، قاعدة عجلات 33، شاحنة ستائر جانبية حمولة 3.5 طن، صندوق بطول 4.2 متر، سعر CFR هو 22,400 دولار."
+  },
+  {
+    "id": "214",
+    "cat": "阿尔及利亚",
+    "title": "2327先生，这款豪沃TX 4×2 47轴距，侧帘车可以运输 15吨货箱长 6.5 米， CFR 价格是 449400 美元。",
+    "en": "Sir, this HOWO TX 4×2, 4700 wheelbase, side curtain truck, 15 tons capacity, 6.5m box, CFR price is $44,900.",
+    "fr": "Monsieur, ce HOWO TX 4×2, empattement 47, camion à rideaux coulissants, 15 tonnes, caisse de 6,5 m, le prix CFR est de 44 900 $.",
+    "ar": "سيدي، شاحنة HOWO TX 4×2، قاعدة عجلات 47، شاحنة ستائر جانبية حمولة 15 طن، صندوق بطول 6.5 متر، سعر CFR هو 44,900 دولار."
+  },
+  {
+    "id": "215",
+    "cat": "阿尔及利亚",
+    "title": "2328先生，这款豪沃 TX 4×2 62轴距，侧帘车可以运输 15吨货物，货箱长 8 米， CFR 的价格是 48400 美元。",
+    "en": "Sir, this HOWO TX 4×2, 6200 wheelbase, side curtain truck, 15 tons capacity, 8m box, CFR price is $48,400.",
+    "fr": "Monsieur, ce HOWO TX 4×2, empattement 62, camion à rideaux coulissants, 15 tonnes, caisse de 8 m, le prix CFR est de 48 400 $.",
+    "ar": "سيدي، شاحنة HOWO TX 4×2، قاعدة عجلات 62، شاحنة ستائر جانبية حمولة 15 طن، صندوق بطول 8 أمتار، سعر CFR هو 48,400 دولار."
+  },
+  {
+    "id": "216",
+    "cat": "阿尔及利亚",
+    "title": "2329先生，这款汕德卡 4×2 侧帘车，62 轴距， man发动机，280 马力，货箱长 8 米。 CFR 的价格 58900 美元。",
+    "en": "Sir, this SITRAK 4×2 side curtain truck, 6200 wheelbase, MAN engine, 280 HP, 8m box, CFR price is $58,900.",
+    "fr": "Monsieur, ce camion à rideaux coulissants SITRAK 4×2, empattement 62, moteur MAN 280 ch, caisse de 8 m, le prix CFR est de 58 900 $.",
+    "ar": "سيدي، شاحنة SITRAK 4×2 ستائر جانبية، قاعدة عجلات 62، محرك MAN بقوة 280 حصان، صندوق بطول 8 أمتار، سعر CFR هو 58,900 دولار."
+  },
+  {
+    "id": "217",
+    "cat": "阿尔及利亚",
+    "title": "2330先生，这款汕德卡 4×2 载货车底盘， G5S， MAN 280 马力发动机。自动挡变速箱 CFR 价格 49700 美元。",
+    "en": "Sir, this Sinotruk SITRAK 4×2 cargo truck chassis, G5S model, equipped with a 280 HP MAN engine and automatic transmission, is priced at 49,700 USD CFR.",
+    "fr": "Monsieur, ce châssis de camion porteur SITRAK 4×2 modèle G5S, équipé d'un moteur MAN de 280 chevaux et d'une boîte de vitesses automatique, est au prix de 49 700 dollars américains CFR.",
+    "ar": "سيدي، هيكل شاحنة حمولة سينوتروك ستراك 4×2 موديل G5S، مزود بمحرك مان بقوة 280 حصان وناقل حركة أوتوماتيكي، وسعره 49700 دولار أمريكي سعر CFR."
+  },
+  {
+    "id": "218",
+    "cat": "阿尔及利亚",
+    "title": "2331先生，这款豪沃 TX 6×4 栏板载货车，潍柴 380 马力。货箱长 5.2 米， CFR 价格 47200 美元。",
+    "en": "Sir, this Howo TX 6×4 flatbed cargo truck is equipped with a Weichai 380 HP engine. The cargo box length is 5.2 meters, with a CFR price of 47,200 US dollars.",
+    "fr": "Monsieur, ce camion à plateau Howo TX 6×4 est équipé d'un moteur Weichai de 380 chevaux. La longueur de la caisse de chargement est de 5,2 mètres, au prix CFR de 47 200 dollars américains.",
+    "ar": "سيدي، شاحنة هوو TX ذات الصندوق المسطح 6×4 مزودة بمحرك ويتشاي بقوة 380 حصان. طول صندوق الحمولة 5.2 متر، وسعر CFR 47200 دولار أمريكي."
+  },
+  {
+    "id": "219",
+    "cat": "阿尔及利亚",
+    "title": "2332先生，这款豪沃 TX 8×4 栏板载货车，潍柴 400 马力发动机，货箱长 6.7 米。 CFR 价格 56200 美元。",
+    "en": "Sir, this HOWO TX 8×4 flatbed cargo truck is fitted with a Weichai 400 HP engine, cargo box length 6.7 meters. CFR price is 56,200 US dollars.",
+    "fr": "Monsieur, ce camion à plateau HOWO TX 8×4 est équipé d'un moteur Weichai de 400 chevaux, la longueur de la caisse de chargement est de 6,7 mètres. Le prix CFR est de 56 200 dollars américains.",
+    "ar": "سيدي، شاحنة هوو TX ذات الصندوق المسطح 8×4 مزودة بمحرك ويتشاي بقوة 400 حصان، طول صندوق الحمولة 6.7 متر. وسعر CFR 56200 دولار أمريكي."
+  },
+  {
+    "id": "220",
+    "cat": "阿尔及利亚",
+    "title": "2401先生，这款豪沃 6×4 搅拌车，380 马力，10 立方，CFR 的价格是 56300 美元。",
+    "en": "Sir, this HOWO 6×4 mixer truck, 380 HP, 10m³, CFR price is $56,300.",
+    "fr": "Monsieur, ce camion malaxeur HOWO 6×4, 380 ch, 10 m³, le prix CFR est de 56 300 $.",
+    "ar": "سيدي، شاحنة خلط HOWO 6×4، بقوة 380 حصان، سعة 10 متر مكعب، سعر CFR هو 56,300 دولار."
+  },
+  {
+    "id": "221",
+    "cat": "阿尔及利亚",
+    "title": "2402先生，这款豪沃 8×4 搅拌车，400 马力发动机，12 立方，CFR 的价格是 64200 美元。",
+    "en": "Sir, this HOWO 8×4 mixer truck, 400 HP engine, 12m³, CFR price is $64,200.",
+    "fr": "Monsieur, ce camion malaxeur HOWO 8×4, moteur 400 ch, 12 m³, le prix CFR est de 64 200 $.",
+    "ar": "سيدي، شاحنة خلط HOWO 8×4، محرك بقوة 400 حصان، سعة 12 متر مكعب، سعر CFR هو 64,200 دولار."
+  },
+  {
+    "id": "222",
+    "cat": "阿尔及利亚",
+    "title": "2403先生，这款豪沃 TX 6×4 搅拌车，380 马力，潍柴发动机，10 立方，CFR 的价格 58900 美元。",
+    "en": "Sir, this HOWO TX 6×4 mixer truck, 380 HP, Weichai engine, 10m³, CFR price is $58,900.",
+    "fr": "Monsieur, ce camion malaxeur HOWO TX 6×4, 380 ch, moteur Weichai, 10 m³, le prix CFR est de 58 900 $.",
+    "ar": "سيدي، شاحنة خلط HOWO TX 6×4، بقوة 380 حصان، محرك Weichai، سعة 10 متر مكعب، سعر CFR هو 58,900 دولار."
+  },
+  {
+    "id": "223",
+    "cat": "阿尔及利亚",
+    "title": "2404先生，这款汕德卡 6×4 搅拌车，MAN 发动机，430 马力，10 立方 CFR 价格是 75700 美元。",
+    "en": "Sir, this SITRAK 6×4 mixer truck, MAN engine, 430 HP, 10m³, CFR price is $75,700.",
+    "fr": "Monsieur, ce camion malaxeur SITRAK 6×4, moteur MAN 430 ch, 10 m³, le prix CFR est de 75 700 $.",
+    "ar": "سيدي، شاحنة خلط SITRAK 6×4، محرك MAN بقوة 430 حصان، سعة 10 متر مكعب، سعر CFR هو 75,700 دولار."
+  },
+  {
+    "id": "224",
+    "cat": "阿尔及利亚",
+    "title": "2405先生，这款汕德卡 8×4 搅拌车，MAN 发动机，430 马力，12 立方 CFR 的价格 80700 美元。",
+    "en": "Sir, this SITRAK 8×4 mixer truck, MAN engine, 430 HP, 12m³, CFR price is $80,700.",
+    "fr": "Monsieur, ce camion malaxeur SITRAK 8×4, moteur MAN 430 ch, 12 m³, le prix CFR est de 80 700 $.",
+    "ar": "سيدي، شاحنة خلط SITRAK 8×4، محرك MAN بقوة 430 حصان، سعة 12 متر مكعب، سعر CFR هو 80,700 دولار."
+  },
+  {
+    "id": "225",
+    "cat": "阿尔及利亚",
+    "title": "2501先生，这款豪沃 4×2 洒水车，潍柴发动机 300 马力，罐体是 12 个立方， CFR 价格 41200 美元。",
+    "en": "Sir, this HOWO 4×2 water tank truck, Weichai engine 300 HP, 12m³ tank, CFR price is $41,200.",
+    "fr": "Monsieur, ce camion-citerne à eau HOWO 4×2, moteur Weichai 300 ch, citerne de 12 m³, le prix CFR est de 41 200 $.",
+    "ar": "سيدي، شاحنة رش مياه HOWO 4×2، محرك Weichai بقوة 300 حصان، خزان سعة 12 متر مكعب، سعر CFR هو 41,200 دولار."
+  },
+  {
+    "id": "226",
+    "cat": "阿尔及利亚",
+    "title": "2502先生，这款豪沃 6×4 洒水车，340 马力，水罐有 22 个立方， CFR 的价格是51600 美元。",
+    "en": "Sir, this HOWO 6×4 water tank truck, 340 HP, 22m³ tank, CFR price is $51,600.",
+    "fr": "Monsieur, ce camion-citerne à eau HOWO 6×4, 340 ch, citerne de 22 m³, le prix CFR est de 51 600 $.",
+    "ar": "سيدي، شاحنة رش مياه HOWO 6×4، بقوة 340 حصان، خزان سعة 22 متر مكعب، سعر CFR هو 51,600 دولار."
+  },
+  {
+    "id": "227",
+    "cat": "阿尔及利亚",
+    "title": "2503先生，这款豪沃 TX 6×4 洒水车，340 马力，潍柴发动机，水罐 22 个立方， CFR 的价格是54400美元。",
+    "en": "Sir, this HOWO TX 6×4 water tank truck, 340 HP, Weichai engine, 22m³ tank, CFR price is $54,400.",
+    "fr": "Monsieur, ce camion-citerne à eau HOWO TX 6×4, 340 ch, moteur Weichai, citerne de 22 m³, le prix CFR est de 54 400 $.",
+    "ar": "سيدي، شاحنة رش مياه HOWO TX 6×4، بقوة 340 حصان، محرك Weichai، خزان سعة 22 متر مكعب، سعر CFR هو 54,400 دولار."
+  },
+  {
+    "id": "228",
+    "cat": "阿尔及利亚",
+    "title": "2504先生，这款豪沃 4×2 油罐车，300 马力，潍柴发动机，油罐 12 个立方， CFR价格是 44500 美元。",
+    "en": "Sir, this HOWO 4×2 fuel tank truck, 300 HP, Weichai engine, 12m³ tank, CFR price is $44,500.",
+    "fr": "Monsieur, ce camion-citerne à carburant HOWO 4×2, 300 ch, moteur Weichai, citerne de 12 m³, le prix CFR est de 44 500 $.",
+    "ar": "سيدي، شاحنة صهريج وقود HOWO 4×2، بقوة 300 حصان، محرك Weichai، صهريج سعة 12 متر مكعب، سعر CFR هو 44,500 دولار."
+  },
+  {
+    "id": "229",
+    "cat": "阿尔及利亚",
+    "title": "2505先生，这款豪沃 TX 4×2 油罐车，潍柴 300 马力发动机，油罐 12 个立方， CFR价格是 47500 美元。",
+    "en": "Sir, this HOWO TX 4×2 fuel tank truck, Weichai 300 HP engine, 12m³ tank, CFR price is $47,500.",
+    "fr": "Monsieur, ce camion-citerne à carburant HOWO TX 4×2, moteur Weichai 300 ch, citerne de 12 m³, le prix CFR est de 47 500 $.",
+    "ar": "سيدي، شاحنة صهريج وقود HOWO TX 4×2، محرك Weichai بقوة 300 حصان، صهريج سعة 12 متر مكعب، سعر CFR هو 47,500 دولار."
+  },
+  {
+    "id": "230",
+    "cat": "阿尔及利亚",
+    "title": "2506先生，这款豪沃 TX 6×4 油罐车，20 立方， CFR 的价格是 55400 美元。",
+    "en": "Sir, this HOWO TX 6×4 fuel tank truck, 20m³, CFR price is $55,400.",
+    "fr": "Sir, this HOWO TX 6×4 fuel tank truck, 20m³, CFR price is $55,400.",
+    "ar": "سيدي، شاحنة صهريج وقود HOWO TX 6×4، سعة 20 متر مكعب، سعر CFR هو 55,400 دولار."
+  },
+  {
+    "id": "231",
+    "cat": "阿尔及利亚",
+    "title": "2600先生，这辆豪沃轻卡 4×2 高空作业车，130 马力玉柴发动机，高空作业 16 米 CFR 价格 46000 美元",
+    "en": "Sir, this HOWO light truck 4×2 aerial work vehicle is equipped with a 130 HP Yuchai engine, working height 16 meters. CFR price is 46,000 US dollars.",
+    "fr": "Monsieur, ce camion léger HOWO 4×4 véhicule de travail aérien est équipé d'un moteur Yuchai de 130 chevaux, hauteur de travail 16 mètres. Le prix CFR est de 46 000 dollars américains.",
+    "ar": "سيدي، شاحنة هوو الخفيفة 4×2 لعمليات الارتفاع، مزودة بمحرك يوتشاي بقوة 130 حصان، ارتفاع العمل الجوي 16 متر. سعر CFR 46000 دولار أمريكي."
+  },
+  {
+    "id": "232",
+    "cat": "阿尔及利亚",
+    "title": "2601你好，先生。这款豪沃五吨直臂吊，配玉柴 130 马力发动机，42 轴距。 CFR 价格 37700 美元。",
+    "en": "Hello Sir, this HOWO 5-ton stiff boom crane truck, Yuchai 130 HP engine, 4200 wheelbase, CFR price is $37,700.",
+    "fr": "Bonjour Monsieur, ce camion-grue à flèche rigide HOWO 5 tonnes, moteur Yuchai 130 ch, empattement 42, prix CFR 37 700 $.",
+    "ar": "مرحباً سيدي، شاحنة رافعة HOWO حمولة 5 طن، محرك Yuchai بقوة 130 حصان، قاعدة عجلات 42، سعر CFR هو 37,700 دولار."
+  },
+  {
+    "id": "233",
+    "cat": "阿尔及利亚",
+    "title": "2602先生，这款豪沃4×2随车吊，8吨吊机，300马力潍柴发动机，货箱长6米，CFR的价格是57400美元。",
+    "en": "Sir, this HOWO 4×2 truck with crane, 8-ton crane, 300 HP Weichai engine, 6m cargo box, CFR price is $57,400.",
+    "fr": "Monsieur, ce camion avec grue HOWO 4×2, grue de 8 tonnes, moteur Weichai 300 ch, caisse de 6 m, le prix CFR est de 57 400 $.",
+    "ar": "سيدي، شاحنة مع رافعة HOWO 4×2، رافعة 8 طن، محرك Weichai بقوة 300 حصان، صندوق شحن بطول 6 أمتار، سعر CFR هو 57,400 دولار."
+  },
+  {
+    "id": "234",
+    "cat": "阿尔及利亚",
+    "title": "2603先生，这款豪沃4×2随车吊，8吨吊机，man280马力潍柴发动机，货箱长6米，CFR的价格是62800美元。",
+    "en": "Sir, this HOWO 4×2 truck with crane, 8-ton crane, MAN 280 HP engine, 6m cargo box, CFR price is $62,800.",
+    "fr": "Monsieur, ce camion avec grue HOWO 4×2, grue de 8 tonnes, moteur MAN 280 ch, caisse de 6 m, le prix CFR est de 62 800 $.",
+    "ar": "سيدي، شاحنة مع رافعة HOWO 4×2، رافعة 8 طن، محرك MAN بقوة 280 حصان، صندوق شحن بطول 6 أمتار، سعر CFR هو 62,800 دولار."
+  },
+  {
+    "id": "235",
+    "cat": "阿尔及利亚",
+    "title": "2604先生，这款豪沃 6×4 8吨随车吊，货箱长8.2 米，运输工程机械带爬梯， CFR 价格是 77800 美元。",
+    "en": "Sir, this HOWO 6×4 with 8-ton crane, 8.2m box, for machinery transport with rear ramps, CFR price is $77,800.",
+    "fr": "Monsieur, ce HOWO 6×4 avec grue de 8 tonnes, caisse de 8,2 m, pour transport de machines avec rampes, le prix CFR est de 77 800 $.",
+    "ar": "سيدي، شاحنة HOWO 6×4 مع رافعة 8 طن، صندوق بطول 8.2 متر، لنقل المعدات الهندسية مع سلالم، سعر CFR هو 77,800 دولار."
+  },
+  {
+    "id": "236",
+    "cat": "阿尔及利亚",
+    "title": "2605先生，这款TX4×2 随车吊，300马力潍柴发动机，8吨的吊机， CFR 的价格是 59900 美元。",
+    "en": "Sir, this TX 4×2 truck with crane, 300 HP Weichai engine, 8-ton crane, CFR price is $59,900.",
+    "fr": "Monsieur, ce camion avec grue TX 4×2, moteur Weichai 300 ch, grue de 8 tonnes, le prix CFR est de 59 900 $.",
+    "ar": "سيدي، شاحنة مع رافعة TX 4×2، محرك Weichai بقوة 300 حصان، رافعة حمولة 8 طن، سعر CFR هو 59,900 دولار."
+  },
+  {
+    "id": "237",
+    "cat": "阿尔及利亚",
+    "title": "2606先生，这款豪沃 TX 6×4 随车吊，340 马力，潍柴发动机，12 吨吊机， CFR 的价格是79800美元。",
+    "en": "Sir, this HOWO TX 6×4 truck with crane, 340 HP, Weichai engine, 12-ton crane, CFR price is $79,800.",
+    "fr": "Monsieur, ce camion avec grue HOWO TX 6×4, 340 ch, moteur Weichai, grue de 12 tonnes, le prix CFR est de 79 800 $.",
+    "ar": "سيدي، شاحنة مع رافعة HOWO TX 6×4، بقوة 340 حصان، محرك Weichai، رافعة حمولة 12 طن، سعر CFR هو 79,800 دولار."
+  },
+  {
+    "id": "238",
+    "cat": "阿尔及利亚",
+    "title": "2607先生，这款豪沃 TX 6×4 随车吊，340 马力，潍柴发动机，16 吨直臂吊机，货箱长6.3米 CFR 的价格是87400美元。",
+    "en": "Sir, this HOWO TX 6×4 with 16-ton stiff boom crane, 340 HP Weichai engine, 6.3m box, CFR price is $87,400.",
+    "fr": "Monsieur, ce HOWO TX 6×4 avec grue rigide de 16 tonnes, moteur Weichai 340 ch, caisse de 6,3 m, prix CFR 87 400 $.",
+    "ar": "سيدي، شاحنة HOWO TX 6×4 مع رافعة ذراع صلبة 16 طن، محرك Weichai بقوة 340 حصان، صندوق بطول 6.3 متر، سعر CFR هو 87,400 دولار."
+  },
+  {
+    "id": "239",
+    "cat": "阿尔及利亚",
+    "title": "2608这款汕德卡 8×4 25 吨折叠臂随车吊，曼发动机 390 马力，货箱长度 7.8 米，CFR 价格 116300 美元",
+    "en": "This SITRAK 8×4 25-ton folding arm crane truck, MAN engine 390 HP, cargo box length 7.8 meters, CFR price 116300 US dollars",
+    "fr": "Ce camion grue à bras repliable SITRAK 8×4 de 25 tonnes, moteur MAN 390 ch, longueur de caisse 7,8 mètres, prix CFR 116300 dollars américains",
+    "ar": "شاحنة رافعة ذراع مطوي سيتراك 8×4 حمولة 25 طن، محرك مان 390 حصان، طول صندوق الحمولة 7.8 متر، سعر سي إف آر 116300 دولار أمريكي"
+  },
+  {
+    "id": "240",
+    "cat": "阿尔及利亚",
+    "title": "2700先生，这款豪沃轻卡 4×2 冷藏车，33 轴距。货箱长 4.2 米，使用冷王发动机。 CFR 价格26400美元。",
+    "en": "This HOWO light truck 4×2 refrigerated truck, wheelbase 3300mm, cargo box length 4.2 meters, equipped with Thermo King refrigeration unit, CFR price 26400 US dollars",
+    "fr": "Camion frigorifique léger HOWO 4×2, empattement 3300 mm, longueur de caisse 4,2 mètres, équipé du groupe frigorifique Thermo King, prix CFR 26400 dollars américains",
+    "ar": "شاحنة تبريد هوو الخفيفة 4×2 ، قاعدة عجلات 3300 ملم ، طول صندوق الحمولة 4.2 متر ، مزودة بوحدة تبريد ثيرمو كينج ، سعر سي إف آر 26400 دولار أمريكي"
+  },
+  {
+    "id": "241",
+    "cat": "阿尔及利亚",
+    "title": "2701先生，这款豪沃TX 4×2 冷藏车，280 马力。曼发动机，货箱长 6.5 米， CFR 的价格是 49700美元。",
+    "en": "Sir, this HOWO TX 4×2 refrigerator truck, 280 HP MAN engine, 6.5m box, CFR price is $49700.",
+    "fr": "Monsieur, ce camion frigorifique HOWO TX 4×2, moteur MAN 280 ch, caisse de 6,5 m, le prix CFR est de 49700$.",
+    "ar": "سيدي، شاحنة تبريد HOWO TX 4×2، محرك MAN بقوة 280 حصان، صندوق بطول 6.5 متر، سعر CFR هو 49700 دولار."
+  },
+  {
+    "id": "242",
+    "cat": "阿尔及利亚",
+    "title": "2702先生，这款豪沃TX 4×2 冷藏车，280 马力。曼发动机，62轴距，货箱长 8.4 米， CFR 的价格是 67200 美元。",
+    "en": "Sir, this HOWO TX 4×2 refrigerator truck, 280 HP MAN engine, 6200 wheelbase, 8.4m box, CFR price is $67,200.",
+    "fr": "Monsieur, ce camion frigorifique HOWO TX 4×2, moteur MAN 280 ch, empattement 62, caisse de 8,4 m, le prix CFR est de 67 200 $.",
+    "ar": "سيدي، شاحنة تبريد HOWO TX 4×2، محرك MAN بقوة 280 حصان، قاعدة عجلات 62، صندوق بطول 8.4 متر، سعر CFR هو 67,200 دولار."
+  },
+  {
+    "id": "243",
+    "cat": "阿尔及利亚",
+    "title": "2703先生，这款豪沃TX 6×4 冷藏车，340 马力，潍柴发动机，货箱长 9 米。 CFR 的价格是 57200 美元。",
+    "en": "Sir, this HOWO TX 6×4 refrigerator truck, 340 HP Weichai engine, 9m box, CFR price is $57,200.",
+    "fr": "Monsieur, ce camion frigorifique HOWO TX 6×4, moteur Weichai 340 ch, caisse de 9 m, le prix CFR est de 57 200 $.",
+    "ar": "سيدي، شاحنة تبريد HOWO TX 6×4، محرك Weichai بقوة 340 حصان، صندوق بطول 9 أمتار، سعر CFR هو 57,200 دولار."
+  },
+  {
+    "id": "244",
+    "cat": "阿尔及利亚",
+    "title": "2800这款豪沃轻卡 4×2 5 立方吸污车，CFR 价格 32000 美元",
+    "en": "This HOWO light truck 4×2 5 cubic meters sewage suction truck, CFR price 32000 US dollars",
+    "fr": "Ce camion aspirateur aux eaux usées HOWO light truck 4×2 5 mètres cubes, prix CFR 32000 dollars américains",
+    "ar": "شاحنة شفط المجارى هوو لايت تراك 4×2 سعة 5 أمتار مكعبة، السعر سي إف آر 32000 دولار أمريكي"
+  },
+  {
+    "id": "245",
+    "cat": "阿尔及利亚",
+    "title": "2801先生，这款豪沃 TX 4×2 吸污车，man发动机280马力，罐体是 10 个立方， CFR 的价格是 56100 美元。",
+    "en": "Sir, this HOWO TX 4×2 sewage suction truck, MAN engine 280 HP, 10m³ tank, CFR price is $56,100.",
+    "fr": "Monsieur, ce camion hydrocureur HOWO TX 4×2, moteur MAN 280 ch, citerne de 10 m³, le prix CFR est de 56 100 $.",
+    "ar": "سيدي، شاحنة شفط مجاري HOWO TX 4×2، محرك MAN بقوة 280 حصان، صهريج سعة 10 متر مكعب، سعر CFR هو 56,100 دولار."
+  },
+  {
+    "id": "246",
+    "cat": "阿尔及利亚",
+    "title": "2802你好先生，这款豪沃 TX 4×2 垃圾运输车，47 轴距，货箱 8个立方。 CFR 价格59800美元。",
+    "en": "Sir, this HOWO TX 4×2 garbage truck, 4700 wheelbase, 8m³ box, CFR price is $59,800.",
+    "fr": "Monsieur, ce camion à ordures HOWO TX 4×2, empattement 47, caisse de 8 m³, le prix CFR est de 59 800 $.",
+    "ar": "مرحباً سيدي، شاحنة نفايات HOWO TX 4×2، قاعدة عجلات 47، صندوق سعة 8 متر مكعب، سعر CFR هو 59,800 دولار."
+  },
+  {
+    "id": "247",
+    "cat": "阿尔及利亚",
+    "title": "2803你好先生，这款豪沃 TX 4×2 垃圾运输车，47 轴距，货箱 15 个立方。 CFR 价格63300美元。",
+    "en": "Sir, this HOWO TX 4×2 garbage truck, 4700 wheelbase, 15m³ box, CFR price is $63,300.",
+    "fr": "Monsieur, ce camion à ordures HOWO TX 4×2, empattement 47, caisse de 15 m³, le prix CFR est de 63 300 $.",
+    "ar": "مرحباً سيدي، شاحنة نفايات HOWO TX 4×2، قاعدة عجلات 47، صندوق سعة 15 متر مكعب، سعر CFR هو 63,300 دولار."
+  },
+  {
+    "id": "248",
+    "cat": "阿尔及利亚",
+    "title": "2804先生，这款汕德卡 4×2 垃圾运输车，man发动机390马力。货箱 15 个立方， CFR 价格 63300 美元。",
+    "en": "This SITRAK 4×2 garbage truck, MAN engine 390 HP, container volume 15 cubic meters, CFR price 63300 USD",
+    "fr": "Ce camion à ordures SITRAK 4×2, moteur MAN 390 ch, volume de benne 15 mètres cubes, prix CFR 63300 USD",
+    "ar": "هذه شاحنة قمامة سيتراك 4×2، محرك مان 390 حصان، حجم الحاوية 15 متر مكعب، سعر سي إف آر 63300 دولار أمريكي"
+  },
+  {
+    "id": "249",
+    "cat": "阿尔及利亚",
+    "title": "2805先生，这款汕德卡 6×4 垃圾运输车，man发动机390马力，货箱 20 个立方， CFR 价格 86300 美元。",
+    "en": "This SITRAK 6×4 garbage truck, MAN engine 390 HP, container volume 20 cubic meters, CFR price 86300 USD",
+    "fr": "Ce camion à ordures SITRAK 6×4, moteur MAN 390 ch, volume de benne 20 mètres cubes, prix CFR 86300 USD",
+    "ar": "هذه شاحنة قمامة سيتراك 6×4، محرك مان 390 حصان، حجم الحاوية 20 متر مكعب، سعر سي إف آر 86300 دولار أمريكي"
+  },
+  {
+    "id": "250",
+    "cat": "阿尔及利亚",
+    "title": "2806这款豪沃 TX 6×4 37 米混凝土泵车，CFR 价格 173500 美元",
+    "en": "This HOWO TX 6×4 37m concrete pump truck, CFR price 173500 USD",
+    "fr": "Camion pompe à béton HOWO TX 6×4 37 m, prix CFR 173500 dollars américains",
+    "ar": "شاحنة مضخة خرسانة هوو تي إكس 6×4 بطول 37 متر، سعر سي إف آر 173500 دولار أمريكي"
+  },
+  {
+    "id": "251",
+    "cat": "阿尔及利亚",
+    "title": "2807这款豪沃 TX 6×4 43 米混凝土泵车，CFR 价格 205900 美元",
+    "en": "This HOWO TX 6×4 43m concrete pump truck, CFR price 205900 US dollars",
+    "fr": "Camion pompe à béton HOWO TX 6×4 de 43 mètres, prix CFR 205900 dollars américains",
+    "ar": "شاحنة مضخة خرسانة هوو تي إكس 6×4 طول الذراع 43 متر، سعر سي إف آر 205900 دولار أمريكي"
+  },
+  {
+    "id": "252",
+    "cat": "阿尔及利亚",
+    "title": "2808这款汕德卡 6×4 43 米混凝土泵车，CFR 价格 228900 美元",
+    "en": "This SITRAK 6×4 43m concrete pump truck, CFR price 228900 US dollars",
+    "fr": "Camion pompe à béton SITRAK 6×4 de 43 mètres, prix CFR 228900 dollars américains",
+    "ar": "شاحنة مضخة خرسانة سيتراك 6×4 طول الذراع 43 متر، سعر سي إف آر 228900 دولار أمريكي"
+  },
+  {
+    "id": "253",
+    "cat": "阿尔及利亚",
+    "title": "2809这款汕德卡 6×4 52 米混凝土泵车，CFR 价格 266300 美元",
+    "en": "This SITRAK 6×4 52m concrete pump truck, CFR price 266300 US dollars",
+    "fr": "Camion pompe à béton SITRAK 6×4 de 52 mètres, prix CFR 266300 dollars américains",
+    "ar": "شاحنة مضخة خرسانة سيتراك 6×4 طول الذراع 52 متر، سعر سي إف آر 266300 دولار أمريكي"
+  },
+  {
+    "id": "254",
+    "cat": "阿尔及利亚",
+    "title": "2901先生，这款 Sinotruk van货运版，潍柴 140 马力，6 档手动变速箱，货箱容积 6.6 个立方。整车尺寸 5092×2069×2090 mm，FOB 价格 20800 美元。",
+    "en": "This Sinotruk van cargo version, Weichai 140 HP, 6-speed manual transmission, cargo volume 6.6 cubic meters, overall dimensions 5092×2069×2090 mm, FOB price 20800 US dollars",
+    "fr": "Cette version cargo fourgon Sinotruk, Weichai 140 ch, boîte manuelle 6 vitesses, volume de cargaison 6,6 mètres cubes, dimensions totales 5092×2069×2090 mm, prix FOB 20800 dollars américains",
+    "ar": "هذه نسخة شاحنة بضائع سينوتروك، محرك ويتشاي 140 حصان، ناقل حركة يدوي 6 سرعات، حجم الحمولة 6.6 متر مكعب، الأبعاد الكلية 5092×2069×2090 ملم، سعر فوب 20800 دولار أمريكي"
+  },
+  {
+    "id": "255",
+    "cat": "阿尔及利亚",
+    "title": "2902先生，这款 Sinotruk Van货运版，潍柴 140 马力，6 档手动变速箱，货箱容积 7.7 个立方，整车尺寸 5092×2069×2319 mm， FOB 价格 20700 美元。",
+    "en": "This Sinotruk van cargo version, Weichai 140 HP, 6-speed manual transmission, cargo volume 7.7 cubic meters, overall dimensions 5092×2069×2319 mm, FOB price 20700 US dollars",
+    "fr": "Cette version cargo fourgon Sinotruk, Weichai 140 ch, boîte manuelle 6 vitesses, volume de cargaison 7,7 mètres cubes, dimensions totales 5092×2069×2319 mm, prix FOB 20700 dollars américains",
+    "ar": "هذه نسخة شاحنة بضائع سينوتروك، محرك ويتشاي 140 حصان، ناقل حركة يدوي 6 سرعات، حجم الحمولة 7.7 متر مكعب، الأبعاد الكلية 5092×2069×2319 ملم، سعر فوب 20700 دولار أمريكي"
+  },
+  {
+    "id": "256",
+    "cat": "阿尔及利亚",
+    "title": "2903先生，这款 Sinotruk Van货运版，潍柴 140 马力，6 档手动变速箱，货箱容积 7.6 个立方，整车尺寸 5492×2069×2090 mm， FOB 价格 20900 美元。",
+    "en": "This Sinotruk van cargo version, Weichai 140 HP, 6-speed manual transmission, cargo volume 7.6 cubic meters, overall dimensions 5492×2069×2090 mm, FOB price 20900 US dollars",
+    "fr": "Cette version cargo fourgon Sinotruk, Weichai 140 ch, boîte manuelle 6 vitesses, volume de cargaison 7,6 mètres cubes, dimensions totales 5492×2069×2090 mm, prix FOB 20900 dollars américains",
+    "ar": "هذه نسخة شاحنة بضائع سينوتروك، محرك ويتشاي 140 حصان، ناقل حركة يدوي 6 سرعات، حجم الحمولة 7.6 متر مكعب، الأبعاد الكلية 5492×2069×2090 ملم، سعر فوب 20900 دولار أمريكي"
+  },
+  {
+    "id": "257",
+    "cat": "阿尔及利亚",
+    "title": "2904先生，这款 Sinotruk Van货运版，潍柴 140 马力，6 档手动变速箱，货箱容积 8.8个立方，整车尺寸 5492×2069×2319 mm， FOB 价格 20800 美元。",
+    "en": "This Sinotruk van cargo version, Weichai 140 HP, 6-speed manual transmission, cargo volume 8.8 cubic meters, overall dimensions 5492×2069×2319 mm, FOB price 20800 US dollars",
+    "fr": "Cette version cargo fourgon Sinotruk, Weichai 140 ch, boîte manuelle 6 vitesses, volume de cargaison 8,8 mètres cubes, dimensions totales 5492×2069×2319 mm, prix FOB 20800 dollars américains",
+    "ar": "هذه نسخة شاحنة بضائع سينوتروك، محرك ويتشاي 140 حصان، ناقل حركة يدوي 6 سرعات، حجم الحمولة 8.8 متر مكعب، الأبعاد الكلية 5492×2069×2319 ملم، سعر فوب 20800 دولار أمريكي"
+  },
+  {
+    "id": "258",
+    "cat": "阿尔及利亚",
+    "title": "2905先生，这款 Sinotruk Van客运版，潍柴 140 马力，6 档手动变速箱，9个座位，整车尺寸 5492×2069×22090 mm， FOB 价格 21700 美元。",
+    "en": "This Sinotruk van passenger version, Weichai 140 HP, 6-speed manual transmission, 9 seats, overall dimensions 5492×2069×22090 mm, FOB price 21700 US dollars",
+    "fr": "Cette version passagers fourgon Sinotruk, Weichai 140 ch, boîte manuelle 6 vitesses, 9 places, dimensions totales 5492×2069×22090 mm, prix FOB 21700 dollars américains",
+    "ar": "هذه نسخة ركاب فان سينوتروك، محرك ويتشاي 140 حصان، ناقل حركة يدوي 6 سرعات، 9 مقاعد، الأبعاد الكلية 5492×2069×22090 ملم، سعر فوب 21700 دولار أمريكي"
+  },
+  {
+    "id": "259",
+    "cat": "阿尔及利亚",
+    "title": "2906先生，这款 Sinotruk Van客运版，潍柴 140 马力，6 档手动变速箱，2个座位，整车尺寸 5492×2069×2319 mm， FOB 价格 21100 美元。",
+    "en": "This Sinotruk van passenger version, Weichai 140 HP, 6-speed manual transmission, 2 seats, overall dimensions 5492×2069×2319 mm, FOB price 21100 US dollars",
+    "fr": "Cette version passagers fourgon Sinotruk, Weichai 140 ch, boîte manuelle 6 vitesses, 2 places, dimensions totales 5492×2069×2319 mm, prix FOB 21100 dollars américains",
+    "ar": "هذه نسخة ركاب فان سينوتروك، محرك ويتشاي 140 حصان، ناقل حركة يدوي 6 سرعات، مقعدان، الأبعاد الكلية 5492×2069×2319 ملم، سعر فوب 21100 دولار أمريكي"
+  },
+  {
+    "id": "260",
+    "cat": "阿尔及利亚",
+    "title": "2907先生，这款 Sinotruk Van客运版，潍柴 140 马力，6 档手动变速箱，9个座位，整车尺寸 5492×2069×2319 mm， FOB 价格 21800 美元。",
+    "en": "This Sinotruk van passenger version, Weichai 140 HP, 6-speed manual transmission, 9 seats, overall dimensions 5492×2069×2319 mm, FOB price 21800 US dollars",
+    "fr": "Cette version passagers fourgon Sinotruk, Weichai 140 ch, boîte manuelle 6 vitesses, 9 places, dimensions totales 5492×2069×2319 mm, prix FOB 21800 dollars américains",
+    "ar": "هذه نسخة ركاب فان سينوتروك، محرك ويتشاي 140 حصان، ناقل حركة يدوي 6 سرعات، 9 مقاعد، الأبعاد الكلية 5492×2069×2319 ملم، سعر فوب 21800 دولار أمريكي"
+  },
+  {
+    "id": "261",
+    "cat": "阿尔及利亚",
+    "title": "2908先生，这款 Sinotruk Van客运改装版，潍柴 140 马力，6 档手动变速箱，7个座位，整车尺寸 5492×2069×2319 mm， FOB 价格 30000 美元。",
+    "en": "This Sinotruk van modified passenger version, Weichai 140 HP, 6-speed manual transmission, 7 seats, overall dimensions 5492×2069×2319 mm, FOB price 30000 US dollars",
+    "fr": "Cette version passagers modifiée fourgon Sinotruk, Weichai 140 ch, boîte manuelle 6 vitesses, 7 places, dimensions totales 5492×2069×2319 mm, prix FOB 30000 dollars américains",
+    "ar": "هذه نسخة ركاب معدلة فان سينوتروك، محرك ويتشاي 140 حصان، ناقل حركة يدوي 6 سرعات، 7 مقاعد، الأبعاد الكلية 5492×2069×2319 ملم، سعر فوب 30000 دولار أمريكي"
+  },
+  {
+    "id": "262",
+    "cat": "阿尔及利亚",
+    "title": "2909先生，这辆依维柯客运版，7 座。排量2.5L。整车尺寸 4875×2000×2570mm 5档手动挡。 FOB 价格 18500 美元。",
+    "en": "This Iveco passenger version, 7 seats, displacement 2.5L, overall dimensions 4875×2000×2570 mm, 5-speed manual transmission, FOB price 18500 US dollars",
+    "fr": "Cette version passagers Iveco, 7 places, cylindrée 2,5 L, dimensions totales 4875×2000×2570 mm, boîte manuelle 5 vitesses, prix FOB 18500 dollars américains",
+    "ar": "هذه نسخة ركاب ايفيكو، 7 مقاعد، سعة المحرك 2.5 لتر، الأبعاد الكلية 4875×2000×2570 ملم، ناقل حركة يدوي 5 سرعات، سعر فوب 18500 دولار أمريكي"
+  },
+  {
+    "id": "263",
+    "cat": "阿尔及利亚",
+    "title": "2910先生，这辆依维柯客运版，7 座。排量2.5L。整车尺寸 4875×2000×2570mm 8AT动挡。 FOB 价格 19900 美元。",
+    "en": "This Iveco passenger version, 7 seats, displacement 2.5L, overall dimensions 4875×2000×2570 mm, 8AT automatic transmission, FOB price 19900 US dollars",
+    "fr": "Cette version passagers Iveco, 7 places, cylindrée 2,5 L, dimensions totales 4875×2000×2570 mm, boîte automatique 8 rapports, prix FOB 19900 dollars américains",
+    "ar": "هذه نسخة ركاب ايفيكو، 7 مقاعد، سعة المحرك 2.5 لتر، الأبعاد الكلية 4875×2000×2570 ملم، ناقل حركة أوتوماتيكي 8 سرعات، سعر فوب 19900 دولار أمريكي"
+  },
+  {
+    "id": "264",
+    "cat": "阿尔及利亚",
+    "title": "3100先生，这款沙克曼 X7 4×2 自卸车， CFR 价格。28200 美元。",
+    "en": "SHACMAN X7 4×2 Tipper Truck - CFR Price $28,200 Camion benne SHACMAN X7 4×2 - Prix CFR 28 150 $",
+    "fr": "Monsieur, ce camion benne SHACMAN X7 4×2, prix CFR 28200 dollars.",
+    "ar": "يا سيدي، هذه الشاحنة القلابة شاكمان X7 4×2، سعر CFR هو 28,200 دولار."
+  },
+  {
+    "id": "265",
+    "cat": "阿尔及利亚",
+    "title": "3101先生，这款沙克曼 F2000 6×4 自卸车，290 马力潍柴发动机，货箱长 5.2 米，货箱16立方， CFR 价格 47600 美元。",
+    "en": "Sir, this SHACMAN F2000 6×4 tipper truck, 290hp Weichai engine, cargo box length 5.2m, 16m³ box, CFR price $47,600.",
+    "fr": "Monsieur, ce camion benne SHACMAN F2000 6×4, moteur Weichai 290 ch, longueur de caisse 5,2 m, caisse de 16 m³, prix CFR 47600 dollars.",
+    "ar": "يا سيدي، هذه الشاحنة القلابة شاكمان F2000 6×4، محرك ويتشاي 290 حصان، طول الصندوق 5.2 متر، سعة 16 متر مكعب، سعر CFR هو 47,600 دولار."
+  },
+  {
+    "id": "266",
+    "cat": "阿尔及利亚",
+    "title": "3102先生，这款沙克曼 F3000 6×4 自卸车，340 马力，潍柴发动机，货箱长 5.2 米。货箱16立方， CFR 价格 49500 美元。",
+    "en": "Sir, this SHACMAN F3000 6×4 tipper truck, 340hp, Weichai engine, cargo box length 5.2m, 16m³ box, CFR price $49,500.",
+    "fr": "Monsieur, ce camion benne SHACMAN F3000 6×4, 340 ch, moteur Weichai, longueur de caisse 5,2 m, caisse de 16 m³, prix CFR 49 500 dollars.",
+    "ar": "يا سيدي، هذه الشاحنة القلابة شاكمان F3000 6×4، 340 حصان، محرك ويتشاي، طول الصندوق 5.2 متر، سعة 16 متر مكعب، سعر CFR هو 49,500 دولار."
+  },
+  {
+    "id": "267",
+    "cat": "阿尔及利亚",
+    "title": "3103先生，这款沙克曼 F3000 8×4 自卸车，380 马力，潍柴发动机，货箱长 6.5 米。 CFR 价格 58300美元。",
+    "en": "Sir, this SHACMAN F3000 8×4 tipper truck, 380hp, Weichai engine, cargo box length 6.5m, CFR price $58,300.",
+    "fr": "Monsieur, ce camion benne SHACMAN F3000 8×4, 380 ch, moteur Weichai, longueur de caisse 6,5 m, prix CFR 58 300 dollars.",
+    "ar": "يا سيدي، هذه الشاحنة القلابة شاكمان F3000 8×4، 380 حصان، محرك ويتشاي، طول الصندوق 6.5 متر، سعر CFR هو 58,300 دولار."
+  },
+  {
+    "id": "268",
+    "cat": "阿尔及利亚",
+    "title": "3104先生，这款沙克曼 X9 4×2 载货车，货箱长 4.1 米 CFR 价格 21700 美元。",
+    "en": "Sir, this SHACMAN X9 4×2 cargo truck, cargo box length 4.1m, CFR price $21,700.",
+    "fr": "Monsieur, ce camion de fret SHACMAN X9 4×2, longueur de caisse 4,1 m, prix CFR 21 700 dollars.",
+    "ar": "يا سيدي، شاحنة بضائع شاكمان X9 4×2، طول الصندوق 4.1 متر، سعر CFR هو 21,700 دولار."
+  },
+  {
+    "id": "269",
+    "cat": "阿尔及利亚",
+    "title": "3105先生，这款沙克曼 L3000 4×2 载货车底盘，210 马力，潍柴发动机， CFR 价格 31300 美元。",
+    "en": "Sir, this SHACMAN L3000 4×2 cargo truck chassis, 210hp, Weichai engine, CFR price $31,300.",
+    "fr": "Monsieur, ce châssis de camion de fret SHACMAN L3000 4×2, 210 ch, moteur Weichai, prix CFR 31 300 dollars.",
+    "ar": "يا سيدي، هيكل شاحنة بضائع شاكمان L3000 4×2، 210 حصان، محرك ويتشاي، سعر CFR هو 31,300 دولار."
+  },
+  {
+    "id": "270",
+    "cat": "阿尔及利亚",
+    "title": "3106先生，这款沙克曼 L3000 4×2 载货车，210 马力、潍柴发动机，货箱长 6.8 米 CFR 价格 33900 美元",
+    "en": "Sir, this SHACMAN L3000 4×2 cargo truck, 210hp, Weichai engine, cargo box length 6.8m, CFR price $33,900.",
+    "fr": "Monsieur, ce camion de fret SHACMAN L3000 4×2, 210 ch, moteur Weichai, longueur de caisse 6,8 m, prix CFR 33 900 dollars.",
+    "ar": "يا سيدي، شاحنة بضائع شاكمان L3000 4×2، 210 حصان، محرك ويتشاي، طول الصندوق 6.8 متر، سعر CFR هو 33,900 دولار."
+  },
+  {
+    "id": "271",
+    "cat": "阿尔及利亚",
+    "title": "3107先生，这款沙克曼 L3000 4×2 高栏载货车，210 马力，潍柴发动机。货箱长 6.8 米， CFR 价格 35600 美元。",
+    "en": "Sir, this SHACMAN L3000 4×2 stake cargo truck, 210hp, Weichai engine, cargo box length 6.8m, CFR price $35,600.",
+    "fr": "Monsieur, ce camion à ridelles hautes SHACMAN L3000 4×2, 210 ch, moteur Weichai, longueur de caisse 6,8 m, prix CFR 35 600 dollars.",
+    "ar": "يا سيدي، شاحنة بضائع بسياج عالي شاكمان L3000 4×2، 210 حصان، محرك ويتشاي، طول الصندوق 6.8 متر، سعر CFR هو 35,600 دولار."
+  },
+  {
+    "id": "272",
+    "cat": "阿尔及利亚",
+    "title": "3108先生，这款沙克曼 L3000 4×2 载货底盘，210 马力，潍柴发动机。 CFR 价格 34900 美元。",
+    "en": "Sir, this SHACMAN L3000 4×2 cargo chassis, 210hp, Weichai engine, CFR price $34,900.",
+    "fr": "Monsieur, ce châssis de fret SHACMAN L3000 4×2, 210 ch, moteur Weichai, prix CFR 34 900 dollars.",
+    "ar": "يا سيدي، هيكل شحن شاكمان L3000 4×2، 210 حصان، محرك ويتشاي، سعر CFR هو 34,900 دولار."
+  },
+  {
+    "id": "273",
+    "cat": "阿尔及利亚",
+    "title": "3109先生，这款沙克曼 L3000 4×2 载货车，210 马力、潍柴发动机，货箱长 7.75 米。 CFR 价格 36800 美元。",
+    "en": "Sir, this SHACMAN L3000 4×2 cargo truck, 210hp, Weichai engine, cargo box length 7.75m, CFR price $36,800.",
+    "fr": "Monsieur, ce camion de fret SHACMAN L3000 4×2, 210 ch, moteur Weichai, longueur de caisse 7,75 m, prix CFR 36 800 dollars.",
+    "ar": "يا سيدي، شاحنة بضائع شاكمان L3000 4×2، 210 حصان، محرك ويتشاي، طول الصندوق 7.75 متر، سعر CFR هو 36,800 دولار."
+  },
+  {
+    "id": "274",
+    "cat": "阿尔及利亚",
+    "title": "3110先生，这一款沙克曼 L3000 4×2 厢式货车，210 马力、潍柴发动机，货箱长 6.7 米。 CFR 价格 38300 美元。",
+    "en": "Sir, this SHACMAN L3000 4×2 van truck, 210hp, Weichai engine, cargo box length 6.7m, CFR price $38,300.",
+    "fr": "Monsieur, ce camion fourgon SHACMAN L3000 4×2, 210 ch, moteur Weichai, longueur de caisse 6,7 m, prix CFR 38 300 dollars.",
+    "ar": "يا سيدي، شاحنة فان شاكمان L3000 4×2، 210 حصان، محرك ويتشاي، طول الصندوق 6.7 متر، سعر CFR هو 38,300 دولار."
+  },
+  {
+    "id": "275",
+    "cat": "阿尔及利亚",
+    "title": "3111先生，这款沙克曼 F3000 6×4 载货车，340 马力，潍柴发动机，货箱长 9.3 米。 CFR 价格 53900 美元",
+    "en": "Sir, this SHACMAN F3000 6×4 cargo truck, 340hp, Weichai engine, cargo box length 9.3m, CFR price $53,900.",
+    "fr": "Monsieur, ce camion de fret SHACMAN F3000 6×4, 340 ch, moteur Weichai, longueur de caisse 9,3 m, prix CFR 53 900 dollars.",
+    "ar": "يا سيدي، شاحنة بضائع شاكمان F3000 6×4، 340 حصان، محرك ويتشاي، طول الصندوق 9.3 متر، سعر CFR هو 53,900 دولار."
+  },
+  {
+    "id": "276",
+    "cat": "阿尔及利亚",
+    "title": "3112先生，这款沙克曼 F3000 6×4 厢式载货车，340 马力，潍柴发动机。货箱长 9.3 米。 CFR 价格 55800 美元。",
+    "en": "Sir, this SHACMAN F3000 6×4 van truck, 340hp, Weichai engine, cargo box length 9.3m, CFR price $55,800.",
+    "fr": "Monsieur, ce camion fourgon SHACMAN F3000 6×4, 340 ch, moteur Weichai, longueur de caisse 9,3 m, prix CFR 55 800 dollars.",
+    "ar": "يا سيدي، شاحنة بضائع صندوقية شاكمان F3000 6×4، 340 حصان، محرك ويتشاي، طول الصندوق 9.3 متر، سعر CFR هو 55,800 دولار."
+  },
+  {
+    "id": "277",
+    "cat": "阿尔及利亚",
+    "title": "3113先生，这款沙克曼 F2000 6×4 水罐车，290马力潍柴发动机。罐体20方,CFR 价格 48800 美元",
+    "en": "Sir, this SHACMAN F2000 6×4 water tanker, 290hp Weichai engine, 20m³ tank, CFR price $48,800.",
+    "fr": "Monsieur, ce camion-citerne à eau SHACMAN F2000 6×4, moteur Weichai 290 ch, citerne de 20 m³, prix CFR 48 800 dollars.",
+    "ar": "يا سيدي، صهريج مياه شاكمان F2000 6×4، محرك ويتشاي 290 حصان، خزان 20 متر مكعب، سعر CFR هو 48,800 دولار."
+  },
+  {
+    "id": "278",
+    "cat": "阿尔及利亚",
+    "title": "3114先生，这一款沙克曼 L3000 4×2 油罐车，210 马力、潍柴发动机。罐体 8 方 CFR 价格 38700 美元",
+    "en": "Sir, this SHACMAN L3000 4×2 fuel tanker, 210hp, Weichai engine, 8m³ tank, CFR price $38,700.",
+    "fr": "Monsieur, ce camion-citerne à carburant SHACMAN L3000 4×2, 210 ch, moteur Weichai, citerne de 8 m³, prix CFR 38 700 dollars.",
+    "ar": "يا سيدي، صهريج وقود شاكمان L3000 4×2، 210 حصان، محرك ويتشاي، خزان 8 متر مكعب، سعر CFR هو 38,700 دولار."
+  },
+  {
+    "id": "279",
+    "cat": "阿尔及利亚",
+    "title": "3115先生，这款沙克曼 F2000 6×4 8 立方搅拌车，340 马力、潍柴发动机， CFR 价格 57300 美元。",
+    "en": "Sir, this SHACMAN F2000 6×4 8m³ concrete mixer truck, 340hp, Weichai engine, CFR price $57,300.",
+    "fr": "Monsieur, ce camion malaxeur SHACMAN F2000 6×4 8 m³, 340 ch, moteur Weichai, prix CFR 57 300 dollars.",
+    "ar": "يا سيدي، خلاطة خرسانة شاكمان F2000 6×4 سعة 8 متر مكعب، 340 حصان، محرك ويتشاي، سعر CFR هو 57,300 دولار."
+  },
+  {
+    "id": "280",
+    "cat": "阿尔及利亚",
+    "title": "3116先生，这款沙克曼 F3000 6×4 搅拌车，10 立方，340 马力、潍柴发动机， CFR 价格 58100 美元。",
+    "en": "Sir, this SHACMAN F3000 6×4 concrete mixer truck, 10m³, 340hp, Weichai engine, CFR price $58,100.",
+    "fr": "Monsieur, ce camion malaxeur SHACMAN F3000 6×4, 10 m³, 340 ch, moteur Weichai, prix CFR 58 100 dollars.",
+    "ar": "يا سيدي، خلاطة خرسانة شاكمان F3000 6×4، 10 متر مكعب، 340 حصان، محرك ويتشاي، سعر CFR هو 58,100 دولار."
+  },
+  {
+    "id": "281",
+    "cat": "阿尔及利亚",
+    "title": "3117先生，这款沙克曼 F3000 8×4 12 立方搅拌车，380 马力潍柴发动机， CFR 价格 66300 美元。",
+    "en": "Sir, this SHACMAN F3000 8×4 12m³ concrete mixer truck, 380hp Weichai engine, CFR price $66,300.",
+    "fr": "Monsieur, ce camion malaxeur SHACMAN F3000 8×4 12 m³, moteur Weichai 380 ch, prix CFR 66 300 dollars.",
+    "ar": "يا سيدي، خلاطة خرسانة شاكمان F3000 8×4 سعة 12 متر مكعب، محرك ويتشاي 380 حصان، سعر CFR هو 66,300 دولار."
+  },
+  {
+    "id": "282",
+    "cat": "阿尔及利亚",
+    "title": "3118先生，这一款沙克曼 L3000 4×2 6吨折臂吊，CFR 价格 49500 美元。",
+    "en": "Sir, this SHACMAN L3000 4×2 6-ton knuckle boom crane truck, CFR price $49,500.",
+    "fr": "Monsieur, ce camion grue à flèche articulée 6T SHACMAN L3000 4×2, prix CFR 49 500 dollars.",
+    "ar": "يا سيدي، شاحنة كرين شاكمان L3000 4×2 رافعة مفصلية 6 طن، سعر CFR هو 49,500 دولار."
+  },
+  {
+    "id": "283",
+    "cat": "阿尔及利亚",
+    "title": "3119先生，这款沙克曼 L3000 4×2 8 吨折臂吊，210 马力、潍柴发动机， CFR 价格 56400 美元。",
+    "en": "Sir, this SHACMAN L3000 4×2 8-ton knuckle boom crane truck, 210hp, Weichai engine, CFR price $56,400.",
+    "fr": "Monsieur, ce camion grue à flèche articulée 8T SHACMAN L3000 4×2, 210 ch, moteur Weichai, prix CFR 56 400 dollars.",
+    "ar": "يا سيدي، شاحنة كرين شاكمان L3000 4×2 رافعة مفصلية 8 طن، 210 حصان، محرك ويتشاي، سعر CFR هو 56,400 دولار."
+  },
+  {
+    "id": "284",
+    "cat": "阿尔及利亚",
+    "title": "3120先生，这款沙克曼 F3000 6×4 8 吨随车吊，340 马力、潍柴发动机。 CFR 价格 72300 美元。",
+    "en": "Sir, this SHACMAN F3000 6×4 8-ton truck-mounted crane, 340hp, Weichai engine, CFR price $72,300.",
+    "fr": "Monsieur, ce camion avec grue 8T SHACMAN F3000 6×4, 340 ch, moteur Weichai, prix CFR 72 300 dollars.",
+    "ar": "يا سيدي، شاحنة برافعة شاكمان F3000 6×4 سعة 8 طن، 340 حصان، محرك ويتشاي، سعر CFR هو 72,300 دولار."
+  },
+  {
+    "id": "285",
+    "cat": "阿尔及利亚",
+    "title": "3121先生，这款沙克曼 X3000 4×2牵引车 430马力潍柴发动机， CFR 价格 51000 美元",
+    "en": "Sir, this SHACMAN X3000 4×2 tractor unit, 430hp Weichai engine, CFR price $51,000.",
+    "fr": "Monsieur, ce tracteur routier SHACMAN X3000 4×2, moteur Weichai 430 ch, prix CFR 51 000 dollars.",
+    "ar": "يا سيدي، رأس تريلا شاكمان X3000 4×2، محرك ويتشاي 430 حصان، سعر CFR هو 51,000 دولار."
+  },
+  {
+    "id": "286",
+    "cat": "阿尔及利亚",
+    "title": "3122先生，这款沙克曼 X3000 6×4 牵引车，430 马力， CFR 价格 54300 美元。",
+    "en": "Sir, this SHACMAN X3000 6×4 tractor unit, 430hp, CFR price $54,300.",
+    "fr": "Monsieur, ce tracteur routier SHACMAN X3000 6×4, 430 ch, prix CFR 54 300 dollars.",
+    "ar": "يا سيدي، رأس تريلا شاكمان X3000 6×4، 430 حصان، سعر CFR هو 54,300 دولار."
+  },
+  {
+    "id": "287",
+    "cat": "阿尔及利亚",
+    "title": "3123先生，这款沙克曼 F3000 4×2 垃圾车，货箱 12 立方， CFR 价格 57900 美元。",
+    "en": "Sir, this SHACMAN F3000 4×2 garbage truck, 12m³ box, CFR price $57,900.",
+    "fr": "Monsieur, ce camion poubelle SHACMAN F3000 4×2, caisse 12 m³, prix CFR 57 900 dollars.",
+    "ar": "يا سيدي، شاحنة نفايات شاكمان F3000 4×2، صندوق 12 متر مكعب، سعر CFR هو 57,900 دولار."
+  },
+  {
+    "id": "288",
+    "cat": "阿尔及利亚",
+    "title": "3124先生，这款沙克曼 F3000 6×4 饲料运输车。罐体 30 个立方， CFR 价格 61300 美元。",
+    "en": "Sir, this SHACMAN F3000 6×4 feed transport truck, 30m³ tank, CFR price $61,300.",
+    "fr": "Monsieur, ce camion de transport d'aliments SHACMAN F3000 6×4, citerne 30 m³, prix CFR 61 300 dollars.",
+    "ar": "يا سيدي، شاحنة نقل أعلاف شاكمان F3000 6×4، خزان 30 متر مكعب، سعر CFR هو 61,300 دولار."
+  },
+  {
+    "id": "289",
+    "cat": "阿尔及利亚",
+    "title": "3125先生，这款沙克曼 L3000 4×2 吸污车，罐体 12 个立方，210 马力潍柴发动机， CFR 价格 47800 美元。",
+    "en": "Sir, this SHACMAN L3000 4×2 sewage suction truck, 12m³ tank, 210hp Weichai engine, CFR price $47,800.",
+    "fr": "Monsieur, ce camion hydrocureur SHACMAN L3000 4×2, citerne 12 m³, moteur Weichai 210 ch, prix CFR 47 800 dollars.",
+    "ar": "يا سيدي، شاحنة شفط مجاري شاكمان L3000 4×2، خزان 12 متر مكعب، محرك ويتشاي 210 حصان، سعر CFR هو 47,800 دولار."
+  },
+  {
+    "id": "290",
+    "cat": "阿尔及利亚",
+    "title": "3126先生，这款沙克曼 L3000 4×2 吸污车，罐体 10 立方，210 马力潍柴发动机， CFR 价格 42600 美元。",
+    "en": "Sir, this SHACMAN L3000 4×2 sewage suction truck, 10m³ tank, 210hp Weichai engine, CFR price $42,600.",
+    "fr": "Monsieur, ce camion hydrocureur SHACMAN L3000 4×2, citerne 10 m³, moteur Weichai 210 ch, prix CFR 42 600 dollars.",
+    "ar": "يا سيدي، شاحنة شفط مجاري شاكمان L3000 4×2، خزان 10 متر مكعب، محرك ويتشاي 210 حصان، سعر CFR هو 42,600 دولار."
+  },
+  {
+    "id": "291",
+    "cat": "阿尔及利亚",
+    "title": "豪沃tx6x4自卸车340马力16立方整车尺寸是8480mm*2590mm*3450mm，自重13吨，大概78个立方。",
+    "en": "汕德卡4x2牵引车平顶版的长宽高是6378mm*2550mm*3290mm，自重8吨，大概54个立方。",
+    "fr": "汕德卡6x4牵引车平顶版的长宽高是7175mm*2525mm*3300mm，自重9吨，大概60个立方。",
+    "ar": "豪沃tx6x4自卸车340马力16立方整车尺寸是8480mm*2590mm*3450mm，自重13吨，大概77个立方。"
+  },
+  {
+    "id": "292",
+    "cat": "阿尔及利亚",
+    "title": "豪沃tx自卸车6x4货箱价格53000元人民币",
+    "en": "豪沃tx6x4自卸车380马力18立方整车尺寸是8480mm*2590mm*3570mm，自重13吨，大概79个立方。",
+    "fr": "豪沃tx8x4自卸车400马力22立方整车尺寸是9950mm*2625mm*3460mm，自重13吨，大概95个立方。",
+    "ar": "豪沃tx自卸车6x4货箱价格53000元人民币"
+  },
+  {
+    "id": "293",
+    "cat": "阿尔及利亚",
+    "title": "豪沃tx8x4自卸车改颜色，需要1万人民币",
+    "en": "豪沃tx自卸车8x4货箱价格61000元人民币",
+    "fr": "阿尔及利亚海运费牵引车和自卸车每立方按照98每立方计算，轻卡按照105每立方计算。",
+    "ar": "豪沃tx8x4自卸车改颜色，需要1万人民币"
+  },
+  {
+    "id": "294",
+    "cat": "阿尔及利亚",
+    "title": "4×2 2800轴距，单排 3.8m，排半 3.3m，双排 2.8m，整车长 5.5m",
+    "en": "泵车有37米，43米，52米，62米，69米的",
+    "fr": "4×2 2600轴距，单排货箱 3.3m，排半 2.8m，双排 2.3m，整车长 5m",
+    "ar": "4×2 2800轴距，单排 3.8m，排半 3.3m，双排 2.8m，整车长 5.5m"
+  },
+  {
+    "id": "295",
+    "cat": "阿尔及利亚",
+    "title": "4×2 3600轴距，单排 4.8m，排半 4.3m，无双排，整车长 6.5m",
+    "en": "4×2 3000轴距，单排 4.0m，排半 3.5m，双排 3.0m，整车长 5.7m",
+    "fr": "4×2 3360轴距，单排 4.2m，排半 3.8m，双排 3.3m，整车长 6.0m",
+    "ar": "4×2 3600轴距，单排 4.8m，排半 4.3m，无双排，整车长 6.5m"
+  },
+  {
+    "id": "296",
+    "cat": "阿尔及利亚",
+    "title": "4×2 4500轴距，单排 6.2m，排半 5.8m，无双排，整车长 8.0m",
+    "en": "4×2 3800轴距，单排 5.2m，排半 4.8m，无双排，整车长 7.0m",
+    "fr": "4×2 4200轴距，单排 5.8m，排半 5.3m，无双排，整车长 7.5m",
+    "ar": "4×2 4500轴距，单排 6.2m，排半 5.8m，无双排，整车长 8.0m"
+  },
+  {
+    "id": "297",
+    "cat": "阿尔及利亚",
+    "title": "4×2 5800轴距，无单排，排半 7.7m，无双排，整车长 10.0m",
+    "en": "4×2 4700轴距，无单排，排半 6.2m，无双排，整车长 8.5m",
+    "fr": "4×2 5000–5300轴距，单排 7.0m，排半 6.8m，无双排，整车长 9.0m",
+    "ar": "4×2 5800轴距，无单排，排半 7.7m，无双排，整车长 10.0m"
+  },
+  {
+    "id": "298",
+    "cat": "阿尔及利亚",
+    "title": "6×4 前四后四轴距 1900+5600轴距，排半货箱 9.6m，整车长 12.0m",
+    "en": "4×2 大单桥轴距 7000–7300轴距，排半货箱 9.6m，整车长 12.0m",
+    "fr": "6×4 小三轴（前四后四）轴距 1900+4700轴距，排半货箱 8.8m，整车长 11.0m",
+    "ar": "6×4 前四后四轴距 1900+5600轴距，排半货箱 9.6m，整车长 12.0m"
+  },
+  {
+    "id": "299",
+    "cat": "阿尔及利亚",
+    "title": "高空作业车，最低高度18米，最高30米，适用在4x2或者6x4载货车上，承载200公斤，瑞雅特上装价格12.5元含税",
+    "en": "6×4 后八轮轴距 5800+1350轴距，排半货箱 9.6m，整车长 12.0m",
+    "fr": "8×4 前四后八轴距 2000+4500+1350轴距，排半货箱 9.6m，整车长 12.0m",
+    "ar": "高空作业车，最低高度18米，最高30米，适用在4x2或者6x4载货车上，承载200公斤，瑞雅特上装价格12.5元含税"
+  },
+  {
+    "id": "300",
+    "cat": "阿尔及利亚",
+    "title": "33轴距轻卡做压缩式垃圾车，程力上装5.5万人民币含税，山东岳强报价6.5万",
+    "en": "瑞雅特上装高空作业车可以制作高80米-90米，但需要8x4的底盘，上装价格根据高度单独问",
+    "fr": "33轴距轻卡做清障车，瑞雅特一托二上装4万人民币含税",
+    "ar": "33轴距轻卡做压缩式垃圾车，程力上装5.5万人民币含税，山东岳强报价6.5万"
+  },
+  {
+    "id": "301",
+    "cat": "阿尔及利亚",
+    "title": "冷藏车上装价格每米7000元x货箱长度等于货箱价格。货箱内部通风槽4000元，顶部导轨5000元。",
+    "en": "33轴距洗扫式垃圾车，山东岳强上装价格12万",
+    "fr": "冷藏车上装价格每米7000元x货箱长度等于货箱价格。货箱内部通风槽4000元，顶部导轨5000元。",
+    "ar": ""
+  }
+]

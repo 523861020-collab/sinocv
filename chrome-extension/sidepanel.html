@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SINOCV CRM</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,sans-serif;background:#fff;color:#1a1a1a;height:100vh;display:flex;flex-direction:column;font-size:12px}
+.hdr{background:#f8f8f8;padding:8px 12px;border-bottom:1px solid #e5e5e5;display:flex;align-items:center;gap:8px}
+.hdr h2{font-size:13px;color:#f59e0b}
+.tab-row{display:flex;background:#f8f8f8;border-bottom:1px solid #e5e5e5}
+.tab-row button{flex:1;padding:7px;border:none;background:none;font-size:11px;font-weight:600;color:#888;cursor:pointer;border-bottom:2px solid transparent}
+.tab-row button.active{color:#f59e0b;border-bottom-color:#f59e0b}
+.srch{padding:6px 10px;background:#fff}
+.srch input{width:100%;padding:5px 8px;border-radius:4px;background:#f5f5f5;border:1px solid #e5e5e5;color:#1a1a1a;font-size:11px;outline:none}
+.filters{display:flex;padding:0 10px 6px;gap:4px}
+.filters button{flex:1;padding:3px;border-radius:3px;cursor:pointer;font-size:9px;background:#f5f5f5;border:1px solid #e5e5e5;color:#888;font-weight:500}
+.filters button.active{background:#f59e0b;color:#fff;border-color:#f59e0b}
+.list{flex:1;overflow-y:auto}
+.item{padding:8px 10px;border-bottom:1px solid #f0f0f0;cursor:pointer}
+.item:hover{background:#f8f8f8}
+.item .n{font-size:12px;font-weight:600}
+.item .m{font-size:10px;color:#999;margin-top:1px}
+.badge{display:inline-block;padding:1px 4px;border-radius:3px;font-size:8px;font-weight:600;margin-left:3px}
+.badge-a{background:#7c3aed;color:#fff}.badge-b{background:#2563eb;color:#fff}.badge-c{background:#6b7280;color:#fff}.badge-new{background:#f59e0b;color:#fff}
+
+/* Detail Panel */
+.det{position:fixed;top:0;right:0;width:100%;height:100vh;background:#fff;z-index:10;overflow-y:auto;display:none}
+.det.show{display:block}
+.det-hdr{background:#f8f8f8;padding:8px 12px;display:flex;align-items:center;gap:8px;border-bottom:1px solid #e5e5e5;position:sticky;top:0;z-index:2}
+.det-hdr h3{flex:1;font-size:13px}
+.det-body{padding:10px}
+.det-body label{display:block;font-size:10px;color:#888;margin:6px 0 2px}
+.det-body input,.det-body select,.det-body textarea{width:100%;padding:5px 7px;border-radius:4px;background:#fff;border:1px solid #e5e5e5;color:#1a1a1a;font-size:11px;outline:none}
+.det-body input:focus,.det-body select:focus,.det-body textarea:focus{border-color:#f59e0b}
+.det-body textarea{resize:vertical;min-height:40px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.btn{padding:4px 10px;border-radius:4px;border:none;cursor:pointer;font-size:10px;font-weight:600}
+.btn-y{background:#f59e0b;color:#fff}
+.btn-r{background:#ef4444;color:#fff}
+.btn-g{background:#10b981;color:#fff}
+.btn-b{background:#3b82f6;color:#fff}
+.btn-o{background:#f8f8f8;color:#888;border:1px solid #e5e5e5}
+.btn-back{background:none;border:none;color:#888;font-size:15px;cursor:pointer}
+.sec{font-size:11px;font-weight:600;color:#f59e0b;margin:12px 0 6px;padding-top:10px;border-top:1px solid #f0f0f0;display:flex;justify-content:space-between;align-items:center}
+.card{border:1px solid #f0f0f0;border-radius:6px;padding:8px;margin-bottom:6px;background:#fafafa}
+.card-hdr{display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:11px;cursor:pointer}
+.card-body{display:none;margin-top:6px;padding-top:6px;border-top:1px solid #f0f0f0}
+.card-body.open{display:block}
+.tag{display:inline-block;padding:2px 6px;border-radius:3px;font-size:9px;font-weight:600}
+.tag-pending{background:#fef3c7;color:#d97706}
+.tag-active{background:#dbeafe;color:#2563eb}
+.tag-shipped{background:#d1fae5;color:#059669}
+.tag-done{background:#e5e7eb;color:#6b7280}
+.pi-row{display:flex;align-items:center;gap:4px;padding:3px 6px;border:1px solid #f0f0f0;border-radius:3px;margin-top:3px;font-size:10px}
+.pi-row span{flex:1;font-weight:600;color:#f59e0b}
+.rem{background:#fef3c7;border-radius:4px;padding:5px 8px;margin-bottom:6px;display:flex;align-items:center;justify-content:space-between;border:1px solid #fde68a;font-size:10px}
+.rem .nx{font-weight:600;color:#d97706}
+.toast{position:fixed;bottom:12px;right:12px;padding:5px 12px;border-radius:4px;font-size:11px;z-index:99;animation:fadeIn .2s;color:#fff}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.backdrop{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:5}
+
+/* Quick Reply */
+.scard{padding:6px 8px;background:#f8f8f8;border:1px solid #f0f0f0;border-radius:4px;margin-bottom:4px;cursor:pointer;font-size:11px}
+.scard:hover{background:#fef3c7}
+.scard .t{font-weight:600}
+.scard .p{font-size:9px;color:#999;margin-top:1px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.cats{display:flex;gap:3px;padding:4px 8px;flex-wrap:wrap}
+.cats button{padding:2px 6px;border-radius:8px;font-size:9px;background:#f5f5f5;border:1px solid #e5e5e5;color:#888;cursor:pointer}
+.cats button.active{background:#f59e0b;color:#fff;border-color:#f59e0b}
+.lang-bar{display:flex;gap:3px;padding:2px 8px 4px}
+.lang-bar button{flex:1;padding:3px;border-radius:3px;font-size:9px;border:1px solid #e5e5e5;background:#fff;cursor:pointer}
+.lang-bar button.active{background:#f59e0b;color:#fff;border-color:#f59e0b}
+.numin{display:flex;gap:4px;padding:4px 8px}
+.numin input{width:55px;padding:4px 6px;border-radius:3px;border:1px solid #e5e5e5;font-size:10px;outline:none}
+</style>
+</head>
+<body>
+
+<div class="hdr"><h2>🚛 SINOCV CRM</h2></div>
+<div class="tab-row">
+  <button class="active" onclick="switchTab('contacts',this)">📋 Contacts</button>
+  <button onclick="switchTab('scripts',this)">💬 Scripts</button>
+</div>
+
+<!-- CONTACTS -->
+<div id="tab-contacts" style="flex:1;display:flex;flex-direction:column">
+  <div class="srch"><input type="text" id="search" placeholder="Search..." oninput="renderList()"></div>
+  <div class="filters">
+    <button class="active" onclick="setFltr('all',this)">All</button>
+    <button onclick="setFltr('A',this)">A·10d</button>
+    <button onclick="setFltr('B',this)">B·30d</button>
+    <button onclick="setFltr('C',this)">C·60d</button>
+  </div>
+  <div class="list" id="list"></div>
+</div>
+
+<!-- SCRIPTS -->
+<div id="tab-scripts" style="flex:1;display:none;flex-direction:column">
+  <div class="cats" id="scriptCats"></div>
+  <div class="lang-bar">
+    <button class="active" onclick="setLang('en',this)">🇬🇧 EN</button>
+    <button onclick="setLang('fr',this)">🇫🇷 FR</button>
+    <button onclick="setLang('ar',this)">🇸🇦 AR</button>
+  </div>
+  <div class="numin">
+    <input type="number" id="scriptNum" placeholder="#ID" onkeydown="if(event.key==='Enter')jumpToScript()">
+    <button class="btn btn-y btn-sm" onclick="jumpToScript()">→</button>
+    <span id="scriptInfo" style="font-size:10px;color:#888;display:flex;align-items:center"></span>
+  </div>
+  <div class="srch"><input type="text" id="scriptSearch" placeholder="Search scripts..." oninput="renderScripts()"></div>
+  <div class="list" id="scriptList"></div>
+</div>
+
+<!-- DETAIL -->
+<div class="backdrop" id="backdrop" onclick="closeDetail()"></div>
+<div class="det" id="detail">
+  <div class="det-hdr">
+    <button class="btn-back" onclick="closeDetail()">←</button>
+    <h3 id="detTitle">Contact</h3>
+    <select id="detCat" onchange="onCatChange()" style="padding:3px 6px;border-radius:3px;border:1px solid #e5e5e5;font-size:10px;outline:none">
+      <option value="">C·New</option><option value="A">A·10d</option><option value="B">B·30d</option><option value="C">C·60d</option>
+    </select>
+    <button class="btn btn-y" style="font-size:10px;padding:3px 8px" onclick="saveDetail()">💾</button>
+  </div>
+  <div class="det-body" id="detBody"></div>
+</div>
+
+<script src="sidepanel.js"></script>
+</body>
+</html>

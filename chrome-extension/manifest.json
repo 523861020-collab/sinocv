@@ -1,17 +1,35 @@
 {
   "manifest_version": 3,
   "name": "SINOCV CRM",
-  "version": "2.0",
-  "description": "Complete CRM for truck export — contacts, PI, reminders, follow-up",
-  "permissions": ["storage", "alarms", "notifications"],
-  "host_permissions": ["https://web.whatsapp.com/*", "https://truck-export-pi-xi.vercel.app/*"],
+  "version": "3.0",
+  "description": "Truck export CRM — contacts, PI, reminders, category follow-up",
+  "icons": {
+    "16": "icon/16.png",
+    "32": "icon/32.png",
+    "48": "icon/48.png",
+    "96": "icon/96.png",
+    "128": "icon/128.png"
+  },
+  "permissions": ["sidePanel", "storage", "alarms", "notifications", "tabs"],
+  "host_permissions": [
+    "*://web.whatsapp.com/*",
+    "https://truck-export-pi-xi.vercel.app/*",
+    "https://api.ycloud.com/*"
+  ],
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
   "background": {
     "service_worker": "background.js"
   },
   "content_scripts": [{
-    "matches": ["https://web.whatsapp.com/*"],
+    "matches": ["*://web.whatsapp.com/*"],
+    "js": ["js/ycloud-sync.js"],
+    "run_at": "document_idle"
+  }, {
+    "matches": ["*://web.whatsapp.com/*"],
     "js": ["content.js"],
-    "css": ["sidebar.css"]
+    "run_at": "document_end"
   }],
   "action": {
     "default_title": "SINOCV CRM"

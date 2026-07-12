@@ -1,62 +1,56 @@
-// SINOCV CRM Background Service — reminders & alarms
+// SINOCV CRM Background — reminders + side panel control
 const API = 'https://truck-export-pi-xi.vercel.app/api/crm';
 
-// Check reminders every hour
+// Check reminders every 60 minutes
 chrome.alarms.create('check-reminders', { periodInMinutes: 60 });
+chrome.runtime.onInstalled.addListener(checkReminders);
 
 chrome.alarms.onAlarm.addListener(async (alarm) => {
-  if (alarm.name === 'check-reminders') {
-    await checkReminders();
-  }
+  if (alarm.name === 'check-reminders') await checkReminders();
 });
 
-// Also check on startup
-chrome.runtime.onStartup.addListener(checkReminders);
-chrome.runtime.onInstalled.addListener(checkReminders);
+// Open side panel when extension icon clicked
+chrome.action.onClicked.addListener(async (tab) => {
+  if (tab.url?.includes('web.whatsapp.com')) {
+    await chrome.sidePanel.open({ windowId: tab.windowId });
+  } else {
+    // Open WhatsApp Web + side panel
+    const tabs = await chrome.tabs.query({ url: '*://web.whatsapp.com/*' });
+    if (tabs.length > 0) {
+      await chrome.tabs.update(tabs[0].id, { active: true });
+      await chrome.sidePanel.open({ windowId: tabs[0].windowId });
+    } else {
+      const newTab = await chrome.tabs.create({ url: 'https://web.whatsapp.com' });
+      chrome.tabs.onUpdated.addListener(function listener(tabId, info) {
+        if (tabId === newTab.id && info.status === 'complete') {
+          chrome.tabs.onUpdated.removeListener(listener);
+          chrome.sidePanel.open({ windowId: newTab.windowId });
+        }
+      });
+    }
+  }
+});
 
 async function checkReminders() {
   try {
     const today = new Date().toISOString().split('T')[0];
-    
-    // Check if today is a holiday
     const holidayRes = await fetch(`${API}/holidays?date=${today}`);
     const holidayData = await holidayRes.json();
-    if (holidayData.isHoliday) {
-      console.log('Today is a holiday, skipping reminders');
-      return;
-    }
+    if (holidayData.isHoliday) return;
 
-    // Get contacts due for follow-up
     const res = await fetch(`${API}/reminders/due`);
     const data = await res.json();
     const due = data.contacts || [];
 
     if (due.length > 0) {
-      const count = due.length;
       const names = due.map(c => c.name || c.phone).slice(0, 5).join(', ');
-      
       chrome.notifications.create({
         type: 'basic',
-        iconUrl: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==',
-        title: `📋 ${count} customers need follow-up`,
-        message: names + (count > 5 ? ` and ${count - 5} more` : ''),
+        iconUrl: 'icon/48.png',
+        title: `📋 ${due.length} customers need follow-up`,
+        message: names + (due.length > 5 ? ` and ${due.length - 5} more` : ''),
         priority: 2,
       });
-
-      // Store notification data
-      chrome.storage.local.set({ lastReminder: { date: today, count, contacts: due } });
     }
-  } catch(e) {
-    console.error('Reminder check failed:', e);
-  }
+  } catch(e) { console.error('Reminder check:', e); }
 }
-
-// Open dashboard when extension icon clicked
-chrome.action.onClicked.addListener(() => {
-  chrome.windows.create({
-    url: 'dashboard.html',
-    type: 'popup',
-    width: 1100,
-    height: 750,
-  });
-});
