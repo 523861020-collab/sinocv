@@ -2,8 +2,8 @@
 const API = 'https://truck-export-pi-xi.vercel.app/api/crm';
 let contacts=[], fltr='all', cur=null, scripts=[], sCat='all', sLang='en';
 let currentUser='', isAdmin=false;
-const USERS = ['李山龙', '王小涵', '毛振威', '赵欢乐', '杜飞跃'];
-const defaultPins={'李山龙':'202502','13001977959':'202502','王小涵':'1111','毛振威':'2222','赵欢乐':'3333','杜飞跃':'4444'};
+const USERS = ['李善龙', '王小涵', '毛振威', '赵欢乐', '杜飞跃'];
+const defaultPins={'李善龙':'202502','13001977959':'202502','王小涵':'1111','毛振威':'2222','赵欢乐':'3333','杜飞跃':'4444'};
 function getPins(){try{return JSON.parse(localStorage.getItem('sinocv_pins')||'{}')}catch(e){return{}}}
 function PINS(){const saved=getPins();return{...defaultPins,...saved}}
 
@@ -13,7 +13,7 @@ function doLogin(){
   const err=document.getElementById('loginError');
   if(!user||!pin){err.textContent='Select user and enter PIN';err.style.display='block';return}
   if(PINS()[user]!==pin){err.textContent='Wrong PIN';err.style.display='block';return}
-  currentUser=user;isAdmin=user==='李山龙'||user==='13001977959'||user==='Li Shanlong';
+  currentUser=user;isAdmin=user==='李善龙'||user==='13001977959'||user==='Li Shanlong';
   localStorage.setItem('sinocv_user',user);
   document.getElementById('loginScreen').style.display='none';
   document.getElementById('mainApp').style.display='flex';
