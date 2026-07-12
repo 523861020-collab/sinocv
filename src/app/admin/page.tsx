@@ -41,9 +41,18 @@ export default function AdminPage() {
   }, []);
   useEffect(() => { if(loggedIn && tab==='time') { loadTime(timeMonth); loadFups(); } }, [loggedIn,tab,timeMonth,loadTime]);
 
-  const loadFups = useCallback(async () => {
-    try { const r = await fetch(`${API}/followups?date=${new Date().toISOString().split('T')[0]}`); if(r.ok) setFollowUps(await r.json()); } catch(e){}
-  }, []);
+  const expTime = () => {
+    let csv='日期,姓名,开始时间,结束时间,在线时长(分钟),工时(分钟)\n';
+    timeLogs.forEach((l:any)=>{
+      const start=l.sessionStart?new Date(l.sessionStart):null;
+      const end=l.endTime?new Date(l.endTime):null;
+      const dur=start&&end?Math.round((end.getTime()-start.getTime())/60000):0;
+      let workMin=0;
+      if(start&&end){for(let t=start.getTime();t<end.getTime();t+=60000){const d3=new Date(t);const h3=d3.getHours()+d3.getMinutes()/60;if(h3>=13&&h3<22.5&&!(h3>=17.5&&h3<18.5))workMin++;}}
+      csv+=`${l.date||''},${l.user||''},${start?start.toLocaleTimeString('zh-CN',{hour12:false}):'-'},${end?end.toLocaleTimeString('zh-CN',{hour12:false}):'-'},${dur},${workMin}\n`;
+    });
+    const bl=new Blob(['\uFEFF'+csv],{type:'text/csv'});const a3=document.createElement('a');a3.href=URL.createObjectURL(bl);a3.download=`考勤_${timeMonth}.csv`;a3.click();
+  };
 
   function doLogin(){ if(!user||!pin){setErr('请输入用户名和密码');return}; if(PINS[user]!==pin){setErr('密码错误');return}; setLoggedIn(true);setErr(''); }
 
@@ -160,8 +169,9 @@ export default function AdminPage() {
 
         {tab==='time'&&<div style={{padding:'32px',maxWidth:'960px'}}>
           <h2 style={{color:'#fff',fontSize:'18px',marginBottom:'20px'}}>⏱ 考勤记录</h2>
-          <div style={{marginBottom:'20px'}}>
+          <div style={{marginBottom:'20px',display:'flex',gap:'8px'}}>
             <input type="month" value={timeMonth} onChange={e=>setTimeMonth(e.target.value)} style={{padding:'8px 12px',borderRadius:'6px',border:'1px solid #1a1a1a',background:'#0d0d0d',color:'#fff',fontSize:'13px',outline:'none'}} />
+            <button onClick={expTime} style={{padding:'8px 16px',borderRadius:'6px',border:'none',background:'#f59e0b',color:'#000',fontWeight:700,fontSize:'13px',cursor:'pointer'}}>📥 导出考勤</button>
           </div>
 
           {/* Per-user summary */}
