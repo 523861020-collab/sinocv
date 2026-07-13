@@ -23,7 +23,7 @@
   },
   "content_scripts": [{
     "matches": ["*://web.whatsapp.com/*"],
-    "js": ["content.js"],
+    "js": ["js/wa-js.js", "js/time-tracker.js", "js/ycloud-sync.js", "content.js"],
     "run_at": "document_end"
   }]
 }
