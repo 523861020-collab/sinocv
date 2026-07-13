@@ -7,43 +7,41 @@
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:-apple-system,sans-serif;background:#0a0a0a;font-size:13px;color:#fff}
 .login-wrap{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh}
-.login-card{width:300px;text-align:center}
-.login-card h2{font-size:16px;color:#f59e0b;margin-bottom:24px}
-.login-card input{width:100%;padding:10px 12px;border-radius:6px;border:1px solid #333;background:#000;color:#fff;font-size:14px;margin-bottom:10px;outline:none}
-.login-card input:focus{border-color:#f59e0b}
-.login-card button{width:100%;padding:10px;border-radius:6px;border:none;background:#f59e0b;color:#000;font-weight:700;font-size:14px;cursor:pointer}
-.login-card .err{color:#ef4444;font-size:11px;margin-top:8px;display:none}
 .app{display:none;flex-direction:column;height:100vh}
-.hdr{display:flex;align-items:center;padding:10px 12px;border-bottom:1px solid #1a1a1a;gap:8px}
-.hdr h3{font-size:13px;color:#f59e0b;flex:1}
+.hdr{display:flex;align-items:center;padding:8px 10px;border-bottom:1px solid #1a1a1a;gap:6px}
+.hdr h3{font-size:12px;color:#f59e0b;flex:1}
 .hdr .usr{font-size:10px;color:#666}
+.panel{padding:10px;flex:1;overflow:auto}
 .btn{width:100%;padding:12px;border-radius:8px;border:1px solid #1a1a1a;background:#111;color:#fff;font-size:14px;cursor:pointer;text-align:left;margin-bottom:8px;display:flex;align-items:center;gap:8px}
 .btn:hover{border-color:#f59e0b}
 .btn .icon{font-size:20px}
-.panel{padding:12px;flex:1;overflow:auto}
-.template-item{padding:10px;border:1px solid #1a1a1a;border-radius:6px;margin-bottom:6px;cursor:pointer;font-size:12px;color:#ccc}
-.template-item:hover{background:#111;border-color:#333}
-.template-item .title{color:#f59e0b;font-weight:600;margin-bottom:4px}
-.template-item .text{color:#999;line-height:1.4}
-.back-btn{background:none;border:none;color:#f59e0b;font-size:13px;cursor:pointer;padding:4px 0;margin-bottom:8px}
-input,textarea{width:100%;padding:8px;border-radius:6px;border:1px solid #333;background:#000;color:#fff;font-size:12px;margin-bottom:8px;outline:none}
-textarea{resize:vertical}
-.save-btn{width:100%;padding:10px;border-radius:6px;border:none;background:#f59e0b;color:#000;font-weight:700;font-size:14px;cursor:pointer}
+.back-btn{background:none;border:none;color:#f59e0b;font-size:13px;cursor:pointer;padding:4px 0;margin-bottom:8px;display:inline-block}
+/* Templates */
+.template-item{padding:8px 10px;border:1px solid #1a1a1a;border-radius:6px;margin-bottom:6px;cursor:pointer;font-size:12px;color:#ccc}
+.template-item:hover{background:#111}
+.template-item .title{color:#f59e0b;font-weight:600;margin-bottom:3px}
+.template-item .text{color:#999;line-height:1.3}
+/* Customer Card */
+.info-row{display:flex;align-items:center;padding:6px 0;border-bottom:1px solid #111;gap:8px}
+.info-label{width:55px;color:#666;font-size:11px;flex-shrink:0}
+.info-val{color:#fff;font-size:12px;flex:1}
+.ed{flex:1;padding:4px 8px;border-radius:4px;border:1px solid #333;background:#000;color:#fff;font-size:12px;outline:none}
+.ed:focus{border-color:#f59e0b}
+textarea.ed{resize:vertical}
+.save-btn{width:100%;padding:10px;border-radius:6px;border:none;background:#f59e0b;color:#000;font-weight:700;font-size:13px;cursor:pointer;margin-top:10px}
+.btn-sm{padding:4px 10px;border-radius:4px;border:1px solid #333;background:none;color:#f59e0b;font-size:11px;cursor:pointer;margin-top:6px}
+.order-item{padding:6px 8px;border:1px solid #1a1a1a;border-radius:4px;margin:4px 0;font-size:11px;color:#999}
+/* Customer List */
+.cust-item{padding:8px 10px;border:1px solid #1a1a1a;border-radius:6px;margin-bottom:4px;cursor:pointer}
+.cust-item:hover{border-color:#f59e0b}
+.cust-name{font-weight:600;font-size:12px}
+.cust-meta{font-size:10px;color:#666;margin-top:2px}
 .toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);padding:6px 16px;border-radius:4px;font-size:12px;z-index:99}
 </style>
 </head>
 <body>
 
-<div id="loginScreen" class="login-wrap" style="display:none">
-  <div class="login-card">
-    <div style="font-size:32px;margin-bottom:8px">🚛</div>
-    <h2>SINOCV CRM</h2>
-    <input type="text" id="loginUser" placeholder="用户名" autofocus>
-    <input type="password" id="loginPass" placeholder="密码">
-    <button id="loginBtn">登 录</button>
-    <div class="err" id="loginErr"></div>
-  </div>
-</div>
+<div id="loginScreen" class="login-wrap" style="display:none"></div>
 
 <div id="mainApp" class="app">
   <div class="hdr">
@@ -52,26 +50,30 @@ textarea{resize:vertical}
     <button id="logoutBtn" style="background:none;border:none;font-size:14px;cursor:pointer">🚪</button>
   </div>
 
-  <!-- Main menu -->
+  <!-- MAIN -->
   <div class="panel" id="mainPanel">
-    <button class="btn" id="btnQuickReply">
-      <span class="icon">💬</span> 快捷回复
-    </button>
-    <button class="btn" id="btnAddCustomer">
-      <span class="icon">📥</span> 添加客户
-    </button>
+    <button class="btn" id="btnAddCustomer"><span class="icon">📥</span> 添加客户</button>
+    <button class="btn" id="btnQuickReply"><span class="icon">💬</span> 快捷回复</button>
+    <button class="btn" id="btnCustomerList"><span class="icon">📋</span> 客户列表</button>
   </div>
 
-  <!-- Quick Reply panel -->
+  <!-- CUSTOMER CARD -->
+  <div class="panel" id="customerCard" style="display:none">
+    <button class="back-btn" id="backToMain">← 返回</button>
+    <div id="customerCardBody"></div>
+    <button class="save-btn" id="saveCustomer">💾 保存</button>
+  </div>
+
+  <!-- QUICK REPLY -->
   <div class="panel" id="quickReplyPanel" style="display:none">
-    <button class="back-btn" id="quickBack">← 返回</button>
+    <button class="back-btn" id="backToMain2" onclick="document.getElementById('backToMain').click()">← 返回</button>
     <div id="templateList"></div>
   </div>
 
-  <!-- Add Customer panel -->
-  <div class="panel" id="addCustomerPanel" style="display:none">
-    <button class="back-btn" id="addBack">← 返回</button>
-    <div id="customerForm"></div>
+  <!-- CUSTOMER LIST -->
+  <div class="panel" id="customerListPanel" style="display:none">
+    <button class="back-btn" id="backToMain3" onclick="document.getElementById('backToMain').click()">← 返回</button>
+    <div id="customerListBody"></div>
   </div>
 </div>
 
