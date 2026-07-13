@@ -4,6 +4,9 @@
 import { useState, useEffect, useCallback } from 'react';
 
 const API = '/api/crm';
+const STORAGE_KEY = 'crm_admin_login';
+const LOGIN_TTL = 24 * 60 * 60 * 1000; // 24h
+
 const USERS = ['Li Shanlong', '王小涵', '毛振威', '赵欢乐', '杜飞跃'];
 const USER_INFO: Record<string,any> = {
   'Li Shanlong': {product:'全部',region:'全球',salary:0},
@@ -149,7 +152,23 @@ export default function AdminPage() {
     const bl=new Blob(['\uFEFF'+csv],{type:'text/csv'});const a3=document.createElement('a');a3.href=URL.createObjectURL(bl);a3.download=`考勤工资_${timeMonth}.csv`;a3.click();
   };
 
-  function doLogin(){ if(!user||!pin){setErr('请输入用户名和密码');return}; if(PINS[user]!==pin){setErr('密码错误');return}; setLoggedIn(true);setErr(''); }
+  // Auto-restore login from localStorage
+  useEffect(() => {
+    try {
+      const stored = localStorage.getItem(STORAGE_KEY);
+      if (stored) {
+        const { u, t } = JSON.parse(stored);
+        if (Date.now() - t < LOGIN_TTL) {
+          setUser(u);
+          setLoggedIn(true);
+          return;
+        }
+      }
+    } catch(e) {}
+    localStorage.removeItem(STORAGE_KEY);
+  }, []);
+
+  function doLogin(){ if(!user||!pin){setErr('请输入用户名和密码');return}; if(PINS[user]!==pin){setErr('密码错误');return}; setLoggedIn(true);setErr(''); localStorage.setItem(STORAGE_KEY, JSON.stringify({u:user, t:Date.now()})); }
 
   // ====== LOGIN ======
   if(!loggedIn) return (
@@ -215,7 +234,7 @@ export default function AdminPage() {
           👤 {user}
           <div style={{marginTop:'6px',display:'flex',gap:'4px'}}>
             <button onClick={exp} style={{flex:1,padding:'5px',borderRadius:'4px',border:'none',background:'#1a1a1a',color:'#999',fontSize:'10px',cursor:'pointer'}}>导出</button>
-            <button onClick={()=>{setLoggedIn(false);setUser('');setPin('')}} style={{flex:1,padding:'5px',borderRadius:'4px',border:'none',background:'#1a1a1a',color:'#999',fontSize:'10px',cursor:'pointer'}}>退出</button>
+            <button onClick={()=>{setLoggedIn(false);setUser('');setPin('');localStorage.removeItem(STORAGE_KEY)}} style={{flex:1,padding:'5px',borderRadius:'4px',border:'none',background:'#1a1a1a',color:'#999',fontSize:'10px',cursor:'pointer'}}>退出</button>
           </div>
         </div>
       </div>
