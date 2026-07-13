@@ -38,6 +38,9 @@ function autoLogin() {
   chrome.storage.local.get(['crmUser', 'crmLoginTime'], function(data) {
     if (data.crmUser && data.crmLoginTime && (Date.now() - data.crmLoginTime < 86400000)) {
       loginSuccess(data.crmUser);
+    } else {
+      // TEST MODE: auto-login as admin
+      loginSuccess('13001977959');
     }
   });
 }
