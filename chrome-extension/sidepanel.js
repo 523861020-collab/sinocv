@@ -50,6 +50,9 @@ document.addEventListener('DOMContentLoaded', function() {
     if (e.target === this) closeEdit();
   });
 
+  // Sync current WhatsApp chat
+  document.getElementById('syncCurrentBtn').addEventListener('click', syncCurrentChat);
+
   // Auto-restore login
   restoreLogin(function(user) {
     if (user) {
@@ -198,4 +201,48 @@ async function saveEdit() {
       loadContacts();
     }
   } catch(e) {}
+}
+
+// ====== SYNC CURRENT CHAT ======
+function showToast(msg, ok) {
+  var t = document.createElement('div');
+  t.className = 'toast';
+  t.style.background = ok ? '#059669' : '#dc2626';
+  t.textContent = msg;
+  document.body.appendChild(t);
+  setTimeout(function() { t.remove(); }, 2500);
+}
+
+async function syncCurrentChat() {
+  showToast('⏳ 读取中...', true);
+  chrome.runtime.sendMessage({ type: 'getCurrentChat' }, async function(resp) {
+    if (!resp || !resp.ok) {
+      showToast('❌ ' + (resp?.error || '无法连接 WhatsApp'), false);
+      return;
+    }
+    var d = resp.data;
+    if (d.error) {
+      showToast('❌ ' + d.error, false);
+      return;
+    }
+    if (!d.phone) {
+      showToast('❌ 未找到客户号码', false);
+      return;
+    }
+    
+    // Save to CRM
+    try {
+      var r = await fetch(API, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ phone: d.phone, name: d.name, source: 'whatsapp_active' }),
+      });
+      if (r.ok) {
+        showToast('✅ ' + (d.name || d.phone) + ' 已同步', true);
+        loadContacts();
+      }
+    } catch(e) {
+      showToast('❌ 同步失败', false);
+    }
+  });
 }
