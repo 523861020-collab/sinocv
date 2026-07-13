@@ -235,7 +235,7 @@ async function syncCurrentChat() {
       var r = await fetch(API, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ phone: d.phone, name: d.name, source: 'whatsapp_active' }),
+        body: JSON.stringify({ phone: d.phone, name: d.name, country: d.country || '', source: 'whatsapp_active' }),
       });
       if (r.ok) {
         showToast('✅ ' + (d.name || d.phone) + ' 已同步', true);
