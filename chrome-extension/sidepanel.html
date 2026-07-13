@@ -35,33 +35,29 @@ body{font-family:-apple-system,sans-serif;background:#fff;font-size:13px}
 </head>
 <body>
 
-<!-- LOGIN -->
 <div id="loginScreen" class="login-wrap">
   <div class="login-card">
     <div style="font-size:32px;margin-bottom:8px">🚛</div>
     <h2>SINOCV CRM</h2>
     <input type="text" id="loginUser" placeholder="用户名" autofocus>
-    <input type="password" id="loginPass" placeholder="密码" onkeydown="if(event.key==='Enter')doLogin()">
-    <button onclick="doLogin()">登 录</button>
+    <input type="password" id="loginPass" placeholder="密码">
+    <button id="loginBtn">登 录</button>
     <div class="err" id="loginErr"></div>
   </div>
 </div>
 
-<!-- MAIN APP -->
 <div id="mainApp" class="app">
   <div class="hdr">
     <h3>🚛 SINOCV CRM</h3>
     <span class="usr" id="curUser"></span>
-    <button style="background:none;border:none;font-size:14px;cursor:pointer" onclick="doLogout()">🚪</button>
+    <button id="logoutBtn" style="background:none;border:none;font-size:14px;cursor:pointer">🚪</button>
   </div>
-  <div class="tabs" id="tabs">
-    <button class="active" onclick="switchTab('list',this)">📋 客户</button>
-  </div>
+  <div class="tabs"></div>
   <div class="filter">
-    <button class="active" onclick="setFilter('all',this)">全部</button>
-    <button onclick="setFilter('A',this)">A类·10天</button>
-    <button onclick="setFilter('B',this)">B类·30天</button>
-    <button onclick="setFilter('C',this)">C类·60天</button>
+    <button data-filter="all" class="active">全部</button>
+    <button data-filter="A">A类·10天</button>
+    <button data-filter="B">B类·30天</button>
+    <button data-filter="C">C类·60天</button>
   </div>
   <div class="list" id="listEl"></div>
 </div>
