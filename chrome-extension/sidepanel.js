@@ -109,9 +109,9 @@ function openDetail(phone) {
   );
 }
 
-function switchTab(id) {
+function switchTab(id, btn) {
   document.querySelectorAll('.tabs button').forEach(b => b.classList.remove('active'));
-  event.target.classList.add('active');
+  if (btn) btn.classList.add('active');
 }
 
 // Toast
