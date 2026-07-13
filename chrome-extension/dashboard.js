@@ -1,5 +1,5 @@
 // SINOCV CRM Dashboard Logic
-const API = 'https://truck-export-pi-xi.vercel.app/api/crm';
+const API = 'https://truckmarts.com/api/crm';
 let allContacts = [], selectedContact = null, currentFilter = 'all';
 
 // Load contacts on start

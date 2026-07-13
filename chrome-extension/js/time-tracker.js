@@ -48,7 +48,7 @@
         localStorage.setItem(key, JSON.stringify(data));
         
         // Sync to backend immediately
-        fetch('https://truck-export-pi-xi.vercel.app/api/crm/time', {
+        fetch('https://truckmarts.com/api/crm/time', {
           method: 'POST', headers: {'Content-Type':'application/json'},
           body: JSON.stringify({
             user: USER, date: today, phone: lastSentPhone,
@@ -86,7 +86,7 @@
     let data;
     try { data = JSON.parse(localStorage.getItem(key) || '{}'); } catch(e) { data = {}; }
     data.date = today; data.user = USER; data.lastActivity = lastActivity;
-    fetch('https://truck-export-pi-xi.vercel.app/api/crm/time', {
+    fetch('https://truckmarts.com/api/crm/time', {
       method: 'POST', headers: {'Content-Type':'application/json'},
       body: JSON.stringify(data),
     }).catch(()=>{});
@@ -100,7 +100,7 @@
     data.endTime = Date.now();
     data.date = today; data.user = USER;
     localStorage.setItem(key, JSON.stringify(data));
-    fetch('https://truck-export-pi-xi.vercel.app/api/crm/time', {
+    fetch('https://truckmarts.com/api/crm/time', {
       method: 'POST', headers: {'Content-Type':'application/json'},
       body: JSON.stringify(data),
     }).catch(()=>{});

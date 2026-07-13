@@ -1,6 +1,6 @@
 // YCloud Contact Sync v3 — also syncs to SINOCV CRM
 const YC_KEY = '9590009a85b9edf2f44edfc92b6737ac';
-const CRM_API = 'https://truck-export-pi-xi.vercel.app/api/crm';
+const CRM_API = 'https://truckmarts.com/api/crm';
 
 async function ycSync(phone, name) {
   try {

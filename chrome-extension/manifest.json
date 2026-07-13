@@ -13,7 +13,7 @@
   "permissions": ["sidePanel", "storage", "alarms", "notifications", "tabs", "scripting"],
   "host_permissions": [
     "*://web.whatsapp.com/*",
-    "https://truck-export-pi-xi.vercel.app/*"
+    "https://truckmarts.com/*"
   ],
   "side_panel": {
     "default_path": "sidepanel.html"

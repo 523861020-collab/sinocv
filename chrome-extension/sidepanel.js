@@ -1,5 +1,5 @@
-// SINOCV CRM — event listeners (NO onclick in HTML)
-const API = 'https://truck-export-pi-xi.vercel.app/api/crm';
+// SINOCV CRM — Chrome Extension Side Panel
+const API = 'https://truckmarts.com/api/crm';
 const PINS = { '13001977959': '202502', '李善龙': '202502', '王小涵': '1111', '毛振威': '2222', '赵欢乐': '3333', '杜飞跃': '4444' };
 const ADMIN_IDS = ['13001977959', '李善龙'];
 
@@ -7,10 +7,29 @@ let currentUser = '';
 let isAdmin = false;
 let contacts = [];
 let filter = 'all';
+let refreshTimer = null;
 
-// ====== INIT EVENT LISTENERS ======
+// ====== PERSISTENT LOGIN ======
+function saveLogin(user) {
+  chrome.storage.local.set({ crmUser: user, crmLoginTime: Date.now() });
+}
+
+function restoreLogin(callback) {
+  chrome.storage.local.get(['crmUser', 'crmLoginTime'], function(data) {
+    if (data.crmUser && data.crmLoginTime) {
+      var elapsed = Date.now() - data.crmLoginTime;
+      if (elapsed < 24 * 60 * 60 * 1000) { // 24h expiry
+        callback(data.crmUser);
+        return;
+      }
+    }
+    callback(null);
+  });
+}
+
+// ====== INIT ======
 document.addEventListener('DOMContentLoaded', function() {
-  // Login
+  // Login button
   document.getElementById('loginBtn').addEventListener('click', doLogin);
   document.getElementById('loginPass').addEventListener('keydown', function(e) {
     if (e.key === 'Enter') doLogin();
@@ -22,6 +41,19 @@ document.addEventListener('DOMContentLoaded', function() {
     btn.addEventListener('click', function() {
       setFilter(btn.getAttribute('data-filter'), btn);
     });
+  });
+
+  // Auto-restore login
+  restoreLogin(function(user) {
+    if (user) {
+      currentUser = user;
+      isAdmin = ADMIN_IDS.indexOf(user) >= 0;
+      document.getElementById('loginScreen').style.display = 'none';
+      document.getElementById('mainApp').style.display = 'flex';
+      document.getElementById('curUser').textContent = (isAdmin ? '👑 ' : '') + user;
+      loadContacts();
+      refreshTimer = setInterval(loadContacts, 20000);
+    }
   });
 });
 
@@ -39,17 +71,21 @@ function doLogin() {
 
   currentUser = u;
   isAdmin = ADMIN_IDS.indexOf(u) >= 0;
+  saveLogin(u);
   document.getElementById('loginScreen').style.display = 'none';
   document.getElementById('mainApp').style.display = 'flex';
   document.getElementById('curUser').textContent = (isAdmin ? '👑 ' : '') + u;
   
   loadContacts();
-  setInterval(loadContacts, 20000);
+  if (refreshTimer) clearInterval(refreshTimer);
+  refreshTimer = setInterval(loadContacts, 20000);
 }
 
 function doLogout() {
+  chrome.storage.local.remove(['crmUser', 'crmLoginTime']);
   currentUser = '';
   contacts = [];
+  if (refreshTimer) { clearInterval(refreshTimer); refreshTimer = null; }
   document.getElementById('mainApp').style.display = 'none';
   document.getElementById('loginScreen').style.display = 'flex';
   document.getElementById('loginUser').value = '';
@@ -104,15 +140,12 @@ function renderList() {
   }
   el.innerHTML = html;
 
-  // Add click listeners to items
   el.querySelectorAll('.item').forEach(function(item) {
     item.addEventListener('dblclick', function() {
-      var phone = item.getAttribute('data-phone');
-      openWA(phone);
+      openWA(item.getAttribute('data-phone'));
     });
     item.addEventListener('click', function() {
-      var phone = item.getAttribute('data-phone');
-      openDetail(phone);
+      openDetail(item.getAttribute('data-phone'));
     });
   });
 }
