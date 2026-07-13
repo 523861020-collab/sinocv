@@ -5,32 +5,31 @@
 <title>SINOCV CRM</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,sans-serif;background:#fff;font-size:13px}
+body{font-family:-apple-system,sans-serif;background:#0a0a0a;font-size:13px;color:#fff}
 .login-wrap{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh}
 .login-card{width:300px;text-align:center}
 .login-card h2{font-size:16px;color:#f59e0b;margin-bottom:24px}
-.login-card input{width:100%;padding:10px 12px;border-radius:6px;border:1px solid #d0d0d0;font-size:14px;margin-bottom:10px;outline:none;box-sizing:border-box}
+.login-card input{width:100%;padding:10px 12px;border-radius:6px;border:1px solid #333;background:#000;color:#fff;font-size:14px;margin-bottom:10px;outline:none}
 .login-card input:focus{border-color:#f59e0b}
-.login-card button{width:100%;padding:10px;border-radius:6px;border:none;background:#f59e0b;color:#000;font-weight:700;font-size:14px;cursor:pointer;margin-top:4px}
+.login-card button{width:100%;padding:10px;border-radius:6px;border:none;background:#f59e0b;color:#000;font-weight:700;font-size:14px;cursor:pointer}
 .login-card .err{color:#ef4444;font-size:11px;margin-top:8px;display:none}
 .app{display:none;flex-direction:column;height:100vh}
-.hdr{display:flex;align-items:center;padding:10px 12px;border-bottom:1px solid #e5e5e5;gap:8px}
-.hdr h3{font-size:14px;color:#f59e0b;flex:1}
-.hdr .usr{font-size:11px;color:#999}
-.tabs{display:flex;border-bottom:1px solid #e5e5e5}
-.tabs button{flex:1;padding:8px;border:none;background:none;font-size:12px;color:#999;cursor:pointer;border-bottom:2px solid transparent}
-.tabs button.active{color:#f59e0b;border-bottom-color:#f59e0b}
-.list{flex:1;overflow-y:auto;padding:6px}
-.item{padding:10px 12px;border:1px solid #f0f0f0;border-radius:6px;margin-bottom:4px;cursor:pointer;display:flex;justify-content:space-between;align-items:center}
-.item:hover{border-color:#f59e0b}
-.item .name{font-weight:600;font-size:13px}
-.item .meta{font-size:11px;color:#999}
-.badge{padding:1px 6px;border-radius:4px;font-size:10px;color:#fff}
-.badge-a{background:#7c3aed}.badge-b{background:#2563eb}.badge-c{background:#666}.badge-new{background:#f59e0b;color:#000}
-.filter{display:flex;gap:4px;padding:6px}
-.filter button{padding:4px 10px;border-radius:4px;border:1px solid #e5e5e5;background:#fff;font-size:11px;cursor:pointer}
-.filter button.active{background:#f59e0b;color:#fff;border-color:#f59e0b}
-.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);padding:6px 16px;border-radius:4px;color:#fff;font-size:12px;z-index:99;background:#059669}
+.hdr{display:flex;align-items:center;padding:10px 12px;border-bottom:1px solid #1a1a1a;gap:8px}
+.hdr h3{font-size:13px;color:#f59e0b;flex:1}
+.hdr .usr{font-size:10px;color:#666}
+.btn{width:100%;padding:12px;border-radius:8px;border:1px solid #1a1a1a;background:#111;color:#fff;font-size:14px;cursor:pointer;text-align:left;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.btn:hover{border-color:#f59e0b}
+.btn .icon{font-size:20px}
+.panel{padding:12px;flex:1;overflow:auto}
+.template-item{padding:10px;border:1px solid #1a1a1a;border-radius:6px;margin-bottom:6px;cursor:pointer;font-size:12px;color:#ccc}
+.template-item:hover{background:#111;border-color:#333}
+.template-item .title{color:#f59e0b;font-weight:600;margin-bottom:4px}
+.template-item .text{color:#999;line-height:1.4}
+.back-btn{background:none;border:none;color:#f59e0b;font-size:13px;cursor:pointer;padding:4px 0;margin-bottom:8px}
+input,textarea{width:100%;padding:8px;border-radius:6px;border:1px solid #333;background:#000;color:#fff;font-size:12px;margin-bottom:8px;outline:none}
+textarea{resize:vertical}
+.save-btn{width:100%;padding:10px;border-radius:6px;border:none;background:#f59e0b;color:#000;font-weight:700;font-size:14px;cursor:pointer}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);padding:6px 16px;border-radius:4px;font-size:12px;z-index:99}
 </style>
 </head>
 <body>
@@ -50,32 +49,29 @@ body{font-family:-apple-system,sans-serif;background:#fff;font-size:13px}
   <div class="hdr">
     <h3>🚛 SINOCV CRM</h3>
     <span class="usr" id="curUser"></span>
-    <button id="syncCurrentBtn" style="padding:4px 10px;border-radius:4px;border:1px solid #f59e0b;background:#000;color:#f59e0b;font-size:11px;cursor:pointer" title="同步当前WhatsApp对话客户">📥 当前客户</button>
     <button id="logoutBtn" style="background:none;border:none;font-size:14px;cursor:pointer">🚪</button>
   </div>
-  <div class="tabs"></div>
-  <div class="filter">
-    <button data-filter="all" class="active">全部</button>
-    <button data-filter="A">A类·10天</button>
-    <button data-filter="B">B类·30天</button>
-    <button data-filter="C">C类·60天</button>
-  </div>
-  <div class="list" id="listEl"></div>
-</div>
 
-<!-- Edit Modal -->
-<div id="editModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:100;justify-content:center;align-items:center">
-  <div style="background:#1a1a1a;border-radius:12px;padding:20px;width:320px;max-height:80vh;overflow:auto">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
-      <b style="color:#f59e0b">✏️ 编辑客户</b>
-      <button id="editClose" style="background:none;border:none;color:#666;font-size:18px;cursor:pointer">✕</button>
-    </div>
-    <input id="editName" placeholder="客户名称" style="width:100%;padding:8px;border-radius:6px;border:1px solid #333;background:#000;color:#fff;font-size:13px;margin-bottom:8px;box-sizing:border-box">
-    <input id="editEmail" placeholder="邮箱" style="width:100%;padding:8px;border-radius:6px;border:1px solid #333;background:#000;color:#fff;font-size:13px;margin-bottom:8px;box-sizing:border-box">
-    <input id="editCompany" placeholder="公司" style="width:100%;padding:8px;border-radius:6px;border:1px solid #333;background:#000;color:#fff;font-size:13px;margin-bottom:8px;box-sizing:border-box">
-    <textarea id="editNotes" placeholder="备注" rows="3" style="width:100%;padding:8px;border-radius:6px;border:1px solid #333;background:#000;color:#fff;font-size:13px;margin-bottom:12px;box-sizing:border-box;resize:vertical"></textarea>
-    <input type="hidden" id="editPhone">
-    <button id="editSave" style="width:100%;padding:10px;border-radius:6px;border:none;background:#f59e0b;color:#000;font-weight:700;font-size:14px;cursor:pointer">💾 保存</button>
+  <!-- Main menu -->
+  <div class="panel" id="mainPanel">
+    <button class="btn" id="btnQuickReply">
+      <span class="icon">💬</span> 快捷回复
+    </button>
+    <button class="btn" id="btnAddCustomer">
+      <span class="icon">📥</span> 添加客户
+    </button>
+  </div>
+
+  <!-- Quick Reply panel -->
+  <div class="panel" id="quickReplyPanel" style="display:none">
+    <button class="back-btn" id="quickBack">← 返回</button>
+    <div id="templateList"></div>
+  </div>
+
+  <!-- Add Customer panel -->
+  <div class="panel" id="addCustomerPanel" style="display:none">
+    <button class="back-btn" id="addBack">← 返回</button>
+    <div id="customerForm"></div>
   </div>
 </div>
 
