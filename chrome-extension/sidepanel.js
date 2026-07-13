@@ -43,6 +43,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
+  // Edit modal
+  document.getElementById('editClose').addEventListener('click', closeEdit);
+  document.getElementById('editSave').addEventListener('click', saveEdit);
+  document.getElementById('editModal').addEventListener('click', function(e) {
+    if (e.target === this) closeEdit();
+  });
+
   // Auto-restore login
   restoreLogin(function(user) {
     if (user) {
@@ -161,14 +168,34 @@ function openWA(phone) {
 function openDetail(phone) {
   var c = contacts.find(function(x) { return x.phone === phone; });
   if (!c) return;
-  alert(
-    '客户: ' + (c.name || c.phone) + '\n' +
-    '手机: ' + c.phone + '\n' +
-    '国家: ' + (c.country || '-') + '\n' +
-    '分类: ' + (c.category || '新') + '\n' +
-    '订单: ' + ((c.orders || []).length) + '个\n' +
-    '邮箱: ' + (c.email || '-') + '\n' +
-    '公司: ' + (c.company || '-') + '\n' +
-    '下次回访: ' + (c.nextFollowUp || '-')
-  );
+  document.getElementById('editPhone').value = phone;
+  document.getElementById('editName').value = c.name || '';
+  document.getElementById('editEmail').value = c.email || '';
+  document.getElementById('editCompany').value = c.company || '';
+  document.getElementById('editNotes').value = c.notes || '';
+  document.getElementById('editModal').style.display = 'flex';
+}
+
+function closeEdit() {
+  document.getElementById('editModal').style.display = 'none';
+}
+
+async function saveEdit() {
+  var phone = document.getElementById('editPhone').value;
+  var name = document.getElementById('editName').value.trim();
+  var email = document.getElementById('editEmail').value.trim();
+  var company = document.getElementById('editCompany').value.trim();
+  var notes = document.getElementById('editNotes').value.trim();
+  
+  try {
+    var r = await fetch(API, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ phone, name, email, company, notes }),
+    });
+    if (r.ok) {
+      closeEdit();
+      loadContacts();
+    }
+  } catch(e) {}
 }
