@@ -21,6 +21,10 @@ let currentUser = '';
 
 // ====== INIT ======
 document.addEventListener('DOMContentLoaded', function() {
+  console.log('🚛 SINOCV CRM sidepanel loaded');
+  
+  // TEST: skip login, go straight to main panel
+  loginSuccess('13001977959');
   document.getElementById('loginBtn').addEventListener('click', doLogin);
   document.getElementById('loginPass').addEventListener('keydown', function(e) { if (e.key === 'Enter') doLogin(); });
   document.getElementById('logoutBtn').addEventListener('click', doLogout);
@@ -35,14 +39,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // ====== PERSISTENT LOGIN ======
 function autoLogin() {
-  chrome.storage.local.get(['crmUser', 'crmLoginTime'], function(data) {
-    if (data.crmUser && data.crmLoginTime && (Date.now() - data.crmLoginTime < 86400000)) {
-      loginSuccess(data.crmUser);
-    } else {
-      // TEST MODE: auto-login as admin
-      loginSuccess('13001977959');
-    }
-  });
+  // TEST MODE: skip login entirely
+  try {
+    chrome.storage.local.get(['crmUser', 'crmLoginTime'], function(data) {
+      if (data.crmUser && data.crmLoginTime && (Date.now() - data.crmLoginTime < 86400000)) {
+        loginSuccess(data.crmUser);
+      } else {
+        loginSuccess('13001977959');
+      }
+    });
+  } catch(e) {
+    loginSuccess('13001977959');
+  }
 }
 
 function doLogin() {
