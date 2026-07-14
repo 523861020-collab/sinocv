@@ -61,8 +61,7 @@ function saveCache(){ localStorage.setItem(CACHE_KEY, JSON.stringify(cache)); }
 function startChatWatcher(){} // disabled — use manual button
 
 function captureCurrentChat(){
-  showStatus('⏳ 正在获取...');
-  // Query ALL tabs, then filter manually (url filter sometimes fails from sidepanel)
+  document.getElementById('userName').textContent = '⏳ 正在获取...';
   chrome.tabs.query({}, function(tabs) {
     var waTabs = tabs.filter(function(t){ return t.url && t.url.indexOf('web.whatsapp.com') > -1; });
     if(!waTabs.length){ showStatus('❌ 未打开 WhatsApp Web'); return; }
