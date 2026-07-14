@@ -61,9 +61,23 @@ function saveCache(){ localStorage.setItem(CACHE_KEY, JSON.stringify(cache)); }
 function startChatWatcher(){} // disabled — use manual button
 
 function captureCurrentChat(){
+  showStatus('⏳ 正在获取...');
   chrome.runtime.sendMessage({type:'getCurrentChat'}, function(resp){
-    if(!resp || !resp.ok || !resp.data || !resp.data.phone){
-      toast('❌ 请先点开一个 WhatsApp 对话', false); return;
+    if(chrome.runtime.lastError){
+      showStatus('❌ '+chrome.runtime.lastError.message);
+      return;
+    }
+    if(!resp || !resp.ok){
+      showStatus('❌ '+(resp?.error||'请先打开 WhatsApp Web'));
+      return;
+    }
+    if(!resp.data || resp.data.error){
+      showStatus('❌ '+(resp.data?.error||'请在 WhatsApp 点开一个对话'));
+      return;
+    }
+    if(!resp.data.phone){
+      showStatus('❌ 未获取到手机号');
+      return;
     }
     var d = resp.data;
     currentPhone = d.phone;
@@ -73,6 +87,7 @@ function captureCurrentChat(){
       orders: [{id:1, requirements:[], docs:[], totalAmt:'', depositAmt:'', depositDate:'', balanceAmt:'', balanceDate:'', orderNo:'', vins:'', shipDate:'', eta:'', status:'active'}],
       followUps: []
     };
+    showStatus('✅ '+(d.name||currentPhone)+' 已识别');
     // Also load from CRM for existing data
     fetch(API+'?phone='+encodeURIComponent(currentPhone))
       .then(function(r){ return r.ok?r.json():null; })
@@ -96,7 +111,10 @@ function captureCurrentChat(){
   });
 }
 
-function updateStatus(txt){ document.getElementById('statusBar').textContent = txt||'就绪'; }
+function showStatus(txt){ 
+  var el = document.getElementById('userName');
+  if(el){ el.textContent = txt; setTimeout(function(){ el.textContent = '👤 '+currentUser; }, 3000); }
+}
 
 // ====== CUSTOMER TAB ======
 function renderCustomerTab(){
