@@ -53,66 +53,21 @@ function saveCache(){ localStorage.setItem(CACHE_KEY, JSON.stringify(cache)); }
 // ====== CAPTURE — STEP BY STEP ======
 function captureCurrentChat(){
   var el = document.getElementById('userName');
-  el.textContent = '⏳ 查询标签页...';
+  el.textContent = '⏳ 读取中...';
   
-  chrome.tabs.query({}, function(tabs) {
-    el.textContent = '找到'+tabs.length+'个标签';
-    
-    // Find WhatsApp tabs
-    var waTabs = [];
-    for(var i=0; i<tabs.length; i++){
-      if(tabs[i].url && tabs[i].url.indexOf('web.whatsapp.com')>-1){
-        waTabs.push(tabs[i]);
-      }
-    }
-    
-    if(!waTabs.length){
-      el.textContent = '❌ 未找到WhatsApp标签';
+  chrome.storage.local.get(['wa_active_chat'], function(data){
+    var info = data.wa_active_chat;
+    if(!info || !info.phone){
+      el.textContent = '❌ 未检测到活跃对话，请确认WhatsApp已加载';
       return;
     }
-    
-    el.textContent = '找到'+waTabs.length+'个WA标签, 尝试通信...';
-    
-    // Try each WhatsApp tab with executeScript
-    function tryTab(i){
-      if(i >= waTabs.length){
-        el.textContent = '❌ 所有WA标签获取失败';
-        return;
-      }
-      el.textContent = '标签'+waTabs[i].id+'...';
-      
-      chrome.scripting.executeScript({
-        target: { tabId: waTabs[i].id },
-        func: function(){
-          try {
-            var s = window.Store;
-            if(!s||!s.Chat) return {error:'notloaded'};
-            var c = s.Chat.getActive?s.Chat.getActive():null;
-            if(!c){ var chats=s.Chat.getModelsArray?s.Chat.getModelsArray():[]; for(var j=0;j<chats.length;j++){if(chats[j].__x_isActive){c=chats[j];break;}} }
-            if(!c) return {error:'nochat'};
-            var ct=c.contact||c.__x_contact; if(!ct) return {error:'nocontact'};
-            var p=''; if(ct.id&&ct.id.user)p=ct.id.user; else if(ct.id&&ct.id._serialized)p=ct.id._serialized.split('@')[0];
-            var n=ct.name||ct.pushname||ct.verifiedName||ct.shortName||p||'';
-            return {phone:p,name:n};
-          }catch(e){ return {error:String(e)}; }
-        }
-      }, function(results){
-        if(chrome.runtime.lastError){
-          el.textContent = '❌ 标签'+waTabs[i].id+':'+chrome.runtime.lastError.message;
-          setTimeout(function(){ tryTab(i+1); }, 500);
-          return;
-        }
-        var d = results&&results[0]?results[0].result:null;
-        if(d&&d.phone&&!d.error){
-          el.textContent = '✅ '+d.name+' '+d.phone;
-          onCaptureSuccess(d);
-        } else {
-          el.textContent = '❌ 标签'+waTabs[i].id+':'+(d?d.error:'nodata');
-          tryTab(i+1);
-        }
-      });
+    // Check if data is stale (>10s old)
+    if(Date.now() - info.time > 10000){
+      el.textContent = '❌ 数据过期，请切换一下聊天窗口';
+      return;
     }
-    tryTab(0);
+    el.textContent = '✅ '+info.name+' '+info.phone;
+    onCaptureSuccess({phone: info.phone, name: info.name});
   });
 }
 
