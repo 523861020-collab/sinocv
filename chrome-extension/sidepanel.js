@@ -99,7 +99,7 @@ function captureCurrentChat(){
       }, function(results){
         if(chrome.runtime.lastError){
           el.textContent = '❌ 标签'+waTabs[i].id+':'+chrome.runtime.lastError.message;
-          tryTab(i+1);
+          setTimeout(function(){ tryTab(i+1); }, 500);
           return;
         }
         var d = results&&results[0]?results[0].result:null;
