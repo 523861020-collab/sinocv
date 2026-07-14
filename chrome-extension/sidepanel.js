@@ -70,7 +70,6 @@ function startChatWatcher(){
         };
         if(activeTab==='customer') renderCustomerTab();
         updateStatus(resp.data.name||currentPhone);
-        trackCustomer(resp.data.phone);
       }
     });
   }, 3000);
@@ -367,35 +366,17 @@ function loadStats(){
 
 function saveStats(){ localStorage.setItem(STATS_KEY, JSON.stringify(dailyStats)); }
 
-function trackCustomer(phone){
-  var today = new Date().toISOString().split('T')[0];
-  if(!dailyStats[today]) dailyStats[today] = {chats:0, customers:{}, pis:0};
-  if(!dailyStats[today].customers[phone]){
-    dailyStats[today].customers[phone] = true;
-    dailyStats[today].chats++;
-    saveStats();
-  }
-  updateDashboard();
-}
-
-function trackPI(){
-  var today = new Date().toISOString().split('T')[0];
-  if(!dailyStats[today]) dailyStats[today] = {chats:0, customers:{}, pis:0};
-  dailyStats[today].pis++;
-  saveStats();
-  updateDashboard();
-}
-
 function updateDashboard(){
-  var today = new Date().toISOString().split('T')[0];
-  var t = dailyStats[today] || {chats:0, customers:{}, pis:0};
-  document.getElementById('dashChats').textContent = Object.keys(t.customers||{}).length;
-  document.getElementById('dashCustomers').textContent = Object.keys(cache.customers||{}).length;
-  document.getElementById('dashPI').textContent = t.pis||0;
-  
-  var totalOrders = 0;
-  Object.values(cache.customers||{}).forEach(function(c){
-    totalOrders += (c.orders||[]).length;
-  });
-  document.getElementById('dashOrders').textContent = totalOrders;
+  // Pull real stats from CRM backend
+  fetch(API+'/stats')
+    .then(function(r){ return r.ok ? r.json() : null; })
+    .then(function(data){
+      if(data){
+        document.getElementById('dashChats').textContent = data.todayChats||0;
+        document.getElementById('dashCustomers').textContent = data.totalCustomers||0;
+        document.getElementById('dashPI').textContent = data.todayPis||0;
+        document.getElementById('dashOrders').textContent = data.totalOrders||0;
+      }
+    })
+    .catch(function(){});
 }
