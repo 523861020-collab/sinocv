@@ -1,9 +1,12 @@
 // SINOCV CRM v6
 const API = 'https://truckmarts.com/api/crm';
 const CACHE_KEY = 'crm_cache';
+const STATS_KEY = 'crm_daily_stats';
 let cache = {}; // {customers:{}, products:[], templates:[], lastSync:0}
 let currentPhone = '';
-let currentData = null; // {phone,name,country,email,company,product,notes,orders:[],followUps:[]}
+let currentData = null;
+let currentUser = '13001977959'; // default
+let dailyStats = {}; // {date: {chats:0, customers:{}, pis:0}}
 let activeTab = 'customer';
 
 // Vehicle types
@@ -23,11 +26,14 @@ const DEFAULT_TEMPLATES = {
 // ====== INIT ======
 document.addEventListener('DOMContentLoaded', function(){
   loadCache();
+  loadStats();
+  initUser();
   document.querySelectorAll('.tabs button').forEach(function(b){
     b.addEventListener('click', function(){ switchTab(b.getAttribute('data-tab')); });
   });
   startChatWatcher();
   switchTab('customer');
+  updateDashboard();
 });
 
 function switchTab(tab){
@@ -64,6 +70,7 @@ function startChatWatcher(){
         };
         if(activeTab==='customer') renderCustomerTab();
         updateStatus(resp.data.name||currentPhone);
+        trackCustomer(resp.data.phone);
       }
     });
   }, 3000);
@@ -344,4 +351,51 @@ function syncToCRM(data){
   try {
     fetch(API, {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(data)});
   } catch(e){}
+}
+
+// ====== DASHBOARD STATS ======
+function initUser(){
+  chrome.storage.local.get(['crmUser'], function(d){
+    if(d.crmUser) currentUser = d.crmUser;
+    document.getElementById('userName').textContent = '👤 '+currentUser;
+  });
+}
+
+function loadStats(){
+  try { dailyStats = JSON.parse(localStorage.getItem(STATS_KEY)||'{}'); } catch(e){ dailyStats = {}; }
+}
+
+function saveStats(){ localStorage.setItem(STATS_KEY, JSON.stringify(dailyStats)); }
+
+function trackCustomer(phone){
+  var today = new Date().toISOString().split('T')[0];
+  if(!dailyStats[today]) dailyStats[today] = {chats:0, customers:{}, pis:0};
+  if(!dailyStats[today].customers[phone]){
+    dailyStats[today].customers[phone] = true;
+    dailyStats[today].chats++;
+    saveStats();
+  }
+  updateDashboard();
+}
+
+function trackPI(){
+  var today = new Date().toISOString().split('T')[0];
+  if(!dailyStats[today]) dailyStats[today] = {chats:0, customers:{}, pis:0};
+  dailyStats[today].pis++;
+  saveStats();
+  updateDashboard();
+}
+
+function updateDashboard(){
+  var today = new Date().toISOString().split('T')[0];
+  var t = dailyStats[today] || {chats:0, customers:{}, pis:0};
+  document.getElementById('dashChats').textContent = Object.keys(t.customers||{}).length;
+  document.getElementById('dashCustomers').textContent = Object.keys(cache.customers||{}).length;
+  document.getElementById('dashPI').textContent = t.pis||0;
+  
+  var totalOrders = 0;
+  Object.values(cache.customers||{}).forEach(function(c){
+    totalOrders += (c.orders||[]).length;
+  });
+  document.getElementById('dashOrders').textContent = totalOrders;
 }
