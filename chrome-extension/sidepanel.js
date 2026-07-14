@@ -25,16 +25,16 @@ const DEFAULT_TEMPLATES = {
 
 // ====== INIT ======
 document.addEventListener('DOMContentLoaded', function(){
+  console.log('CRM INIT');
   loadCache();
   loadStats();
   initUser();
   document.querySelectorAll('.tabs button').forEach(function(b){
     b.addEventListener('click', function(){ switchTab(b.getAttribute('data-tab')); });
   });
-  startChatWatcher();
   switchTab('customer');
   updateDashboard();
-  setInterval(updateDashboard, 300000); // refresh stats every 5 min
+  setInterval(updateDashboard, 300000);
 });
 
 function switchTab(tab){
@@ -159,7 +159,11 @@ function showStatus(txt){
 function renderCustomerTab(){
   var el = document.getElementById('content');
   if(!currentData){
-    el.innerHTML = '<div style="text-align:center;padding:40px"><div style="color:#666;margin-bottom:16px">👆 先在 WhatsApp 点开客户对话</div><button class="btn btn-gold" id="captureBtn" style="width:auto;display:inline-block;padding:10px 24px" onclick="captureCurrentChat()">📥 添加客户信息</button></div>';
+    el.innerHTML = '<div style="text-align:center;padding:40px"><div style="color:#666;margin-bottom:16px">👆 先在 WhatsApp 点开客户对话</div><button class="btn btn-gold" id="captureBtn" style="width:auto;display:inline-block;padding:10px 24px">📥 添加客户信息</button></div>';
+    setTimeout(function(){
+      var b = document.getElementById('captureBtn');
+      if(b){ b.onclick = function(){ alert('clicked!'); captureCurrentChat(); }; }
+    }, 100);
     return;
   }
   var d = currentData;
