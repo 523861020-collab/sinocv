@@ -62,35 +62,14 @@ function startChatWatcher(){} // disabled — use manual button
 
 function captureCurrentChat(){
   showStatus('⏳ 正在获取...');
-  // Query WhatsApp tabs directly from sidepanel (has tabs+scripting permissions)
   chrome.tabs.query({ url: '*://web.whatsapp.com/*' }, function(tabs) {
     if(!tabs.length){ showStatus('❌ 未打开 WhatsApp Web'); return; }
-    
     function tryTab(i){
-      if(i >= tabs.length){ showStatus('❌ 请在 WhatsApp 点开一个对话'); return; }
-      chrome.scripting.executeScript({
-        target: { tabId: tabs[i].id },
-        func: function(){
-          try {
-            var s = window.Store;
-            if(!s||!s.Chat) return {error:'notloaded'};
-            var c = s.Chat.getActive?s.Chat.getActive():null;
-            if(!c){
-              var chats = s.Chat.getModelsArray?s.Chat.getModelsArray():[];
-              for(var j=0;j<chats.length;j++){ if(chats[j].__x_isActive){c=chats[j];break;} }
-            }
-            if(!c) return {error:'nochat'};
-            var ct = c.contact||c.__x_contact;
-            if(!ct) return {error:'nocontact'};
-            var p=''; if(ct.id&&ct.id.user)p=ct.id.user; else if(ct.id&&ct.id._serialized)p=ct.id._serialized.split('@')[0];
-            var n=ct.name||ct.pushname||ct.verifiedName||ct.shortName||p||'';
-            return {phone:p,name:n};
-          }catch(e){ return {error:String(e)}; }
-        }
-      }, function(results){
-        var d = results&&results[0]?results[0].result:null;
-        if(d&&d.phone&&!d.error){ onCaptureSuccess(d); }
-        else { tryTab(i+1); }
+      if(i >= tabs.length){ showStatus('❌ 请在 WhatsApp 点开对话'); return; }
+      chrome.tabs.sendMessage(tabs[i].id, {type:'getCurrentChat'}, function(resp){
+        if(chrome.runtime.lastError){ tryTab(i+1); return; }
+        if(!resp || !resp.ok || !resp.data || !resp.data.phone){ tryTab(i+1); return; }
+        onCaptureSuccess(resp.data);
       });
     }
     tryTab(0);
