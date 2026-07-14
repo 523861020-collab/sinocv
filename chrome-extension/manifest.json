@@ -3,6 +3,10 @@
   "name": "SINOCV CRM",
   "version": "5.0",
   "description": "XINYUNTONG CRM — injected into WhatsApp Web",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "SINOCV CRM"
+  },
   "permissions": ["storage"],
   "host_permissions": [
     "*://web.whatsapp.com/*",
