@@ -62,11 +62,13 @@ function startChatWatcher(){} // disabled — use manual button
 
 function captureCurrentChat(){
   showStatus('⏳ 正在获取...');
-  chrome.tabs.query({ url: '*://web.whatsapp.com/*' }, function(tabs) {
-    if(!tabs.length){ showStatus('❌ 未打开 WhatsApp Web'); return; }
+  // Query ALL tabs, then filter manually (url filter sometimes fails from sidepanel)
+  chrome.tabs.query({}, function(tabs) {
+    var waTabs = tabs.filter(function(t){ return t.url && t.url.indexOf('web.whatsapp.com') > -1; });
+    if(!waTabs.length){ showStatus('❌ 未打开 WhatsApp Web'); return; }
     function tryTab(i){
-      if(i >= tabs.length){ showStatus('❌ 请在 WhatsApp 点开对话'); return; }
-      chrome.tabs.sendMessage(tabs[i].id, {type:'getCurrentChat'}, function(resp){
+      if(i >= waTabs.length){ showStatus('❌ 请在 WhatsApp 点开对话'); return; }
+      chrome.tabs.sendMessage(waTabs[i].id, {type:'getCurrentChat'}, function(resp){
         if(chrome.runtime.lastError){ tryTab(i+1); return; }
         if(!resp || !resp.ok || !resp.data || !resp.data.phone){ tryTab(i+1); return; }
         onCaptureSuccess(resp.data);
