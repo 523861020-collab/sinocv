@@ -159,8 +159,7 @@ function showStatus(txt){
 function renderCustomerTab(){
   var el = document.getElementById('content');
   if(!currentData){
-    el.innerHTML = '<div style="text-align:center;padding:40px"><div style="color:#666;margin-bottom:16px">👆 先在 WhatsApp 点开客户对话</div><button class="btn btn-gold" id="captureBtn" style="width:auto;display:inline-block;padding:10px 24px">📥 添加客户信息</button></div>';
-    document.getElementById('captureBtn').addEventListener('click', captureCurrentChat);
+    el.innerHTML = '<div style="text-align:center;padding:40px"><div style="color:#666;margin-bottom:16px">👆 先在 WhatsApp 点开客户对话</div><button class="btn btn-gold" id="captureBtn" style="width:auto;display:inline-block;padding:10px 24px" onclick="captureCurrentChat()">📥 添加客户信息</button></div>';
     return;
   }
   var d = currentData;
