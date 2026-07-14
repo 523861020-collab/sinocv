@@ -73,34 +73,43 @@ function captureCurrentChat(){
     
     el.textContent = '找到'+waTabs.length+'个WA标签, 尝试通信...';
     
-    // Try each WhatsApp tab
+    // Try each WhatsApp tab with executeScript
     function tryTab(i){
       if(i >= waTabs.length){
-        el.textContent = '❌ 所有WA标签通信失败';
+        el.textContent = '❌ 所有WA标签获取失败';
         return;
       }
-      el.textContent = '尝试WA标签'+waTabs[i].id+'...';
+      el.textContent = '标签'+waTabs[i].id+'...';
       
-      chrome.tabs.sendMessage(waTabs[i].id, {type:'getCurrentChat'}, function(resp){
-        var err = chrome.runtime.lastError;
-        if(err){
-          el.textContent = '❌ 标签'+waTabs[i].id+':'+err.message;
+      chrome.scripting.executeScript({
+        target: { tabId: waTabs[i].id },
+        func: function(){
+          try {
+            var s = window.Store;
+            if(!s||!s.Chat) return {error:'notloaded'};
+            var c = s.Chat.getActive?s.Chat.getActive():null;
+            if(!c){ var chats=s.Chat.getModelsArray?s.Chat.getModelsArray():[]; for(var j=0;j<chats.length;j++){if(chats[j].__x_isActive){c=chats[j];break;}} }
+            if(!c) return {error:'nochat'};
+            var ct=c.contact||c.__x_contact; if(!ct) return {error:'nocontact'};
+            var p=''; if(ct.id&&ct.id.user)p=ct.id.user; else if(ct.id&&ct.id._serialized)p=ct.id._serialized.split('@')[0];
+            var n=ct.name||ct.pushname||ct.verifiedName||ct.shortName||p||'';
+            return {phone:p,name:n};
+          }catch(e){ return {error:String(e)}; }
+        }
+      }, function(results){
+        if(chrome.runtime.lastError){
+          el.textContent = '❌ 标签'+waTabs[i].id+':'+chrome.runtime.lastError.message;
           tryTab(i+1);
           return;
         }
-        if(!resp || !resp.ok){
-          el.textContent = '❌ 标签'+waTabs[i].id+':响应错误';
+        var d = results&&results[0]?results[0].result:null;
+        if(d&&d.phone&&!d.error){
+          el.textContent = '✅ '+d.name+' '+d.phone;
+          onCaptureSuccess(d);
+        } else {
+          el.textContent = '❌ 标签'+waTabs[i].id+':'+(d?d.error:'nodata');
           tryTab(i+1);
-          return;
         }
-        if(!resp.data || !resp.data.phone){
-          el.textContent = '❌ 标签'+waTabs[i].id+':无手机号';
-          tryTab(i+1);
-          return;
-        }
-        // SUCCESS!
-        el.textContent = '✅ '+resp.data.name+' '+resp.data.phone;
-        onCaptureSuccess(resp.data);
       });
     }
     tryTab(0);
