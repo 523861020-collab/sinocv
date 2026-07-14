@@ -2,14 +2,7 @@
   "manifest_version": 3,
   "name": "SINOCV CRM",
   "version": "5.0",
-  "description": "XINYUNTONG CRM for WhatsApp Web",
-  "icons": {
-    "16": "icon/16.png",
-    "32": "icon/32.png",
-    "48": "icon/48.png",
-    "96": "icon/96.png",
-    "128": "icon/128.png"
-  },
+  "description": "XINYUNTONG CRM — injected into WhatsApp Web",
   "permissions": ["storage"],
   "host_permissions": [
     "*://web.whatsapp.com/*",
@@ -18,6 +11,6 @@
   "content_scripts": [{
     "matches": ["*://web.whatsapp.com/*"],
     "js": ["content.js"],
-    "run_at": "document_idle"
+    "run_at": "document_end"
   }]
 }
