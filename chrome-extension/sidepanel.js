@@ -62,53 +62,92 @@ function startChatWatcher(){} // disabled — use manual button
 
 function captureCurrentChat(){
   showStatus('⏳ 正在获取...');
-  chrome.runtime.sendMessage({type:'getCurrentChat'}, function(resp){
-    if(chrome.runtime.lastError){
-      showStatus('❌ '+chrome.runtime.lastError.message);
-      return;
-    }
-    if(!resp || !resp.ok){
-      showStatus('❌ '+(resp?.error||'请先打开 WhatsApp Web'));
-      return;
-    }
-    if(!resp.data || resp.data.error){
-      showStatus('❌ '+(resp.data?.error||'请在 WhatsApp 点开一个对话'));
-      return;
-    }
-    if(!resp.data.phone){
-      showStatus('❌ 未获取到手机号');
-      return;
-    }
-    var d = resp.data;
-    currentPhone = d.phone;
-    currentData = cache.customers[currentPhone] || {
-      phone: currentPhone, name: d.name||'', country: d.country||'',
-      email:'', company:'', product:'', notes:'',
-      orders: [{id:1, requirements:[], docs:[], totalAmt:'', depositAmt:'', depositDate:'', balanceAmt:'', balanceDate:'', orderNo:'', vins:'', shipDate:'', eta:'', status:'active'}],
-      followUps: []
-    };
-    showStatus('✅ '+(d.name||currentPhone)+' 已识别');
-    // Also load from CRM for existing data
-    fetch(API+'?phone='+encodeURIComponent(currentPhone))
-      .then(function(r){ return r.ok?r.json():null; })
-      .then(function(existing){
-        if(existing && existing.contact){
-          var c = existing.contact;
-          currentData.name = c.name || currentData.name;
-          currentData.country = c.country || currentData.country;
-          currentData.email = c.email || '';
-          currentData.company = c.company || '';
-          currentData.notes = c.notes || '';
-          currentData.orders = (c.orders && c.orders.length) ? c.orders : currentData.orders;
-          currentData.followUps = c.followUps || [];
-          cache.customers[currentPhone] = currentData;
-          saveCache();
+  // Query WhatsApp tabs directly from sidepanel (has tabs+scripting permissions)
+  chrome.tabs.query({ url: '*://web.whatsapp.com/*' }, function(tabs) {
+    if(!tabs.length){ showStatus('❌ 未打开 WhatsApp Web'); return; }
+    
+    function tryTab(i){
+      if(i >= tabs.length){ showStatus('❌ 请在 WhatsApp 点开一个对话'); return; }
+      chrome.scripting.executeScript({
+        target: { tabId: tabs[i].id },
+        func: function(){
+          try {
+            var s = window.Store;
+            if(!s||!s.Chat) return {error:'notloaded'};
+            var c = s.Chat.getActive?s.Chat.getActive():null;
+            if(!c){
+              var chats = s.Chat.getModelsArray?s.Chat.getModelsArray():[];
+              for(var j=0;j<chats.length;j++){ if(chats[j].__x_isActive){c=chats[j];break;} }
+            }
+            if(!c) return {error:'nochat'};
+            var ct = c.contact||c.__x_contact;
+            if(!ct) return {error:'nocontact'};
+            var p=''; if(ct.id&&ct.id.user)p=ct.id.user; else if(ct.id&&ct.id._serialized)p=ct.id._serialized.split('@')[0];
+            var n=ct.name||ct.pushname||ct.verifiedName||ct.shortName||p||'';
+            return {phone:p,name:n};
+          }catch(e){ return {error:String(e)}; }
         }
-        renderCustomerTab();
-        toast('✅ '+(currentData.name||currentPhone)+' 已加载', true);
-      })
-      .catch(function(){ renderCustomerTab(); });
+      }, function(results){
+        var d = results&&results[0]?results[0].result:null;
+        if(d&&d.phone&&!d.error){ onCaptureSuccess(d); }
+        else { tryTab(i+1); }
+      });
+    }
+    tryTab(0);
   });
+}
+
+function onCaptureSuccess(d){
+  currentPhone = d.phone;
+  currentData = cache.customers[currentPhone] || {
+    phone: currentPhone, name: d.name||'', country: d.country||getCountryFromPhone(d.phone),
+    email:'', company:'', product:'', notes:'',
+    orders: [{id:1, requirements:[], docs:[], totalAmt:'', depositAmt:'', depositDate:'', balanceAmt:'', balanceDate:'', orderNo:'', vins:'', shipDate:'', eta:'', status:'active'}],
+    followUps: []
+  };
+  showStatus('✅ '+(d.name||currentPhone)+' 已识别');
+  renderCustomerTab();
+  fetch(API+'?phone='+encodeURIComponent(currentPhone))
+    .then(function(r){ return r.ok?r.json():null; })
+    .then(function(existing){
+      if(existing&&existing.contact){
+        var c=existing.contact;
+        currentData.name=c.name||currentData.name;
+        currentData.country=c.country||currentData.country;
+        currentData.email=c.email||'';
+        currentData.company=c.company||'';
+        currentData.notes=c.notes||'';
+        currentData.orders=(c.orders&&c.orders.length)?c.orders:currentData.orders;
+        currentData.followUps=c.followUps||[];
+        cache.customers[currentPhone]=currentData;
+        saveCache();
+      }
+      renderCustomerTab();
+      toast('✅ '+(currentData.name||currentPhone)+' 已加载',true);
+    })
+    .catch(function(){});
+}
+
+// Phone → country prefix map (compact)
+function getCountryFromPhone(p){
+  if(!p||!p.startsWith('+')) return '';
+  var m={ '213':'Algeria','218':'Libya','234':'Nigeria','232':'Sierra Leone','224':'Guinea',
+    '221':'Senegal','223':'Mali','227':'Niger','229':'Benin','228':'Togo','233':'Ghana',
+    '225':'Ivory Coast','237':'Cameroon','243':'DR Congo','242':'Congo','241':'Gabon',
+    '254':'Kenya','251':'Ethiopia','252':'Somalia','253':'Djibouti','249':'Sudan',
+    '211':'South Sudan','256':'Uganda','255':'Tanzania','250':'Rwanda','257':'Burundi',
+    '265':'Malawi','260':'Zambia','263':'Zimbabwe','258':'Mozambique','244':'Angola',
+    '264':'Namibia','267':'Botswana','27':'South Africa','230':'Mauritius',
+    '20':'Egypt','212':'Morocco','216':'Tunisia','222':'Mauritania','235':'Chad',
+    '236':'CAR','231':'Liberia','220':'Gambia','245':'Guinea-Bissau','226':'Burkina Faso',
+    '240':'Equatorial Guinea','269':'Comoros','261':'Madagascar',
+    '63':'Philippines','1':'US/Canada','44':'UK','971':'UAE',
+    '91':'India','92':'Pakistan','880':'Bangladesh','86':'China','55':'Brazil',
+    '58':'Venezuela','591':'Bolivia','592':'Guyana',
+  };
+  var code=p.replace('+','').replace(/[^0-9]/g,'');
+  for(var len=3;len>=1;len--){ var pre=code.substring(0,len); if(m[pre])return m[pre]; }
+  return '';
 }
 
 function showStatus(txt){ 
