@@ -8,16 +8,27 @@ chrome.action.onClicked.addListener(function(tab) {
 // Get current chat info from WhatsApp Web
 chrome.runtime.onMessage.addListener(function(msg, sender, sendResponse) {
   if (msg.type === 'getCurrentChat') {
-    chrome.tabs.query({ url: '*://web.whatsapp.com/*', active: true }, function(tabs) {
-      if (!tabs.length) return sendResponse({ ok: false, error: 'no WhatsApp tab' });
-      chrome.scripting.executeScript({
-        target: { tabId: tabs[0].id },
-        func: getChatInfo
-      }, function(results) {
-        sendResponse({ ok: true, data: results && results[0] ? results[0].result : null });
-      });
+    // Query ALL WhatsApp tabs, not just active ones
+    chrome.tabs.query({ url: '*://web.whatsapp.com/*' }, function(tabs) {
+      if (!tabs.length) return sendResponse({ ok: false, error: '未打开 WhatsApp Web' });
+      // Try each tab until we find one with a chat open
+      function tryTab(i){
+        if(i >= tabs.length) return sendResponse({ ok: false, error: '请在 WhatsApp 点开一个对话再试' });
+        chrome.scripting.executeScript({
+          target: { tabId: tabs[i].id },
+          func: getChatInfo
+        }, function(results) {
+          var data = results && results[0] ? results[0].result : null;
+          if(data && data.phone && !data.error){
+            sendResponse({ ok: true, data: data });
+          } else {
+            tryTab(i+1);
+          }
+        });
+      }
+      tryTab(0);
     });
-    return true; // keep channel open for async
+    return true;
   }
 });
 
