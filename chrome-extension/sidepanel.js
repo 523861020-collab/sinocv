@@ -63,17 +63,8 @@ function startChatWatcher(){} // disabled — use manual button
 function captureCurrentChat(){
   document.getElementById('userName').textContent = '⏳ 正在获取...';
   chrome.tabs.query({}, function(tabs) {
-    var waTabs = tabs.filter(function(t){ return t.url && t.url.indexOf('web.whatsapp.com') > -1; });
-    if(!waTabs.length){ showStatus('❌ 未打开 WhatsApp Web'); return; }
-    function tryTab(i){
-      if(i >= waTabs.length){ showStatus('❌ 请在 WhatsApp 点开对话'); return; }
-      chrome.tabs.sendMessage(waTabs[i].id, {type:'getCurrentChat'}, function(resp){
-        if(chrome.runtime.lastError){ tryTab(i+1); return; }
-        if(!resp || !resp.ok || !resp.data || !resp.data.phone){ tryTab(i+1); return; }
-        onCaptureSuccess(resp.data);
-      });
-    }
-    tryTab(0);
+    alert('找到'+tabs.length+'个标签页');
+    document.getElementById('userName').textContent = '标签页数:'+tabs.length;
   });
 }
 
