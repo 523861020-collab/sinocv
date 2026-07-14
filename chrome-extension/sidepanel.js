@@ -162,7 +162,7 @@ function renderCustomerTab(){
     el.innerHTML = '<div style="text-align:center;padding:40px"><div style="color:#666;margin-bottom:16px">👆 先在 WhatsApp 点开客户对话</div><button class="btn btn-gold" id="captureBtn" style="width:auto;display:inline-block;padding:10px 24px">📥 添加客户信息</button></div>';
     setTimeout(function(){
       var b = document.getElementById('captureBtn');
-      if(b){ b.onclick = function(){ alert('clicked!'); captureCurrentChat(); }; }
+      if(b){ b.onclick = captureCurrentChat; }
     }, 100);
     return;
   }
