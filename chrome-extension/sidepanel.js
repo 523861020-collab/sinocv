@@ -55,10 +55,12 @@ function captureCurrentChat(){
   var el = document.getElementById('userName');
   el.textContent = '⏳ 读取中...';
   
-  chrome.storage.local.get(['wa_active_chat'], function(data){
+  chrome.storage.local.get(['wa_active_chat', 'wa_diag'], function(data){
     var info = data.wa_active_chat;
+    var diag = data.wa_diag || {};
+    
     if(!info || !info.phone){
-      el.textContent = '❌ 未检测到活跃对话，请确认WhatsApp已加载';
+      el.textContent = '❌ Store:'+(diag.storeReady?'OK':'?')+' Chat:'+(diag.hasChat?'OK':'?');
       return;
     }
     // Accept data up to 30s old (polling is every 2s)
