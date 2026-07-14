@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', function(){
   startChatWatcher();
   switchTab('customer');
   updateDashboard();
+  setInterval(updateDashboard, 300000); // refresh stats every 5 min
 });
 
 function switchTab(tab){
@@ -56,23 +57,43 @@ function loadCache(){
 
 function saveCache(){ localStorage.setItem(CACHE_KEY, JSON.stringify(cache)); }
 
-// ====== CHAT WATCHER ======
-function startChatWatcher(){
-  setInterval(function(){
-    chrome.runtime.sendMessage({type:'getCurrentChat'}, function(resp){
-      if(resp && resp.ok && resp.data && resp.data.phone && resp.data.phone !== currentPhone){
-        currentPhone = resp.data.phone;
-        currentData = cache.customers[currentPhone] || {
-          phone: currentPhone, name: resp.data.name||'', country: resp.data.country||'',
-          email:'', company:'', product:'', notes:'',
-          orders: [{id:1, requirements:[], docs:[], totalAmt:'', depositAmt:'', depositDate:'', balanceAmt:'', balanceDate:'', orderNo:'', vins:'', shipDate:'', eta:'', status:'active'}],
-          followUps: []
-        };
-        if(activeTab==='customer') renderCustomerTab();
-        updateStatus(resp.data.name||currentPhone);
-      }
-    });
-  }, 3000);
+// ====== CHAT CAPTURE (manual button) ======
+function startChatWatcher(){} // disabled — use manual button
+
+function captureCurrentChat(){
+  chrome.runtime.sendMessage({type:'getCurrentChat'}, function(resp){
+    if(!resp || !resp.ok || !resp.data || !resp.data.phone){
+      toast('❌ 请先点开一个 WhatsApp 对话', false); return;
+    }
+    var d = resp.data;
+    currentPhone = d.phone;
+    currentData = cache.customers[currentPhone] || {
+      phone: currentPhone, name: d.name||'', country: d.country||'',
+      email:'', company:'', product:'', notes:'',
+      orders: [{id:1, requirements:[], docs:[], totalAmt:'', depositAmt:'', depositDate:'', balanceAmt:'', balanceDate:'', orderNo:'', vins:'', shipDate:'', eta:'', status:'active'}],
+      followUps: []
+    };
+    // Also load from CRM for existing data
+    fetch(API+'?phone='+encodeURIComponent(currentPhone))
+      .then(function(r){ return r.ok?r.json():null; })
+      .then(function(existing){
+        if(existing && existing.contact){
+          var c = existing.contact;
+          currentData.name = c.name || currentData.name;
+          currentData.country = c.country || currentData.country;
+          currentData.email = c.email || '';
+          currentData.company = c.company || '';
+          currentData.notes = c.notes || '';
+          currentData.orders = (c.orders && c.orders.length) ? c.orders : currentData.orders;
+          currentData.followUps = c.followUps || [];
+          cache.customers[currentPhone] = currentData;
+          saveCache();
+        }
+        renderCustomerTab();
+        toast('✅ '+(currentData.name||currentPhone)+' 已加载', true);
+      })
+      .catch(function(){ renderCustomerTab(); });
+  });
 }
 
 function updateStatus(txt){ document.getElementById('statusBar').textContent = txt||'就绪'; }
@@ -81,7 +102,8 @@ function updateStatus(txt){ document.getElementById('statusBar').textContent = t
 function renderCustomerTab(){
   var el = document.getElementById('content');
   if(!currentData){
-    el.innerHTML = '<div style="text-align:center;padding:40px;color:#666">👆 请先在 WhatsApp 点开一个对话</div>';
+    el.innerHTML = '<div style="text-align:center;padding:40px"><div style="color:#666;margin-bottom:16px">👆 先在 WhatsApp 点开客户对话</div><button class="btn btn-gold" id="captureBtn" style="width:auto;display:inline-block;padding:10px 24px">📥 添加客户信息</button></div>';
+    document.getElementById('captureBtn').addEventListener('click', captureCurrentChat);
     return;
   }
   var d = currentData;
