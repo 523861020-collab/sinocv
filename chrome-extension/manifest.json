@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "SINOCV CRM",
-  "version": "4.0",
-  "description": "XINYUNTONG CRM",
+  "version": "5.0",
+  "description": "XINYUNTONG CRM for WhatsApp Web",
   "icons": {
     "16": "icon/16.png",
     "32": "icon/32.png",
@@ -10,20 +10,14 @@
     "96": "icon/96.png",
     "128": "icon/128.png"
   },
-  "permissions": ["sidePanel", "storage", "alarms", "notifications", "tabs", "scripting", "activeTab"],
+  "permissions": ["storage"],
   "host_permissions": [
     "*://web.whatsapp.com/*",
     "https://truckmarts.com/*"
   ],
-  "side_panel": {
-    "default_path": "sidepanel.html"
-  },
-  "background": {
-    "service_worker": "background.js"
-  },
   "content_scripts": [{
     "matches": ["*://web.whatsapp.com/*"],
     "js": ["content.js"],
-    "run_at": "document_end"
+    "run_at": "document_idle"
   }]
 }
