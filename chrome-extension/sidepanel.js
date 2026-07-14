@@ -61,8 +61,8 @@ function captureCurrentChat(){
       el.textContent = '❌ 未检测到活跃对话，请确认WhatsApp已加载';
       return;
     }
-    // Check if data is stale (>10s old)
-    if(Date.now() - info.time > 10000){
+    // Accept data up to 30s old (polling is every 2s)
+    if(Date.now() - info.time > 30000){
       el.textContent = '❌ 数据过期，请切换一下聊天窗口';
       return;
     }
