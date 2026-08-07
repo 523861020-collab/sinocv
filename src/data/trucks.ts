@@ -865,13 +865,13 @@ export const advantages = [
   {
     title: 'Competitive Price',
     titleEn: 'Competitive Price',
-    description: 'Factory-direct supply, no middlemen, 15%-20% below market price',
+    description: 'Factory-direct supply, no middlemen, competitive export pricing',
     icon: 'price'
   },
   {
     title: 'After-sales Service',
     titleEn: 'After-sales Service',
-    description: '2-year warranty, overseas service network, fast parts supply, remote technical support',
+    description: '1-3 year warranty (model-dependent), overseas service network, fast parts supply, remote technical support',
     icon: 'service'
   },
   {

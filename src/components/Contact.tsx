@@ -134,8 +134,14 @@ export default function Contact() {
                     <option value="tractor">Tractor Truck</option>
                     <option value="dump">Dump Truck</option>
                     <option value="mixer">Concrete Mixer</option>
-                    <option value="tanker">Tank Truck</option>
-                    <option value="crane">Crane Truck</option>
+                    <option value="cargo">Cargo Truck</option>
+                    <option value="excavator">Excavator</option>
+                    <option value="loader">Loader / Backhoe</option>
+                    <option value="crane">Crane / Mobile Crane</option>
+                    <option value="trailer">Trailer / Semi-Trailer</option>
+                    <option value="van">Van / Light Commercial</option>
+                    <option value="mining">Mining Truck</option>
+                    <option value="other">Other / Not Listed</option>
                   </select>
                 </div>
               </div>
