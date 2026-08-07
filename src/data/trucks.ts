@@ -740,6 +740,44 @@ export const trucks: Truck[] = [
     image: '/images/sinotruk-biz-light-1.jpg',
     images: ['/images/sinotruk-biz-light-1.jpg', '/images/sinotruk-biz-light-2.jpg', '/images/sinotruk-biz-light-3.jpg'],
     features: ['VIP Transport', 'Luxury Interior', '9 Seats', 'Premium']
+  },
+  // ===== FOTON Light Vehicles =====
+  {
+    id: 'foton-view-c2',
+    name: 'FOTON View C2 Van',
+    category: 'light',
+    brand: 'FOTON',
+    horsepower: 136,
+    driveType: '4×2',
+    engine: 'Cummins ISF2.8',
+    price: '$10,000 - $15,000',
+    image: '/images/sinotruk-cargo-light-1.jpg',
+    features: ['Cargo Van', 'City Delivery', 'Fuel Efficient', '2 units/40HQ']
+  },
+  {
+    id: 'foton-view-cs2',
+    name: 'FOTON View CS2 Van',
+    category: 'light',
+    brand: 'FOTON',
+    horsepower: 150,
+    driveType: '4×2',
+    engine: 'Cummins ISF2.8',
+    price: '$12,000 - $18,000',
+    image: '/images/sinotruk-pass-light-1.jpg',
+    features: ['Passenger Van', '15 Seats', 'Comfort', '2 units/40HQ']
+  },
+  // ===== IVECO Light Vehicles =====
+  {
+    id: 'iveco-daily-van',
+    name: 'IVECO Daily Van',
+    category: 'light',
+    brand: 'IVECO',
+    horsepower: 146,
+    driveType: '4×2',
+    engine: 'F1C / F1A',
+    price: '$15,000 - $25,000',
+    image: '/images/sinotruk-biz-light-1.jpg',
+    features: ['European Design', 'LHD Only', 'Cargo/Passenger', '2 units/40HQ']
   }
 ];
 
@@ -848,8 +886,8 @@ export const zones = [
     title: 'Light Vehicles',
     titleEn: 'Light Vehicles',
     icon: '🚐',
-    brand: 'SINOTRUK Light',
-    description: 'Van · Cargo · Passenger · Business',
+    brand: 'SINOTRUK · FOTON · IVECO',
+    description: 'Van · Cargo · Passenger · Business — 2 units/40HQ container',
     categories: ['light'],
     color: 'from-green-500/20 to-transparent'
   }
