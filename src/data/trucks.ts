@@ -794,7 +794,7 @@ export const categories = [
   { id: '6x6', name: '6×6 Off-Road', nameEn: '6×6 Off-Road', icon: '🧭' },
   { id: 'machinery', name: 'Construction Machinery', nameEn: 'Construction Machinery', icon: '⚙️' },
   { id: 'mining', name: 'Mining Truck', nameEn: 'Mining Truck', icon: '⛏️' },
-  { id: 'trailer', name: 'Trailer', nameEn: 'Trailer', icon: '🔗' },
+  { id: "trailer", name: 'Trailer', nameEn: 'Trailer', icon: '🔗' },
   { id: 'light', name: 'Light Commercial', nameEn: 'Light Commercial', icon: '🚐' }
 ];
 
@@ -872,7 +872,7 @@ export const zones = [
     color: 'from-red-500/20 to-transparent'
   },
   {
-    id: 'trailer',
+    id: "trailers",
     title: 'Trailers',
     titleEn: 'Trailers',
     icon: '🔗',
