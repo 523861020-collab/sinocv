@@ -3,10 +3,10 @@ export interface Truck {
   name: string;
   category: 'tractor' | 'cargo' | 'dump' | 'mixer' | 'reefer' | 'light-special' | 'crane' | 'water' | 'fuel' | 'wrecker' | '6x6' | 'trailer' | 'machinery' | 'mining' | 'light';
   brand: string;
-  horsepower: number;
-  driveType: string;
-  engine: string;
-  price: string;
+  horsepower?: number;
+  driveType?: string;
+  engine?: string;
+  price?: string;
   image: string;
   images?: string[];
   features: string[];
@@ -747,24 +747,16 @@ export const trucks: Truck[] = [
     name: 'FOTON View C2 Van',
     category: 'light',
     brand: 'FOTON',
-    horsepower: 136,
-    driveType: '4×2',
-    engine: 'Cummins ISF2.8',
-    price: '$10,000 - $15,000',
     image: '/images/sinotruk-cargo-light-1.jpg',
-    features: ['Cargo Van', 'City Delivery', 'Fuel Efficient', '2 units/40HQ']
+    features: ['Cargo Van', 'City Delivery', '2 units/40HQ']
   },
   {
     id: 'foton-view-cs2',
     name: 'FOTON View CS2 Van',
     category: 'light',
     brand: 'FOTON',
-    horsepower: 150,
-    driveType: '4×2',
-    engine: 'Cummins ISF2.8',
-    price: '$12,000 - $18,000',
     image: '/images/sinotruk-pass-light-1.jpg',
-    features: ['Passenger Van', '15 Seats', 'Comfort', '2 units/40HQ']
+    features: ['Passenger Van', '15 Seats', '2 units/40HQ']
   },
   // ===== IVECO Light Vehicles =====
   {
@@ -772,12 +764,8 @@ export const trucks: Truck[] = [
     name: 'IVECO Daily Van',
     category: 'light',
     brand: 'IVECO',
-    horsepower: 146,
-    driveType: '4×2',
-    engine: 'F1C / F1A',
-    price: '$15,000 - $25,000',
     image: '/images/sinotruk-biz-light-1.jpg',
-    features: ['European Design', 'LHD Only', 'Cargo/Passenger', '2 units/40HQ']
+    features: ['European Design', 'LHD Only', '2 units/40HQ']
   }
 ];
 

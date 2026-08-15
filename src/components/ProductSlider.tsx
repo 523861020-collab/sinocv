@@ -91,7 +91,7 @@ export default function ProductSlider() {
                   <div className="absolute top-4 left-4 z-20 rounded-full bg-amber-500 px-3 py-1 text-xs font-semibold text-black">
                     {categories.find(c => c.id === truck.category)?.name}
                   </div>
-                  {truck.horsepower > 0 && (
+                  {(truck.horsepower || 0) > 0 && (
                     <div className="absolute top-4 right-4 z-20 rounded-full bg-white/20 backdrop-blur-sm px-3 py-1 text-xs font-semibold text-white">
                       {truck.horsepower}HP
                     </div>
@@ -103,14 +103,18 @@ export default function ProductSlider() {
                   </h3>
                   <p className="text-amber-500 text-sm mb-3">{truck.brand}</p>
                   <div className="space-y-2 mb-4">
-                    <div className="flex justify-between text-sm">
-                      <span className="text-gray-500">Drive</span>
-                      <span className="text-gray-300">{truck.driveType}</span>
-                    </div>
-                    <div className="flex justify-between text-sm">
-                      <span className="text-gray-500">Engine</span>
-                      <span className="text-gray-300">{truck.engine}</span>
-                    </div>
+                    {truck.driveType && (
+                      <div className="flex justify-between text-sm">
+                        <span className="text-gray-500">Drive</span>
+                        <span className="text-gray-300">{truck.driveType}</span>
+                      </div>
+                    )}
+                    {truck.engine && (
+                      <div className="flex justify-between text-sm">
+                        <span className="text-gray-500">Engine</span>
+                        <span className="text-gray-300">{truck.engine}</span>
+                      </div>
+                    )}
                   </div>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {truck.features.slice(0, 3).map((feature, i) => (

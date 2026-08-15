@@ -28,7 +28,7 @@ function TruckCard({ truck, index }: { truck: Truck; index: number }) {
         <div className="absolute top-4 left-4 z-20 rounded-full bg-amber-500 px-3 py-1 text-xs font-semibold text-black">
           {categories.find(c => c.id === truck.category)?.name}
         </div>
-        {truck.horsepower > 0 && (
+        {(truck.horsepower || 0) > 0 && (
           <div className="absolute top-4 right-4 z-20 rounded-full bg-white/20 backdrop-blur-sm px-3 py-1 text-xs font-semibold text-white">
             {truck.horsepower}HP
           </div>
@@ -41,18 +41,24 @@ function TruckCard({ truck, index }: { truck: Truck; index: number }) {
         </h3>
         <p className="text-amber-500 text-xs mb-3">{truck.brand}</p>
         <div className="space-y-1.5 mb-3">
-          <div className="flex justify-between text-sm">
-            <span className="text-gray-500">驱动</span>
-            <span className="text-gray-300">{truck.driveType}</span>
-          </div>
-          <div className="flex justify-between text-sm">
-            <span className="text-gray-500">发动机</span>
-            <span className="text-gray-300">{truck.engine}</span>
-          </div>
-          <div className="flex justify-between text-sm">
-            <span className="text-gray-500">价格</span>
-            <span className="text-amber-500 font-semibold">{truck.price}</span>
-          </div>
+          {truck.driveType && (
+            <div className="flex justify-between text-sm">
+              <span className="text-gray-500">驱动</span>
+              <span className="text-gray-300">{truck.driveType}</span>
+            </div>
+          )}
+          {truck.engine && (
+            <div className="flex justify-between text-sm">
+              <span className="text-gray-500">发动机</span>
+              <span className="text-gray-300">{truck.engine}</span>
+            </div>
+          )}
+          {truck.price && (
+            <div className="flex justify-between text-sm">
+              <span className="text-gray-500">价格</span>
+              <span className="text-amber-500 font-semibold">{truck.price}</span>
+            </div>
+          )}
         </div>
         <div className="flex flex-wrap gap-1.5 mb-3">
           {truck.features.slice(0, 3).map((f, i) => (
