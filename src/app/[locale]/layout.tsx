@@ -7,6 +7,7 @@ import { routing } from "@/i18n/routing";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
+import AiChat from "@/components/AiChat";
 import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
@@ -37,6 +38,7 @@ export default async function LocaleLayout({
           <main className="flex-1">{children}</main>
           <Footer />
           <WhatsAppFloat />
+          <AiChat />
           <Analytics />
         </NextIntlClientProvider>
       </body>
