@@ -7,7 +7,7 @@ const WELCOME =
 
 export default function AiChat() {
   const [open, setOpen] = useState(false);
-  const [messages, setMessages] = useState<{ role: string; content: string }[]>([
+  const [messages, setMessages] = useState<{ role: string; content: string; product?: any }[]>([
     { role: 'assistant', content: WELCOME },
   ]);
   const [input, setInput] = useState('');
@@ -37,7 +37,7 @@ export default function AiChat() {
       const data = await resp.json();
       setMessages((prev) => [
         ...prev,
-        { role: 'assistant', content: data.reply || '...' },
+        { role: 'assistant', content: data.reply || '...', product: data.product || null },
       ]);
     } catch {
       setMessages((prev) => [
@@ -150,6 +150,27 @@ export default function AiChat() {
                   }}
                 >
                   {m.content}
+                  {m.product && (
+                    <div style={{ marginTop: '8px', borderTop: '1px solid #333', paddingTop: '8px' }}>
+                      <div style={{ fontWeight: 700, color: '#f59e0b', marginBottom: '4px' }}>{m.product.name}</div>
+                      {m.product.config && (
+                        <div style={{ fontSize: '11px', color: '#bbb', lineHeight: 1.5, whiteSpace: 'pre-wrap' }}>
+                          {m.product.config.slice(0, 220)}{m.product.config.length > 220 ? '...' : ''}
+                        </div>
+                      )}
+                      {Array.isArray(m.product.images) && m.product.images.length > 0 && (
+                        <img
+                          src={m.product.images[0]}
+                          alt={m.product.name}
+                          onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                          style={{ width: '100%', borderRadius: '8px', marginTop: '6px', maxHeight: '160px', objectFit: 'cover' }}
+                        />
+                      )}
+                      <div style={{ fontSize: '10px', color: '#666', marginTop: '4px' }}>
+                        💬 Price will be provided by our specialist on WhatsApp.
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
