@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Analytics } from '@vercel/analytics/next';
+import DwellTrack from '@/components/DwellTrack';
 
 export const metadata: Metadata = {
   title: 'XINYUNTONG | Chinese Commercial Vehicles Export - Trucks, Machinery, Trailers',
@@ -28,6 +29,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <>
       {children}
       <Analytics />
+      <DwellTrack />
     </>
   );
 }
