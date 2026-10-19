@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from 'react';
 
 const WELCOME =
-  "Hi! I'm the AI assistant of XINYUNTONG CHINA 👋\nI'll help match you with the right truck or machine.\n\nTo start — which country are you from?";
+  "Hi! I'm the AI assistant of XINYUNTONG 👋\nI'll help match you with the right truck or machine.\n\nTo start — which country are you from?";
 
 export default function AiChat() {
   const [open, setOpen] = useState(false);

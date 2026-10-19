@@ -8,10 +8,10 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   const { locale } = await params;
   const isFr = locale === 'fr';
   return {
-    title: isFr ? 'Actualités & offres en stock | XINYUNTONG China' : 'News & In-Stock Offers | XINYUNTONG China',
+    title: isFr ? 'Actualités & offres en stock | XINYUNTONG' : 'News & In-Stock Offers | XINYUNTONG',
     description: isFr
-      ? "Dernières nouveautés, offres de stock et départs immédiats de XINYUNTONG China — camions, engins et remorques."
-      : 'Latest stock offers, ready-to-ship trucks, machinery and trailers from XINYUNTONG China.',
+      ? "Dernières nouveautés, offres de stock et départs immédiats de XINYUNTONG — camions, engins et remorques."
+      : 'Latest stock offers, ready-to-ship trucks, machinery and trailers from XINYUNTONG.',
     alternates: { canonical: `https://sinocv.com/${locale}/news` },
   };
 }
@@ -21,8 +21,8 @@ export default async function NewsListPage({ params }: { params: Params }) {
   const isFr = locale === 'fr';
   const heading = isFr ? 'Actualités & Offres en stock' : 'News & In-Stock Offers';
   const sub = isFr
-    ? 'Dernières nouveautés et offres de stock de XINYUNTONG China.'
-    : 'Latest stock offers and updates from XINYUNTONG China.';
+    ? 'Dernières nouveautés et offres de stock de XINYUNTONG.'
+    : 'Latest stock offers and updates from XINYUNTONG.';
   const readMore = isFr ? 'Lire la suite' : 'Read more';
 
   return (

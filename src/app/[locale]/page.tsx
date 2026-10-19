@@ -133,9 +133,9 @@ export default function Home() {
             <span>📱 +86 13001977959</span>
             <a href="https://wa.me/8619103781257" target="_blank" className="text-green-400 hover:text-green-300">💬 WhatsApp</a>
           </div>
-          <h3 className="text-3xl font-bold text-white mb-6">About XINYUNTONG CHINA</h3>
+          <h3 className="text-3xl font-bold text-white mb-6">About HENAN XINYUNTONG AUTOMOBILE SALES CO., LTD.</h3>
           <p className="text-gray-300 leading-relaxed text-base mb-4">
-            <span className="text-amber-400 font-semibold">Xin Yuntong China Limited</span> is dedicated to providing superior services to global truck users. As a professional commercial vehicle export enterprise, we specialize in exporting Chinese heavy-duty trucks and construction machinery. Backed by a comprehensive supply chain and complete export qualifications, we deliver high-quality, smart manufacturing from China to the world.
+            <span className="text-amber-400 font-semibold">HENAN XINYUNTONG AUTOMOBILE SALES CO., LTD.</span> is dedicated to providing superior services to global truck users. As a professional commercial vehicle export enterprise, we specialize in exporting Chinese heavy-duty trucks and construction machinery. Backed by a comprehensive supply chain and complete export qualifications, we deliver high-quality, smart manufacturing from China to the world.
           </p>
           <p className="text-gray-300 leading-relaxed text-base mb-6">
             We offer not only one-stop procurement services covering complete vehicles and spare parts but also a robust after-sales support system, ensuring a hassle-free, efficient, and seamless cross-border purchasing experience for every client.
