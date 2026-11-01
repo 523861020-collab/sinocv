@@ -122,7 +122,7 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.9 }}
-                className="flex gap-4"
+                className="flex flex-wrap gap-4"
               >
                 <Link
                   href={slides[current].link}
@@ -132,7 +132,7 @@ export default function Hero() {
                 </Link>
                 <a
                   href="https://wa.me/8619103781257" target="_blank"
-                    className="rounded-md border-2 border-green-500 px-8 py-4 text-lg font-semibold text-green-400 transition-all hover:bg-green-500 hover:text-white"
+                    className="rounded-md border-2 border-green-500 bg-green-500 px-8 py-4 text-lg font-semibold text-white shadow-lg shadow-green-500/20 transition-all hover:bg-green-400 hover:border-green-400"
                 >
                   Get Quote
                 </a>
