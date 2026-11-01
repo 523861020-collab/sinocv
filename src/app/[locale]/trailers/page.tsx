@@ -9,7 +9,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 import ZonePage from '@/components/ZonePage';
 import { trucks, zones } from '@/data/trucks';
 
-const zone = zones.find(z => z.id === 'trailer')!;
+const zone = zones.find(z => z.id === 'trailers')!;
 
 export default function TrailerPage() {
   return (
