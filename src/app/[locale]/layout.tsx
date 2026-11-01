@@ -8,6 +8,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import AiChat from "@/components/AiChat";
+import VisitPing from "@/components/VisitPing";
 import { Analytics } from "@vercel/analytics/react";
 
 // 2026-11-01 SEO：每个语言有独立标题/描述/canonical。
@@ -84,6 +85,7 @@ export default async function LocaleLayout({
           <Footer />
           <WhatsAppFloat />
           <AiChat />
+          <VisitPing />
           <Analytics />
         </NextIntlClientProvider>
       </body>
