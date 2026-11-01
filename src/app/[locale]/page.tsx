@@ -11,6 +11,8 @@ import QuickInquiry from '@/components/QuickInquiry';
 import PriceListCTA from '@/components/PriceListCTA';
 import PriceEstimator from '@/components/PriceEstimator';
 import { trucks, zones, categories, stockTrucks } from '@/data/trucks';
+import { useLocale } from 'next-intl';
+import { content } from '@/data/site-i18n';
 
 function Lightbox({ images, onClose }: { images: string[]; onClose: () => void }) {
   const [idx, setIdx] = useState(0);
@@ -30,6 +32,7 @@ function Lightbox({ images, onClose }: { images: string[]; onClose: () => void }
 }
 
 function ZoneWindow({ zone }: { zone: typeof zones[0] }) {
+  const zoneText = content(useLocale()).zones[zone.id as keyof ReturnType<typeof content>['zones']];
   const products = trucks.filter(t => zone.categories.includes(t.category));
   const [current, setCurrent] = useState(0);
 
@@ -46,7 +49,7 @@ function ZoneWindow({ zone }: { zone: typeof zones[0] }) {
     <div className="rounded-2xl bg-gray-900 border border-gray-800 overflow-hidden group hover:border-amber-500/40 transition-colors">
       <div className="bg-gray-800/50 px-4 py-2.5 flex items-center gap-2 border-b border-gray-800">
         <span className="text-lg">{zone.icon}</span>
-        <span className="text-white font-semibold text-sm">{zone.title}</span>
+        <span className="text-white font-semibold text-sm">{zoneText?.title ?? zone.title}</span>
       </div>
       <div className="relative h-52 overflow-hidden bg-gray-800">
         <AnimatePresence mode="wait">
@@ -74,6 +77,7 @@ function ZoneWindow({ zone }: { zone: typeof zones[0] }) {
 
 export default function Home() {
   const [lightbox, setLightbox] = useState<string[] | null>(null);
+  const c = content(useLocale());
   return (
     <>
       <Hero />
@@ -93,20 +97,20 @@ export default function Home() {
         <section id="promo" style={{paddingTop: '1.5rem', paddingBottom: '1.5rem'}} className="bg-gray-950">
           <div className="px-6">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-1">Promotions</h2>
-              <p className="text-gray-400 text-lg">In-Stock · Ready to Ship · No Production Wait</p>
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-1">{c.promo.title}</h2>
+              <p className="text-gray-400 text-lg">{c.promo.sub}</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {stockTrucks.map(t => (
                 <div key={t.id} className="rounded-xl bg-gray-900 border border-red-500/20 overflow-hidden group hover:border-red-500/50 transition-all">
                   <div className="relative h-52 overflow-hidden bg-gray-800 cursor-pointer" onClick={() => setLightbox(t.images || [t.image])}>
                     <img src={t.image} alt={t.name} className="h-full w-full object-cover" loading="lazy" />
-                    <div className="absolute top-3 left-3 rounded-full bg-red-500 px-2.5 py-0.5 text-xs font-semibold text-white">Hot</div>
+                    <div className="absolute top-3 left-3 rounded-full bg-red-500 px-2.5 py-0.5 text-xs font-semibold text-white">{c.promo.hot}</div>
                   </div>
                   <div className="p-4 text-center">
                     <h3 className="text-base font-bold text-white">{t.name}</h3>
                     <a href="https://wa.me/8619103781257" target="_blank" className="mt-3 inline-block w-full rounded-md bg-red-500/10 py-2.5 text-center text-red-400 font-semibold text-sm transition-all hover:bg-red-500 hover:text-white">
-                      Inquire Now →
+                      {c.promo.cta}
                     </a>
                   </div>
                 </div>
@@ -119,8 +123,8 @@ export default function Home() {
       <section id="products" style={{paddingTop: '1.5rem', paddingBottom: '1.5rem'}} className="bg-gray-950">
         <div className="px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-1">Products</h2>
-            <p className="text-gray-400 text-lg">5 Categories · One-Stop Sourcing</p>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-1">{c.products.title}</h2>
+            <p className="text-gray-400 text-lg">{c.products.sub}</p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             {zones.map(zone => (
@@ -141,7 +145,7 @@ export default function Home() {
 
       <section style={{paddingTop: '1.5rem', paddingBottom: '1.5rem'}} className="bg-black">
         <div style={{textAlign: 'center', padding: '0 1.5rem'}}>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-12">About Us</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-12">{c.about.title}</h2>
           {/* v20260710-1: manager photo directly below */}
           <div className="mb-8 flex justify-center">
             <img src="/images/manager.webp" alt="Li Shanlong" className="w-56 h-56 rounded-full object-cover border-2 border-amber-500/40" />
@@ -153,19 +157,17 @@ export default function Home() {
             <span>📱 <bdi>+86 13001977959</bdi></span>
             <a href="https://wa.me/8619103781257" target="_blank" className="text-green-400 hover:text-green-300">💬 WhatsApp</a>
           </div>
-          <h3 className="text-3xl font-bold text-white mb-6">About HENAN XINYUNTONG AUTOMOBILE SALES CO., LTD.</h3>
+          <h3 className="text-3xl font-bold text-white mb-6">{c.about.h3}</h3>
           {/* 2026-11-01 修：这段正文原来继承了外层的 text-align:center，
               几十个词的长段落被居中排，每行首尾参差，眼睛找不到下一行起点。
               正文一律左对齐并限宽到阅读舒适宽度（约 70 字符/行）。 */}
-          <div className="mx-auto max-w-3xl text-left" dir="ltr">
+          <div className="mx-auto max-w-3xl text-left">
             <p className="text-gray-300 leading-relaxed text-base mb-4">
-              <span className="text-amber-400 font-semibold">HENAN XINYUNTONG AUTOMOBILE SALES CO., LTD.</span> is dedicated to providing superior services to global truck users. As a professional commercial vehicle export enterprise, we specialize in exporting Chinese heavy-duty trucks and construction machinery. Backed by a comprehensive supply chain and complete export qualifications, we deliver high-quality, smart manufacturing from China to the world.
-            </p>
+              {c.about.p1}</p>
             <p className="text-gray-300 leading-relaxed text-base mb-6">
-              We offer not only one-stop procurement services covering complete vehicles and spare parts but also a robust after-sales support system, ensuring a hassle-free, efficient, and seamless cross-border purchasing experience for every client.
-            </p>
+              {c.about.p2}</p>
             <p className="mb-12 border-s-2 border-amber-500/60 ps-4 text-base not-italic leading-relaxed text-gray-300">
-              🎯 <span className="text-amber-400 font-medium">Our Mission:</span> Customer-focused, quality-driven — to provide the finest Chinese commercial vehicles and construction machinery to global customers and become a trusted long-term partner.
+              🎯 <span className="text-amber-400 font-medium">{c.about.missionLabel}</span> {c.about.mission}
             </p>
           </div>
           <h3 className="text-2xl font-bold text-white mb-8">Certifications</h3>

@@ -1,7 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { advantages } from '@/data/trucks';
+import { useLocale } from 'next-intl';
+import { content } from '@/data/site-i18n';
 import { MAP_DATA_URI } from '@/data/mapImage';
 
 const iconMap: Record<string, React.ReactNode> = {
@@ -28,7 +29,16 @@ const iconMap: Record<string, React.ReactNode> = {
   )
 };
 
+const ADV_ICONS = ['shield', 'price', 'service', 'custom'] as const;
+
 export default function Advantages() {
+  const locale = useLocale();
+  const t = content(locale);
+  const advantages = t.advantages.map((a, i) => ({
+    title: a.title,
+    description: a.desc,
+    icon: ADV_ICONS[i],
+  }));
   return (
     <section style={{paddingTop: '1.5rem', paddingBottom: '1.5rem'}} className="bg-black">
       <div className="px-6">
@@ -38,10 +48,10 @@ export default function Advantages() {
           viewport={{ once: true }}
           className="mb-20 text-center"
         >
-          <p className="mb-4 text-amber-500 tracking-widest text-sm">WHY CHOOSE US</p>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Our Advantages</h2>
+          <p className="mb-4 text-amber-500 tracking-widest text-sm">{t.why.kicker}</p>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">{t.why.title}</h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed">
-            6 Major Brands · One-Stop Sourcing — SINOTRUK + SHACMAN + XCMG + CIMC + FOTON + IVECO
+            {t.why.sub}
           </p>
         </motion.div>
 
@@ -59,10 +69,6 @@ export default function Advantages() {
                 {iconMap[adv.icon]}
               </div>
               <h3 className="text-xl font-bold text-white mb-2">{adv.title}</h3>
-              {/* 2026-11-01 修：title 与 titleEn 内容完全相同，导致页面上标题显示两遍 */}
-              {adv.titleEn && adv.titleEn !== adv.title && (
-                <p className="text-sm text-gray-500 mb-4">{adv.titleEn}</p>
-              )}
               <p className="text-gray-400 leading-relaxed">{adv.description}</p>
             </motion.div>
           ))}

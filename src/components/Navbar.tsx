@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
+import { content } from '@/data/site-i18n';
 import { useRouter, usePathname } from '@/i18n/routing';
 
 const locales = [
@@ -56,8 +57,9 @@ export default function Navbar() {
           <Link href={`/${locale}`} className="flex items-center gap-3">
             <img src="/images/logo-nav.webp" alt="Logo" className="h-10 w-auto" width={130} height={40} />
             <div className="text-sm text-amber-500 font-medium leading-tight">
-              <div>One-Stop Sourcing for</div>
-              <div>Commercial Vehicles</div>
+              {content(locale).navTagline.map((line, i) => (
+                <div key={i}>{line}</div>
+              ))}
             </div>
           </Link>
 

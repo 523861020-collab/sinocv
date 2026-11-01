@@ -3,46 +3,26 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
+import { useLocale } from 'next-intl';
+import { content } from '@/data/site-i18n';
 
-const slides = [
-  {
-    image: '/images/hero-tractor.webp',
-    title: 'SINOTRUK Tractor Truck',
-    subtitle: 'HOWO / SITRAK · German MAN Technology',
-    description: 'Weichai engine, 6×4 drive, 30 years of heavy truck export experience',
-    link: '/heavy-truck'
-  },
-  {
-    image: '/images/hero-excavator.webp',
-    title: 'XCMG Excavator',
-    subtitle: 'XCMG · China\'s #1 Construction Machinery',
-    description: 'XE215 Excavator, ZL50 Loader — mining, infrastructure, municipal projects',
-    link: '/machinery'
-  },
-  {
-    image: '/images/hero-mining-new.webp',
-    title: 'Mining Dump Truck',
-    subtitle: 'SINOTRUK · 70-105T Wide-body Mining Trucks',
-    description: '40-45 ton payload, reinforced chassis, built for harsh mining conditions',
-    link: '/mining'
-  },
-  {
-    image: '/images/hero-trailer.webp',
-    title: 'CIMC Trailer',
-    subtitle: 'CIMC · Global #1 Trailer Manufacturer',
-    description: 'Flatbed trailers, dump trailers — 13-ton axles, durable and dependable',
-    link: '/trailers'
-  },
-  {
-    image: '/images/hero-van-new.webp',
-    title: 'SINOTRUK Light Vehicles',
-    subtitle: 'SINOTRUK · Urban Logistics Expert',
-    description: 'Light Vehicles — fuel-efficient, spacious, and reliable for cargo delivery',
-    link: '/light'
-  }
+// 图片与跳转固定在代码里，文案按语言从 site-i18n 取（2026-11-01）
+const HERO_META = [
+  { image: '/images/hero-tractor.webp', link: '/heavy-truck' },
+  { image: '/images/hero-excavator.webp', link: '/machinery' },
+  { image: '/images/hero-mining-new.webp', link: '/mining' },
+  { image: '/images/hero-trailer.webp', link: '/trailers' },
+  { image: '/images/hero-van-new.webp', link: '/light' }
 ];
 
 export default function Hero() {
+  const locale = useLocale();
+  const t = content(locale);
+  const slides = HERO_META.map((m, i) => ({
+    ...m,
+    ...t.hero.slides[i],
+    description: t.hero.slides[i].desc,
+  }));
   const [current, setCurrent] = useState(0);
   const [prev, setPrev] = useState(0);
 
@@ -78,7 +58,8 @@ export default function Hero() {
             className="h-full w-full bg-cover bg-center"
             style={{ backgroundImage: `url(${slide.image})` }}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent pointer-events-none" />
+          {/* 2026-11-01 修：RTL 下文字在右侧，渐变必须镜像，否则阿拉伯语压在亮色车身上看不清 */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent rtl:bg-gradient-to-l pointer-events-none" />
         </motion.div>
       ))}
 
@@ -128,13 +109,13 @@ export default function Hero() {
                   href={slides[current].link}
                   className="rounded-md bg-amber-500 px-8 py-4 text-lg font-semibold text-black transition-all hover:bg-amber-400 hover:shadow-lg hover:shadow-amber-500/30"
                 >
-                  View Products
+                  {t.hero.ctaProducts}
                 </Link>
                 <a
                   href="https://wa.me/8619103781257" target="_blank"
                     className="rounded-md border-2 border-green-500 bg-green-500 px-8 py-4 text-lg font-semibold text-white shadow-lg shadow-green-500/20 transition-all hover:bg-green-400 hover:border-green-400"
                 >
-                  Get Quote
+                  {t.hero.ctaQuote}
                 </a>
               </motion.div>
             </motion.div>
