@@ -149,15 +149,15 @@ export default function Home() {
           <h4 className="text-white font-bold text-5xl mb-3">Li Shanlong</h4>
           <p className="text-amber-400 text-xl font-medium mb-6">General Manager</p>
           <div className="flex flex-wrap justify-center gap-3 text-base text-gray-400 mb-12">
-            <span>📧 lishanlong@sinocv.com</span>
-            <span>📱 +86 13001977959</span>
+            <span>📧 <bdi>lishanlong@sinocv.com</bdi></span>
+            <span>📱 <bdi>+86 13001977959</bdi></span>
             <a href="https://wa.me/8619103781257" target="_blank" className="text-green-400 hover:text-green-300">💬 WhatsApp</a>
           </div>
           <h3 className="text-3xl font-bold text-white mb-6">About HENAN XINYUNTONG AUTOMOBILE SALES CO., LTD.</h3>
           {/* 2026-11-01 修：这段正文原来继承了外层的 text-align:center，
               几十个词的长段落被居中排，每行首尾参差，眼睛找不到下一行起点。
               正文一律左对齐并限宽到阅读舒适宽度（约 70 字符/行）。 */}
-          <div className="mx-auto max-w-3xl text-left">
+          <div className="mx-auto max-w-3xl text-left" dir="ltr">
             <p className="text-gray-300 leading-relaxed text-base mb-4">
               <span className="text-amber-400 font-semibold">HENAN XINYUNTONG AUTOMOBILE SALES CO., LTD.</span> is dedicated to providing superior services to global truck users. As a professional commercial vehicle export enterprise, we specialize in exporting Chinese heavy-duty trucks and construction machinery. Backed by a comprehensive supply chain and complete export qualifications, we deliver high-quality, smart manufacturing from China to the world.
             </p>

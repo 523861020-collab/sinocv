@@ -53,11 +53,11 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-3">{t('footer.contact')}</h4>
             <div className="space-y-2 text-sm text-gray-400">
-              <p>📱 +86 13001977959</p>
+              <p>📱 <bdi>+86 13001977959</bdi></p>
               <a href="https://wa.me/8619103781257" target="_blank" rel="noopener" className="flex items-center gap-2 text-green-400 hover:text-green-300">
-                <span>💬 WhatsApp: +86 19103781257</span>
+                <span>💬 WhatsApp: <bdi>+86 19103781257</bdi></span>
               </a>
-              <p>📧 lishanlong@sinocv.com</p>
+              <p>📧 <bdi>lishanlong@sinocv.com</bdi></p>
               <p>📍 {t('footer.address')}</p>
             </div>
           </div>

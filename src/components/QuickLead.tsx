@@ -220,7 +220,7 @@ export default function QuickLead() {
                 {state === 'error' && (
                   <p className="text-xs text-red-400">
                     {t.err}{' '}
-                    <a href="https://wa.me/8619103781257" target="_blank" rel="noreferrer" className="underline">
+                    <a href="https://wa.me/8619103781257" target="_blank" rel="noreferrer" dir="ltr" className="inline-block underline">
                       +86 191 0378 1257
                     </a>
                   </p>
