@@ -42,3 +42,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 /public/downloads/howo-tx-africa.pdf
+
+# 本地密钥（2026-11-01）
+.env*.local
