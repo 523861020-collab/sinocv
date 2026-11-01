@@ -6,7 +6,7 @@ import { newsArticles } from '@/data/news'
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.sinocv.com'
   const locales = ['en', 'fr', 'ar']
-  const paths = ['', '/heavy-truck', '/machinery', '/mining', '/trailers', '/light', '/news']
+  const paths = ['', '/about', '/heavy-truck', '/machinery', '/mining', '/trailers', '/light', '/news']
 
   const pages: MetadataRoute.Sitemap = []
   for (const p of paths) {

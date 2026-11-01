@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
 import { useRouter, usePathname } from '@/i18n/routing';
 
@@ -37,6 +38,8 @@ export default function Navbar() {
     { href: '/mining', label: t('nav.mining') },
     { href: '/trailers', label: t('nav.trailers') },
     { href: '/light', label: t('nav.lightVehicles') },
+    // 2026-11-01 新增信任页入口
+    { href: '/about', label: locale === 'fr' ? 'À propos' : locale === 'ar' ? 'من نحن' : 'About Us' },
   ];
 
   return (
@@ -50,24 +53,24 @@ export default function Navbar() {
       <div className="px-6 lg:px-16 max-w-[1920px] mx-auto">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-3">
+          <Link href={`/${locale}`} className="flex items-center gap-3">
             <img src="/images/logo-nav.webp" alt="Logo" className="h-10 w-auto" width={130} height={40} />
             <div className="text-sm text-amber-500 font-medium leading-tight">
               <div>One-Stop Sourcing for</div>
               <div>Commercial Vehicles</div>
             </div>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.href}
-                href={link.href}
+                href={`/${locale}${link.href}`}
                 className="text-gray-300 hover:text-amber-500 transition-colors font-medium"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
             <a
               href="https://wa.me/8619103781257" target="_blank"
@@ -118,14 +121,14 @@ export default function Navbar() {
           >
             <div className="py-4 space-y-4">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.href}
-                  href={link.href}
+                  href={`/${locale}${link.href}`}
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="block px-4 py-2 text-gray-300 hover:text-amber-500 transition-colors"
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
             </div>
               <a

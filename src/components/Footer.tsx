@@ -47,6 +47,7 @@ export default function Footer() {
               <Link href={`/${locale}/mining`} className="text-gray-400 hover:text-amber-500">{t('nav.mining')}</Link>
               <Link href={`/${locale}/trailers`} className="text-gray-400 hover:text-amber-500">{t('nav.trailers')}</Link>
               <Link href={`/${locale}/light`} className="text-gray-400 hover:text-amber-500">{t('nav.lightVehicles')}</Link>
+              <Link href={`/${locale}/about`} className="text-gray-400 hover:text-amber-500">{locale === 'fr' ? 'À propos' : locale === 'ar' ? 'من نحن' : 'About Us'}</Link>
             </div>
           </div>
           <div>
