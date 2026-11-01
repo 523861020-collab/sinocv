@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+import { zoneMeta } from '../seo-titles';
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return zoneMeta('heavy-truck', locale);
+}
+
 import ZonePage from '@/components/ZonePage';
 import { trucks, zones } from '@/data/trucks';
 

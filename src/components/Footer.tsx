@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
             <div className="flex flex-col items-start gap-2 mb-4">
-              <img src="/images/logo-new.png" alt="Logo" className="h-10 w-auto" />
+              <img src="/images/logo-nav.png" alt="Logo" className="h-10 w-auto" width={130} height={40} />
               <div className="text-sm text-amber-500 font-medium leading-tight">
                 {t('footer.tagline')}
               </div>

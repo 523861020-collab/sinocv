@@ -9,6 +9,24 @@ export async function POST(request: Request) {
   const message = body.message || '';
   const company = body.company || '';
 
+  // 2026-11-01 李总要求：官网询盘一个都不能丢 -> 统一转发到香港 CRM 收口
+  // 香港接口 /api/v1/lead/inbound 落库 leads(source=website) 并推送给王小涵；
+  // 失败不影响返回成功（客户侧不报错），同时在日志里留痕。
+  const CRM_KEY = process.env.CRM_INBOUND_KEY || 'sinocv_inbound_2026';
+  try {
+    await fetch('https://img.sinocv.com/api/v1/lead/inbound', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'X-Inbound-Key': CRM_KEY },
+      body: JSON.stringify({
+        name, email, phone, company, country, product, message,
+        source: 'website',
+        page: request.headers.get('referer') || '',
+      }),
+    });
+  } catch (e: any) {
+    console.error('CRM inbound failed:', e.message);
+  }
+
   const RESEND_KEY = process.env.RESEND_API_KEY || '';
 
   if (RESEND_KEY) {

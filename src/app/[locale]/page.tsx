@@ -6,6 +6,8 @@ import Link from 'next/link';
 import Hero from '@/components/Hero';
 import Advantages from '@/components/Advantages';
 import Contact from '@/components/Contact';
+import QuickNav from '@/components/QuickNav';
+import QuickInquiry from '@/components/QuickInquiry';
 import { trucks, zones, categories, stockTrucks } from '@/data/trucks';
 
 function Lightbox({ images, onClose }: { images: string[]; onClose: () => void }) {
@@ -74,8 +76,16 @@ export default function Home() {
     <>
       <Hero />
 
+      {/* 首屏之后：快速定位 + 快速询价，第一屏滑完立刻能看到（2026-11-01 留客改造） */}
+      <QuickNav />
+      <section className="bg-gray-950 px-4 py-4 md:px-6">
+        <div className="mx-auto max-w-4xl">
+          <QuickInquiry />
+        </div>
+      </section>
+
       {stockTrucks.length > 0 && (
-        <section style={{paddingTop: '1.5rem', paddingBottom: '1.5rem'}} className="bg-gray-950">
+        <section id="promo" style={{paddingTop: '1.5rem', paddingBottom: '1.5rem'}} className="bg-gray-950">
           <div className="px-6">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-1">Promotions</h2>
@@ -101,7 +111,7 @@ export default function Home() {
         </section>
       )}
 
-      <section style={{paddingTop: '1.5rem', paddingBottom: '1.5rem'}} className="bg-gray-950">
+      <section id="products" style={{paddingTop: '1.5rem', paddingBottom: '1.5rem'}} className="bg-gray-950">
         <div className="px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-1">Products</h2>
@@ -109,9 +119,11 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             {zones.map(zone => (
-              <Link key={zone.id} href={zone.id === 'heavy-truck' ? '/heavy-truck' : `/${zone.id}`}>
-                <ZoneWindow zone={zone} />
-              </Link>
+              <div key={zone.id} id={zone.id === 'heavy-truck' ? 'truck' : zone.id === 'machinery' ? 'machine' : zone.id === 'trailers' ? 'trailer' : zone.id === 'light' ? 'light' : zone.id}>
+                <Link href={zone.id === 'heavy-truck' ? '/heavy-truck' : `/${zone.id}`}>
+                  <ZoneWindow zone={zone} />
+                </Link>
+              </div>
             ))}
           </div>
         </div>

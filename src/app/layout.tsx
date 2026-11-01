@@ -7,9 +7,8 @@ export const metadata: Metadata = {
   description: 'HENAN XINYUNTONG AUTOMOBILE SALES CO., LTD. — Professional Chinese commercial vehicles exporter. Heavy trucks, construction machinery, mining equipment, light vehicles, and semi-trailers. HOWO, SITRAK, SHACMAN, XCMG direct factory supply with competitive FOB/CFR prices. Export to Africa, Middle East, Southeast Asia.',
   keywords: 'Chinese trucks export, HOWO, SITRAK, SHACMAN, XCMG, heavy trucks, dump trucks, tractor trucks, commercial vehicles China, construction machinery export, semi-trailers, FOB price, CFR price, Africa truck supplier, sinocv',
   metadataBase: new URL('https://sinocv.com'),
-  alternates: {
-    canonical: 'https://sinocv.com',
-  },
+  // 2026-11-01: 去掉全站统一 canonical(原来所有页面都指向首页，谷歌只认一个页面)，
+  // 改由 [locale]/layout.tsx 和每个分类页各自声明 canonical + 三语言 alternate。
   openGraph: {
     title: 'XINYUNTONG | Chinese Commercial Vehicles Export',
     description: 'Professional Chinese commercial vehicles exporter — HOWO, SITRAK, SHACMAN, XCMG direct factory supply.',
