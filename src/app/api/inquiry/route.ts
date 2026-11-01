@@ -58,8 +58,12 @@ export async function POST(request: Request) {
   // 走 http://img.sinocv.com（80 → CF 301 → 443 SNI 分流到 nginx）：Vercel 函数对部分域名 443 直连会被拦，
   // 这里用 80+跟随跳转最稳；失败只记日志，不影响客户侧返回成功。
   try {
+    // Vercel 出口到 img.sinocv.com 有 3 秒以上的建连延迟，必须给足超时；默认 10s 会 silent 掉
     const CRM_KEY = process.env.CRM_INBOUND_KEY || 'sinocv_inbound_2026';
-    const crmRes = await fetch('http://img.sinocv.com/api/v1/lead/inbound', {
+    const ac = new AbortController();
+    const tid = setTimeout(() => ac.abort(), 8000);
+    const crmRes = await fetch('https://img.sinocv.com/api/v1/lead/inbound', {
+      signal: ac.signal,
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'X-Inbound-Key': CRM_KEY },
       body: JSON.stringify({
@@ -67,10 +71,12 @@ export async function POST(request: Request) {
         message: message || '', page: request.headers.get('referer') || '', source: 'website',
       }),
       redirect: 'follow',
+      cache: 'no-store',
     });
+    clearTimeout(tid);
     console.log('CRM inbound:', crmRes.status, (await crmRes.text()).slice(0, 200));
   } catch (e: any) {
-    console.error('CRM inbound failed:', e.message);
+    console.error('CRM inbound failed:', e.name, e.message);
   }
 
   const RESEND_KEY = process.env.RESEND_API_KEY || '';
