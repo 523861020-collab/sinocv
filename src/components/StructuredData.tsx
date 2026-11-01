@@ -12,7 +12,7 @@ export default function StructuredData({ locale }: { locale: string }) {
         name: 'XINYUNTONG CHINA Co., Ltd.',
         alternateName: ['鑫运通中国有限公司', 'HENAN XINYUNTONG AUTOMOBILE SALES CO., LTD.'],
         url: `${base}/${locale}`,
-        logo: `${base}/images/logo-nav.png`,
+        logo: `${base}/images/logo-nav.webp`,
         description:
           'Chinese heavy duty trucks and construction machinery exporter. SINOTRUK HOWO, SITRAK, SHACMAN, XCMG. FOB and CIF shipping to Africa, Middle East, Southeast Asia, South America.',
         address: {

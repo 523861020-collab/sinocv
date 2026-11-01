@@ -12,7 +12,7 @@ export default function TrailerPage() {
       brand={zone.brand}
       description={zone.description}
       trucks={trucks.filter(t => zone.categories.includes(t.category))}
-      bannerImage="/images/hero-trailer.jpg"
+      bannerImage="/images/hero-trailer.webp"
     />
   );
 }

@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XINYUNTONG CRM</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f8fafc;color:#334155;min-height:100vh;display:flex;flex-direction:column}
+
+/* ===== Top Nav Tabs ===== */
+.nav{display:flex;background:#1a56db;flex-shrink:0}
+.navtab{flex:1;padding:12px 6px;text-align:center;font-size:12px;font-weight:600;color:rgba(255,255,255,.65);cursor:pointer;border:none;background:none;transition:all .15s;border-bottom:2px solid transparent}
+.navtab:hover{color:rgba(255,255,255,.85)}
+.navtab.active{color:#fff;border-bottom-color:#fff;background:rgba(255,255,255,.1)}
+
+/* ===== Main Content ===== */
+.content{flex:1;overflow-y:auto;padding:12px}
+.page{display:none}
+.page.active{display:block}
+
+/* ===== Customer Card ===== */
+.card{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:12px;margin-bottom:10px;display:none}
+.card.show{display:block}
+.card .cname{font-size:16px;font-weight:700;color:#1e293b}
+.card .cphone{font-size:14px;color:#1a56db;font-weight:600;margin-top:2px}
+.card .cmeta{font-size:11px;color:#64748b;margin-top:2px}
+.card .cstatus{display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;margin-top:4px}
+.cstatus.registered{background:#dcfce7;color:#059669}
+.cstatus.new{background:#fef3c7;color:#d97706}
+
+/* ===== Buttons ===== */
+.btn-row{display:flex;gap:8px;margin-bottom:10px}
+.btn{flex:1;padding:10px 8px;border:none;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;text-align:center;transition:all .15s}
+.btn:active{transform:scale(0.97)}
+.btn-primary{background:#1a56db;color:#fff}
+.btn-outline{background:#fff;color:#1a56db;border:1.5px solid #1a56db}
+.btn-success{background:#059669;color:#fff}
+
+/* ===== Form ===== */
+.form-section{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:12px;margin-bottom:10px}
+.fg{margin-bottom:8px}
+.fg label{display:block;font-size:11px;font-weight:600;color:#475569;margin-bottom:2px}
+.fg input,.fg select,.fg textarea{width:100%;padding:7px 9px;border:1.5px solid #e2e8f0;border-radius:6px;font-size:12px;outline:none;color:#334155;background:#fff}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:#1a56db;box-shadow:0 0 0 3px rgba(26,86,219,.1)}
+.fg textarea{resize:vertical;min-height:44px;font-family:inherit}
+.fg input[readonly]{background:#f8fafc;color:#94a3b8}
+.form-row{display:flex;gap:6px}
+.form-row .fg{flex:1}
+
+/* ===== Product Tab ===== */
+.country-select{margin-bottom:10px}
+.country-select select{width:100%;padding:8px;border:1.5px solid #e2e8f0;border-radius:8px;font-size:13px;font-weight:600;outline:none}
+.product-list{background:#fff;border:1px solid #e2e8f0;border-radius:10px;overflow:hidden}
+.product-item{padding:10px 12px;border-bottom:1px solid #f1f5f9;cursor:pointer;transition:background .1s}
+.product-item:hover{background:#eff6ff}
+.product-item:last-child{border-bottom:none}
+.product-item .pname{font-size:13px;font-weight:600;color:#1e293b}
+.product-item .pprice{font-size:12px;color:#059669;font-weight:500;margin-top:2px}
+.product-item .pspec{font-size:11px;color:#94a3b8}
+.product-item .pdetail{font-size:11px;color:#64748b;margin-top:1px}
+.product-item .pdetail span{display:inline-block;margin-right:10px}
+.prod-empty{padding:20px;text-align:center;color:#94a3b8;font-size:13px}
+/* Search */
+.search-box{width:100%;padding:8px 10px;border:1.5px solid #e2e8f0;border-radius:8px;font-size:13px;outline:none;color:#334155}
+.search-box:focus{border-color:#1a56db;box-shadow:0 0 0 3px rgba(26,86,219,.1)}
+.search-drop{background:#fff;border:1px solid #e2e8f0;border-radius:0 0 8px 8px;max-height:180px;overflow-y:auto;box-shadow:0 4px 12px rgba(0,0,0,.08)}
+.search-drop div{padding:8px 10px;cursor:pointer;font-size:12px;border-bottom:1px solid #f1f5f9}
+.search-drop div:hover{background:#eff6ff}
+
+/* ===== Quick Reply Tab ===== */
+.reply-card{background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:10px;margin-bottom:8px}
+.reply-card .rcode{font-size:11px;font-weight:700;color:#1a56db;margin-bottom:6px}
+.reply-card .rlang-row{display:flex;align-items:flex-start;padding:4px 0;border-bottom:1px solid #f8fafc;cursor:pointer}
+.reply-card .rlang-row:hover{background:#eff6ff;border-radius:4px}
+.reply-card .rlang-row:last-child{border-bottom:none}
+.reply-card .rlang-tag{font-size:10px;font-weight:600;color:#fff;background:#64748b;padding:1px 6px;border-radius:8px;margin-right:8px;min-width:28px;text-align:center;flex-shrink:0}
+.reply-card .rlang-text{font-size:12px;color:#475569;line-height:1.4;flex:1}
+.reply-empty{padding:20px;text-align:center;color:#94a3b8;font-size:13px}
+.lang-tabs{display:flex;margin-bottom:10px;background:#fff;border-radius:8px;overflow:hidden;border:1px solid #e2e8f0}
+.langtab{flex:1;padding:8px;text-align:center;font-size:12px;font-weight:600;cursor:pointer;color:#64748b;background:#fff;border:none}
+.langtab.active{background:#1a56db;color:#fff}
+.reply-list{background:#fff;border:1px solid #e2e8f0;border-radius:10px;overflow:hidden}
+.reply-item{padding:10px 12px;border-bottom:1px solid #f1f5f9;cursor:pointer;transition:background .1s}
+.reply-item:hover{background:#eff6ff}
+.reply-item:last-child{border-bottom:none}
+.reply-item .rnum{display:inline-block;width:22px;height:22px;background:#1a56db;color:#fff;border-radius:50%;text-align:center;line-height:22px;font-size:11px;font-weight:700;margin-right:8px;flex-shrink:0}
+.reply-item .rtext{font-size:12px;color:#475569;line-height:1.4}
+.add-reply{margin-top:8px}
+.add-reply textarea{width:100%;padding:7px 9px;border:1.5px solid #e2e8f0;border-radius:6px;font-size:12px;resize:vertical;min-height:44px;outline:none}
+.add-reply textarea:focus{border-color:#1a56db}
+.add-reply .add-row{display:flex;gap:6px;margin-top:4px}
+.add-reply select{padding:6px;border:1.5px solid #e2e8f0;border-radius:6px;font-size:12px}
+.add-reply .btn-sm{padding:6px 14px;background:#1a56db;color:#fff;border:none;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer}
+
+/* Order blocks */
+.order-block{border:1px solid #e2e8f0;border-radius:8px;padding:10px;margin-bottom:8px;background:#fafafa}
+.order-block .order-title{display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:700;color:#475569;margin-bottom:6px}
+.order-block .order-remove{font-size:10px;padding:2px 8px;background:#fef2f2;color:#dc2626;border:1px solid #fca5a5;border-radius:4px;cursor:pointer}
+.order-block .order-body{margin-top:4px}
+.order-block input,.order-block textarea{border:1px solid #e2e8f0}
+
+/* Price tags */
+.price-tag{padding:2px 6px;border-radius:4px;font-size:10px;font-weight:600;cursor:pointer;white-space:nowrap}
+.fob-tag{background:#eff6ff;color:#1e40af}
+.ship-tag{background:#fef3c7;color:#92400e}
+.cfr-tag{background:#dcfce7;color:#059669}
+.price-tag:hover{opacity:.8}
+
+/* ===== Attendance bar ===== */
+.att-bar{display:flex;align-items:center;justify-content:space-between;background:#f0fdf4;border:1px solid #86efac;border-radius:8px;padding:8px 12px;margin-bottom:8px}
+.att-bar.weekend{background:#fefce8;border-color:#fde68a}
+.att-bar.offline{background:#fef2f2;border-color:#fca5a5}
+.att-info{display:flex;flex-wrap:wrap;gap:8px;font-size:11px;color:#475569}
+.att-info span{white-space:nowrap}
+.att-logout{padding:4px 10px;background:#ef4444;color:#fff;border:none;border-radius:6px;font-size:11px;font-weight:600;cursor:pointer}
+.att-logout:hover{background:#dc2626}
+
+/* ===== Tools page ===== */
+.tz-bar{display:flex;justify-content:space-around;background:#1a56db;color:#fff;padding:8px 6px;border-radius:8px;margin-bottom:10px;font-size:11px;font-weight:600}
+.tz-bar span{text-align:center}
+.ship-result,.box-result{margin-top:8px}
+
+/* ===== Status ===== */
+.status{text-align:center;padding:8px 12px;font-size:12px;font-weight:600;border-radius:6px;margin-top:8px;display:none}
+.status.show{display:block}
+.status.ok{background:#dcfce7;color:#166534;border:1px solid #86efac}
+.status.err{background:#fef2f2;color:#dc2626;border:1px solid #fca5a5}
+
+/* ===== Bottom Bar ===== */
+.bottom-bar{display:flex;gap:6px;padding:10px 14px;border-top:1px solid #e2e8f0;background:#fff;flex-shrink:0}
+.bottom-bar button{flex:1;padding:9px 4px;font-size:11px;border:1px solid #e2e8f0;border-radius:6px;background:#f8fafc;color:#475569;cursor:pointer;font-weight:600}
+.bottom-bar button:hover{background:#eff6ff;border-color:#1a56db;color:#1a56db}
+
+@keyframes spin{to{transform:rotate(360deg)}}
+.spin{display:inline-block;width:14px;height:14px;border:2px solid #e2e8f0;border-top-color:#1a56db;border-radius:50%;animation:spin .6s linear infinite;vertical-align:middle;margin-right:6px}
+</style>
+</head>
+<body>
+<!-- Login Modal -->
+<div id="loginModal" style="display:flex;position:fixed;top:0;left:0;right:0;bottom:0;background:#f8fafc;z-index:9999;align-items:center;justify-content:center">
+  <div style="width:300px;background:#fff;border-radius:12px;padding:24px;box-shadow:0 4px 24px rgba(0,0,0,0.1)">
+    <div style="text-align:center;margin-bottom:20px">
+      <div style="font-size:32px;margin-bottom:8px">🚛</div>
+      <div style="font-size:16px;font-weight:700;color:#1e293b">XINYUNTONG CRM</div>
+      <div style="font-size:11px;color:#94a3b8">鑫运通中国客户管理系统</div>
+    </div>
+    <div style="margin-bottom:12px">
+      <label style="font-size:11px;color:#64748b;margin-bottom:4px;display:block">手机号</label>
+      <input id="loginPhone" placeholder="输入手机号" style="width:100%;padding:10px;border:1px solid #e2e8f0;border-radius:8px;font-size:14px;box-sizing:border-box">
+    </div>
+    <div style="margin-bottom:16px">
+      <label style="font-size:11px;color:#64748b;margin-bottom:4px;display:block">密码</label>
+      <input id="loginPass" type="password" placeholder="输入密码" style="width:100%;padding:10px;border:1px solid #e2e8f0;border-radius:8px;font-size:14px;box-sizing:border-box">
+    </div>
+    <button id="btnLogin" style="width:100%;padding:12px;background:#1a56db;color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer">🔐 登录</button>
+    <div id="loginErr" style="color:#dc2626;font-size:11px;text-align:center;margin-top:8px;display:none"></div>
+  </div>
+</div>
+
+<div id="mainApp" style="display:none;flex-direction:column;height:100vh">
+<!-- Top Nav -->
+<div class="nav">
+  <button class="navtab active" data-page="customer">📝 客户信息</button>
+  <button class="navtab" data-page="product">🚛 产品</button>
+  <button class="navtab" data-page="quickreply">💬 快捷回复</button>
+  <button class="navtab" data-page="tools">🔧 工具</button>
+</div>
+
+
+
+  
+<!-- ====== PAGE: Customer ====== -->
+<div class="content page active" id="page-customer">
+<!-- 全局搜索 -->
+  <div style="margin:0 14px 8px;padding:8px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px">
+    <div style="display:flex;gap:6px">
+      <input id="searchInput" placeholder="搜客户/手机号/船名/提单号/信用证/合同号/PI编号..." style="flex:1;padding:8px 10px;font-size:12px;border:1px solid #e2e8f0;border-radius:6px;outline:none">
+      <button id="btnGlobalSearch" style="padding:8px 14px;background:#1a56db;color:#fff;border:none;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap">🔍 搜索</button>
+    </div>
+    <div id="searchResults" style="display:none;max-height:300px;overflow:auto;margin-top:8px;border-top:1px solid #e2e8f0;padding-top:6px"></div>
+  </div>
+
+  <!-- Attendance bar -->
+  <div class="att-bar" id="attBar" style="display:none">
+    <div class="att-info">
+      <span id="attUser"></span><span id="attClock"></span><span id="attMsgs"></span><span id="attDuration"></span>
+    </div>
+  <!-- Admin alert: pending orders -->
+  <div id="adminAlert" style="display:none;background:#fef2f2;border:2px solid #dc2626;border-radius:8px;padding:10px 14px;margin-bottom:8px;animation:pulse 2s infinite">
+    <div style="display:flex;align-items:center;justify-content:space-between">
+      <span style="color:#dc2626;font-weight:700;font-size:12px">🔴 <span id="alertCount">0</span> 个订单待处理 — 需要订舱/安排发运</span>
+      <button id="btnDismissAlert" style="background:#dc2626;color:#fff;border:none;border-radius:4px;padding:2px 8px;font-size:10px;cursor:pointer">知道了</button>
+    </div>
+      <span id="attMsgs">💬 0</span>
+    </div>
+    <button class="att-logout" id="btnLogout">下班</button>
+  </div>
+  <div class="card" id="card">
+    <div class="cname" id="cname">—</div>
+    <div class="cphone" id="cphone">—</div>
+    <div class="cmeta" id="cmeta">—</div>
+    <div class="cstatus" id="cstatus" style="display:none"></div>
+  </div>
+
+  <div class="btn-row">
+    <button class="btn btn-primary" id="btnFetch">📥 获取当前客户</button>
+    <button class="btn btn-outline" id="btnFill">✍️ 重新填写</button>
+    <button class="btn btn-outline" id="btnViewChat" style="font-size:11px">📋 聊天历史</button>
+  </div>
+
+  <div class="status" id="status"></div>
+
+
+  
+
+
+  <div class="form-section">
+    <div class="form-row">
+      <div class="fg"><label>名称</label><input id="fname" placeholder="客户名称"></div>
+      <div class="fg"><label>电话</label><input id="fphone" placeholder="+86..." readonly></div>
+    </div>
+    <div class="form-row">
+      <div class="fg"><label>国家</label><input id="fcountry" placeholder="自动识别"></div>
+      <div class="fg"><label>等级</label><select id="flevel"><option value="C" selected>C</option><option value="B">B</option><option value="A">A</option></select></div>
+    </div>
+    <div class="form-row">
+      <div class="fg"><label>公司</label><input id="fcompany" placeholder="公司名称"></div>
+      <div class="fg"><label>邮箱</label><input id="femail" placeholder="email@example.com" type="email"></div>
+    </div>
+    <div class="fg">
+      <div id="ordersContainer">
+        <!-- Order blocks are dynamically managed by JS -->
+      </div>
+      <button class="btn btn-outline" id="btnAddOrder" style="width:100%;font-size:12px;padding:8px">+ 新建订单</button>
+    </div>
+    <div class="fg"><label>备注</label><textarea id="fnotes" placeholder="记录客户需求..." rows="1"></textarea></div>
+    <button class="btn btn-success" style="width:100%" id="btnSave">💾 保存客户信息</button>
+  </div>
+
+</div>
+
+<!-- ====== PAGE: Product ====== -->
+<div class="content page" id="page-product">
+  <div class="form-row" style="margin-top:8px">
+    <div class="fg"><label>品牌</label><select id="brandSelect"><option value="">全部</option></select></div>
+  </div>
+  <input class="search-box" id="countryInput" placeholder="🔍 输入国家名称..." autocomplete="off" style="margin-top:8px">
+  <div class="search-drop" id="countryDrop" style="display:none"></div>
+
+  <div class="form-row" style="margin-top:8px">
+    <div class="fg"><label>车型</label><select id="catSelect"><option value="">全部</option></select></div>
+  </div>
+  <div class="form-row">
+    <div class="fg"><label>驱动</label><select id="driveSelect"><option value="">全部</option></select></div>
+  </div>
+
+  <button class="btn btn-primary" id="btnSearch" style="width:100%;margin-top:6px;padding:10px;font-size:14px">🔍 查询产品</button>
+
+  <div class="product-list" id="productList" style="margin-top:8px">
+    <div class="prod-empty">请选择国家查看产品报价</div>
+  </div>
+  <div class="status" id="pstatus"></div>
+
+</div>
+
+<!-- ====== PAGE: Quick Reply ====== -->
+<div class="content page" id="page-quickreply">
+  <!-- Translate tool -->
+  <div class="form-section" style="margin-bottom:10px">
+    <div style="font-size:13px;font-weight:700;color:#1e293b;margin-bottom:6px">🔄 翻译工具</div>
+    <textarea id="translateInput" placeholder="输入要翻译的文字..." rows="2" style="width:100%;padding:8px;border:1.5px solid #e2e8f0;border-radius:8px;font-size:13px;resize:vertical;min-height:50px;outline:none;font-family:inherit"></textarea>
+    <div style="display:flex;gap:6px;margin-top:6px">
+      <button class="btn btn-primary" id="btnTranslate" style="font-size:12px;flex:1">🔄 翻译</button>
+      <input id="translateCode" placeholder="编号" style="width:50px;padding:6px;border:1.5px solid #e2e8f0;border-radius:6px;font-size:12px;text-align:center;outline:none">
+      <button class="btn btn-outline" id="btnSaveAsReply" style="font-size:11px;white-space:nowrap">💾 存为话术</button>
+    </div>
+    <div id="translateResults" style="margin-top:8px"></div>
+  </div>
+
+  <!-- Reply library -->
+  <div class="form-section">
+    <div style="font-size:13px;font-weight:700;color:#1e293b;margin-bottom:6px">🔍 话术库</div>
+    <input class="search-box" id="replySearch" placeholder="搜索编号或关键词..." autocomplete="off">
+    <div class="reply-list" id="replyList" style="margin-top:8px"></div>
+  </div>
+  <div class="status" id="rstatus"></div>
+</div>
+
+<!-- ====== PAGE: Tools ====== -->
+<div class="content page" id="page-tools">
+  <!-- Timezone bar -->
+  <div class="tz-bar" id="tzBar">
+    <span id="tzDZ">🇩🇿 阿尔及利亚 —</span>
+    <span id="tzNG">🇹🇿 坦桑尼亚 —</span>
+    <span id="tzSA">🇸🇦 沙特 —</span>
+  </div>
+
+  <!-- Currency -->
+  <div class="tz-bar" style="margin-bottom:8px">
+    <span id="fxRate">💵 实时汇率: 1 USD = — CNY</span>
+  </div>
+
+  <!-- CFR 快速计算器 -->
+  <div class="form-section" style="margin-bottom:8px">
+    <h3 style="font-size:13px;font-weight:700;color:#1e293b;margin-bottom:8px">🧮 CFR 快速计算器</h3>
+    <div class="form-row">
+      <div class="fg"><label>FOB 价格 (¥)</label><input id="cfrFob" type="number" placeholder="如 275,000"></div>
+      <div class="fg"><label>汇率</label><input id="cfrRate" value="6.7" type="number" step="0.01"></div>
+    </div>
+    <div class="form-row">
+      <div class="fg"><label>海运费 立方数 (m³)</label><input id="cfrCbm" type="number" step="0.1" placeholder="如 45"></div>
+      <div class="fg"><label>每立方价格 ($)</label><input id="cfrCbmPrice" type="number" placeholder="如 110"></div>
+    </div>
+    <div style="background:#f0fdf4;border:1px solid #86efac;border-radius:8px;padding:12px;margin-top:8px">
+      <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px">
+        <div style="text-align:center;flex:1"><span style="font-size:10px;color:#64748b">FOB</span><br><b style="font-size:14px;color:#475569" id="cfrFobR">$0</b></div>
+        <div style="text-align:center;flex:1"><span style="font-size:10px;color:#64748b">海运费</span><br><b style="font-size:14px;color:#475569" id="cfrFreightR">$0</b></div>
+        <div style="text-align:center;flex:1"><span style="font-size:10px;color:#64748b">单台利润</span><br><b style="font-size:14px;color:#f59e0b" id="cfrProfitR">$1,000</b></div>
+        <div style="text-align:center;flex:1"><span style="font-size:10px;color:#64748b">运费加价</span><br><b style="font-size:14px;color:#f59e0b" id="cfrMarkupR">$500</b></div>
+      </div>
+      <div style="text-align:center;margin-top:10px;padding-top:8px;border-top:1px solid #86efac">
+        <span style="font-size:11px;color:#64748b">💰 CFR 报客户</span><br>
+        <b style="font-size:22px;color:#059669" id="cfrFinal">$0</b>
+        <button class="btn btn-primary" id="btnCalcCFR" style="margin-top:10px;width:100%;font-size:13px">📊 计算 CFR</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 今日总结 -->
+  <div style="margin-top:12px;padding:12px;background:#f0fdf4;border:1px solid #86efac;border-radius:8px">
+    <h3 style="font-size:13px;font-weight:700;color:#166534;margin-bottom:8px">📋 今日总结</h3>
+    <div id="dailySummary" style="font-size:11px;color:#166534;line-height:1.7">
+      <div>🆕 新增客户: <span id="dsNew">-</span></div>
+      <div>🔔 回访: <span id="dsFollow">-</span> 人 / 已回 <span id="dsFollowDone">-</span> 人 / 剩余 <span id="dsFollowLeft" style="color:#dc2626">-</span> 人</div>
+      <div>📄 上传PI: <span id="dsPI">-</span></div>
+      <div>💬 回复消息: <span id="dsReply">-</span></div>
+      <div>🌐 使用翻译: <span id="dsTrans">-</span></div>
+      <div style="margin-top:6px;font-size:10px;color:#64748b">⏰ 首次: <span id="dsFirst">-</span> · 末次: <span id="dsLast">-</span></div>
+    </div>
+    <div id="teamSummary" style="margin-top:8px;padding-top:8px;border-top:1px solid #86efac;display:none;font-size:10px;color:#166534;line-height:1.6"></div>
+  </div>
+
+
+
+
+
+  <div class="status" id="tstatus"></div>
+</div>
+
+<!-- Bottom Bar -->
+<div class="bottom-bar">
+  <button id="btnTranslateChat" style="background:#ecfdf5;border-color:#059669;color:#065f46">🌐 翻译</button>
+  <button id="btnFollowup" style="background:#fef2f2;border-color:#f87171;color:#dc2626;position:relative">🔔 客户回访<span id="followupBadge" style="display:none;position:absolute;top:-4px;right:-4px;background:#dc2626;color:#fff;font-size:9px;border-radius:10px;padding:1px 5px;min-width:16px;text-align:center">0</span></button>
+  <button id="btnAddProduct" style="background:#eff6ff;border-color:#1a56db;color:#1a56db">➕ 产品添加</button>
+  <button id="btnSaveChat" style="background:#fefce8;border-color:#eab308;color:#92400e">💾 保存聊天</button>
+  <button id="btnExportContacts" style="background:#f0fdf4;border-color:#22c55e;color:#166534">📱 A级通讯录</button>
+</div>
+
+<script src="chrome-bridge.js"></script>
+<script src="sidepanel.js"></script>
+<!-- Follow-up Modal -->
+<div id="followupModal" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.7);z-index:999;overflow:auto">
+  <div style="max-width:420px;margin:40px auto;background:#fff;border-radius:12px;overflow:hidden">
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 16px;background:#fef2f2;border-bottom:2px solid #f87171">
+      <span style="font-weight:700;color:#dc2626;font-size:14px">🔔 今日回访 · <span id="modalCount">0</span> 个客户</span>
+      <button id="btnCloseModal" style="background:none;border:none;color:#dc2626;font-size:18px;cursor:pointer;padding:0 4px">&times;</button>
+    </div>
+    <div id="modalList" style="max-height:450px;overflow:auto;padding:8px"></div>
+    <div style="padding:8px 16px;font-size:10px;color:#94a3b8;text-align:center;border-top:1px solid #e2e8f0">双击客户跳转 WhatsApp 聊天</div>
+  </div>
+</div>
+
+
+<!-- Product Add Modal -->
+<div id="productModal" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.7);z-index:999;overflow:auto">
+  <div style="max-width:420px;margin:30px auto;background:#fff;border-radius:12px;overflow:hidden">
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 16px;background:#eff6ff;border-bottom:2px solid #1a56db">
+      <span style="font-weight:700;color:#1a56db;font-size:14px">➕ 添加新产品到服务器</span>
+      <button id="btnCloseProductModal" style="background:none;border:none;color:#1a56db;font-size:18px;cursor:pointer;padding:0 4px">&times;</button>
+    </div>
+    <div style="padding:14px">
+      <div class="form-row">
+        <div class="fg"><label>国家</label><input id="addCountry" placeholder="如 阿尔及利亚"></div>
+        <div class="fg"><label>品牌</label><select id="addBrand"><option value="">选择品牌</option></select></div>
+      </div>
+      <div class="form-row">
+        <div class="fg"><label>车型</label><select id="addCat"><option value="">先选品牌</option></select></div>
+        <div class="fg"><label>驱动形式</label><select id="addDrive"><option value="">选择驱动</option></select></div>
+      </div>
+      <div class="fg"><label>车辆标题</label><input id="addName" placeholder="如 HOWO TX 6x4 430hp 牵引车"></div>
+      <div class="form-row">
+        <div class="fg"><label>FOB价格 $ *必填</label><input id="addFob" type="number" placeholder="如 41100"></div>
+        <div class="fg"><label>海运费 $</label><input id="addShipping" type="number" placeholder="选填"></div>
+      </div>
+      <div class="form-row">
+        <div class="fg"><label>CFR价格 $</label><input id="addCfr" type="number" placeholder="选填"></div>
+        <div class="fg"></div>
+      </div>
+      <div class="fg"><label>配置</label><textarea id="addEngine" placeholder="发动机、变速箱、车桥、轮胎等详细配置..." rows="2" style="resize:vertical;min-height:44px"></textarea></div>
+      <div class="fg"><label>照片 (≤3张)</label>
+        <div style="display:flex;gap:6px;margin-bottom:4px;flex-wrap:wrap" id="addPhotoPreview"></div>
+        <input type="file" id="addPhoto" accept="image/*" multiple style="font-size:11px">
+        <input type="hidden" id="addPhotos">
+      </div>
+      <button class="btn btn-success" id="btnSaveProduct" style="width:100%;margin-top:8px">💾 保存到服务器</button>
+      <div class="status" id="addpStatus"></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- Edit Product Modal -->
+<div id="editProductModal" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.7);z-index:999;overflow:auto">
+  <div style="max-width:420px;margin:30px auto;background:#fff;border-radius:12px;overflow:hidden">
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 16px;background:#fefce8;border-bottom:2px solid #eab308">
+      <span style="font-weight:700;color:#92400e;font-size:14px">✏️ 编辑产品</span>
+      <button id="btnCloseEditModal" style="background:none;border:none;color:#92400e;font-size:18px;cursor:pointer;padding:0 4px">&times;</button>
+    </div>
+    <div style="padding:14px">
+      <input type="hidden" id="editIdx">
+      <div class="form-row">
+        <div class="fg"><label>国家</label><input id="editCountry"></div>
+        <div class="fg"><label>品牌</label><input id="editBrand"></div>
+      </div>
+      <div class="form-row">
+        <div class="fg"><label>车型</label><input id="editCat"></div>
+        <div class="fg"><label>驱动</label><input id="editDrive"></div>
+      </div>
+      <div class="fg"><label>型号/名称</label><input id="editName"></div>
+      <div class="form-row">
+        <div class="fg"><label>FOB</label><input id="editFob"></div>
+        <div class="fg"><label>海运</label><input id="editShipping"></div>
+        <div class="fg"><label>CFR</label><input id="editCfr"></div>
+      </div>
+      <div class="fg"><label>配置</label><textarea id="editConfig" rows="2" style="resize:vertical;min-height:44px"></textarea></div>
+      <div class="fg"><label>照片 (≤3张)</label>
+        <div style="display:flex;gap:6px;margin-bottom:4px;flex-wrap:wrap" id="editPhotoPreview"></div>
+        <input type="file" id="editPhoto" accept="image/*" multiple style="font-size:11px">
+        <input type="hidden" id="editPhotos">
+      </div>
+      <button class="btn btn-success" id="btnSaveEdit" style="width:100%;margin-top:8px">✅ 确定修改</button>
+      <div class="status" id="editpStatus"></div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

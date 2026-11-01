@@ -1,0 +1,452 @@
+{
+  "阿尔及利亚": {
+    "HOWO": {
+      "自卸车": {
+        "6×4": [
+          {
+            "model": "HOWO 6X4自卸车16方",
+            "config": "SINOTRUK HOWO 6X4 TIPPER TRUCK LHD-16 CBM\\nCab: HW76 model, with single sleeper, with AC \\nEngine: WECHAI WP10.340E22, 340PS, Euro II\\nGear box: HW19709XST 9F&1R, With synchronizer and PTO\\nSteering: BOSCH brand\\nFront axle: 9500KGS steering axle with drum brake\\nRear axle: 2*16000KGS axle with drum brake\\nSuspension: Reinforced parabolic multi-leaf springs\\nFuel tank: 400L\\nTire: 315/80R22.5 tubeless, with one spare tire\\nWith ABS(4S/4M)\\nWith EVB\\nWith driver air suspension seat \\n\nTipper body:\nBody Size: 5200x2300x1350mm, 16m³\nBody Thickness: floor 8mm, side 4mm\nFront lifting system, high strength steel",
+            "fob": "$41,600",
+            "shipping": "$4,900",
+            "cfr": "$46,500"
+          },
+          {
+            "model": "HOWO 6X4自卸车18方",
+            "config": "SINOTRUK HOWO 6X4 TIPPER TRUCK LHD-18 CBM\\nCab: HW76 model, with single sleeper, with AC \\nEngine: WECHAI WP10.380E22, 380PS, Euro II\\nGear box: HW19709XST 9F&1R, With synchronizer and PTO\\nSteering: BOSCH brand\\nFront axle: 9500KGS steering axle with drum brake\\nRear axle: 2*16000KGS axle with drum brake\\nSuspension: Reinforced parabolic multi-leaf springs\\nFuel tank: 400L\\nTire: 315/80R22.5 tubeless, with one spare tire\\nWith ABS(4S/4M)\\nWith EVB\\nWith electronic cab-flip system \\nWith driver\nTipper body:\nBody Size: 5600x2300x1400mm, 18m³\nBody Thickness: floor 8mm, side 6mm\nFront lifting system, high strength steel",
+            "fob": "$43,600",
+            "shipping": "$5,300",
+            "cfr": "$48,900"
+          }
+        ],
+        "8×4": [
+          {
+            "model": "HOWO 8X4自卸车22方",
+            "config": "SINOTRUK HOWO 8X4 TIPPER TRUCK LHD -22CBM\\nCab: HW76, with single sleeper\\nWheelbase: 3200mm\\nEngine: WECHAI WP12S400E201, 400PS, EuroⅡemission\\nGearBox: HW19709XST, 9F&1R, With Synchronizer and PTO\\nSteering: BOSCH brand\\nFront axle: 9500kg*2 steering axle with drum brake\\nRear axle:16000kg*2 axle with drum brake\\nSuspension: Reinforced parabolic multi-leaf springs\\nTire: 315/80R22.5 tubeless, with one spare tire\\nFuel tank: 400L\\nCompliance with Algeria regulatory requirements\\nWith Air-condit\nTipper body:\nBody Size: 6500x2300x1500mm, 22.4m³\nBody Thickness: floor 8mm, side 6mm\nFront lifting system, high strength steel",
+            "fob": "$50,800",
+            "shipping": "$6,100",
+            "cfr": "$56,900"
+          },
+          {
+            "model": "HOWO 8X4自卸车货箱长7.6米，36方",
+            "config": "SINOTRUK HOWO 8X4 TIPPER TRUCK LHD\\nCab:HW76 New Front-Face Cab\\nWheelbase: 4200mm\\nEngine: WP12S430E201 Engine EuroⅡemission\\nGearBox:HW19710 + HW50 Direct-Drive Power Take-Off\\nSteering: BOSCH brand\\nFront axle: 9500kg*2 steering axle with drum brake\\nRear axle:16000kg*2 axle with drum brake\\nSuspension: Front and rear reinforced multi-leaf springs\\n(11/11/12)\\nTire: 12.00/R20 Mixed pattern\\nFuel tank: 400L\\nCompliance with Algeria regulatory requirements\\nWith Intercooler Protection Device\\nW\nTipper body:\nBody Size: 7600x2300x1500mm, 36m³\nBody Thickness: floor 8mm, side 6mm\nFront lifting system, high strength steel",
+            "fob": "$50,600",
+            "shipping": "$12,100",
+            "cfr": "$62,700"
+          }
+        ]
+      },
+      "搅拌车": {
+        "6×4": [
+          {
+            "model": "HOWO 6X4搅拌车10方",
+            "config": "SINOTRUK HOWO 6X4 MIXER TRUCK LHD-10 CBM\\nCab: HW76 model, with single sleeper, with AC \\nEngine: WECHAI WP10.380E22, 380PS, Euro II, With PTO\\nGear box: HW19709XST 9F&1R, With synchronizer\\nSteering: BOSCH brand\\nFront axle: 9500KGS steering axle with drum brake\\nRear axle: 2*16000KGS axle with drum brake\\nSuspension: Reinforced parabolic multi-leaf springs\\nFuel tank: 400L\\nTire: 315/80R22.5 tubeless, with one spare tire\\nWith ABS(4S/4M)\\nWith EVB\\nWith electronic cab-flip system \\nWith driver",
+            "fob": "$49,700",
+            "shipping": "$6,600",
+            "cfr": "$56,300"
+          }
+        ],
+        "8×4": [
+          {
+            "model": "HOWO 8X4搅拌车12方",
+            "config": "SINOTRUK HOWO 8X4 MIXER TRUCK LHD -12CBM\\nCab: HW76, with single sleeper\\nWheelbase: 3200mm\\nEngine: WECHAI WP12S400E201, 400PS, EuroⅡemission With PTO\\nGearBox: HW19709XST, 9F&1R, With Synchronizer\\nSteering: BOSCH brand\\nFront axle: 9500kg*2 steering axle with drum brake\\nRear axle:16000kg*2 axle with drum brake\\nSuspension: Reinforced parabolic multi-leaf springs\\nTire: 315/80R22.5 tubeless, with one spare tire\\nFuel tank: 400L\\nCompliance with Algeria regulatory requirements\\nWith Air-condit",
+            "fob": "$56,800",
+            "shipping": "$7,400",
+            "cfr": "$64,200"
+          }
+        ]
+      },
+      "洒水车": {
+        "6×4": [
+          {
+            "model": "HOWO 6X4洒水车22方",
+            "config": "SINOTRUK HOWO 6X4 SPRINKLER TRUCK LHD\\nCab: HW76, with single sleeper\\nWheelbase: 4600mm\\nEngine: WECHAI WP10.340E22, 340PS, EuroⅡ\\nGearBox: HW19709XST,9F&1R, with Synchronizer and PTO\\nSteering : BOSCH brand \\nFront axle: 7000KGS with drum brake \\nRear axle: 16000KGS*2 with drum brake \\nTire: 315/80R22.5 tubeless, with one spare tire\\nFuel tank: 400L\\nCompliance with regulatory requirements\\nWith Air-conditioner，\\nWith ABS \\nWith EVB\\nWith Reversing buzzer,\\nWith Tachograph， \\nwith cruise contr",
+            "fob": "$46,100",
+            "shipping": "$5,500",
+            "cfr": "$51,600"
+          }
+        ]
+      },
+      "随车吊": {
+        "4×2": [
+          {
+            "model": "HOWO 4X2随车吊 8吨",
+            "config": "SINOTRUK HOWO 4X2 TRUCK MOUNTED CRANE LHD\\nCab: HW76, with single sleeper\\nWheelbase: 4600mm\\nEngine: WECHAI WP10.300E22, 300PS, EuroⅡ\\nGearBox: HW19709XST,9F&1R, with Synchronizer and PTO\\nSteering : BOSCH brand \\nFront axle: 7000KGS with drum brake \\nRear axle: 16000KGS with drum brake \\nTire: 315/80R22.5 tubeless, with one spare tire\\nFuel tank: 400L\\nCompliance with regulatory requirements\\nWith Air-conditioner，\\nWith ABS \\nWith EVB\\nWith Reversing buzzer,\\nWith Tachograph， \\nwith cruise con",
+            "fob": "$52,100",
+            "shipping": "$5,300",
+            "cfr": "$57,400"
+          }
+        ]
+      },
+      "油罐车": {
+        "4×2": [
+          {
+            "model": "HOWO 4X2油罐车 12方",
+            "config": "SINOTRUK HOWO 4X2 FUEL TANK TRUCK LHD\\nCab: HW76, with single sleeper\\nWheelbase: 4600mm\\nEngine: WECHAI WP10.300E22, 300PS, EuroⅡ\\nGearBox: HW19709XST,9F&1R, with Synchronizer and PTO\\nSteering : BOSCH brand \\nFront axle: 7000KGS with drum brake \\nRear axle: 16000KGS with drum brake \\nTire: 315/80R22.5 tubeless, with one spare tire\\nFuel tank: 400L\\nCompliance with regulatory requirements\\nWith Air-conditioner，\\nWith ABS \\nWith EVB\\nWith Reversing buzzer,\\nWith Tachograph， \\nwith cruise control",
+            "fob": "$39,600",
+            "shipping": "$4,900",
+            "cfr": "$44,500"
+          }
+        ]
+      },
+      "水泥泵车": {},
+      "消防车": {},
+      "吸污车": {}
+    },
+    "TX/T7H": {
+      "牵引车": {
+        "4×2": [
+          {
+            "model": "T7H 4X2平顶牵引车-13吨后桥",
+            "config": "SINOTRUK HOWO-T7H 4x2 TRACTOR TRUCK LHD\\nCab: T7H–P Cabin with simple sleeper，with AC\\nWheelbase: 3900mm\\nEngine: MC11.43-30,430PS, EuroⅢ(MAN TECHNOLOGY)\\nGear box: HW25712XSTCL,12F& 2R, With synchronizer\\nSteering: BOSCH brand\\nFuel tank: 600L+300L\\nFront axle:7000kgs (MAN TECHNOLOGY)，drum brake\\nRear axle: 13000kgs (MAN TECHNOLOGY)，drum brake\\nTire: 315/80R22.5 tubeless, With one spare tire\\nCompliance with regulatory requirements\\nOthers： \\nWith ABS\\nWith long-life engine diesel filter,\\nWith",
+            "fob": "$39,900",
+            "shipping": "$3,800",
+            "cfr": "$43,700"
+          },
+          {
+            "model": "T7H 4X2平顶牵引车-16吨后桥 （选装液压系统+2000美元）",
+            "config": "SINOTRUK HOWO-T7H 4x2 TRACTOR TRUCK LHD\\nCab: T7H–P Cabin with simple sleeper，with AC\\nWheelbase: 3900mm\\nEngine: MC11.43-30,430PS, EuroⅢ(MAN TECHNOLOGY)\\nGear box: HW25712XSTCL,12F& 2R, With synchronizer\\nSteering: BOSCH brand\\nFuel tank: 600L+300L\\nFront axle:7000kgs (MAN TECHNOLOGY)，drum brake\\nRear axle: 16000kgs (MAN TECHNOLOGY)，drum brake\\nTire: 315/80R22.5 tubeless, With one spare tire\\nCompliance with regulatory requirements\\nOthers： \\nWith ABS\\nWith long-life engine diesel filter,\\nWith",
+            "fob": "$42,300",
+            "shipping": "$3,800",
+            "cfr": "$46,100"
+          }
+        ],
+        "6×4": [
+          {
+            "model": "T7H 6X4平顶牵引车-13吨后桥",
+            "config": "SINOTRUK HOWO-T7H 6X4 TRACTOR TRUCK LHD\\nCab: T7H–P Cabin with simple sleeper，with AC\\nWheelbase: 3400mm\\nEngine: MC11.43-30,430PS, EuroⅢ(MAN TECHNOLOGY)\\nGear box: HW25712XSTCL,12F& 2R, With synchronizer\\nSteering: BOSCH brand\\nFuel tank: 600L+300L\\nFront axle:7000kgs (MAN TECHNOLOGY)，drum brake\\nRear axle: 13000kgs*2 (MAN TECHNOLOGY)，drum brake\\nTire: 315/80R22.5 tubeless, With one spare tire\\nCompliance with regulatory requirements\\nOthers： \\nWith ABS\\nWith long-life engine diesel filter,\\nWi",
+            "fob": "$44,900",
+            "shipping": "$4,200",
+            "cfr": "$49,100"
+          },
+          {
+            "model": "T7H 6X4高顶牵引车-13吨后桥",
+            "config": "SINOTRUK HOWO-T7H 6X4 TRACTOR TRUCK LHD\\nCab: T7H–G Cabin with double sleeper，with AC\\nWheelbase: 3400mm\\nEngine: MC11.43-30,430PS, EuroⅢ(MAN TECHNOLOGY)\\nGear box: HW25712XSTCL,12F& 2R, With synchronizer\\nSteering: BOSCH brand\\nFuel tank: 600L+300L\\nFront axle:7000kgs (MAN TECHNOLOGY)，drum brake\\nRear axle: 13000kgs*2 (MAN TECHNOLOGY)，drum brake\\nTire: 315/80R22.5 tubeless, With one spare tire\\nCompliance with regulatory requirements\\nOthers： \\nWith ABS\\nWith long-life engine diesel filter,\\nWi",
+            "fob": "$45,300",
+            "shipping": "$4,800",
+            "cfr": "$50,100"
+          },
+          {
+            "model": "T7H 6X4平顶牵引车-16吨后桥 （选装液压系统+2000美元）",
+            "config": "SINOTRUK HOWO-T7H 6X4 TRACTOR TRUCK LHD\\nCab: T7H–P Cabin with simple sleeper，with AC\\nWheelbase: 3400mm\\nEngine: MC11.43-30,430PS, EuroⅢ(MAN TECHNOLOGY)\\nGear box: HW25712XSTCL,12F& 2R, With synchronizer and PTO\\nSteering: BOSCH brand\\nFuel tank: 600L+300L\\nFront axle:9000kgs (MAN TECHNOLOGY)，drum brake\\nRear axle: 16000kgs*2 (MAN TECHNOLOGY)，drum brake\\nTire: 315/80R22.5 tubeless, With one spare tire\\nCompliance with regulatory requirements\\nOthers： \\nWith ABS\\nWith long-life engine diesel fil",
+            "fob": "$47,900",
+            "shipping": "$4,200",
+            "cfr": "$52,100"
+          },
+          {
+            "model": "T7H 6X4高顶牵引车-16吨后桥 （选装液压系统+2000美元）",
+            "config": "SINOTRUK HOWO-T7H 6X4 TRACTOR TRUCK LHD\\nCab: T7H–G Cabin with double sleeper，with AC\\nWheelbase: 3400mm\\nEngine: MC11.43-30,430PS, EuroⅢ(MAN TECHNOLOGY)\\nGear box: HW25712XSTCL,12F& 2R, With synchronizer and PTO\\nSteering: BOSCH brand\\nFuel tank: 600L+300L\\nFront axle:9000kgs (MAN TECHNOLOGY)，drum brake\\nRear axle: 16000kgs*2 (MAN TECHNOLOGY)，drum brake\\nTire: 315/80R22.5 tubeless, With one spare tire\\nCompliance with regulatory requirements\\nOthers： \\nWith ABS\\nWith long-life engine diesel fil",
+            "fob": "$48,300",
+            "shipping": "$5,000",
+            "cfr": "$53,300"
+          }
+        ]
+      },
+      "自卸车": {
+        "6×4": [
+          {
+            "model": "TX 6X4自卸车16方",
+            "config": "SINOTRUK HOWO TX 6X4 TIPPER TRUCK LHD-16 CBM\\nCab: TX-F cabin, with single sleeper, with AC \\nEngine: WECHAI WP10.340E22, 340PS, Euro II\\nGear box: HW19709XST 9F&1R, With synchronizer and PTO\\nSteering: BOSCH brand\\nFront axle: 9500KGS steering axle with drum brake\\nRear axle: 2*16000KGS axle with drum brake\\nSuspension: Reinforced parabolic multi-leaf springs\\nFuel tank: 400L\\nTire: 315/80R22.5 tubeless, with one spare tire\\nWith ABS(4S/4M)\\nWith EVB\\nWith driver air suspension seat \\nWith fron\nTipper body:\nBody Size: 5200x2300x1350mm, 16m³\nBody Thickness: floor 8mm, side 6mm\nFront lifting system, high strength steel",
+            "fob": "$45,100",
+            "shipping": "$4,900",
+            "cfr": "$50,000"
+          },
+          {
+            "model": "TX 6X4自卸车18方",
+            "config": "SINOTRUK HOWO TX 6X4 TIPPER TRUCK LHD-18 CBM\\nCab: TX-F cabin, with single sleeper, with AC \\nEngine: WECHAI WP10.380E22, 380PS, Euro II\\nGear box: HW19709XST 9F&1R, With synchronizer and PTO\\nSteering: BOSCH brand\\nFront axle: 9500KGS steering axle with drum brake\\nRear axle: 2*16000KGS axle with drum brake\\nSuspension: Reinforced parabolic multi-leaf springs\\nFuel tank: 400L\\nTire: 315/80R22.5 tubeless, with one spare tire\\nWith ABS(4S/4M)\\nWith EVB\\nWith electronic cab-flip system \\nWith driv\nTipper body:\nBody Size: 5600x2300x1500mm, 18m³\nBody Thickness: floor 8mm, side 6mm\nHYVA lifting cylinder, high strength steel",
+            "fob": "$46,100",
+            "shipping": "$5,300",
+            "cfr": "$51,400"
+          }
+        ],
+        "8×4": [
+          {
+            "model": "TX 8X4自卸车22方",
+            "config": "SINOTRUK HOWO TX 8X4 TIPPER TRUCK LHD -22CBM\\nCab: TX-F cabin, with single sleeper\\nWheelbase: 3200mm\\nEngine: WECHAI WP12S400E201, 400PS, EuroⅡemission\\nGearBox: HW19709XST, 9F&1R, With Synchronizer and PTO\\nSteering: BOSCH brand\\nFront axle: 9500kg*2 steering axle with drum brake\\nRear axle:16000kg*2 axle with drum brake\\nSuspension: Reinforced parabolic multi-leaf springs\\nTire: 315/80R22.5 tubeless, with one spare tire\\nFuel tank: 400L\\nCompliance with Algeria regulatory requirements\\nWith A\nTipper body:\nBody Size: 6500x2300x1500mm, 22.4m³\nBody Thickness: floor 8mm, side 6mm\nHYVA front lifting cylinder, high strength steel",
+            "fob": "$53,600",
+            "shipping": "$6,100",
+            "cfr": "$59,700"
+          }
+        ]
+      },
+      "搅拌车": {
+        "6×4": [
+          {
+            "model": "TX 6X4搅拌车10方",
+            "config": "SINOTRUK HOWO 6X4 MIXER TRUCK LHD-10 CBM\\nCab: TX-F cabin with single sleeper, with AC \\nEngine: WECHAI WP10.380E22, 380PS, Euro II, With PTO\\nGear box: HW19709XST 9F&1R, With synchronizer\\nSteering: BOSCH brand\\nFront axle: 9500KGS steering axle with drum brake\\nRear axle: 2*16000KGS axle with drum brake\\nSuspension: Reinforced parabolic multi-leaf springs\\nFuel tank: 400L\\nTire: 315/80R22.5 tubeless, with one spare tire\\nWith ABS(4S/4M)\\nWith EVB\\nWith electronic cab-flip system \\nWith driver ",
+            "fob": "$52,100",
+            "shipping": "$6,800",
+            "cfr": "$58,900"
+          }
+        ]
+      },
+      "洒水车": {
+        "6×4": [
+          {
+            "model": "TX 6X4洒水车22方",
+            "config": "SINOTRUK HOWO TX 6X4 SPRINKLER TRUCK LHD\\nCab: TX-F cabin, with single sleeper\\nWheelbase: 4600mm\\nEngine: WECHAI WP10.340E22, 340PS, EuroⅡ\\nGearBox: HW19709XST,9F&1R, with Synchronizer and PTO\\nSteering : BOSCH brand \\nFront axle: 7000KGS with drum brake \\nRear axle: 16000KGS*2 with drum brake \\nTire: 315/80R22.5 tubeless, with one spare tire\\nFuel tank: 400L\\nCompliance with regulatory requirements\\nWith Air-conditioner，\\nWith ABS \\nWith EVB\\nWith Reversing buzzer,\\nWith Tachograph， \\nwith cru",
+            "fob": "$48,900",
+            "shipping": "$5,500",
+            "cfr": "$54,400"
+          }
+        ]
+      },
+      "随车吊": {
+        "4×2": [
+          {
+            "model": "TX 4X2随车吊 8吨",
+            "config": "SINOTRUK HOWO TX 4X2 TRUCK MOUNTED CRANE LHD\\nCab: TX-F cabin, with single sleeper\\nWheelbase: 4600mm\\nEngine: WECHAI WP10.300E22, 300PS, EuroⅡ\\nGearBox: HW19709XST,9F&1R, with Synchronizer and PTO\\nSteering : BOSCH brand \\nFront axle: 7000KGS with drum brake \\nRear axle: 16000KGS with drum brake \\nTire: 315/80R22.5 tubeless, with one spare tire\\nFuel tank: 400L\\nCompliance with regulatory requirements\\nWith Air-conditioner，\\nWith ABS \\nWith EVB\\nWith Reversing buzzer,\\nWith Tachograph， \\nwith c",
+            "fob": "$54,600",
+            "shipping": "$5,300",
+            "cfr": "$59,900"
+          }
+        ],
+        "6×4": [
+          {
+            "model": "TX 6X4随车吊12吨",
+            "config": "SINOTRUK HOWO-TX 6X4 TRUCK\\nMOUNTED CRANE\\nZZ1257N464GB1\\nBrand: HOWO; Application: Truck\\nDrive Axle: MCX16ZG Dual Rear Axle\\n(Drum)\\nFrame: Double-layer frame (8+5/300)\\nSuspension: Standard front and rear multi_x0002_leaf springs (10/12)\\nTransmission: HW19709XST transmission +\\nHW70 flange-mounted power take-off\\nEngine: WP10.340E22, EuroⅡ\\nCab: TX-F cab\\nTires: 315/80R22.5 (front longitudinal\\ntread/rear block tread/18PR/spare tire)\\nABS: 4S/4M\\nSpeed Ratio: 4.803\\nBumper: High-mounted bump",
+            "fob": "$69,500",
+            "shipping": "$10,800",
+            "cfr": "$80,300"
+          }
+        ]
+      },
+      "油罐车": {
+        "4×2": [
+          {
+            "model": "TX 4X2油罐车 12方",
+            "config": "SINOTRUK HOWO TX 4X2 FUEL TANK TRUCK LHD\\nCab: TX-F cabin, with single sleeper\\nWheelbase: 4600mm\\nEngine: WECHAI WP10.300E22, 300PS, EuroⅡ\\nGearBox: HW19709XST,9F&1R, with Synchronizer and PTO\\nSteering : BOSCH brand \\nFront axle: 7000KGS with drum brake \\nRear axle: 16000KGS with drum brake \\nTire: 315/80R22.5 tubeless, with one spare tire\\nFuel tank: 400L\\nCompliance with regulatory requirements\\nWith Air-conditioner，\\nWith ABS \\nWith EVB\\nWith Reversing buzzer,\\nWith Tachograph， \\nwith cruis",
+            "fob": "$42,600",
+            "shipping": "$4,900",
+            "cfr": "$47,500"
+          }
+        ],
+        "6×4": [
+          {
+            "model": "TX 6X4油罐车 20方",
+            "config": "SINOTRUK HOWO TX 6X4 FUEL TANK TRUCK LHD\\nCab: TX-F cabin, with single sleeper\\nWheelbase: 4625mm\\nEngine: WP10.340E22, 340PS, EuroⅡ\\nGearBox: HW19709XST Transmission + HW70 Flange- Mounted Power Take-Off\\nSteering : BOSCH brand\\nFront axle: 7000KGS with drum brake\\nRear axle: 16000KGS *2with drum brake\\nTire: 315/80R22.5 tubeless, with one spare tire\\nFuel tank: 400L\\nCompliance with regulatory requirements\\nWith Air-conditioner，\\nWith ABS\\nWith EVB\\nWith Reversing buzzer, With Tachograph，\\nwit",
+            "fob": "$46,300",
+            "shipping": "$9,600",
+            "cfr": "$55,900"
+          }
+        ]
+      },
+      "载货车": {
+        "4×2": [
+          {
+            "model": "TX 4X2载货车底盘 47轴距",
+            "config": "SINOTRUK HOWO TX 4X2 CARGO TRUCK CHASSIS LHD\\nCab: TX-M model, with single small sleeper, with AC  \\nWheelbase: 4700mm\\nEngine: SINOTRUK MC07.28-30, 280hp EURO III emission \\nGear box: HW13709XSTC2, Manual type with synchronizer and PTO, 9 F and 1 R\\nSteering: BOSCH brand\\nFront axle: 7000kg, steering axle with drum brake \\nRear axle: 13000kg, driving axle with drum brake\\n(MAN TECHNOLOGY AXLE)\\nSuspension: Reinforced parabolic leaf springs\\nFuel tank: single tanker with capacity 400L\\nTire: 315",
+            "fob": "$33,400",
+            "shipping": "$4,600",
+            "cfr": "$38,000"
+          },
+          {
+            "model": "TX 4X2载货车底盘 62轴距",
+            "config": "SINOTRUK HOWO TX 4X2 CARGO TRUCK CHASSIS LHD\\nCab: TX-M model, with single small sleeper, with AC  \\nWheelbase: 6200mm\\nEngine: SINOTRUK MC07.28-30, 280hp EURO III emission \\nGear box: HW13709XSTC2, Manual type with synchronizer and PTO, 9 F and 1 R\\nSteering: BOSCH brand\\nFront axle: 7000kg, steering axle with drum brake \\nRear axle: 13000kg, driving axle with drum brake\\n(MAN TECHNOLOGY AXLE)\\nSuspension: Reinforced parabolic leaf springs\\nFuel tank: single tanker with capacity 400L\\nTire: 315",
+            "fob": "$34,600",
+            "shipping": "$5,700",
+            "cfr": "$40,300"
+          }
+        ]
+      },
+      "冷藏车": {
+        "4×2": [
+          {
+            "model": "TX4x2冷藏车47轴距",
+            "config": "SINOTRUK HOWO TX 4X2 VAN TRUCK LHDCab: TX-M model, with single small sleeper, with ACWheelbase: 4700mm\\nEngine: SINOTRUK MC07.28-30, 280hp EURO III emissionGear box: HW13709XSTC2, Manual type with synchronizer andPTO, 9 F and 1 R\\nSteering: BOSCH brand\\nFront axle: 7000kg, steering axe with drum brakeRear axle: 13000kg, driving axle with drum brake(MAN TECHNOLOGY AXLE)\\nSuspension: Reinforced parabolic leaf springsFuel tank: single tanker with capacity 400LTire: 315/80R22.5 tubeless, With one sp",
+            "fob": "$41,100",
+            "shipping": "$8,600",
+            "cfr": "$49,700"
+          }
+        ]
+      },
+      "厢式车": {
+        "4×2": [
+          {
+            "model": "TX4x2厢式车47轴距",
+            "config": "SINOTRUK HOWO TX 4X2 VAN TRUCK LHDCab: TX-M model, with single small sleeper, with ACWheelbase: 4700mm\\nEngine: SINOTRUK MC07.28-30, 280hp EURO III emissionGear box: HW13709XSTC2, Manual type with synchronizer andPTO, 9 F and 1 R\\nSteering: BOSCH brand\\nFront axle: 7000kg, steering axe with drum brakeRear axle: 13000kg, driving axle with drum brake(MAN TECHNOLOGY AXLE)\\nSuspension: Reinforced parabolic leaf springsFuel tank: single tanker with capacity 400LTire: 315/80R22.5 tubeless, With one sp",
+            "fob": "$37,500",
+            "shipping": "$9,400",
+            "cfr": "$46,900"
+          }
+        ]
+      },
+      "水泥泵车": {},
+      "消防车": {},
+      "吸污车": {}
+    },
+    "SITRAK": {
+      "牵引车": {
+        "4×2": [
+          {
+            "model": "SITRAK-4X2牵引车 G7-P单卧铺-430马力-手动挡- 标载版-板簧悬架",
+            "config": "SINOTRUK SITRAK 4x2 TRACTOR-MANUAL GEARBOX LHD\nCab: G7–P Cabin with simple Sleeper\nWheelbase: 3900mm\nChassis frame: GERMANY MAN TGA\nEngine: MC11.43-30, 430PS, Euro III, (GERMANY MAN TECHNOLOGY)\nGear box: ZF16S2231TO, 16F&2R, manual gearbox, with ZF PTO and retarder\nSteering: BOSCH brand\nFront axle: 7000kgs disc brake\nRear axle: 13000kgs axle with drum brake single reduction\nSuspension: Front/Rear leaf springs (3//5)\nFuel tank: double tankers with capacity 860L+400L\nTire: 315/80R22.5 t",
+            "fob": "$53,800",
+            "shipping": "$5,900",
+            "cfr": "$59,700"
+          },
+          {
+            "model": "SITRAK-4X2牵引车 G7-P单卧铺-430马力-自动挡- 标载版-板簧悬架",
+            "config": "SINOTRUK SITRAK 4x2 TRACTOR-AUTOMATIC GEARBOX LHD\nCab: G7-P Cabin with simple Sleeper\nWheelbase: 3900mm\nChassis frame: GERMANY MAN TGA\nEngine: MC11.43-30, 430PS, Euro III, (GERMANY MAN TECHNOLOGY)\nGear box: ZF12TX2621 TD, 12F&2R, automatic gearbox, with ZF PTO and retarder\nSteering: BOSCH brand\nFront axle: 7000kgs disc brake\nRear axle: 13000kgs axle with drum brake single reduction\nSuspension: Front/Rear leaf springs (3//5)\nFuel tank: double tankers with capacity 860L+400L\nTire: 315/8",
+            "fob": "$57,100",
+            "shipping": "$5,900",
+            "cfr": "$63,000"
+          },
+          {
+            "model": "SITRAK-4X2牵引车       G7S-P单卧铺-480马力-自动挡-标载版-板簧悬架",
+            "config": "SINOTRUK SITRAK 4x2 TRACTOR-AUTOMATIC GEARBOX LHD\nCab: G7S-P Cabin with simple Sleeper\nWheelbase: 3900mm\nChassis frame: GERMANY MAN TGA\nEngine: MC13.48-30, 480PS, Euro III, (GERMANY MAN TECHNOLOGY)\nGear box: ZF12TX2621 TD, 12F&2R, automatic gearbox, with ZF PTO and retarder\nSteering: BOSCH brand\nFront axle: 7000kgs drum brake\nRear axle: 16000kgs axle with drum brake \nSuspension: Front/Rear leaf springs (3/9+6)\nFuel tank: double tankers with capacity 860L+400L\nTire: 315/80R22.5 tubeles",
+            "fob": "$63,100",
+            "shipping": "$5,900",
+            "cfr": "$69,000"
+          },
+          {
+            "model": "SITRAK-4X2牵引车 G7S-E双卧铺(新内饰)- 480马力-自动挡-标载版-空气悬架",
+            "config": "SINOTRUK SITRAK 4x2 TRACTOR TRUCK-AUTOMATIC \nGEARBOX LHD- AIR SUSPENSION\nCab: G7S-E Cabin with double Sleepers,\nWheelbase: 3900mm\nChassis frame: GERMANY MAN TGA\nEngine: MC13.48-30, 480PS, Euro III, \n(GERMANY MAN TECHNOLOGY)\nGear box: ZF12TX2621 TD, 12F&2R, automatic gearbox, and retarder\nSteering: BOSCH brand\nFront axle: 7000kgs disc brake\nRear axle: 13000kgs axle with disc brake single reduction\nWith EBS+ESC\nSuspension: Front leaf spring and rear Air suspension\nFuel tank: double ta",
+            "fob": "$64,700",
+            "shipping": "$6,300",
+            "cfr": "$71,000"
+          }
+        ],
+        "6×4": [
+          {
+            "model": "SITRAK-6X4牵引车 G7-P 单卧铺 -手动挡-标运-板簧悬架-430CV",
+            "config": "SINOTRUK SITRAK 6x4 TRACTOR-MANUAL GEARBOX LHD\nCab: G7–P Cabin with single sleeper\nWheelbase: 3600mm\nChassis frame: GERMANY MAN TGA\nEngine: MC11.43-30, 430PS, Euro III, (GERMANY MAN TECHNOLOGY)\nGear box: ZF16S2231TO, 16F&2R , manual gearbox，with ZF PTO and retarder\nSteering: BOSCH brand\nFront axle: 7000kgs disc brake\nRear axle: 13000kgs*2 axle with drum brake single reduction \nSuspension: Front/Rear leaf springs (3//5)\nFuel tank: double tankers with capacity 860L+500L\nTire: 315/80R22.",
+            "fob": "$57,300",
+            "shipping": "$6,700",
+            "cfr": "$64,000"
+          },
+          {
+            "model": "SITRAK-6X4牵引车 G7-P 单卧铺-手动挡-载重-板簧悬架-430CV",
+            "config": "SINOTRUK SITRAK-G7 6x4 TRACTOR TRUCK LHD- Manual Gearbox- Heavy Load\nCab: G7–P Cabin with simple sleeper, with AC\nWheelbase: 3600mm\nEngine: MC11.43-30,430PS, EuroⅢ(GERMAN TECHNOLOGY)\nGear box: ZF16S2230 TO, 16F& 2R, With ZF PTO, Manual\nSteering: BOSCH brand\nFuel tank: 860L+360L\nFront axle: 9500kg (GERMAN TECHNOLOGY)，drum brake\nRear axle: 2*16000kg (GERMAN TECHNOLOGY)，drum brake\nSuspension: Front/Rear parabolic leaf springs（9/12)\nTire: 315/80R22.5 tubeless tire, With one spare tire\nTir",
+            "fob": "$58,600",
+            "shipping": "$6,700",
+            "cfr": "$65,300"
+          },
+          {
+            "model": "SITRAK-6X4牵引车 G7-P 单卧铺-手动挡-标运-板簧悬架-480CV",
+            "config": "SINOTRUK SITRAK 6x4 TRACTOR-MANUAL GEARBOX LHD\nCab: G7–P Cabin with single sleeper\nWheelbase: 3600mm\nChassis frame: GERMANY MAN TGA\nEngine: MC13.48-30, 480PS, Euro III, (GERMANY MAN TECHNOLOGY)\nGear box: ZF16S2531TO, 16F&2R , manual gearbox，with ZF PTO and retarder\nSteering: BOSCH brand\nFront axle: 7000kgs disc brake\nRear axle: 13000kgs*2 axle with drum brake single reduction \nSuspension: Front/Rear leaf springs (3//12)\nFuel tank: double tankers with capacity 860L+500L\nTire: 315/80R22",
+            "fob": "$58,500",
+            "shipping": "$6,700",
+            "cfr": "$65,200"
+          },
+          {
+            "model": "SITRAK-6X4牵引车 G7-P 单卧铺-自动挡-标运-板簧悬架-480CV",
+            "config": "SINOTRUK SITRAK 6X4 TRACTOR-AUTOMATIC GEARBOX LHD\nCab: G7–P Cabin with single sleeper\nWheelbase: 3600mm\nChassis frame: GERMANY MAN TGA\nEngine: MC13.48-30, 480PS, Euro III, (GERMANY MAN TECHNOLOGY)\nGear box: ZF12TX2621 TD, 12F&2R , automatic gearbox，with ZF PTO and retarder\nSteering: BOSCH brand\nFront axle: 7000kgs disc brake\nRear axle: 13000kgs*2 axle with drum brake single reduction \nSuspension: Front/Rear leaf springs (3//12)\nFuel tank: double tankers with capacity 860L+500L\nTire: 3",
+            "fob": "$65,300",
+            "shipping": "$6,700",
+            "cfr": "$72,000"
+          },
+          {
+            "model": "SITRAK-6X4牵引车 G7-P 单卧铺-手动挡-载重-板簧悬架-480CV",
+            "config": "SINOTRUK SITRAK 6x4 TRACTOR FOR HEAVY LOAD DESERT TRANSPORTATION – MANUAL GEARBOX LHD \nCab: G7-P Cabin with simple Sleeper\nWheelbase: 3600mm\nChassis frame: Reinforced chassis-partial three-layers frame\nEngine: MC13.48-30, 480PS, Euro III, \n(GERMANY MAN TECHNOLOGY)\nGear box: ZF16S2531 TO, 16F&2R, with ZF PTO and retarder\nSteering: BOSCH brand\nFront axle: 9000kgs drum brake\n(GERMANY MAN TECHNOLOGY)\nRear axle: 16000kgs*2 drum brake double reduction\n(GERMANY MAN TECHNOLOGY)\nSuspension: F",
+            "fob": "$59,600",
+            "shipping": "$6,700",
+            "cfr": "$66,300"
+          },
+          {
+            "model": "SITRAK-6X4牵引车 G7-G 双卧铺-手动挡-标运-板簧悬架-480CV",
+            "config": "SINOTRUK SITRAK 6x4 TRACTOR-MANUAL GEARBOX LHD\nCab:G7–G Cabin with double sleeper\nWheelbase: 3600mm\nChassis frame: GERMANY MAN TGA\nEngine: MC13.48-30, 480PS, Euro III, (GERMANY MAN TECHNOLOGY)\nGear box: ZF16S2531 TO, 16F&2R , manual gearbox，with ZF PTO and retarder\nSteering: BOSCH brand\nFront axle: 7000kgs disc brake\nRear axle: 13000kgs*2 axle with drum brake single reduction \nSuspension: Front/Rear leaf springs (3//12)\nFuel tank: double tankers with capacity 860L+500L\nTire: 315/80R22",
+            "fob": "$59,100",
+            "shipping": "$7,300",
+            "cfr": "$66,400"
+          },
+          {
+            "model": "SITRAK-6X4牵引车 G7-G 双卧铺-手动挡-载重-板簧悬架-480CV",
+            "config": "SINOTRUK SITRAK 6x4 TRACTOR-MANUAL GEARBOX LHD\nCab:G7–G Cabin with double sleeper\nWheelbase: 3600mm\nEngine: MC13.48-30, 480PS, Euro III, (GERMANY MAN TECHNOLOGY)\nGear box: ZF16S2531 TO, 16F&2R , manual gearbox，with ZF PTO and retarder\nSteering: BOSCH brand\nFront axle: 9500kgs drum brake\nRear axle: 16000kgs*2 axle with drum brake single reduction \nSuspension: Front/Rear leaf springs (9//12)\nFuel tank: double tankers with capacity 860L+360L\nTire: 315/80R22.5 tubeless, With one spare tire",
+            "fob": "$60,200",
+            "shipping": "$7,300",
+            "cfr": "$67,500"
+          },
+          {
+            "model": "SITRAK-6X4牵引车 G7S-P 单卧铺-自动挡-载重-板簧悬架-480马力（新内饰）",
+            "config": "SINOTRUK SITRAK G7S 6X4 TRACTOR-AUTOMATIC GEARBOX LHD\nCab: G7S-P Cabin with simple Sleeper \nChassis frame:  Reinforced chassis-partial three-layers frame\nEngine: MC13.48-30, 480PS, Euro III, (GERMANY MAN TECHNOLOGY)\nGear box:  ZF12TX2621 TD, 12F&2R , with ZF PTO and retarder\nSteering: BOSCH brand\nFront axle: 9000kgs drum brake\nRear axle: 16000kgs *2 double axle with drum brake \nSuspension: Front/Rear parabolic leaf springs（9/12）\nFuel tank: double tankers with capacity 860L+360L\nTire: 3",
+            "fob": "$67,300",
+            "shipping": "$6,700",
+            "cfr": "$74,000"
+          },
+          {
+            "model": "SITRAK-6X4牵引车 G7S-E 双卧铺-自动挡-载重-板簧悬架-480马力（新内饰）",
+            "config": "SINOTRUK SITRAK G7S 6X4 TRACTOR-AUTOMATIC GEARBOX LHD\nCab: G7S–E Cabin with two Sleepers\nChassis frame:  Reinforced chassis-partial three-layers frame\nEngine: MC13.48-30, 480PS, Euro III, (GERMANY MAN TECHNOLOGY)\nGear box:  ZF12TX2621 TD, 12F&2R , with ZF PTO and retarder\nSteering: BOSCH brand\nFront axle: 9000kgs drum brake\nRear axle: 16000kgs *2 double axle with drum brake \nSuspension: Front/Rear parabolic leaf springs（9/12）\nFuel tank: double tankers with capacity 860L+360L\nTire: 315/",
+            "fob": "$68,300",
+            "shipping": "$7,600",
+            "cfr": "$75,900"
+          },
+          {
+            "model": "SITRAK-6X4牵引车 G7S-E 双卧铺-自动挡-标载-空气悬架-540马力（新内饰）",
+            "config": "SINOTRUK SITRAK 6X4 TRACTOR-AUTOMATIC GEARBOX LHD\nCab: G7S-E Cabin with double sleeper\nChassis frame: GERMANY MAN TGA\nEngine: MC13.54-30,540PS, EURO III\n(GERMANY MAN TECHNOLOGY)\nGear box: ZF12TX2621 TD, 12F&2R , automatic gearbox，with ZF PTO and retarder\nSteering: BOSCH brand\nFront axle: 7000kgs disc brake\n(GERMANY MAN TECHNOLOGY)\nRear axle: 13000kgs*2 axle with drum brake single reduction\n(GERMANY MAN TECHNOLOGY) \nSuspension: Front leaf springs and rear air suspension (3/-/-)\nFuel t",
+            "fob": "$67,400",
+            "shipping": "$7,600",
+            "cfr": "$75,000"
+          },
+          {
+            "model": "SITRAK-6X4牵引车 G7S-E 双卧铺-自动挡-标载-钢板悬架-540马力（新内饰）",
+            "config": "SINOTRUK SITRAK 6X4 TRACTOR-AUTOMATIC GEARBOX\nLHD\nCab: G7S-E Cabin with double sleeper\nChassis frame: GERMANY MAN TGA\nEngine: MC13.54-30,540PS, EUROIll\n'GERMANY MAN TECHNOLOGY)\nGear box: ZF12TX2621 TD,12F&2R, automatic gearbox,\nwith ZF PTO and retarder \nSteering: BOSCH brand\nFront axle: 7000kgs disc brake\n'GERMANY MAN TECHNOLOGY)\nRear axle: 13000kgs*2 axle with drum brake single reduction\n'GERMANY MAN TECHNOLOGY)\nsuspension: Front/Rear parabolic leaf springs (3/5)\nFuel tank: double",
+            "fob": "$66,400",
+            "shipping": "$7,600",
+            "cfr": "$74,000"
+          }
+        ]
+      },
+      "自卸车": {
+        "6×4": [
+          {
+            "model": "SITRAK-6X4 自卸车 G7-P-单卧铺-手动挡-重载-板簧悬架-430马力",
+            "config": "SINOTRUK SITRAK 6X4 TIPPER TRUCK LHD-MANUAL GEARBOX\nCab: G7–M Cabin with one small sleeper\nWheelbase: 3600mm\nEngine: MC11.43-30, 430PS, Euro III \n(GERMAN MAN TECHNOLOGY)\nGear box: ZF16S2230 TO, 16F&2R, manual gearbox ，with ZF PTO \nSteering: BOSCH brand\nFront axle: 9500kg, drum brake\n(GERMAN MAN TECHNOLOGY)\nRear axle:16000kg*2, drum brake, double reduction\n(GERMAN MAN TECHNOLOGY)\nFuel tank: 400L\nTire: 315/80R22.5 tubeless, With one spare tire\nTire brand：GOODYEAR\nTipper body: \nHYVA ",
+            "fob": "$60,800",
+            "shipping": "$7,900",
+            "cfr": "$68,700"
+          }
+        ],
+        "8×4": [
+          {
+            "model": "SITRAK-8X4 自卸车 G7-P-单卧铺-手动挡-重载-板簧悬架-430马力",
+            "config": "SINOTRUK SITRAK 8X4 TIPPER TRUCK LHD-MANUAL GEARBOX\nCab: G7–M Cabin with one small sleeper\nWheelbase: 3000mm\nEngine: MC11.43-30, 430PS, Euro III\n(MAN TECHNOLOGY)\nGear box: ZF16S2230TO 16F&2R, manual gearbox, With synchronizer, with ZF PTO\nSteering: BOSCH brand\nFront axle: 9500kg*2, drum brake\n(MAN TECHNOLOGY)\nRear axle:16000kg*2, drum brake, double reduction \n(MAN TECHNOLOGY)\nTire: 315/80R22.5 tubeless, With one spare tire\nTire brand: GOODYEAR brand\nFuel tank: 400L\nTipper body: \nH",
+            "fob": "$62,400",
+            "shipping": "$9,100",
+            "cfr": "$71,500"
+          },
+          {
+            "model": "\"SITRAK-8X4 自卸车 G7-P-单卧铺-自动挡-重载-板簧悬架-480马力\"",
+            "config": "SINOTRUK SITRAK 8X4 TIPPER TRUCKLHD-AUTOMATIC GEARBOXCab:G7-MCabin with one small sleeper[Wheelbase:3200mmEngine:MC13.48-30,480PS,EuroIlMANTECHNOLOGY)\nGeurbox-ZF12TX2621TDAutomnticgearbox,Withsynchronizer, with\nZF PTO WTTH RETARDER\nSteering:BOSCH bmndFront axle:9500kg*2,drum brake(MANTECHNOLOGY\nRear axle: 16000kg*2,drum brnke,double reductionMANTECHNOLOGY)\nTire: 1 3R22,$tubeless,With one spare tireFuel tank:400L\nTipper body: HYVA front lifing cylinder BodySize:6500x2350x1650mm",
+            "fob": "$69,600",
+            "shipping": "$9,900",
+            "cfr": "$79,500"
+          }
+        ]
+      },
+      "搅拌车": {
+        "6×4": [
+          {
+            "model": "SITRAK-6X4 搅拌车 G7-P-单卧铺-手动挡-重载-板簧悬架-430马力",
+            "config": "SINOTRUK SITRAK 6X4 MIXER TRUCK LHD-MANUAL GEARBOX\nCab: G7–M Cabin with one small sleeper\nWheelbase: 3800mm\nEngine: MC11.43-30, 430PS, Euro III \n(GERMAN MAN TECHNOLOGY)\nGear box: ZF16S2230 TO, 16F&2R, manual gearbox ，with ZF PTO \nSteering: BOSCH brand\nFront axle: 9500kg, drum brake\n(GERMAN MAN TECHNOLOGY)\nRear axle:16000kg*2, drum brake, double reduction\n(GERMAN MAN TECHNOLOGY)\nFuel tank: 400L\nTire: 315/80R22.5 tubeless, With one spare tire\nTire brand：GOODYEAR \nOthers：\nWith A/C, \\",
+            "fob": "$65,600",
+            "shipping": "$10,100",
+            "cfr": "$75,700"
+          }
+        ],
+        "8×4": [
+          {
+            "model": "SITRAK-8X4 搅拌车 G7-P-单卧铺-手动挡-重载-板簧悬架-430马力",
+            "config": "SINOTRUK SITRAK 8X4 MIXER TRUCK LHD-MANUAL GEARBOX\nCab: G7-M, with one small sleeper\nWheelbase: 3000mm\nEngine: MC11.43-30, 430PS, Euro III emission, with PTO\n(GERMAN MAN TECHNOLOGY)\nGearBox: ZF16S2230TO, 16F&2R, manual gearbox,, with Synchronizer\nSteering: BOSCH brand\nFront axle: 9500kg*2, drum brake \n(GERMAN MAN TECHNOLOGY)\nRear axle:16000kg*2, drum brake, double reduction \n(GERMAN MAN TECHNOLOGY)\nTire: 315/80R22.5 tubeless, with one spare tire\nTire brand: GOODYEAR brand\nFuel tank:",
+            "fob": "$69,600",
+            "shipping": "$11,100",
+            "cfr": "$80,700"
+          }
+        ]
+      },
+      "载货车": {
+        "4×2": [
+          {
+            "model": "SITRAK G5-4X2载货车底盘-280马力",
+            "config": "SINOTRUK SITRAK-G5 4X2 CARGO TRUCK CHASSIS LHD\\nCab: G5–M Cabin, with AC\\nWheelbase: 4700mm\\nEngine: MC07.28-30, 280PS, EuroⅢ (MAN TECHNOLOGY)\\nGear box: HW15710ACL transmission + HW70 Flanged Power Take-Off\\nSteering: BOSCH brand\\nFuel tank: 400L\\nFront axle: 7000kg (MAN TECHNOLOGY), disc brake\\nRear axle: 13000kg (MAN TECHNOLOGY), drum brake\\nTire: 315/80R22.5 tubeless tire, With one spare tire\\nOthers:\\nWith EBS+ESC\\nWith Knob-Type PTO\\nWith MTCO1324 Trip Recorder\\nWith Roof-mounted emergency lights on both sides of the cab\\nWith High-Mounted Bumper (All-Metal)\\nWith Curtains\\nPhoto for reference：(Color is optional)",
+            "fob": "$42,100",
+            "shipping": "$7,400",
+            "cfr": "CFR Jijel: $49,500"
+          }
+        ]
+      },
+      "水泥泵车": {},
+      "消防车": {},
+      "吸污车": {}
+    }
+  }
+}

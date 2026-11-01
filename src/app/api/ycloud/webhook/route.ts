@@ -1,11 +1,12 @@
 // @ts-nocheck
 import { NextRequest, NextResponse } from 'next/server';
+import { Pool } from 'pg';
 import { readFileSync } from 'fs';
 import { join } from 'path';
 
 const YCLOUD_API = 'https://api.ycloud.com/v2/whatsapp/messages';
 const YCLOUD_KEY = process.env.YCLOUD_API_KEY || 'c5fb395d62777195f9a6ef9eb78dd4e7';
-const DEEPSEEK_KEY = process.env.DEEPSEEK_API_KEY || 'sk-6a8e3d15cad947059848d910de8fe10f';
+const DEEPSEEK_KEY = process.env.DEEPSEEK_API_KEY || process.env.DEEPSEEK_API_KEY || '';
 const DEEPSEEK_URL = 'https://api.deepseek.com/v1/chat/completions';
 
 let PRODUCTS: any = {};
@@ -41,6 +42,22 @@ async function getApiProducts(): Promise<Record<string, any>> {
 
 const SYSTEM_PROMPT = "You are Liam (李亚姆), truck sales at XINYUNTONG. You ONLY sell heavy trucks, tractors, dump trucks, concrete mixers, trailers, construction machinery — NEVER mention bicycles, cars, motorcycles. After customer answers quantity, the price quote will appear — do NOT say 'let me calculate'. Always address as 'sir'. Match customer language. 1-2 sentences max. NEVER invent prices or brands.";
 
+const pgPool = new Pool({
+  host: '127.0.0.1', port: 5432, database: 'sinocv_crm',
+  user: 'sinocv', password: 'crm2025pass',
+  statement_timeout: 15000, max: 20, connectionTimeoutMillis: 5000,
+});
+
+async function saveMessage(phone, sender, text, employee, wamid, media) {
+  if (!phone || !text) return;
+  try {
+    await pgPool.query(
+      'INSERT INTO chat_messages (phone, sender, text, msg_time, employee, wamid, media) VALUES ($1,$2,$3,NOW(),$4,$5,$6) ON CONFLICT (wamid) DO NOTHING',
+      [phone, sender, text, employee, wamid, media || '']
+    );
+  } catch(e) { console.error('[SaveMsg] error:', e); }
+}
+
 const inMemoryHistory: Record<string, Array<{ role: string; content: string }>> = {};
 const inMemoryProduct: Record<string, { brand: string; model: string; fob: string; shipping: string; country: string }> = {};
 
@@ -56,6 +73,9 @@ export async function POST(req: NextRequest) {
       const mediaType = body.whatsappInboundMessage.type || '';
       const mediaUrl = body.whatsappInboundMessage.image?.url || body.whatsappInboundMessage.video?.url || '';
       if ((mediaType === 'image' || mediaType === 'video') && mediaUrl) {
+        // save customer image/video message
+        const mediaWamid = (body.whatsappInboundMessage && (body.whatsappInboundMessage.id || body.whatsappInboundMessage.messageId)) || ('in_' + Date.now() + '_' + Math.random().toString(36).slice(2));
+        await saveMessage(fromPhone, '客户', mediaType==='image'?'[图片]':'[视频]', toPhone, mediaWamid, mediaUrl);
         // 转发给管理员
         const forwardMsg = `📩 客户 ${fromPhone} 发来${mediaType==='image'?'图片':'视频'}：\n${mediaUrl}`;
         await sendMsg(toPhone, '8613001977959', forwardMsg);
@@ -65,6 +85,10 @@ export async function POST(req: NextRequest) {
         return NextResponse.json({ status:'ok', mode:'media_forwarded' });
       }
     }
+    // auto-save customer inbound message (before test-mode check)
+    const inboundWamid = (body.whatsappInboundMessage && (body.whatsappInboundMessage.id || body.whatsappInboundMessage.messageId)) || ('in_' + Date.now() + '_' + Math.random().toString(36).slice(2));
+    await saveMessage(fromPhone, '客户', text, toPhone, inboundWamid, '');
+
     if (!fromPhone || !text) return NextResponse.json({ status:'ignored', reason:'no text' });
 
     // TEST MODE: admin + test customer
@@ -351,6 +375,7 @@ function roundUp(price: number): number {
 async function sendMsg(to: string, from: string, text: string) {
   try {
     await fetch(YCLOUD_API, { method:'POST', headers:{ 'Content-Type':'application/json', 'X-API-Key':YCLOUD_KEY }, body:JSON.stringify({ from:to, to:from, type:'text', text:{ body:text } }) });
+    await saveMessage(from, '我', text, to, 'out_' + Date.now() + '_' + Math.random().toString(36).slice(2), '');
   } catch(e) {}
 }
 
@@ -359,5 +384,6 @@ async function sendImage(to: string, from: string, imageUrl: string) {
     const r = await fetch(YCLOUD_API, { method:'POST', headers:{ 'Content-Type':'application/json', 'X-API-Key':YCLOUD_KEY }, body:JSON.stringify({ from:to, to:from, type:'image', image:{ link:imageUrl } }) });
     const txt = await r.text();
     console.log('[Webhook] Image sent:', r.status, txt.substring(0, 100));
+    await saveMessage(from, '我', '[图片]', to, 'out_' + Date.now() + '_' + Math.random().toString(36).slice(2), imageUrl);
   } catch(e: any) { console.error('[Webhook] Image error:', e.message); }
 }

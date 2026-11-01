@@ -28,12 +28,12 @@ export const newsArticles: NewsArticle[] = [
   {
     slug: 'howo-6x4-400hp-dump-truck-in-stock',
     date: '2026-09-11',
-    hero: '/images/news-howo-dump-1.jpg',
+    hero: '/images/news-howo-dump-1.webp',
     heroAlt: 'HOWO 6x4 400HP dump truck in stock — ready for immediate shipment from China',
     photos: [
-      { src: '/images/news-howo-dump-2.jpg', alt: 'HOWO 6x4 dump truck 400HP — front view (in stock for Africa export)' },
-      { src: '/images/news-howo-dump-3.jpg', alt: 'HOWO 6x4 dump truck 400HP — side view (reinforced dump body)' },
-      { src: '/images/news-howo-dump-4.jpg', alt: 'HOWO 6x4 dump truck 400HP — rear view (EURO 2, ready to ship)' },
+      { src: '/images/news-howo-dump-2.webp', alt: 'HOWO 6x4 dump truck 400HP — front view (in stock for Africa export)' },
+      { src: '/images/news-howo-dump-3.webp', alt: 'HOWO 6x4 dump truck 400HP — side view (reinforced dump body)' },
+      { src: '/images/news-howo-dump-4.webp', alt: 'HOWO 6x4 dump truck 400HP — rear view (EURO 2, ready to ship)' },
     ],
     content: {
       en: {

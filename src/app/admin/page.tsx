@@ -173,7 +173,7 @@ export default function AdminPage() {
   // ====== LOGIN ======
   if(!loggedIn) return (
     <div style={{minHeight:'100vh',background:'#000',display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center'}}>
-      <img src="/images/logo-new.png" alt="" style={{height:'48px',marginBottom:'40px'}} />
+      <img src="/images/logo-new.webp" alt="" style={{height:'48px',marginBottom:'40px'}} />
       <div style={{width:'360px',background:'#0d0d0d',border:'1px solid #222',borderRadius:'12px',padding:'36px 28px'}}>
         <h2 style={{color:'#fff',fontSize:'16px',textAlign:'center',marginBottom:'24px'}}>CRM 管理系统</h2>
         <input value={user} onChange={e=>setUser(e.target.value)} placeholder="用户名" style={inp}/>
@@ -222,7 +222,7 @@ export default function AdminPage() {
       {/* 侧边栏 */}
       <div style={{width:'200px',background:'#0a0a0a',borderRight:'1px solid #1a1a1a',display:'flex',flexDirection:'column',flexShrink:0}}>
         <div style={{padding:'20px 16px',borderBottom:'1px solid #1a1a1a'}}>
-          <img src="/images/logo-new.png" alt="" style={{height:'24px',marginBottom:'6px'}} />
+          <img src="/images/logo-new.webp" alt="" style={{height:'24px',marginBottom:'6px'}} />
           <p style={{color:'#555',fontSize:'10px',margin:0}}>CRM · 商用汽车出口</p>
         </div>
         <div style={{padding:'8px',flex:1}}>

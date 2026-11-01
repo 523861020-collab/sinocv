@@ -3,10 +3,10 @@ export interface Truck {
   name: string;
   category: 'tractor' | 'cargo' | 'dump' | 'mixer' | 'reefer' | 'light-special' | 'crane' | 'water' | 'fuel' | 'wrecker' | '6x6' | 'trailer' | 'machinery' | 'mining' | 'light';
   brand: string;
-  horsepower?: number;
-  driveType?: string;
-  engine?: string;
-  price?: string;
+  horsepower: number;
+  driveType: string;
+  engine: string;
+  price: string;
   image: string;
   images?: string[];
   features: string[];
@@ -23,8 +23,8 @@ export const trucks: Truck[] = [
     driveType: '6×4',
     engine: 'MAN MC13 / MC11',
     price: '$35,000 - $55,000',
-    image: '/images/sitrak-12.jpg',
-    images: ['/images/sitrak-12.jpg', '/images/sitrak-13.jpg', '/images/sitrak-14.jpg'],
+    image: '/images/sitrak-12.webp',
+    images: ['/images/sitrak-12.webp', '/images/sitrak-13.webp', '/images/sitrak-14.webp'],
     features: ['430HP · 480HP · 540HP', 'MAN Engine', 'ZF Transmission', 'Luxury Cabin']
   },
   {
@@ -36,8 +36,8 @@ export const trucks: Truck[] = [
     driveType: '6×4',
     engine: 'Weichai / MAN',
     price: '$28,000 - $42,000',
-    image: '/images/howo-15.jpg',
-    images: ['/images/howo-15.jpg', '/images/howo-16.jpg', '/images/howo-17.jpg'],
+    image: '/images/howo-15.webp',
+    images: ['/images/howo-15.webp', '/images/howo-16.webp', '/images/howo-17.webp'],
     features: ['340HP · 380HP · 400HP · 430HP', 'Weichai/MAN Engine', 'High Roof Sleeper', 'ABS+AC']
   },
   {
@@ -49,8 +49,8 @@ export const trucks: Truck[] = [
     driveType: '6×4',
     engine: 'Weichai',
     price: '$30,000 - $40,000',
-    image: '/images/howo-nx-1.jpg',
-    images: ['/images/howo-nx-1.jpg', '/images/howo-nx-2.jpg', '/images/howo-nx-3.jpg'],
+    image: '/images/howo-nx-1.webp',
+    images: ['/images/howo-nx-1.webp', '/images/howo-nx-2.webp', '/images/howo-nx-3.webp'],
     features: ['380HP · 400HP · 430HP', 'Weichai Engine', 'High Roof Sleeper', 'ABS+AC']
   },
   // ===== Cargo Trucks =====
@@ -63,7 +63,7 @@ export const trucks: Truck[] = [
     driveType: '8×4',
     engine: 'Weichai WP10.340E62',
     price: '$25,000 - $32,000',
-    image: '/images/hero-2.jpg',
+    image: '/images/hero-2.webp',
     features: ['9.6m Cargo Box', 'Air Suspension Seat', 'Multimedia Console', 'Cruise Control']
   },
   {
@@ -75,8 +75,8 @@ export const trucks: Truck[] = [
     driveType: '6×4',
     engine: 'MAN MC13.440',
     price: '$38,000 - $48,000',
-    image: '/images/sitrak-curtain-1.jpg',
-    images: ['/images/sitrak-curtain-1.jpg', '/images/sitrak-curtain-2.jpg', '/images/sitrak-curtain-3.jpg'],
+    image: '/images/sitrak-curtain-1.webp',
+    images: ['/images/sitrak-curtain-1.webp', '/images/sitrak-curtain-2.webp', '/images/sitrak-curtain-3.webp'],
     features: ['Curtain Side', 'Quick Loading', 'Large Capacity', 'MAN Engine']
   },
   {
@@ -88,8 +88,8 @@ export const trucks: Truck[] = [
     driveType: '4×2',
     engine: 'MAN MC07.280',
     price: '$25,000 - $32,000',
-    image: '/images/sitrak-4x2-cargo-1.jpg',
-    images: ['/images/sitrak-4x2-cargo-1.jpg', '/images/sitrak-4x2-cargo-2.jpg', '/images/sitrak-4x2-cargo-3.jpg'],
+    image: '/images/sitrak-4x2-cargo-1.webp',
+    images: ['/images/sitrak-4x2-cargo-1.webp', '/images/sitrak-4x2-cargo-2.webp', '/images/sitrak-4x2-cargo-3.webp'],
     features: ['City Logistics', 'MAN Engine', 'Large Box', 'Fuel Efficient']
   },
   // ===== Reefer Trucks =====
@@ -102,8 +102,8 @@ export const trucks: Truck[] = [
     driveType: '4×2',
     engine: 'Weichai WP2.3Q',
     price: '$22,000 - $28,000',
-    image: '/images/howo-4x2-reefer-1.jpg',
-    images: ['/images/howo-4x2-reefer-1.jpg', '/images/howo-4x2-reefer-2.jpg', '/images/howo-4x2-reefer-3.jpg'],
+    image: '/images/howo-4x2-reefer-1.webp',
+    images: ['/images/howo-4x2-reefer-1.webp', '/images/howo-4x2-reefer-2.webp', '/images/howo-4x2-reefer-3.webp'],
     features: ['Light Reefer', 'City Delivery', 'Low Fuel', 'Thermo King Unit']
   },
   {
@@ -115,8 +115,8 @@ export const trucks: Truck[] = [
     driveType: '4×2',
     engine: 'Weichai WP4.6',
     price: '$28,000 - $35,000',
-    image: '/images/howo-tx-4x2-reefer-1.jpg',
-    images: ['/images/howo-tx-4x2-reefer-1.jpg', '/images/howo-tx-4x2-reefer-2.jpg', '/images/howo-tx-4x2-reefer-3.jpg'],
+    image: '/images/howo-tx-4x2-reefer-1.webp',
+    images: ['/images/howo-tx-4x2-reefer-1.webp', '/images/howo-tx-4x2-reefer-2.webp', '/images/howo-tx-4x2-reefer-3.webp'],
     features: ['Medium Reefer', 'Cold Chain', 'Fuel Efficient', 'Thermo King Unit']
   },
   {
@@ -128,8 +128,8 @@ export const trucks: Truck[] = [
     driveType: '8×4',
     engine: 'MAN MC13.440',
     price: '$48,000 - $60,000',
-    image: '/images/sitrak-8x4-reefer-1.jpg',
-    images: ['/images/sitrak-8x4-reefer-1.jpg', '/images/sitrak-8x4-reefer-2.jpg'],
+    image: '/images/sitrak-8x4-reefer-1.webp',
+    images: ['/images/sitrak-8x4-reefer-1.webp', '/images/sitrak-8x4-reefer-2.webp'],
     features: ['Large Reefer', 'Long-haul Cold Chain', 'MAN Engine', 'Thermo King Unit']
   },
   // ===== Dump Trucks =====
@@ -142,8 +142,8 @@ export const trucks: Truck[] = [
     driveType: '6×4',
     engine: 'Weichai WP12.400E62',
     price: '$38,000 - $48,000',
-    image: '/images/howo-dump-1.jpg',
-    images: ['/images/howo-dump-1.jpg', '/images/howo-dump-2.jpg', '/images/howo-dump-3.jpg'],
+    image: '/images/howo-dump-1.webp',
+    images: ['/images/howo-dump-1.webp', '/images/howo-dump-2.webp', '/images/howo-dump-3.webp'],
     features: ['Reinforced Box', 'Hydraulic Lift', 'Mining Tires', 'Safety Mesh']
   },
   {
@@ -155,8 +155,8 @@ export const trucks: Truck[] = [
     driveType: '6×4',
     engine: 'Weichai WP13.430E62',
     price: '$42,000 - $52,000',
-    image: '/images/howo-nx-dump-1.jpg',
-    images: ['/images/howo-nx-dump-1.jpg', '/images/howo-nx-dump-2.jpg', '/images/howo-nx-dump-3.jpg'],
+    image: '/images/howo-nx-dump-1.webp',
+    images: ['/images/howo-nx-dump-1.webp', '/images/howo-nx-dump-2.webp', '/images/howo-nx-dump-3.webp'],
     features: ['Reinforced Box', 'Hydraulic Lift', 'Mining Tires', 'Safety Mesh']
   },
   {
@@ -168,8 +168,8 @@ export const trucks: Truck[] = [
     driveType: '6×4',
     engine: 'MAN MC13.440',
     price: '$40,000 - $52,000',
-    image: '/images/sitrak-dump-1.jpg',
-    images: ['/images/sitrak-dump-1.jpg', '/images/sitrak-dump-2.jpg', '/images/sitrak-dump-3.jpg'],
+    image: '/images/sitrak-dump-1.webp',
+    images: ['/images/sitrak-dump-1.webp', '/images/sitrak-dump-2.webp', '/images/sitrak-dump-3.webp'],
     features: ['MAN Engine', 'Reinforced Box', 'Hydraulic Lift', 'Mining Spec']
   },
   // ===== Mixer Trucks =====
@@ -182,8 +182,8 @@ export const trucks: Truck[] = [
     driveType: '8×4',
     engine: 'Weichai WP13.430E62',
     price: '$48,000 - $58,000',
-    image: '/images/howo-nx-mixer-1.jpg',
-    images: ['/images/howo-nx-mixer-1.jpg', '/images/howo-nx-mixer-2.jpg', '/images/howo-nx-mixer-3.jpg'],
+    image: '/images/howo-nx-mixer-1.webp',
+    images: ['/images/howo-nx-mixer-1.webp', '/images/howo-nx-mixer-2.webp', '/images/howo-nx-mixer-3.webp'],
     features: ['12m³ Drum', 'Constant Speed', 'Wear-resistant Blades', 'Auto-lubrication']
   },
   {
@@ -195,8 +195,8 @@ export const trucks: Truck[] = [
     driveType: '6×4',
     engine: 'Weichai WP12.400E62',
     price: '$43,000 - $53,000',
-    image: '/images/howo-mixer-1.jpg',
-    images: ['/images/howo-mixer-1.jpg', '/images/howo-mixer-2.jpg', '/images/howo-mixer-3.jpg'],
+    image: '/images/howo-mixer-1.webp',
+    images: ['/images/howo-mixer-1.webp', '/images/howo-mixer-2.webp', '/images/howo-mixer-3.webp'],
     features: ['12m³ Drum', 'Constant Speed', 'Wear-resistant Blades', 'Auto-lubrication']
   },
   {
@@ -208,8 +208,8 @@ export const trucks: Truck[] = [
     driveType: '6×4',
     engine: 'MAN MC13.440',
     price: '$48,000 - $60,000',
-    image: '/images/sitrak-mixer-1.jpg',
-    images: ['/images/sitrak-mixer-1.jpg', '/images/sitrak-mixer-2.jpg', '/images/sitrak-mixer-3.jpg'],
+    image: '/images/sitrak-mixer-1.webp',
+    images: ['/images/sitrak-mixer-1.webp', '/images/sitrak-mixer-2.webp', '/images/sitrak-mixer-3.webp'],
     features: ['12m³ Drum', 'Constant Speed', 'Wear-resistant Blades', 'Auto-lubrication']
   },
   // ===== Light Special Vehicles =====
@@ -222,8 +222,8 @@ export const trucks: Truck[] = [
     driveType: '4×2',
     engine: 'Weichai WP2.3Q',
     price: '$20,000 - $26,000',
-    image: '/images/howo-4x2-garbage-1.jpg',
-    images: ['/images/howo-4x2-garbage-1.jpg', '/images/howo-4x2-garbage-2.jpg', '/images/howo-4x2-garbage-3.jpg'],
+    image: '/images/howo-4x2-garbage-1.webp',
+    images: ['/images/howo-4x2-garbage-1.webp', '/images/howo-4x2-garbage-2.webp', '/images/howo-4x2-garbage-3.webp'],
     features: ['Municipal', 'Compact', 'Sealed', 'Fuel Efficient']
   },
   {
@@ -235,8 +235,8 @@ export const trucks: Truck[] = [
     driveType: '4×2',
     engine: 'Weichai WP2.3Q',
     price: '$24,000 - $30,000',
-    image: '/images/howo-4x2-wrecker-1.jpg',
-    images: ['/images/howo-4x2-wrecker-1.jpg', '/images/howo-4x2-wrecker-2.jpg', '/images/howo-4x2-wrecker-3.jpg'],
+    image: '/images/howo-4x2-wrecker-1.webp',
+    images: ['/images/howo-4x2-wrecker-1.webp', '/images/howo-4x2-wrecker-2.webp', '/images/howo-4x2-wrecker-3.webp'],
     features: ['City Rescue', 'Flatbed', 'Hydraulic Winch', 'Compact']
   },
   {
@@ -248,8 +248,8 @@ export const trucks: Truck[] = [
     driveType: '4×2',
     engine: 'Weichai WP2.3Q',
     price: '$28,000 - $35,000',
-    image: '/images/howo-4x2-aerial-1.jpg',
-    images: ['/images/howo-4x2-aerial-1.jpg', '/images/howo-4x2-aerial-2.jpg', '/images/howo-4x2-aerial-3.jpg'],
+    image: '/images/howo-4x2-aerial-1.webp',
+    images: ['/images/howo-4x2-aerial-1.webp', '/images/howo-4x2-aerial-2.webp', '/images/howo-4x2-aerial-3.webp'],
     features: ['City Aerial Work', 'Compact', 'Fuel Efficient', 'Safety Lock']
   },
   // ===== Crane Trucks =====
@@ -262,8 +262,8 @@ export const trucks: Truck[] = [
     driveType: '6×4',
     engine: 'Weichai WP12.400E62',
     price: '$38,000 - $48,000',
-    image: '/images/howo-tx-crane-1.jpg',
-    images: ['/images/howo-tx-crane-1.jpg', '/images/howo-tx-crane-2.jpg', '/images/howo-tx-crane-3.jpg'],
+    image: '/images/howo-tx-crane-1.webp',
+    images: ['/images/howo-tx-crane-1.webp', '/images/howo-tx-crane-2.webp', '/images/howo-tx-crane-3.webp'],
     features: ['12T Crane', 'Hydraulic Legs', 'Remote Control', '360° Rotation']
   },
   {
@@ -275,8 +275,8 @@ export const trucks: Truck[] = [
     driveType: '4×2',
     engine: 'Weichai WP2.3Q',
     price: '$25,000 - $32,000',
-    image: '/images/howo-4x2-crane-1.jpg',
-    images: ['/images/howo-4x2-crane-1.jpg', '/images/howo-4x2-crane-2.jpg', '/images/howo-4x2-crane-3.jpg'],
+    image: '/images/howo-4x2-crane-1.webp',
+    images: ['/images/howo-4x2-crane-1.webp', '/images/howo-4x2-crane-2.webp', '/images/howo-4x2-crane-3.webp'],
     features: ['Light Crane', 'City Flexible', 'Fuel Efficient', 'Hydraulic Legs']
   },
   // ===== Water Trucks =====
@@ -289,8 +289,8 @@ export const trucks: Truck[] = [
     driveType: '6×4',
     engine: 'Weichai WP10.340E62',
     price: '$25,000 - $32,000',
-    image: '/images/howo-tx-water-1.jpg',
-    images: ['/images/howo-tx-water-1.jpg', '/images/howo-tx-water-2.jpg', '/images/howo-tx-water-3.jpg'],
+    image: '/images/howo-tx-water-1.webp',
+    images: ['/images/howo-tx-water-1.webp', '/images/howo-tx-water-2.webp', '/images/howo-tx-water-3.webp'],
     features: ['15m³ Tank', 'Front Spray', 'Water Cannon', 'Self-priming']
   },
   {
@@ -302,8 +302,8 @@ export const trucks: Truck[] = [
     driveType: '6×4',
     engine: 'Weichai WP10.340E62',
     price: '$25,000 - $32,000',
-    image: '/images/howo-nx-water-1.jpg',
-    images: ['/images/howo-nx-water-1.jpg', '/images/howo-nx-water-2.jpg', '/images/howo-nx-water-3.jpg'],
+    image: '/images/howo-nx-water-1.webp',
+    images: ['/images/howo-nx-water-1.webp', '/images/howo-nx-water-2.webp', '/images/howo-nx-water-3.webp'],
     features: ['15m³ Tank', 'Front Spray', 'Water Cannon', 'Self-priming']
   },
   {
@@ -315,8 +315,8 @@ export const trucks: Truck[] = [
     driveType: '4×2',
     engine: 'MAN MC07.280',
     price: '$22,000 - $28,000',
-    image: '/images/sitrak-4x2-water-1.jpg',
-    images: ['/images/sitrak-4x2-water-1.jpg', '/images/sitrak-4x2-water-2.jpg', '/images/sitrak-4x2-water-3.jpg'],
+    image: '/images/sitrak-4x2-water-1.webp',
+    images: ['/images/sitrak-4x2-water-1.webp', '/images/sitrak-4x2-water-2.webp', '/images/sitrak-4x2-water-3.webp'],
     features: ['Municipal Spray', 'Dust Control', 'Water Cannon', 'MAN Engine']
   },
   // ===== Fuel Tankers =====
@@ -329,8 +329,8 @@ export const trucks: Truck[] = [
     driveType: '6×4',
     engine: 'Weichai WP12.380E62',
     price: '$30,000 - $40,000',
-    image: '/images/howo-tx-fuel-1.jpg',
-    images: ['/images/howo-tx-fuel-1.jpg', '/images/howo-tx-fuel-2.jpg', '/images/howo-tx-fuel-3.jpg'],
+    image: '/images/howo-tx-fuel-1.webp',
+    images: ['/images/howo-tx-fuel-1.webp', '/images/howo-tx-fuel-2.webp', '/images/howo-tx-fuel-3.webp'],
     features: ['20m³ Tank', 'Explosion Proof', 'Vapor Recovery', 'Static Grounding']
   },
   {
@@ -342,8 +342,8 @@ export const trucks: Truck[] = [
     driveType: '4×4',
     engine: 'Weichai WP2.3Q',
     price: '$22,000 - $28,000',
-    image: '/images/howo-4x4-fuel-1.jpg',
-    images: ['/images/howo-4x4-fuel-1.jpg', '/images/howo-4x4-fuel-2.jpg', '/images/howo-4x4-fuel-3.jpg'],
+    image: '/images/howo-4x4-fuel-1.webp',
+    images: ['/images/howo-4x4-fuel-1.webp', '/images/howo-4x4-fuel-2.webp', '/images/howo-4x4-fuel-3.webp'],
     features: ['4×4 AWD', 'Small Tank', 'Mine/Site Refuel', 'Explosion Proof']
   },
   {
@@ -355,8 +355,8 @@ export const trucks: Truck[] = [
     driveType: '8×4',
     engine: 'Weichai WP13.430E62',
     price: '$38,000 - $48,000',
-    image: '/images/howo-nx-8x4-fuel-1.jpg',
-    images: ['/images/howo-nx-8x4-fuel-1.jpg', '/images/howo-nx-8x4-fuel-2.jpg', '/images/howo-nx-8x4-fuel-3.jpg'],
+    image: '/images/howo-nx-8x4-fuel-1.webp',
+    images: ['/images/howo-nx-8x4-fuel-1.webp', '/images/howo-nx-8x4-fuel-2.webp', '/images/howo-nx-8x4-fuel-3.webp'],
     features: ['Large Tank', 'Explosion Proof', 'Vapor Recovery', '8×4 Heavy Duty']
   },
   // ===== 6×6 =====
@@ -369,8 +369,8 @@ export const trucks: Truck[] = [
     driveType: '6×6',
     engine: 'Weichai WP13.420E62',
     price: '$50,000 - $62,000',
-    image: '/images/howo-6x6-dump-1.jpg',
-    images: ['/images/howo-6x6-dump-1.jpg', '/images/howo-6x6-dump-2.jpg', '/images/howo-6x6-dump-3.jpg'],
+    image: '/images/howo-6x6-dump-1.webp',
+    images: ['/images/howo-6x6-dump-1.webp', '/images/howo-6x6-dump-2.webp', '/images/howo-6x6-dump-3.webp'],
     features: ['6×6 AWD', 'Desert Spec', 'Reinforced Box', 'Hydraulic Lift']
   },
   {
@@ -382,8 +382,8 @@ export const trucks: Truck[] = [
     driveType: '6×6',
     engine: 'Weichai WP12.400E62',
     price: '$32,000 - $42,000',
-    image: '/images/howo-6x6-chassis-1.jpg',
-    images: ['/images/howo-6x6-chassis-1.jpg', '/images/howo-6x6-chassis-2.jpg', '/images/howo-6x6-chassis-3.jpg'],
+    image: '/images/howo-6x6-chassis-1.webp',
+    images: ['/images/howo-6x6-chassis-1.webp', '/images/howo-6x6-chassis-2.webp', '/images/howo-6x6-chassis-3.webp'],
     features: ['6×6 AWD', 'Reinforced Frame', 'Multi-body Fit', 'Military Grade']
   },
   {
@@ -395,8 +395,8 @@ export const trucks: Truck[] = [
     driveType: '6×6',
     engine: 'Weichai WP13.420E62',
     price: '$45,000 - $58,000',
-    image: '/images/howo-6x6-fuel-1.jpg',
-    images: ['/images/howo-6x6-fuel-1.jpg', '/images/howo-6x6-fuel-2.jpg', '/images/howo-6x6-fuel-3.jpg'],
+    image: '/images/howo-6x6-fuel-1.webp',
+    images: ['/images/howo-6x6-fuel-1.webp', '/images/howo-6x6-fuel-2.webp', '/images/howo-6x6-fuel-3.webp'],
     features: ['Desert Spec', '6×6 AWD', 'Large Tank', 'High Temp Adapt']
   },
   // ===== Mining Trucks =====
@@ -409,8 +409,8 @@ export const trucks: Truck[] = [
     driveType: '6×4',
     engine: 'Weichai WP15.480E62',
     price: '$85,000 - $110,000',
-    image: '/images/sinotruk-90t-mining-1.jpg',
-    images: ['/images/sinotruk-90t-mining-1.jpg', '/images/sinotruk-90t-mining-2.jpg', '/images/sinotruk-90t-mining-3.jpg'],
+    image: '/images/sinotruk-90t-mining-1.webp',
+    images: ['/images/sinotruk-90t-mining-1.webp', '/images/sinotruk-90t-mining-2.webp', '/images/sinotruk-90t-mining-3.webp'],
     features: ['90T Payload', 'Mining Wide-body', 'Weichai 15L Engine', 'Hydro-pneumatic']
   },
   {
@@ -422,8 +422,8 @@ export const trucks: Truck[] = [
     driveType: '6×4',
     engine: 'Weichai WP16.510E62',
     price: '$92,000 - $120,000',
-    image: '/images/sinotruk-95-mining-1.jpg',
-    images: ['/images/sinotruk-95-mining-1.jpg', '/images/sinotruk-95-mining-2.jpg', '/images/sinotruk-95-mining-3.jpg'],
+    image: '/images/sinotruk-95-mining-1.webp',
+    images: ['/images/sinotruk-95-mining-1.webp', '/images/sinotruk-95-mining-2.webp', '/images/sinotruk-95-mining-3.webp'],
     features: ['70T Payload', 'Mining Wide-body', 'Weichai 16L Engine', 'Hydro-pneumatic']
   },
   {
@@ -435,8 +435,8 @@ export const trucks: Truck[] = [
     driveType: '6×6',
     engine: 'Weichai WP17.540E62',
     price: '$108,000 - $138,000',
-    image: '/images/sinotruk-90-mining-1.jpg',
-    images: ['/images/sinotruk-90-mining-1.jpg', '/images/sinotruk-90-mining-2.jpg', '/images/sinotruk-90-mining-3.jpg'],
+    image: '/images/sinotruk-90-mining-1.webp',
+    images: ['/images/sinotruk-90-mining-1.webp', '/images/sinotruk-90-mining-2.webp', '/images/sinotruk-90-mining-3.webp'],
     features: ['102T Payload', 'Mining Wide-body', 'Weichai 17L Engine', '6×6 AWD']
   },
   {
@@ -448,8 +448,8 @@ export const trucks: Truck[] = [
     driveType: '6×4',
     engine: 'Weichai WP17.540E62',
     price: '$100,000 - $130,000',
-    image: '/images/sinotruk-102-mining-1.jpg',
-    images: ['/images/sinotruk-102-mining-1.jpg', '/images/sinotruk-102-mining-2.jpg', '/images/sinotruk-102-mining-3.jpg'],
+    image: '/images/sinotruk-102-mining-1.webp',
+    images: ['/images/sinotruk-102-mining-1.webp', '/images/sinotruk-102-mining-2.webp', '/images/sinotruk-102-mining-3.webp'],
     features: ['105T Payload', 'Mining Wide-body', 'Weichai 17L Engine', 'Hydro-pneumatic']
   },
   // ===== Trailers =====
@@ -462,8 +462,8 @@ export const trucks: Truck[] = [
     driveType: '6×4',
     engine: 'MAN MC13.440',
     price: '$42,000 - $55,000',
-    image: '/images/sinotruk-3axle-cargo-1.jpg',
-    images: ['/images/sinotruk-3axle-cargo-1.jpg', '/images/sinotruk-3axle-cargo-2.jpg', '/images/sinotruk-3axle-cargo-3.jpg'],
+    image: '/images/sinotruk-3axle-cargo-1.webp',
+    images: ['/images/sinotruk-3axle-cargo-1.webp', '/images/sinotruk-3axle-cargo-2.webp', '/images/sinotruk-3axle-cargo-3.webp'],
     features: ['Tractor+Trailer', 'Heavy Load', 'MAN Engine', 'Long-haul']
   },
   {
@@ -475,8 +475,8 @@ export const trucks: Truck[] = [
     driveType: '6×4',
     engine: 'MAN MC13.440',
     price: '$45,000 - $58,000',
-    image: '/images/sinotruk-3axle-highside-1.jpg',
-    images: ['/images/sinotruk-3axle-highside-1.jpg', '/images/sinotruk-3axle-highside-2.jpg', '/images/sinotruk-3axle-highside-3.jpg'],
+    image: '/images/sinotruk-3axle-highside-1.webp',
+    images: ['/images/sinotruk-3axle-highside-1.webp', '/images/sinotruk-3axle-highside-2.webp', '/images/sinotruk-3axle-highside-3.webp'],
     features: ['High-side Box', 'Large Capacity', 'MAN Engine', 'Long-haul']
   },
   {
@@ -488,8 +488,8 @@ export const trucks: Truck[] = [
     driveType: '4 Axles',
     engine: '-',
     price: '$15,000 - $22,000',
-    image: '/images/cimc-4axle-flat-1.jpg',
-    images: ['/images/cimc-4axle-flat-1.jpg', '/images/cimc-4axle-flat-2.jpg', '/images/cimc-4axle-flat-3.jpg'],
+    image: '/images/cimc-4axle-flat-1.webp',
+    images: ['/images/cimc-4axle-flat-1.webp', '/images/cimc-4axle-flat-2.webp', '/images/cimc-4axle-flat-3.webp'],
     features: ['4-Axle Heavy Duty', '16T Axles', 'ABS', 'Container Locks']
   },
   {
@@ -501,8 +501,8 @@ export const trucks: Truck[] = [
     driveType: '3 Axles',
     engine: '-',
     price: '$12,000 - $18,000',
-    image: '/images/cimc-3axle-curtain-1.jpg',
-    images: ['/images/cimc-3axle-curtain-1.jpg', '/images/cimc-3axle-curtain-2.jpg', '/images/cimc-3axle-curtain-3.jpg'],
+    image: '/images/cimc-3axle-curtain-1.webp',
+    images: ['/images/cimc-3axle-curtain-1.webp', '/images/cimc-3axle-curtain-2.webp', '/images/cimc-3axle-curtain-3.webp'],
     features: ['Curtain Side', 'Quick Loading', '13T Axles', 'ABS']
   },
   {
@@ -514,8 +514,8 @@ export const trucks: Truck[] = [
     driveType: '4 Axles',
     engine: '-',
     price: '$18,000 - $25,000',
-    image: '/images/cimc-4axle-lowbed-1.jpg',
-    images: ['/images/cimc-4axle-lowbed-1.jpg', '/images/cimc-4axle-lowbed-2.jpg', '/images/cimc-4axle-lowbed-3.jpg'],
+    image: '/images/cimc-4axle-lowbed-1.webp',
+    images: ['/images/cimc-4axle-lowbed-1.webp', '/images/cimc-4axle-lowbed-2.webp', '/images/cimc-4axle-lowbed-3.webp'],
     features: ['Low-bed', '4-Axle Heavy Duty', 'Equipment Transport', '16T Axles']
   },
   {
@@ -527,8 +527,8 @@ export const trucks: Truck[] = [
     driveType: '3 Axles',
     engine: '-',
     price: '$14,000 - $20,000',
-    image: '/images/cimc-3axle-heavy-1.jpg',
-    images: ['/images/cimc-3axle-heavy-1.jpg', '/images/cimc-3axle-heavy-2.jpg', '/images/cimc-3axle-heavy-3.jpg'],
+    image: '/images/cimc-3axle-heavy-1.webp',
+    images: ['/images/cimc-3axle-heavy-1.webp', '/images/cimc-3axle-heavy-2.webp', '/images/cimc-3axle-heavy-3.webp'],
     features: ['Heavy Haul', 'Reinforced Frame', '13T Axles', 'ABS']
   },
   {
@@ -540,8 +540,8 @@ export const trucks: Truck[] = [
     driveType: '2 Axles',
     engine: '-',
     price: '$10,000 - $15,000',
-    image: '/images/cimc-2axle-car-1.jpg',
-    images: ['/images/cimc-2axle-car-1.jpg', '/images/cimc-2axle-car-2.jpg'],
+    image: '/images/cimc-2axle-car-1.webp',
+    images: ['/images/cimc-2axle-car-1.webp', '/images/cimc-2axle-car-2.webp'],
     features: ['Car Carrier', 'Double Deck', '10T Axles', 'ABS']
   },
   {
@@ -553,8 +553,8 @@ export const trucks: Truck[] = [
     driveType: '3 Axles',
     engine: '-',
     price: '$14,000 - $20,000',
-    image: '/images/cimc-semi-dump-1.jpg',
-    images: ['/images/cimc-semi-dump-1.jpg', '/images/cimc-semi-dump-2.jpg', '/images/cimc-semi-dump-3.jpg'],
+    image: '/images/cimc-semi-dump-1.webp',
+    images: ['/images/cimc-semi-dump-1.webp', '/images/cimc-semi-dump-2.webp', '/images/cimc-semi-dump-3.webp'],
     features: ['U-shaped Box', 'Hydraulic Lift', 'Wear Plate', 'Auto Cover']
   },
   {
@@ -566,8 +566,8 @@ export const trucks: Truck[] = [
     driveType: '3 Axles',
     engine: '-',
     price: '$22,000 - $30,000',
-    image: '/images/cimc-reefer-1.jpg',
-    images: ['/images/cimc-reefer-1.jpg', '/images/cimc-reefer-2.jpg', '/images/cimc-reefer-3.jpg'],
+    image: '/images/cimc-reefer-1.webp',
+    images: ['/images/cimc-reefer-1.webp', '/images/cimc-reefer-2.webp', '/images/cimc-reefer-3.webp'],
     features: ['Reefer Trailer', 'Thermo King Unit', 'Polyurethane Insulation', '-18°C']
   },
   {
@@ -579,8 +579,8 @@ export const trucks: Truck[] = [
     driveType: '3 Axles',
     engine: '-',
     price: '$25,000 - $35,000',
-    image: '/images/cimc-fuel-trailer-1.jpg',
-    images: ['/images/cimc-fuel-trailer-1.jpg', '/images/cimc-fuel-trailer-2.jpg', '/images/cimc-fuel-trailer-3.jpg'],
+    image: '/images/cimc-fuel-trailer-1.webp',
+    images: ['/images/cimc-fuel-trailer-1.webp', '/images/cimc-fuel-trailer-2.webp', '/images/cimc-fuel-trailer-3.webp'],
     features: ['Large Tank', 'Explosion Proof', 'Vapor Recovery', 'Grounding']
   },
   {
@@ -592,8 +592,8 @@ export const trucks: Truck[] = [
     driveType: '3 Axles',
     engine: '-',
     price: '$28,000 - $38,000',
-    image: '/images/cimc-lng-trailer-1.jpg',
-    images: ['/images/cimc-lng-trailer-1.jpg', '/images/cimc-lng-trailer-2.jpg', '/images/cimc-lng-trailer-3.jpg'],
+    image: '/images/cimc-lng-trailer-1.webp',
+    images: ['/images/cimc-lng-trailer-1.webp', '/images/cimc-lng-trailer-2.webp', '/images/cimc-lng-trailer-3.webp'],
     features: ['LNG Cryogenic', 'Vacuum Insulated', 'Safety Valves']
   },
   {
@@ -605,8 +605,8 @@ export const trucks: Truck[] = [
     driveType: '3 Axles',
     engine: '-',
     price: '$20,000 - $28,000',
-    image: '/images/cimc-powder-trailer-1.jpg',
-    images: ['/images/cimc-powder-trailer-1.jpg', '/images/cimc-powder-trailer-2.jpg', '/images/cimc-powder-trailer-3.jpg'],
+    image: '/images/cimc-powder-trailer-1.webp',
+    images: ['/images/cimc-powder-trailer-1.webp', '/images/cimc-powder-trailer-2.webp', '/images/cimc-powder-trailer-3.webp'],
     features: ['Powder Tank', 'Compressor Discharge', 'Safety Valve', 'Anti-clog']
   },
   // ===== Construction Machinery (XCMG) =====
@@ -619,8 +619,8 @@ export const trucks: Truck[] = [
     driveType: 'Tracked',
     engine: 'Cummins QSB7',
     price: '$55,000 - $75,000',
-    image: '/images/xcmg-xe215-1.jpg',
-    images: ['/images/xcmg-xe215-1.jpg', '/images/xcmg-xe215-2.jpg', '/images/xcmg-xe215-3.jpg'],
+    image: '/images/xcmg-xe215-1.webp',
+    images: ['/images/xcmg-xe215-1.webp', '/images/xcmg-xe215-2.webp', '/images/xcmg-xe215-3.webp'],
     features: ['21.5T', '1.1m³ Bucket', 'Smart Control', 'Mining Strengthened']
   },
   {
@@ -632,8 +632,8 @@ export const trucks: Truck[] = [
     driveType: '4×4',
     engine: 'Weichai WD10G220',
     price: '$35,000 - $48,000',
-    image: '/images/xcmg-zl50-1.jpg',
-    images: ['/images/xcmg-zl50-1.jpg', '/images/xcmg-zl50-2.jpg', '/images/xcmg-zl50-3.jpg'],
+    image: '/images/xcmg-zl50-1.webp',
+    images: ['/images/xcmg-zl50-1.webp', '/images/xcmg-zl50-2.webp', '/images/xcmg-zl50-3.webp'],
     features: ['5T', '3.0m³ Bucket', 'Hydraulic Pilot', 'AC Cabin']
   },
   {
@@ -645,8 +645,8 @@ export const trucks: Truck[] = [
     driveType: '6×4',
     engine: 'Weichai WP10.290E62',
     price: '$80,000 - $100,000',
-    image: '/images/xcmg-25t-crane-1.jpg',
-    images: ['/images/xcmg-25t-crane-1.jpg', '/images/xcmg-25t-crane-2.jpg', '/images/xcmg-25t-crane-3.jpg'],
+    image: '/images/xcmg-25t-crane-1.webp',
+    images: ['/images/xcmg-25t-crane-1.webp', '/images/xcmg-25t-crane-2.webp', '/images/xcmg-25t-crane-3.webp'],
     features: ['25T Lift', 'Telescopic Boom', '360° Rotation', 'All-terrain']
   },
   {
@@ -658,8 +658,8 @@ export const trucks: Truck[] = [
     driveType: 'Wheel Type',
     engine: 'Weichai WP6.180E62',
     price: '$35,000 - $50,000',
-    image: '/images/xcmg-roller-1.jpg',
-    images: ['/images/xcmg-roller-1.jpg', '/images/xcmg-roller-2.jpg', '/images/xcmg-roller-3.jpg'],
+    image: '/images/xcmg-roller-1.webp',
+    images: ['/images/xcmg-roller-1.webp', '/images/xcmg-roller-2.webp', '/images/xcmg-roller-3.webp'],
     features: ['20T Class', 'Hydraulic Vibration', 'Dual Drive', 'Full Hydraulic Steering']
   },
   {
@@ -671,8 +671,8 @@ export const trucks: Truck[] = [
     driveType: '4×4',
     engine: 'Weichai WP4.1',
     price: '$38,000 - $52,000',
-    image: '/images/xcmg-backhoe-1.jpg',
-    images: ['/images/xcmg-backhoe-1.jpg', '/images/xcmg-backhoe-2.jpg', '/images/xcmg-backhoe-3.jpg'],
+    image: '/images/xcmg-backhoe-1.webp',
+    images: ['/images/xcmg-backhoe-1.webp', '/images/xcmg-backhoe-2.webp', '/images/xcmg-backhoe-3.webp'],
     features: ['Dig+Load Combo', 'Multi-function', 'Compact', 'Municipal/Farm']
   },
   {
@@ -684,8 +684,8 @@ export const trucks: Truck[] = [
     driveType: '6×4',
     engine: 'Weichai WP10.220E62',
     price: '$45,000 - $60,000',
-    image: '/images/xcmg-grader-1.jpg',
-    images: ['/images/xcmg-grader-1.jpg', '/images/xcmg-grader-2.jpg'],
+    image: '/images/xcmg-grader-1.webp',
+    images: ['/images/xcmg-grader-1.webp', '/images/xcmg-grader-2.webp'],
     features: ['18T Class', 'Hydraulic Control', '360° Blade', 'Mining/Highway']
   },
   {
@@ -697,8 +697,8 @@ export const trucks: Truck[] = [
     driveType: 'Wheel',
     engine: 'Weichai WP3.2',
     price: '$18,000 - $28,000',
-    image: '/images/xcmg-skid-1.jpg',
-    images: ['/images/xcmg-skid-1.jpg', '/images/xcmg-skid-2.jpg', '/images/xcmg-skid-3.jpg'],
+    image: '/images/xcmg-skid-1.webp',
+    images: ['/images/xcmg-skid-1.webp', '/images/xcmg-skid-2.webp', '/images/xcmg-skid-3.webp'],
     features: ['Compact', 'Multi-function', 'Municipal', 'Low Fuel']
   },
   // ===== Light Vehicles =====
@@ -711,8 +711,8 @@ export const trucks: Truck[] = [
     driveType: '4×2',
     engine: 'Weichai WP2.3Q',
     price: '$8,000 - $12,000',
-    image: '/images/sinotruk-cargo-light-1.jpg',
-    images: ['/images/sinotruk-cargo-light-1.jpg', '/images/sinotruk-cargo-light-2.jpg', '/images/sinotruk-cargo-light-3.jpg'],
+    image: '/images/sinotruk-cargo-light-1.webp',
+    images: ['/images/sinotruk-cargo-light-1.webp', '/images/sinotruk-cargo-light-2.webp', '/images/sinotruk-cargo-light-3.webp'],
     features: ['City Cargo', 'Spacious', 'Fuel Efficient', 'Compact']
   },
   {
@@ -724,8 +724,8 @@ export const trucks: Truck[] = [
     driveType: '4×2',
     engine: 'Weichai WP2.3Q',
     price: '$14,000 - $20,000',
-    image: '/images/sinotruk-pass-light-1.jpg',
-    images: ['/images/sinotruk-pass-light-1.jpg', '/images/sinotruk-pass-light-2.jpg', '/images/sinotruk-pass-light-3.jpg'],
+    image: '/images/sinotruk-pass-light-1.webp',
+    images: ['/images/sinotruk-pass-light-1.webp', '/images/sinotruk-pass-light-2.webp', '/images/sinotruk-pass-light-3.webp'],
     features: ['15 Seats', 'Commuter', 'Comfort', 'AC']
   },
   {
@@ -737,8 +737,8 @@ export const trucks: Truck[] = [
     driveType: '4×2',
     engine: 'Weichai WP2.3Q',
     price: '$16,000 - $22,000',
-    image: '/images/sinotruk-biz-light-1.jpg',
-    images: ['/images/sinotruk-biz-light-1.jpg', '/images/sinotruk-biz-light-2.jpg', '/images/sinotruk-biz-light-3.jpg'],
+    image: '/images/sinotruk-biz-light-1.webp',
+    images: ['/images/sinotruk-biz-light-1.webp', '/images/sinotruk-biz-light-2.webp', '/images/sinotruk-biz-light-3.webp'],
     features: ['VIP Transport', 'Luxury Interior', '9 Seats', 'Premium']
   },
   // ===== FOTON Light Vehicles =====
@@ -747,16 +747,24 @@ export const trucks: Truck[] = [
     name: 'FOTON View C2 Van',
     category: 'light',
     brand: 'FOTON',
-    image: '/images/sinotruk-cargo-light-1.jpg',
-    features: ['Cargo Van', 'City Delivery', '2 units/40HQ']
+    horsepower: 136,
+    driveType: '4×2',
+    engine: 'Cummins ISF2.8',
+    price: '$10,000 - $15,000',
+    image: '/images/sinotruk-cargo-light-1.webp',
+    features: ['Cargo Van', 'City Delivery', 'Fuel Efficient', '2 units/40HQ']
   },
   {
     id: 'foton-view-cs2',
     name: 'FOTON View CS2 Van',
     category: 'light',
     brand: 'FOTON',
-    image: '/images/sinotruk-pass-light-1.jpg',
-    features: ['Passenger Van', '15 Seats', '2 units/40HQ']
+    horsepower: 150,
+    driveType: '4×2',
+    engine: 'Cummins ISF2.8',
+    price: '$12,000 - $18,000',
+    image: '/images/sinotruk-pass-light-1.webp',
+    features: ['Passenger Van', '15 Seats', 'Comfort', '2 units/40HQ']
   },
   // ===== IVECO Light Vehicles =====
   {
@@ -764,8 +772,12 @@ export const trucks: Truck[] = [
     name: 'IVECO Daily Van',
     category: 'light',
     brand: 'IVECO',
-    image: '/images/sinotruk-biz-light-1.jpg',
-    features: ['European Design', 'LHD Only', '2 units/40HQ']
+    horsepower: 146,
+    driveType: '4×2',
+    engine: 'F1C / F1A',
+    price: '$15,000 - $25,000',
+    image: '/images/sinotruk-biz-light-1.webp',
+    features: ['European Design', 'LHD Only', 'Cargo/Passenger', '2 units/40HQ']
   }
 ];
 
@@ -796,8 +808,8 @@ export const stockTrucks: Truck[] = [
     driveType: '8×4',
     engine: 'Mercedes OM 470',
     price: '',
-    image: '/images/benz-fire-1.jpg',
-    images: ['/images/benz-fire-1.jpg', '/images/benz-fire-2.jpg', '/images/benz-fire-3.jpg'],
+    image: '/images/benz-fire-1.webp',
+    images: ['/images/benz-fire-1.webp', '/images/benz-fire-2.webp', '/images/benz-fire-3.webp'],
     features: ['8×4', 'Mercedes Chassis', 'China Body', 'Ready to Ship']
   },
   {
@@ -809,8 +821,8 @@ export const stockTrucks: Truck[] = [
     driveType: '6×4',
     engine: 'Weichai WP12.400E62',
     price: '',
-    image: '/images/stock-howo-dump-1.jpg',
-    images: ['/images/stock-howo-dump-1.jpg', '/images/stock-howo-dump-2.jpg', '/images/stock-howo-dump-3.jpg'],
+    image: '/images/stock-howo-dump-1.webp',
+    images: ['/images/stock-howo-dump-1.webp', '/images/stock-howo-dump-2.webp', '/images/stock-howo-dump-3.webp'],
     features: ['6×4', 'Weichai Engine', 'Reinforced Box', 'Ready to Ship']
   },
   {
@@ -822,8 +834,8 @@ export const stockTrucks: Truck[] = [
     driveType: '8×4',
     engine: 'MAN MC13.440',
     price: '',
-    image: '/images/stk-sitrak-dump-1.jpg',
-    images: ['/images/stk-sitrak-dump-1.jpg', '/images/stk-sitrak-dump-2.jpg', '/images/stk-sitrak-dump-3.jpg'],
+    image: '/images/stk-sitrak-dump-1.webp',
+    images: ['/images/stk-sitrak-dump-1.webp', '/images/stk-sitrak-dump-2.webp', '/images/stk-sitrak-dump-3.webp'],
     features: ['8×4', 'MAN Engine', 'Reinforced Box', 'Ready to Ship']
   }
 ];

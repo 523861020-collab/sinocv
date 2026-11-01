@@ -51,7 +51,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <a href="/" className="flex items-center gap-3">
-            <img src="/images/logo-nav.png" alt="Logo" className="h-10 w-auto" width={130} height={40} />
+            <img src="/images/logo-nav.webp" alt="Logo" className="h-10 w-auto" width={130} height={40} />
             <div className="text-sm text-amber-500 font-medium leading-tight">
               <div>One-Stop Sourcing for</div>
               <div>Commercial Vehicles</div>

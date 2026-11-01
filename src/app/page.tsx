@@ -124,7 +124,7 @@ export default function Home() {
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-12">About Us</h2>
           {/* v20260710-1: manager photo directly below */}
           <div className="mb-8 flex justify-center">
-            <img src="/images/manager.jpg" alt="Li Shanlong" className="w-56 h-56 rounded-full object-cover border-2 border-amber-500/40" />
+            <img src="/images/manager.webp" alt="Li Shanlong" className="w-56 h-56 rounded-full object-cover border-2 border-amber-500/40" />
           </div>
           <h4 className="text-white font-bold text-5xl mb-3">Li Shanlong</h4>
           <p className="text-amber-400 text-xl font-medium mb-6">General Manager</p>
@@ -145,12 +145,12 @@ export default function Home() {
           </p>
           <h3 className="text-2xl font-bold text-white mb-8">Certifications</h3>
           <div className="flex justify-center gap-6">
-            <a href="/images/cert-hk-1.jpg" target="_blank" className="rounded-xl overflow-hidden border border-gray-800 hover:border-amber-500/40 block" style={{width: '45%', maxWidth: '300px'}}>
-              <img src="/images/cert-hk-1.jpg" alt="Certificate" className="w-full" />
+            <a href="/images/cert-hk-1.webp" target="_blank" className="rounded-xl overflow-hidden border border-gray-800 hover:border-amber-500/40 block" style={{width: '45%', maxWidth: '300px'}}>
+              <img src="/images/cert-hk-1.webp" alt="Certificate" className="w-full" />
               <div className="px-3 py-2 text-xs text-gray-500">Hong Kong Certificate of Incorporation</div>
             </a>
-            <a href="/images/cert-hk-2.jpg" target="_blank" className="rounded-xl overflow-hidden border border-gray-800 hover:border-amber-500/40 block" style={{width: '45%', maxWidth: '300px'}}>
-              <img src="/images/cert-hk-2.jpg" alt="Certificate" className="w-full" />
+            <a href="/images/cert-hk-2.webp" target="_blank" className="rounded-xl overflow-hidden border border-gray-800 hover:border-amber-500/40 block" style={{width: '45%', maxWidth: '300px'}}>
+              <img src="/images/cert-hk-2.webp" alt="Certificate" className="w-full" />
               <div className="px-3 py-2 text-xs text-gray-500">Hong Kong Business Registration</div>
             </a>
           </div>

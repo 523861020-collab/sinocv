@@ -54,6 +54,15 @@ export async function generateMetadata({
       siteName: "XINYUNTONG",
       locale: locale === "fr" ? "fr_FR" : locale === "ar" ? "ar_SA" : "en_US",
       type: "website",
+      // 2026-11-01：原来没有 og:image，客户在 WhatsApp/Facebook 转发链接时
+      // 显示的是一行灰字，没有任何卡车照片，白白损失信任。补一张 1200x630 封面。
+      images: [{ url: `${SITE}/images/og-cover.jpg`, width: 1200, height: 630, alt: "XINYUNTONG — Chinese trucks & machinery exporter" }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: m.title,
+      description: m.desc,
+      images: [`${SITE}/images/og-cover.jpg`],
     },
     robots: { index: true, follow: true },
   };
@@ -79,7 +88,7 @@ export default async function LocaleLayout({
       <body className="min-h-full flex flex-col bg-black text-white font-sans">
         {/* 2026-11-01 性能：logo 476KB 却是全站第一张图，被 4 次 preload 抢带宽。
             这里去掉无谓的证书/经理照片预加载，只预加载 logo 并标记为高优先级。 */}
-        <link rel="preload" as="image" href="/images/logo-nav.png" fetchPriority="high" />
+        <link rel="preload" as="image" href="/images/logo-nav.webp" fetchPriority="high" />
         {/* 结构化数据：让谷歌/必应认出公司、产品、地址（2026-11-01） */}
         <StructuredData locale={locale} />
         <NextIntlClientProvider messages={messages}>

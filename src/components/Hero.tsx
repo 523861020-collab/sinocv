@@ -6,35 +6,35 @@ import Link from 'next/link';
 
 const slides = [
   {
-    image: '/images/hero-tractor.jpg',
+    image: '/images/hero-tractor.webp',
     title: 'SINOTRUK Tractor Truck',
     subtitle: 'HOWO / SITRAK · German MAN Technology',
     description: 'Weichai engine, 6×4 drive, 30 years of heavy truck export experience',
     link: '/heavy-truck'
   },
   {
-    image: '/images/hero-excavator.jpg',
+    image: '/images/hero-excavator.webp',
     title: 'XCMG Excavator',
     subtitle: 'XCMG · China\'s #1 Construction Machinery',
     description: 'XE215 Excavator, ZL50 Loader — mining, infrastructure, municipal projects',
     link: '/machinery'
   },
   {
-    image: '/images/hero-mining-new.jpg',
+    image: '/images/hero-mining-new.webp',
     title: 'Mining Dump Truck',
     subtitle: 'SINOTRUK · 70-105T Wide-body Mining Trucks',
     description: '40-45 ton payload, reinforced chassis, built for harsh mining conditions',
     link: '/mining'
   },
   {
-    image: '/images/hero-trailer.jpg',
+    image: '/images/hero-trailer.webp',
     title: 'CIMC Trailer',
     subtitle: 'CIMC · Global #1 Trailer Manufacturer',
     description: 'Flatbed trailers, dump trailers — 13-ton axles, durable and dependable',
     link: '/trailers'
   },
   {
-    image: '/images/hero-van-new.jpg',
+    image: '/images/hero-van-new.webp',
     title: 'SINOTRUK Light Vehicles',
     subtitle: 'SINOTRUK · Urban Logistics Expert',
     description: 'Light Vehicles — fuel-efficient, spacious, and reliable for cargo delivery',
