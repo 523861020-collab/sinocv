@@ -195,7 +195,7 @@ export default function PriceEstimator() {
 
         <div className="mt-5 rounded-xl border border-amber-500/40 bg-black/60 p-5 text-center">
           <p className="text-xs uppercase tracking-widest text-gray-500">{t.est}</p>
-          <p className="mt-1 text-3xl font-extrabold text-amber-400 md:text-4xl">
+          <p className="mt-1 whitespace-nowrap text-2xl font-extrabold text-amber-400 sm:text-3xl md:text-4xl">
             {money(calc.lo)} – {money(calc.hi)}
           </p>
           <p className="mt-1 text-xs text-gray-500">{qty} × {t.unit} · {calc.p.label}</p>
