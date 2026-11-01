@@ -166,11 +166,11 @@ export default function Home() {
           <h3 className="text-2xl font-bold text-white mb-8">Certifications</h3>
           <div className="flex justify-center gap-6">
             <a href="/images/cert-hk-1.webp" target="_blank" className="rounded-xl overflow-hidden border border-gray-800 hover:border-amber-500/40 block" style={{width: '45%', maxWidth: '300px'}}>
-              <img src="/images/cert-hk-1.webp" alt="Certificate" className="w-full" />
+              <img src="/images/cert-hk-1.webp" alt="Hong Kong Certificate of Incorporation" className="w-full bg-white object-cover object-center" style={{aspectRatio: "1 / 1.35"}} loading="lazy" />
               <div className="px-3 py-2 text-xs text-gray-500">Hong Kong Certificate of Incorporation</div>
             </a>
             <a href="/images/cert-hk-2.webp" target="_blank" className="rounded-xl overflow-hidden border border-gray-800 hover:border-amber-500/40 block" style={{width: '45%', maxWidth: '300px'}}>
-              <img src="/images/cert-hk-2.webp" alt="Certificate" className="w-full" />
+              <img src="/images/cert-hk-2.webp" alt="Hong Kong Business Registration Certificate" className="w-full bg-white object-cover object-center" style={{aspectRatio: "1 / 1.35"}} loading="lazy" />
               <div className="px-3 py-2 text-xs text-gray-500">Hong Kong Business Registration</div>
             </a>
           </div>

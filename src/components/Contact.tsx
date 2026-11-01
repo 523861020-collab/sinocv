@@ -50,7 +50,7 @@ export default function Contact() {
           <p className="mb-4 text-amber-500 tracking-widest text-sm">CONTACT US</p>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Get a Quote</h2>
           <p className="text-gray-400 text-lg leading-relaxed mb-10 max-w-xl">
-            Fill out the form below and our team will provide a detailed quotation within 24 hours.
+            Fill out the form below. A manager will contact you within 5 minutes and send a detailed quotation within 1 hour.
           </p>
 
           {isSubmitted ? (
@@ -58,7 +58,7 @@ export default function Contact() {
               <div className="text-6xl mb-6">✅</div>
               <h3 className="text-2xl font-bold text-white mb-4">Quote Submitted!</h3>
               <p className="text-gray-400 mb-8">
-                Thank you for your inquiry. Our team will contact you within 24 hours.
+                Thank you for your inquiry. Our manager will contact you within 5 minutes.
               </p>
               <button
                 onClick={() => setIsSubmitted(false)}

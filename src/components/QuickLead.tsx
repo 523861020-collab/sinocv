@@ -108,7 +108,7 @@ export default function QuickLead() {
       {/* 右下角悬浮按钮 */}
       <button
         onClick={() => setOpen(true)}
-        className="fixed bottom-20 right-4 z-40 rounded-full bg-amber-500 px-5 py-3 text-sm font-bold text-black shadow-lg shadow-amber-500/30 transition hover:bg-amber-400 md:bottom-24 md:right-6"
+        className="fixed bottom-24 right-4 z-40 rounded-full bg-amber-500 px-5 py-3 text-sm font-bold text-black shadow-lg shadow-amber-500/30 transition hover:bg-amber-400 md:bottom-28 md:right-6"
       >
         ⚡ {t.fab}
       </button>

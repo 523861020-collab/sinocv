@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 
 const steps = [
-  { icon: '📋', title: 'Inquiry & Needs Analysis', desc: 'Tell us your requirements — vehicle type, quantity, destination port and configuration. Our export specialists respond within 24 hours.' },
+  { icon: '📋', title: 'Inquiry & Needs Analysis', desc: 'Tell us your requirements — vehicle type, quantity, destination port and configuration. A manager contacts you within 5 minutes.' },
   { icon: '💰', title: 'Quotation & Configuration', desc: 'Receive a detailed quotation with factory-direct pricing and full specifications tailored to your market.' },
   { icon: '🏭', title: 'Order & Production', desc: 'Confirm your order with a formal contract. We arrange production directly with the factory and keep you updated on progress.' },
   { icon: '🔍', title: 'Quality Inspection', desc: 'Every unit passes factory inspection and a Pre-Delivery Inspection (PDI) before shipment — photos and reports shared with you.' },

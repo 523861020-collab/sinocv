@@ -5,7 +5,7 @@ export default function WhatsAppFloat() {
     <a
       href="https://wa.me/8619103781257"
       target="_blank"
-      className="fixed top-1/2 right-6 z-50 -translate-y-1/2 flex items-center gap-3 rounded-full bg-green-500 px-5 py-3 text-white shadow-lg shadow-green-500/30 hover:bg-green-400 hover:shadow-green-400/40 hover:scale-105 transition-all duration-300"
+      className="fixed bottom-5 right-4 z-40 flex items-center justify-center gap-3 rounded-full bg-green-500 px-4 py-3.5 text-white shadow-lg shadow-green-500/30 transition-all duration-300 hover:bg-green-400 hover:shadow-green-400/40 md:bottom-8 md:right-6 md:px-5"
     >
       {/* WhatsApp icon */}
       <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">

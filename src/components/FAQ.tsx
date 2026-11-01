@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 const faqs = [
   {
     q: 'How do I get a quotation?',
-    a: 'Send us your requirements via WhatsApp or email — vehicle type, quantity, destination port and configuration. Our specialists reply within 24 hours with factory-direct pricing and full specifications.',
+    a: 'Send us your requirements via WhatsApp or email — vehicle type, quantity, destination port and configuration. A manager replies within 5 minutes with factory-direct pricing and full specifications.',
   },
   {
     q: 'What are the payment terms?',

@@ -74,7 +74,7 @@ export default function Navbar() {
             ))}
             <a
               href="https://wa.me/8619103781257" target="_blank"
-              className="rounded-md bg-green-500 px-6 py-2.5 font-semibold text-white hover:bg-green-400 transition-colors"
+              className="rounded-md bg-amber-500 px-6 py-2.5 font-semibold text-black hover:bg-amber-400 transition-colors"
             >
               {t('nav.getQuote')}
             </a>

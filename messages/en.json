@@ -50,7 +50,7 @@
     "certHK2": "Hong Kong Business Registration",
     "contactUs": "CONTACT US",
     "getAQuote": "Get a Quote",
-    "quoteDesc": "Fill out the form below and our team will provide a detailed quotation within 24 hours.",
+    "quoteDesc": "Fill out the form below. A manager will contact you within 5 minutes and send a detailed quotation within 1 hour.",
     "name": "Name *",
     "email": "Email *",
     "phone": "Phone",
@@ -68,7 +68,7 @@
     "submit": "Submit Inquiry",
     "submitting": "Submitting...",
     "submitted": "Quote Submitted!",
-    "submittedText": "Thank you for your inquiry. Our team will contact you within 24 hours.",
+    "submittedText": "Thank you for your inquiry. Our manager will contact you within 5 minutes.",
     "submitAnother": "Submit Another",
     "inquireNow": "Inquire Now →",
     "inquireNowMobile": "Inquire Now"

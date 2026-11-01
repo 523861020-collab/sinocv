@@ -50,7 +50,7 @@
     "certHK2": "Enregistrement Commercial de Hong Kong",
     "contactUs": "CONTACTEZ-NOUS",
     "getAQuote": "Obtenir un Devis",
-    "quoteDesc": "Remplissez le formulaire ci-dessous et notre équipe vous fournira un devis détaillé sous 24 heures.",
+    "quoteDesc": "Remplissez le formulaire ci-dessous. Un responsable vous contactera sous 5 minutes et vous enverra un devis détaillé sous 1 heure.",
     "name": "Nom *",
     "email": "Email *",
     "phone": "Téléphone",
@@ -68,7 +68,7 @@
     "submit": "Envoyer la Demande",
     "submitting": "Envoi...",
     "submitted": "Devis Soumis!",
-    "submittedText": "Merci pour votre demande. Notre équipe vous contactera sous 24 heures.",
+    "submittedText": "Merci pour votre demande. Notre responsable vous contactera sous 5 minutes.",
     "submitAnother": "Nouvelle Demande",
     "inquireNow": "Demander →",
     "inquireNowMobile": "Demander"

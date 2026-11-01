@@ -59,7 +59,10 @@ export default function Advantages() {
                 {iconMap[adv.icon]}
               </div>
               <h3 className="text-xl font-bold text-white mb-2">{adv.title}</h3>
-              <p className="text-sm text-gray-500 mb-4">{adv.titleEn}</p>
+              {/* 2026-11-01 修：title 与 titleEn 内容完全相同，导致页面上标题显示两遍 */}
+              {adv.titleEn && adv.titleEn !== adv.title && (
+                <p className="text-sm text-gray-500 mb-4">{adv.titleEn}</p>
+              )}
               <p className="text-gray-400 leading-relaxed">{adv.description}</p>
             </motion.div>
           ))}

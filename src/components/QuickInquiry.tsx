@@ -11,7 +11,7 @@ const TXT: Record<string, Record<string, string>> = {
     title: 'Leave your WhatsApp / email — ', within: 'price within 1 hour',
     ph: 'WhatsApp number / email', ph2: 'What do you need? (optional)',
     btn: 'Get Price', sending: 'Sending…',
-    ok1: '✅ Received! Our sales team will contact you within 1 hour.',
+    ok1: '✅ Received! Our sales team will contact you within 5 minutes.',
     ok2: 'In a hurry? Chat with us on WhatsApp →',
     err: 'Submission failed. Please WhatsApp us:',
   },
