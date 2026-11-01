@@ -20,6 +20,7 @@ export default function MachineryPage() {
       brand={zone.brand}
       description={zone.description}
       trucks={trucks.filter(t => zone.categories.includes(t.category))}
+      zoneId="machinery"
       bannerImage="/images/hero-machinery-banner.webp"
     />
   );

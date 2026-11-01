@@ -20,6 +20,7 @@ export default function HeavyTruckPage() {
       brand={zone.brand}
       description={zone.description}
       trucks={trucks.filter(t => zone.categories.includes(t.category))}
+      zoneId="heavy-truck"
       bannerImage="/images/hero-heavy-banner.webp"
     />
   );

@@ -8,7 +8,15 @@ export type Locale = 'en' | 'fr' | 'ar';
 
 export const SITE_CONTENT = {
   en: {
+    categories: {
+      'tractor': 'Tractor Truck', 'cargo': 'Cargo Truck', 'dump': 'Dump Truck',
+      'mixer': 'Concrete Mixer', 'reefer': 'Reefer Truck', 'light-special': 'Light Special',
+      'crane': 'Truck Crane', 'water': 'Water Truck', 'fuel': 'Fuel Tanker',
+      '6x6': '6×6 Off-Road', 'machinery': 'Construction Machinery', 'mining': 'Mining Truck', 'light': 'Light Commercial'
+    },
     navTagline: ['One-Stop Sourcing for', 'Commercial Vehicles'],
+    photosLabel: 'photos',
+    quoteBtn: 'Get Quote',
     waLabel: 'Chat on WhatsApp',
     hero: {
       ctaProducts: 'View Products',
@@ -48,7 +56,15 @@ export const SITE_CONTENT = {
   },
 
   fr: {
+    categories: {
+      'tractor': 'Tracteur routier', 'cargo': 'Camion de transport', 'dump': 'Camion benne',
+      'mixer': 'Malaxeur à béton', 'reefer': 'Camion frigorifique', 'light-special': 'Véhicules spéciaux légers',
+      'crane': 'Camion grue', 'water': 'Camion citerne d\'eau', 'fuel': 'Camion citerne de carburant',
+      '6x6': '6×6 tout-terrain', 'machinery': 'Engins de construction', 'mining': 'Camion minier', 'light': 'Utilitaire léger'
+    },
     navTagline: ['Approvisionnement centralisé', 'véhicules utilitaires'],
+    photosLabel: 'photos',
+    quoteBtn: 'Demander un devis',
     waLabel: 'Discuter sur WhatsApp',
     hero: {
       ctaProducts: 'Voir les produits',
@@ -88,7 +104,15 @@ export const SITE_CONTENT = {
   },
 
   ar: {
+    categories: {
+      'tractor': 'شاحنة رأس جرار', 'cargo': 'شاحنة نقل', 'dump': 'شاحنة قلابة',
+      'mixer': 'خلاطة خرسانة', 'reefer': 'شاحنة مبردة', 'light-special': 'مركبات خاصة خفيفة',
+      'crane': 'شاحنة رافعة', 'water': 'صهريج ماء', 'fuel': 'صهريج وقود',
+      '6x6': '6×6 للطرق الوعرة', 'machinery': 'معدات البناء', 'mining': 'شاحنة تعدين', 'light': 'مركبة تجارية خفيفة'
+    },
     navTagline: ['توريد من مصدر واحد', 'للمركبات التجارية'],
+    photosLabel: 'صور',
+    quoteBtn: 'اطلب عرض سعر',
     waLabel: 'تواصل عبر واتساب',
     hero: {
       ctaProducts: 'عرض المنتجات',

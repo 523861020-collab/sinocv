@@ -1,16 +1,9 @@
-import ZonePage from '@/components/ZonePage';
-import { trucks } from '@/data/trucks';
+import { redirect } from 'next/navigation';
 
-export default function SixBySixPage() {
-  return (
-    <ZonePage
-      title="6×6 Off-Road"
-      titleEn="6×6 Off-Road Vehicles"
-      icon="🧭"
-      brand="SINOTRUK"
-      description="AWD Desert Spec · Dump · Chassis · Fuel Tanker"
-      trucks={trucks.filter(t => t.category === '6x6')}
-      bannerImage="/images/howo-6x6-dump-1.webp"
-    />
-  );
+// 2026-11-01: this route was a full duplicate of /[locale]/6x6 (same content,
+// no locale context). It caused duplicate content for Google and broke the
+// build once the body copy became locale-aware. Redirect only; the real page
+// lives in src/app/[locale]/6x6.
+export default function Page() {
+  redirect('/en/6x6');
 }

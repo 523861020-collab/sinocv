@@ -1,18 +1,9 @@
-import ZonePage from '@/components/ZonePage';
-import { trucks, zones } from '@/data/trucks';
+import { redirect } from 'next/navigation';
 
-const zone = zones.find(z => z.id === 'mining')!;
-
-export default function MiningPage() {
-  return (
-    <ZonePage
-      title={zone.title}
-      titleEn={zone.titleEn}
-      icon={zone.icon}
-      brand={zone.brand}
-      description={zone.description}
-      trucks={trucks.filter(t => zone.categories.includes(t.category))}
-      bannerImage="/images/hero-mining-banner.webp"
-    />
-  );
+// 2026-11-01: this route was a full duplicate of /[locale]/mining (same content,
+// no locale context). It caused duplicate content for Google and broke the
+// build once the body copy became locale-aware. Redirect only; the real page
+// lives in src/app/[locale]/mining.
+export default function Page() {
+  redirect('/en/mining');
 }

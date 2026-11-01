@@ -20,6 +20,7 @@ export default function MiningPage() {
       brand={zone.brand}
       description={zone.description}
       trucks={trucks.filter(t => zone.categories.includes(t.category))}
+      zoneId="mining"
       bannerImage="/images/hero-mining-banner.webp"
     />
   );
