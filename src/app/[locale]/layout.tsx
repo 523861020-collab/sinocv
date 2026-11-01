@@ -9,6 +9,7 @@ import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import AiChat from "@/components/AiChat";
 import VisitPing from "@/components/VisitPing";
+import StructuredData from "@/components/StructuredData";
 import { Analytics } from "@vercel/analytics/react";
 
 // 2026-11-01 SEO：每个语言有独立标题/描述/canonical。
@@ -79,6 +80,8 @@ export default async function LocaleLayout({
         {/* 2026-11-01 性能：logo 476KB 却是全站第一张图，被 4 次 preload 抢带宽。
             这里去掉无谓的证书/经理照片预加载，只预加载 logo 并标记为高优先级。 */}
         <link rel="preload" as="image" href="/images/logo-nav.png" fetchPriority="high" />
+        {/* 结构化数据：让谷歌/必应认出公司、产品、地址（2026-11-01） */}
+        <StructuredData locale={locale} />
         <NextIntlClientProvider messages={messages}>
           <Navbar />
           <main className="flex-1">{children}</main>
