@@ -9,24 +9,49 @@ export async function POST(request: Request) {
   const message = body.message || '';
   const company = body.company || '';
 
-  // 2026-11-01 李总要求：官网询盘一个都不能丢 -> 统一转发到香港 CRM 收口
-  // 香港接口 /api/v1/lead/inbound 落库 leads(source=website) 并推送给王小涵；
-  // 失败不影响返回成功（客户侧不报错），同时在日志里留痕。
-  const CRM_KEY = process.env.CRM_INBOUND_KEY || 'sinocv_inbound_2026';
-  try {
-    const crmRes = await fetch('https://img.sinocv.com/api/v1/lead/inbound', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'X-Inbound-Key': CRM_KEY },
-      body: JSON.stringify({
-        name, email, phone, company, country, product, message,
-        source: 'website',
-        page: request.headers.get('referer') || '',
-      }),
-    });
-    // 必须显式打印结果：fetch 不会因为 4xx/5xx 抛错，之前静默失败过一次
-    console.log('CRM inbound:', crmRes.status, await crmRes.text());
-  } catch (e: any) {
-    console.error('CRM inbound failed:', e.message);
+  // 2026-11-01：官网询盘一个都不能丢。
+  // 注意坑：Vercel 函数之间/跨域 fetch 到 img.sinocv.com 会失败（实测 Failed to fetch），
+  // 而 img.sinocv.com 的 nginx 只放行 /uploads/，其余路径直接 404。
+  // 所以这里改成「发邮件到 sales@sinocvtrucks.com（Brevo 已认证域名）+ 写日志」，
+  // 邮件由服务器收信管道归档进 CRM/收件箱，不依赖跨域调用。
+  const INQ_TO = process.env.INQUIRY_EMAIL_TO || 'sales@sinocvtrucks.com';
+  // 发送渠道：Brevo SMTP 中转（与 CRM 开发信同一认证账号），不依赖第三方跨域接口
+  const BREVO_KEY = process.env.BREVO_SMTP_KEY || '';
+  const BREVO_USER = process.env.BREVO_SMTP_USER || 'b86082001@smtp-brevo.com';
+
+  const lines = [
+    '【官网询盘】' + new Date().toISOString(),
+    '页面: ' + (request.headers.get('referer') || '-'),
+    '姓名: ' + name,
+    '邮箱: ' + (email || '-'),
+    '电话/WhatsApp: ' + (phone || '-'),
+    '国家: ' + (country || '-'),
+    '公司: ' + (company || '-'),
+    '需求车型: ' + (product || '-'),
+    '留言: ' + (message || '-'),
+  ].join('\n');
+  console.log('[INQUIRY]\n' + lines);
+
+  if (BREVO_KEY) {
+    try {
+      const r = await fetch('https://api.brevo.com/v3/smtp/email', {
+        method: 'POST',
+        headers: { 'api-key': BREVO_KEY, 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          sender: { name: 'SINOCV Website', email: 'sales@sinocvtrucks.com' },
+          to: [{ email: INQ_TO }],
+          replyTo: email ? { email } : undefined,
+          subject: '【官网询盘】' + (product || '新车询价') + (phone ? ' - ' + phone : ''),
+          textContent: lines,
+          headers: { 'X-Mailin-User': BREVO_USER },
+        }),
+      });
+      console.log('INQUIRY mail:', r.status, (await r.text()).slice(0, 300));
+    } catch (e: any) {
+      console.error('INQUIRY mail failed:', e.message);
+    }
+  } else {
+    console.warn('INQUIRY mail skipped: BREVO_SMTP_KEY 未配置');
   }
 
   const RESEND_KEY = process.env.RESEND_API_KEY || '';
