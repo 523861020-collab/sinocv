@@ -7,7 +7,7 @@ import { routing } from "@/i18n/routing";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
-import AiChat from "@/components/AiChat";
+import QuickLead from "@/components/QuickLead";
 import VisitPing from "@/components/VisitPing";
 import StructuredData from "@/components/StructuredData";
 import { Analytics } from "@vercel/analytics/react";
@@ -87,7 +87,8 @@ export default async function LocaleLayout({
           <main className="flex-1">{children}</main>
           <Footer />
           <WhatsAppFloat />
-          <AiChat />
+          {/* 2026-11-01 李总要求：取消 AI 聊天，改成一屏快速询价，5分钟内回电 */}
+          <QuickLead />
           <VisitPing />
           <Analytics />
         </NextIntlClientProvider>
