@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "../globals.css";
 import { NextIntlClientProvider } from "next-intl";
-import { getMessages } from "next-intl/server";
+import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import Navbar from "@/components/Navbar";
@@ -31,6 +31,16 @@ const HOME: Record<string, { title: string; desc: string }> = {
     desc: "مورد تصدير شاحنات SINOTRUK HOWO و SHACMAN الثقيلة، حفارات XCMG، ومقطورات CIMC. أسعار المصنع FOB / CFR، قطع غيار، وشحن إلى أفريقيا والشرق الأوسط.",
   },
 };
+
+// 2026-11-01 性能：原来 [locale] 下所有页面都是"动态渲染"(ƒ)，每次访问都要在
+// 服务器函数里现算一遍，TTFB 实测 1.4–4.1 秒——非洲客户用手机打开要等 4 秒以上。
+// 加 generateStaticParams 后三语首页/分类页在构建时预生成，由 Vercel 全球 CDN 直接返回，
+// 内容改动 1 小时内自动重建(ISR)，客户在肯尼亚/尼日利亚打开就是百毫秒级。
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
+export const revalidate = 3600;
 
 export async function generateMetadata({
   params,
@@ -79,6 +89,7 @@ export default async function LocaleLayout({
   if (!routing.locales.includes(locale as 'en' | 'fr' | 'ar')) {
     notFound();
   }
+  setRequestLocale(locale);
 
   const messages = await getMessages();
   const isRTL = locale === 'ar';
