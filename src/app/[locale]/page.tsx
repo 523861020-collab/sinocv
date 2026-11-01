@@ -164,7 +164,7 @@ export default function Home() {
             <p className="text-gray-300 leading-relaxed text-base mb-6">
               We offer not only one-stop procurement services covering complete vehicles and spare parts but also a robust after-sales support system, ensuring a hassle-free, efficient, and seamless cross-border purchasing experience for every client.
             </p>
-            <p className="mb-12 border-l-2 border-amber-500/60 pl-4 text-base not-italic leading-relaxed text-gray-300">
+            <p className="mb-12 border-s-2 border-amber-500/60 ps-4 text-base not-italic leading-relaxed text-gray-300">
               🎯 <span className="text-amber-400 font-medium">Our Mission:</span> Customer-focused, quality-driven — to provide the finest Chinese commercial vehicles and construction machinery to global customers and become a trusted long-term partner.
             </p>
           </div>
