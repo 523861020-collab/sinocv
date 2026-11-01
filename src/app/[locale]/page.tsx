@@ -154,15 +154,20 @@ export default function Home() {
             <a href="https://wa.me/8619103781257" target="_blank" className="text-green-400 hover:text-green-300">💬 WhatsApp</a>
           </div>
           <h3 className="text-3xl font-bold text-white mb-6">About HENAN XINYUNTONG AUTOMOBILE SALES CO., LTD.</h3>
-          <p className="text-gray-300 leading-relaxed text-base mb-4">
-            <span className="text-amber-400 font-semibold">HENAN XINYUNTONG AUTOMOBILE SALES CO., LTD.</span> is dedicated to providing superior services to global truck users. As a professional commercial vehicle export enterprise, we specialize in exporting Chinese heavy-duty trucks and construction machinery. Backed by a comprehensive supply chain and complete export qualifications, we deliver high-quality, smart manufacturing from China to the world.
-          </p>
-          <p className="text-gray-300 leading-relaxed text-base mb-6">
-            We offer not only one-stop procurement services covering complete vehicles and spare parts but also a robust after-sales support system, ensuring a hassle-free, efficient, and seamless cross-border purchasing experience for every client.
-          </p>
-          <p className="text-gray-400 italic text-base mb-12">
-            🎯 <span className="text-amber-400 font-medium">Our Mission:</span> Customer-focused, quality-driven — to provide the finest Chinese commercial vehicles and construction machinery to global customers and become a trusted long-term partner.
-          </p>
+          {/* 2026-11-01 修：这段正文原来继承了外层的 text-align:center，
+              几十个词的长段落被居中排，每行首尾参差，眼睛找不到下一行起点。
+              正文一律左对齐并限宽到阅读舒适宽度（约 70 字符/行）。 */}
+          <div className="mx-auto max-w-3xl text-left">
+            <p className="text-gray-300 leading-relaxed text-base mb-4">
+              <span className="text-amber-400 font-semibold">HENAN XINYUNTONG AUTOMOBILE SALES CO., LTD.</span> is dedicated to providing superior services to global truck users. As a professional commercial vehicle export enterprise, we specialize in exporting Chinese heavy-duty trucks and construction machinery. Backed by a comprehensive supply chain and complete export qualifications, we deliver high-quality, smart manufacturing from China to the world.
+            </p>
+            <p className="text-gray-300 leading-relaxed text-base mb-6">
+              We offer not only one-stop procurement services covering complete vehicles and spare parts but also a robust after-sales support system, ensuring a hassle-free, efficient, and seamless cross-border purchasing experience for every client.
+            </p>
+            <p className="text-gray-400 italic text-base mb-12">
+              🎯 <span className="text-amber-400 font-medium">Our Mission:</span> Customer-focused, quality-driven — to provide the finest Chinese commercial vehicles and construction machinery to global customers and become a trusted long-term partner.
+            </p>
+          </div>
           <h3 className="text-2xl font-bold text-white mb-8">Certifications</h3>
           <div className="flex justify-center gap-6">
             <a href="/images/cert-hk-1.webp" target="_blank" className="rounded-xl overflow-hidden border border-gray-800 hover:border-amber-500/40 block" style={{width: '45%', maxWidth: '300px'}}>
