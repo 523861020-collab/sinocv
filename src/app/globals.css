@@ -10,11 +10,12 @@
   --color-foreground: var(--foreground);
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* 2026-11-01 修复全站排版：
+   这里原来有一段不带 @layer 的  * { margin:0; padding:0 }。
+   CSS 规定「未分层的样式」优先级高于任何 @layer 里的样式，而 Tailwind v4 把
+   p-* / m-* / px-* / py-* 全放在 @layer utilities 里 —— 结果全站每一个内外边距
+   都被这段全局清零压掉：文字贴边、区块挤在一起、导航挤成一团。
+   Tailwind 的 preflight 已经在 @layer base 里做了正确的重置，这里删掉即可。 */
 
 html {
   scroll-behavior: smooth;
