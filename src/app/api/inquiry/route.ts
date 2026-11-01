@@ -14,7 +14,7 @@ export async function POST(request: Request) {
   // 失败不影响返回成功（客户侧不报错），同时在日志里留痕。
   const CRM_KEY = process.env.CRM_INBOUND_KEY || 'sinocv_inbound_2026';
   try {
-    await fetch('https://img.sinocv.com/api/v1/lead/inbound', {
+    const crmRes = await fetch('https://img.sinocv.com/api/v1/lead/inbound', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'X-Inbound-Key': CRM_KEY },
       body: JSON.stringify({
@@ -23,6 +23,8 @@ export async function POST(request: Request) {
         page: request.headers.get('referer') || '',
       }),
     });
+    // 必须显式打印结果：fetch 不会因为 4xx/5xx 抛错，之前静默失败过一次
+    console.log('CRM inbound:', crmRes.status, await crmRes.text());
   } catch (e: any) {
     console.error('CRM inbound failed:', e.message);
   }
