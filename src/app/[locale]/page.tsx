@@ -8,6 +8,8 @@ import Advantages from '@/components/Advantages';
 import Contact from '@/components/Contact';
 import QuickNav from '@/components/QuickNav';
 import QuickInquiry from '@/components/QuickInquiry';
+import PriceListCTA from '@/components/PriceListCTA';
+import PriceEstimator from '@/components/PriceEstimator';
 import { trucks, zones, categories, stockTrucks } from '@/data/trucks';
 
 function Lightbox({ images, onClose }: { images: string[]; onClose: () => void }) {
@@ -84,6 +86,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* 报价包索取（留联系方式换清单）2026-11-01 */}
+      <PriceListCTA />
+
       {stockTrucks.length > 0 && (
         <section id="promo" style={{paddingTop: '1.5rem', paddingBottom: '1.5rem'}} className="bg-gray-950">
           <div className="px-6">
@@ -130,6 +135,9 @@ export default function Home() {
       </section>
 
       <Advantages />
+
+      {/* 到港价计算器（留 WhatsApp 换精确报价）2026-11-01 */}
+      <PriceEstimator />
 
       <section style={{paddingTop: '1.5rem', paddingBottom: '1.5rem'}} className="bg-black">
         <div style={{textAlign: 'center', padding: '0 1.5rem'}}>
