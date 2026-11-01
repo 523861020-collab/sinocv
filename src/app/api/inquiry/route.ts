@@ -8,20 +8,21 @@ export async function POST(request: Request) {
   const product = body.product || '';
   const message = body.message || '';
   const company = body.company || '';
+  const page = body.page || request.headers.get('referer') || '-';
 
-  // 2026-11-01：官网询盘一个都不能丢。
-  // 注意坑：Vercel 函数之间/跨域 fetch 到 img.sinocv.com 会失败（实测 Failed to fetch），
-  // 而 img.sinocv.com 的 nginx 只放行 /uploads/，其余路径直接 404。
-  // 所以这里改成「发邮件到 sales@sinocvtrucks.com（Brevo 已认证域名）+ 写日志」，
-  // 邮件由服务器收信管道归档进 CRM/收件箱，不依赖跨域调用。
+  // 2026-11-01 修复记录（重要）：
+  // 之前同时写了 Brevo REST 和 Resend 两条路。Vercel 上的 BREVO_SMTP_KEY 是 SMTP 密钥
+  // （xsmtpsib- 开头），调 api.brevo.com/v3 一定 401；于是每条询盘都从 Resend 的
+  // onboarding@resend.dev 发出去（这是个只能给自己发信的沙箱发件人），邮件标题
+  // 就成了 "New inquiry from XXX"。所以现在只保留 Brevo REST 一条路，
+  // 并且用正确的 API key（BREVO_API_KEY，xkeysib- 开头）。
   const INQ_TO = process.env.INQUIRY_EMAIL_TO || 'sales@sinocvtrucks.com';
-  // 发送渠道：Brevo SMTP 中转（与 CRM 开发信同一认证账号），不依赖第三方跨域接口
-  const BREVO_KEY = process.env.BREVO_SMTP_KEY || '';
+  const BREVO_API_KEY = process.env.BREVO_API_KEY || '';
   const BREVO_USER = process.env.BREVO_SMTP_USER || 'b86082001@smtp-brevo.com';
 
   const lines = [
     '【官网询盘】' + new Date().toISOString(),
-    '页面: ' + (request.headers.get('referer') || '-'),
+    '页面: ' + page,
     '姓名: ' + name,
     '邮箱: ' + (email || '-'),
     '电话/WhatsApp: ' + (phone || '-'),
@@ -32,11 +33,12 @@ export async function POST(request: Request) {
   ].join('\n');
   console.log('[INQUIRY]\n' + lines);
 
-  if (BREVO_KEY) {
+  let delivered = false;
+  if (BREVO_API_KEY) {
     try {
       const r = await fetch('https://api.brevo.com/v3/smtp/email', {
         method: 'POST',
-        headers: { 'api-key': BREVO_KEY, 'Content-Type': 'application/json' },
+        headers: { 'api-key': BREVO_API_KEY, 'Content-Type': 'application/json' },
         body: JSON.stringify({
           sender: { name: 'SINOCV Website', email: 'sales@sinocvtrucks.com' },
           to: [{ email: INQ_TO }],
@@ -46,40 +48,35 @@ export async function POST(request: Request) {
           headers: { 'X-Mailin-User': BREVO_USER },
         }),
       });
-      console.log('INQUIRY mail:', r.status, (await r.text()).slice(0, 300));
+      const txt = (await r.text()).slice(0, 300);
+      console.log('INQUIRY mail:', r.status, txt);
+      delivered = r.ok;
     } catch (e: any) {
       console.error('INQUIRY mail failed:', e.message);
     }
   } else {
-    console.warn('INQUIRY mail skipped: BREVO_SMTP_KEY 未配置');
+    console.warn('INQUIRY mail skipped: BREVO_API_KEY 未配置');
   }
 
-  // 2026-11-01 实测结论：Vercel 函数无法把询盘直接送到香港 CRM——
-  // http/https 到 img.sinocv.com 都在 8 秒内静默失败（catch 到 ERR_ 类错误），
-  // 服务器侧没有任何来自 Vercel 的访问记录。所以询盘只走 Brevo 邮件到 sales@sinocvtrucks.com。
-  // 想做成「进 CRM + 微信秒提醒」，必须先给接口单独配一个域名（如 api.sinocv.com）。
-
-  const RESEND_KEY = process.env.RESEND_API_KEY || '';
-
-  if (RESEND_KEY) {
-    try {
-      const res = await fetch('https://api.resend.com/emails', {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${RESEND_KEY}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          from: 'onboarding@resend.dev',
-          to: '523861020@qq.com',
-          subject: 'New inquiry from ' + name,
-          text: 'Name: ' + name + '\nEmail: ' + email + '\nPhone: ' + phone + '\nCountry: ' + country + '\nCompany: ' + company + '\nProduct: ' + product + '\nMessage: ' + message,
-        }),
-      });
-      const data = await res.json();
-      console.log('Resend full:', JSON.stringify(data));
-    } catch (e: any) {
-      console.error('Resend failed:', e.message);
+  // 邮件投递失败时才用 Resend 兜底（不再作为主通道，避免沙箱发件人主导全站邮件）
+  if (!delivered) {
+    const RESEND_KEY = process.env.RESEND_API_KEY || '';
+    if (RESEND_KEY) {
+      try {
+        await fetch('https://api.resend.com/emails', {
+          method: 'POST',
+          headers: { 'Authorization': `Bearer ${RESEND_KEY}`, 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            from: 'onboarding@resend.dev',
+            to: '523861020@qq.com',
+            subject: '【官网询盘·备用通道】' + (product || '新车询价') + (phone ? ' - ' + phone : ''),
+            text: lines,
+          }),
+        });
+        console.warn('INQUIRY: 主通道失败，已走 Resend 备用通道');
+      } catch (e: any) {
+        console.error('INQUIRY resend fallback failed:', e.message);
+      }
     }
   }
 
