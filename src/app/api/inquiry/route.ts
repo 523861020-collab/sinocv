@@ -54,24 +54,10 @@ export async function POST(request: Request) {
     console.warn('INQUIRY mail skipped: BREVO_SMTP_KEY 未配置');
   }
 
-  // 2026-11-01：同时直连香港 CRM 落库（leads.source='website'），成功后服务端会推李总微信。
-  // 走 http://img.sinocv.com（80 → CF 301 → 443 SNI 分流到 nginx）：Vercel 函数对部分域名 443 直连会被拦，
-  // 这里用 80+跟随跳转最稳；失败只记日志，不影响客户侧返回成功。
-  try {
-    const CRM_KEY = process.env.CRM_INBOUND_KEY || 'sinocv_inbound_2026';
-    const crmRes = await fetch('http://img.sinocv.com/api/v1/lead/inbound', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'X-Inbound-Key': CRM_KEY },
-      body: JSON.stringify({
-        name, email, phone, company, country, product,
-        message: message || '', page: request.headers.get('referer') || '', source: 'website',
-      }),
-      redirect: 'follow',
-    });
-    console.log('CRM inbound:', crmRes.status, (await crmRes.text()).slice(0, 200));
-  } catch (e: any) {
-    console.error('CRM inbound failed:', e.message);
-  }
+  // 2026-11-01 实测结论：Vercel 函数无法把询盘直接送到香港 CRM——
+  // http/https 到 img.sinocv.com 都在 8 秒内静默失败（catch 到 ERR_ 类错误），
+  // 服务器侧没有任何来自 Vercel 的访问记录。所以询盘只走 Brevo 邮件到 sales@sinocvtrucks.com。
+  // 想做成「进 CRM + 微信秒提醒」，必须先给接口单独配一个域名（如 api.sinocv.com）。
 
   const RESEND_KEY = process.env.RESEND_API_KEY || '';
 
