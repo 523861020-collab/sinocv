@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { useLocale } from 'next-intl';
 import { content } from '@/data/site-i18n';
@@ -50,7 +50,7 @@ export default function Hero() {
             opacity: i === current ? 1 : i === prev ? 0 : 0,
             pointerEvents: i === current ? 'auto' : 'none',
           }}
-          transition={{ duration: 1.2 }}
+          transition={{ duration: 0.45 }}
           className="absolute inset-0"
         >
           <Link href={slide.link} className="absolute inset-0 z-10 cursor-pointer" aria-label={slide.title} />
@@ -63,63 +63,35 @@ export default function Hero() {
         </motion.div>
       ))}
 
-      {/* Content */}
+      {/* Content — 文案不做进出场动画：原来 AnimatePresence mode="wait" 在切换间隙会把文字整段清空，
+          手机上（尤其实微信内置浏览器）能停近 1 秒，看起来像"图配错了"。文字瞬切、始终有内容最稳。 */}
       <div className="relative z-20 flex h-full items-center pointer-events-none">
         <div className="container mx-auto px-6 lg:px-16 pointer-events-auto">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={current}
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -40 }}
-              transition={{ duration: 0.8 }}
-              className="max-w-3xl"
-            >
-              <motion.p
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.3 }}
-                className="mb-4 text-lg tracking-widest text-amber-400"
+          <div className="max-w-3xl">
+            <p className="mb-4 text-lg tracking-widest text-amber-400">
+              {slides[current].subtitle}
+            </p>
+            <h1 className="mb-6 text-5xl font-bold leading-relaxed tracking-normal text-white md:text-7xl">
+              {slides[current].title}
+            </h1>
+            <p className="mb-8 text-xl leading-relaxed tracking-normal text-gray-300">
+              {slides[current].description}
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Link
+                href={slides[current].link}
+                className="rounded-md bg-amber-500 px-8 py-4 text-lg font-semibold text-black transition-all hover:bg-amber-400 hover:shadow-lg hover:shadow-amber-500/30"
               >
-                {slides[current].subtitle}
-              </motion.p>
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 }}
-                className="mb-6 text-5xl font-bold leading-relaxed tracking-normal text-white md:text-7xl"
+                {t.hero.ctaProducts}
+              </Link>
+              <a
+                href="https://wa.me/8619103781257" target="_blank"
+                className="rounded-md border-2 border-green-500 bg-green-500 px-8 py-4 text-lg font-semibold text-white shadow-lg shadow-green-500/20 transition-all hover:bg-green-400 hover:border-green-400"
               >
-                {slides[current].title}
-              </motion.h1>
-              <motion.p
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.7 }}
-                className="mb-8 text-xl leading-relaxed tracking-normal text-gray-300"
-              >
-                {slides[current].description}
-              </motion.p>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.9 }}
-                className="flex flex-wrap gap-4"
-              >
-                <Link
-                  href={slides[current].link}
-                  className="rounded-md bg-amber-500 px-8 py-4 text-lg font-semibold text-black transition-all hover:bg-amber-400 hover:shadow-lg hover:shadow-amber-500/30"
-                >
-                  {t.hero.ctaProducts}
-                </Link>
-                <a
-                  href="https://wa.me/8619103781257" target="_blank"
-                    className="rounded-md border-2 border-green-500 bg-green-500 px-8 py-4 text-lg font-semibold text-white shadow-lg shadow-green-500/20 transition-all hover:bg-green-400 hover:border-green-400"
-                >
-                  {t.hero.ctaQuote}
-                </a>
-              </motion.div>
-            </motion.div>
-          </AnimatePresence>
+                {t.hero.ctaQuote}
+              </a>
+            </div>
+          </div>
         </div>
       </div>
 
