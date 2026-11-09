@@ -82,16 +82,11 @@ export default function Home() {
     <>
       <Hero />
 
-      {/* 首屏之后：快速定位 + 快速询价，第一屏滑完立刻能看到（2026-11-01 留客改造） */}
+      {/* 首屏之后：快速定位，第一屏滑完立刻能看到（2026-11-01 留客改造） */}
       <QuickNav />
-      <section className="bg-gray-950 px-4 py-4 md:px-6">
-        <div className="mx-auto max-w-4xl">
-          <QuickInquiry />
-        </div>
-      </section>
 
-      {/* 报价包索取（留联系方式换清单）2026-11-01 */}
-      <PriceListCTA />
+      {/* 2026-11-09 李总反馈：首屏正下方紧跟"留 WhatsApp"表单太突兀（客户还没看到车就要电话）。
+          QuickInquiry 与 PriceListCTA 原都在首屏，现统一挪到产品分类之后。 */}
 
       {stockTrucks.length > 0 && (
         <section id="promo" style={{paddingTop: '1.5rem', paddingBottom: '1.5rem'}} className="bg-gray-950">
@@ -139,6 +134,16 @@ export default function Home() {
       </section>
 
       <Advantages />
+
+      {/* 报价包索取（留联系方式换清单）2026-11-01 — 2026-11-09 从首屏挪到这里 */}
+      <PriceListCTA />
+
+      {/* 快速询价条：产品看完之后才出现（2026-11-09 从首屏挪下来） */}
+      <section className="bg-gray-950 px-4 py-8 md:px-6">
+        <div className="mx-auto max-w-4xl">
+          <QuickInquiry />
+        </div>
+      </section>
 
       {/* 到港价计算器（留 WhatsApp 换精确报价）2026-11-01 */}
       <PriceEstimator />

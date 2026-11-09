@@ -78,8 +78,8 @@ export default function QuickInquiry() {
   }
 
   return (
-    <form onSubmit={submit} className="rounded-xl border border-amber-500/40 bg-gray-900/80 p-4 md:p-5">
-      <p className="mb-3 text-center text-base md:text-lg font-semibold text-white">
+    <form onSubmit={submit} className="rounded-xl border border-gray-800 bg-gray-900/50 p-4 md:p-5">
+      <p className="mb-3 text-center text-sm md:text-base font-semibold text-gray-300">
         {t.title}<span className="text-amber-400">{t.within}</span>
       </p>
       <div className="flex flex-col gap-2 md:flex-row">
