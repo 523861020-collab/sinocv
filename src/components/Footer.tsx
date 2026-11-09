@@ -10,24 +10,29 @@ export default function Footer() {
   const locale = useLocale();
   return (
     <footer className="bg-gray-950 border-t border-gray-800">
-      <div className="px-6 lg:px-16 max-w-[1920px] mx-auto py-12">
+      <div className="px-6 lg:px-16 max-w-[1920px] mx-auto pt-12 pb-36 md:pb-24">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
-            <div className="flex flex-col items-start gap-2 mb-4">
-              <img src="/images/logo-nav.webp" alt="Logo" className="h-10 w-auto" width={130} height={40} />
-              <div className="text-sm text-amber-500 font-medium leading-tight">
+            {/* 2026-11-09 品牌块重排：logo 放大一档、tagline 限宽成两行、社交图标统一 16px 高光学尺寸，
+                不再是一条橙色长句 + 三个粗细不一的圆点。 */}
+            <div className="flex flex-col items-start gap-3 mb-5">
+              <img src="/images/logo-nav.webp" alt="Logo" className="h-11 w-auto" width={144} height={44} />
+              <p className="max-w-[170px] text-[13px] font-medium leading-snug text-amber-500">
                 {t('footer.tagline')}
-              </div>
+              </p>
             </div>
-            <div className="flex gap-3">
-              <a href="https://www.facebook.com/chintruck" target="_blank" className="w-9 h-9 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-[#1877F2] hover:text-white transition-colors">
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            <div className="flex items-center gap-2.5">
+              <a href="https://www.facebook.com/chintruck" target="_blank" rel="noopener noreferrer" aria-label="Facebook"
+                className="flex h-[34px] w-[34px] items-center justify-center rounded-full bg-white/[0.06] ring-1 ring-inset ring-white/10 text-gray-300 transition-colors hover:bg-[#1877F2] hover:text-white hover:ring-transparent">
+                <svg className="h-4 w-auto" viewBox="0 0 320 512" fill="currentColor"><path d="M80 299.3V512h116V299.3h86.5l18-97.8H196v-34.6c0-51.7 20.3-71.5 72.7-71.5 16.3 0 29.4.4 37 1.2V7.9C291.4 4 256.4 0 236.2 0 129.3 0 80 50.5 80 159.4v42.1H14v97.8h66z"/></svg>
               </a>
-              <a href="https://www.linkedin.com/company/xinyuntong" target="_blank" rel="noopener" className="w-9 h-9 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-[#0A66C2] hover:text-white transition-colors" aria-label="LinkedIn">
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              <a href="https://www.linkedin.com/company/xinyuntong" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
+                className="flex h-[34px] w-[34px] items-center justify-center rounded-full bg-white/[0.06] ring-1 ring-inset ring-white/10 text-gray-300 transition-colors hover:bg-[#0A66C2] hover:text-white hover:ring-transparent">
+                <svg className="h-4 w-auto" viewBox="0 0 448 512" fill="currentColor"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>
               </a>
-              <a href="https://www.youtube.com/@sinocv-u2k" target="_blank" className="w-9 h-9 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-[#FF0000] hover:text-white transition-colors">
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              <a href="https://www.youtube.com/@sinocv-u2k" target="_blank" rel="noopener noreferrer" aria-label="YouTube"
+                className="flex h-[34px] w-[34px] items-center justify-center rounded-full bg-white/[0.06] ring-1 ring-inset ring-white/10 text-gray-300 transition-colors hover:bg-[#FF0000] hover:text-white hover:ring-transparent">
+                <svg className="h-4 w-auto" viewBox="0 0 576 512" fill="currentColor"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
               </a>
             </div>
           </div>
