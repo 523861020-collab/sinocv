@@ -2,9 +2,17 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useLocale } from 'next-intl';
 import { openLead } from '@/lib/leadModal';
 
+const PRICE_LINK: Record<string, string> = {
+  en: '📄 Just need prices? Get the 2026 Price List (FOB / CIF) →',
+  fr: '📄 Besoin seulement des prix ? Recevez la liste de prix 2026 (FOB / CIF) →',
+  ar: '📄 تحتاج الأسعار فقط؟ احصل على قائمة أسعار 2026 (FOB / CIF) ←',
+};
+
 export default function Contact() {
+  const locale = useLocale();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -59,7 +67,7 @@ export default function Contact() {
             onClick={() => openLead('pricelist')}
             className="mb-10 inline-flex items-center gap-1.5 text-sm font-medium text-amber-400 hover:text-amber-300 underline underline-offset-4"
           >
-            📄 Just need prices? Get the 2026 Price List (FOB / CIF) →
+            {PRICE_LINK[locale] || PRICE_LINK.en}
           </button>
 
           {isSubmitted ? (
