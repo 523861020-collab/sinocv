@@ -7,7 +7,6 @@ import Hero from '@/components/Hero';
 import Advantages from '@/components/Advantages';
 import Contact from '@/components/Contact';
 import QuickNav from '@/components/QuickNav';
-import QuickInquiry from '@/components/QuickInquiry';
 import PriceListCTA from '@/components/PriceListCTA';
 import PriceEstimator from '@/components/PriceEstimator';
 import { trucks, zones, categories, stockTrucks } from '@/data/trucks';
@@ -135,18 +134,11 @@ export default function Home() {
 
       <Advantages />
 
-      {/* 报价包索取（留联系方式换清单）2026-11-01 — 2026-11-09 从首屏挪到这里 */}
+      {/* 报价包索取（留联系方式换清单）—— 页面里只保留这一个强留资块。
+          2026-11-09：QuickInquiry（“留 WhatsApp 1 小时报价”）已删除，与这块功能重复，
+          两块挨在一起客户会觉得被连着要两次联系方式。
+          PriceEstimator（到港价计算器）也挪到“关于我们”之后，避免两个表单上下相邻。 */}
       <PriceListCTA />
-
-      {/* 快速询价条：产品看完之后才出现（2026-11-09 从首屏挪下来） */}
-      <section className="bg-gray-950 px-4 py-8 md:px-6">
-        <div className="mx-auto max-w-4xl">
-          <QuickInquiry />
-        </div>
-      </section>
-
-      {/* 到港价计算器（留 WhatsApp 换精确报价）2026-11-01 */}
-      <PriceEstimator />
 
       <section style={{paddingTop: '1.5rem', paddingBottom: '1.5rem'}} className="bg-black">
         <div style={{textAlign: 'center', padding: '0 1.5rem'}}>
@@ -188,6 +180,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* 到港价计算器（留 WhatsApp 换精确报价）2026-11-01 — 2026-11-09 移到关于我们之后 */}
+      <PriceEstimator />
 
       <Contact />
       <AnimatePresence>{lightbox && <Lightbox images={lightbox} onClose={() => setLightbox(null)} />}</AnimatePresence>
