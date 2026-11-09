@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { openLead } from '@/lib/leadModal';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -49,9 +50,17 @@ export default function Contact() {
         >
           <p className="mb-4 text-amber-500 tracking-widest text-sm">CONTACT US</p>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Get a Quote</h2>
-          <p className="text-gray-400 text-lg leading-relaxed mb-10 max-w-xl">
+          <p className="text-gray-400 text-lg leading-relaxed mb-3 max-w-xl">
             Fill out the form below. A manager will contact you within 5 minutes and send a detailed quotation within 1 hour.
           </p>
+          {/* 2026-11-09：报价清单不再单独占一块版面，收进询价入口（点这里直接打开弹窗的 Price List 页签） */}
+          <button
+            type="button"
+            onClick={() => openLead('pricelist')}
+            className="mb-10 inline-flex items-center gap-1.5 text-sm font-medium text-amber-400 hover:text-amber-300 underline underline-offset-4"
+          >
+            📄 Just need prices? Get the 2026 Price List (FOB / CIF) →
+          </button>
 
           {isSubmitted ? (
             <div className="rounded-xl bg-gray-900 border border-gray-800 p-12 text-center w-full">

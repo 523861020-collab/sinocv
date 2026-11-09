@@ -44,7 +44,7 @@ export default function Hero() {
     // 改成「手机上图片按 16:9 完整显示 + 文案在图下方」，桌面 md 以上保持原来的满屏 hero。
     <section className="relative flex w-full flex-col bg-black pt-20 md:block md:h-screen md:overflow-hidden md:pt-0">
       {/* All slides layered — 手机：固定 16:9 高度、object-cover 不裁切；桌面：满屏铺满 */}
-      <div className="relative aspect-video w-full shrink-0 md:absolute md:inset-0 md:aspect-auto md:h-full">
+      <div className="relative aspect-video w-full shrink-0 overflow-hidden md:absolute md:inset-0 md:aspect-auto md:h-full">
         {slides.map((slide, i) => (
           <motion.div
             key={i}

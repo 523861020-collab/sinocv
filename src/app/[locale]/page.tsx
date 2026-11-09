@@ -7,7 +7,6 @@ import Hero from '@/components/Hero';
 import Advantages from '@/components/Advantages';
 import Contact from '@/components/Contact';
 import QuickNav from '@/components/QuickNav';
-import PriceListCTA from '@/components/PriceListCTA';
 import PriceEstimator from '@/components/PriceEstimator';
 import { trucks, zones, categories, stockTrucks } from '@/data/trucks';
 import { useLocale } from 'next-intl';
@@ -84,8 +83,8 @@ export default function Home() {
       {/* 首屏之后：快速定位，第一屏滑完立刻能看到（2026-11-01 留客改造） */}
       <QuickNav />
 
-      {/* 2026-11-09 李总反馈：首屏正下方紧跟"留 WhatsApp"表单太突兀（客户还没看到车就要电话）。
-          QuickInquiry 与 PriceListCTA 原都在首屏，现统一挪到产品分类之后。 */}
+      {/* 2026-11-09 李总反馈：首屏正下方紧跟"留 WhatsApp"表单太突兀（客户还没看到车就要电话），
+          留资块已全部撤出页面，统一收进右下角询价弹窗。 */}
 
       {stockTrucks.length > 0 && (
         <section id="promo" style={{paddingTop: '1.5rem', paddingBottom: '1.5rem'}} className="bg-gray-950">
@@ -134,11 +133,9 @@ export default function Home() {
 
       <Advantages />
 
-      {/* 报价包索取（留联系方式换清单）—— 页面里只保留这一个强留资块。
-          2026-11-09：QuickInquiry（“留 WhatsApp 1 小时报价”）已删除，与这块功能重复，
-          两块挨在一起客户会觉得被连着要两次联系方式。
-          PriceEstimator（到港价计算器）也挪到“关于我们”之后，避免两个表单上下相邻。 */}
-      <PriceListCTA />
+      {/* 2026-11-09 李总反馈：页面中间不要直接摆留资表单（太突兀、影响美观）。
+          价格清单已并入右下角询价弹窗的「📄 2026 Price List」页签，页面上只保留
+          产品、公司介绍等正常内容；询价入口 = 右下角悬浮按钮 + 底部 Contact 区。 */}
 
       <section style={{paddingTop: '1.5rem', paddingBottom: '1.5rem'}} className="bg-black">
         <div style={{textAlign: 'center', padding: '0 1.5rem'}}>
